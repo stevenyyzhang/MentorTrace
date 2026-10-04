@@ -1,0 +1,25 @@
+# Private inputs and generated runs never belong in this public repository.
+/workspaces/
+/runs/
+/data/
+/private/
+/local-releases/
+/.release-work/
+/output/
+/tmp/
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.log
+*.pdf
+*.doc
+*.docx
+*.tex
+*.zip
+*.7z
+# This report is generated only from a fictional test manuscript.
+!/examples/report_bilingual.pdf

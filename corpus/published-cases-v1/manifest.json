@@ -1,0 +1,17 @@
+{
+  "role": "goodpaper_task_cases",
+  "version": "1.0.0",
+  "language": "en",
+  "reader_cases": 189,
+  "technical_F_cases": 52,
+  "record_level_pairs": 5,
+  "reader_entry_count": 11,
+  "technical_entry_count": 14,
+  "source_papers": 52,
+  "original_case_id_coverage": "complete",
+  "license": "CC-BY-4.0",
+  "epistemic_policy": "Source relationships are analyst reconstructions; effects and target sufficiency are unvalidated hypotheses, not universally required manuscript form.",
+  "undocumented_reader_alternatives_withheld": 189,
+  "source_limit": "English analyst summaries; no source PDFs, paragraphs, full-page text or independent mathematical reproof.",
+  "routing_policy": "Match frozen target tasks; zero matches are allowed; selected cases do not establish target defects."
+}

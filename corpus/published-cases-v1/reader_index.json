@@ -1,0 +1,2213 @@
+{
+  "entries": [
+    {
+      "id": "R01",
+      "title": "State the axis of change when moving from earlier work to the current task",
+      "task_description": "**Shared relationship:** Establish the reference, identify its specific limit in variables, constraints, information, or scope, then state what the present task changes. The source cases move from multi-antenna interference to a new estimator, distinguish nonconvexity from coupling and mismatched prior objectives, and move from infinite-tone duality to finite practical-tone tests. These are different forms of reasoning, each making the change explainable.\n\n**Common misreading:** Listing literature or naming a method does not identify the change. An adjacent equation or table can already do so. **Editing action:** Place shared premises and changed objects together when facts exist. Ask the author to establish missing differences; wording cannot manufacture novelty.",
+      "highlight_case_ids": [
+        "P02-01",
+        "P11-C1",
+        "P42-C1"
+      ],
+      "category_evidence": {
+        "distinct_paper_ids": [
+          "P02",
+          "P11",
+          "P42"
+        ],
+        "distinct_paper_count": 3,
+        "source_supported_common_task_description": "Explain the specific obstacle or scope difference that motivates moving from an earlier result or approach to the present task.",
+        "evidence_status": "actual_source_examples_grouped_by_analyst_interpretation",
+        "scope_limit": "The examples concern different estimator, objective and asymptotic-scope changes. They support a recurring task relationship in the selected papers, not a shared technical mechanism or a mandatory novelty-sentence format.",
+        "empirically_validated_writing_advantage": false
+      }
+    },
+    {
+      "id": "R02",
+      "title": "Fix the referent when terminology or objects change",
+      "task_description": "**Shared relationship:** Give a term or symbol a context-specific meaning and identify changes of role. Cases explain a configurable base-station constraint, reverse a user's decoding and encoding order between MAC and BC, and distinguish an achievable rate from an unknown capacity optimum. Terminology, ordering, and performance boundaries require more than a nearest-pronoun check.\n\n**Common misreading:** Definitions or equations do not automatically connect later claims to the right object. **Adequate alternatives:** A caption, adjacent equation, or short reference suffices if object and property are uniquely retrievable. **Editing action:** Name the object near its property when needed; do not transplant the source paper's terminology or technical conclusions.",
+      "highlight_case_ids": [
+        "P34-C6",
+        "P46-C3",
+        "P43-C1"
+      ],
+      "category_evidence": {
+        "distinct_paper_ids": [
+          "P34",
+          "P43",
+          "P46"
+        ],
+        "distinct_paper_count": 3,
+        "source_supported_common_task_description": "Fix the meaning or role of an object before its term, order or performance interpretation can be confused with another object.",
+        "evidence_status": "actual_source_examples_grouped_by_analyst_interpretation",
+        "scope_limit": "Terminology, encoding order and achievable-rate scope are different subtypes. Their grouping is an analyst abstraction; explicit role identification can occur through definitions, figures or precise references.",
+        "empirically_validated_writing_advantage": false
+      }
+    },
+    {
+      "id": "R03",
+      "title": "Place conditions beside the conclusions they qualify",
+      "task_description": "**Shared relationship:** Identify a conclusion's conditions and check whether its wording extends to another task. Cases separate asymptotic detection errors, estimation errors still affecting rates, and a later analysis; connect eigenspace conditions to scheduling while retaining scheduling as a separate optimization; and distinguish proven sum-rate optimality from an unknown full capacity region.\n\n**Common misreading:** A generic conditional phrase may not identify the qualified result. **Adequate alternatives:** A precise reference to a definition or theorem can supply conditions without repetition. **Editing action:** Connect conditions directly to the action or result. Missing conditions remain questions rather than invented facts.",
+      "highlight_case_ids": [
+        "P05:C1",
+        "P18-C2",
+        "P46-C7"
+      ],
+      "category_evidence": {
+        "distinct_paper_ids": [
+          "P05",
+          "P18",
+          "P46"
+        ],
+        "distinct_paper_count": 3,
+        "source_supported_common_task_description": "Associate a claim with the condition, object and evidence scope that actually qualify it.",
+        "evidence_status": "actual_source_examples_grouped_by_analyst_interpretation",
+        "scope_limit": "The sources distinguish detection from estimation, theorem conditions from scheduling optimality, and sum-rate results from whole regions. The open-region status belongs to its publication context and is not independently verified as current.",
+        "empirically_validated_writing_advantage": false
+      }
+    },
+    {
+      "id": "R04",
+      "title": "Explain what abstraction or idealization removes",
+      "task_description": "**Shared relationship:** Map the modeling unit, retained coupling, and omitted factors. Cases establish system, antennas, protocol knowledge, and channel scope before uplink equations; reduce a multihop network to links while restricting interference through cross-channel orthogonality; and make only selected channel estimates imperfect.\n\n**Common misreading:** An assumption phrase alone does not delimit downstream conclusions. **Adequate alternatives:** A complete model table or precise reference can supply the scope. **Editing action:** State abstraction level, omissions, and research rationale where first needed. Validity of the assumptions belongs to Technical review.",
+      "highlight_case_ids": [
+        "P22-02",
+        "P36-C01",
+        "P41-06"
+      ],
+      "category_evidence": {
+        "distinct_paper_ids": [
+          "P22",
+          "P36",
+          "P41"
+        ],
+        "distinct_paper_count": 3,
+        "source_supported_common_task_description": "Specify the modeled unit, operating assumptions and intentionally perturbed or retained interactions so later formulas and findings are read within that scope.",
+        "evidence_status": "actual_source_examples_grouped_by_analyst_interpretation",
+        "scope_limit": "P22-02 primarily declares model scope rather than explaining every discarded mechanism. Only P36-C01 explicitly licenses a reduction through negligible cross-channel interference; these are related scope tasks, not identical idealization arguments.",
+        "empirically_validated_writing_advantage": false
+      }
+    },
+    {
+      "id": "R05",
+      "title": "Make the bridge from equations and lemmas to later actions traceable",
+      "task_description": "**Shared relationship:** Explain which step a mathematical result answers. Cases connect common scaling to an active upper bound, a statewise lemma to the optimal dual solution and ergodic sum-capacity theorem, and potentially high-rank relaxed solutions to feasible recovery for the original problem.\n\n**Common misreading:** A theorem reference may leave its obstacle unresolved; a fluent bridge does not validate mathematics. **Adequate alternatives:** Proofs or equations that explicitly establish the relation need no prose repetition. **Editing action:** Add the specific obstacle removed or remaining only when implicit. Technical review must check any proof obligation.",
+      "highlight_case_ids": [
+        "P35-1",
+        "P40-1",
+        "P25-4"
+      ],
+      "category_evidence": {
+        "distinct_paper_ids": [
+          "P25",
+          "P35",
+          "P40"
+        ],
+        "distinct_paper_count": 3,
+        "source_supported_common_task_description": "Identify what a mathematical result resolves or leaves unresolved before a subsequent theorem, recovery step or original-objective conclusion.",
+        "evidence_status": "actual_source_examples_grouped_by_analyst_interpretation",
+        "scope_limit": "The observed bridges are scaling-to-boundary reasoning, statewise-to-optimal-dual reasoning and relaxation-to-rank-one recovery. Their writing relation does not establish the technical validity of any bridge.",
+        "empirically_validated_writing_advantage": false
+      }
+    },
+    {
+      "id": "R06",
+      "title": "Map obstacles to modules instead of only listing steps",
+      "task_description": "**Shared relationship:** Modules address distinct information or cost barriers. Cases connect statistical pre-beamforming and effective-channel precoding to training and feedback, power-beam coupling to joint treatment, centralized limitations to local problems and coordination prices, and coarse allocation fairness to later power allocation.\n\n**Common misreading:** Complete steps do not necessarily explain why those modules address those obstacles. **Adequate alternatives:** A diagram, table, or nearby equation can show the correspondence. **Editing action:** Use existing facts to connect obstacle, step, and remaining work. Ask the author when a step's role cannot be verified.",
+      "highlight_case_ids": [
+        "P18-C1",
+        "P39-C3",
+        "P44-C5",
+        "P34-C2"
+      ],
+      "category_evidence": {
+        "distinct_paper_ids": [
+          "P18",
+          "P34",
+          "P39",
+          "P44"
+        ],
+        "distinct_paper_count": 4,
+        "source_supported_common_task_description": "Connect a method component or joint formulation to the obstacle, coupling or remaining stage responsibility it is intended to address.",
+        "evidence_status": "actual_source_examples_grouped_by_analyst_interpretation",
+        "scope_limit": "The sources use different cost, information, coupling and fairness arguments. The common grouping is a functional interpretation rather than evidence for one necessary module order or identical algorithm design.",
+        "empirically_validated_writing_advantage": false
+      }
+    },
+    {
+      "id": "R07",
+      "title": "Read algorithm steps as executable state transitions",
+      "task_description": "**Shared relationship:** Trace triggers, state changes, and next actions as well as normal updates. Cases explain priority for the lowest proportional capacity, deactivate a subchannel after infeasibility and rerun allocation, and separate exit, channel change, waiting, and same-channel retry. These paths need explanation when present; every method need not introduce recovery.\n\n**Common misreading:** Step names alone do not identify the path after conditions change. **Adequate alternatives:** Complete pseudocode branches and updates can suffice. **Editing action:** Add a trigger-action-update-return bridge when needed. Technical review checks algorithm correctness.",
+      "highlight_case_ids": [
+        "P34-C2",
+        "P34-C3",
+        "P36-C04"
+      ],
+      "category_evidence": {
+        "distinct_paper_ids": [
+          "P34",
+          "P36"
+        ],
+        "distinct_paper_count": 2,
+        "source_supported_common_task_description": "Make selection or branch conditions, resulting state updates and subsequent stage or retry destinations identifiable.",
+        "evidence_status": "actual_source_examples_grouped_by_analyst_interpretation",
+        "scope_limit": "Three examples come from only two papers. P34-C2 concerns selection principles and stage responsibility, while P34-C3 and P36-C04 include exception or exit/retry paths. They do not show that all methods require recovery branches or certify executable correctness and termination.",
+        "empirically_validated_writing_advantage": false
+      }
+    },
+    {
+      "id": "R08",
+      "title": "Fix comparison objects, conventions, and costs before interpreting results",
+      "task_description": "**Shared relationship:** Performance must refer to comparable quantities within the same problem. Cases separate throughput from transmit-power differences; compare convergence, step-size sensitivity, distributed operation, and iteration costs; relate average and peak constraints to outage margin, growth, and saturation; and identify curves through initialization and run budgets.\n\n**Common misreading:** Shared figures, parameter names, or method labels do not guarantee equal requirements or budgets. **Adequate alternatives:** Different conditions can intentionally illustrate tradeoffs when conclusions stay within that comparison. **Editing action:** Establish metric and constraint conventions before observations; missing alignment requires an additional comparison, not wording alone.",
+      "highlight_case_ids": [
+        "P35-2",
+        "P38-03",
+        "P41-05",
+        "P29-C4"
+      ],
+      "category_evidence": {
+        "distinct_paper_ids": [
+          "P29",
+          "P35",
+          "P38",
+          "P41"
+        ],
+        "distinct_paper_count": 4,
+        "source_supported_common_task_description": "Identify the compared methods, metrics, constraints, computational budgets and tradeoffs so each comparison has a recoverable basis.",
+        "evidence_status": "actual_source_examples_grouped_by_analyst_interpretation",
+        "scope_limit": "Explicitly different constraints or budgets can be the intended comparison. These examples support identifying differences and metric scope, not forcing equal conditions or proving universal method superiority.",
+        "empirically_validated_writing_advantage": false
+      }
+    },
+    {
+      "id": "R09",
+      "title": "Separate figure observations, mechanism explanations, and extrapolation",
+      "task_description": "**Shared relationship:** Identify visible behavior, explain its proposed mechanism, and delimit extension. Cases follow low-to-high-SNR behavior for one channel realization, separate congestion observations from an inactive-link interference feedback explanation, and establish iteration benchmarks before interpreting capacity changes.\n\n**Common misreading:** Correlated plotted changes do not establish causation. **Adequate alternatives:** Concise prose works when captions and adjacent statements identify curves and conditions. **Editing action:** Reorder existing evidence into observed settings and behavior, the author's analysis or conjecture, and untested comparisons. Do not present explanations as causal proof without controls.",
+      "highlight_case_ids": [
+        "P29-C5",
+        "P36-C06",
+        "P34-C5"
+      ],
+      "category_evidence": {
+        "distinct_paper_ids": [
+          "P29",
+          "P34",
+          "P36"
+        ],
+        "distinct_paper_count": 3,
+        "source_supported_common_task_description": "Connect a located result and its conditions with the source author's explanation while retaining the finding's sample and extrapolation scope.",
+        "evidence_status": "actual_source_examples_grouped_by_analyst_interpretation",
+        "scope_limit": "The source text contains observed trends and mechanism claims, but textual explanations alone do not validate causal identification. P36-C06 uses figure 3 for capacity/maximal throughput and figure 4 for admission delay; an earlier analysis note mismatched those figures.",
+        "empirically_validated_writing_advantage": false
+      }
+    },
+    {
+      "id": "R10",
+      "title": "Preserve evidence levels for analysis, numerical observation, and prediction",
+      "task_description": "**Shared relationship:** Identify what supports each assertion. Cases distinguish conditional zero duality gap, an infinite-carrier limit, and practical iterative-spectrum-balancing performance; separate provable dynamic-TDMA cases from simulated near-optimal cases; and separate theoretical approximations, simulation suggestions, and predictions awaiting measurement. These do not share a universal demand for more experiments.\n\n**Common misreading:** One qualification does not cover every later generalization, while an explicit expectation is not an established result. **Adequate alternatives:** Headings, figure references, or precise cross-references can delimit evidence. **Editing action:** Adjust claim strength, subjects, and evidence references. Editing cannot fill factual gaps.",
+      "highlight_case_ids": [
+        "P38-08",
+        "P40-5",
+        "P22-07"
+      ],
+      "category_evidence": {
+        "distinct_paper_ids": [
+          "P22",
+          "P38",
+          "P40"
+        ],
+        "distinct_paper_count": 3,
+        "source_supported_common_task_description": "Distinguish analytical statements, limiting regimes, simulated observations and further predictions in a multi-result summary.",
+        "evidence_status": "actual_source_examples_grouped_by_analyst_interpretation",
+        "scope_limit": "The examples separate different evidence levels; they do not impose a common requirement to add experiments, demonstrate reader comprehension, or provide universal support for a technical conclusion.",
+        "empirically_validated_writing_advantage": false
+      }
+    },
+    {
+      "id": "R11",
+      "title": "Distinguish current research boundaries from future extension tasks",
+      "task_description": "**Shared relationship:** Explain why the current model works and which relationship an extension changes. Cases connect common scatterers to lost angular separation and energy-service tradeoffs, distinguish a fictitious game used for proof from cooperative users and needed noncooperation incentives, separate multi-link and combined-power-constraint extensions, and retain an unknown full capacity region.\n\n**Common misreading:** Future-work labels alone do not identify new objects or coupling. **Adequate alternatives:** No extra limitations list is needed when no extension is claimed or scope is already clear. **Editing action:** Pair known boundaries with corresponding extension objects. Technical review checks whether results transfer to the new system.",
+      "highlight_case_ids": [
+        "P18-C7",
+        "P37-C6",
+        "P41-08",
+        "P46-C7"
+      ],
+      "category_evidence": {
+        "distinct_paper_ids": [
+          "P18",
+          "P37",
+          "P41",
+          "P46"
+        ],
+        "distinct_paper_count": 4,
+        "source_supported_common_task_description": "Relate the current model or proved scope to a changed condition, prospective extension or open question without merging distinct tasks.",
+        "evidence_status": "actual_source_examples_grouped_by_analyst_interpretation",
+        "scope_limit": "Some examples explain present applicability boundaries and others propose future work. The shared grouping is broader than a future-work paragraph format. Historical open questions require attribution to the source's publication context.",
+        "empirically_validated_writing_advantage": false
+      }
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "P01-C1",
+      "paper_id": "P01",
+      "section": "III. THREE-PHASE CHANNEL ESTIMATION PROTOCOL",
+      "reader_task": "Separate coefficient counts, shared-channel dependence, and implementation obstacles.",
+      "full_relation_chain": "Overhead goal -> coefficients differ from degrees of freedom -> reflected channels share rn -> potential shorter training -> indirect exploitation is needed because the IRS cannot estimate rn directly.",
+      "trigger": "Savings depend on structure hidden by coefficient counts.",
+      "do_not_use_when": "The shared structure is unsupported or the alleged implementation obstacle is absent.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P01-C2",
+      "paper_id": "P01",
+      "section": "IV.C. Phase III: Reflecting Channel Estimation for Other Users",
+      "reader_task": "Map columns to effective users and observation dimensions to training time.",
+      "full_relation_chain": "Linear model -> V columns represent effective users -> multiple antennas give M tau3 observations -> full-rank conditions determine shortest training.",
+      "trigger": "Matrix dimensions explain the next optimization goal.",
+      "do_not_use_when": "Dimensions depend on unstated assumptions or replace a necessary rank proof.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P01-C4",
+      "paper_id": "P01",
+      "section": "VI.B. The Case With Noise at the BS",
+      "reader_task": "Identify the metric, baseline range, proposed explanation, and corresponding new-method results.",
+      "full_relation_chain": "Comparison conditions -> baseline MSE -> metric interpretation -> noiseless perfect-estimation pilot threshold -> tested training interval -> proposed-method MSE.",
+      "trigger": "A result paragraph reports curve differences and explains one curve.",
+      "do_not_use_when": "Threshold and plot conditions differ or the causal explanation lacks support.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P01-C5",
+      "paper_id": "P01",
+      "section": "APPENDIX A. Proof of Theorem 1",
+      "reader_task": "Trace intermediate recovery, remaining-system counts, and necessity.",
+      "full_relation_chain": "Model-specific independence -> recover eta -> solve the remaining system -> count unknowns and equations -> necessary tau3 bound -> separate sufficiency.",
+      "trigger": "A lower bound requires eliminating or recovering intermediates before counting.",
+      "do_not_use_when": "Required independence is unestablished or counting does not yield an applicable prerequisite.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P02-01",
+      "paper_id": "P02",
+      "section": "I. INTRODUCTION",
+      "reader_task": "Explain why those methods do not transfer directly to multiple transmit antennas.",
+      "full_relation_chain": "Transmission arrangement -> superposition -> other transmissions become interference under prior estimation -> reported error -> new-method need.",
+      "trigger": "A gap needs explanation through an existing method's specific failure.",
+      "do_not_use_when": "Failure mechanisms or consequences lack evidence.",
+      "entry_ids": [
+        "R01"
+      ]
+    },
+    {
+      "case_id": "P02-07",
+      "paper_id": "P02",
+      "section": "VIII. CONCLUSIONS",
+      "reader_task": "Separate completed work, evaluation form, numerical conditions, and application inference.",
+      "full_relation_chain": "Subject -> method and error bound -> simulation -> conditional numbers -> application inference.",
+      "trigger": "Conclusions contain easily decontextualized performance numbers.",
+      "do_not_use_when": "Numbers are unverified or conclusions exceed available evidence.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P03-C1",
+      "paper_id": "P03",
+      "section": "II. SYSTEM MODEL AND SPHERE VECTOR QUANTIZATION PROBLEMS",
+      "reader_task": "Understand the MISO starting point and the locations of extension support.",
+      "full_relation_chain": "Narrow model -> separate codebook and analysis extension support -> justified choice -> detailed assumptions.",
+      "trigger": "A narrower derivation model has extensions at multiple levels.",
+      "do_not_use_when": "Extensions are unproved or the simplification genuinely limits conclusions.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P03-C3",
+      "paper_id": "P03",
+      "section": "III-B. Upper Bounding the Information Rate-Distortion Function",
+      "reader_task": "Identify how the achieved quantity supplies the theorem's upper bound.",
+      "full_relation_chain": "Test-channel constructions -> constrained achieved quantity -> metric-specific upper bound -> theorem.",
+      "trigger": "A construction or computation immediately precedes a theorem.",
+      "do_not_use_when": "Computation does not establish the claim or prose would conceal a proof gap.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P03-C4",
+      "paper_id": "P03",
+      "section": "III-C. Quantifying the Operational Rate-Distortion Performance",
+      "reader_task": "Distinguish practical performance from the theoretical function and explain the bound comparison.",
+      "full_relation_chain": "Theory's operational cost -> practical quantization -> different performance quantities -> practical lower bound -> theoretical upper-bound comparison.",
+      "trigger": "Adjacent sections use similar metric names under different operations.",
+      "do_not_use_when": "Metrics coincide or the stated operation does not cause their difference.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P04-C1",
+      "paper_id": "P04",
+      "section": "II-A. Training-Based Schemes",
+      "reader_task": "Separate the bound's formal scope from high-SNR expectations for another receiver.",
+      "full_relation_chain": "Existence of a bound-achieving structure -> separate mismatched-receiver analysis -> formal optimal-transceiver scope -> mechanism difference -> high-SNR expectation.",
+      "trigger": "One paragraph mixes a formal bound target and extrapolated expectation.",
+      "do_not_use_when": "Labels or separate sections already distinguish evidence levels.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P04-C2",
+      "paper_id": "P04",
+      "section": "III. Capacity and Capacity Bounds",
+      "reader_task": "Follow estimation, noise aggregation, retained correlation, and noise replacement.",
+      "full_relation_chain": "Estimate -> absorb error into additive noise -> retain correlation only -> substitute correlation-preserving worst-case noise -> bound.",
+      "trigger": "Several analytical steps change the object analyzed.",
+      "do_not_use_when": "Order is unsettled or an overview conceals validity conditions.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P04-C6",
+      "paper_id": "P04",
+      "section": "V. Discussion and Conclusion",
+      "reader_task": "Separate low-SNR evidence, an unknown threshold, and bounded design implications.",
+      "full_relation_chain": "Low-SNR evidence -> unknown high/low transition -> implication limited to low-SNR capacity.",
+      "trigger": "Endpoints are understood but their transition is not.",
+      "do_not_use_when": "A reliable threshold exists but is obscured as unknown.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P05:C1",
+      "paper_id": "P05",
+      "section": "I. INTRODUCTION, A. Motivation",
+      "reader_task": "Identify vanishing detection error, persistent estimation error, and Part II analysis.",
+      "full_relation_chain": "Detection and estimation goals -> asymptotic detection result -> remaining estimation error -> rate and pilot analysis in Part II.",
+      "trigger": "Related metrics have different conclusions.",
+      "do_not_use_when": "Metrics do not differ or the contrast lacks evidence.",
+      "entry_ids": [
+        "R03"
+      ]
+    },
+    {
+      "case_id": "P05:C2",
+      "paper_id": "P05",
+      "section": "III. USER ACTIVITY DETECTION AND CHANNEL ESTIMATION VIA AMP, A. Device Activity Detection and Channel Estimation as a Compressed Sensing Problem",
+      "reader_task": "Connect physical goals, recovery targets, row sparsity, and multiantenna measurements.",
+      "full_relation_chain": "Matrix observation -> recover X from Y -> row sparsity -> shared multiantenna support -> MMV method.",
+      "trigger": "A new model precedes a specialized solver.",
+      "do_not_use_when": "The stated properties do not justify the category.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P05:C4",
+      "paper_id": "P05",
+      "section": "III. USER ACTIVITY DETECTION AND CHANNEL ESTIMATION VIA AMP, D. State Evolution for MMSE Denoiser Based Vector AMP",
+      "reader_task": "Understand why the result is notable and what it simplifies.",
+      "full_relation_chain": "Scalar theorem -> channel assumptions -> nonlinear-processing question -> detection and estimation use.",
+      "trigger": "A theorem simplifies a form despite an apparently conflicting operation.",
+      "do_not_use_when": "The tension is absent or the simplification has no clear use.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P05:C5",
+      "paper_id": "P05",
+      "section": "V. ASYMPTOTIC PERFORMANCE WITH MASSIVE MIMO, A. Asymptotic Performance of User Activity Detection",
+      "reader_task": "Understand pilot/activity ratios without transferring detection guarantees to estimation.",
+      "full_relation_chain": "Detection ratio result -> L <= K case -> separate estimation limitation.",
+      "trigger": "One metric covers a difficult regime while another behaves differently.",
+      "do_not_use_when": "The other limitation is unknown or the boundary lies outside theorem conditions.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P06-C2",
+      "paper_id": "P06",
+      "section": "II-E. Quantization codebook model",
+      "reader_task": "Understand why RVQ is introduced and what the two curves test.",
+      "full_relation_chain": "Upper bound -> tightness question -> comparator definition -> lower-bound role -> gap-based assessment.",
+      "trigger": "An idealization has an implementable comparator.",
+      "do_not_use_when": "Bound relationships are unsupported or results do not support wider implementations.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P06-C3",
+      "paper_id": "P06",
+      "section": "V. K > M: CDI and SINR feedback",
+      "reader_task": "Explain why a selected user's distribution needs an extreme-value analysis.",
+      "full_relation_chain": "Given-user distribution -> selected user differs -> candidate maximum -> maximum distribution -> large-K extreme-value theory.",
+      "trigger": "A result for original objects precedes selected or aggregated ones.",
+      "do_not_use_when": "Objects are identical or adjacent formulas already explain selection.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P06-C6",
+      "paper_id": "P06",
+      "section": "VII. Conclusion",
+      "reader_task": "Connect study scope, feedback limits, design implications, and adjustable parameters.",
+      "full_relation_chain": "Scope -> analysis -> CDI-only limitation -> SINR-based CQI -> quantization implication -> tradeoffs -> user/feedback relationship -> joint adjustment.",
+      "trigger": "Several findings share a research scope.",
+      "do_not_use_when": "Different findings cannot share one scope.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P07-C1",
+      "paper_id": "P07",
+      "section": "I. INTRODUCTION",
+      "reader_task": "Connect differential and coherent demodulation to estimation choices.",
+      "full_relation_chain": "OFDM role -> estimation-free demodulation and cost -> coherent reception enabled by estimation -> diversity combining.",
+      "trigger": "A studied component completes a system choice with clear uses or costs.",
+      "do_not_use_when": "Uses lack a shared mechanism or costs lack evidence.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P07-C3",
+      "paper_id": "P07",
+      "section": "IV. ROBUST CHANNEL ESTIMATOR DESIGN",
+      "reader_task": "Explain the turn to statistical mismatch.",
+      "full_relation_chain": "Known-statistics design -> environment-dependent changing statistics -> fragility of close matching -> mismatch analysis.",
+      "trigger": "A section relaxes a previous method's condition.",
+      "do_not_use_when": "The premise does not fail in the intended setting.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P07-C6",
+      "paper_id": "P07",
+      "section": "V.A. System Parameters",
+      "reader_task": "Identify both configurations and connect coding to reported rates.",
+      "full_relation_chain": "Common waveform -> comparator configurations -> coding structure -> decoding -> reported rates and bandwidth.",
+      "trigger": "A comparison contains several system components.",
+      "do_not_use_when": "Important comparator differences remain unstated.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P07-C7",
+      "paper_id": "P07",
+      "section": "V.C. Simulation Results",
+      "reader_task": "Check the training-block response and applicable SNR range.",
+      "full_relation_chain": "Propagation threshold -> training blocks -> Figure 6 WER/NMSE -> 1% training results over 0-20 dB.",
+      "trigger": "Results test a change responding to an earlier problem.",
+      "do_not_use_when": "The figure cannot isolate the change or comparison scope is absent.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P08-01",
+      "paper_id": "P08",
+      "section": "I. INTRODUCTION",
+      "reader_task": "Position LS and SLS by performance and required prior knowledge.",
+      "full_relation_chain": "Scope -> performance/knowledge axes -> LS -> SLS inheritance -> benefit and requirements.",
+      "trigger": "Method selection depends on multiple dimensions.",
+      "do_not_use_when": "Tasks are incomparable or performance differences lack support.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P08-02",
+      "paper_id": "P08",
+      "section": "II. BACKGROUND",
+      "reader_task": "Distinguish expectation's random object from the current channel realization.",
+      "full_relation_chain": "Random channel -> expectation object -> current-block realization.",
+      "trigger": "A symbol serves population statistics and instance estimation.",
+      "do_not_use_when": "No population/instance distinction exists or it is already consistent.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P08-05",
+      "paper_id": "P08",
+      "section": "VI. RMMSE CHANNEL ESTIMATION",
+      "reader_task": "Identify the new estimator's purpose and the requirement changed.",
+      "full_relation_chain": "Prior requirement -> practical difficulty -> relaxed replacement -> parameter objective.",
+      "trigger": "A method primarily relaxes an existing requirement.",
+      "do_not_use_when": "The method is not a relaxation or its difficulty is undefined.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P08-06",
+      "paper_id": "P08",
+      "section": "VII. COMBINING MULTIPLE LS CHANNEL ESTIMATES",
+      "reader_task": "Explain repeated-training scope and why saved estimates are combined.",
+      "full_relation_chain": "Single instance -> repeated training -> accumulated-data burden -> save estimates -> combine estimates.",
+      "trigger": "A solved task expands to repeated observations or intermediate outputs.",
+      "do_not_use_when": "Intermediates are unnecessary or data objects are unchanged.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P08-07",
+      "paper_id": "P08",
+      "section": "VIII. NUMERICAL EXAMPLES",
+      "reader_task": "Separate overall ranking and condition-specific closeness to optimal training.",
+      "full_relation_chain": "Overall comparison -> weak correlation -> strong correlation -> antenna/SNR region with larger differences.",
+      "trigger": "One figure combines overall and conditional comparisons.",
+      "do_not_use_when": "Conditions are indistinguishable or qualitative rankings lack visual support.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P09-C3",
+      "paper_id": "P09",
+      "section": "III.D. Digital Feedback With Errors",
+      "reader_task": "Identify shared training-length trends before feedback-length differences.",
+      "full_relation_chain": "Comparison -> Figure 2 definitions -> training commonality -> Equation (22) -> feedback differences -> analog/digital explanations.",
+      "trigger": "One figure compares methods and several outputs.",
+      "do_not_use_when": "Only one variable is shown or mechanisms lack evidence.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P09-C4",
+      "paper_id": "P09",
+      "section": "IV.A. AWGN Feedback Link",
+      "reader_task": "Explain the shift to uplink/downlink rates and required units.",
+      "full_relation_chain": "Spectral-efficiency function -> rate-based design -> block time/bandwidth -> unit conversion -> directional-rate tradeoff.",
+      "trigger": "Existing variables differ from the design decision's scale.",
+      "do_not_use_when": "No valid conversion exists or model quantities are undefined.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P09-C5",
+      "paper_id": "P09",
+      "section": "V. Allowing for Many Users",
+      "reader_task": "Explain why extra feedback gains depend on whether more users may report.",
+      "full_relation_chain": "Figure 9 range -> interval optima -> approximate relation -> fixed-K saturation -> variable-K benefit -> Figure 10 range/results.",
+      "trigger": "Resource and eligible-object count vary together with different trends.",
+      "do_not_use_when": "Conditions cannot be distinguished or intervals are unexplained interpolation.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P09-C6",
+      "paper_id": "P09",
+      "section": "Appendix A. Effect of Non-Ideal Dedicated Training",
+      "reader_task": "Identify reusable optimization steps and new training effects.",
+      "full_relation_chain": "New component expressions -> original outer optimization -> added-loss parameter relation -> conditional expectation -> other-band model.",
+      "trigger": "An appendix changes one component of an existing optimization.",
+      "do_not_use_when": "New conditions change the outer objective, constraints, or feasible set.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P10-01",
+      "paper_id": "P10",
+      "section": "I. INTRODUCTION",
+      "reader_task": "Separate provenance, covered scope, deferred extensions, and theoretical claims.",
+      "full_relation_chain": "Prior methods -> new method/technique -> two scope extensions -> deferred extension -> theoretical and complexity claims.",
+      "trigger": "Several close methods need explicit contribution positioning.",
+      "do_not_use_when": "Subset inclusion or extension is unsupported.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P10-04",
+      "paper_id": "P10",
+      "section": "V. SIMULATION RESULTS",
+      "reader_task": "Identify run settings, benchmark scope, and corresponding conclusions.",
+      "full_relation_chain": "Setting/metric -> averaging -> run labels -> algorithm comparison -> three-user reference -> gap -> ten-initialization result.",
+      "trigger": "Curves differ in execution and benchmark applicability.",
+      "do_not_use_when": "Explanation adds no value or the plotted evidence is absent.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P10-05",
+      "paper_id": "P10",
+      "section": "V. SIMULATION RESULTS",
+      "reader_task": "Separate computational cost and performance, checking stopping rules.",
+      "full_relation_chain": "Rate comparison -> cost question -> CPU time/common stopping -> large-user observations.",
+      "trigger": "Methods align on one metric but differ on another cost.",
+      "do_not_use_when": "Stopping rules or environments differ incompatibly, or plots lack support.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P11-C1",
+      "paper_id": "P11",
+      "section": "II. SYSTEM MODEL AND PROBLEM FORMULATION",
+      "reader_task": "Separate nonconvexity, coupling, and prior-objective mismatch.",
+      "full_relation_chain": "P1 -> nonconvexity and coupling -> prior-objective mismatch -> structural solution.",
+      "trigger": "A joint problem precedes a structure-dependent solver.",
+      "do_not_use_when": "Adjacent text already explains obstacles or method comparisons are unverifiable.",
+      "entry_ids": [
+        "R01"
+      ]
+    },
+    {
+      "case_id": "P11-C4",
+      "paper_id": "P11",
+      "section": "IV. CAPACITY MAXIMIZATION FOR MIMO-OFDM SYSTEM",
+      "reader_task": "Determine when the relaxed solution can serve the original problem.",
+      "full_relation_chain": "Solve subproblems -> alternate relaxed problem -> test original constraints -> adopt or normalize/recompute -> algorithm summary.",
+      "trigger": "Relaxation is followed by return to original constraints.",
+      "do_not_use_when": "Equivalence is already proved or recovery is not part of the method.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P11-C5",
+      "paper_id": "P11",
+      "section": "V-A. MIMO System Under Frequency-Flat Channel, Fig. 6 results",
+      "reader_task": "Separate energy observations, conditional multiplexing, and proposed mechanisms.",
+      "full_relation_chain": "Common comparison -> first-condition result -> rank/correlation explanation -> single stream -> second-condition result -> scoped implication.",
+      "trigger": "Conditions in a figure have different mechanisms.",
+      "do_not_use_when": "Only one condition exists or mechanisms lack model/data support.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P11-C6",
+      "paper_id": "P11",
+      "section": "VI. CONCLUSIONS",
+      "reader_task": "Pair each channel condition with its algorithm and findings.",
+      "full_relation_chain": "Common task -> flat method/cases -> selective constraint/method -> rates -> channel properties -> future work.",
+      "trigger": "Conclusions compress multiple regimes with different methods.",
+      "do_not_use_when": "One regime exists or broad results lack support.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P12-C1",
+      "paper_id": "P12",
+      "section": "I. INTRODUCTION",
+      "reader_task": "Identify the answer, required argument, and derived result.",
+      "full_relation_chain": "Question -> answer/tools -> finite-link joint-optimization difficulty -> scoped duality consequence.",
+      "trigger": "An answered question generates a further result.",
+      "do_not_use_when": "The answer lacks support or the second result is not its consequence.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P12-C2",
+      "paper_id": "P12",
+      "section": "II. UPLINK AND DOWNLINK C-RAN MODEL",
+      "reader_task": "Identify compression's scope and rationale.",
+      "full_relation_chain": "Finite-link setup -> directional compression -> capacity/computation tradeoff -> practical expectation.",
+      "trigger": "A strategy choice has a material tradeoff.",
+      "do_not_use_when": "Tradeoff or practical expectation lacks support.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P12-C3",
+      "paper_id": "P12",
+      "section": "III. OPTIMALITY OF CHANNEL DIAGONALIZATION",
+      "reader_task": "Translate matrices into operations, a point-to-point comparison, and proof locations.",
+      "full_relation_chain": "Matrix theorems -> familiar reference -> constrained operational meaning -> proof location -> scalar parameters.",
+      "trigger": "Formal results must inform processing or scalar models.",
+      "do_not_use_when": "Formal results do not establish the proposed operation.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P13-C1",
+      "paper_id": "P13",
+      "section": "I. INTRODUCTION",
+      "reader_task": "Separate parameterization, local optimization, structural results, and implementation.",
+      "full_relation_chain": "Boundary problem -> interference temperatures -> local constrained optimization -> solution structure -> necessary conditions -> pairwise algorithm.",
+      "trigger": "An introduction combines dependent theory and operations.",
+      "do_not_use_when": "Dependencies are not established.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P13-C7",
+      "paper_id": "P13",
+      "section": "V. CONCLUDING REMARKS",
+      "reader_task": "Distinguish new scenarios from a proof gap limiting global convergence.",
+      "full_relation_chain": "Outlook -> model extension -> sufficiency gap -> global-convergence consequence -> other analysis.",
+      "trigger": "One future-work item directly limits the current algorithm.",
+      "do_not_use_when": "Future work has no direct logical link to current results.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P14-C1",
+      "paper_id": "P14",
+      "section": "I. INTRODUCTION",
+      "reader_task": "Pair each study's constraints with its claimed result.",
+      "full_relation_chain": "Overlap -> prior conditions/results -> added constraint -> claimed broader result.",
+      "trigger": "A model contribution is compared with its nearest predecessor.",
+      "do_not_use_when": "Objectives or results cannot be compared.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P14-C4",
+      "paper_id": "P14",
+      "section": "V. MULTICHANNEL TRANSMISSION",
+      "reader_task": "Identify added dimensions and secondary-user actions.",
+      "full_relation_chain": "Single channel -> parallel time/frequency examples -> detection -> resource adjustment.",
+      "trigger": "A simpler model is generalized.",
+      "do_not_use_when": "Only notation changes without new decisions.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P14-C7",
+      "paper_id": "P14",
+      "section": "VII. CONCLUDING REMARKS AND FUTURE DIRECTIONS",
+      "reader_task": "Pair each future direction with an existing limitation.",
+      "full_relation_chain": "Outlook -> constraints -> actors -> information -> network scale.",
+      "trigger": "A conclusion proposes several extensions.",
+      "do_not_use_when": "Directions have no defined boundary or are unsupported applications.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P15:C1",
+      "paper_id": "P15",
+      "section": "II-B. Proposed Quadratic Transform",
+      "reader_task": "Identify the stronger equivalence needed for sums.",
+      "full_relation_chain": "Single-ratio success -> stronger termwise equivalence -> values may change -> unsupported summation -> objective-preserving condition.",
+      "trigger": "One objective term expands to several with insufficient equivalence.",
+      "do_not_use_when": "A theorem already supports termwise use or a different obstacle matters.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P15:C2",
+      "paper_id": "P15",
+      "section": "II-E. Iterative Optimization for Concave-Convex FP",
+      "reader_task": "Identify shared and special assumptions and the updated variables.",
+      "full_relation_chain": "Problem types -> common concave/convex conditions -> composition extras -> alternating variables -> update explanations.",
+      "trigger": "One algorithm covers problems with differing assumptions.",
+      "do_not_use_when": "All assumptions coincide or a neighboring theorem already supplies them.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P15:C5",
+      "paper_id": "P15",
+      "section": "III-C. Closed-Form FP Approach",
+      "reader_task": "Identify the algorithm class and separate convergence proof needs.",
+      "full_relation_chain": "Update summary -> differing objectives -> no automatic standard ascent proof -> stationary convergence claim -> external appendix.",
+      "trigger": "A familiar algorithm appearance hides changed prerequisites.",
+      "do_not_use_when": "All requirements of the known algorithm class already hold.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P15:C6",
+      "paper_id": "P15",
+      "section": "IV-D. Numerical Example",
+      "reader_task": "Explain why iteration counts are followed by work-per-iteration reasoning.",
+      "full_relation_chain": "Figure -> direct-FP iteration advantage -> count is incomplete -> per-iteration work -> closed-form-FP preference.",
+      "trigger": "A conspicuous plotted metric differs from the practical cost.",
+      "do_not_use_when": "The target cost is measured directly or added differences lack evidence.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P16-C1",
+      "paper_id": "P16",
+      "section": "III. MINIMUM NUMBER OF RF CHAINS TO REALIZE FULLY DIGITAL BEAMFORMERS",
+      "reader_task": "Identify the new sufficient-condition task and the single-stream precedent.",
+      "full_relation_chain": "Necessary result -> sufficient question -> known single-stream case -> generalizing proposition.",
+      "trigger": "Adjacent necessary and sufficient bounds may be conflated.",
+      "do_not_use_when": "The next result does not extend the case or the case is irrelevant.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P16-C2",
+      "paper_id": "P16",
+      "section": "IV. HYBRID BEAMFORMING DESIGN FOR SINGLE-USER LARGE-SCALE MIMO SYSTEMS",
+      "reader_task": "Pair solving obstacles with dependent stages.",
+      "full_relation_chain": "Joint design -> solving/constraint difficulty -> staged strategy -> assumed-optimal receiver and precoder -> fixed transmitter and combiner.",
+      "trigger": "Joint design is decomposed by dependencies.",
+      "do_not_use_when": "Steps are independent or splitting has no justified reason.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P16-C3",
+      "paper_id": "P16",
+      "section": "V. HYBRID BEAMFORMING DESIGN FOR MULTI-USER MASSIVE MISO SYSTEMS",
+      "reader_task": "Identify changed reception, interference, and objective.",
+      "full_relation_chain": "Scenario change -> two differences -> noncooperation/interference -> priority variation -> weighted objective.",
+      "trigger": "Neighboring scenarios differ in constraints and objectives.",
+      "do_not_use_when": "No material formula or objective difference exists.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P16-C4",
+      "paper_id": "P16",
+      "section": "VI. HYBRID BEAMFORMING WITH FINITE RESOLUTION PHASE SHIFTERS",
+      "reader_task": "Explain why finite precision enters optimization itself.",
+      "full_relation_chain": "Enumeration cost -> continuous design and quantization -> low-resolution shortcoming -> precision-aware optimization.",
+      "trigger": "A modification has an obvious simpler competitor.",
+      "do_not_use_when": "The alternative is not comparable or its limitation lacks evidence.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P16-C5",
+      "paper_id": "P16",
+      "section": "VII. SIMULATIONS — B. Performance Analysis of a MU-MISO System with Hybrid Beamforming",
+      "reader_task": "Pair gains and baselines under the simulation conditions.",
+      "full_relation_chain": "Test factor -> system settings -> resolution -> Figure 6 -> ordered gains and baselines.",
+      "trigger": "Several baseline results need conditional attribution.",
+      "do_not_use_when": "The list is too complex or values cannot be read reliably.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P16-C6",
+      "paper_id": "P16",
+      "section": "VIII. CONCLUSION",
+      "reader_task": "Separate proven guarantees, heuristic evidence, and benchmark meaning.",
+      "full_relation_chain": "Subject -> exact conditions -> fewer-chain heuristics -> numerical behavior -> precision modification/results -> perfect-CSI applicability and benchmark purpose.",
+      "trigger": "A conclusion combines proof, heuristics, numerics, and proposed use.",
+      "do_not_use_when": "A clear earlier optimum or bound is precisely referenced.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P17-C1",
+      "paper_id": "P17",
+      "section": "I. INTRODUCTION",
+      "reader_task": "Map physical selection to grouped variables and sparsity penalties.",
+      "full_relation_chain": "Joint problem -> coordination scope -> sparse view -> station/group mapping -> group-sparse selection -> regularizer -> single-stage formulation -> contributions.",
+      "trigger": "Entity selection becomes variable structure.",
+      "do_not_use_when": "Mapping is unstable or penalty effects are unsupported.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P17-C2",
+      "paper_id": "P17",
+      "section": "II. SYSTEM MODEL AND PROBLEM FORMULATION → III. EQUIVALENT FORMULATION",
+      "reader_task": "Distinguish complexity from group-LASSO applicability limits.",
+      "full_relation_chain": "P1 -> complexity -> tool limits -> equivalent reformulation -> convex sequence and stationary target.",
+      "trigger": "A defined problem is replaced by a reformulation.",
+      "do_not_use_when": "Obstacles lack evidence or the new route does not address them.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P17-C3",
+      "paper_id": "P17",
+      "section": "III.A. Single User Per Cell with Sum Rate Utility",
+      "reader_task": "Identify two local simplifications, their meaning, and restoration points.",
+      "full_relation_chain": "Single user -> scheduling meaning -> sum-rate utility -> extension locations.",
+      "trigger": "A difficult derivation begins with a special case.",
+      "do_not_use_when": "No extension follows or special-case inclusion is unestablished.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P17-C6",
+      "paper_id": "P17",
+      "section": "IV.C. Distributed Implementation",
+      "reader_task": "Trace information generation, reporting, exchange, computation, and decision delivery during one iteration.",
+      "full_relation_chain": "User measurements and updates -> serving-station reporting -> macro-station exchange -> macro computation -> decision delivery.",
+      "trigger": "Distributed operation is claimed but its information dependencies remain unclear.",
+      "do_not_use_when": "Communication assumptions are unspecified or unsupported.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P17-C7",
+      "paper_id": "P17",
+      "section": "V. NUMERICAL RESULTS",
+      "reader_task": "Read throughput and serving-station count together, distinguishing nominal cluster size from actual serving count.",
+      "full_relation_chain": "Settings -> metrics and figures -> averaging -> baseline quantity definitions -> throughput -> cooperation scale -> zero-forcing comparison -> mechanism interpretation.",
+      "trigger": "Performance and resource metrics are paired, but nominal baseline settings could be confused with measured quantities.",
+      "do_not_use_when": "The metrics use incompatible settings or the proposed mechanism lacks supporting evidence.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P18-C1",
+      "paper_id": "P18",
+      "section": "I. INTRODUCTION",
+      "reader_task": "Map grouping, pre-beamforming, instantaneous precoding, and the possible overhead reduction.",
+      "full_relation_chain": "FDD overhead -> grouping by similar covariance eigenspaces -> statistical pre-beamforming -> instantaneous effective-channel processing within groups -> potentially lower dimension -> potentially lower overhead.",
+      "trigger": "Several stages use information on different timescales.",
+      "do_not_use_when": "A neighboring diagram already supplies these relationships clearly.",
+      "entry_ids": [
+        "R06"
+      ]
+    },
+    {
+      "case_id": "P18-C2",
+      "paper_id": "P18",
+      "section": "IV-A. Achieving Capacity With Reduced CSIT, Remark 4",
+      "reader_task": "Map the condition to scheduling without treating it as overall scheduling optimality.",
+      "full_relation_chain": "Theorem condition -> user groups -> qualifying modes -> slot assignment -> limited concurrent groups -> separate mode-partition optimization.",
+      "trigger": "A theoretical condition has an operational construction with tradeoffs.",
+      "do_not_use_when": "The result has no operational interpretation or the claimed cost is unsupported.",
+      "entry_ids": [
+        "R03"
+      ]
+    },
+    {
+      "case_id": "P18-C7",
+      "paper_id": "P18",
+      "section": "IX. CONCLUDING REMARKS, Beyond the one-ring model",
+      "reader_task": "Identify the required angular separation, a failure scenario, and the tradeoff of a possible repair.",
+      "full_relation_chain": "Angular separation -> shared-scatterer failure -> eigenspace coupling -> candidate common-subspace removal -> energy loss -> SINR/group-separation tradeoff.",
+      "trigger": "A model extension has a known failure scenario and a repair with a cost.",
+      "do_not_use_when": "The failure or cost is merely imagined rather than supported.",
+      "entry_ids": [
+        "R11"
+      ]
+    },
+    {
+      "case_id": "P19-C1",
+      "paper_id": "P19",
+      "section": "II. SYSTEM MODEL AND PROBLEM FORMULATION",
+      "reader_task": "Distinguish the original problem, a fixed-splitting variant, and an energy-constraint-free baseline.",
+      "full_relation_chain": "Problem (7) -> name -> two nonconvexity sources -> fixed-variable difficulty -> energy-constraint-free baseline -> feasibility then solution -> computation site.",
+      "trigger": "A new optimization problem recurs and may be confused with simpler variants.",
+      "do_not_use_when": "Only one formulation is used or the simplified relationship is unestablished.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P19-C2",
+      "paper_id": "P19",
+      "section": "III. WHEN IS THE JBPS PROBLEM FEASIBLE?",
+      "reader_task": "Synthesize the equivalences to understand why an existing criterion applies to the original problem.",
+      "full_relation_chain": "Lemma 3.2 -> combined equivalences -> literature result -> criterion for (9) and hence the original problem.",
+      "trigger": "Intermediate equivalences connect an original problem to a known criterion.",
+      "do_not_use_when": "The equivalence is unproved or the cited result's conditions have not been checked.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P19-C3",
+      "paper_id": "P19",
+      "section": "V. SUBOPTIMAL SOLUTIONS, B. SINR-Optimal Beamfoming",
+      "reader_task": "Connect a tight baseline and new energy demand to the amplification bound.",
+      "full_relation_chain": "Tight decoding baseline -> energy splitting -> amplification to retain SINR -> formal proposition.",
+      "trigger": "An apparently artificial bound serves a specific new requirement.",
+      "do_not_use_when": "The bound is only a convenience or its claimed necessity has not been established.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P19-C4",
+      "paper_id": "P19",
+      "section": "V. SUBOPTIMAL SOLUTIONS, C. Asymptotic Optimality",
+      "reader_task": "Identify the limiting regime and performance metric before considering the mechanism.",
+      "full_relation_chain": "Ordinary suboptimality -> SINR targets tending to infinity and power metric -> power/interference intuition -> proposition.",
+      "trigger": "A method ordinarily lacks a property but attains it in a defined regime.",
+      "do_not_use_when": "The mechanism is unproved or the limiting regime is undefined.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P19-C7",
+      "paper_id": "P19",
+      "section": "APPENDIX A, PROOF OF LEMMA 3.1",
+      "reader_task": "Distinguish the subset argument from the constructive direction.",
+      "full_relation_chain": "Added constraints -> reverse-direction feasible point -> adjustable construction -> meeting the extra requirement -> equivalence.",
+      "trigger": "Two problems have equivalent feasibility despite different constraints.",
+      "do_not_use_when": "The construction violates old constraints or existence of the required factor is unproved.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P20-C1",
+      "paper_id": "P20",
+      "section": "I. INTRODUCTION",
+      "reader_task": "Decide whether existing results justify using the same structure for new criteria.",
+      "full_relation_chain": "Shared structure for existing criteria -> easier solution -> extension question -> new criteria -> extension not yet established.",
+      "trigger": "Several literature cases share useful structure and the paper examines new criteria.",
+      "do_not_use_when": "The same structure has already been proved for the new criteria.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P20-C2",
+      "paper_id": "P20",
+      "section": "IV. OPTIMALITY OF THE CHANNEL-DIAGONALIZING STRUCTURE",
+      "reader_task": "Connect an intuitive performance comparison to a usable monotonicity condition.",
+      "full_relation_chain": "Performance-metric purpose -> one-substream comparison -> restricted function class -> componentwise monotonicity.",
+      "trigger": "A derivation requires an objective-function condition that could appear arbitrary.",
+      "do_not_use_when": "The example's performance ordering does not match the stated condition.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P20-C4",
+      "paper_id": "P20",
+      "section": "V-B. SINR-Based Criteria",
+      "reader_task": "Distinguish the objective's optimum from a practical system choice.",
+      "full_relation_chain": "Mathematical optimizer and mechanism -> spectral-efficiency cost -> local choice about the criterion.",
+      "trigger": "A formal objective's optimum can harm another explicit system objective.",
+      "do_not_use_when": "No confirmed system cost or application objective supports rejecting the solution.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P20-C8",
+      "paper_id": "P20",
+      "section": "VIII. CONCLUSIONS",
+      "reader_task": "Place structure, convex optimization, added constraints, practical schemes, and a cooperative closed-form result in one chain.",
+      "full_relation_chain": "Optimal structures -> convex design framework -> criteria and additional constraints -> carrier cooperation -> practical schemes -> cooperation-specific closed-form result.",
+      "trigger": "A conclusion combines a general framework, several achievements, and a narrower stronger result.",
+      "do_not_use_when": "The listed performance or optimality claims lack supporting evidence.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P21-C1",
+      "paper_id": "P21",
+      "section": "I. INTRODUCTION",
+      "reader_task": "Distinguish MSE designs, the fixed-receiver condition, and the two actual optimization problems.",
+      "full_relation_chain": "Earlier metrics -> computational and performance reasons -> application metric -> fixed-receiver difference -> worst-SINR target -> two constraint directions -> property requiring proof.",
+      "trigger": "A method retains the research object but changes its metric because of a specific condition.",
+      "do_not_use_when": "No evidence supports the relevant difference between the old metric and the new goal.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P21-C2",
+      "paper_id": "P21",
+      "section": "II. PROBLEM FORMULATION",
+      "reader_task": "Understand why one quantity becomes a constraint and identify the first strategy's objective.",
+      "full_relation_chain": "Two metrics -> competing directions -> application-specific constraint -> two strategies -> first strategy in words -> system scenario -> (6) and parameter explanation.",
+      "trigger": "Two performance quantities trade off and can exchange objective and constraint roles.",
+      "do_not_use_when": "The asserted tradeoff does not hold or the application permits only one formulation.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P21-C3",
+      "paper_id": "P21",
+      "section": "IV-B. Conic Optimization Solution",
+      "reader_task": "Know the transformations' target, its use, and why constraints must be rewritten.",
+      "full_relation_chain": "Problem to solve -> solver use of standard form -> required constraint rewrite -> subsequent transformations.",
+      "trigger": "A method section is about to transform objectives or constraints repeatedly.",
+      "do_not_use_when": "A neighboring title, figure, or formula already makes the purpose clear.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P21-C7",
+      "paper_id": "P21",
+      "section": "VIII. CONCLUSION",
+      "reader_task": "Connect each future direction to a relaxed assumption, practical issue, and proposed task.",
+      "full_relation_chain": "Future-work overview -> partial CSI -> information limitation -> robust optimization -> fixed nonlinear receiver -> performance motivation -> anticipated precoding benefit.",
+      "trigger": "Several future directions correspond to different current assumptions.",
+      "do_not_use_when": "The directions' relationship to the paper's boundaries or predicted benefit is unsupported.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P22-01",
+      "paper_id": "P22",
+      "section": "I. INTRODUCTION",
+      "reader_task": "Identify the conditions behind those benefits and why further research is needed.",
+      "full_relation_chain": "Listed benefits -> optimistic premises -> more realistic modeling studies -> measurement studies -> present analysis.",
+      "trigger": "Potential advantages precede a transition to a research gap.",
+      "do_not_use_when": "The preceding paragraph already qualifies each benefit fully.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P22-02",
+      "paper_id": "P22",
+      "section": "II. SYSTEM MODEL",
+      "reader_task": "Determine participants, scale, protocol, and channel scope before the formulas.",
+      "full_relation_chain": "System composition -> antenna configuration -> operating assumptions -> channel scope -> proposed extension scope -> uplink expression.",
+      "trigger": "A method section will introduce formulas involving several participants and dimensions.",
+      "do_not_use_when": "An adjacent figure or table already defines every object and dimension.",
+      "entry_ids": [
+        "R04"
+      ]
+    },
+    {
+      "case_id": "P22-03",
+      "paper_id": "P22",
+      "section": "III. ASYMPTOTIC ANALYSIS",
+      "reader_task": "Understand the chosen limit, its distinction from prior work, and the later shorthand.",
+      "full_relation_chain": "Finite-dimensional difficulty -> joint-growth limit -> comparison with fixed-user-count limit -> special-case relationship -> notation convention.",
+      "trigger": "A paper adopts an asymptotic setting similar to but different from related work.",
+      "do_not_use_when": "No shorthand recurs later, so a separate notation convention adds little.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P22-05",
+      "paper_id": "P22",
+      "section": "V. NUMERICAL RESULTS",
+      "reader_task": "Identify the validation target, layout, user positions, signal-to-noise ratios, and averaging scope.",
+      "full_relation_chain": "Validation goal -> displayed scope -> network layout -> distance and propagation -> user positions -> signal-to-noise ratios -> RZF parameter -> rate-averaging population.",
+      "trigger": "Results depend on several simulation conditions and curve interpretation follows.",
+      "do_not_use_when": "A directly adjacent table or caption already supplies all settings clearly.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P22-07",
+      "paper_id": "P22",
+      "section": "VI. CONCLUSIONS",
+      "reader_task": "Separate completed analysis, model-specific findings, and predictions still requiring measurements.",
+      "full_relation_chain": "Analysis object -> theoretical approximations and conditions -> accuracy and use -> additional applications -> simplified-model findings -> antenna-count comparison -> simulation suggestions -> measurement needs.",
+      "trigger": "A conclusion combines claims from general and simplified models and simulations.",
+      "do_not_use_when": "Only one model and evidence source are used, making extra markers redundant.",
+      "entry_ids": [
+        "R10"
+      ]
+    },
+    {
+      "case_id": "P23-C1",
+      "paper_id": "P23",
+      "section": "I. INTRODUCTION",
+      "reader_task": "Separate its established constructions and uses from the unresolved choice tied to steering-vector uncertainty.",
+      "full_relation_chain": "Method category and uses -> common constructions -> further uses -> parameter-selection gap relevant to this paper.",
+      "trigger": "A concrete research gap must be located within established methods.",
+      "do_not_use_when": "The category cannot be summarized reliably or the gap does not belong to those methods.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P23-C2",
+      "paper_id": "P23",
+      "section": "I. INTRODUCTION",
+      "reader_task": "Map the classes to sections and anticipate their computational differences.",
+      "full_relation_chain": "Two constraint classes -> reason for separate treatment -> shared definition -> branch-specific methods -> examples -> conclusion.",
+      "trigger": "Two apparently similar cases require separate method treatments.",
+      "do_not_use_when": "The branches differ only in name, with identical steps and conditions.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P24-C1",
+      "paper_id": "P24",
+      "section": "II.B Secrecy MISO Transmission，Remark 1",
+      "reader_task": "Assess whether their similarity supports conversion and identify the difference needing resolution.",
+      "full_relation_chain": "Shared feature -> difference due to noise terms -> conversion question -> relationship analysis then algorithm.",
+      "trigger": "Similar models invite an unproved conversion on which later methods depend.",
+      "do_not_use_when": "No shared quantity is identifiable or the difference is irrelevant to the argument.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P24-C2",
+      "paper_id": "P24",
+      "section": "III.B Algorithms",
+      "reader_task": "Identify the problem directly solved and the reason for choosing it.",
+      "full_relation_chain": "Algorithm goal -> established equivalence and function property -> Problem (3) as direct target -> feasibility construction.",
+      "trigger": "A method begins solving a transformed version of its original problem.",
+      "do_not_use_when": "The method directly treats one already clear problem throughout.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P24-C3",
+      "paper_id": "P24",
+      "section": "IV. Multi-Antenna Secrecy Receiver",
+      "reader_task": "Decide whether the preceding polynomial-complexity MISO algorithm transfers.",
+      "full_relation_chain": "Grid-search cost -> required transfer condition -> potential benefit -> example disproving the general condition -> algorithm boundary.",
+      "trigger": "An earlier method seems extensible, but a new setting may lack a key premise.",
+      "do_not_use_when": "No comparable premise or evidence of failed transfer has been established.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P24-C4",
+      "paper_id": "P24",
+      "section": "VI.A MISO Secrecy Channel with Two Single-Antenna Eavesdroppers",
+      "reader_task": "Separate rate comparison between methods from function shape in one numerical example.",
+      "full_relation_chain": "Setting and A1 curve -> P-SVD baseline and operation -> Figure 2 rate comparison -> proposition's function property -> Figure 3 parameters and example.",
+      "trigger": "One results paragraph discusses figures serving different purposes.",
+      "do_not_use_when": "Several figures present the same comparison and repeated definitions add burden.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P24-C5",
+      "paper_id": "P24",
+      "section": "Appendix C, Proof of Proposition 3",
+      "reader_task": "Identify the remaining goal, its criterion, and the case handled next.",
+      "full_relation_chain": "Completed part -> remaining goal -> line criterion -> target in t -> inactive-case discussion -> assumption for following derivation.",
+      "trigger": "A multipart proof changes criterion and introduces notation in its remaining part.",
+      "do_not_use_when": "A short single-step proof would merely repeat what the formula already shows.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P25-1",
+      "paper_id": "P25",
+      "section": "II. SYSTEM MODEL",
+      "reader_task": "Understand why the paper studies a fixed-power region and what its beamforming matrix controls.",
+      "full_relation_chain": "Overall-region definition in (9) -> fixed-power regions as analysis units -> matrix A in (8) controls each unit's boundary tradeoff.",
+      "trigger": "An object is assembled from subproblems, but the paper directly treats those subproblems.",
+      "do_not_use_when": "The whole object is treated directly or the assembly relationship is unestablished.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P25-4",
+      "paper_id": "P25",
+      "section": "III.C. Power Minimization under SNR Constraints",
+      "reader_task": "Determine whether solving the relaxation suffices for the original problem and why a theorem is needed.",
+      "full_relation_chain": "Solvable relaxation -> feasible-case scope -> rank obstacle -> ordinary recovery may be suboptimal -> special optimal recovery claim -> Theorem 3.2 as justification.",
+      "trigger": "A computational relaxation still requires recovery of an original-problem solution.",
+      "do_not_use_when": "The relaxed solution already satisfies original constraints or lossless recovery lacks evidence.",
+      "entry_ids": [
+        "R05"
+      ]
+    },
+    {
+      "case_id": "P26-C1",
+      "paper_id": "P26",
+      "section": "I. INTRODUCTION",
+      "reader_task": "Identify the obstacle to direct solution and the intermediate tool used to advance analysis.",
+      "full_relation_chain": "Open ordering problem -> difficult layer-gain distribution -> bound (6) as analysis tool -> later use for R5.",
+      "trigger": "A method relies on an indirect intermediate bound whose purpose is unclear.",
+      "do_not_use_when": "The adjacent paragraph already explains the obstacle or its relationship to the bound is unsupported.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P26-C4",
+      "paper_id": "P26",
+      "section": "IV.B. Outage Probability and -Outage Capacity",
+      "reader_task": "Distinguish fixed-rate comparisons from maximum-rate comparisons at fixed outage thresholds.",
+      "full_relation_chain": "Apparently conflicting results -> outage-probability gap as rate increases -> shrinking maximum-rate gap at fixed outage threshold -> numerical illustration.",
+      "trigger": "Neighboring results appear contradictory but use different fixed conditions or metrics.",
+      "do_not_use_when": "The results actually contradict each other under identical conditions and the mathematical or data error remains unresolved.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P27:C1",
+      "paper_id": "P27",
+      "section": "I. INTRODUCTION",
+      "reader_task": "Assign each method its own limitation and identify the consequence relevant to wireless communication.",
+      "full_relation_chain": "Broader scope -> two named methods -> respective limitations -> application consequence of one limitation.",
+      "trigger": "Several established approaches serve a shared task but fail under different conditions.",
+      "do_not_use_when": "The approaches have no comparable task or limitations first require supporting evidence.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P27:C3",
+      "paper_id": "P27",
+      "section": "III-B. Relationship to the LSMI Beamformer",
+      "reader_task": "Distinguish an explanatory expression from computing its parameters; understand the transition to SOC.",
+      "full_relation_chain": "Expression's role -> direct-computation obstacle -> next section's treatment.",
+      "trigger": "A derivation gives an interpretation but lacks executable solution steps.",
+      "do_not_use_when": "The expression already provides an executable procedure, or the next section addresses a different obstacle.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P27:C4",
+      "paper_id": "P27",
+      "section": "IV-A. Example 1: Exactly Known Signal Steering Vector",
+      "reader_task": "Identify the convergence problem isolated when training data contain the target signal.",
+      "full_relation_chain": "No steering mismatch -> remaining training-data issue -> purpose for convergence comparisons.",
+      "trigger": "A results subsection uses seemingly overideal conditions.",
+      "do_not_use_when": "The purpose is clear in adjacent captions and text, or no independent issue remains.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P27:C5",
+      "paper_id": "P27",
+      "section": "IV-G. Discussion",
+      "reader_task": "Distinguish high-SNR SMI behavior, low-SNR eigenspace behavior, and the fourth and no-mismatch examples.",
+      "full_relation_chain": "Method/SNR synthesis -> fourth-example exception -> separate mechanisms -> convergence dimension -> no-mismatch example.",
+      "trigger": "Dispersed figures show condition-dependent weaknesses of different methods.",
+      "do_not_use_when": "Trends are unstable or unsupported mechanisms should remain observations only.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P27:C7",
+      "paper_id": "P27",
+      "section": "V. CONCLUSIONS",
+      "reader_task": "Separate ease of implementation into computational cost and available tools.",
+      "full_relation_chain": "Performance conclusion -> implementation dimension -> complexity comparison -> existing software tools.",
+      "trigger": "A conclusion claims practical value supported by earlier complexity and implementation discussion.",
+      "do_not_use_when": "No complexity, tools, or implementation evidence exists.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P28-5",
+      "paper_id": "P28",
+      "section": "V. CONCLUSIONS",
+      "reader_task": "Separate core scope, active-sensing transfer, BIC and RELAX roles, and simulation-supported conclusions.",
+      "full_relation_chain": "Subject -> core scope -> active-sensing rationale -> BIC sparsification -> RELAX refinement -> simulations -> practical candidacy.",
+      "trigger": "A paper combines a core method, sequential extensions, and multiple applications.",
+      "do_not_use_when": "Transfer rationale is missing or limited simulations are presented as universal practical guarantees.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P29-C4",
+      "paper_id": "P29",
+      "section": "VI-B. Performance",
+      "reader_task": "Establish the conditions needed to interpret subsequent curves.",
+      "full_relation_chain": "Comparison groups -> initialization and guarantee limits -> variants and purposes -> averaging and reference -> figure configurations.",
+      "trigger": "Several figures share settings but differ materially in initialization or computational budget.",
+      "do_not_use_when": "Adjacent captions already give complete, accessible settings.",
+      "entry_ids": [
+        "R08"
+      ]
+    },
+    {
+      "case_id": "P29-C5",
+      "paper_id": "P29",
+      "section": "VI-B. 4) Achievable rate region",
+      "reader_task": "Understand low-SNR observations, reference comparisons, SNR trends, and conclusion scope.",
+      "full_relation_chain": "Figure and common channel -> low SNR -> point count -> corner interpretation -> DPC comparison -> higher-SNR trend -> realization limit.",
+      "trigger": "One figure spans conditions whose salient local result invites overgeneralization.",
+      "do_not_use_when": "Broader statistical conclusions are genuinely supported and already summarized.",
+      "entry_ids": [
+        "R09"
+      ]
+    },
+    {
+      "case_id": "P30-C1",
+      "paper_id": "P30",
+      "section": "I. INTRODUCTION",
+      "reader_task": "Understand the intervention, its selective intent, and its connection to cited secrecy conditions.",
+      "full_relation_chain": "Known problem -> artificial-noise intervention -> selective intent -> cited condition and objective.",
+      "trigger": "An introduction identifies a known condition and then develops multiple implementations.",
+      "do_not_use_when": "Selectivity is unsupported or the cited result's conditions are unexplained.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P30-C2",
+      "paper_id": "P30",
+      "section": "III. ARTIFICIAL NOISE USING TRANSMIT ANTENNAS",
+      "reader_task": "Identify this section's scope and why information and noise occupy different spaces.",
+      "full_relation_chain": "Scope -> restrictions and example -> spatial arrangement -> channel knowledge -> legitimate consequence -> eavesdropper consequence.",
+      "trigger": "A method introduces many channel variables whose roles depend on scope restrictions.",
+      "do_not_use_when": "The arrangement or effect requires an as-yet-unsupported proof.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P30-C3",
+      "paper_id": "P30",
+      "section": "IV. ARTIFICIAL NOISE USING RELAYS",
+      "reader_task": "Understand relay coordination and who sends, receives, and cancels noise in each stage.",
+      "full_relation_chain": "Old method -> changed setting and failure -> relays and control obstacle -> two stages -> initial exchanges -> parallel replay/transmission -> cancellation -> equations.",
+      "trigger": "A method retains an earlier objective but uses resources outside the same participant's direct control.",
+      "do_not_use_when": "Missing synchronization or channel conditions would be hidden by an overview.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P30-C4",
+      "paper_id": "P30",
+      "section": "V. ARTIFICIAL NOISE IN MIMO SCENARIO",
+      "reader_task": "Understand opposing effects and what conditions differ from prior work.",
+      "full_relation_chain": "Fixed comparison -> two opposing mechanisms -> unclear net effect -> prior conditions -> new worst case and strategy.",
+      "trigger": "One parameter drives opposing mechanisms while prior conclusions assume different conditions.",
+      "do_not_use_when": "Mechanisms lack model support or apply under different comparison conditions.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P31-01",
+      "paper_id": "P31",
+      "section": "I.B. Propagation and multiuser MIMO operation",
+      "reader_task": "Identify the shared prerequisite and where it fails.",
+      "full_relation_chain": "Model differences -> common growth condition -> claimed applicable cases -> failure example.",
+      "trigger": "Several models precede a derivation relying on one property.",
+      "do_not_use_when": "The models have not been shown to share the condition.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P31-02",
+      "paper_id": "P31",
+      "section": "IV.B. Maximum-ratio combining",
+      "reader_task": "Connect parameter absence to interference limitation and conditional energy conclusions.",
+      "full_relation_chain": "Formula property -> proportional-power mechanism -> many-antenna approach to the limit.",
+      "trigger": "Parameter cancellation has an easily overstated physical meaning.",
+      "do_not_use_when": "The mechanism lacks model or derivation support.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P31-03",
+      "paper_id": "P31",
+      "section": "V.B. Signal model",
+      "reader_task": "Locate common components, distinct random-variable sources, and dependence mechanisms.",
+      "full_relation_chain": "Similar appearance -> common numerator -> reverse coefficients and independence -> forward coefficients and dependence -> qualified duality inference.",
+      "trigger": "Similar formulas have different dependencies affecting interpretation.",
+      "do_not_use_when": "The claimed independence or correlation is unestablished.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P31-04",
+      "paper_id": "P31",
+      "section": "VI.B. Reverse-link performance",
+      "reader_task": "Read opposing low- and high-SIR effects in the capacity figure and connect choices to objectives.",
+      "full_relation_chain": "Figure metric -> low-SIR gains and costs -> high-SIR reversal -> objective-specific choice.",
+      "trigger": "Rankings change with operating regime or metric.",
+      "do_not_use_when": "The figure or model does not support the mechanism or advice.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P31-05",
+      "paper_id": "P31",
+      "section": "VII.D. Variable-length slots for variable mobility",
+      "reader_task": "Trace baseline, mobility conditions, grouping, throughput consequences, and control costs.",
+      "full_relation_chain": "Baseline coherence -> conditional velocity interpretation -> slower-terminal grouping -> terminal count -> two throughput metrics -> control overhead.",
+      "trigger": "Discussion changes a model parameter to derive design consequences.",
+      "do_not_use_when": "The model does not support the parameter-to-result link.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P31-07",
+      "paper_id": "P31",
+      "section": "VIII. CONCLUSIONS",
+      "reader_task": "Remember architecture, eliminated effects, and remaining interference together.",
+      "full_relation_chain": "Limitations -> architecture -> potential -> asymptotically eliminated effects -> residual contamination.",
+      "trigger": "Strong benefits coexist with decisive limitations.",
+      "do_not_use_when": "Benefits or residual mechanisms are unestablished.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P32-C5",
+      "paper_id": "P32",
+      "section": "VI. Discussion, applicability boundaries",
+      "reader_task": "Identify claimed settings, the limiting property, and two violations.",
+      "full_relation_chain": "Expected coverage -> conditional downlink -> limitation -> monotonicity -> nonuniversality -> two failures.",
+      "trigger": "Transfer prospects depend on assumptions altered by system operations.",
+      "do_not_use_when": "Examples do not violate the named property or scope is undefined.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P33-C1",
+      "paper_id": "P33",
+      "section": "III. DISTRIBUTED ALGORITHMS: DEFINITIONS AND CONVERGENCE THEORY",
+      "reader_task": "Identify continuous-time purposes and the discrete model's added question.",
+      "full_relation_chain": "Section objective -> continuous-time role -> discrete version -> stability.",
+      "trigger": "An idealized model precedes an implementation-oriented version.",
+      "do_not_use_when": "Models lack distinct tasks or the added issue is unestablished.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P33-C2",
+      "paper_id": "P33",
+      "section": "III.B. More Precise Difference Equation Form of Algorithm",
+      "reader_task": "Recognize the unproved condition and the next proof's objective.",
+      "full_relation_chain": "Conditional limit -> when premise holds -> stability -> conditional answer to prove.",
+      "trigger": "A conclusion depends on an unverified premise.",
+      "do_not_use_when": "The premise is already proved or the prospective answer lacks later support.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P33-C7",
+      "paper_id": "P33",
+      "section": "V. CONCLUSION",
+      "reader_task": "Match evolution speed, stability constraints, theoretical choice, and simulations.",
+      "full_relation_chain": "Discrete speed -> possible instability -> guaranteed theoretical choice -> simulated effects.",
+      "trigger": "A conclusion revisits a design choice's theory and numerical demonstration.",
+      "do_not_use_when": "Corresponding evidence is absent or addresses different questions.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P34-C1",
+      "paper_id": "P34",
+      "section": "III. OPTIMAL SUBCHANNEL ALLOCATION AND POWER DISTRIBUTION",
+      "reader_task": "Assign difficulty to variables and constraints.",
+      "full_relation_chain": "Optimization -> continuous/binary variables -> problem class -> nonlinear constraints and nonconvex feasibility.",
+      "trigger": "A stated optimization model motivates a changed solver strategy.",
+      "do_not_use_when": "Obstacles are unverified or irrelevant to the solver.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P34-C2",
+      "paper_id": "P34",
+      "section": "IV-A. Suboptimal Subchannel Allocation",
+      "reader_task": "Explain selection and the subchannel stage's completion boundary.",
+      "full_relation_chain": "Steps -> principle -> round priority -> equal-power approximation -> preliminary fairness -> power allocation.",
+      "trigger": "Steps leave uncertainty about completed and remaining tasks.",
+      "do_not_use_when": "No staged task exists or the limitation is unrelated to the next section.",
+      "entry_ids": [
+        "R06",
+        "R07"
+      ]
+    },
+    {
+      "case_id": "P34-C3",
+      "paper_id": "P34",
+      "section": "IV-C. Existence of Power Allocation Scheme",
+      "reader_task": "Identify failure, possible cause, and quantities updated before rerunning.",
+      "full_relation_chain": "Failure threshold -> allocation cause -> disable subchannel -> update sets and derived quantities -> rerun.",
+      "trigger": "A boundary invalidates current solutions or parameters.",
+      "do_not_use_when": "The condition or recovery is unverified.",
+      "entry_ids": [
+        "R07"
+      ]
+    },
+    {
+      "case_id": "P34-C5",
+      "paper_id": "P34",
+      "section": "V-C. Comparison With the Method in [6]",
+      "reader_task": "Identify the statistic, benchmark, trend, and possible mechanism.",
+      "full_relation_chain": "Mean capacity -> benchmark -> varied constraints -> direction -> user's mean channel gain.",
+      "trigger": "A plot contains benchmarks and a varied parameter.",
+      "do_not_use_when": "Unsupported mechanisms would be presented as definite causes.",
+      "entry_ids": [
+        "R09"
+      ]
+    },
+    {
+      "case_id": "P34-C6",
+      "paper_id": "P34",
+      "section": "VI. CONCLUSION",
+      "reader_task": "Distinguish adjustable rate constraints from other unspecified changes.",
+      "full_relation_chain": "Framework -> constraint groups -> variable means configurable constraints and rate allocation.",
+      "trigger": "A conclusion reuses a keyword with multiple technical meanings.",
+      "do_not_use_when": "The term is unambiguous and repetition displaces substantive conclusions.",
+      "entry_ids": [
+        "R02"
+      ]
+    },
+    {
+      "case_id": "P35-1",
+      "paper_id": "P35",
+      "section": "III. Transmit Power Analysis, Lemma 1 proof",
+      "reader_task": "Connect the feasible improvement to an optimum-boundary requirement and its physical meaning.",
+      "full_relation_chain": "Strict increase -> simultaneous scaling until a bound -> exclusion of an interior optimum -> boundary lemma -> physical explanation.",
+      "trigger": "A perturbation formula implies a structural property of an optimum.",
+      "do_not_use_when": "The scaling path is infeasible or strict improvement has not been established.",
+      "entry_ids": [
+        "R05"
+      ]
+    },
+    {
+      "case_id": "P35-2",
+      "paper_id": "P35",
+      "section": "III.C. Binary Power Control in the N-Cell Case, Example 1",
+      "reader_task": "Compare throughput and total transmit power without turning one example into a general result.",
+      "full_relation_chain": "Shared parameters -> allocations and throughput -> prospective simulation trend -> total-power distinction.",
+      "trigger": "Methods are close on one metric but differ on another.",
+      "do_not_use_when": "The second metric is unsupported or a prospective trend is presented as established.",
+      "entry_ids": [
+        "R08"
+      ]
+    },
+    {
+      "case_id": "P35-3",
+      "paper_id": "P35",
+      "section": "IV. Low-Complexity Power Control Algorithms",
+      "reader_task": "Understand their common operation, lost global guarantee, and evaluation objective.",
+      "full_relation_chain": "Decomposition -> absent optimal substructure -> no implied global optimum -> performance-complexity evaluation.",
+      "trigger": "Algorithm variants share a simplification and a lost guarantee.",
+      "do_not_use_when": "The algorithms do not share that limitation or the asserted property is unverified.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P35-5",
+      "paper_id": "P35",
+      "section": "V.D. Average transmit power",
+      "reader_task": "Read the environments and methods separately, then combine power and throughput evidence.",
+      "full_relation_chain": "Power plot -> macrocell observation -> microcell contrast -> interference explanation -> method comparison -> earlier throughput comparison.",
+      "trigger": "A new metric changes the interpretation of an earlier near-tie.",
+      "do_not_use_when": "Conditions differ between figures or evidence cannot support the tradeoff.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P35-7",
+      "paper_id": "P35",
+      "section": "VI. Conclusions",
+      "reader_task": "Track each conclusion's assumptions, scope, and evidence type.",
+      "full_relation_chain": "Model and constraints -> information and comparators -> two-cell analysis and approximation -> larger-network simulations.",
+      "trigger": "A conclusion mixes theorem, approximation, and simulation claims.",
+      "do_not_use_when": "Claims lack support or a conditional approximation is rewritten as unconditional.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P36-C01",
+      "paper_id": "P36",
+      "section": "II. THE WIRELESS NETWORK AS A COLLECTION OF INTERFERING RADIO LINKS",
+      "reader_task": "Understand the modeled unit, multihop inclusion, and reduction assumption.",
+      "full_relation_chain": "Link-level focus -> multihop inclusion -> negligible cross-channel interference -> retained cochannel interactions -> single-channel problem.",
+      "trigger": "A larger system is reduced to a smaller analysis unit.",
+      "do_not_use_when": "Cross-channel interference is central or the assumption fails.",
+      "entry_ids": [
+        "R04"
+      ]
+    },
+    {
+      "case_id": "P36-C02",
+      "paper_id": "P36",
+      "section": "IV. DISTRIBUTED POWER CONTROL WITH ACTIVE LINK PROTECTION",
+      "reader_task": "Connect this property to admission of an initially inactive link.",
+      "full_relation_chain": "Preserve existing active links -> new link may activate and remain active -> admission event.",
+      "trigger": "A proposition supports a later operational decision or event.",
+      "do_not_use_when": "Required activation conditions are missing.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P36-C04",
+      "paper_id": "P36",
+      "section": "VI. THE CASE OF PARTIALLY ADMISSIBLE NEW LINKS. DPC/ALP WITH VOLUNTARY DROP-OUT",
+      "reader_task": "Follow congestion-triggered voluntary exit, waiting, and retry.",
+      "full_relation_chain": "Observed congestion -> voluntary exit -> another channel or retry -> wait -> renewed ramping.",
+      "trigger": "An observed example motivates a new state transition.",
+      "do_not_use_when": "A single example is treated as a general justification without qualification or evidence.",
+      "entry_ids": [
+        "R07"
+      ]
+    },
+    {
+      "case_id": "P36-C06",
+      "paper_id": "P36",
+      "section": "IX.B. Dynamical Effects and Network Performance",
+      "reader_task": "Distinguish the plotted improvement from its proposed feedback explanation.",
+      "full_relation_chain": "Voluntary exit versus no exit -> high-load instability -> accumulation-interference-admission feedback.",
+      "trigger": "A performance comparison includes degradation with load.",
+      "do_not_use_when": "The trend is unshown or an unverified causal account is presented as proof.",
+      "entry_ids": [
+        "R09"
+      ]
+    },
+    {
+      "case_id": "P36-C07",
+      "paper_id": "P36",
+      "section": "IX.B. Dynamical Effects and Network Performance",
+      "reader_task": "Understand the new overall-performance question, baseline, and proposed explanation.",
+      "full_relation_chain": "Protection function -> overall-performance question -> combined-method comparison -> local-exit explanation.",
+      "trigger": "An added mechanism is evaluated beyond its original function.",
+      "do_not_use_when": "Comparative or mechanistic evidence is missing and the benefit would sound universal.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P36-C08",
+      "paper_id": "P36",
+      "section": "X. CONCLUSION",
+      "reader_task": "Connect their functions to a shared mechanism and separate prospects from findings.",
+      "full_relation_chain": "Model -> combined functions -> shared mechanism -> explanatory analogy -> prospective extension.",
+      "trigger": "Several methods are summarized through a common mechanism.",
+      "do_not_use_when": "The mechanism is not shared or future applicability would be presented as established.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P37-C1",
+      "paper_id": "P37",
+      "section": "Introduction",
+      "reader_task": "Identify the cooperative-behavior premise and the consequences of its failure.",
+      "full_relation_chain": "Cooperation assumption -> possible price manipulation -> possible performance loss -> excluded issue and prospective mitigation.",
+      "trigger": "A method relies on an easily overlooked behavioral assumption.",
+      "do_not_use_when": "The adjacent text already defines the premise clearly.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P37-C4",
+      "paper_id": "P37",
+      "section": "IV. Simulation Results",
+      "reader_task": "Compare error under two iteration counts and identify the minimum-update setting.",
+      "full_relation_chain": "Few-inner-update question -> first figure's axes and settings -> aggregation -> one-update observation -> second figure's primal-update comparison.",
+      "trigger": "The same outcome is plotted under two iteration counts outside a theorem's setting.",
+      "do_not_use_when": "Only one unambiguous count is used and repeated descriptions would slow the results.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P37-C6",
+      "paper_id": "P37",
+      "section": "V. Conclusion",
+      "reader_task": "Distinguish proof devices from system behavior and identify future incentive tasks.",
+      "full_relation_chain": "Proof device -> actual cooperation premise -> noncooperative-user question -> two incentive tasks -> beacon-power example.",
+      "trigger": "An analysis model's behavior differs from the deployed system's premise.",
+      "do_not_use_when": "There is no corresponding model-system distinction.",
+      "entry_ids": [
+        "R11"
+      ]
+    },
+    {
+      "case_id": "P38-03",
+      "paper_id": "P38",
+      "section": "IV. DUAL UPDATE METHODS",
+      "reader_task": "Compare observed convergence, distributed implementation, and per-iteration cost.",
+      "full_relation_chain": "Figure comparators -> observed convergence -> distributed implementation -> ellipsoid limitation -> per-iteration cost.",
+      "trigger": "One method wins a plotted metric but another condition affects selection.",
+      "do_not_use_when": "The plots or method descriptions do not support the proposed comparison.",
+      "entry_ids": [
+        "R08"
+      ]
+    },
+    {
+      "case_id": "P38-07",
+      "paper_id": "P38",
+      "section": "VI. SIMULATIONS — C. 10-User VDSL Full-Duplex",
+      "reader_task": "Scan frequency regions and distinguish observed shape, scenario dependence, and ordering.",
+      "full_relation_chain": "Rate comparison -> spectral figure -> low, intermediate, and high bands -> scenario dependence -> ordering dependence -> example order.",
+      "trigger": "A plot contains coordinate-dependent regions and setting-dependent shapes.",
+      "do_not_use_when": "Stable regions are absent or irrelevant to the main finding.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P38-08",
+      "paper_id": "P38",
+      "section": "VII. CONCLUSION",
+      "reader_task": "Separate zero-duality-gap conditions, infinite-carrier scope, algorithm changes, and practical tradeoffs.",
+      "full_relation_chain": "Theory -> conditional zero gap -> limiting scope -> two algorithm changes -> empirical tradeoff -> author assessment.",
+      "trigger": "A conclusion must connect theory, design changes, and experiments.",
+      "do_not_use_when": "The changes lack theoretical support or experiments do not support performance claims.",
+      "entry_ids": [
+        "R10"
+      ]
+    },
+    {
+      "case_id": "P39-C1",
+      "paper_id": "P39",
+      "section": "III. ANTENNA ARRAY AND BEAMFORMING",
+      "reader_task": "Connect array components, weighted combination, interference suppression, and figures.",
+      "full_relation_chain": "Device purpose -> weighted combination -> distinct null and main-direction tasks -> figure check.",
+      "trigger": "An unfamiliar device or method will shortly be formalized.",
+      "do_not_use_when": "No checkable operation-to-figure correspondence exists.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P39-C3",
+      "paper_id": "P39",
+      "section": "IV. JOINTLY OPTIMAL POWER CONTROL AND BEAMFORMING",
+      "reader_task": "Understand why their variables belong in one optimization problem.",
+      "full_relation_chain": "Power and gain affect interference -> optimal beams may change with powers -> joint treatment.",
+      "trigger": "Separately introduced methods become a joint model.",
+      "do_not_use_when": "There is no evidence of coupling in the model.",
+      "entry_ids": [
+        "R06"
+      ]
+    },
+    {
+      "case_id": "P39-C4",
+      "paper_id": "P39",
+      "section": "IV. JOINTLY OPTIMAL POWER CONTROL AND BEAMFORMING",
+      "reader_task": "Identify shared claims, changed information requirements, and the next update.",
+      "full_relation_chain": "Alternative method -> shared properties -> proposed argument reuse -> information difference -> update expression.",
+      "trigger": "A variant resembles an existing method.",
+      "do_not_use_when": "The shared properties have not been established sufficiently to reuse the argument.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P39-C6",
+      "paper_id": "P39",
+      "section": "VI. SIMULATION RESULTS AND COMPARISONS",
+      "reader_task": "Map three maximum user counts and separate capacity from fixed-count power.",
+      "full_relation_chain": "Capacity claim -> plot axes -> three configuration-count pairs -> assignment maps -> fixed-count power comparison.",
+      "trigger": "One plot compares several schemes and supports multiple metrics.",
+      "do_not_use_when": "Conditions are incomparable or metric definitions are absent.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P40-1",
+      "paper_id": "P40",
+      "section": "III.A. Long-term transmit-power and interference-power constraints",
+      "reader_task": "Trace the local structure through optimal dual variables to ergodic sum capacity.",
+      "full_relation_chain": "Statewise lemma -> validity for arbitrary dual variables -> validity at an optimal dual solution -> ergodic-capacity theorem.",
+      "trigger": "A local result supports a global theorem through a defined optimal value.",
+      "do_not_use_when": "The result covers only some values or existence of the needed optimum is unproved.",
+      "entry_ids": [
+        "R05"
+      ]
+    },
+    {
+      "case_id": "P40-5",
+      "paper_id": "P40",
+      "section": "VI. Conclusion",
+      "reader_task": "Distinguish model, allocation schemes, analytical cases, simulation findings, and mechanism observations.",
+      "full_relation_chain": "Scope -> model and constraints -> allocation schemes -> analytical versus simulation evidence -> mechanism relative to conventional MAC.",
+      "trigger": "A conclusion combines theorems, algorithms, and numerical observations of differing strength.",
+      "do_not_use_when": "The summarized result lacks proof or experiment.",
+      "entry_ids": [
+        "R10"
+      ]
+    },
+    {
+      "case_id": "P41-01",
+      "paper_id": "P41",
+      "section": "II.C. Secondary User Transmission",
+      "reader_task": "Distinguish two capacity metrics and their delay contexts.",
+      "full_relation_chain": "Protection constraint -> common control task -> two metrics -> contrasted definitions -> delay-based selection.",
+      "trigger": "One model has two easily confused objectives.",
+      "do_not_use_when": "Definitions are already adjacent or no practical choice exists.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P41-02",
+      "paper_id": "P41",
+      "section": "III.A. Average Power Constraint",
+      "reader_task": "Explain why the penalty does not change the optimum when x < 0.",
+      "full_relation_chain": "Branch condition -> fixed indicator -> constant objective shift -> unchanged maximizer -> branch result.",
+      "trigger": "A piecewise optimization branch is resolved by objective structure.",
+      "do_not_use_when": "The simplifying property fails or the supposed constant depends on the decision variable.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P41-03",
+      "paper_id": "P41",
+      "section": "IV. Outage Capacity of SU under PU Outage Constraint",
+      "reader_task": "Connect the changed use case, metric, and optimization form.",
+      "full_relation_chain": "Delay-sensitive setting -> outage-capacity metric -> corresponding optimization form -> two power-constraint tasks.",
+      "trigger": "A section's objective appears different from its named performance metric.",
+      "do_not_use_when": "The correspondence is unestablished or the scenario is unchanged.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P41-05",
+      "paper_id": "P41",
+      "section": "V.A. Ergodic Capacity of SU",
+      "reader_task": "Identify fixed conditions, observations, and their distinct explanations.",
+      "full_relation_chain": "Figure and dimensions -> outage-margin trend -> saturation explanation -> same-margin group difference -> group-difference explanation.",
+      "trigger": "One plot supports axis trends and between-group comparisons.",
+      "do_not_use_when": "The plot lacks the trend or the explanation is unverified.",
+      "entry_ids": [
+        "R08"
+      ]
+    },
+    {
+      "case_id": "P41-06",
+      "paper_id": "P41",
+      "section": "V.C. Imperfect Channel Estimation",
+      "reader_task": "Identify the performance consequence and perturbed-channel scope.",
+      "full_relation_chain": "Estimation-error topic -> primary-user outage focus -> imperfect versus perfect channels -> error model.",
+      "trigger": "A robustness study changes only part of a system.",
+      "do_not_use_when": "All variables are perturbed or the stated scope conflicts with the model.",
+      "entry_ids": [
+        "R04"
+      ]
+    },
+    {
+      "case_id": "P41-08",
+      "paper_id": "P41",
+      "section": "VI. Concluding Remarks",
+      "reader_task": "Separate link-count and joint-power-constraint extensions and identify the first extension's evaluation object.",
+      "full_relation_chain": "Completed results -> link-count boundary -> associated performance-region task -> independent constraint boundary.",
+      "trigger": "Future directions change different model dimensions.",
+      "do_not_use_when": "The direction does not follow from the model or the evaluation object is undetermined.",
+      "entry_ids": [
+        "R11"
+      ]
+    },
+    {
+      "case_id": "P42-C1",
+      "paper_id": "P42",
+      "section": "I. INTRODUCTION",
+      "reader_task": "Understand the asymptotic basis of dual decomposition and the finite-size check still required.",
+      "full_relation_chain": "Prior-method limitation -> asymptotic duality -> dual-decomposition rationale -> condition -> current method -> finite-tone validation.",
+      "trigger": "A method uses a prior result whose scope differs from the current setting.",
+      "do_not_use_when": "The result already covers this setting or the claimed validation was not performed.",
+      "entry_ids": [
+        "R01"
+      ]
+    },
+    {
+      "case_id": "P42-C2",
+      "paper_id": "P42",
+      "section": "II. SYSTEM MODEL AND PROBLEM FORMULATION",
+      "reader_task": "Connect weights, decisions, purpose, and computational difficulty.",
+      "full_relation_chain": "Symbols -> single optimization -> weight-sweep purpose -> combinatorial difficulty -> next problem's shared difficulty.",
+      "trigger": "One formula introduces a task, research purpose, and algorithm motivation.",
+      "do_not_use_when": "The definition is familiar and later discussion does not depend on its difficulty.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P43-C1",
+      "paper_id": "P43",
+      "section": "III-A Optimality of Binary Power Control",
+      "reader_task": "Identify its achievable-rate meaning and the scope of subsequent optimality claims.",
+      "full_relation_chain": "Rate expression -> achievability -> capacity limitation -> receiver-side cause -> adopted assumption.",
+      "trigger": "A formula might be read as a stronger performance bound than claimed.",
+      "do_not_use_when": "Adjacent definitions already resolve the scope.",
+      "entry_ids": [
+        "R02"
+      ]
+    },
+    {
+      "case_id": "P43-C4",
+      "paper_id": "P43",
+      "section": "V-B Benefits From Successive Decoding",
+      "reader_task": "Separate perfect-cancellation gains from residual-interference behavior as SNR changes.",
+      "full_relation_chain": "Comparators -> perfect-cancellation gain -> density/SNR scope -> residual-interference trend -> engineering implication.",
+      "trigger": "Method rankings depend on experimental conditions.",
+      "do_not_use_when": "The plot does not support conditional groups or changing rankings.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P44-C1",
+      "paper_id": "P44",
+      "section": "III.B Cellular wireless networks, Example 1",
+      "reader_task": "Map curve stages to feasibility, power transfer, noise, and power limits.",
+      "full_relation_chain": "Decreasing threshold -> initial infeasibility -> steep rise and power/noise explanation -> bend and mechanism change -> power limit and shallow slope.",
+      "trigger": "Different restrictions dominate different regions of a control-variable plot.",
+      "do_not_use_when": "Data do not resolve stages or support the mechanisms.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P44-C2",
+      "paper_id": "P44",
+      "section": "III.D Extensions: Queuing models",
+      "reader_task": "Understand why delay is added and how power affects queues under defined assumptions.",
+      "full_relation_chain": "New objective -> queueing delay -> power-SIR-rate-queue path -> service and routing assumptions -> stochastic arrivals.",
+      "trigger": "A new metric is separated from decisions by several intermediate quantities.",
+      "do_not_use_when": "Intermediate relationships are unestablished or listed assumptions are not actual derivation conditions.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P44-C5",
+      "paper_id": "P44",
+      "section": "V. Distributed implementation",
+      "reader_task": "Understand the implementation limit, local computation/message roles, and auxiliary-variable purpose.",
+      "full_relation_chain": "Central limitation -> distributed direction -> local/message division -> coupling structure -> dual decomposition -> copies and consistency -> general-to-specific presentation.",
+      "trigger": "A method introduces apparently complexity-increasing variables or constraints.",
+      "do_not_use_when": "The construction's role lacks methodological support.",
+      "entry_ids": [
+        "R06"
+      ]
+    },
+    {
+      "case_id": "P44-C6",
+      "paper_id": "P44",
+      "section": "VI. Conclusions",
+      "reader_task": "Recover contributions while separating global optimization from heuristics.",
+      "full_relation_chain": "Nonlinear difficulty -> high-SIR GP conversion -> associated optimum and feasibility uses -> low-SIR heuristic -> distributed implementation.",
+      "trigger": "Different regimes yield guarantees of different strengths.",
+      "do_not_use_when": "The body lacks the condition or guarantee, or necessary exceptions would be obscured.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P45-C1",
+      "paper_id": "P45",
+      "section": "I.A. Problem Formulation",
+      "reader_task": "Determine which failure must be checked before optimization.",
+      "full_relation_chain": "SINR-constrained objective -> possible infeasibility -> test then minimize -> adjust resources if infeasible.",
+      "trigger": "Optimization feasibility determines algorithm flow.",
+      "do_not_use_when": "Feasibility is guaranteed or no algorithm flow is being described.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P45-C2",
+      "paper_id": "P45",
+      "section": "II.A. Signal Model",
+      "reader_task": "Separate a temporary comparison premise from final algorithm inputs.",
+      "full_relation_chain": "Reciprocity/TDD motivation -> limited comparison use -> virtual-uplink replacement -> final information requirement.",
+      "trigger": "A strong assumption serves only one later step.",
+      "do_not_use_when": "The assumption governs every result and is not relaxed.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P45-C4",
+      "paper_id": "P45",
+      "section": "IV. Algorithmic Solutions",
+      "reader_task": "Map numbered steps to iterations and identify the remaining convergence task.",
+      "full_relation_chain": "Optimality analysis -> alternating steps -> step justification assuming the other fixed quantity is already a global optimizer -> separate whole-iteration convergence argument.",
+      "trigger": "Derived substeps are composed into an iterative method.",
+      "do_not_use_when": "No reusable steps exist or unestablished convergence would be stated as settled.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P45-C5",
+      "paper_id": "P45",
+      "section": "IV.D. Numerical Simulations",
+      "reader_task": "Identify what simulations illustrate and what they cannot establish.",
+      "full_relation_chain": "Simulation -> algorithm illustration -> missing whole-system assumptions -> unmodeled space/time/frequency interactions.",
+      "trigger": "Plots cover only part of a model or algorithm but invite broader inference.",
+      "do_not_use_when": "Complete-system comparisons have actually been designed and performed.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P46-C1",
+      "paper_id": "P46",
+      "section": "III-A. Achievable BC Region—The Dirty Paper Region",
+      "reader_task": "Trace encoding order, receiver interference, and order-dependent rates.",
+      "full_relation_chain": "Lemma -> ordered three-user example -> all-user extension -> receiver interference -> order-dependent rate expression.",
+      "trigger": "A formula depends on operation order while only an abstract principle has been given.",
+      "do_not_use_when": "Order is irrelevant or the example implies unproved generality.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P46-C2",
+      "paper_id": "P46",
+      "section": "III-A. Achievable BC Region—The Dirty Paper Region",
+      "reader_task": "Identify the direct computational obstacle and distinguish constraint settings.",
+      "full_relation_chain": "Expression property -> covariance-search difficulty -> current constraint scope -> neighboring task's different constraints.",
+      "trigger": "An indirectly solved object has just been defined.",
+      "do_not_use_when": "The obstacle is unsupported or irrelevant to method choice.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P46-C3",
+      "paper_id": "P46",
+      "section": "IV. Duality of the MAC and Dirty Paper BC Region",
+      "reader_task": "Remember reverse order and distinguish existence from explicit computation.",
+      "full_relation_chain": "Needed mapping -> structure preview -> reversal and example -> existence versus explicit construction -> computational use.",
+      "trigger": "A bidirectional construction has easily confused index orders.",
+      "do_not_use_when": "No order correspondence or usable explicit construction exists.",
+      "entry_ids": [
+        "R02"
+      ]
+    },
+    {
+      "case_id": "P46-C6",
+      "paper_id": "P46",
+      "section": "VI. Numerical Examples, Example 1",
+      "reader_task": "Connect a segment's endpoints with orders and its interior with time sharing.",
+      "full_relation_chain": "Segment result -> figure location -> lower-endpoint order -> same covariances and opposite order -> time-shared interior.",
+      "trigger": "One optimum corresponds to several plotted points produced differently.",
+      "do_not_use_when": "No segment exists or time sharing cannot attain its interior.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P46-C7",
+      "paper_id": "P46",
+      "section": "VII. Conclusion",
+      "reader_task": "Separate region duality, computation, sum-rate optimality, and the unknown complete BC region.",
+      "full_relation_chain": "Proved duality -> computational use -> proved sum-rate result and full-region boundary -> possibilities.",
+      "trigger": "A conclusion combines proof, use, and prospects beyond proof.",
+      "do_not_use_when": "The prospect is already proved or proof scope is unverified.",
+      "entry_ids": [
+        "R03",
+        "R11"
+      ]
+    },
+    {
+      "case_id": "P47:C3",
+      "paper_id": "P47",
+      "section": "III-C. Proposed Algorithm and Its Convergence Property",
+      "reader_task": "Distinguish two inherited properties and their different conditions.",
+      "full_relation_chain": "Property framework -> initialization claim -> mechanism -> monotonic cost after feasibility.",
+      "trigger": "A method combines properties with differing prerequisites.",
+      "do_not_use_when": "Properties lack support or no distinction is needed.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P48-01",
+      "paper_id": "P48",
+      "section": "IV-A. The Single-LTCC Case",
+      "reader_task": "Identify conversion inputs, outputs, and their original objective.",
+      "full_relation_chain": "Solvable dual problem -> covariance-input conversion -> corresponding BC solution -> original optimization.",
+      "trigger": "An auxiliary solution is followed by return-to-original conversion.",
+      "do_not_use_when": "No established relationship supports the conversion.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P48-02",
+      "paper_id": "P48",
+      "section": "IV-C. Relationship to Minimax Duality",
+      "reader_task": "Compare common tasks and identify each task's conditions.",
+      "full_relation_chain": "Formula equivalence -> shared-task decomposition -> task-specific relations and conditions.",
+      "trigger": "Different formulations are claimed to have similar mechanisms.",
+      "do_not_use_when": "Equivalence is unsupported or tasks cannot be aligned.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P48-04",
+      "paper_id": "P48",
+      "section": "IV-D. Nonlinear Transmit Covariance Constraint",
+      "reader_task": "Determine whether equivalence yields an executable algorithm.",
+      "full_relation_chain": "Equivalence -> construction needs unknown optimum -> direct solving blocked -> approximation example.",
+      "trigger": "An equivalent formulation depends on unknown answer-derived quantities.",
+      "do_not_use_when": "All construction parameters are already directly computable.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P48-06",
+      "paper_id": "P48",
+      "section": "VI-B. WSRMax With a Nonlinear Transmit Covariance Constraint",
+      "reader_task": "Map quantities and trends to panels and connect the second trend with tightening constraints.",
+      "full_relation_chain": "First panel -> constraint observation -> second panel -> rate trend -> tightening explanation.",
+      "trigger": "Panels show different quantities and one trend has a mechanism.",
+      "do_not_use_when": "The trends or mechanisms lack data or model support.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P48-07",
+      "paper_id": "P48",
+      "section": "Appendix B. Proof of Corollary 2",
+      "reader_task": "Understand why fixed-order comparison suffices and how orders pair.",
+      "full_relation_chain": "All-order definitions -> sufficient fixed-order matching -> proof reduction -> BC order and opposite MAC order.",
+      "trigger": "A conclusion covers all configurations while proof handles one fixed configuration.",
+      "do_not_use_when": "Configurations interact in untreated ways or component matching is insufficient.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P49-C1",
+      "paper_id": "P49",
+      "section": "I. INTRODUCTION",
+      "reader_task": "Locate achievable rates, upper bounds, and their connecting argument.",
+      "full_relation_chain": "Special-case obstacle -> generalization target -> uplink-downlink achievability relation -> Sato bound -> convex-duality connection.",
+      "trigger": "Generalizing a special case requires linking an achievable construction to an upper bound.",
+      "do_not_use_when": "The connection is not established later or only a direct step is required.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P49-C5",
+      "paper_id": "P49",
+      "section": "III-B. Point-to-Point Reciprocity",
+      "reader_task": "Identify a fourth channel's origin and bridge role.",
+      "full_relation_chain": "Existing BC, Sato cooperative channel, and uplink MAC -> bounds-connection gap -> reciprocal fourth channel -> model and cost constraints.",
+      "trigger": "An added model bridges established lower and upper bounds.",
+      "do_not_use_when": "The origin or comparison role is unresolved.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P49-C6",
+      "paper_id": "P49",
+      "section": "III-C. Finding the Right Cost Matrix",
+      "reader_task": "Trace local capacity equality back to Costa attainment of the Sato bound.",
+      "full_relation_chain": "Cost matrix -> MAC/reciprocal-point-to-point equality -> uplink-downlink duality and reciprocity -> Costa attainment of Sato bound -> theorem completion.",
+      "trigger": "A long proof ends in a local construction on a different model.",
+      "do_not_use_when": "Mappings are unproved or their directions cannot establish the target.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P50-01",
+      "paper_id": "P50",
+      "section": "I. INTRODUCTION",
+      "reader_task": "Separate effects on other links from channel-information requirements.",
+      "full_relation_chain": "Mobile deployment -> base-station option -> transmit interference effects -> receive-side contrast -> joint network task -> feedback requirements -> TDD reciprocity.",
+      "trigger": "Similar methods differ in influence scope and information needs before a joint algorithm.",
+      "do_not_use_when": "No relevant coupling exists or reciprocity is unrelated.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P50-02",
+      "paper_id": "P50",
+      "section": "III. JOINT POWER CONTROL AND RECEIVE DIVERSITY COMBINING",
+      "reader_task": "Trace both directions of dependence among power, SINR, and combining weights.",
+      "full_relation_chain": "Quality-based power updates -> SINR -> weight-dependent SINR -> power-dependent weights -> joint computation.",
+      "trigger": "Two jointly solved quantities could seem independently solvable.",
+      "do_not_use_when": "The quantities are independent or only one direction holds.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P50-03",
+      "paper_id": "P50",
+      "section": "IV. TRANSMIT BEAMFORMING",
+      "reader_task": "Identify task, feasible-condition claim, auxiliary construction, and return mapping.",
+      "full_relation_chain": "Joint task -> conditional optimality claim -> virtual uplink -> vector computation/reuse -> steps.",
+      "trigger": "An auxiliary model solves an original task before a step list.",
+      "do_not_use_when": "No established correspondence links the models.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P50-04",
+      "paper_id": "P50",
+      "section": "IV-A. Convergence of the Algorithm",
+      "reader_task": "Follow the virtual-uplink-to-downlink convergence route.",
+      "full_relation_chain": "Downlink target -> virtual-uplink convergence -> gain-matrix property -> eigenvalue relation -> downlink convergence -> needed definition.",
+      "trigger": "A proof uses an auxiliary system, matrix properties, and a stability theorem.",
+      "do_not_use_when": "The proof is direct or the preview merely duplicates all derivation.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P50-06",
+      "paper_id": "P50",
+      "section": "IV-C. Practical Implementation",
+      "reader_task": "Trace measurements, feedback, interstation exchange, and the proposed locality change.",
+      "full_relation_chain": "Global knowledge -> measurement/feedback -> interstation cost -> nearby responses -> narrower exchange -> research boundary.",
+      "trigger": "A global-information method has a narrower-data implementation proposal.",
+      "do_not_use_when": "The proposal cannot support required computations or no implementation option exists.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P50-08",
+      "paper_id": "P50",
+      "section": "VI. CONCLUSION",
+      "reader_task": "Separate contributions, performance, and reciprocal/nonreciprocal deployment.",
+      "full_relation_chain": "Feasible solving -> power objective -> multitap extension -> comparisons -> additional metrics -> reciprocal implementation -> nonreciprocal implementation.",
+      "trigger": "A conclusion combines results with network-dependent implementation.",
+      "do_not_use_when": "Conditions do not alter deployment or performance lacks prior evidence.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P51:C1",
+      "paper_id": "P51",
+      "section": "I.B. Overview of Main Results",
+      "reader_task": "Understand the Lagrangian route and the unresolved constraint conversion.",
+      "full_relation_chain": "New duality -> nonlinear obstacle to old feasibility tests -> fixed-beamformer convexification -> dual/variable interpretation -> matrix conversion -> optimal-solution equivalence.",
+      "trigger": "An unfamiliar proof route contains an easily overlooked unresolved constraint.",
+      "do_not_use_when": "The old route still applies or transformations and solution properties lack support.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P51:C2",
+      "paper_id": "P51",
+      "section": "VI.A. Convex Reformulation of Problem (97) and Its Dual Problem",
+      "reader_task": "Match objectives and constraints and isolate the remaining mismatch.",
+      "full_relation_chain": "Dual problem -> interpreted variable and rate roles with reversed optimization and inequality directions -> remaining matrix constraint -> the earlier direct constraint correspondence does not apply.",
+      "trigger": "A new formulation resembles the target but retains a mismatch.",
+      "do_not_use_when": "No reliable correspondence or known residual obstacle exists.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P51:C5",
+      "paper_id": "P51",
+      "section": "X. Concluding Remarks",
+      "reader_task": "Identify established objects, broader strategies, and two different extensions.",
+      "full_relation_chain": "Established scope -> broader strategies and prior operational duality -> computational contribution -> computational and capacity-region open questions.",
+      "trigger": "Strong results neighbor broader unresolved problems.",
+      "do_not_use_when": "The boundary is unsupported or the questions have already been solved.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P52-C1",
+      "paper_id": "P52",
+      "section": "I.A. Literature Review",
+      "reader_task": "Identify interchangeable tasks and differences in applicability, coverage, and computation.",
+      "full_relation_chain": "Common result -> three distinct comparison dimensions -> singular-noise condition -> relevant dimensional setting.",
+      "trigger": "Methods have similar outcomes but differing conditions, coverage, or costs.",
+      "do_not_use_when": "Dimensions lack verifiable correspondences or comparisons obscure unproved differences.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P52-C4",
+      "paper_id": "P52",
+      "section": "III.B. Uplink–Downlink Duality Via Minimax Duality",
+      "reader_task": "Use bidirectional maps to choose the solving route.",
+      "full_relation_chain": "Proof/table -> bidirectional solutions -> single maximization -> block-diagonal reduction -> numerical use.",
+      "trigger": "A formal equivalence has a practical solving advantage.",
+      "do_not_use_when": "Only formal correspondence exists without supported computational advantage.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P52-C6",
+      "paper_id": "P52",
+      "section": "IV.A. Duality for Broadcast Channels With an Arbitrary Linear Constraint",
+      "reader_task": "Identify the extension, computational use, and old-proof obstacle.",
+      "full_relation_chain": "Linear-constraint extension -> computational use -> old-proof obstacle -> sum-power dependence -> Lagrangian route.",
+      "trigger": "A broader method extends a result whose earlier proof used a narrower condition.",
+      "do_not_use_when": "The old limitation is unverified or the new method lacks the claimed scope.",
+      "entry_ids": []
+    },
+    {
+      "case_id": "P52-C7",
+      "paper_id": "P52",
+      "section": "IV.B. Duality for Broadcast Channels With Per-Antenna Power Constraints",
+      "reader_task": "Map the abstract formulation to two decision roles.",
+      "full_relation_chain": "Minimax dual -> MAC with uncertain noise -> transmitter maximization -> constrained noise minimization.",
+      "trigger": "A derived optimization contains multiple decision roles.",
+      "do_not_use_when": "No legitimate two-party interpretation exists or personification adds unsupported behavior.",
+      "entry_ids": []
+    }
+  ]
+}

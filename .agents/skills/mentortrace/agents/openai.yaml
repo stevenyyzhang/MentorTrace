@@ -1,0 +1,6 @@
+interface:
+  display_name: "MentorTrace"
+  short_description: "Independent manuscript review and bilingual reporting"
+  default_prompt: "Use $mentortrace to review this manuscript and deliver a bilingual Markdown and PDF report."
+policy:
+  allow_implicit_invocation: true

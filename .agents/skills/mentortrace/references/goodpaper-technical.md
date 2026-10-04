@@ -1,0 +1,9 @@
+# Technical retrieval from published-case summaries
+
+The public Technical records contain English analyst reconstructions, candidate sufficiency hypotheses, boundaries and public citations. Unvalidated writing moves and skeletons remain research notes and are excluded from execution inputs. The library contains no original full-page text, source PDFs or private-feedback chains. Read the manifest and use only case IDs in the frozen route.
+
+Start from the target's precise claim, compared quantities, conditions and evidence type. Select a navigation entry and case only when they add a relevant distinction. A shared subject or source paper is insufficient. Zero applicable cases is valid. Read the summary's bounds and evidence status. A route records a `sufficiency_question`; it cannot establish that a suggested response is sufficient. Do not interpret summary availability as independent mathematical verification.
+
+A source summary cannot resolve omitted or uncertain formulas. Judge correctness and information availability from the target's own evidence. If source-specific mathematics would be necessary, obtain and inspect a lawfully available public source separately, record that additional evidence explicitly, or mark the case's uncertain part unusable. Keep missing explanation, technical invalidity and unknown implementation separate. Seek the strongest target passage, appendix or figure that could close a concern.
+
+After diagnosis freeze, construct a proposal from verified target facts and actual repair requirements. Source-specific skeletons and editing recipes are not execution instructions. Unproved conditions, missing procedures or experiment details require author information. Never import technical claims or numerical values from the source as target facts. Account for all selected cases in case_usage. Advisor receives no case route or Reader/Technical case inputs.

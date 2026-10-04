@@ -1,0 +1,49 @@
+# Merge and independently verify
+
+When language findings are supplied, preserve their finding_type=surface, category and suggested_text fields in every retained output. Keep them separate from technical findings and retain every occurrence anchor. Definite small errors are reportable regardless of importance; do not withdraw them for being minor. Uncertain language/notation items and optional style suggestions remain separately visible, not promoted to confirmed defects.
+
+Freeze branch findings before integration. Consolidate by object, relationship, gap and closure goal, not topic alone. A local technical error does not automatically answer a question about the overall explanation; complete parameter reporting does not settle realism.
+
+Every initial finding has a disposition: retained, merged with explicit target IDs, narrowed, withdrawn with manuscript evidence, or unresolved. Preserve original text. Track parent/child dependencies and additional objects without rewriting earlier planning history. Full-card cross-batch reads enter the input log.
+
+Verification receives the original manuscript, concrete findings, source support and counterevidence in fresh context, without prior praise or pass labels. It returns its own evidence-based disposition. Fresh context is not an independent-expert guarantee. Newly discovered findings are marked as new in verification. Final output remains linked to each original finding; fewer findings alone is not improvement.
+
+## Consolidation decision
+
+Prefer one final finding for each independently answerable, supported gap. Two gaps are independent when an author could close one while the other remains. Share a section heading if useful, but retain separate finding IDs and closure goals for independent gaps, even at the same location. For example, acquisition-path evidence and reconstructed-size accuracy are separate requirements; baseline identity and comparison settings may also require separate answers. These examples illustrate independence, not mandatory checks on every manuscript.
+
+Merge repeated formulations of the same object, relationship, gap and closure goal. Do not combine independent requirements just to shorten the final list. Supporting calculations or examples for one gap need not become separate findings. No target count, reduction ratio or preference for fewer findings applies. Preserve the concrete question and the evidence that would answer it rather than replacing them with a broad topic label.
+
+Compare each proposed merge on four axes: current object, relationship, actual gap and what evidence would close it. Merge only when the combined wording preserves each substantive requirement. If one change would close only one of the original findings, keep distinct findings or explicitly retain both requirements.
+
+Audit preservation at the level of concrete requirements, not just finding IDs. Could an author fully follow the proposed output while leaving an input finding's supported specific question unanswered? If yes, retain that requirement explicitly under the shared heading or keep separate findings. There is no target reduction in finding count. A retained or merged disposition must not conceal a dropped requirement; when only part is warranted, use the existing narrowed disposition and explain which part was removed and why. Preserve uncertainty without turning it into a new accusation.
+
+When supplied source checks contain a specific candidate absent from the input findings, verify its applicability and manuscript support first. If it merits inclusion, mark the added diagnostic content as `new_in_stage:true` and cite the originating check in the disposition explanation; do not retroactively count it as explicitly delivered in the frozen raw findings. If the candidate is unsupported or already answered, record the basis for exclusion. This distinguishes a recorded candidate from a justified finding and from the requirements actually delivered to the author.
+
+During verification identify what the finding actually alleges, using its existing relation, gap and closure goal, then seek evidence that answers that allegation. Apply the following criteria in the existing disposition explanation; no new classification schema is required.
+
+- A technical criticism needs a specific conflict, invalid inference or unmet condition. Test that claim and its materiality against the manuscript.
+- An explanatory criticism needs a concrete reader task that the paper leaves obstructed and a reason the paper must supply the missing connection for its audience. Attempt that task using the cited text and whole-paper support. Mathematical validity or an explanation the verifier can construct does not alone remove the obstruction. Conversely, routine background, a direct derivation, an adequate equivalent explanation or a legitimate forward reference may close it; cite that basis instead of demanding more prose.
+- A preference about selection, ordering or presentation remains an optional editorial suggestion unless a specific comprehension or correctness obstacle is established. Do not promote preferences to defects or dismiss a demonstrated dependency problem as mere style.
+
+Withdraw with a concrete source anchor when the paper already answers the actual criticism. Narrow a finding when only part is supported, preserving independently justified explanatory requirements even if a technical allegation is withdrawn. Unresolved is preferable to confidently asserting an unverifiable defect. Retention cases should remain visible in the audit trace even when not included in the final problem list.
+
+Original findings are not rewritten after verification or after seeing target comments. Preserve discoveries added at merge or verification separately. Internal consolidation should consider impact and dependency, not strength of phrasing or number of historical cards. Author-facing presentation follows report-language.md: group related content problems by revision object in broad manuscript order, retain independent problem numbers, and place a shared repair plan and local drafts after each group. Organization and language comments follow manuscript order. State necessary conditions directly instead of creating numbered cross-reference chains.
+
+## Delivery preservation checkpoint
+
+For a multi-paragraph or cross-subsection repair, preserve the shared argument task, affected passage range, and the linked retain/delete/compress/move/add/merge/split/rewrite actions. Several independent findings may refer to one coordinated revision plan; do not fragment that plan into unrelated sentence edits or merge away separately answerable requirements. Verify that deletions preserve needed assumptions, evidence and later references. Existing technical correctness does not dispose of an independently evidenced organization problem.
+
+Carry optional organization suggestions through consolidation and independent verification separately from confirmed findings. For each input suggestion record retention, merging, incorporation into a supported content finding, withdrawal with manuscript evidence, or unresolved status. A sufficient content judgment does not by itself justify dropping a useful optional rearrangement. If incorporated into a content finding, preserve the concrete source/destination and reason for moving it, not just “clarify the text.”
+
+Inspect source checks for specific ordering proposals left only in explanations. Verify them before adding an optional suggestion, mark additions as new in this stage, and identify their source checks in the reason. Do not retroactively claim they were frozen raw suggestions. Validate a proposed move against the manuscript: it must preserve meaning and qualifications, repair or improve the stated reading task, and account for affected pronouns, transitions and references. Where the existing order is already adequate, retain an optional suggestion only if its benefit is concrete; otherwise record why it was excluded.
+
+Before freezing author-facing output, inspect the source `relation`, `gap` and `closure_goal`, not just titles or source-ID coverage. Classify content versus surface by the actual requirement; missing sections or claim-evidence gaps remain content even if found by Language. Deduplicate identical corrections across lanes while keeping their occurrence locations.
+
+If an existing frozen delivery needs reorganization, create a new version from the manuscript, frozen raw findings and explicit earlier verification additions/dispositions. Keep target comments and hit labels out of this generation. Preserve the original final and response, map every source requirement to its new location or evidence-based exclusion, and disclose unresolved grouping boundaries. Do not invent detail to increase counts. Freeze the reorganized output before any new alignment scoring; restoration of a previously expressed requirement is delivery recovery, not a new autonomous finding.
+
+For section-level argument, information selection and whole-paper summary checks, also follow [section-argument.md](section-argument.md). Its runtime module is enabled for new section-review protocols; frozen older requests are unchanged.
+
+## Preserve obligations, not only IDs
+
+Before declaring an input covered, compare its gap and closure goal clause by clause, including source explanations with decisive calculations, conditions, alternatives and affected locations. A shared experiment-protocol finding must not erase an independently answerable boundary convention. Keep such obligations explicit in the output gap/closure goal. Re-evaluate source explanations rather than treating them as verdicts. Later report delivery follows delivery-preservation.md; numbered mapping alone does not establish semantic retention.

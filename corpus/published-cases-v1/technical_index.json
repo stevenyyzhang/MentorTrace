@@ -1,0 +1,1040 @@
+{
+  "entries": [
+    {
+      "id": "T01",
+      "title": "The interface between this paper's deliverables and the overall research objective",
+      "complete_task_relation": "Overall objective -> locally solved subtask -> outputs for the next task -> end-to-end conclusions not yet established.",
+      "distinction": "Application motivation or improved intermediate quantities do not establish system benefits. The series interface in F05 and strategy-family scope in F51 are complementary and need different sufficient checks.",
+      "effect_and_pass": "Readers may misidentify the local contribution or mistake conditional achievable results for capacity. Clear outputs, external dependencies, and claim scope suffice.",
+      "revision_move": "State local deliverables, downstream uses, and unfinished interfaces in that order. Narrow scope when needed; do not invent end-to-end validation.",
+      "candidate_case_ids": [
+        "F01",
+        "F03",
+        "F05",
+        "F12",
+        "F30",
+        "F40",
+        "F51"
+      ],
+      "category_evidence": {
+        "candidate_paper_ids": [
+          "P01",
+          "P03",
+          "P05",
+          "P12",
+          "P30",
+          "P40",
+          "P51"
+        ],
+        "candidate_paper_count": 7,
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false
+      }
+    },
+    {
+      "id": "T02",
+      "title": "Levels of theoretical guarantees and evidence identity",
+      "complete_task_relation": "Assumptions -> actual theorem -> algorithm-output properties -> experimental observations -> conclusion wording.",
+      "distinction": "Monotone objectives, stationarity, local optima, and global optima differ; plot agreement is not exact equality. F13/F48 explicitly retain unproved parts, whereas F10/F29/F42/F44 include source wording requiring caution.",
+      "effect_and_pass": "Incorrect guarantees distort reliability and optimality judgments. State only the established level; a global proof is not always necessary.",
+      "revision_move": "Separate theorem and numerical observations. Narrow wording to stationarity when that is proved, or identify the additional proof needed for a stronger claim.",
+      "candidate_case_ids": [
+        "F10",
+        "F13",
+        "F15",
+        "F29",
+        "F42",
+        "F44",
+        "F48"
+      ],
+      "category_evidence": {
+        "candidate_paper_ids": [
+          "P10",
+          "P13",
+          "P15",
+          "P29",
+          "P42",
+          "P44",
+          "P48"
+        ],
+        "candidate_paper_count": 7,
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false
+      }
+    },
+    {
+      "id": "T03",
+      "title": "Which old proofs survive algorithm modifications?",
+      "complete_task_relation": "Original algorithm and assumptions -> changed constraints, updates, or structure -> retained properties -> broken properties -> revised claim scope.",
+      "distinction": "Fixed-parameter results do not automatically cover adaptation; solvability does not preserve a closed form; structural zeros may destroy irreducibility.",
+      "effect_and_pass": "Invalid convergence or complexity claims may be inherited. Verify required invariants or identify an empirical method honestly.",
+      "revision_move": "Describe the changed step, check proof dependencies, retain valid parts, and prove, test, or narrow statements affected by failed assumptions.",
+      "candidate_case_ids": [
+        "F17",
+        "F20",
+        "F24",
+        "F28",
+        "F37",
+        "F38",
+        "F47"
+      ],
+      "category_evidence": {
+        "candidate_paper_ids": [
+          "P17",
+          "P20",
+          "P24",
+          "P28",
+          "P37",
+          "P38",
+          "P47"
+        ],
+        "candidate_paper_count": 7,
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false
+      }
+    },
+    {
+      "id": "T04",
+      "title": "Distinguish convergence, feasibility, timeout, and successful-sample statistics",
+      "complete_task_relation": "Service requirements and resource caps -> feasibility -> stopping event -> output-constraint checks -> success/failure statistics.",
+      "distinction": "A fixed point may violate service requirements, a budget timeout is not infeasibility, and conditional average iterations do not represent all trials. F19's uncapped feasibility cannot transfer to capped power.",
+      "effect_and_pass": "Reliability can be overstated or negative-power formulas called executable. Define events and denominators and supply appropriate feasibility evidence.",
+      "revision_move": "Define success and failure first, then conditional statistics and failure handling. Rewording must not conceal unchecked feasibility.",
+      "candidate_case_ids": [
+        "F19",
+        "F32",
+        "F33",
+        "F36",
+        "F45",
+        "F47"
+      ],
+      "category_evidence": {
+        "candidate_paper_ids": [
+          "P19",
+          "P32",
+          "P33",
+          "P36",
+          "P45",
+          "P47"
+        ],
+        "candidate_paper_count": 6,
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false
+      }
+    },
+    {
+      "id": "T05",
+      "title": "The gap between transformed solving and original-problem recovery",
+      "complete_task_relation": "Original problem -> preserved sets/objectives -> auxiliary solution -> original-variable recovery -> feasibility -> objective/bound closure.",
+      "distinction": "Equal optima do not automatically give an original feasible solution; feasible scaling need not preserve optimality; order and auxiliary noise may be mapping inputs. F49 closes bounds with a witness, while F48 limits recovery conditionally.",
+      "effect_and_pass": "Solver outputs may not support original-system claims. Valid recovery, residuals, and appropriate certificates suffice; explicit suboptimal recovery is acceptable.",
+      "revision_move": "Add recovery steps and conditions. With numerical evidence only, report recovered objectives and residuals instead of replacing original results with auxiliary results.",
+      "candidate_case_ids": [
+        "F21",
+        "F25",
+        "F38",
+        "F46",
+        "F48",
+        "F49",
+        "F52"
+      ],
+      "category_evidence": {
+        "candidate_paper_ids": [
+          "P21",
+          "P25",
+          "P38",
+          "P46",
+          "P48",
+          "P49",
+          "P52"
+        ],
+        "candidate_paper_count": 7,
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false
+      }
+    },
+    {
+      "id": "T06",
+      "title": "Distinguish necessary conditions, sufficient constructions, and uniqueness",
+      "complete_task_relation": "Task constraints -> necessary conditions -> sufficient conditions or construction -> remaining gaps -> alternative optima.",
+      "distinction": "One implementation is not uniquely necessary; hardware lower bounds and sufficient counts need not give an exact minimum; optimum sum rate can correspond to multiple points.",
+      "effect_and_pass": "Review can force unnecessary designs or exaggerate minimum resources. Other implementations satisfying the same conditions should pass.",
+      "revision_move": "State solution conditions before explaining the chosen representative's additional implementation benefit. Keep bounds when the exact minimum remains unknown.",
+      "candidate_case_ids": [
+        "F08",
+        "F16",
+        "F21",
+        "F46"
+      ],
+      "category_evidence": {
+        "candidate_paper_ids": [
+          "P08",
+          "P16",
+          "P21",
+          "P46"
+        ],
+        "candidate_paper_count": 4,
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false
+      }
+    },
+    {
+      "id": "T07",
+      "title": "Identify comparison policies and certify reference values",
+      "complete_task_relation": "Compared policy families -> optimization degree -> constraints/information -> reference status -> supported interpretation.",
+      "distinction": "A relaxed local solution is not a certified bound; binary enumeration is not a continuous global optimum; cancellation baselines include scheduling policies. F25 gives bound logic, while F11/F42 reveal wording risks.",
+      "effect_and_pass": "A weaker baseline or numerical reference can be mistaken for the strongest competitor. Accurate reference names and scoped conclusions suffice without a global benchmark in every paper.",
+      "revision_move": "State policy domains, optimization, and certificates. Without certification, use numerical-reference wording and remove unsupported optimum-gap claims.",
+      "candidate_case_ids": [
+        "F11",
+        "F14",
+        "F16",
+        "F25",
+        "F35",
+        "F42",
+        "F43"
+      ],
+      "category_evidence": {
+        "candidate_paper_ids": [
+          "P11",
+          "P14",
+          "P16",
+          "P25",
+          "P35",
+          "P42",
+          "P43"
+        ],
+        "candidate_paper_count": 7,
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false
+      }
+    },
+    {
+      "id": "T08",
+      "title": "Attribute module gains and identify parameter-scan direction",
+      "complete_task_relation": "Proposed mechanism -> other fixed factors -> changed module/environment -> performance changes -> supported mechanism explanation.",
+      "distinction": "Changing design with fixed reality differs from changing reality with fixed design. Shared subchannel allocation better isolates a power module. Simultaneous changes limit causal attribution.",
+      "effect_and_pass": "Regime or other-module gains may be assigned to the proposed design. Explaining combined comparisons can suffice; ablation is not always mandatory.",
+      "revision_move": "Identify fixed and varied quantities and baseline roles. Rewrite from existing evidence, narrow causality without isolation, or list needed experiments.",
+      "candidate_case_ids": [
+        "F02",
+        "F06",
+        "F07",
+        "F11",
+        "F34"
+      ],
+      "category_evidence": {
+        "candidate_paper_ids": [
+          "P02",
+          "P06",
+          "P07",
+          "P11",
+          "P34"
+        ],
+        "candidate_paper_count": 5,
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false
+      }
+    },
+    {
+      "id": "T09",
+      "title": "Metric units, aggregation, and time scales",
+      "complete_task_relation": "Required performance -> metric and units -> user/system aggregation -> instantaneous/long-term scale -> actual conclusion.",
+      "distinction": "Equal diversity order allows constant signal-to-noise gains; realization-level fairness differs from mean fairness; user capacity, bit rate, aggregate values, and per-user optimality are not interchangeable.",
+      "effect_and_pass": "Correct numbers can support incorrect service judgments. Define metrics precisely and match the claimed scale.",
+      "revision_move": "Name measurement objects, units, and aggregation before interpretation. Per-block claims need per-block evidence or must become long-term claims.",
+      "candidate_case_ids": [
+        "F22",
+        "F26",
+        "F31",
+        "F34",
+        "F39",
+        "F50"
+      ],
+      "category_evidence": {
+        "candidate_paper_ids": [
+          "P22",
+          "P26",
+          "P31",
+          "P34",
+          "P39",
+          "P50"
+        ],
+        "candidate_paper_count": 6,
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false
+      }
+    },
+    {
+      "id": "T10",
+      "title": "Computation and communication costs must cover actual execution",
+      "complete_task_relation": "Required data -> acquisition/exchange -> per-step work -> inner/outer counts -> physical latency/net resources -> implementation claim.",
+      "distinction": "Fewer outer rounds need not mean less work, local updates can need feedback, and virtual quantities need not be locally measurable. Cases address complementary costs, not mandatory exact measurement of every cost.",
+      "effect_and_pass": "Complexity, distributed, or real-time claims may omit dominant costs. Complete accounting within the claim, or explicit single-stage comparison, suffices.",
+      "revision_move": "List information and costs in execution order. Without device measurements, report theoretical costs or iterations rather than fabricated latency.",
+      "candidate_case_ids": [
+        "F09",
+        "F19",
+        "F22",
+        "F27",
+        "F31",
+        "F33",
+        "F35",
+        "F37",
+        "F39",
+        "F47",
+        "F50"
+      ],
+      "category_evidence": {
+        "candidate_paper_ids": [
+          "P09",
+          "P19",
+          "P22",
+          "P27",
+          "P31",
+          "P33",
+          "P35",
+          "P37",
+          "P39",
+          "P47",
+          "P50"
+        ],
+        "candidate_paper_count": 11,
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false
+      }
+    },
+    {
+      "id": "T11",
+      "title": "Robustness scope, information loss, and service costs",
+      "complete_task_relation": "Uncertainty/training contamination -> protection or projection -> retained/lost information -> protected metric -> service utility.",
+      "distinction": "Smaller uncertainty sets need not improve finite-sample behavior; projection may lose energy; switching off service protects others while eliminating utility. These cases have different technical conditions.",
+      "effect_and_pass": "Protection-only evaluation can hide degeneration or extend set-based guarantees to every distribution. Pair benefits/costs and specify the error domain.",
+      "revision_move": "Define uncertainty sources and sets before protection/utility relations. List missing paired data rather than inventing tradeoff values.",
+      "candidate_case_ids": [
+        "F18",
+        "F23",
+        "F27",
+        "F41"
+      ],
+      "category_evidence": {
+        "candidate_paper_ids": [
+          "P18",
+          "P23",
+          "P27",
+          "P41"
+        ],
+        "candidate_paper_count": 4,
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false
+      }
+    },
+    {
+      "id": "T12",
+      "title": "Bridge limits, finite scale, and operating regimes",
+      "complete_task_relation": "Theoretical limit or small-scale evidence -> parameter regime -> finite-scale deviations -> deployment conditions -> qualified conclusion.",
+      "distinction": "Equal leading terms are not equal finite values; small-system enumeration does not prove large-system near-optimality; limiting recovery is a check rather than a full proof.",
+      "effect_and_pass": "Resource laws or guarantees may be reused in unsupported regimes. State regimes and finite evidence or retain asymptotic scope.",
+      "revision_move": "Separate strict results from finite-scale observations and add evidence for extrapolated intermediate regimes; a smooth curve does not close a theoretical gap.",
+      "candidate_case_ids": [
+        "F04",
+        "F06",
+        "F16",
+        "F26",
+        "F34",
+        "F42",
+        "F51"
+      ],
+      "category_evidence": {
+        "candidate_paper_ids": [
+          "P04",
+          "P06",
+          "P16",
+          "P26",
+          "P34",
+          "P42",
+          "P51"
+        ],
+        "candidate_paper_count": 7,
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false
+      }
+    },
+    {
+      "id": "T13",
+      "title": "Separate model duality from implementable and computable duality",
+      "complete_task_relation": "Objects/policy families -> abstract equivalence -> required order/auxiliary quantities -> acquisition/solution conditions -> physical execution.",
+      "distinction": "Operational existence does not supply an algorithm; minimax under general convex constraints need not represent fixed-noise physical uplink; reciprocity is not implied by mathematical duality.",
+      "effect_and_pass": "Unknown auxiliaries can be treated as inputs or implementation scope overstated. State duality types and interfaces clearly.",
+      "revision_move": "Explain transformation objects, inputs, outputs, and conditions; without construction, retain existence-only scope.",
+      "candidate_case_ids": [
+        "F12",
+        "F30",
+        "F46",
+        "F48",
+        "F50",
+        "F51",
+        "F52"
+      ],
+      "category_evidence": {
+        "candidate_paper_ids": [
+          "P12",
+          "P30",
+          "P46",
+          "P48",
+          "P50",
+          "P51",
+          "P52"
+        ],
+        "candidate_paper_count": 7,
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false
+      }
+    },
+    {
+      "id": "T14",
+      "title": "Organize the proof around relationships that must be closed",
+      "complete_task_relation": "Final claim -> subtasks -> each input/output -> bridge conditions -> closing evidence -> uncovered scope.",
+      "distinction": "Section order or simple-to-complex exposition is not necessary; readers must be able to trace how each step supports the final result.",
+      "effect_and_pass": "Every local derivation may appear without supporting the final claim. Complete prose, figures, or theorem references can suffice without a fixed format.",
+      "revision_move": "Rewrite transitions around missing bridges. If the bridge itself is unproved, list technical work needed rather than merely adding therefore.",
+      "candidate_case_ids": [
+        "F01",
+        "F03",
+        "F05",
+        "F20",
+        "F24",
+        "F40",
+        "F49"
+      ],
+      "category_evidence": {
+        "candidate_paper_ids": [
+          "P01",
+          "P03",
+          "P05",
+          "P20",
+          "P24",
+          "P40",
+          "P49"
+        ],
+        "candidate_paper_count": 7,
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false
+      }
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "F01",
+      "paper_id": "P01",
+      "title": "Locate the gap by assumptions and task; scope minimum overhead to the framework",
+      "diagnostic_relation": "The source distinguishes its task from preceding work, establishes a minimum within a specified training framework, and leaves error propagation and resource allocation open.",
+      "case_role": "source_task_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T01",
+        "T14"
+      ]
+    },
+    {
+      "case_id": "F02",
+      "paper_id": "P02",
+      "title": "Gains depend on operating regime; system comparisons also depend on rate and coding",
+      "diagnostic_relation": "The source reports different gains in low- and high-Doppler regimes and compares configurations that also differ in coding or rate-related conditions.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T08"
+      ]
+    },
+    {
+      "case_id": "F03",
+      "paper_id": "P03",
+      "title": "Align contributions and conclusions with theoretical objects, implementable designs, and evidence levels",
+      "diagnostic_relation": "The source separates a theoretical quantization object from implementable vector designs and identifies correlated-codebook performance analysis as future work while reporting numerical results.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T01",
+        "T14"
+      ]
+    },
+    {
+      "case_id": "F04",
+      "paper_id": "P04",
+      "title": "Inefficiency of a restricted receiver is not information-theoretic impossibility",
+      "diagnostic_relation": "The source treats a restricted training and receiver scheme, an asymptotic leading term, and unresolved transition behavior; power constraints change the training problem.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T12"
+      ]
+    },
+    {
+      "case_id": "F05",
+      "paper_id": "P05",
+      "title": "Separate a paper's deliverables from the overall objective of a series",
+      "diagnostic_relation": "The source defines intermediate estimation quantities for a companion analysis and distinguishes channel-estimation error from downstream detection behavior.",
+      "case_role": "source_task_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T01",
+        "T14"
+      ]
+    },
+    {
+      "case_id": "F06",
+      "paper_id": "P06",
+      "title": "Resource exchange rates change across operating regimes",
+      "diagnostic_relation": "The source explains a user-count and feedback-bit tradeoff whose behavior changes with regime, and omits some comparison curves after a reported approximation check.",
+      "case_role": "source_task_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T08",
+        "T12"
+      ]
+    },
+    {
+      "case_id": "F07",
+      "paper_id": "P07",
+      "title": "Trace robustness claims to the actual direction of parameter scans",
+      "diagnostic_relation": "The source distinguishes varying the true channel with an estimator held fixed from varying a design parameter with the true channel held fixed; the FIR design depends on Doppler assumptions.",
+      "case_role": "source_task_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T08"
+      ]
+    },
+    {
+      "case_id": "F08",
+      "paper_id": "P08",
+      "title": "Separate an optimum set from one representative satisfying extra implementation constraints",
+      "diagnostic_relation": "Within its least-squares model, the source gives row-orthogonality and equal-norm conditions and uses a DFT-based constant-modulus construction; other criteria can depend on prior information.",
+      "case_role": "source_task_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T06"
+      ]
+    },
+    {
+      "case_id": "F09",
+      "paper_id": "P09",
+      "title": "Restore idealized stages and trace changes to the optimization structure",
+      "diagnostic_relation": "The source includes a nonideal dedicated-training stage, changes an inner allocation term, and describes retained outer structure; the claimed SNR-gap behavior is a mathematical source claim.",
+      "case_role": "source_task_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T10"
+      ]
+    },
+    {
+      "case_id": "F10",
+      "paper_id": "P10",
+      "title": "Match convergence language to the theorem and fix runtime stopping criteria",
+      "diagnostic_relation": "The source states a stationary-limit-point theorem and reports runtime comparisons under a shared stopping criterion. These are source-specific examples of naming a theorem result and specifying a comparison condition.",
+      "case_role": "mixed",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T02"
+      ]
+    },
+    {
+      "case_id": "F11",
+      "paper_id": "P11",
+      "title": "Baselines isolate design effects; relaxed references still need numerical certificates",
+      "diagnostic_relation": "The source uses different baselines to investigate different design mechanisms and describes the constraint removed in a relaxed reference. These are source-specific comparison descriptions; the reference certificate is a separate question.",
+      "case_role": "mixed",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T07",
+        "T08"
+      ]
+    },
+    {
+      "case_id": "F12",
+      "paper_id": "P12",
+      "title": "Explain why a simple scenario matters and which strategy class its optimality covers",
+      "diagnostic_relation": "The source explains a single-user, single-radio-head compression task and proves an optimality relationship within a strategy class; it also notes that another relaying strategy can perform better.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T01",
+        "T13"
+      ]
+    },
+    {
+      "case_id": "F13",
+      "paper_id": "P13",
+      "title": "Repeated empirical success does not close the gap from necessary to sufficient conditions",
+      "diagnostic_relation": "The source distinguishes empirical success from a necessary condition and explicitly leaves sufficiency or general convergence unresolved.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T02"
+      ]
+    },
+    {
+      "case_id": "F14",
+      "paper_id": "P14",
+      "title": "Distinguish best-of-family curves from implementable selection rules",
+      "diagnostic_relation": "The source takes a maximum over candidate designs and discusses a future information-model extension; the plotted envelope depends on how candidates are evaluated and selected.",
+      "case_role": "source_task_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T07"
+      ]
+    },
+    {
+      "case_id": "F15",
+      "paper_id": "P15",
+      "title": "A more general framework may be slower on an existing special case",
+      "diagnostic_relation": "The source reports that a specialized method can converge faster on a shared special case while explaining the broader class handled by its framework and the scope of stationarity claims.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T02"
+      ]
+    },
+    {
+      "case_id": "F16",
+      "paper_id": "P16",
+      "title": "Necessary bounds, sufficient constructions, and architecture changes do not define one exact hardware minimum",
+      "diagnostic_relation": "The source separates a necessary RF-chain count from a sufficient construction, discusses a changed hardware topology, and restricts exhaustive comparisons to small instances.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T06",
+        "T07",
+        "T12"
+      ]
+    },
+    {
+      "case_id": "F17",
+      "paper_id": "P17",
+      "title": "Adaptive parameters and limited coordination change the proved algorithm",
+      "diagnostic_relation": "The source separates an adaptive heuristic from a proof for a fixed parameter and explains that one baseline cannot meet the stated service constraint without modification.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T03"
+      ]
+    },
+    {
+      "case_id": "F18",
+      "paper_id": "P18",
+      "title": "Connect preprocessing assumptions to input construction and failure costs",
+      "diagnostic_relation": "The source relies on a group structure derived from channel statistics and proposes projecting away a shared subspace, with resulting energy loss and system impact left for further evaluation.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T11"
+      ]
+    },
+    {
+      "case_id": "F19",
+      "paper_id": "P19",
+      "title": "Separate feasibility from optimum cost and per-iteration work from total work",
+      "diagnostic_relation": "Under an uncapped resource model, the source separates a feasibility condition from the resource required to meet a threshold and reports empirical iteration behavior.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T04",
+        "T10"
+      ]
+    },
+    {
+      "case_id": "F20",
+      "paper_id": "P20",
+      "title": "Added convex constraints can preserve solvability while invalidating a closed form",
+      "diagnostic_relation": "The source preserves convexity after certain added constraints while losing the previous closed form, and its metric equivalences retain shared constellation or coding conditions.",
+      "case_role": "source_task_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T03",
+        "T14"
+      ]
+    },
+    {
+      "case_id": "F21",
+      "paper_id": "P21",
+      "title": "Counterexamples to a necessary bound complement numerical feasibility checks",
+      "diagnostic_relation": "The source distinguishes a necessary bound from sufficient feasibility and gives an equivalent conic formulation without the unnecessary structural restriction identified in the case.",
+      "case_role": "source_task_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T05",
+        "T06"
+      ]
+    },
+    {
+      "case_id": "F22",
+      "paper_id": "P22",
+      "title": "Separate gross rate, net rate, and fixed design inputs",
+      "diagnostic_relation": "The source treats training quality as an input and explains how training overhead and scheduling shares affect net throughput, while leaving some parameter optimization outside its task.",
+      "case_role": "source_task_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T09",
+        "T10"
+      ]
+    },
+    {
+      "case_id": "F23",
+      "paper_id": "P23",
+      "title": "Tighter robust sets also change noise gain and sample costs",
+      "diagnostic_relation": "The source compares constraint-set geometry, prior information, and noise or sample tradeoffs, and notes that equality of weights does not settle power scaling.",
+      "case_role": "source_task_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T11"
+      ]
+    },
+    {
+      "case_id": "F24",
+      "paper_id": "P24",
+      "title": "Reformulation can survive while useful curvature and complexity disappear",
+      "diagnostic_relation": "The source gives an extended-setting concavity counterexample and contrasts a grid procedure whose complexity grows exponentially with the more tractable restricted setting.",
+      "case_role": "source_task_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T03",
+        "T14"
+      ]
+    },
+    {
+      "case_id": "F25",
+      "paper_id": "P25",
+      "title": "Construct upper bounds through traceable relaxation and distinguish achieved values from lower bounds",
+      "diagnostic_relation": "The source constructs upper bounds through successive relaxations and distinguishes achieved values from lower bounds and their particular equality conditions.",
+      "case_role": "source_task_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T05",
+        "T07"
+      ]
+    },
+    {
+      "case_id": "F26",
+      "paper_id": "P26",
+      "title": "Identical asymptotic slopes do not imply identical operating-point performance",
+      "diagnostic_relation": "The source distinguishes a shared diversity-multiplexing order from finite-SNR gaps and separates a sorting gain from a diversity improvement.",
+      "case_role": "source_task_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T09",
+        "T12"
+      ]
+    },
+    {
+      "case_id": "F27",
+      "paper_id": "P27",
+      "title": "Equal batch complexity does not imply equal online update costs",
+      "diagnostic_relation": "The source distinguishes batch computation from an online implementation requiring recomputation or updates, and relates training contamination to observed sample behavior.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T10",
+        "T11"
+      ]
+    },
+    {
+      "case_id": "F28",
+      "paper_id": "P28",
+      "title": "Identify what each postprocessing stage changes and which statistical interpretations survive",
+      "diagnostic_relation": "The source separates support selection from parameter refinement and distinguishes a fitting interpretation from a likelihood interpretation requiring distributional assumptions; convergence of an approximate variant is not fully proved.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T03"
+      ]
+    },
+    {
+      "case_id": "F29",
+      "paper_id": "P29",
+      "title": "Separate monotone objectives from local optima and finite weighted scans from complete boundaries",
+      "diagnostic_relation": "The source describes an objective sequence and labels a region generated by finite weighted samples as an approximation. The sampled evaluation and its stated scope can be described without adopting the stronger local-minimum inference.",
+      "case_role": "mixed",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T02"
+      ]
+    },
+    {
+      "case_id": "F30",
+      "paper_id": "P30",
+      "title": "Bind security claims to the threat model and distinguish achievability from implementation",
+      "diagnostic_relation": "The source gives an information-theoretic secrecy result under explicit adversary, channel, coordination, and public-information assumptions and does not provide a practical coding implementation.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T01",
+        "T13"
+      ]
+    },
+    {
+      "case_id": "F31",
+      "paper_id": "P31",
+      "title": "Per-user improvements can oppose cell-wide gains; deployment extensions need new evidence",
+      "diagnostic_relation": "The source separates per-user gains from concurrency and total cell performance and identifies a further architecture extension as dependent on an unverified propagation property.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T09",
+        "T10"
+      ]
+    },
+    {
+      "case_id": "F32",
+      "paper_id": "P32",
+      "title": "Asynchrony requires eventual refresh; convergence under caps need not satisfy service constraints",
+      "diagnostic_relation": "The source distinguishes continual asynchronous updates and eventual information refresh from meeting original service constraints at a fixed point of a capped iteration; association changes can alter monotonicity.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T04"
+      ]
+    },
+    {
+      "case_id": "F33",
+      "paper_id": "P33",
+      "title": "Explain convergence-sample selection together with physical latency",
+      "diagnostic_relation": "The source reports a feasible subset, convergence statistics conditional on that subset, and failure handling; per-iteration durations are hypothetical examples rather than measurements.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T04",
+        "T10"
+      ]
+    },
+    {
+      "case_id": "F34",
+      "paper_id": "P34",
+      "title": "Verify fairness at its required time scale and isolate modules using shared remaining steps",
+      "diagnostic_relation": "The source holds one allocation stage fixed, distinguishes per-realization from mean fairness, and reports that a favorable small-system observation changes in a larger system.",
+      "case_role": "source_task_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T08",
+        "T09",
+        "T12"
+      ]
+    },
+    {
+      "case_id": "F35",
+      "paper_id": "P35",
+      "title": "Compare centralized and local algorithms together with their information architectures",
+      "diagnostic_relation": "The source normalizes to an exhaustive optimum over a binary decision set and compares centralized information with local or clustered approximations while leaving scheduling questions open.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T07",
+        "T10"
+      ]
+    },
+    {
+      "case_id": "F36",
+      "paper_id": "P36",
+      "title": "Trace steady-state protection through arrivals and power saturation",
+      "diagnostic_relation": "The source separates a post-initialization invariant from transients when links join and uses a specific distress-signaling and retry mechanism with associated delay.",
+      "case_role": "source_task_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T04"
+      ]
+    },
+    {
+      "case_id": "F37",
+      "paper_id": "P37",
+      "title": "A game-theoretic proof is not incentive compatibility; nested-iteration tests must disclose truncation",
+      "diagnostic_relation": "The source uses a game as an analytical device under cooperative protocol compliance and separates an inner-solution theoretical requirement from finite inner-update experiments.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T03",
+        "T10"
+      ]
+    },
+    {
+      "case_id": "F38",
+      "paper_id": "P38",
+      "title": "Separate dual values, primal feasible recovery, and approximate inner solves",
+      "diagnostic_relation": "The source distinguishes equality of optimal values from nonunique primal recovery and notes that approximate inner solves can remove an exact subgradient guarantee; finite constructions can be approximations.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T03",
+        "T05"
+      ]
+    },
+    {
+      "case_id": "F39",
+      "paper_id": "P39",
+      "title": "Define the actual capacity metric and distributed message interfaces",
+      "diagnostic_relation": "The source defines capacity as a maximum admissible-user count under targets and describes locally measured quantities that are communicated for updates.",
+      "case_role": "source_task_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T09",
+        "T10"
+      ]
+    },
+    {
+      "case_id": "F40",
+      "paper_id": "P40",
+      "title": "Separate proofs for specific constraint combinations from empirical closeness in others",
+      "diagnostic_relation": "The source proves optimality for some long-term and short-term constraint combinations, evaluates others empirically, and distinguishes sum measures from weighted or region-based extensions.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T01",
+        "T14"
+      ]
+    },
+    {
+      "case_id": "F41",
+      "paper_id": "P41",
+      "title": "Pair protection gains with service losses and separate bounded uncertainty from full random support",
+      "diagnostic_relation": "The source trades uncertainty protection against utility, including loss of service at extreme margins, and distinguishes a bounded uncertainty set from an unbounded error distribution.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T11"
+      ]
+    },
+    {
+      "case_id": "F42",
+      "paper_id": "P42",
+      "title": "Numerical indistinguishability is not exact finite-scale zero duality gap",
+      "diagnostic_relation": "The source describes discrete assignment changes and finite numerical comparisons. These can be used as examples of explaining an allocation mechanism and reporting a tested instance, without treating numerical agreement as an exact theorem.",
+      "case_role": "mixed",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T02",
+        "T07",
+        "T12"
+      ]
+    },
+    {
+      "case_id": "F43",
+      "paper_id": "P43",
+      "title": "Name receiver comparisons together with their scheduling policies",
+      "diagnostic_relation": "The source compares a receiver-scheduling combination with residual interference, while acknowledging that user selection can change performance; its scope includes a restricted cell and sum-rate setting.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T07"
+      ]
+    },
+    {
+      "case_id": "F44",
+      "paper_id": "P44",
+      "title": "Approximation direction depends on placement; tightness and optimality conditions need separate explanation",
+      "diagnostic_relation": "The source describes where surrogate expressions are introduced and states contact, feasibility, and convergence-related conditions. This illustrates a task of documenting approximation dependencies, without independently certifying the inequalities or guarantee.",
+      "case_role": "mixed",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T02"
+      ]
+    },
+    {
+      "case_id": "F45",
+      "paper_id": "P45",
+      "title": "Check feasibility before closed-form recovery and align stopping with the task",
+      "diagnostic_relation": "The source checks feasibility before applying a positive closed-form recovery and evaluates algorithm behavior rather than a full system deployment.",
+      "case_role": "source_task_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T04"
+      ]
+    },
+    {
+      "case_id": "F46",
+      "paper_id": "P46",
+      "title": "Optimal mappings also need coding order; endpoint examples do not prove all cases",
+      "diagnostic_relation": "The source covariance mapping depends on decoding order, distinguishes endpoint choices from intermediate constructions, and leaves some singular-case coverage limited.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T05",
+        "T06",
+        "T13"
+      ]
+    },
+    {
+      "case_id": "F47",
+      "paper_id": "P47",
+      "title": "Budgeted failure to find feasibility is not infeasibility; outer iterations are not total work",
+      "diagnostic_relation": "The source defines failure through a finite search budget, compares algorithms with different inner work, and notes a condition under which an earlier irreducibility argument can fail.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T03",
+        "T04",
+        "T10"
+      ]
+    },
+    {
+      "case_id": "F48",
+      "paper_id": "P48",
+      "title": "Feasibility scaling can restore constraints without retaining optimality",
+      "diagnostic_relation": "The source separates conditional recovery optimality from scaling to restore feasibility and leaves a strong-duality or consistently feasible recovery observation unproved.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T02",
+        "T05",
+        "T13"
+      ]
+    },
+    {
+      "case_id": "F49",
+      "paper_id": "P49",
+      "title": "A global proof must identify inclusion, equivalence, and a witness closing the bounds",
+      "diagnostic_relation": "The source links achievability, an upper-bound channel construction, and a witness that closes equality; a diagram and a three-step presentation are used to communicate this chain.",
+      "case_role": "source_task_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T05",
+        "T14"
+      ]
+    },
+    {
+      "case_id": "F50",
+      "paper_id": "P50",
+      "title": "Mathematical duality does not make virtual quantities measurable; total optimality is not per-user optimality",
+      "diagnostic_relation": "The source distinguishes total-power from per-user constraints and separates virtual dual variables from locally obtainable physical quantities, with reciprocity or information exchange conditions.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T09",
+        "T10",
+        "T13"
+      ]
+    },
+    {
+      "case_id": "F51",
+      "paper_id": "P51",
+      "title": "Preserve strategy families, orders, and variable roles in duality; limits provide consistency checks",
+      "diagnostic_relation": "The source duality concerns a specified strategy class, order correspondence, and a recoverable computational mapping; an infinite-resource limit recovers a known case rather than full general capacity.",
+      "case_role": "source_scope_boundary_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T01",
+        "T12",
+        "T13"
+      ]
+    },
+    {
+      "case_id": "F52",
+      "paper_id": "P52",
+      "title": "Abstract minimax duality does not automatically retain a fixed physical-uplink interpretation",
+      "diagnostic_relation": "The source separates a convex minimax representation from a physical dual-channel interpretation requiring further structure, and treats an auxiliary noise variable as optimized rather than given.",
+      "case_role": "source_task_example",
+      "boundary": "Source-specific example; selected source contexts do not establish target sufficiency or a universal writing advantage.",
+      "entry_ids": [
+        "T05",
+        "T13"
+      ]
+    }
+  ]
+}

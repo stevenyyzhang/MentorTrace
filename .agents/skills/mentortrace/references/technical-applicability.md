@@ -1,0 +1,11 @@
+# Actual-setting applicability
+
+This is a Technical subpass, not another lane or an Advisor inventory. New runs freeze `technical_applicability:1`; older frozen protocols remain unchanged.
+
+The neutral planner identifies actual configurations and the operations they invoke, with anchors at both ends. Technical independently adds missed configurations and evaluates each. Cover baselines, ablations and experiment settings as well as the main method. An exclusion needs a specific reason and does not cancel the ordinary Technical check. An object may provide context for several configurations; a configuration review links the ordinary checks that actually assess that setting. It may cite an additional check for a genuine dependency, such as noise normalization behind an SNR calculation. Every Technical object still needs its ordinary check, while each configuration needs at least one linked check. Do not attach an unrelated check merely to fill a cross-product matrix.
+
+For each relevant setting record: actual values or assumptions → operation prerequisite → substitution/calculation or supporting evidence → sufficient, gap, unknown, not applicable or unfinished → ordinary check/finding links. Inspect singleton/zero settings, dimensions, normalization, existence of moments, information availability, dependence/noise assumptions and statistical operation order when the manuscript actually uses or claims them. Do not invent arbitrary edge cases or infer sufficiency from the presence of a formula alone.
+
+For any operation whose prerequisite fails under a reported setting, distinguish an undefined or inapplicable expression in the manuscript from an implementation that may use an unstated convention. Do not infer that the experiment itself is wrong without evidence. Ask for the actual convention and its consequence when those facts are absent; retain uncertainty until they are supplied.
+
+Carry any gap's exact condition and repair obligation into its finding, not only a check's explanation. Additional configurations cannot rewrite the frozen case route. Missing author facts remain unknown. A structurally complete inventory is not proof that every configuration was found or evaluated correctly; review its completeness against actual settings in tables, captions, baseline descriptions and claims.

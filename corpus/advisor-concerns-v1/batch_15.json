@@ -1,0 +1,1313 @@
+[
+  {
+    "id": "C0421",
+    "core_question": {
+      "text": "Do numerical comparisons explain what each baseline estimates, how it works, and which overhead/error claims the plots support?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02622",
+        "SRC02623",
+        "SRC02624",
+        "SRC02625",
+        "SRC02626",
+        "SRC02627",
+        "SRC02628",
+        "SRC02629",
+        "SRC02630",
+        "SRC02631",
+        "SRC02632",
+        "SRC02633"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Several estimation baselines are compared using training overhead and error.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02622",
+        "SRC02623",
+        "SRC02624",
+        "SRC02625",
+        "SRC02626",
+        "SRC02627",
+        "SRC02628",
+        "SRC02629",
+        "SRC02630",
+        "SRC02631",
+        "SRC02632",
+        "SRC02633"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Identify each baseline's estimation action and target, then align comparisons with matched conditions and plotted metrics.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02622",
+        "SRC02623",
+        "SRC02624",
+        "SRC02625",
+        "SRC02626",
+        "SRC02627",
+        "SRC02628",
+        "SRC02629",
+        "SRC02630",
+        "SRC02631",
+        "SRC02632",
+        "SRC02633"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A tensor-decomposition method name and training-design label did not explain its actual operation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02627"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Briefly explain direct least squares, factorization, and alternating estimation as applicable, and qualify conclusions by matched pilot budgets and observed error curves.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02622",
+        "SRC02623",
+        "SRC02624",
+        "SRC02625",
+        "SRC02626",
+        "SRC02627",
+        "SRC02628",
+        "SRC02629",
+        "SRC02630",
+        "SRC02631",
+        "SRC02632",
+        "SRC02633"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "This applies when experiments support relative accuracy or overhead advantages.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02622",
+        "SRC02623",
+        "SRC02624",
+        "SRC02625",
+        "SRC02626",
+        "SRC02627",
+        "SRC02628",
+        "SRC02629",
+        "SRC02630",
+        "SRC02631",
+        "SRC02632",
+        "SRC02633"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source IDs and version coverage were checked and historical quoted substrings mechanically compared; semantic and repair sufficiency remain provisional, and transfer validation is not established. No additional local unresolved limitation is recorded. Some historical quotations remain unconfirmed.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0421",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0422",
+    "core_question": {
+      "text": "Are multi-user literature claims and extended baselines verified, with accurate descriptions of earlier dimension-reduction limits?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02634",
+        "SRC02635",
+        "SRC02636",
+        "SRC02637",
+        "SRC02638",
+        "SRC02639"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Literature gaps are claimed or methods are extended into another scenario for comparison.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02634",
+        "SRC02635",
+        "SRC02636",
+        "SRC02637",
+        "SRC02638",
+        "SRC02639"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Verify native related methods first; if absent, state how orthogonalization extends a single-user baseline and qualify the comparison.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02634",
+        "SRC02635",
+        "SRC02636",
+        "SRC02637",
+        "SRC02638",
+        "SRC02639"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Calling baselines single-user and directly applying them to multiple users omitted the extension rationale and literature verification.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02634",
+        "SRC02635"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Distinguish native and extended baselines, describe exploited structure and omitted correlation accurately, and narrow priority claims without adequate literature evidence.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02634",
+        "SRC02635",
+        "SRC02636",
+        "SRC02637",
+        "SRC02638",
+        "SRC02639"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "This applies to cross-scenario baseline extensions or claims of prior-work absence.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02634",
+        "SRC02635",
+        "SRC02636",
+        "SRC02637",
+        "SRC02638",
+        "SRC02639"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source IDs and version coverage were checked and historical quoted substrings mechanically compared; semantic and repair sufficiency remain provisional, and transfer validation is not established. No literature audit establishes absence of multi-user multi-antenna precedent; independence claims about an iterative baseline still require algorithm verification.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0422",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0423",
+    "core_question": {
+      "text": "Why does non-diagonal control introduce additional cascaded coefficients, and which new terms enter observations or design?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02640",
+        "SRC02641",
+        "SRC02642",
+        "SRC02643",
+        "SRC02644",
+        "SRC02645",
+        "SRC02646",
+        "SRC02647",
+        "SRC02648",
+        "SRC02649",
+        "SRC02650"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Channel-estimation dimensions are compared between diagonal and non-diagonal control matrices.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02640",
+        "SRC02641",
+        "SRC02642",
+        "SRC02643",
+        "SRC02644",
+        "SRC02645",
+        "SRC02646",
+        "SRC02647",
+        "SRC02648",
+        "SRC02649",
+        "SRC02650"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Match active control entries, physical paths, newly relevant cascaded coefficients, and terms absent under diagonal control.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02640",
+        "SRC02641",
+        "SRC02642",
+        "SRC02643",
+        "SRC02644",
+        "SRC02645",
+        "SRC02646",
+        "SRC02647",
+        "SRC02648",
+        "SRC02649",
+        "SRC02650"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Hardware interconnection language did not derive why more coefficients are needed.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02646"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Expand the channel-control-channel product for both structures, identify cross-index products and counts, and qualify any restricted architecture.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02640",
+        "SRC02641",
+        "SRC02642",
+        "SRC02643",
+        "SRC02644",
+        "SRC02645",
+        "SRC02646",
+        "SRC02647",
+        "SRC02648",
+        "SRC02649",
+        "SRC02650"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Hardware connections alone do not prove parameter-dimension changes; the comparison must follow the observation model.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02640",
+        "SRC02641",
+        "SRC02642",
+        "SRC02643",
+        "SRC02644",
+        "SRC02645",
+        "SRC02646",
+        "SRC02647",
+        "SRC02648",
+        "SRC02649",
+        "SRC02650"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source IDs and version coverage were checked and historical quoted substrings mechanically compared; semantic and repair sufficiency remain provisional, and transfer validation is not established. Cross-propagation coefficients from non-diagonal terms still need itemwise correspondence with the diagonal model. Some historical quotations remain unconfirmed.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0423",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0424",
+    "core_question": {
+      "text": "Do same-order overhead comparisons use the same user-antenna counts and reference-channel ranks?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02651",
+        "SRC02652",
+        "SRC02653",
+        "SRC02654"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Architecture overhead formulas depend on antenna dimensions and channel rank.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02651",
+        "SRC02652",
+        "SRC02653",
+        "SRC02654"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Compare using common user antennas, surface size, receive dimension, and channel rank, with justified extended baselines.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02651",
+        "SRC02652",
+        "SRC02653",
+        "SRC02654"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A general multi-antenna formula was compared against a single-antenna conventional result.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02653",
+        "SRC02654"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Derive or reliably cite conventional overhead under identical dimensions and rank, or limit comparison to mutually proved special cases.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02651",
+        "SRC02652",
+        "SRC02653",
+        "SRC02654"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Same-order conclusions depend on common assumptions in any cross-method training comparison.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02651",
+        "SRC02652",
+        "SRC02653",
+        "SRC02654"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source IDs and version coverage were checked and historical quoted substrings mechanically compared; semantic and repair sufficiency remain provisional, and transfer validation is not established. The cited source's support for the multi-antenna rank-dependent formula requires checking or an added derivation.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0424",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0425",
+    "core_question": {
+      "text": "How does comparable pilot overhead preserve the practical value of richer control when more coefficients must be characterized?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02655",
+        "SRC02656",
+        "SRC02657",
+        "SRC02658",
+        "SRC02659",
+        "SRC02660",
+        "SRC02661",
+        "SRC02662"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A new design offers rate gains but additional training, control, or computation may consume them.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02655",
+        "SRC02656",
+        "SRC02657",
+        "SRC02658",
+        "SRC02659",
+        "SRC02660",
+        "SRC02661",
+        "SRC02662"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Compare new, existing rich-control, and conventional designs under one setting; explain how reference-plus-ratio structure reduces direct-estimation scaling and qualify throughput claims.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02655",
+        "SRC02656",
+        "SRC02657",
+        "SRC02658",
+        "SRC02659",
+        "SRC02660",
+        "SRC02661",
+        "SRC02662"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A same-order overhead conclusion omitted the linked training durations, comparison values, and actual usable-data question.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02655",
+        "SRC02656",
+        "SRC02660"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Provide formulas and a common-assumption overhead table, separate structural and pilot-design roles, and calculate coherence-length, training-fraction, and data-rate effects before claiming net-throughput gains.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02655",
+        "SRC02656",
+        "SRC02657",
+        "SRC02658",
+        "SRC02659",
+        "SRC02660",
+        "SRC02661",
+        "SRC02662"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "When only estimation costs are supported, limit claims accordingly; the particular three architecture families are not universal baselines.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02655",
+        "SRC02656",
+        "SRC02657",
+        "SRC02658",
+        "SRC02659",
+        "SRC02660",
+        "SRC02661",
+        "SRC02662"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source IDs and version coverage were checked and historical quoted substrings mechanically compared; semantic and repair sufficiency remain provisional, and transfer validation is not established. Same-order training supports conditional practical-value reasoning but does not alone guarantee higher net throughput. Some historical quotations remain unconfirmed.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0425",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0426",
+    "core_question": {
+      "text": "Do the reference set, individual summaries, applicability claims, and quadratic-overhead baseline describe the same supporting works?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02663",
+        "SRC02664",
+        "SRC02665",
+        "SRC02666",
+        "SRC02667",
+        "SRC02668"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A review groups references and summarizes shared costs, limits, or applicability.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02663",
+        "SRC02664",
+        "SRC02665",
+        "SRC02666",
+        "SRC02667",
+        "SRC02668"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Align review scope, algorithms, overhead attribution, and conditions paper by paper, identifying methods with differing expansions or priors.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02663",
+        "SRC02664",
+        "SRC02665",
+        "SRC02666",
+        "SRC02667",
+        "SRC02668"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The stated citation set differed from works later discussed, obscuring which methods supported the comparison.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02663",
+        "SRC02664"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Verify each reference and use one consistent set in prose and tables; qualify methods that do not share the asserted scaling.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02663",
+        "SRC02664",
+        "SRC02665",
+        "SRC02666",
+        "SRC02667",
+        "SRC02668"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "This applies to any multi-paper baseline summary, without imposing historical citation numbering or baseline choices.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02663",
+        "SRC02664",
+        "SRC02665",
+        "SRC02666",
+        "SRC02667",
+        "SRC02668"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source IDs and version coverage were checked and historical quoted substrings mechanically compared; semantic and repair sufficiency remain provisional, and transfer validation is not established. Cited full texts are unavailable, so correctness of attributions is not established. Some historical quotations remain unconfirmed.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0426",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0427",
+    "core_question": {
+      "text": "Are coefficients entering diagonal and non-diagonal reception distinguished from irreducible independent unknowns?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02669",
+        "SRC02670",
+        "SRC02671"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A parameter-count comparison involves matrices with shared or coupled entries.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02669",
+        "SRC02670",
+        "SRC02671"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Identify cascaded terms activated by each control structure and separate representation dimension from independent parameter counts after exploiting correlation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02669",
+        "SRC02670",
+        "SRC02671"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A coupled-coefficient count did not clarify whether it described direct-estimation representation or unavoidable unknowns.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02670",
+        "SRC02671"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Expand indexed observation terms and count both represented coefficients and independent parameters under stated conditions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02669",
+        "SRC02670",
+        "SRC02671"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "This applies when model dimensions justify complexity or training needs; other explanations are valid with defined effective parameters and proved identifiability.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02669",
+        "SRC02670",
+        "SRC02671"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source IDs and version coverage were checked and historical quoted substrings mechanically compared; semantic and repair sufficiency remain provisional, and transfer validation is not established. A later reference-and-ratio reduction contradicts unqualified full-coefficient estimation wording unless explicitly framed as the direct baseline. Some historical quotations remain unconfirmed.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0427",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0428",
+    "core_question": {
+      "text": "How do feasible paired pilots and unitary controls eliminate coupling, estimate the reference channel, and then estimate scaling factors?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02672",
+        "SRC02673",
+        "SRC02674",
+        "SRC02675",
+        "SRC02676",
+        "SRC02677",
+        "SRC02678"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Two hardware-constrained control stages use pairing to separate coupled parameters.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02672",
+        "SRC02673",
+        "SRC02674",
+        "SRC02675",
+        "SRC02676",
+        "SRC02677",
+        "SRC02678"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Explain nonlinearity and unitary constraints, first-stage controls/pilots, second-stage pairing, cancellation, and ratio equations; noisy designs additionally require error treatment.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02672",
+        "SRC02673",
+        "SRC02674",
+        "SRC02675",
+        "SRC02676",
+        "SRC02677",
+        "SRC02678"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Treating first-stage controls as given and later referring back to a theorem did not explain how to generate them.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02675"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Construct feasible first-stage unitary controls and nonzero pilots, prove pairing/cancellation, and distinguish their roles in noiseless rank proofs and noisy mean-square-error design.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02672",
+        "SRC02673",
+        "SRC02674",
+        "SRC02675",
+        "SRC02676",
+        "SRC02677",
+        "SRC02678"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Other identifiable designs need not use the historical cyclic construction; this applies to paired or time-varying separation of coupled parameters.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02672",
+        "SRC02673",
+        "SRC02674",
+        "SRC02675",
+        "SRC02676",
+        "SRC02677",
+        "SRC02678"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source IDs and version coverage were checked and historical quoted substrings mechanically compared; semantic and repair sufficiency remain provisional, and transfer validation is not established. Noisy estimation must match the actual pilot design; final acceptance is absent, and some historical quotations remain unconfirmed.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0428",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0429",
+    "core_question": {
+      "text": "How does a fixed training construction recover reference and scaling parameters, with correctly qualified sufficiency, probability-one claims, and rank knowledge?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02679",
+        "SRC02680",
+        "SRC02681",
+        "SRC02682",
+        "SRC02683",
+        "SRC02684"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Recovery guarantees for concrete observation counts depend on rank, randomness, or unknown rank.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02679",
+        "SRC02680",
+        "SRC02681",
+        "SRC02682",
+        "SRC02683",
+        "SRC02684"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "When initial-stage length equals reference dimension, paired stages double that length. Prove reference and scaling-design rank separately, distinguishing deterministic/almost-sure guarantees and known-low-rank reductions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02679",
+        "SRC02680",
+        "SRC02681",
+        "SRC02682",
+        "SRC02683",
+        "SRC02684"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A minimum-duration aim inside an already fixed construction did not prove the constructed matrices full rank.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02680",
+        "SRC02681"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Fix the construction and parameter domain, connect the reference design to a unitary basis, and prove stacked rank over the claimed probability scope or narrow the result.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02679",
+        "SRC02680",
+        "SRC02681",
+        "SRC02682",
+        "SRC02683",
+        "SRC02684"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "No fixed doubled-duration rule or universal unknown-rank assumption applies; rank-dependent shorter schedules need separate conditions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02679",
+        "SRC02680",
+        "SRC02681",
+        "SRC02682",
+        "SRC02683",
+        "SRC02684"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source IDs and version coverage were checked and historical quoted substrings mechanically compared; semantic and repair sufficiency remain provisional, and transfer validation is not established. Full rank for every nonzero scaling vector under a random cyclic construction needs independent mathematical verification; no acceptance is shown, and some historical quotations remain unconfirmed.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0429",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0430",
+    "core_question": {
+      "text": "Can feasible pilots and unitary controls actually attain the observation lower bound set by per-slot rank?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02685",
+        "SRC02686",
+        "SRC02687",
+        "SRC02688",
+        "SRC02689"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Independent information per observation yields a sample lower bound claimed attainable by a schedule or construction.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02685",
+        "SRC02686",
+        "SRC02687",
+        "SRC02688",
+        "SRC02689"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "The slot lower bound is the ceiling of remaining unknown-column count divided by per-slot rank. Define feasible pilots/controls, prove independence, and handle remainder groups.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02685",
+        "SRC02686",
+        "SRC02687",
+        "SRC02688",
+        "SRC02689"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A transportation analogy and an unspecified allocation matrix did not explain the construction or meanings of its nonzero entries.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02686",
+        "SRC02687"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Construct legal nonoverlapping pilot groups, rank-preserving unitary transforms, and coverage of each user's required directions; handle remainder groups and provide a complete small example.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02685",
+        "SRC02686",
+        "SRC02687",
+        "SRC02688",
+        "SRC02689"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Any valid construction can establish attainability; the historical analogy and grouping formulas are not required.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02685",
+        "SRC02686",
+        "SRC02687",
+        "SRC02688",
+        "SRC02689"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source IDs and version coverage were checked and historical quoted substrings mechanically compared; semantic and repair sufficiency remain provisional, and transfer validation is not established. Specific full-rank matrix algebra still requires verification; absence of repeated comments is not acceptance, and some historical quotations remain unconfirmed.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0430",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0431",
+    "core_question": {
+      "text": "Can a small training example be reproduced from pilots and control matrices through rank-preserving operations to column independence?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02690",
+        "SRC02691",
+        "SRC02692",
+        "SRC02693"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A worked example illustrates sequential inputs, matrix transformations, and rank claims.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02690",
+        "SRC02691",
+        "SRC02692",
+        "SRC02693"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Define pilots, controls, decomposition matrices, and bases; use justified zero-row deletion, nonzero scaling, and elementary operations, then prove rank through independent directions or a determinant.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02690",
+        "SRC02691",
+        "SRC02692",
+        "SRC02693"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Simply asserting independence of leading rows did not explain why one basis direction cannot be generated by the others.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02694",
+        "SRC02693"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Define all dimensions and inputs, show reproducible row operations leading to a full-rank square submatrix, and use unitary-basis independence to prove its rank.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02690",
+        "SRC02691",
+        "SRC02692",
+        "SRC02693"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Examples illustrating general constructions can be removed or qualified when the theorem does not depend on them; historical example sizes are not universal.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02690",
+        "SRC02691",
+        "SRC02692",
+        "SRC02693"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source IDs and version coverage were checked and historical quoted substrings mechanically compared; semantic and repair sufficiency remain provisional, and transfer validation is not established. One pilot vector's dimension is inconsistent, and simplified matrix rows need checking against the stated controls; some historical quotations remain unconfirmed.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0431",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0432",
+    "core_question": {
+      "text": "How are additional noisy-training slots designed beyond a noiseless minimum, and what performance improvement is actually supported?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02695",
+        "SRC02696",
+        "SRC02697"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Practical noisy estimation uses more observations than an ideal recovery construction.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02695",
+        "SRC02696",
+        "SRC02697"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Separate noiseless minimum duration from additional noisy slots, specifying pilot distribution, control generation, and conditional improvement claims.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02695",
+        "SRC02696",
+        "SRC02697"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "An unconditional statement that diverse measurements never reduce useful information and therefore improve estimation lacked conditions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02697"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Give feasible random or optimized extra-slot designs and prove or measure effects under specified noise, prior, and estimator models, or report the design without a guarantee.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02695",
+        "SRC02696",
+        "SRC02697"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Random pilots are not mandatory; this concerns differing theoretical and practical observation lengths.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02695",
+        "SRC02696",
+        "SRC02697"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source IDs and version coverage were checked and historical quoted substrings mechanically compared; semantic and repair sufficiency remain provisional, and transfer validation is not established. Available evidence cannot establish random-design effects for all noise and prior models; some historical quotations remain unconfirmed.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0432",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0433",
+    "core_question": {
+      "text": "Are structural theorem conditions distinguished from numerical examples under a particular distribution?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02698",
+        "SRC02699"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Theory relies on structure or rank while simulations choose or compare random distributions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02698",
+        "SRC02699"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "State the algebraic conditions and explain how a non-Gaussian example differs from earlier settings and what it demonstrates.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02698",
+        "SRC02699"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Introducing an alternative fading distribution to show low-rank effects did not establish distributional scope or the figure's evidential role.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02698",
+        "SRC02699"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State proved algebraic assumptions first, label alternate-distribution simulations as examples, and narrow claims when arbitrary-distribution results are unproved.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02698",
+        "SRC02699"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "One distributional example cannot establish performance under every distribution.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02698",
+        "SRC02699"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source IDs and version coverage were checked and historical quoted substrings mechanically compared; semantic and repair sufficiency remain provisional, and transfer validation is not established. The alternative fading example does not prove universal distributional performance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0433",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0434",
+    "core_question": {
+      "text": "How should transfer from one fully connected architecture to other architectures or wideband systems be qualified?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02700",
+        "SRC02701"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Conclusions extrapolate a specific hardware or signal model to new architectures or bandwidth conditions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02700",
+        "SRC02701"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Separate proved common channel structure from unproved realizable protocols, framing future work as specific new system and overhead questions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02700",
+        "SRC02701"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Claiming the strategy remained efficient while acknowledging protocol redevelopment left unsupported transfer guarantees.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02700",
+        "SRC02701"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Retain structural applicability conditions, frame unstudied architecture/wideband estimation as future work, or prove legal controls and identifiability for those extensions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02700",
+        "SRC02701"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "This applies when conclusions exceed the analyzed scope; proposed future systems need not be imposed on other studies.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02700",
+        "SRC02701"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source IDs and version coverage were checked and historical quoted substrings mechanically compared; semantic and repair sufficiency remain provisional, and transfer validation is not established. One historical quotation remains unconfirmed; extension efficiency is not established by shared structure alone.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0434",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0435",
+    "core_question": {
+      "text": "Is complete detection/localization validated when several range clusters contain targets simultaneously?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02702"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A cluster-wise method claims complete-task applicability with targets present across multiple range clusters.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02702"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Connect simultaneous occupied clusters, per-cluster observations and estimates, cross-cluster output assembly, and claimed complete-task performance.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02702"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A same-cluster experimental setting did not test simultaneous occupied clusters; a suggested multi-cluster setting had no supplied results.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02702"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Under the claimed multi-cluster scope, specify targets and field regimes, explain assembly of final detections/positions, and report full-task results with optional diagnostic per-cluster metrics.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02702"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Illustrative cluster and target counts are not requirements; same-cluster resolution remains valuable, and proposing or running a setting alone does not prove performance.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02702"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Supplied page evidence only; transfer validation, independently verified advisor identity, and advisor acceptance are not established. The original comment author's advisor identity is not independently verified; implementation results and advisor acceptance are not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0435",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0436",
+    "core_question": {
+      "text": "When a range cluster mixes near- and far-field targets, do both contributions explain the claimed far-field angle estimator?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02703",
+        "SRC02704"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Far-field angles are inferred from a composite cluster channel that may contain near-field targets.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02703",
+        "SRC02704"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Connect field-regime definitions, target subsets, both channel contributions, composite steering representation, and the relation used for far-field estimation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02703",
+        "SRC02704"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The composite model lacked requested near/far contributions. An author reply claimed an equation was added, but the supplied page did not show that equation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02703",
+        "SRC02704"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Define the field conditions, show both contributions to the observation, and identify the estimator's supporting relation and limits; missed-detection/false-alarm metrics can be optional additional evidence.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02703",
+        "SRC02704"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Explanatory decomposition does not prove identifiability or performance; an author reply does not establish implementation or acceptance, and historical equation numbers are not requirements.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02703",
+        "SRC02704"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Supplied page evidence only; transfer validation, independently verified advisor identity, and advisor acceptance are not established. The comment author's identity is unverified; the separate author reply's claimed formula change cannot be checked from supplied pages, and acceptance is absent.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0436",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0437",
+    "core_question": {
+      "text": "When important optimization constraints are cited from an appendix, can readers understand the feasible set from the main text?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02705"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A main-text problem references appendix conditions that may materially restrict candidate solutions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02705"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Connect decisions and objective to the cited constraints' restrictions and importance, feasible set, and later algorithm conditions; detailed derivations may remain in the appendix.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02705"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Only a broad cost-threshold description accompanied appendix constraint references; full formulas and later revisions were unavailable.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02705"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Assess importance, present necessary constraint forms and variable meanings near the problem, and align later algorithm conditions; this is a potential repair, not a documented completed one.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02705"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Only constraints necessary to understanding need relocation; historical formula numbers and counts are not universal, and vague purpose statements may be insufficient.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02705"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Supplied page evidence only; transfer validation, independently verified advisor identity, and advisor acceptance are not established. The original comment author's identity is unverified; full cited conditions, subsequent implementation, and acceptance records are unavailable.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0437",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  }
+]

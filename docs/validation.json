@@ -1,0 +1,15 @@
+{
+  "status": "pass",
+  "tests": 83,
+  "workflow_stages": 21,
+  "concerns_read_exactly_once": 437,
+  "advisor_batches": 15,
+  "source_execution_views_checked": {
+    "reader": 189,
+    "technical": 52
+  },
+  "post_freeze_relation_references": 2,
+  "largest_synthetic_request_utf8_bytes": 163291,
+  "model_calls": 0,
+  "limitations": "Synthetic schema/isolation/delivery checks, without page images, live model output or diagnostic-quality evaluation."
+}

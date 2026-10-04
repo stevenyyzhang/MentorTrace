@@ -1,0 +1,13 @@
+{
+  "files": {
+    "category_evidence.json": "fc2809c5e4df11d443660628f7b6dd0dd5e5bc507325da7e049a95ee19b4afb4",
+    "manifest.json": "e48839183e7536852eeb6f4f2b3b8922979cc8d59ace89d7d0e0251360e82069",
+    "reader_cases.json": "c1ef5109765946871393b83b8d2d5156bf1ad4969febb87287a07d70a4e9885c",
+    "reader_index.json": "2df3b9d122813a70912089fa857b6050aba4127637a60dfab6d43ac388a2f233",
+    "semantic_pairs.json": "63a42701e203dbf5250adea9d775e54b7d09328935320aec39d20082275cfcb8",
+    "sources.json": "a0416ac83f90ef299e42cbee17746a316d4f35dc0e394de10f1840818361ebec",
+    "technical_cases.json": "64b3a57af3392372a6041c00a21a50222233f097e3f23d15cc6266547c092753",
+    "technical_companions.json": "b17aa4960016f678d991ea80cfd52712e29d3da9b4a127ee6997b2a024d9bf26",
+    "technical_index.json": "d4146af5376afb5af7f082bb9066f3cf8b8792bff97b1d30e9bfa07490da29d7"
+  }
+}

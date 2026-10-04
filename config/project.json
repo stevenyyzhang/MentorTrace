@@ -1,0 +1,10 @@
+{
+  "name": "MentorTrace",
+  "version": "1.0.0",
+  "candidate_skill": ".agents/skills/mentortrace",
+  "model_calls_enabled": false,
+  "default_knowledge": "corpus/advisor-concerns-v1",
+  "goodpaper_knowledge": "corpus/published-cases-v1",
+  "initial_mode": "diagnose_only",
+  "publication_scope": "English analytical abstractions and cited case summaries; no private historical text"
+}

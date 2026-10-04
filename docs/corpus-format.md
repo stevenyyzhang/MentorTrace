@@ -1,0 +1,19 @@
+# English public corpus interface
+
+All corpus field names and analytical content are English. The final author report uses English followed by Chinese according to the skill's report-language contract.
+
+Each concern has an anonymous `id`, six decision objects, and `evidence_status`. The decision objects are `core_question`, `new_manuscript_check`, `relationship_to_check`, `historically_insufficient_response`, `potentially_sufficient_response`, and `applicability_boundary`. Each contains `text`, `basis`, and anonymous `source_ids`. A source ID is a linkage token, not a public document title, filesystem location or proof of a current defect.
+
+`evidence_status` distinguishes a public analyst abstraction from private historical evidence and advisor acceptance. Private histories are unavailable in this distribution. Explicitly record missing evidence and do not infer that an adequate proposed response was historically implemented or accepted. The six fields must be read together; a short question without its conditions is insufficient.
+
+Private source records previously held annotation text (`original_comments`), the manuscript text marked by an annotation (`marked_text`), neighboring text (`local_context`), and version/transition quotations. Those records and the private identity mapping are excluded from public corpora. Generalized analytical statements replace source quotations. They are not presented as verbatim mentor instructions or certified universal requirements.
+
+Published cases carry `public_source` containing the public title, DOI, URL and year. These are public bibliographic references, not bundled local PDFs. `full_case` and `full_source_record` mean the complete analytical summary record available in this release, not a copy of the original article. Technical summaries are not independent re-proofs. The indexes and frozen route link cases to actual target tasks; case IDs never substitute for evidence from the target manuscript.
+
+Reader records omit undocumented `plausible_alternative`. The former `actual_reader_benefit` is `hypothesized_reader_benefit`; no reader-study outcome is implied. Technical `sufficient_alternative` is removed; an optional `transfer_hypothesis` is an analyst research note and `assessed_target_sufficiency` is null. `analysis_status` separates reconstruction, effects and transfer evidence. Unvalidated editing recipes and analyst critiques are excluded from runtime selected cases and revision-proposal requests. Technical execution views supply the source-specific description and evidence limits. Routes require a `sufficiency_question`, not a manufactured sufficient alternative.
+
+The 11 Reader categories group source examples from 2–4 papers each; the 14 Technical categories nominate cases from 4–11 papers each. These overlapping, curated groups are recurring task relationships, not a survey showing common strengths of every paper or superior writing. Technical `case_role` distinguishes source task examples, source scope-boundary examples and mixed source/analyst notes. See `case-quality-audit.md` and the corpus `category_evidence.json` for support and limits.
+
+The frozen package manifest and FREEZE.json must be regenerated together when content changes. Git uses LF text files so checkout conversion does not invalidate hashes. Runtime batches must preserve full fields, card order and unique coverage. Do not reuse hashes, manifests or batch counts from a different package.
+
+Public abstractions and withheld history do not establish diagnostic accuracy. Any quality comparison must control manuscript inputs, model settings and generic review rules separately from corpus changes.

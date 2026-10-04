@@ -1,0 +1,2142 @@
+{
+  "reader": {
+    "categories": [
+      {
+        "id": "R01",
+        "source_case_ids": [
+          "P02-01",
+          "P11-C1",
+          "P42-C1"
+        ],
+        "distinct_paper_ids": [
+          "P02",
+          "P11",
+          "P42"
+        ],
+        "distinct_paper_count": 3,
+        "source_supported_common_task_description": "Explain the specific obstacle or scope difference that motivates moving from an earlier result or approach to the present task.",
+        "evidence_status": "actual_source_examples_grouped_by_analyst_interpretation",
+        "actual_source_examples": true,
+        "category_grouping_is_analyst_interpretation": true,
+        "empirically_validated_writing_advantage": false,
+        "scope_limit": "The examples concern different estimator, objective and asymptotic-scope changes. They support a recurring task relationship in the selected papers, not a shared technical mechanism or a mandatory novelty-sentence format.",
+        "source_checks": [
+          {
+            "case_id": "P02-01",
+            "paper_id": "P02",
+            "source_relationship": "Multiple simultaneous transmit signals make a previous estimator treat other transmit signals as interference, motivating a new estimation task."
+          },
+          {
+            "case_id": "P11-C1",
+            "paper_id": "P11",
+            "source_relationship": "The source separately identifies nonconcavity, unit-modulus constraints, coupled variables and mismatched prior objectives before its solver direction."
+          },
+          {
+            "case_id": "P42-C1",
+            "paper_id": "P42",
+            "source_relationship": "The source distinguishes an infinite-tone duality basis from explicit evaluation at practical finite tone counts."
+          }
+        ]
+      },
+      {
+        "id": "R02",
+        "source_case_ids": [
+          "P34-C6",
+          "P46-C3",
+          "P43-C1"
+        ],
+        "distinct_paper_ids": [
+          "P34",
+          "P43",
+          "P46"
+        ],
+        "distinct_paper_count": 3,
+        "source_supported_common_task_description": "Fix the meaning or role of an object before its term, order or performance interpretation can be confused with another object.",
+        "evidence_status": "actual_source_examples_grouped_by_analyst_interpretation",
+        "actual_source_examples": true,
+        "category_grouping_is_analyst_interpretation": true,
+        "empirically_validated_writing_advantage": false,
+        "scope_limit": "Terminology, encoding order and achievable-rate scope are different subtypes. Their grouping is an analyst abstraction; explicit role identification can occur through definitions, figures or precise references.",
+        "source_checks": [
+          {
+            "case_id": "P34-C6",
+            "paper_id": "P34",
+            "source_relationship": "The conclusion defines variable as configurable base-station rate constraints and flexible rate allocation."
+          },
+          {
+            "case_id": "P46-C3",
+            "paper_id": "P46",
+            "source_relationship": "The source states reverse MAC/BC processing order and illustrates the correspondence before distinguishing existence from computable transformations."
+          },
+          {
+            "case_id": "P43-C1",
+            "paper_id": "P43",
+            "source_relationship": "The source identifies interference-as-noise achievable rates and distinguishes them from a larger multiuser capacity region."
+          }
+        ]
+      },
+      {
+        "id": "R03",
+        "source_case_ids": [
+          "P05:C1",
+          "P18-C2",
+          "P46-C7"
+        ],
+        "distinct_paper_ids": [
+          "P05",
+          "P18",
+          "P46"
+        ],
+        "distinct_paper_count": 3,
+        "source_supported_common_task_description": "Associate a claim with the condition, object and evidence scope that actually qualify it.",
+        "evidence_status": "actual_source_examples_grouped_by_analyst_interpretation",
+        "actual_source_examples": true,
+        "category_grouping_is_analyst_interpretation": true,
+        "empirically_validated_writing_advantage": false,
+        "scope_limit": "The sources distinguish detection from estimation, theorem conditions from scheduling optimality, and sum-rate results from whole regions. The open-region status belongs to its publication context and is not independently verified as current.",
+        "source_checks": [
+          {
+            "case_id": "P05:C1",
+            "paper_id": "P05",
+            "source_relationship": "The source separates asymptotically vanishing detection error from remaining estimation error and Part II rate analysis."
+          },
+          {
+            "case_id": "P18-C2",
+            "paper_id": "P18",
+            "source_relationship": "The source links eigenspace and tall-unitary conditions to scheduling patterns, then explicitly limits optimality and notes a separate partition problem."
+          },
+          {
+            "case_id": "P46-C7",
+            "paper_id": "P46",
+            "source_relationship": "The conclusion separates established region duality and sum-rate capacity from possibilities concerning a complete region and other networks."
+          }
+        ]
+      },
+      {
+        "id": "R04",
+        "source_case_ids": [
+          "P22-02",
+          "P36-C01",
+          "P41-06"
+        ],
+        "distinct_paper_ids": [
+          "P22",
+          "P36",
+          "P41"
+        ],
+        "distinct_paper_count": 3,
+        "source_supported_common_task_description": "Specify the modeled unit, operating assumptions and intentionally perturbed or retained interactions so later formulas and findings are read within that scope.",
+        "evidence_status": "actual_source_examples_grouped_by_analyst_interpretation",
+        "actual_source_examples": true,
+        "category_grouping_is_analyst_interpretation": true,
+        "empirically_validated_writing_advantage": false,
+        "scope_limit": "P22-02 primarily declares model scope rather than explaining every discarded mechanism. Only P36-C01 explicitly licenses a reduction through negligible cross-channel interference; these are related scope tasks, not identical idealization arguments.",
+        "source_checks": [
+          {
+            "case_id": "P22-02",
+            "paper_id": "P22",
+            "source_relationship": "The model specifies cells, antennas, terminal counts, synchronization, TDD, reuse and flat-fading scope before the uplink expression."
+          },
+          {
+            "case_id": "P36-C01",
+            "paper_id": "P36",
+            "source_relationship": "The model uses individual links even for multihop paths and invokes negligible cross-channel interference before reducing to cochannel analysis."
+          },
+          {
+            "case_id": "P41-06",
+            "paper_id": "P41",
+            "source_relationship": "The source explains its primary-user outage focus and perturbs two related channels while explicitly retaining two ideal channels."
+          }
+        ]
+      },
+      {
+        "id": "R05",
+        "source_case_ids": [
+          "P35-1",
+          "P40-1",
+          "P25-4"
+        ],
+        "distinct_paper_ids": [
+          "P25",
+          "P35",
+          "P40"
+        ],
+        "distinct_paper_count": 3,
+        "source_supported_common_task_description": "Identify what a mathematical result resolves or leaves unresolved before a subsequent theorem, recovery step or original-objective conclusion.",
+        "evidence_status": "actual_source_examples_grouped_by_analyst_interpretation",
+        "actual_source_examples": true,
+        "category_grouping_is_analyst_interpretation": true,
+        "empirically_validated_writing_advantage": false,
+        "scope_limit": "The observed bridges are scaling-to-boundary reasoning, statewise-to-optimal-dual reasoning and relaxation-to-rank-one recovery. Their writing relation does not establish the technical validity of any bridge.",
+        "source_checks": [
+          {
+            "case_id": "P35-1",
+            "paper_id": "P35",
+            "source_relationship": "The proof connects strict improvement under simultaneous power scaling to a maximum-power component at an optimum."
+          },
+          {
+            "case_id": "P40-1",
+            "paper_id": "P40",
+            "source_relationship": "The source applies a statewise result valid for arbitrary dual variables at optimal dual values before a global capacity theorem."
+          },
+          {
+            "case_id": "P25-4",
+            "paper_id": "P25",
+            "source_relationship": "The source explains why solving an SDP relaxation can leave a high-rank recovery obstacle and identifies the following optimal rank-one recovery theorem."
+          }
+        ]
+      },
+      {
+        "id": "R06",
+        "source_case_ids": [
+          "P18-C1",
+          "P39-C3",
+          "P44-C5",
+          "P34-C2"
+        ],
+        "distinct_paper_ids": [
+          "P18",
+          "P34",
+          "P39",
+          "P44"
+        ],
+        "distinct_paper_count": 4,
+        "source_supported_common_task_description": "Connect a method component or joint formulation to the obstacle, coupling or remaining stage responsibility it is intended to address.",
+        "evidence_status": "actual_source_examples_grouped_by_analyst_interpretation",
+        "actual_source_examples": true,
+        "category_grouping_is_analyst_interpretation": true,
+        "empirically_validated_writing_advantage": false,
+        "scope_limit": "The sources use different cost, information, coupling and fairness arguments. The common grouping is a functional interpretation rather than evidence for one necessary module order or identical algorithm design.",
+        "source_checks": [
+          {
+            "case_id": "P18-C1",
+            "paper_id": "P18",
+            "source_relationship": "The source assigns covariance information to statistical prebeamforming and instantaneous effective-channel information to group precoding, then links reduced dimensions with overhead."
+          },
+          {
+            "case_id": "P39-C3",
+            "paper_id": "P39",
+            "source_relationship": "The source identifies power-dependent interference and beam choices as the reason for joint power and beamforming treatment."
+          },
+          {
+            "case_id": "P44-C5",
+            "paper_id": "P44",
+            "source_relationship": "The source motivates distributed solving through centralized costs and explains local subproblems, coordination, auxiliary variables and consistency prices."
+          },
+          {
+            "case_id": "P34-C2",
+            "paper_id": "P34",
+            "source_relationship": "The source explains subchannel selection principles, equal-power suboptimality, coarse fairness and the remaining power-allocation task."
+          }
+        ]
+      },
+      {
+        "id": "R07",
+        "source_case_ids": [
+          "P34-C2",
+          "P34-C3",
+          "P36-C04"
+        ],
+        "distinct_paper_ids": [
+          "P34",
+          "P36"
+        ],
+        "distinct_paper_count": 2,
+        "source_supported_common_task_description": "Make selection or branch conditions, resulting state updates and subsequent stage or retry destinations identifiable.",
+        "evidence_status": "actual_source_examples_grouped_by_analyst_interpretation",
+        "actual_source_examples": true,
+        "category_grouping_is_analyst_interpretation": true,
+        "empirically_validated_writing_advantage": false,
+        "scope_limit": "Three examples come from only two papers. P34-C2 concerns selection principles and stage responsibility, while P34-C3 and P36-C04 include exception or exit/retry paths. They do not show that all methods require recovery branches or certify executable correctness and termination.",
+        "source_checks": [
+          {
+            "case_id": "P34-C2",
+            "paper_id": "P34",
+            "source_relationship": "The source explains subchannel selection principles, equal-power suboptimality, coarse fairness and the remaining power-allocation task."
+          },
+          {
+            "case_id": "P34-C3",
+            "paper_id": "P34",
+            "source_relationship": "The source names an infeasibility threshold, disabled subchannel, updated sets and derived quantities, and rerunning the allocation algorithm."
+          },
+          {
+            "case_id": "P36-C04",
+            "paper_id": "P36",
+            "source_relationship": "The source links a congestion example to voluntary exit, another-channel access or dormant same-channel backoff and renewed ramping."
+          }
+        ]
+      },
+      {
+        "id": "R08",
+        "source_case_ids": [
+          "P35-2",
+          "P38-03",
+          "P41-05",
+          "P29-C4"
+        ],
+        "distinct_paper_ids": [
+          "P29",
+          "P35",
+          "P38",
+          "P41"
+        ],
+        "distinct_paper_count": 4,
+        "source_supported_common_task_description": "Identify the compared methods, metrics, constraints, computational budgets and tradeoffs so each comparison has a recoverable basis.",
+        "evidence_status": "actual_source_examples_grouped_by_analyst_interpretation",
+        "actual_source_examples": true,
+        "category_grouping_is_analyst_interpretation": true,
+        "empirically_validated_writing_advantage": false,
+        "scope_limit": "Explicitly different constraints or budgets can be the intended comparison. These examples support identifying differences and metric scope, not forcing equal conditions or proving universal method superiority.",
+        "source_checks": [
+          {
+            "case_id": "P35-2",
+            "paper_id": "P35",
+            "source_relationship": "The source pairs binary and continuous allocations in one example and distinguishes close throughput from possible total-power savings."
+          },
+          {
+            "case_id": "P38-03",
+            "paper_id": "P38",
+            "source_relationship": "The source contrasts convergence behavior and step-size sensitivity with distributed implementability and per-iteration costs."
+          },
+          {
+            "case_id": "P41-05",
+            "paper_id": "P41",
+            "source_relationship": "The source distinguishes an outage-margin saturation trend from a same-margin average-versus-peak power comparison and gives separate explanations."
+          },
+          {
+            "case_id": "P29-C4",
+            "paper_id": "P29",
+            "source_relationship": "The setup distinguishes initialization and iteration budgets, absence of a global guarantee, averaging and DPC reference generation."
+          }
+        ]
+      },
+      {
+        "id": "R09",
+        "source_case_ids": [
+          "P29-C5",
+          "P36-C06",
+          "P34-C5"
+        ],
+        "distinct_paper_ids": [
+          "P29",
+          "P34",
+          "P36"
+        ],
+        "distinct_paper_count": 3,
+        "source_supported_common_task_description": "Connect a located result and its conditions with the source author's explanation while retaining the finding's sample and extrapolation scope.",
+        "evidence_status": "actual_source_examples_grouped_by_analyst_interpretation",
+        "actual_source_examples": true,
+        "category_grouping_is_analyst_interpretation": true,
+        "empirically_validated_writing_advantage": false,
+        "scope_limit": "The source text contains observed trends and mechanism claims, but textual explanations alone do not validate causal identification. P36-C06 uses figure 3 for capacity/maximal throughput and figure 4 for admission delay; an earlier analysis note mismatched those figures.",
+        "source_checks": [
+          {
+            "case_id": "P29-C5",
+            "paper_id": "P29",
+            "source_relationship": "The source fixes one channel realization, reports low-SNR corner behavior and describes a changing DPC advantage as SNR increases."
+          },
+          {
+            "case_id": "P36-C06",
+            "paper_id": "P36",
+            "source_relationship": "The source reports a capacity improvement and then explains high-load clogging through inactive-link accumulation, interference and harder admission."
+          },
+          {
+            "case_id": "P34-C5",
+            "paper_id": "P34",
+            "source_relationship": "The source identifies averaged capacity and a benchmark before associating changed priority constraints with a curve trend and channel-gain explanation."
+          }
+        ]
+      },
+      {
+        "id": "R10",
+        "source_case_ids": [
+          "P38-08",
+          "P40-5",
+          "P22-07"
+        ],
+        "distinct_paper_ids": [
+          "P22",
+          "P38",
+          "P40"
+        ],
+        "distinct_paper_count": 3,
+        "source_supported_common_task_description": "Distinguish analytical statements, limiting regimes, simulated observations and further predictions in a multi-result summary.",
+        "evidence_status": "actual_source_examples_grouped_by_analyst_interpretation",
+        "actual_source_examples": true,
+        "category_grouping_is_analyst_interpretation": true,
+        "empirically_validated_writing_advantage": false,
+        "scope_limit": "The examples separate different evidence levels; they do not impose a common requirement to add experiments, demonstrate reader comprehension, or provide universal support for a technical conclusion.",
+        "source_checks": [
+          {
+            "case_id": "P38-08",
+            "paper_id": "P38",
+            "source_relationship": "The conclusion distinguishes time-sharing conditions, an infinite-carrier result, two algorithm changes and empirical complexity-optimality tradeoffs."
+          },
+          {
+            "case_id": "P40-5",
+            "paper_id": "P40",
+            "source_relationship": "The conclusion explicitly separates analytically optimal cases, simulated near-optimal cases and a multiuser-diversity observation."
+          },
+          {
+            "case_id": "P22-07",
+            "paper_id": "P22",
+            "source_relationship": "The conclusion separates large-system approximations, finite-dimension accuracy claims, simplified-model findings, realistic simulations and needed measurements."
+          }
+        ]
+      },
+      {
+        "id": "R11",
+        "source_case_ids": [
+          "P18-C7",
+          "P37-C6",
+          "P41-08",
+          "P46-C7"
+        ],
+        "distinct_paper_ids": [
+          "P18",
+          "P37",
+          "P41",
+          "P46"
+        ],
+        "distinct_paper_count": 4,
+        "source_supported_common_task_description": "Relate the current model or proved scope to a changed condition, prospective extension or open question without merging distinct tasks.",
+        "evidence_status": "actual_source_examples_grouped_by_analyst_interpretation",
+        "actual_source_examples": true,
+        "category_grouping_is_analyst_interpretation": true,
+        "empirically_validated_writing_advantage": false,
+        "scope_limit": "Some examples explain present applicability boundaries and others propose future work. The shared grouping is broader than a future-work paragraph format. Historical open questions require attribution to the source's publication context.",
+        "source_checks": [
+          {
+            "case_id": "P18-C7",
+            "paper_id": "P18",
+            "source_relationship": "The source identifies angular-separation failure through a shared scatterer, a possible common-subspace removal and an energy/SINR/group-count tradeoff."
+          },
+          {
+            "case_id": "P37-C6",
+            "paper_id": "P37",
+            "source_relationship": "The source distinguishes fictitious noncooperative proof games from cooperative users and identifies price and beacon incentives as separate future tasks."
+          },
+          {
+            "case_id": "P41-08",
+            "paper_id": "P41",
+            "source_relationship": "The source treats multiple links and simultaneously imposed power constraints as separate extensions, with dedicated performance-region tasks for the former."
+          },
+          {
+            "case_id": "P46-C7",
+            "paper_id": "P46",
+            "source_relationship": "The conclusion separates established region duality and sum-rate capacity from possibilities concerning a complete region and other networks."
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "category_count": 11,
+      "highlight_references": 36,
+      "unique_highlight_cases": 34,
+      "unique_highlight_papers": 19,
+      "all_highlights_exist_and_match_source_relationships": true,
+      "independent_paper_support": {
+        "R01": 3,
+        "R02": 3,
+        "R03": 3,
+        "R04": 3,
+        "R05": 3,
+        "R06": 4,
+        "R07": 2,
+        "R08": 4,
+        "R09": 3,
+        "R10": 3,
+        "R11": 4
+      }
+    },
+    "interpretation": "These are recurrent reader-task relationships instantiated in selected published-paper passages. The source passages are actual examples; their grouping, reader-benefit hypotheses and proposed transfer criteria are analyst interpretations. They are neither features demonstrated in all excellent papers nor experimentally validated superiority.",
+    "critical_note_review": [
+      {
+        "case_id": "P16-C6",
+        "primary_critical_note_in_raw_analysis": true,
+        "source_classification": "source_acknowledges_perfect_CSI_and_benchmark_scope",
+        "editorial_resolution": "Raw counterexample analysis conflicts with the later editorial decision, which explicitly rejects the missing-benchmark-type reading and accepts a scoped result-to-boundary conclusion.",
+        "recommendation": "Remove or isolate the unresolved analyst criticism in context_notes, reader_after, final sentence role, full_relation_chain, actual_reader_benefit and minimum_edit. Do not demand deletion of maximum solely from this annotation. Retain source-observed distinctions among sufficient RF-chain conditions, heuristics, numerical findings and perfect-CSI applicability.",
+        "evidence_boundary": "Benchmark validity needs technical checking; the paragraph itself does state perfect CSI and its benchmark purpose."
+      },
+      {
+        "case_id": "P04-C1",
+        "primary_critical_note_in_raw_analysis": true,
+        "source_classification": "source_distinguishes_formal_bound_scope_from_qualified_high_SNR_expectation",
+        "editorial_resolution": "Raw counterexample and presumed rereading burden are superseded by a mixed, accept-with-boundary decision acknowledging explicit source qualifications.",
+        "recommendation": "Retain it as a source example of evidence-scope distinction. Relabel any confusion or rereading claim as an untested analyst concern; do not call an explicitly qualified expectation an established source defect.",
+        "evidence_boundary": "The high-SNR expectation is not a formal guarantee; the source marks that distinction."
+      },
+      {
+        "case_id": "P27:C7",
+        "primary_critical_note_in_raw_analysis": false,
+        "source_classification": "positive_source_example_with_separate_technical_limits",
+        "editorial_resolution": "The source follows its ease-of-implementation assessment with a complexity comparator and software route. The phrase suggesting replacement of an unsupported slogan overstates the analyst inference.",
+        "recommendation": "Retain the actual performance-to-implementation, comparator-and-route example. Revise actual_reader_benefit to a hypothesized benefit without asserting the source was unsupported. Keep runtime, compatibility and online-update limits separate as technical boundaries.",
+        "evidence_boundary": "Textual complexity and software claims do not prove equal costs in every online mode or universal practical superiority."
+      }
+    ],
+    "distinctions": [
+      {
+        "case_id": "P32-C5",
+        "note": "The source itself gives applicability counterexamples; these are constructive scope explanations, not analyst criticism of a writing defect."
+      },
+      {
+        "case_id": "P36-C06",
+        "note": "The figure/metric mismatch is an analysis metadata error, not a demonstrated defect in the source paragraph."
+      }
+    ],
+    "review_scope": "All 34 unique highlighted source cases checked, using earlier per-case source/context audits for this slice and targeted inspection of the nine other highlighted cases. Also checked both raw counterexample labels and the requested implementation case. No exhaustive new review of all 189 passages or current literature search performed."
+  },
+  "technical": {
+    "classification_type": "technical_source_example_and_analyst_note_roles",
+    "basis": "Previously completed comparison of original analysis with stored source-page contexts; no new mathematical reproof.",
+    "scope": {
+      "technical_cases": 52,
+      "technical_navigation_categories": 14
+    },
+    "role_definitions": {
+      "source_task_example": "The source text actually describes a way of completing a technical explanation, construction, evaluation, or proof-organization task. This classification does not independently validate all of its mathematics.",
+      "source_scope_boundary_example": "The source itself states relevant assumptions, evidence limits, tradeoffs, unproved parts, or unfinished tasks. The boundary is a source description, not an analyst-established defect.",
+      "analyst_critical_note": "An analyst raises a question or criticism whose status must remain separate from source strengths and from a verified whole-paper defect.",
+      "mixed": "The case contains usable source task or boundary material and a separately identified analyst critical note. Runtime example use must separate those components."
+    },
+    "primary_role_counts": {
+      "source_task_example": 20,
+      "source_scope_boundary_example": 27,
+      "analyst_critical_note": 0,
+      "mixed": 5
+    },
+    "interpretation": "The library contains source-specific examples of recurring explanation tasks and explicit boundary-setting, plus analyst notes. It does not establish that these are advantages shared by every selected paper, universal rules, or reasons those papers are superior to different writing.",
+    "case_recurrence_count_limit": "Counts refer to existing navigation candidate assignments across the 52 technical papers. Categories overlap and the index is curated; counts must not be summed into independent evidence or treated as a population prevalence estimate.",
+    "runtime_recommendation": "Source examples may inform a target review only where the target claim calls for the same task. Mixed-case analyst critiques require separate labels and must not be loaded as positive source-author rules. Target sufficiency and chosen formats remain independent judgments.",
+    "technical_cases": [
+      {
+        "case_id": "F01",
+        "paper_id": "P01",
+        "anchor_pages": [
+          2,
+          12
+        ],
+        "primary_role": "source_task_example",
+        "role_components": [
+          "source_task_example"
+        ],
+        "role_justification": "The source connects its task comparison, restricted framework, and stated minimum result.",
+        "source_description_for_example_use": "The source distinguishes its task from preceding work, establishes a minimum within a specified training framework, and leaves error propagation and resource allocation open.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F02",
+        "paper_id": "P02",
+        "anchor_pages": [
+          9,
+          10
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source explicitly distinguishes operating regimes and the conditions of combined system comparisons.",
+        "source_description_for_example_use": "The source reports different gains in low- and high-Doppler regimes and compares configurations that also differ in coding or rate-related conditions.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F03",
+        "paper_id": "P03",
+        "anchor_pages": [
+          2,
+          9
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source distinguishes the theoretical object, implementable design, and unanalysed extension.",
+        "source_description_for_example_use": "The source separates a theoretical quantization object from implementable vector designs and identifies correlated-codebook performance analysis as future work while reporting numerical results.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F04",
+        "paper_id": "P04",
+        "anchor_pages": [
+          9,
+          12
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source limits receiver assumptions, the asymptotic claim, and unresolved transition behavior.",
+        "source_description_for_example_use": "The source treats a restricted training and receiver scheme, an asymptotic leading term, and unresolved transition behavior; power constraints change the training problem.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F05",
+        "paper_id": "P05",
+        "anchor_pages": [
+          2,
+          3
+        ],
+        "primary_role": "source_task_example",
+        "role_components": [
+          "source_task_example"
+        ],
+        "role_justification": "The source defines a local deliverable and its interface to a companion task.",
+        "source_description_for_example_use": "The source defines intermediate estimation quantities for a companion analysis and distinguishes channel-estimation error from downstream detection behavior.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F06",
+        "paper_id": "P06",
+        "anchor_pages": [
+          9,
+          10
+        ],
+        "primary_role": "source_task_example",
+        "role_components": [
+          "source_task_example"
+        ],
+        "role_justification": "The source explains regime-dependent tradeoff behavior and a reported approximation check.",
+        "source_description_for_example_use": "The source explains a user-count and feedback-bit tradeoff whose behavior changes with regime, and omits some comparison curves after a reported approximation check.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F07",
+        "paper_id": "P07",
+        "anchor_pages": [
+          7,
+          11
+        ],
+        "primary_role": "source_task_example",
+        "role_components": [
+          "source_task_example"
+        ],
+        "role_justification": "The source distinguishes two parameter-scan tasks through what is fixed and varied.",
+        "source_description_for_example_use": "The source distinguishes varying the true channel with an estimator held fixed from varying a design parameter with the true channel held fixed; the FIR design depends on Doppler assumptions.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F08",
+        "paper_id": "P08",
+        "anchor_pages": [
+          2,
+          8
+        ],
+        "primary_role": "source_task_example",
+        "role_components": [
+          "source_task_example"
+        ],
+        "role_justification": "The source states design conditions and gives one construction meeting them in its model.",
+        "source_description_for_example_use": "Within its least-squares model, the source gives row-orthogonality and equal-norm conditions and uses a DFT-based constant-modulus construction; other criteria can depend on prior information.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F09",
+        "paper_id": "P09",
+        "anchor_pages": [
+          12
+        ],
+        "primary_role": "source_task_example",
+        "role_components": [
+          "source_task_example"
+        ],
+        "role_justification": "The source restores an idealized stage and traces its claimed changes to the optimization structure; the gap expression remains mathematically unchecked here.",
+        "source_description_for_example_use": "The source includes a nonideal dedicated-training stage, changes an inner allocation term, and describes retained outer structure; the claimed SNR-gap behavior is a mathematical source claim.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": "The selected prose is not an independent algebraic verification of the gap claim. Reusing a structural argument for a target perturbation requires checking that the new terms, objective, and regime really preserve the needed relationships.",
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F10",
+        "paper_id": "P10",
+        "anchor_pages": [
+          2,
+          5,
+          7
+        ],
+        "primary_role": "mixed",
+        "role_components": [
+          "source_task_example",
+          "source_scope_boundary_example",
+          "analyst_critical_note"
+        ],
+        "role_justification": "Source convergence and runtime descriptions coexist with an analyst-identified wording discrepancy.",
+        "source_description_for_example_use": "The source states a stationary-limit-point theorem and reports runtime comparisons under a shared stopping criterion. These are source-specific examples of naming a theorem result and specifying a comparison condition.",
+        "analyst_critical_note_to_isolate": "The selected introduction uses a stronger local-optimum expression than the selected stationary-limit-point theorem. This is an analyst reading of a wording discrepancy, not proof that every source claim is false or that no stronger result exists elsewhere.",
+        "analyst_critical_note_status": "not_a_complete_source_defect_verification",
+        "analyst_verification_caution": "Report the source wording discrepancy without certifying that no stronger result exists elsewhere. A target skeleton must state the target theorem actually verified, and a fair runtime comparison may use matched accuracy or another justified common budget.",
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": "Keep the identified analyst critique separate from source strengths. It may motivate a question for further source verification; do not present it as an established author defect.",
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F11",
+        "paper_id": "P11",
+        "anchor_pages": [
+          12,
+          14
+        ],
+        "primary_role": "mixed",
+        "role_components": [
+          "source_task_example",
+          "source_scope_boundary_example",
+          "analyst_critical_note"
+        ],
+        "role_justification": "Source comparison design coexists with an analyst question about the relaxed reference certificate.",
+        "source_description_for_example_use": "The source uses different baselines to investigate different design mechanisms and describes the constraint removed in a relaxed reference. These are source-specific comparison descriptions; the reference certificate is a separate question.",
+        "analyst_critical_note_to_isolate": "A locally computed result of a relaxed maximization problem does not by itself certify an upper bound. The selected excerpts leave the certificate unclear; this audit did not exclude other certificates or establish that the entire source bound is invalid.",
+        "analyst_critical_note_status": "not_a_complete_source_defect_verification",
+        "analyst_verification_caution": "Lack of a certificate in these excerpts is an audit limitation, not proof that the entire source has no certificate. A feasible point of a relaxation is not automatically an upper bound for a maximization problem. Check the target bound direction and certificate.",
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": "Keep the identified analyst critique separate from source strengths. It may motivate a question for further source verification; do not present it as an established author defect.",
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F12",
+        "paper_id": "P12",
+        "anchor_pages": [
+          1,
+          3
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source states the model use and limits optimality to its strategy class.",
+        "source_description_for_example_use": "The source explains a single-user, single-radio-head compression task and proves an optimality relationship within a strategy class; it also notes that another relaying strategy can perform better.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F13",
+        "paper_id": "P13",
+        "anchor_pages": [
+          6
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source explicitly distinguishes necessary conditions, empirical observations, and an unproved sufficiency claim.",
+        "source_description_for_example_use": "The source distinguishes empirical success from a necessary condition and explicitly leaves sufficiency or general convergence unresolved.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F14",
+        "paper_id": "P14",
+        "anchor_pages": [
+          12,
+          13
+        ],
+        "primary_role": "source_task_example",
+        "role_components": [
+          "source_task_example"
+        ],
+        "role_justification": "The source describes a candidate-set selection or envelope and its information setting.",
+        "source_description_for_example_use": "The source takes a maximum over candidate designs and discusses a future information-model extension; the plotted envelope depends on how candidates are evaluated and selected.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F15",
+        "paper_id": "P15",
+        "anchor_pages": [
+          5,
+          13
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source acknowledges a weaker special-case outcome and limits the guarantee of its broader framework.",
+        "source_description_for_example_use": "The source reports that a specialized method can converge faster on a shared special case while explaining the broader class handled by its framework and the scope of stationarity claims.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F16",
+        "paper_id": "P16",
+        "anchor_pages": [
+          4,
+          10
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source distinguishes bounds, changed hardware, and the scale of exhaustive comparisons.",
+        "source_description_for_example_use": "The source separates a necessary RF-chain count from a sufficient construction, discusses a changed hardware topology, and restricts exhaustive comparisons to small instances.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F17",
+        "paper_id": "P17",
+        "anchor_pages": [
+          9,
+          10
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source distinguishes the fixed-parameter guarantee from adaptive experiments and comparator limitations.",
+        "source_description_for_example_use": "The source separates an adaptive heuristic from a proof for a fixed parameter and explains that one baseline cannot meet the stated service constraint without modification.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F18",
+        "paper_id": "P18",
+        "anchor_pages": [
+          19
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source exposes an external grouping dependency and leaves costs of a proposed remedy unresolved.",
+        "source_description_for_example_use": "The source relies on a group structure derived from channel statistics and proposes projecting away a shared subspace, with resulting energy loss and system impact left for further evaluation.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F19",
+        "paper_id": "P19",
+        "anchor_pages": [
+          3,
+          6
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source identifies an uncapped model, required resources, and the meaning of iteration observations.",
+        "source_description_for_example_use": "Under an uncapped resource model, the source separates a feasibility condition from the resource required to meet a threshold and reports empirical iteration behavior.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F20",
+        "paper_id": "P20",
+        "anchor_pages": [
+          13,
+          16
+        ],
+        "primary_role": "source_task_example",
+        "role_components": [
+          "source_task_example"
+        ],
+        "role_justification": "The source separates retained convexity from lost closed-form solving and keeps conditions of metric equivalence.",
+        "source_description_for_example_use": "The source preserves convexity after certain added constraints while losing the previous closed form, and its metric equivalences retain shared constellation or coding conditions.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F21",
+        "paper_id": "P21",
+        "anchor_pages": [
+          6
+        ],
+        "primary_role": "source_task_example",
+        "role_components": [
+          "source_task_example"
+        ],
+        "role_justification": "The source distinguishes a necessary screening bound from an equivalent feasibility formulation.",
+        "source_description_for_example_use": "The source distinguishes a necessary bound from sufficient feasibility and gives an equivalent conic formulation without the unnecessary structural restriction identified in the case.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F22",
+        "paper_id": "P22",
+        "anchor_pages": [
+          3
+        ],
+        "primary_role": "source_task_example",
+        "role_components": [
+          "source_task_example"
+        ],
+        "role_justification": "The source maps an intermediate performance quantity to a net resource-adjusted metric.",
+        "source_description_for_example_use": "The source treats training quality as an input and explains how training overhead and scheduling shares affect net throughput, while leaving some parameter optimization outside its task.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F23",
+        "paper_id": "P23",
+        "anchor_pages": [
+          5,
+          10
+        ],
+        "primary_role": "source_task_example",
+        "role_components": [
+          "source_task_example"
+        ],
+        "role_justification": "The source explains how prior information, constraint geometry, and sample or noise behavior interact.",
+        "source_description_for_example_use": "The source compares constraint-set geometry, prior information, and noise or sample tradeoffs, and notes that equality of weights does not settle power scaling.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F24",
+        "paper_id": "P24",
+        "anchor_pages": [
+          5
+        ],
+        "primary_role": "source_task_example",
+        "role_components": [
+          "source_task_example"
+        ],
+        "role_justification": "The source explains a changed curvature property and the complexity of an alternative solution approach.",
+        "source_description_for_example_use": "The source gives an extended-setting concavity counterexample and contrasts a grid procedure whose complexity grows exponentially with the more tractable restricted setting.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F25",
+        "paper_id": "P25",
+        "anchor_pages": [
+          7,
+          10
+        ],
+        "primary_role": "source_task_example",
+        "role_components": [
+          "source_task_example"
+        ],
+        "role_justification": "The source traces bound validity through successive relaxations and distinguishes achieved values.",
+        "source_description_for_example_use": "The source constructs upper bounds through successive relaxations and distinguishes achieved values from lower bounds and their particular equality conditions.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F26",
+        "paper_id": "P26",
+        "anchor_pages": [
+          2,
+          16
+        ],
+        "primary_role": "source_task_example",
+        "role_components": [
+          "source_task_example"
+        ],
+        "role_justification": "The source distinguishes equivalence in one asymptotic metric from operating-point differences.",
+        "source_description_for_example_use": "The source distinguishes a shared diversity-multiplexing order from finite-SNR gaps and separates a sorting gain from a diversity improvement.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F27",
+        "paper_id": "P27",
+        "anchor_pages": [
+          6,
+          10
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source separates batch and online computation and notes data-related limitations.",
+        "source_description_for_example_use": "The source distinguishes batch computation from an online implementation requiring recomputation or updates, and relates training contamination to observed sample behavior.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F28",
+        "paper_id": "P28",
+        "anchor_pages": [
+          12,
+          13
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source distinguishes statistical interpretations, modules, and unproved approximation guarantees.",
+        "source_description_for_example_use": "The source separates support selection from parameter refinement and distinguishes a fitting interpretation from a likelihood interpretation requiring distributional assumptions; convergence of an approximate variant is not fully proved.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F29",
+        "paper_id": "P29",
+        "anchor_pages": [
+          4,
+          8
+        ],
+        "primary_role": "mixed",
+        "role_components": [
+          "source_task_example",
+          "source_scope_boundary_example",
+          "analyst_critical_note"
+        ],
+        "role_justification": "Source objective and region-evaluation descriptions coexist with an analyst objection to one local-optimality inference.",
+        "source_description_for_example_use": "The source describes an objective sequence and labels a region generated by finite weighted samples as an approximation. The sampled evaluation and its stated scope can be described without adopting the stronger local-minimum inference.",
+        "analyst_critical_note_to_isolate": "Monotone bounded objective values alone do not imply a local minimum. The selected explanation does not supply that implication; this is a critique of the read reasoning, not a complete reproof or disproof of the source algorithm.",
+        "analyst_critical_note_status": "not_a_complete_source_defect_verification",
+        "analyst_verification_caution": "Monotone bounded objective values alone do not establish local optimality. This flags a missing implication in the selected explanation; it is not a reproof or disproof of the entire algorithm. Finite weighted samples do not certify a complete global boundary.",
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": "Keep the identified analyst critique separate from source strengths. It may motivate a question for further source verification; do not present it as an established author defect.",
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F30",
+        "paper_id": "P30",
+        "anchor_pages": [
+          2,
+          9
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source states theoretical secrecy assumptions and limits its operational implementation claim.",
+        "source_description_for_example_use": "The source gives an information-theoretic secrecy result under explicit adversary, channel, coordination, and public-information assumptions and does not provide a practical coding implementation.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F31",
+        "paper_id": "P31",
+        "anchor_pages": [
+          9,
+          10
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source separates per-user and aggregate gains and labels an extension as dependent on an unverified property.",
+        "source_description_for_example_use": "The source separates per-user gains from concurrency and total cell performance and identifies a further architecture extension as dependent on an unverified propagation property.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F32",
+        "paper_id": "P32",
+        "anchor_pages": [
+          4,
+          6
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source distinguishes asynchronous update assumptions from satisfaction of service constraints at a capped fixed point.",
+        "source_description_for_example_use": "The source distinguishes continual asynchronous updates and eventual information refresh from meeting original service constraints at a fixed point of a capped iteration; association changes can alter monotonicity.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F33",
+        "paper_id": "P33",
+        "anchor_pages": [
+          5,
+          6
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source identifies a feasible subset, conditional convergence, and hypothetical rather than measured timing.",
+        "source_description_for_example_use": "The source reports a feasible subset, convergence statistics conditional on that subset, and failure handling; per-iteration durations are hypothetical examples rather than measurements.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F34",
+        "paper_id": "P34",
+        "anchor_pages": [
+          7,
+          8
+        ],
+        "primary_role": "source_task_example",
+        "role_components": [
+          "source_task_example"
+        ],
+        "role_justification": "The source isolates a module and distinguishes fairness evidence across temporal and system scales.",
+        "source_description_for_example_use": "The source holds one allocation stage fixed, distinguishes per-realization from mean fairness, and reports that a favorable small-system observation changes in a larger system.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F35",
+        "paper_id": "P35",
+        "anchor_pages": [
+          9
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source identifies the binary reference domain, information differences, and unresolved scheduling scope.",
+        "source_description_for_example_use": "The source normalizes to an exhaustive optimum over a binary decision set and compares centralized information with local or clustered approximations while leaving scheduling questions open.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F36",
+        "paper_id": "P36",
+        "anchor_pages": [
+          10,
+          14
+        ],
+        "primary_role": "source_task_example",
+        "role_components": [
+          "source_task_example"
+        ],
+        "role_justification": "The source defines a steady-state condition and a particular transient-recovery mechanism with costs.",
+        "source_description_for_example_use": "The source separates a post-initialization invariant from transients when links join and uses a specific distress-signaling and retry mechanism with associated delay.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F37",
+        "paper_id": "P37",
+        "anchor_pages": [
+          9
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source limits cooperation assumptions and separates an inner-solution theorem from finite-update evaluation.",
+        "source_description_for_example_use": "The source uses a game as an analytical device under cooperative protocol compliance and separates an inner-solution theoretical requirement from finite inner-update experiments.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F38",
+        "paper_id": "P38",
+        "anchor_pages": [
+          6,
+          10
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source distinguishes optimal values, primal recovery, and guarantee limits after approximate solving.",
+        "source_description_for_example_use": "The source distinguishes equality of optimal values from nonunique primal recovery and notes that approximate inner solves can remove an exact subgradient guarantee; finite constructions can be approximations.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F39",
+        "paper_id": "P39",
+        "anchor_pages": [
+          8,
+          11
+        ],
+        "primary_role": "source_task_example",
+        "role_components": [
+          "source_task_example"
+        ],
+        "role_justification": "The source defines its capacity metric and traces local measurement and communication in the update.",
+        "source_description_for_example_use": "The source defines capacity as a maximum admissible-user count under targets and describes locally measured quantities that are communicated for updates.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F40",
+        "paper_id": "P40",
+        "anchor_pages": [
+          12
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source separates proof and empirical status across constraint cases and leaves extensions outside scope.",
+        "source_description_for_example_use": "The source proves optimality for some long-term and short-term constraint combinations, evaluates others empirically, and distinguishes sum measures from weighted or region-based extensions.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F41",
+        "paper_id": "P41",
+        "anchor_pages": [
+          9
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source explicitly defines uncertainty protection, utility costs, and the bounded-set guarantee domain.",
+        "source_description_for_example_use": "The source trades uncertainty protection against utility, including loss of service at extreme margins, and distinguishes a bounded uncertainty set from an unbounded error distribution.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F42",
+        "paper_id": "P42",
+        "anchor_pages": [
+          3,
+          5
+        ],
+        "primary_role": "mixed",
+        "role_components": [
+          "source_task_example",
+          "source_scope_boundary_example",
+          "analyst_critical_note"
+        ],
+        "role_justification": "Source finite-allocation and numerical descriptions coexist with an analyst objection to interpreting plots as exact equality.",
+        "source_description_for_example_use": "The source describes discrete assignment changes and finite numerical comparisons. These can be used as examples of explaining an allocation mechanism and reporting a tested instance, without treating numerical agreement as an exact theorem.",
+        "analyst_critical_note_to_isolate": "Visual indistinguishability of finite-example curves does not by itself prove exact zero duality gap for arbitrary finite sizes. This analyst evidence assessment must be separated from the source wording and does not disprove an applicable theorem elsewhere.",
+        "analyst_critical_note_status": "not_a_complete_source_defect_verification",
+        "analyst_verification_caution": "Keep the source zero-gap wording separate from the analyst assessment that plot agreement alone does not certify exact equality. Neither theorem validity nor a numerical tolerance was independently established by this excerpt audit.",
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": "Keep the identified analyst critique separate from source strengths. It may motivate a question for further source verification; do not present it as an established author defect.",
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F43",
+        "paper_id": "P43",
+        "anchor_pages": [
+          9,
+          12
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source restricts its receiver-scheduling comparison and notes an unexamined stronger policy choice.",
+        "source_description_for_example_use": "The source compares a receiver-scheduling combination with residual interference, while acknowledging that user selection can change performance; its scope includes a restricted cell and sum-rate setting.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F44",
+        "paper_id": "P44",
+        "anchor_pages": [
+          7,
+          11
+        ],
+        "primary_role": "mixed",
+        "role_components": [
+          "source_task_example",
+          "source_scope_boundary_example",
+          "analyst_critical_note"
+        ],
+        "role_justification": "Source approximation construction coexists with an analyst caution about wording and bound direction.",
+        "source_description_for_example_use": "The source describes where surrogate expressions are introduced and states contact, feasibility, and convergence-related conditions. This illustrates a task of documenting approximation dependencies, without independently certifying the inequalities or guarantee.",
+        "analyst_critical_note_to_isolate": "Approximation-direction wording on the selected page needs comparison with the displayed inequalities and domain assumptions. The analyst caution is not a verified finding that the full source construction or convergence result is wrong.",
+        "analyst_critical_note_status": "not_a_complete_source_defect_verification",
+        "analyst_verification_caution": "A ratio-bound claim requires the actual numerator and denominator signs, inequality directions, contact, and feasibility conditions. Do not convert the source prose into a verified general bound or global-optimality guarantee; the mathematics has not been re-proved.",
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": "Keep the identified analyst critique separate from source strengths. It may motivate a question for further source verification; do not present it as an established author defect.",
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F45",
+        "paper_id": "P45",
+        "anchor_pages": [
+          7,
+          8
+        ],
+        "primary_role": "source_task_example",
+        "role_components": [
+          "source_task_example"
+        ],
+        "role_justification": "The source orders a feasibility check before applying a recovery formula in its valid domain.",
+        "source_description_for_example_use": "The source checks feasibility before applying a positive closed-form recovery and evaluates algorithm behavior rather than a full system deployment.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F46",
+        "paper_id": "P46",
+        "anchor_pages": [
+          8,
+          9
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source limits transformation inputs, intermediate constructions, and singular-case coverage.",
+        "source_description_for_example_use": "The source covariance mapping depends on decoding order, distinguishes endpoint choices from intermediate constructions, and leaves some singular-case coverage limited.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F47",
+        "paper_id": "P47",
+        "anchor_pages": [
+          10,
+          11
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source distinguishes timeout, work units, and an assumption that can fail in a changed variant.",
+        "source_description_for_example_use": "The source defines failure through a finite search budget, compares algorithms with different inner work, and notes a condition under which an earlier irreducibility argument can fail.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F48",
+        "paper_id": "P48",
+        "anchor_pages": [
+          10
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source itself states conditional recovery, feasibility scaling without optimality, and an unproved conjecture. These explicit limits are source examples, not analyst-proven source defects.",
+        "source_description_for_example_use": "The source separates conditional recovery optimality from scaling to restore feasibility and leaves a strong-duality or consistently feasible recovery observation unproved.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": "Scaling establishes only the properties actually verified, not optimality. A target certificate cannot be assumed from source numerical experience; its feasibility, objective value, and conditional guarantee require independent evidence.",
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F49",
+        "paper_id": "P49",
+        "anchor_pages": [
+          7,
+          9
+        ],
+        "primary_role": "source_task_example",
+        "role_components": [
+          "source_task_example"
+        ],
+        "role_justification": "The source organizes a proof by achievability, upper bounds, and a witness closing the argument.",
+        "source_description_for_example_use": "The source links achievability, an upper-bound channel construction, and a witness that closes equality; a diagram and a three-step presentation are used to communicate this chain.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F50",
+        "paper_id": "P50",
+        "anchor_pages": [
+          7,
+          10
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source distinguishes constraint types and the assumptions for acquiring virtual quantities locally.",
+        "source_description_for_example_use": "The source distinguishes total-power from per-user constraints and separates virtual dual variables from locally obtainable physical quantities, with reciprocity or information exchange conditions.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F51",
+        "paper_id": "P51",
+        "anchor_pages": [
+          10,
+          22
+        ],
+        "primary_role": "source_scope_boundary_example",
+        "role_components": [
+          "source_scope_boundary_example"
+        ],
+        "role_justification": "The source limits strategy scope, order correspondence, recovery, and the role of a limiting check.",
+        "source_description_for_example_use": "The source duality concerns a specified strategy class, order correspondence, and a recoverable computational mapping; an infinite-resource limit recovers a known case rather than full general capacity.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      },
+      {
+        "case_id": "F52",
+        "paper_id": "P52",
+        "anchor_pages": [
+          10
+        ],
+        "primary_role": "source_task_example",
+        "role_components": [
+          "source_task_example"
+        ],
+        "role_justification": "The source distinguishes mathematical duality from physical interpretation and explains the auxiliary-variable role.",
+        "source_description_for_example_use": "The source separates a convex minimax representation from a physical dual-channel interpretation requiring further structure, and treats an auxiliary noise variable as optimized rather than given.",
+        "analyst_critical_note_to_isolate": null,
+        "analyst_critical_note_status": "no_separate_critical_note_identified_in_this_role_classification",
+        "analyst_verification_caution": null,
+        "source_example_use": "A source-specific illustration of the stated task or scope boundary, with its own assumptions and evidence limits. It is not a universal advantage, an author-endorsed target revision, or proof that a different presentation is inferior.",
+        "research_note_use": null,
+        "target_transfer_status": "requires_independent_target_claim_and_evidence_assessment",
+        "source_mathematics_independently_reproved": false
+      }
+    ],
+    "technical_navigation": [
+      {
+        "id": "T01",
+        "title": "The interface between this paper's deliverables and the overall research objective",
+        "category_role": "cross_paper_task_recurrence_navigation",
+        "task_relation": "Overall objective -> locally solved subtask -> outputs for the next task -> end-to-end conclusions not yet established.",
+        "candidate_case_ids": [
+          "F01",
+          "F03",
+          "F05",
+          "F12",
+          "F30",
+          "F40",
+          "F51"
+        ],
+        "candidate_case_count": 7,
+        "candidate_paper_ids": [
+          "P01",
+          "P03",
+          "P05",
+          "P12",
+          "P30",
+          "P40",
+          "P51"
+        ],
+        "candidate_paper_count": 7,
+        "candidate_library_paper_denominator": 52,
+        "candidate_role_counts": {
+          "source_task_example": 2,
+          "source_scope_boundary_example": 5,
+          "analyst_critical_note": 0,
+          "mixed": 0
+        },
+        "mixed_case_ids_requiring_source_and_critique_separation": [],
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false,
+        "universal_rule_or_superiority_over_alternative_writing_established": false,
+        "source_example_filter": "Use only the source_description_for_example_use from nominated cases. Keep mixed-case critiques in separately labeled analyst research notes."
+      },
+      {
+        "id": "T02",
+        "title": "Levels of theoretical guarantees and evidence identity",
+        "category_role": "cross_paper_task_recurrence_navigation",
+        "task_relation": "Assumptions -> actual theorem -> algorithm-output properties -> experimental observations -> conclusion wording.",
+        "candidate_case_ids": [
+          "F10",
+          "F13",
+          "F15",
+          "F29",
+          "F42",
+          "F44",
+          "F48"
+        ],
+        "candidate_case_count": 7,
+        "candidate_paper_ids": [
+          "P10",
+          "P13",
+          "P15",
+          "P29",
+          "P42",
+          "P44",
+          "P48"
+        ],
+        "candidate_paper_count": 7,
+        "candidate_library_paper_denominator": 52,
+        "candidate_role_counts": {
+          "source_task_example": 0,
+          "source_scope_boundary_example": 3,
+          "analyst_critical_note": 0,
+          "mixed": 4
+        },
+        "mixed_case_ids_requiring_source_and_critique_separation": [
+          "F10",
+          "F29",
+          "F42",
+          "F44"
+        ],
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false,
+        "universal_rule_or_superiority_over_alternative_writing_established": false,
+        "source_example_filter": "Use only the source_description_for_example_use from nominated cases. Keep mixed-case critiques in separately labeled analyst research notes."
+      },
+      {
+        "id": "T03",
+        "title": "Which old proofs survive algorithm modifications?",
+        "category_role": "cross_paper_task_recurrence_navigation",
+        "task_relation": "Original algorithm and assumptions -> changed constraints, updates, or structure -> retained properties -> broken properties -> revised claim scope.",
+        "candidate_case_ids": [
+          "F17",
+          "F20",
+          "F24",
+          "F28",
+          "F37",
+          "F38",
+          "F47"
+        ],
+        "candidate_case_count": 7,
+        "candidate_paper_ids": [
+          "P17",
+          "P20",
+          "P24",
+          "P28",
+          "P37",
+          "P38",
+          "P47"
+        ],
+        "candidate_paper_count": 7,
+        "candidate_library_paper_denominator": 52,
+        "candidate_role_counts": {
+          "source_task_example": 2,
+          "source_scope_boundary_example": 5,
+          "analyst_critical_note": 0,
+          "mixed": 0
+        },
+        "mixed_case_ids_requiring_source_and_critique_separation": [],
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false,
+        "universal_rule_or_superiority_over_alternative_writing_established": false,
+        "source_example_filter": "Use only the source_description_for_example_use from nominated cases. Keep mixed-case critiques in separately labeled analyst research notes."
+      },
+      {
+        "id": "T04",
+        "title": "Distinguish convergence, feasibility, timeout, and successful-sample statistics",
+        "category_role": "cross_paper_task_recurrence_navigation",
+        "task_relation": "Service requirements and resource caps -> feasibility -> stopping event -> output-constraint checks -> success/failure statistics.",
+        "candidate_case_ids": [
+          "F19",
+          "F32",
+          "F33",
+          "F36",
+          "F45",
+          "F47"
+        ],
+        "candidate_case_count": 6,
+        "candidate_paper_ids": [
+          "P19",
+          "P32",
+          "P33",
+          "P36",
+          "P45",
+          "P47"
+        ],
+        "candidate_paper_count": 6,
+        "candidate_library_paper_denominator": 52,
+        "candidate_role_counts": {
+          "source_task_example": 2,
+          "source_scope_boundary_example": 4,
+          "analyst_critical_note": 0,
+          "mixed": 0
+        },
+        "mixed_case_ids_requiring_source_and_critique_separation": [],
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false,
+        "universal_rule_or_superiority_over_alternative_writing_established": false,
+        "source_example_filter": "Use only the source_description_for_example_use from nominated cases. Keep mixed-case critiques in separately labeled analyst research notes."
+      },
+      {
+        "id": "T05",
+        "title": "The gap between transformed solving and original-problem recovery",
+        "category_role": "cross_paper_task_recurrence_navigation",
+        "task_relation": "Original problem -> preserved sets/objectives -> auxiliary solution -> original-variable recovery -> feasibility -> objective/bound closure.",
+        "candidate_case_ids": [
+          "F21",
+          "F25",
+          "F38",
+          "F46",
+          "F48",
+          "F49",
+          "F52"
+        ],
+        "candidate_case_count": 7,
+        "candidate_paper_ids": [
+          "P21",
+          "P25",
+          "P38",
+          "P46",
+          "P48",
+          "P49",
+          "P52"
+        ],
+        "candidate_paper_count": 7,
+        "candidate_library_paper_denominator": 52,
+        "candidate_role_counts": {
+          "source_task_example": 4,
+          "source_scope_boundary_example": 3,
+          "analyst_critical_note": 0,
+          "mixed": 0
+        },
+        "mixed_case_ids_requiring_source_and_critique_separation": [],
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false,
+        "universal_rule_or_superiority_over_alternative_writing_established": false,
+        "source_example_filter": "Use only the source_description_for_example_use from nominated cases. Keep mixed-case critiques in separately labeled analyst research notes."
+      },
+      {
+        "id": "T06",
+        "title": "Distinguish necessary conditions, sufficient constructions, and uniqueness",
+        "category_role": "cross_paper_task_recurrence_navigation",
+        "task_relation": "Task constraints -> necessary conditions -> sufficient conditions or construction -> remaining gaps -> alternative optima.",
+        "candidate_case_ids": [
+          "F08",
+          "F16",
+          "F21",
+          "F46"
+        ],
+        "candidate_case_count": 4,
+        "candidate_paper_ids": [
+          "P08",
+          "P16",
+          "P21",
+          "P46"
+        ],
+        "candidate_paper_count": 4,
+        "candidate_library_paper_denominator": 52,
+        "candidate_role_counts": {
+          "source_task_example": 2,
+          "source_scope_boundary_example": 2,
+          "analyst_critical_note": 0,
+          "mixed": 0
+        },
+        "mixed_case_ids_requiring_source_and_critique_separation": [],
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false,
+        "universal_rule_or_superiority_over_alternative_writing_established": false,
+        "source_example_filter": "Use only the source_description_for_example_use from nominated cases. Keep mixed-case critiques in separately labeled analyst research notes."
+      },
+      {
+        "id": "T07",
+        "title": "Identify comparison policies and certify reference values",
+        "category_role": "cross_paper_task_recurrence_navigation",
+        "task_relation": "Compared policy families -> optimization degree -> constraints/information -> reference status -> supported interpretation.",
+        "candidate_case_ids": [
+          "F11",
+          "F14",
+          "F16",
+          "F25",
+          "F35",
+          "F42",
+          "F43"
+        ],
+        "candidate_case_count": 7,
+        "candidate_paper_ids": [
+          "P11",
+          "P14",
+          "P16",
+          "P25",
+          "P35",
+          "P42",
+          "P43"
+        ],
+        "candidate_paper_count": 7,
+        "candidate_library_paper_denominator": 52,
+        "candidate_role_counts": {
+          "source_task_example": 2,
+          "source_scope_boundary_example": 3,
+          "analyst_critical_note": 0,
+          "mixed": 2
+        },
+        "mixed_case_ids_requiring_source_and_critique_separation": [
+          "F11",
+          "F42"
+        ],
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false,
+        "universal_rule_or_superiority_over_alternative_writing_established": false,
+        "source_example_filter": "Use only the source_description_for_example_use from nominated cases. Keep mixed-case critiques in separately labeled analyst research notes."
+      },
+      {
+        "id": "T08",
+        "title": "Attribute module gains and identify parameter-scan direction",
+        "category_role": "cross_paper_task_recurrence_navigation",
+        "task_relation": "Proposed mechanism -> other fixed factors -> changed module/environment -> performance changes -> supported mechanism explanation.",
+        "candidate_case_ids": [
+          "F02",
+          "F06",
+          "F07",
+          "F11",
+          "F34"
+        ],
+        "candidate_case_count": 5,
+        "candidate_paper_ids": [
+          "P02",
+          "P06",
+          "P07",
+          "P11",
+          "P34"
+        ],
+        "candidate_paper_count": 5,
+        "candidate_library_paper_denominator": 52,
+        "candidate_role_counts": {
+          "source_task_example": 3,
+          "source_scope_boundary_example": 1,
+          "analyst_critical_note": 0,
+          "mixed": 1
+        },
+        "mixed_case_ids_requiring_source_and_critique_separation": [
+          "F11"
+        ],
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false,
+        "universal_rule_or_superiority_over_alternative_writing_established": false,
+        "source_example_filter": "Use only the source_description_for_example_use from nominated cases. Keep mixed-case critiques in separately labeled analyst research notes."
+      },
+      {
+        "id": "T09",
+        "title": "Metric units, aggregation, and time scales",
+        "category_role": "cross_paper_task_recurrence_navigation",
+        "task_relation": "Required performance -> metric and units -> user/system aggregation -> instantaneous/long-term scale -> actual conclusion.",
+        "candidate_case_ids": [
+          "F22",
+          "F26",
+          "F31",
+          "F34",
+          "F39",
+          "F50"
+        ],
+        "candidate_case_count": 6,
+        "candidate_paper_ids": [
+          "P22",
+          "P26",
+          "P31",
+          "P34",
+          "P39",
+          "P50"
+        ],
+        "candidate_paper_count": 6,
+        "candidate_library_paper_denominator": 52,
+        "candidate_role_counts": {
+          "source_task_example": 4,
+          "source_scope_boundary_example": 2,
+          "analyst_critical_note": 0,
+          "mixed": 0
+        },
+        "mixed_case_ids_requiring_source_and_critique_separation": [],
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false,
+        "universal_rule_or_superiority_over_alternative_writing_established": false,
+        "source_example_filter": "Use only the source_description_for_example_use from nominated cases. Keep mixed-case critiques in separately labeled analyst research notes."
+      },
+      {
+        "id": "T10",
+        "title": "Computation and communication costs must cover actual execution",
+        "category_role": "cross_paper_task_recurrence_navigation",
+        "task_relation": "Required data -> acquisition/exchange -> per-step work -> inner/outer counts -> physical latency/net resources -> implementation claim.",
+        "candidate_case_ids": [
+          "F09",
+          "F19",
+          "F22",
+          "F27",
+          "F31",
+          "F33",
+          "F35",
+          "F37",
+          "F39",
+          "F47",
+          "F50"
+        ],
+        "candidate_case_count": 11,
+        "candidate_paper_ids": [
+          "P09",
+          "P19",
+          "P22",
+          "P27",
+          "P31",
+          "P33",
+          "P35",
+          "P37",
+          "P39",
+          "P47",
+          "P50"
+        ],
+        "candidate_paper_count": 11,
+        "candidate_library_paper_denominator": 52,
+        "candidate_role_counts": {
+          "source_task_example": 3,
+          "source_scope_boundary_example": 8,
+          "analyst_critical_note": 0,
+          "mixed": 0
+        },
+        "mixed_case_ids_requiring_source_and_critique_separation": [],
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false,
+        "universal_rule_or_superiority_over_alternative_writing_established": false,
+        "source_example_filter": "Use only the source_description_for_example_use from nominated cases. Keep mixed-case critiques in separately labeled analyst research notes."
+      },
+      {
+        "id": "T11",
+        "title": "Robustness scope, information loss, and service costs",
+        "category_role": "cross_paper_task_recurrence_navigation",
+        "task_relation": "Uncertainty/training contamination -> protection or projection -> retained/lost information -> protected metric -> service utility.",
+        "candidate_case_ids": [
+          "F18",
+          "F23",
+          "F27",
+          "F41"
+        ],
+        "candidate_case_count": 4,
+        "candidate_paper_ids": [
+          "P18",
+          "P23",
+          "P27",
+          "P41"
+        ],
+        "candidate_paper_count": 4,
+        "candidate_library_paper_denominator": 52,
+        "candidate_role_counts": {
+          "source_task_example": 1,
+          "source_scope_boundary_example": 3,
+          "analyst_critical_note": 0,
+          "mixed": 0
+        },
+        "mixed_case_ids_requiring_source_and_critique_separation": [],
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false,
+        "universal_rule_or_superiority_over_alternative_writing_established": false,
+        "source_example_filter": "Use only the source_description_for_example_use from nominated cases. Keep mixed-case critiques in separately labeled analyst research notes."
+      },
+      {
+        "id": "T12",
+        "title": "Bridge limits, finite scale, and operating regimes",
+        "category_role": "cross_paper_task_recurrence_navigation",
+        "task_relation": "Theoretical limit or small-scale evidence -> parameter regime -> finite-scale deviations -> deployment conditions -> qualified conclusion.",
+        "candidate_case_ids": [
+          "F04",
+          "F06",
+          "F16",
+          "F26",
+          "F34",
+          "F42",
+          "F51"
+        ],
+        "candidate_case_count": 7,
+        "candidate_paper_ids": [
+          "P04",
+          "P06",
+          "P16",
+          "P26",
+          "P34",
+          "P42",
+          "P51"
+        ],
+        "candidate_paper_count": 7,
+        "candidate_library_paper_denominator": 52,
+        "candidate_role_counts": {
+          "source_task_example": 3,
+          "source_scope_boundary_example": 3,
+          "analyst_critical_note": 0,
+          "mixed": 1
+        },
+        "mixed_case_ids_requiring_source_and_critique_separation": [
+          "F42"
+        ],
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false,
+        "universal_rule_or_superiority_over_alternative_writing_established": false,
+        "source_example_filter": "Use only the source_description_for_example_use from nominated cases. Keep mixed-case critiques in separately labeled analyst research notes."
+      },
+      {
+        "id": "T13",
+        "title": "Separate model duality from implementable and computable duality",
+        "category_role": "cross_paper_task_recurrence_navigation",
+        "task_relation": "Objects/policy families -> abstract equivalence -> required order/auxiliary quantities -> acquisition/solution conditions -> physical execution.",
+        "candidate_case_ids": [
+          "F12",
+          "F30",
+          "F46",
+          "F48",
+          "F50",
+          "F51",
+          "F52"
+        ],
+        "candidate_case_count": 7,
+        "candidate_paper_ids": [
+          "P12",
+          "P30",
+          "P46",
+          "P48",
+          "P50",
+          "P51",
+          "P52"
+        ],
+        "candidate_paper_count": 7,
+        "candidate_library_paper_denominator": 52,
+        "candidate_role_counts": {
+          "source_task_example": 1,
+          "source_scope_boundary_example": 6,
+          "analyst_critical_note": 0,
+          "mixed": 0
+        },
+        "mixed_case_ids_requiring_source_and_critique_separation": [],
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false,
+        "universal_rule_or_superiority_over_alternative_writing_established": false,
+        "source_example_filter": "Use only the source_description_for_example_use from nominated cases. Keep mixed-case critiques in separately labeled analyst research notes."
+      },
+      {
+        "id": "T14",
+        "title": "Organize the proof around relationships that must be closed",
+        "category_role": "cross_paper_task_recurrence_navigation",
+        "task_relation": "Final claim -> subtasks -> each input/output -> bridge conditions -> closing evidence -> uncovered scope.",
+        "candidate_case_ids": [
+          "F01",
+          "F03",
+          "F05",
+          "F20",
+          "F24",
+          "F40",
+          "F49"
+        ],
+        "candidate_case_count": 7,
+        "candidate_paper_ids": [
+          "P01",
+          "P03",
+          "P05",
+          "P20",
+          "P24",
+          "P40",
+          "P49"
+        ],
+        "candidate_paper_count": 7,
+        "candidate_library_paper_denominator": 52,
+        "candidate_role_counts": {
+          "source_task_example": 5,
+          "source_scope_boundary_example": 2,
+          "analyst_critical_note": 0,
+          "mixed": 0
+        },
+        "mixed_case_ids_requiring_source_and_critique_separation": [],
+        "recurrence_meaning": "The navigation nominates several source cases relevant to this technical explanation or scope task. This is a count of candidate papers in the curated index, not an exhaustive occurrence count, a verified strength count, or a causal explanation of paper quality.",
+        "common_advantage_established": false,
+        "universal_rule_or_superiority_over_alternative_writing_established": false,
+        "source_example_filter": "Use only the source_description_for_example_use from nominated cases. Keep mixed-case critiques in separately labeled analyst research notes."
+      }
+    ]
+  },
+  "audit_limit": "Selected stored source contexts and prior case records; no reader study, mathematical reproof, comparison experiment or exhaustive current-literature review."
+}

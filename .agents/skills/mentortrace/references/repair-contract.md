@@ -1,0 +1,24 @@
+# Repair boundary — later integration
+
+The first MentorTrace V1 trial is diagnosis-only. Do not generate applied edits as a side effect of review. For an authorized repair, reuse the existing candidate-manuscript owner and stale-version checks; do not create a second current manuscript.
+
+Each repair links a confirmed finding, closure goal, exact source version, bounded diff, evidence and affected locations. Definitions and assumptions may affect equations, algorithms and conclusions; changed metrics may affect figures and summaries; moved material may leave dangling dependencies. Verify the exact candidate after editing. Record unsatisfied goals and missing author evidence, never invent results to close a concern.
+
+V1 can state a closure goal and a supported revision plan; automated patch application and integration with the old candidate-manuscript owner are deferred. Do not claim the project-local runner supports full drafting or final manuscript generation.
+
+A repair plan should distinguish an editorial change supported by existing content, a technical correction requiring author confirmation of implementation, and an evidence gap requiring new results. Map affected definitions, method steps, experiments and claims before suggesting changes. Preserve a valid explanation if rephrasing would only replace vocabulary without improving its task.
+
+When a case-enhanced run supplies a relevant source relationship, use it only **after** the target finding and target facts have been checked. Editing recipes are unvalidated research notes and are excluded from execution; source organization never establishes a uniquely correct target order. State the review concern and evidence first within its numbered comment or revision group. Its local revision plan may provide a directly adoptable English sentence or paragraph if every factual element is already in the target manuscript. If one clearly named premise controls use of otherwise supported wording, place that condition immediately before the passage and identify which sentence depends on it. If actual system roles, decision rules, experiment procedures or other author facts are missing, give the insertion location and a short fact checklist instead of a bracket-filled pseudo-paragraph. Record which target sentences support a direct rewrite, and which selected source relationship prompted a target-specific consideration. An analyst interpretation of a source paper is not authority for adding the source's technical claim, numerical value or assumption to the target.
+
+Preserve conditional repair actions and valid alternatives under delivery-preservation.md. A report rewrite may simplify the explanation without changing what the author must supply or check.
+
+## Revision scope and completeness check
+
+After diagnosis freeze, before report delivery, assess every retained content/technical and organization comment (or coordinated revision group) for the scope of repair and the available facts. This is a drafting check, not another discovery lane. Record privately the source IDs, affected passage, intended change, factual support or missing facts, chosen deliverable and its report location.
+
+- For a local wording defect with sufficient facts, provide the actual replacement sentence or phrase.
+- For connected changes to several sentences, paragraph logic, information selection or a section summary, assess the affected passage as a whole. When its factual content is supported, provide a coordinated paragraph or bounded passage, rather than stopping at instructions such as “compress,” “clarify,” or “summarize.” Do not require a full rewrite of every abstract, introduction or conclusion solely because of its section name.
+- When an exact move or deletion of existing text fully resolves the issue, identify the source span, destination and necessary transition/reference edits; explain privately why replacement prose adds no value.
+- When author facts are missing, name them and their insertion location. Draft the supported portion when it can stand on its own. If one unresolved claim affects the paragraph, identify it locally and provide a coherent interim passage where useful; do not fabricate a complete method or treat a conditional draft as ready to use.
+
+Before delivery, compare the chosen scope with the actual output. A Suggested revision field alone is not evidence of completeness. If a paragraph-level repair was selected, confirm that the paragraph was delivered, covers the coordinated requirements and introduces no new claims. If only actions or local sentences were delivered, record the concrete reason that this scope suffices. Check factual fidelity separately from completeness; a complete paragraph can still be technically unsupported. Keep this decision record private and show the author only the issue, specific revision and usable wording or missing information.

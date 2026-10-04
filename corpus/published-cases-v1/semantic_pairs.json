@@ -1,0 +1,59 @@
+{
+  "status": "record_level_semantic_review_only_not_target_test",
+  "auto_load_any_relation": false,
+  "same_task_pair_candidates": [
+    {
+      "from": "F42",
+      "to": "L37",
+      "entry_ids": [
+        "T02",
+        "T07",
+        "T12"
+      ],
+      "task": "finite-scale duality gap versus asymptotic proof and numerical agreement",
+      "selection_boundary": "Load together only when a target claim upgrades asymptotic or numerical evidence to a general finite-size exact statement."
+    },
+    {
+      "from": "F33",
+      "to": "GP10-02",
+      "entry_ids": [
+        "T04",
+        "T10"
+      ],
+      "task": "conditional convergence sample and physical latency",
+      "selection_boundary": "Load together only for claims about overall reliability or real-time behavior inferred from conditional iteration statistics."
+    },
+    {
+      "from": "F49",
+      "to": "L07",
+      "entry_ids": [
+        "T05",
+        "T14"
+      ],
+      "task": "closing an achievability and upper-bound proof chain",
+      "selection_boundary": "Load together only when intermediate relations must connect to the final theorem; do not require a diagram."
+    },
+    {
+      "from": "F07",
+      "to": "L55",
+      "entry_ids": [
+        "T08"
+      ],
+      "task": "scope of statistical mismatch robustness",
+      "selection_boundary": "Load together only when actual-environment changes and design-assumption changes matter to the target robustness claim."
+    },
+    {
+      "from": "F26",
+      "to": "L03",
+      "entry_ids": [
+        "T09",
+        "T12"
+      ],
+      "task": "which metric or limit supports an equivalence claim",
+      "selection_boundary": "Load together only if a target extrapolates one metric or asymptotic order to broader performance equivalence."
+    }
+  ],
+  "other_relation_policy": "Other F-L/GP relations are not dependencies. A full-chain record may be retrieved separately only after its own concrete task matches the target claim.",
+  "source_verification_limit": "Record summaries were compared; cited technical derivations were not independently reproved.",
+  "pair_evidence_status": "analyst task-correspondence mapping; not certified equivalence or target sufficiency"
+}

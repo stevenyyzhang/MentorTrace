@@ -1,0 +1,2344 @@
+[
+  {
+    "id": "C0181",
+    "core_question": {
+      "text": "Does reference selection use the same granularity as reconstruction parameters?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01265",
+        "SRC01266",
+        "SRC01267",
+        "SRC01268",
+        "SRC01269"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check consistency when selecting references by group or element and reconstructing other objects through relative coefficients.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01265",
+        "SRC01266",
+        "SRC01267",
+        "SRC01268",
+        "SRC01269"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Groupwise or elementwise reference, ordering, relative coefficient, and reconstruction.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01265",
+        "SRC01266",
+        "SRC01267",
+        "SRC01268",
+        "SRC01269"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Unclear selection granularity and vector ownership could produce inconsistent ordering.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01265",
+        "SRC01266",
+        "SRC01267",
+        "SRC01268",
+        "SRC01269"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Define a general reference index and reconstruction relation before specifying the selection strategy.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01265",
+        "SRC01266",
+        "SRC01267",
+        "SRC01268",
+        "SRC01269"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Different groups may use different references; the requirement is agreement between formulas and actual selection.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01265",
+        "SRC01266",
+        "SRC01267",
+        "SRC01268",
+        "SRC01269"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0181",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0182",
+    "core_question": {
+      "text": "Is a retained design rule still justified after changing the feedback object?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01270",
+        "SRC01271"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Recheck reference-selection heuristics when feedback or quantization targets change.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01270",
+        "SRC01271"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Changed quantization target, changed noise and error propagation, and reference-selection rationale.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01270",
+        "SRC01271"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A strongest-reference rule was retained after switching from coefficient feedback to received-signal feedback without explaining its benefit.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01270",
+        "SRC01271"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Reassess the selection objective and effect under the new observation and quantization-error model.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01270",
+        "SRC01271"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A heuristic valid for an earlier protocol need not transfer to a changed protocol.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01270",
+        "SRC01271"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0182",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0183",
+    "core_question": {
+      "text": "Who actually has the information needed to exploit cross-node correlation?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01272",
+        "SRC01273",
+        "SRC01274",
+        "SRC01275",
+        "SRC01276",
+        "SRC01277"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check local observations and communication requirements in distributed estimation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01272",
+        "SRC01273",
+        "SRC01274",
+        "SRC01275",
+        "SRC01276",
+        "SRC01277"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Local observations, cross-user dependence, observations collected centrally, and joint estimation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01272",
+        "SRC01273",
+        "SRC01274",
+        "SRC01275",
+        "SRC01276",
+        "SRC01277"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The lack of global information at individual nodes was stated, but its relation to feedback, estimator placement, and communication overhead remained loose.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01272",
+        "SRC01273",
+        "SRC01274",
+        "SRC01275",
+        "SRC01276",
+        "SRC01277"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Define each node's available information and show how feedback supplies the central estimator with required inputs.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01272",
+        "SRC01273",
+        "SRC01274",
+        "SRC01275",
+        "SRC01276",
+        "SRC01277"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Cross-object dependence does not mean every distributed node knows its realized values.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01272",
+        "SRC01273",
+        "SRC01274",
+        "SRC01275",
+        "SRC01276",
+        "SRC01277"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0183",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0184",
+    "core_question": {
+      "text": "Are communication durations separated from local computation steps?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01278",
+        "SRC01279",
+        "SRC01280",
+        "SRC01281",
+        "SRC01282",
+        "SRC01283",
+        "SRC01284"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Distinguish transmission stages and receiver-side estimation operations when reporting time or overhead.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01278",
+        "SRC01279",
+        "SRC01280",
+        "SRC01281",
+        "SRC01282",
+        "SRC01283",
+        "SRC01284"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Pilot transmission, feedback transmission, internal estimation steps, and resource accounting.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01278",
+        "SRC01279",
+        "SRC01280",
+        "SRC01281",
+        "SRC01282",
+        "SRC01283",
+        "SRC01284"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Calling internal estimation steps and over-the-air stages the same kind of phase blurred overhead.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01278",
+        "SRC01279",
+        "SRC01280",
+        "SRC01281",
+        "SRC01282",
+        "SRC01283",
+        "SRC01284"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Describe executable quantization, feedback, and estimation order, then identify internal computation and communication resources separately.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01278",
+        "SRC01279",
+        "SRC01280",
+        "SRC01281",
+        "SRC01282",
+        "SRC01283",
+        "SRC01284"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Absence of receiver noise does not imply absence of feedback quantization error.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01278",
+        "SRC01279",
+        "SRC01280",
+        "SRC01281",
+        "SRC01282",
+        "SRC01283",
+        "SRC01284"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0184",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0185",
+    "core_question": {
+      "text": "Does actual quantization error enter the estimator in the correct coordinates?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01271",
+        "SRC01267",
+        "SRC01285",
+        "SRC01286"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Trace error statistics through quantization, reconstruction, and coordinate transformations into linear estimation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01271",
+        "SRC01267",
+        "SRC01285",
+        "SRC01286"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Quantization coordinates, inverse transform, error covariance, LMMSE, and channel reconstruction.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01271",
+        "SRC01267",
+        "SRC01285",
+        "SRC01286"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Quantization noise was mentioned but its power and coordinates relative to the estimator were unclear.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01271",
+        "SRC01267",
+        "SRC01285",
+        "SRC01286"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Define feedback, reconstructed signals, and error statistics in one consistent model, then connect estimation steps and final recovery.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01271",
+        "SRC01267",
+        "SRC01285",
+        "SRC01286"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Known covariance and error independence require support; scalar quantization alone does not certify independence.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01271",
+        "SRC01267",
+        "SRC01285",
+        "SRC01286"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0185",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0186",
+    "core_question": {
+      "text": "Are ideal zero-error overhead bounds separated from finite-bit algorithms?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01278",
+        "SRC01279",
+        "SRC01287",
+        "SRC01288"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check which errors are removed when an actual quantized protocol is followed by ideal overhead analysis.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01278",
+        "SRC01279",
+        "SRC01287",
+        "SRC01288"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Executable quantization and estimation, ideal noise and compression assumptions, and minimum training length.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01278",
+        "SRC01279",
+        "SRC01287",
+        "SRC01288"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Beginning with noiseless feedback made readers infer distortion-free quantization.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01278",
+        "SRC01279",
+        "SRC01287",
+        "SRC01288"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Present the practical protocol first, then explicitly remove selected error sources for ideal overhead analysis.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01278",
+        "SRC01279",
+        "SRC01287",
+        "SRC01288"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "An ideal lower bound is not a finite-bit accuracy guarantee.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01278",
+        "SRC01279",
+        "SRC01287",
+        "SRC01288"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0186",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0187",
+    "core_question": {
+      "text": "Are assumptions attached to the conclusions that actually require them?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01289",
+        "SRC01290",
+        "SRC01291",
+        "SRC01292"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Identify which algorithms, analyses, or experiments use an introduced distribution assumption.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01289",
+        "SRC01290",
+        "SRC01291",
+        "SRC01292"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "General protocol, specific distribution-dependent analysis or experiment, and corresponding assumption.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01289",
+        "SRC01290",
+        "SRC01291",
+        "SRC01292"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Presenting an analysis-only or simulation-only Gaussian assumption as necessary for the entire protocol.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01289",
+        "SRC01290",
+        "SRC01291",
+        "SRC01292"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Separate algorithm applicability from distributional requirements and state assumptions where needed.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01289",
+        "SRC01290",
+        "SRC01291",
+        "SRC01292"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Removing an assumption from the system-model section does not generalize derivations that still depend on it.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01289",
+        "SRC01290",
+        "SRC01291",
+        "SRC01292"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0187",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0188",
+    "core_question": {
+      "text": "Does surrogate distortion correspond to the final physical estimation objective?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01293",
+        "SRC01294",
+        "SRC01295"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check mappings when optimizing an intermediate or transformed-domain distortion for a final parameter.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01293",
+        "SRC01294",
+        "SRC01295"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Quantization domain, reconstructed observation error, channel-estimation error, and optimization objective.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01293",
+        "SRC01294",
+        "SRC01295"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A Gaussian test-channel distortion was attached to an intermediate variable without explaining its relation to channel error.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01293",
+        "SRC01294",
+        "SRC01295"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Define the approximate channel's domain, inverse mapping, and how surrogate distortion supports the final task.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01293",
+        "SRC01294",
+        "SRC01295"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Small surrogate error does not automatically imply small final-parameter error.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01293",
+        "SRC01294",
+        "SRC01295"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0188",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0189",
+    "core_question": {
+      "text": "Are covariance and transform properties defined before whitening or rotation?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01296",
+        "SRC01297",
+        "SRC01285",
+        "SRC01298"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check the origin and properties of transforms derived from covariance decompositions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01296",
+        "SRC01297",
+        "SRC01285",
+        "SRC01298"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Received-signal covariance, decomposition or transform, quantization coordinates, and inverse transformation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01296",
+        "SRC01297",
+        "SRC01285",
+        "SRC01298"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A matrix was used for whitening or denoising before its source and unitary properties were defined.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01296",
+        "SRC01297",
+        "SRC01285",
+        "SRC01298"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Define covariance and transform roles first; distinguish decorrelation, whitening, and rotation before transforming errors.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01296",
+        "SRC01297",
+        "SRC01285",
+        "SRC01298"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A unitary rotation does not automatically normalize unequal variances into white noise.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01296",
+        "SRC01297",
+        "SRC01285",
+        "SRC01298"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0189",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0190",
+    "core_question": {
+      "text": "Is a joint Gaussian approximation supported rather than inferred from marginal distributions?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01299",
+        "SRC01300",
+        "SRC01301",
+        "SRC01302",
+        "SRC01303",
+        "SRC01291"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check assumptions behind joint Gaussian or rate-distortion results derived from components or large-system limits.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01299",
+        "SRC01300",
+        "SRC01301",
+        "SRC01302",
+        "SRC01303",
+        "SRC01291"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Underlying random quantities, joint linear-combination distribution, transformed distribution, and Gaussian rate-distortion analysis.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01299",
+        "SRC01300",
+        "SRC01301",
+        "SRC01302",
+        "SRC01303",
+        "SRC01291"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Declaring an observation Gaussian without conditions or using joint results from marginal Gaussianity.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01299",
+        "SRC01300",
+        "SRC01301",
+        "SRC01302",
+        "SRC01303",
+        "SRC01291"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State the approximation, asymptotic quantity, and joint-distribution justification; use an explicit assumption when necessary.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01299",
+        "SRC01300",
+        "SRC01301",
+        "SRC01302",
+        "SRC01303",
+        "SRC01291"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Different large-system limits are not interchangeable sufficient conditions; supporting citations require verification.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01299",
+        "SRC01300",
+        "SRC01301",
+        "SRC01302",
+        "SRC01303",
+        "SRC01291"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0190",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0191",
+    "core_question": {
+      "text": "Are proxy-model errors distinguished from actual quantization noise?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01304",
+        "SRC01305",
+        "SRC01306",
+        "SRC01307"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check notation and statistics when a Gaussian proxy represents real quantization errors.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01304",
+        "SRC01305",
+        "SRC01306",
+        "SRC01307"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Actual quantization error, Gaussian proxy, covariance and independence assumptions, and resulting analysis.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01304",
+        "SRC01305",
+        "SRC01306",
+        "SRC01307"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Using one symbol for different distributions made analytical assumptions appear to be physical quantizer properties.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01304",
+        "SRC01305",
+        "SRC01306",
+        "SRC01307"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Use separate error notation and statistics, identifying what is approximated and what is preserved.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01304",
+        "SRC01305",
+        "SRC01306",
+        "SRC01307"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Zero receiver noise and zero quantization error are independent restrictions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01304",
+        "SRC01305",
+        "SRC01306",
+        "SRC01307"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0191",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0192",
+    "core_question": {
+      "text": "How are feedback bits transported, and what overhead follows?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01308",
+        "SRC01309",
+        "SRC01310",
+        "SRC01311",
+        "SRC01312",
+        "SRC01313",
+        "SRC01314",
+        "SRC01315"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check access, modulation, rate, and decoding assumptions when converting multiuser feedback bits to duration.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01308",
+        "SRC01309",
+        "SRC01310",
+        "SRC01311",
+        "SRC01312",
+        "SRC01313",
+        "SRC01314",
+        "SRC01315"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Bit generation, multiuser modulation and access, parallel or serial transmission, and feedback duration.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01308",
+        "SRC01309",
+        "SRC01310",
+        "SRC01311",
+        "SRC01312",
+        "SRC01313",
+        "SRC01314",
+        "SRC01315"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Computing overhead from bit counts without an access protocol, or multiplying broadcast cost by the number of receivers.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01308",
+        "SRC01309",
+        "SRC01310",
+        "SRC01311",
+        "SRC01312",
+        "SRC01313",
+        "SRC01314",
+        "SRC01315"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State the access protocol, available rates, and decoding assumptions before computing total feedback time.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01308",
+        "SRC01309",
+        "SRC01310",
+        "SRC01311",
+        "SRC01312",
+        "SRC01313",
+        "SRC01314",
+        "SRC01315"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A single-user formula does not prove simultaneous error-free multiuser transmission.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01308",
+        "SRC01309",
+        "SRC01310",
+        "SRC01311",
+        "SRC01312",
+        "SRC01313",
+        "SRC01314",
+        "SRC01315"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0192",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0193",
+    "core_question": {
+      "text": "Does duration accounting respect overlapping pilot and feedback transmissions?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01316"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check schedules and duplex capability when stages can overlap.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01316"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Pilot reception and feedback timeline, duplex conditions, and total elapsed duration.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01316"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Adding sequential stage durations despite feedback being streamed during pilot reception.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01316"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State whether feedback waits for all pilots or is pipelined; calculate duration from actual overlap and duplex capability.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01316"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Rounding a total versus rounding individual packets depends on the packet protocol, not algebra alone.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01316"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0193",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0194",
+    "core_question": {
+      "text": "Are stage-feasibility constraints tracked through the overall theorem without conflating variables?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01317",
+        "SRC01318",
+        "SRC01319",
+        "SRC01320"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Compare each stage constraint with the distinct parameter ratios governing theorem branches.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01317",
+        "SRC01318",
+        "SRC01319",
+        "SRC01320"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Feedback feasibility, full protocol, and theorem branches involving their own dimensions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01317",
+        "SRC01318",
+        "SRC01319",
+        "SRC01320"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Treating one dimension inequality as eliminating a branch governed by a different dimension comparison.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01317",
+        "SRC01318",
+        "SRC01319",
+        "SRC01320"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Track the variables and origin of every constraint and verify each claimed branch implication.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01317",
+        "SRC01318",
+        "SRC01319",
+        "SRC01320"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A suggested deletion is not valid merely because it appears in feedback; different ratios must be checked separately.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01317",
+        "SRC01318",
+        "SRC01319",
+        "SRC01320"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0194",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0195",
+    "core_question": {
+      "text": "Are bits, bits per sample, and transmission time dimensionally consistent?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01321",
+        "SRC01322",
+        "SRC01323"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check formulas mixing rates, sample counts, total bits, and time budgets.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01321",
+        "SRC01322",
+        "SRC01323"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Per-sample rate, number of samples, total bits, feedback time, and budget.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01321",
+        "SRC01322",
+        "SRC01323"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Equating total bits directly with a per-sample rate or adding a redundant constraint already imposed by time.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01321",
+        "SRC01322",
+        "SRC01323"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State units and derive totals, maximum user duration, and constraint relationships.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01321",
+        "SRC01322",
+        "SRC01323"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Samples and slots need an explicit duration convention.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01321",
+        "SRC01322",
+        "SRC01323"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0195",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0196",
+    "core_question": {
+      "text": "Are reference-object exceptions preserved in reconstruction formulas?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01324",
+        "SRC01325",
+        "SRC01326",
+        "SRC01327"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check formulas that reconstruct all objects through references and nonreference relative quantities.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01324",
+        "SRC01325",
+        "SRC01326",
+        "SRC01327"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Reference-selection sets, nonreference ratios, feedback counts per object, and complete reconstruction.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01324",
+        "SRC01325",
+        "SRC01326",
+        "SRC01327"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Applying a nonreference-only formula unconditionally to reference objects.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01324",
+        "SRC01325",
+        "SRC01326",
+        "SRC01327"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Separate reference terms and define reference-group membership and associated feedback quantities.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01324",
+        "SRC01325",
+        "SRC01326",
+        "SRC01327"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "One object may serve as reference in multiple groups; a single reference label cannot replace membership sets.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01324",
+        "SRC01325",
+        "SRC01326",
+        "SRC01327"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0196",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0197",
+    "core_question": {
+      "text": "Does the actual measurement design match the identifiability theorem's construction?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01328",
+        "SRC01329"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check what a minimum-observation theorem provides for implemented pilots or control matrices.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01328",
+        "SRC01329"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Minimum-length theorem, full-rank construction, implemented pilot or reflection design, and estimator.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01328",
+        "SRC01329"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Repeated theorem references were treated as concrete designs even when the theorem did not supply a construction.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01328",
+        "SRC01329"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Determine whether the theorem proves existence, supplies a construction, or only counts dimensions; justify the actual implementation accordingly.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01328",
+        "SRC01329"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A theorem title alone does not close a missing-construction issue.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01328",
+        "SRC01329"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0197",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0198",
+    "core_question": {
+      "text": "What heterogeneity makes nonuniform resource allocation useful?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01330",
+        "SRC01331",
+        "SRC01332"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check allocation dimensions, per-user and total budgets, and the mechanism behind claimed gains.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01330",
+        "SRC01331",
+        "SRC01332"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Reference selection, per-user per-slot bits, individual and total feedback budgets, allocation dimensions, and equal-budget accuracy.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01330",
+        "SRC01331",
+        "SRC01332",
+        "SRC01333"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Claiming temporal allocation importance without explaining power or sensitivity differences across observations.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01330",
+        "SRC01331",
+        "SRC01332"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Define per-slot bits and budget aggregation, equal-budget assumptions, optimization dimensions and constraints; justify any reference-selection effect and compare accuracy at the same cost.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01330",
+        "SRC01331",
+        "SRC01332",
+        "SRC01333"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Do not require a predetermined gain or choose favorable examples as evidence of universal improvement.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01330",
+        "SRC01331",
+        "SRC01332"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0198",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0199",
+    "core_question": {
+      "text": "Does a surrogate objective preserve the quality of resource-allocation decisions?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01334",
+        "SRC01335",
+        "SRC01336",
+        "SRC01337",
+        "SRC01338",
+        "SRC01339"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "When a proxy chooses configurations, seek appropriate theory or empirical comparisons of actual decision quality.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01334",
+        "SRC01335",
+        "SRC01336",
+        "SRC01337",
+        "SRC01338",
+        "SRC01339"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Analytical error, actual quantizer error, configuration ranking or optimum, and usable decisions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01334",
+        "SRC01335",
+        "SRC01336",
+        "SRC01337",
+        "SRC01338",
+        "SRC01339"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Curves from different distortion targets or unexplained sampled configurations did not validate the allocation strategy.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01334",
+        "SRC01335",
+        "SRC01336",
+        "SRC01337",
+        "SRC01338",
+        "SRC01339"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Describe samples and configurations, compare both errors for the same allocations, and separate value approximation from reliable decisions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01334",
+        "SRC01335",
+        "SRC01336",
+        "SRC01337",
+        "SRC01338",
+        "SRC01339"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Agreement on finite examples does not prove identical rankings for every allocation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01334",
+        "SRC01335",
+        "SRC01336",
+        "SRC01337",
+        "SRC01338",
+        "SRC01339"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0199",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0200",
+    "core_question": {
+      "text": "Are variable dependencies and constraint separability sufficient for decomposition?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01340",
+        "SRC01341",
+        "SRC01342",
+        "SRC01343"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check coupled objectives and budgets before splitting allocation into independent subproblems.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01340",
+        "SRC01341",
+        "SRC01342",
+        "SRC01343"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Independent quantization, separable objective and constraints, and per-user subproblems.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01340",
+        "SRC01341",
+        "SRC01342",
+        "SRC01343"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Claiming parallel decomposition without showing separability or absence of coupled constraints.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01340",
+        "SRC01341",
+        "SRC01342",
+        "SRC01343"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Show each objective's variable dependence, constraints, and independence before deriving subproblems.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01340",
+        "SRC01341",
+        "SRC01342",
+        "SRC01343"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A shared total budget can prevent independent optimization.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01340",
+        "SRC01341",
+        "SRC01342",
+        "SRC01343"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0200",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0201",
+    "core_question": {
+      "text": "Does majorization-minimization distinguish surrogate solutions from original-problem guarantees?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01344",
+        "SRC01345",
+        "SRC01346",
+        "SRC01347",
+        "SRC01348",
+        "SRC01349"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check the upper bound, touching condition, feasible set, updates, and claimed convergence.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01344",
+        "SRC01345",
+        "SRC01346",
+        "SRC01347",
+        "SRC01348",
+        "SRC01349"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Original objective, upper-bound surrogate, convex subproblem, update, and resulting guarantee.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01344",
+        "SRC01345",
+        "SRC01346",
+        "SRC01347",
+        "SRC01348",
+        "SRC01349"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Saying an optimization is solvable without explaining the bound or the problem solved at each iteration.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01344",
+        "SRC01345",
+        "SRC01346",
+        "SRC01347",
+        "SRC01348",
+        "SRC01349"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Specify majorization and tangency, constraints, updates, and the convergence properties actually supported.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01344",
+        "SRC01345",
+        "SRC01346",
+        "SRC01347",
+        "SRC01348",
+        "SRC01349"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Monotonicity alone does not prove strict descent or general local optimality; suggested guarantees need theoretical checking.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01344",
+        "SRC01345",
+        "SRC01346",
+        "SRC01347",
+        "SRC01348",
+        "SRC01349"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0201",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0202",
+    "core_question": {
+      "text": "Does discretizing continuous bit allocations preserve feasibility?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01350",
+        "SRC01351",
+        "SRC01352"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check rounding and codebook size against the original budget and implementation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01350",
+        "SRC01351",
+        "SRC01352"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Continuous rate solution, integer bits, codebook size, and budget.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01350",
+        "SRC01351",
+        "SRC01352"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Nearest-integer rounding could exceed the budget, while the continuous relaxation was not clearly identified.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01350",
+        "SRC01351",
+        "SRC01352"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Specify rounding, feasibility, and performance loss, distinguishing relaxed optimization from implementation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01350",
+        "SRC01351",
+        "SRC01352"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Flooring can protect some upper bounds but need not satisfy additional lower bounds.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01350",
+        "SRC01351",
+        "SRC01352"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0202",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0203",
+    "core_question": {
+      "text": "Does a total-overhead comparison isolate pilot and feedback bottlenecks?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01353",
+        "SRC01354",
+        "SRC01355",
+        "SRC01356",
+        "SRC01357",
+        "SRC01358",
+        "SRC01359"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check fixed total resources when changing pilot counts and feedback precision.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01353",
+        "SRC01354",
+        "SRC01355",
+        "SRC01356",
+        "SRC01357",
+        "SRC01358",
+        "SRC01359"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Total resources, pilot-sample count, bits per sample, and channel-estimation error.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01353",
+        "SRC01354",
+        "SRC01355",
+        "SRC01356",
+        "SRC01357",
+        "SRC01358",
+        "SRC01359"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Adding pilots could dilute quantization precision; axes and fixed quantities were unclear.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01353",
+        "SRC01354",
+        "SRC01355",
+        "SRC01356",
+        "SRC01357",
+        "SRC01358",
+        "SRC01359"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Identify fixed and varying costs at comparable total overhead and check each baseline's minimum pilot requirement.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01353",
+        "SRC01354",
+        "SRC01355",
+        "SRC01356",
+        "SRC01357",
+        "SRC01358",
+        "SRC01359"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Minimum-length differences may explain curves; baselines operated below feasibility must be labeled.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01353",
+        "SRC01354",
+        "SRC01355",
+        "SRC01356",
+        "SRC01357",
+        "SRC01358",
+        "SRC01359"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0203",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0204",
+    "core_question": {
+      "text": "Do staged-resource experiments satisfy the modeled time and energy budgets?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01360",
+        "SRC01361",
+        "SRC01362",
+        "SRC01363"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check stage-specific sample counts and powers against total budgets and feasibility.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01360",
+        "SRC01361",
+        "SRC01362",
+        "SRC01363"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Estimation stages, samples and power, total energy and duration, and feasible settings.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01360",
+        "SRC01361",
+        "SRC01362",
+        "SRC01363"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Stage-dependent simulated powers conflicted with a single-power model, or parameter sweeps crossed minimum feasible lengths.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01360",
+        "SRC01361",
+        "SRC01362",
+        "SRC01363"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Update stage-indexed model quantities and restrict experiments to feasible time and energy allocations.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01360",
+        "SRC01361",
+        "SRC01362",
+        "SRC01363"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Removing a subsection for space is an editorial decision, not resolution of its technical question.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01360",
+        "SRC01361",
+        "SRC01362",
+        "SRC01363"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0204",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0205",
+    "core_question": {
+      "text": "Do baselines address the same task with accurately described information and costs?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01364",
+        "SRC01365",
+        "SRC01366",
+        "SRC01367",
+        "SRC01368",
+        "SRC01369",
+        "SRC01370"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check task, channel, and acquisition assumptions before treating prior methods as direct baselines.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01364",
+        "SRC01365",
+        "SRC01366",
+        "SRC01367",
+        "SRC01368",
+        "SRC01369",
+        "SRC01370"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Prior task and channel assumptions, usable correlation, pilot and feedback costs, and comparable evaluation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01364",
+        "SRC01365",
+        "SRC01366",
+        "SRC01367",
+        "SRC01368",
+        "SRC01369",
+        "SRC01370"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Insufficient descriptions conflated distinct sparsity or transmission-direction tasks with direct baselines.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01364",
+        "SRC01365",
+        "SRC01366",
+        "SRC01367",
+        "SRC01368",
+        "SRC01369",
+        "SRC01370"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Explain conventional and improved estimate-then-quantize approaches and identify which resource components each addresses.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01364",
+        "SRC01365",
+        "SRC01366",
+        "SRC01367",
+        "SRC01368",
+        "SRC01369",
+        "SRC01370"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A question about literature coverage does not establish that every prior method ignores a cost.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01364",
+        "SRC01365",
+        "SRC01366",
+        "SRC01367",
+        "SRC01368",
+        "SRC01369",
+        "SRC01370"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0205",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0206",
+    "core_question": {
+      "text": "Does revised protocol wording preserve the actual operation sequence?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01371",
+        "SRC01372"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check added phrases about ordering, feedback targets, or operations in reused protocol descriptions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01371",
+        "SRC01372"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Established explanation, new phrase, and the operation sequence a reader infers.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01371",
+        "SRC01372"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Wording about sending observations rather than estimates suggested unnecessary local estimation before feedback.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01371",
+        "SRC01372"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Check whether a rewrite implies new operations; retain established technical meaning and add only actual changes.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01371",
+        "SRC01372"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Reusing earlier prose does not prohibit rewriting; preserving protocol meaning is the criterion.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01371",
+        "SRC01372"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0206",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0207",
+    "core_question": {
+      "text": "Does the research objective connect distributed observations with acquisition and feedback costs?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01373",
+        "SRC01374",
+        "SRC01375",
+        "SRC01376",
+        "SRC01377",
+        "SRC01378",
+        "SRC01379"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check centralized estimation that jointly designs observation acquisition and compression.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01373",
+        "SRC01374",
+        "SRC01375",
+        "SRC01376",
+        "SRC01377",
+        "SRC01378",
+        "SRC01379"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Downlink channel-information need, user observations, feedback objects, and pilot and feedback costs.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01373",
+        "SRC01374",
+        "SRC01375",
+        "SRC01376",
+        "SRC01377",
+        "SRC01378",
+        "SRC01379"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "An objective limited to estimation accuracy or a new protocol did not explain the joint acquisition-and-feedback problem.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01373",
+        "SRC01374",
+        "SRC01375",
+        "SRC01376",
+        "SRC01377",
+        "SRC01378",
+        "SRC01379"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Define participants, required information, return path, both resource costs, and the value of cross-user dependence.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01373",
+        "SRC01374",
+        "SRC01375",
+        "SRC01376",
+        "SRC01377",
+        "SRC01378",
+        "SRC01379"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Historical claims of conventional-protocol optimality for independent channels require independent literature verification.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01373",
+        "SRC01374",
+        "SRC01375",
+        "SRC01376",
+        "SRC01377",
+        "SRC01378",
+        "SRC01379"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0207",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0208",
+    "core_question": {
+      "text": "Are deleted propagation components reflected in applicability claims?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01380"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check whether removing a path changes assumptions and subsequent algorithm scope.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01380"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Removed direct component, explicit blockage assumption, signal model, and application scope.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01380"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The earlier model retained a direct path; feedback requested its removal under an explicit blockage assumption, requiring corresponding model and scope changes.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01380"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Revise the model and scope together; do not retain claims that require the removed component.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01380"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A simplification request does not prove real deployments are always blocked or supply a justification by itself.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01380"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0208",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0209",
+    "core_question": {
+      "text": "Are quantization units, codewords, and transmitted representations connected?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01381",
+        "SRC01382",
+        "SRC01383",
+        "SRC01384",
+        "SRC01385",
+        "SRC01386",
+        "SRC01387",
+        "SRC01388",
+        "SRC01389"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check quantizer design, indices, bits, transmission, and reconstruction for omissions or inconsistency.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01381",
+        "SRC01382",
+        "SRC01383",
+        "SRC01384",
+        "SRC01385",
+        "SRC01386",
+        "SRC01387",
+        "SRC01388",
+        "SRC01389"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Scalar or vector quantization, codebook index, bit representation, transport, and inverse quantization.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01381",
+        "SRC01382",
+        "SRC01383",
+        "SRC01384",
+        "SRC01385",
+        "SRC01386",
+        "SRC01387",
+        "SRC01388",
+        "SRC01389"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Mentioning quantization without distinguishing samples, vectors, codewords, and transmitted indices.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01381",
+        "SRC01382",
+        "SRC01383",
+        "SRC01384",
+        "SRC01385",
+        "SRC01386",
+        "SRC01387",
+        "SRC01388",
+        "SRC01389"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Define codebooks, distortion criterion, indices and bits, and how endpoints share the codebook.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01381",
+        "SRC01382",
+        "SRC01383",
+        "SRC01384",
+        "SRC01385",
+        "SRC01386",
+        "SRC01387",
+        "SRC01388",
+        "SRC01389"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Informal references to transmitting codewords must be reconciled with whether the protocol actually modulates index bits.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01381",
+        "SRC01382",
+        "SRC01383",
+        "SRC01384",
+        "SRC01385",
+        "SRC01386",
+        "SRC01387",
+        "SRC01388",
+        "SRC01389"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0209",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0210",
+    "core_question": {
+      "text": "Is the stated error covariance that of the named estimator?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01390",
+        "SRC01391",
+        "SRC01392",
+        "SRC01393",
+        "SRC01394"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Distinguish true quantities, noisy observations, and estimates when interpreting covariance formulas.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01390",
+        "SRC01391",
+        "SRC01392",
+        "SRC01393",
+        "SRC01394"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "True signal, noisy or quantized observation, estimator output, and covariance of estimate minus truth.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01390",
+        "SRC01391",
+        "SRC01392",
+        "SRC01393",
+        "SRC01394"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "An error-covariance claim left readers unable to identify whether it described the observation or estimator.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01390",
+        "SRC01391",
+        "SRC01392",
+        "SRC01393",
+        "SRC01394"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Name truth, observation, and estimator, and compute the covariance from the defined estimation error.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01390",
+        "SRC01391",
+        "SRC01392",
+        "SRC01393",
+        "SRC01394"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "This differs from confusing an intermediate target with the final channel; retain both distinctions rather than merging them into generic error clarity.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01390",
+        "SRC01391",
+        "SRC01392",
+        "SRC01393",
+        "SRC01394"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Versions and issue trajectories were reviewed with selected visual evidence. Unconfirmed local responses remain unknown, and unchanged prose does not establish a repair. Complete formulas, external citations, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0210",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  }
+]

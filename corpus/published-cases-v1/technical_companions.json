@@ -1,0 +1,282 @@
+{
+  "L37": {
+    "case_id": "L37",
+    "paper_id": "P42",
+    "paired_from": "F42",
+    "selection_boundary": "Load together only when a target claim upgrades asymptotic or numerical evidence to a general finite-size exact statement.",
+    "anchor_pages": [
+      3
+    ],
+    "full_source_record": {
+      "title": "Finite-size allocation switches expose a gap unanswered by an asymptotic argument",
+      "task": "Explain why an infinite-subcarrier result alone cannot guarantee zero duality gap for finite-subcarrier OFDMA.",
+      "premises": "Weighted rate or power optimization includes discrete subcarrier assignment; continuous water filling is available after fixing an assignment.",
+      "chain": [
+        "An infinite-subcarrier concavity result does not estimate the actual finite-size gap.",
+        "Continuous optimization for one fixed assignment differs from selection across assignments.",
+        "A small instance illustrates slope changes caused by assignment switches and a mechanism for loss of global concavity.",
+        "Changes in plots as subcarrier count increases remain observations of finite instances, rather than a theorem for every finite size."
+      ],
+      "boundary": "The final evidence-level distinction is an analyst interpretation. The source's finite examples are not a universal error bound, and the plotted slopes were not quantitatively rechecked.",
+      "verification_limit": "The small-instance optima were not independently enumerated and the cited asymptotic theorem was not reverified.",
+      "status": "analyst_reconstruction_pending_review; target_transfer_not_validated",
+      "source_description": "The stored page distinguishes fixed continuous allocation from finite discrete assignment changes and relates those changes to nonsmooth behavior. The finite-example evidence-level assessment is explicitly an analyst interpretation.",
+      "source_description_status": "selected_source_text_context_review; mathematics not independently reproved",
+      "transfer_hypothesis": null,
+      "assessed_target_sufficiency": null,
+      "analyst_assessment": "Keep the author observation, the limiting argument, and the analyst conclusion about finite evidence separate. This page does not quantify plot slopes or certify a finite-size error bound or exact zero gap.",
+      "analysis_status": {
+        "source_relation": "analyst_reconstruction_of_cited_source",
+        "target_transfer": "unvalidated; not an assessed sufficient revision"
+      },
+      "interpretation": "Analyst summary; source passages and full derivations are not supplied.",
+      "anchor_pages": [
+        3
+      ],
+      "source_review_limits": {
+        "review_scope": "Original companion analysis and the stored source-page text contexts were compared. Previously recorded visual checks were not repeated; complete mathematics and target applicability were not independently verified.",
+        "verification_limit": "The small-instance optima were not independently enumerated and the cited asymptotic theorem was not reverified.",
+        "global_limits": [
+          "Only original stored analysis and selected source-page text contexts were reviewed. Full papers and all citations were not exhaustively re-read.",
+          "No theorem was independently re-proved, no simulation was rerun, and no new visual verification or target-manuscript evaluation was performed.",
+          "Source OCR can omit symbols and hyphenated text. F20 shared constellation and coding conditions were located in the stored footnotes after a whole-anchor mismatch.",
+          "Statements in a companion about unstored pages remain outside this audit. Earlier recorded visual checks are provenance records, not new checks performed here."
+        ]
+      }
+    },
+    "public_source": {
+      "title": "Optimal Resource Allocation for OFDMA Downlink Systems",
+      "doi": null,
+      "url": null,
+      "year": null,
+      "source_status": "Published-paper library; analytical summaries do not reprove source results."
+    }
+  },
+  "GP10-02": {
+    "case_id": "GP10-02",
+    "paper_id": "P33",
+    "paired_from": "F33",
+    "selection_boundary": "Load together only for claims about overall reliability or real-time behavior inferred from conditional iteration statistics.",
+    "anchor_pages": [
+      5
+    ],
+    "full_source_record": {
+      "title": "Relate convergence performance to feasible samples, tolerance and physical time",
+      "task": "Explain the response speed of power control and what it supports about deployment.",
+      "chain": [
+        "Feasibility determines the sample population represented by conditional convergence statistics.",
+        "The reported experiment uses 10000 random trials, approximately 48 percent feasible cases and a tolerance within 1 percent of a 12 dB target; these are source-experiment settings.",
+        "The source separately reports infeasibility detection and discusses different implications of 0.01-second and 0.1-second iterations.",
+        "Theoretical convergence is conditional on feasibility and an appropriate step size; a small iteration count does not itself establish physical real-time performance."
+      ],
+      "diagnostic_relation": "Check the statistical denominator, feasibility filtering, convergence threshold and available time budget before inferring overall success or deployment speed.",
+      "boundary": "The source's feasible fraction and tolerance are not general standards. Static-propagation results do not automatically cover mobile or fast-fading tracking. Unknown iteration duration leaves a deployment claim unsupported rather than supplying an invented runtime.",
+      "verification_limit": "Source text and a relevant visual page were checked in the original analysis; independent review and target-paper validation were not established.",
+      "status": "reference_only; analyst_transfer_hypothesis; advisor_endorsement_unknown",
+      "source_description": "The stored experimental page reports a feasible subset, convergence conditional on that subset, and failure behavior. Iteration durations are hypothetical examples, not measured latency.",
+      "source_description_status": "selected_source_text_context_review; mathematics not independently reproved",
+      "transfer_hypothesis": "If the target claim is only conditional convergence speed, assess its stated subset, denominator, and convergence criterion. An unconditional-success or real-time claim requires additional evidence appropriate to that claim.",
+      "assessed_target_sufficiency": null,
+      "analyst_assessment": "The original companion already labels diagnostic transfer as an untested analyst hypothesis and advisor endorsement as unknown. Its statement about sufficient reporting still needs target-claim qualification. Assertions about theoretical pages outside the stored page remain unchecked here.",
+      "analysis_status": {
+        "source_relation": "analyst_reconstruction_of_cited_source",
+        "target_transfer": "unvalidated; not an assessed sufficient revision"
+      },
+      "interpretation": "Analyst summary; source passages and full derivations are not supplied.",
+      "anchor_pages": [
+        5
+      ],
+      "source_review_limits": {
+        "review_scope": "Original companion analysis and the stored source-page text contexts were compared. Previously recorded visual checks were not repeated; complete mathematics and target applicability were not independently verified.",
+        "verification_limit": "Source text and a relevant visual page were checked in the original analysis; independent review and target-paper validation were not established.",
+        "global_limits": [
+          "Only original stored analysis and selected source-page text contexts were reviewed. Full papers and all citations were not exhaustively re-read.",
+          "No theorem was independently re-proved, no simulation was rerun, and no new visual verification or target-manuscript evaluation was performed.",
+          "Source OCR can omit symbols and hyphenated text. F20 shared constellation and coding conditions were located in the stored footnotes after a whole-anchor mismatch.",
+          "Statements in a companion about unstored pages remain outside this audit. Earlier recorded visual checks are provenance records, not new checks performed here."
+        ]
+      }
+    },
+    "public_source": {
+      "title": "A simple distributed autonomous power control algorithm and its convergence",
+      "doi": null,
+      "url": null,
+      "year": 1993,
+      "source_status": "Published-paper library; analytical summaries do not reprove source results."
+    }
+  },
+  "L07": {
+    "case_id": "L07",
+    "paper_id": "P49",
+    "paired_from": "F49",
+    "selection_boundary": "Load together only when intermediate relations must connect to the final theorem; do not require a diagram.",
+    "anchor_pages": [
+      6,
+      9
+    ],
+    "full_source_record": {
+      "title": "Organize a long proof around traceable intermediate propositions and close its final claim",
+      "task": "Explain how Costa-strategy achievable sum rate reaches broadcast-channel sum capacity, rather than merely proving an achievable scheme works.",
+      "premises": "The vector Gaussian broadcast channel, total-power condition and source receiver structure require an achievable lower side and an upper bound valid for arbitrary strategies to meet.",
+      "chain": [
+        "Relate the Costa achievable region to the reverse multiple-access channel's capacity region to establish the achievable side.",
+        "Use a receiver-cooperating point-to-point channel as a Sato upper bound and distinguish marginal from joint noise distributions when optimizing that bound.",
+        "Apply reciprocity to obtain an uplink cooperating channel with a quadratic cost.",
+        "Choose the cost matrix so that the cooperating uplink capacity meets the multiple-access sum capacity, closing the upper-bound and achievability argument.",
+        "A diagram links four channel types with different logical relations, while the conclusion recalls the steps rather than only repeating the capacity claim."
+      ],
+      "diagnostic_relation": "Several correct lemmas do not establish a final capacity claim unless their dependencies and closing implication are supplied.",
+      "boundary": "Achievability, upper bounds, reciprocity and equality of optimized values have different logical meanings; do not turn all links into unconditional equalities. Logical closure is required for the claim, but a diagram or a three-step presentation is optional.",
+      "verification_limit": "The original analysis examined selected organization and diagram pages, without independently reproving every derivation in the preceding sections.",
+      "status": "analyst_hypothesis_not_validated; awaiting_review",
+      "source_description": "The stored pages link an achievable rate, a receiver-cooperation upper bound, reciprocity, and a witness that closes the capacity argument. A figure and staged proof outline communicate this chain.",
+      "source_description_status": "selected_source_text_context_review; mathematics not independently reproved",
+      "transfer_hypothesis": null,
+      "assessed_target_sufficiency": null,
+      "analyst_assessment": "The original companion already distinguishes necessary logical closure from optional diagrams and labels diagnostic transfer as unvalidated. Replace the sufficient-alternative label with nonexclusive expression options and retain the actual proof obligations.",
+      "analysis_status": {
+        "source_relation": "analyst_reconstruction_of_cited_source",
+        "target_transfer": "unvalidated; not an assessed sufficient revision"
+      },
+      "interpretation": "Analyst summary; source passages and full derivations are not supplied.",
+      "anchor_pages": [
+        6,
+        9
+      ],
+      "source_review_limits": {
+        "review_scope": "Original companion analysis and the stored source-page text contexts were compared. Previously recorded visual checks were not repeated; complete mathematics and target applicability were not independently verified.",
+        "verification_limit": "The original analysis examined selected organization and diagram pages, without independently reproving every derivation in the preceding sections.",
+        "global_limits": [
+          "Only original stored analysis and selected source-page text contexts were reviewed. Full papers and all citations were not exhaustively re-read.",
+          "No theorem was independently re-proved, no simulation was rerun, and no new visual verification or target-manuscript evaluation was performed.",
+          "Source OCR can omit symbols and hyphenated text. F20 shared constellation and coding conditions were located in the stored footnotes after a whole-anchor mismatch.",
+          "Statements in a companion about unstored pages remain outside this audit. Earlier recorded visual checks are provenance records, not new checks performed here."
+        ]
+      }
+    },
+    "public_source": {
+      "title": "Sum capacity of the vector Gaussian broadcast channel and uplinkdownlink duality",
+      "doi": "10.1109/TIT.2003.814483",
+      "url": "https://doi.org/10.1109/TIT.2003.814483",
+      "year": 2003,
+      "source_status": "Published-paper library; analytical summaries do not reprove source results."
+    }
+  },
+  "L55": {
+    "case_id": "L55",
+    "paper_id": "P07",
+    "paired_from": "F07",
+    "selection_boundary": "Load together only when actual-environment changes and design-assumption changes matter to the target robustness claim.",
+    "anchor_pages": [
+      4,
+      5,
+      6,
+      10
+    ],
+    "full_source_record": {
+      "title": "Robustness to within-set shape mismatch does not permit arbitrary unknown support changes",
+      "task": "Identify which statistical changes a claim of channel-statistics insensitivity permits.",
+      "premises": "Time-domain and frequency-domain mismatch are analyzed separately; the time spectrum is normalized within a specified bandwidth, while the frequency analysis needs separate conditions such as common eigenvectors.",
+      "chain": [
+        "State the estimator and mean-square error when assumed statistics differ from actual statistics.",
+        "Under fixed frequency-domain matching, use support and normalization conditions to analyze the permitted time-domain shape mismatch.",
+        "Introduce common-eigenvector assumptions separately for frequency mismatch, and qualify the DFT approximation and leakage limits.",
+        "Construct a design insensitive to the specified statistical variations under those conditions.",
+        "Distinguish within-set variation, actual Doppler or delay beyond the design bound, and an overly conservative design bound."
+      ],
+      "boundary": "The related figure pages were not checked in the original analysis; that part of the chain rests on the accompanying discussion. Separate time- and frequency-domain conditions cannot be discarded to claim a joint arbitrary-mismatch guarantee.",
+      "verification_limit": "The listed page texts were read and selected evidence had visual checks; full theorems were not reproved and simulations were not rerun.",
+      "status": "positive_task_example_with_limits; analyst_reconstruction_pending_review",
+      "source_description": "The stored pages distinguish time- and frequency-domain mismatch under different assumptions, including spectral, support, or eigenvector conditions, and describe out-of-support degradation and a conservative-design tradeoff.",
+      "source_description_status": "selected_source_text_context_review; mathematics not independently reproved",
+      "transfer_hypothesis": null,
+      "assessed_target_sufficiency": null,
+      "analyst_assessment": "The original companion already restricts the positive example and explicitly excludes arbitrary joint mismatch guarantees. The construction and observed tradeoffs must remain source-specific; figures not stored as reviewed text contexts were not newly verified.",
+      "analysis_status": {
+        "source_relation": "analyst_reconstruction_of_cited_source",
+        "target_transfer": "unvalidated; not an assessed sufficient revision"
+      },
+      "interpretation": "Analyst summary; source passages and full derivations are not supplied.",
+      "anchor_pages": [
+        4,
+        5,
+        6,
+        10
+      ],
+      "source_review_limits": {
+        "review_scope": "Original companion analysis and the stored source-page text contexts were compared. Previously recorded visual checks were not repeated; complete mathematics and target applicability were not independently verified.",
+        "verification_limit": "The listed page texts were read and selected evidence had visual checks; full theorems were not reproved and simulations were not rerun.",
+        "global_limits": [
+          "Only original stored analysis and selected source-page text contexts were reviewed. Full papers and all citations were not exhaustively re-read.",
+          "No theorem was independently re-proved, no simulation was rerun, and no new visual verification or target-manuscript evaluation was performed.",
+          "Source OCR can omit symbols and hyphenated text. F20 shared constellation and coding conditions were located in the stored footnotes after a whole-anchor mismatch.",
+          "Statements in a companion about unstored pages remain outside this audit. Earlier recorded visual checks are provenance records, not new checks performed here."
+        ]
+      }
+    },
+    "public_source": {
+      "title": "Robust channel estimation for OFDM systems with rapid dispersive fading channels",
+      "doi": null,
+      "url": null,
+      "year": 1998,
+      "source_status": "Published-paper library; analytical summaries do not reprove source results."
+    }
+  },
+  "L03": {
+    "case_id": "L03",
+    "paper_id": "P26",
+    "paired_from": "F26",
+    "selection_boundary": "Load together only if a target extrapolates one metric or asymptotic order to broader performance equivalence.",
+    "anchor_pages": [
+      2,
+      4
+    ],
+    "full_source_record": {
+      "title": "Separate equivalence metrics to explain different performance despite identical asymptotic order",
+      "task": "Clarify the high-SNR relationship between ZF and MMSE without treating one limiting similarity as equality of every performance metric.",
+      "premises": "The source MIMO model and receive-antenna conditions distinguish output SNR, error rate, outage and diversity-multiplexing tradeoff.",
+      "chain": [
+        "Identify the inference from ZF being the high-SNR limit of MMSE to equality of output SNR, error or outage performance.",
+        "Decompose MMSE output SNR into the ZF term and an additional term, retaining its statistical properties and high-SNR limit.",
+        "Distinguish a nonvanishing SNR gain from an asymptotic outage-capacity relationship.",
+        "Explain how both receivers can share a diversity-multiplexing tradeoff that does not capture the SNR gain.",
+        "State which comparisons coincide and which differ using the same results, rather than declaring broad equivalence or nonequivalence."
+      ],
+      "diagnostic_relation": "Similarity of a limiting matrix or asymptotic slope answers only its specified comparison; it does not establish broader absence of performance differences.",
+      "boundary": "Keep dimensions, coding conditions, metric definitions and limits. Source-model conclusions cannot extend to arbitrary receivers or channels.",
+      "verification_limit": "Selected relations were visually checked in the original analysis; the theorem was examined without a recorded visual check. Complete error-rate, outage and tradeoff proofs were not independently reproved.",
+      "status": "analyst_hypothesis_not_validated; awaiting_review",
+      "source_description": "The stored pages decompose the model-specific SNR relationship and distinguish a shared asymptotic diversity-multiplexing order from finite-SNR or outage differences.",
+      "source_description_status": "selected_source_text_context_review; mathematics not independently reproved",
+      "transfer_hypothesis": null,
+      "assessed_target_sufficiency": null,
+      "analyst_assessment": "The original companion already labels transfer as unvalidated and says other metrics are unnecessary without a broader equivalence claim. Its alternative options should be conditional on the target metric and model, rather than labeled sufficient.",
+      "analysis_status": {
+        "source_relation": "analyst_reconstruction_of_cited_source",
+        "target_transfer": "unvalidated; not an assessed sufficient revision"
+      },
+      "interpretation": "Analyst summary; source passages and full derivations are not supplied.",
+      "anchor_pages": [
+        2,
+        4
+      ],
+      "source_review_limits": {
+        "review_scope": "Original companion analysis and the stored source-page text contexts were compared. Previously recorded visual checks were not repeated; complete mathematics and target applicability were not independently verified.",
+        "verification_limit": "Selected relations were visually checked in the original analysis; the theorem was examined without a recorded visual check. Complete error-rate, outage and tradeoff proofs were not independently reproved.",
+        "global_limits": [
+          "Only original stored analysis and selected source-page text contexts were reviewed. Full papers and all citations were not exhaustively re-read.",
+          "No theorem was independently re-proved, no simulation was rerun, and no new visual verification or target-manuscript evaluation was performed.",
+          "Source OCR can omit symbols and hyphenated text. F20 shared constellation and coding conditions were located in the stored footnotes after a whole-anchor mismatch.",
+          "Statements in a companion about unstored pages remain outside this audit. Earlier recorded visual checks are provenance records, not new checks performed here."
+        ]
+      }
+    },
+    "public_source": {
+      "title": "Performance Analysis of ZF and MMSE Equalizers for MIMO Systems An In-Depth Study of the High SNR Regime",
+      "doi": "10.1109/TIT.2011.2112070",
+      "url": "https://doi.org/10.1109/TIT.2011.2112070",
+      "year": 2011,
+      "source_status": "Published-paper library; analytical summaries do not reprove source results."
+    }
+  }
+}

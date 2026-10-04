@@ -1,0 +1,366 @@
+{
+  "P01": {
+    "title": "Channel Estimation for Intelligent Reflecting Surface Assisted Multiuser Communications Framework Algorithms and Analysis",
+    "doi": "10.1109/TWC.2020.3004330",
+    "url": "https://doi.org/10.1109/TWC.2020.3004330",
+    "year": 2020,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P02": {
+    "title": "Channel estimation for OFDM systems with transmitter diversity in mobile wireless channels",
+    "doi": null,
+    "url": null,
+    "year": 1999,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P03": {
+    "title": "Design and analysis of transmit-beamforming based on limited-rate feedback",
+    "doi": "10.1109/TSP.2006.871967",
+    "url": "https://doi.org/10.1109/TSP.2006.871967",
+    "year": 2006,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P04": {
+    "title": "How much training is needed in multiple-antenna wireless links",
+    "doi": "10.1109/TIT.2003.809594",
+    "url": "https://doi.org/10.1109/TIT.2003.809594",
+    "year": 2003,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P05": {
+    "title": "Massive Connectivity With Massive MIMOPart I Device Activity Detection and Channel Estimation",
+    "doi": "10.1109/TSP.2018.2818082",
+    "url": "https://doi.org/10.1109/TSP.2018.2818082",
+    "year": 2018,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P06": {
+    "title": "Multi-Antenna Downlink Channels with Limited Feedback and User Selection",
+    "doi": "10.1109/JSAC.2007.070920",
+    "url": "https://doi.org/10.1109/JSAC.2007.070920",
+    "year": 2007,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P07": {
+    "title": "Robust channel estimation for OFDM systems with rapid dispersive fading channels",
+    "doi": null,
+    "url": null,
+    "year": 1998,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P08": {
+    "title": "Training-based MIMO channel estimation a study of estimator tradeoffs and optimal training signals",
+    "doi": "10.1109/TSP.2005.863008",
+    "url": "https://doi.org/10.1109/TSP.2005.863008",
+    "year": 2006,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P09": {
+    "title": "Training and Feedback Optimization for Multiuser MIMO Downlink",
+    "doi": "10.1109/TCOMM.2011.051711.090752",
+    "url": "https://doi.org/10.1109/TCOMM.2011.051711.090752",
+    "year": 2011,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P10": {
+    "title": "An Iteratively Weighted MMSE Approach to Distributed Sum-Utility Maximization for a MIMO Interfering Broadcast Channel",
+    "doi": "10.1109/TSP.2011.2147784",
+    "url": "https://doi.org/10.1109/TSP.2011.2147784",
+    "year": 2011,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P11": {
+    "title": "Capacity Characterization for Intelligent Reflecting Surface Aided MIMO Communication",
+    "doi": "10.1109/JSAC.2020.3000814",
+    "url": "https://doi.org/10.1109/JSAC.2020.3000814",
+    "year": 2020,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P12": {
+    "title": "Channel Diagonalization for Cloud Radio Access",
+    "doi": "10.1109/LWC.2018.2803825",
+    "url": "https://doi.org/10.1109/LWC.2018.2803825",
+    "year": 2018,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P13": {
+    "title": "Cooperative Interference Management With MISO Beamforming",
+    "doi": "10.1109/TSP.2010.2056685",
+    "url": "https://doi.org/10.1109/TSP.2010.2056685",
+    "year": 2010,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P14": {
+    "title": "Exploiting Multi-Antennas for Opportunistic Spectrum Sharing in Cognitive Radio Networks",
+    "doi": "10.1109/JSTSP.2007.914894",
+    "url": "https://doi.org/10.1109/JSTSP.2007.914894",
+    "year": 2008,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P15": {
+    "title": "Fractional Programming for Communication SystemsPart I Power Control and Beamforming",
+    "doi": "10.1109/TSP.2018.2812733",
+    "url": "https://doi.org/10.1109/TSP.2018.2812733",
+    "year": 2018,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P16": {
+    "title": "Hybrid Digital and Analog Beamforming Design for Large-Scale Antenna Arrays",
+    "doi": "10.1109/JSTSP.2016.2520912",
+    "url": "https://doi.org/10.1109/JSTSP.2016.2520912",
+    "year": 2016,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P17": {
+    "title": "Joint Base Station Clustering and Beamformer Design for Partial Coordinated Transmission in Heterogeneous Networks",
+    "doi": "10.1109/JSAC.2013.130211",
+    "url": "https://doi.org/10.1109/JSAC.2013.130211",
+    "year": 2013,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P18": {
+    "title": "Joint Spatial Division and MultiplexingThe Large-Scale Array Regime",
+    "doi": "10.1109/TIT.2013.2269476",
+    "url": "https://doi.org/10.1109/TIT.2013.2269476",
+    "year": 2013,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P19": {
+    "title": "Joint Transmit Beamforming and Receive Power Splitting for MISO SWIPT Systems",
+    "doi": "10.1109/TWC.2014.041714.131688",
+    "url": "https://doi.org/10.1109/TWC.2014.041714.131688",
+    "year": 2014,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P20": {
+    "title": "Joint Tx-Rx beamforming design for multicarrier MIMO channels a unified framework for convex optimization",
+    "doi": "10.1109/TSP.2003.815393",
+    "url": "https://doi.org/10.1109/TSP.2003.815393",
+    "year": 2003,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P21": {
+    "title": "Linear precoding via conic optimization for fixed MIMO receivers",
+    "doi": "10.1109/TSP.2005.861073",
+    "url": "https://doi.org/10.1109/TSP.2005.861073",
+    "year": 2006,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P22": {
+    "title": "Massive MIMO in the UL DL of Cellular Networks How Many Antennas Do We Need",
+    "doi": "10.1109/JSAC.2013.130205",
+    "url": "https://doi.org/10.1109/JSAC.2013.130205",
+    "year": 2013,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P23": {
+    "title": "On robust Capon beamforming and diagonal loading",
+    "doi": "10.1109/TSP.2003.812831",
+    "url": "https://doi.org/10.1109/TSP.2003.812831",
+    "year": 2003,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P24": {
+    "title": "On the relationship between the multi-antenna secrecy communications and cognitive radio communications",
+    "doi": "10.1109/TCOMM.2010.06.090063",
+    "url": "https://doi.org/10.1109/TCOMM.2010.06.090063",
+    "year": 2010,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P25": {
+    "title": "Optimal beamforming for two-way multi-antenna relay channel with analogue network coding",
+    "doi": "10.1109/JSAC.2009.090611",
+    "url": "https://doi.org/10.1109/JSAC.2009.090611",
+    "year": 2009,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P26": {
+    "title": "Performance Analysis of ZF and MMSE Equalizers for MIMO Systems An In-Depth Study of the High SNR Regime",
+    "doi": "10.1109/TIT.2011.2112070",
+    "url": "https://doi.org/10.1109/TIT.2011.2112070",
+    "year": 2011,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P27": {
+    "title": "Robust adaptive beamforming using worst-case performance optimization a solution to the signal mismatch problem",
+    "doi": "10.1109/TSP.2002.806865",
+    "url": "https://doi.org/10.1109/TSP.2002.806865",
+    "year": 2003,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P28": {
+    "title": "Source Localization and Sensing A Nonparametric Iterative Adaptive Approach Based on Weighted Least Squares",
+    "doi": null,
+    "url": null,
+    "year": null,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P29": {
+    "title": "Weighted sum-rate maximization using weighted MMSE for MIMO-BC beamforming design",
+    "doi": "10.1109/T-WC.2008.070851",
+    "url": "https://doi.org/10.1109/T-WC.2008.070851",
+    "year": 2008,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P30": {
+    "title": "Guaranteeing Secrecy using Artificial Noise",
+    "doi": "10.1109/TWC.2008.060848",
+    "url": "https://doi.org/10.1109/TWC.2008.060848",
+    "year": 2008,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P31": {
+    "title": "Noncooperative Cellular Wireless with Unlimited Numbers of Base Station Antennas",
+    "doi": "10.1109/TWC.2010.092810.091092",
+    "url": "https://doi.org/10.1109/TWC.2010.092810.091092",
+    "year": 2010,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P32": {
+    "title": "A framework for uplink power control in cellular radio systems",
+    "doi": null,
+    "url": null,
+    "year": 1995,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P33": {
+    "title": "A simple distributed autonomous power control algorithm and its convergence",
+    "doi": null,
+    "url": null,
+    "year": 1993,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P34": {
+    "title": "Adaptive resource allocation in multiuser OFDM systems with proportional rate constraints",
+    "doi": "10.1109/TWC.2005.858010",
+    "url": "https://doi.org/10.1109/TWC.2005.858010",
+    "year": 2005,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P35": {
+    "title": "Binary Power Control for Sum Rate Maximization over Multiple Interfering Links",
+    "doi": "10.1109/TWC.2008.070227",
+    "url": "https://doi.org/10.1109/TWC.2008.070227",
+    "year": 2008,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P36": {
+    "title": "Channel access algorithms with active link protection for wireless communication networks with power control",
+    "doi": null,
+    "url": null,
+    "year": 2000,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P37": {
+    "title": "Distributed interference compensation for wireless networks",
+    "doi": "10.1109/JSAC.2006.872889",
+    "url": "https://doi.org/10.1109/JSAC.2006.872889",
+    "year": 2006,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P38": {
+    "title": "Dual methods for nonconvex spectrum optimization of multicarrier systems",
+    "doi": "10.1109/TCOMM.2006.877962",
+    "url": "https://doi.org/10.1109/TCOMM.2006.877962",
+    "year": 2006,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P39": {
+    "title": "Joint optimal power control and beamforming in wireless networks using antenna arrays",
+    "doi": null,
+    "url": null,
+    "year": 1998,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P40": {
+    "title": "On Ergodic Sum Capacity of Fading Cognitive Multiple-Access and Broadcast Channels",
+    "doi": "10.1109/TIT.2009.2030449",
+    "url": "https://doi.org/10.1109/TIT.2009.2030449",
+    "year": 2009,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P41": {
+    "title": "Optimal Power Allocation Strategies for Fading Cognitive Radio Channels with Primary User Outage Constraint",
+    "doi": "10.1109/JSAC.2011.110210",
+    "url": "https://doi.org/10.1109/JSAC.2011.110210",
+    "year": 2011,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P42": {
+    "title": "Optimal Resource Allocation for OFDMA Downlink Systems",
+    "doi": null,
+    "url": null,
+    "year": null,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P43": {
+    "title": "Optimality of Binary Power Control for the Single Cell Uplink",
+    "doi": "10.1109/TIT.2012.2206071",
+    "url": "https://doi.org/10.1109/TIT.2012.2206071",
+    "year": 2012,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P44": {
+    "title": "Power Control By Geometric Programming",
+    "doi": "10.1109/TWC.2007.05960",
+    "url": "https://doi.org/10.1109/TWC.2007.05960",
+    "year": 2007,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P45": {
+    "title": "Solution of the multiuser downlink beamforming problem with individual SINR constraints",
+    "doi": "10.1109/TVT.2003.819629",
+    "url": "https://doi.org/10.1109/TVT.2003.819629",
+    "year": 2004,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P46": {
+    "title": "Duality achievable rates and sum-rate capacity of Gaussian MIMO broadcast channels",
+    "doi": "10.1109/TIT.2003.817421",
+    "url": "https://doi.org/10.1109/TIT.2003.817421",
+    "year": 2003,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P47": {
+    "title": "Network Duality for Multiuser MIMO Beamforming Networks and Applications",
+    "doi": "10.1109/TCOMM.2006.888889",
+    "url": "https://doi.org/10.1109/TCOMM.2006.888889",
+    "year": 2007,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P48": {
+    "title": "On Gaussian MIMO BC-MAC Duality With Multiple Transmit Covariance Constraints",
+    "doi": "10.1109/TIT.2011.2177760",
+    "url": "https://doi.org/10.1109/TIT.2011.2177760",
+    "year": 2012,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P49": {
+    "title": "Sum capacity of the vector Gaussian broadcast channel and uplinkdownlink duality",
+    "doi": "10.1109/TIT.2003.814483",
+    "url": "https://doi.org/10.1109/TIT.2003.814483",
+    "year": 2003,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P50": {
+    "title": "Transmit beamforming and power control for cellular wireless systems",
+    "doi": null,
+    "url": null,
+    "year": 1998,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P51": {
+    "title": "Uplink-Downlink Duality Between Multiple-Access and Broadcast Channels With Compressing Relays",
+    "doi": "10.1109/TIT.2021.3104847",
+    "url": "https://doi.org/10.1109/TIT.2021.3104847",
+    "year": 2021,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  },
+  "P52": {
+    "title": "Uplink-downlink duality via minimax duality",
+    "doi": "10.1109/TIT.2005.862102",
+    "url": "https://doi.org/10.1109/TIT.2005.862102",
+    "year": 2006,
+    "source_status": "Published-paper library; analytical summaries do not reprove source results."
+  }
+}

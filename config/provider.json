@@ -1,0 +1,9 @@
+{
+  "enabled": false,
+  "model": "gpt-6-sol",
+  "reasoning_effort": "xhigh",
+  "context_window": null,
+  "max_output_tokens": 16000,
+  "safety_margin_tokens": 2048,
+  "note": "Verify account access and context capacity before enabling. Input-token preflight also sends manuscript content to the service. Credentials belong only in the local environment."
+}

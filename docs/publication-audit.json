@@ -1,0 +1,8 @@
+{
+  "version": "1.0.0",
+  "status": "pass",
+  "scanned_files": 92,
+  "corpus_json_files": 28,
+  "findings": [],
+  "limits": "Automated rules complement semantic abstraction review; they do not certify legal rights or diagnostic equivalence."
+}
