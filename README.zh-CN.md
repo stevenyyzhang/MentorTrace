@@ -46,8 +46,14 @@ $mentortrace 请审阅 workspaces/manuscript.pdf，并生成包含具体修改�
 从 PDF 稿件准备开始，经过四路审阅、合并复核和修改建议整理，最终交付中英双语 Markdown 与 PDF 报告。
 
 ```mermaid
+---
+config:
+  htmlLabels: false
+  flowchart:
+    htmlLabels: false
+---
 flowchart TB
-    F["PDF 稿件准备<br/>冻结稿件、语料与审阅规则"]
+    F["PDF 稿件准备<br/>冻结稿件、语料与规则"]
     O["对象与任务规划"]
     C["选择并冻结相关案例"]
     R["Reader<br/>阅读理解与组织"]
@@ -55,9 +61,9 @@ flowchart TB
     A["Advisor<br/>独立核查导师审阅关注点"]
     L["Language<br/>语言、符号与格式"]
     M["冻结原始意见<br/>合并并记录处理去向"]
-    V["结合稿件证据独立复核"]
+    V["结合稿件证据<br/>独立复核"]
     D["形成具体修改建议<br/>整理双语报告草稿"]
-    B["核对意见、依据与修改建议的保留"]
+    B["核对意见与依据<br/>检查修改建议是否保留"]
     OUT["确认双语 Markdown 报告<br/>生成 PDF 并逐页检查"]
 
     F --> O --> C

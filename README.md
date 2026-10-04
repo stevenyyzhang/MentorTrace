@@ -46,19 +46,25 @@ The skill provides the review rules, individual checks and report requirements. 
 The workflow prepares the PDF, reviews it through four lanes, merges and verifies the findings, develops revision proposals, and delivers bilingual Markdown and PDF reports.
 
 ```mermaid
+---
+config:
+  htmlLabels: false
+  flowchart:
+    htmlLabels: false
+---
 flowchart TB
-    F["Prepare the PDF<br/>Freeze manuscript, corpus<br/>and review rules"]
-    O["Object and task planning"]
-    C["Select and freeze relevant cases"]
+    F["Prepare PDF inputs<br/>Freeze inputs and rules"]
+    O["Object and task plan"]
+    C["Select and freeze cases"]
     R["Reader<br/>Comprehension<br/>and organization"]
-    T["Technical<br/>Technical relationships<br/>and reasoning"]
+    T["Technical<br/>Relationships<br/>and reasoning"]
     A["Advisor<br/>Independent<br/>concern review"]
-    L["Language<br/>Language, notation<br/>and formatting"]
-    M["Freeze original findings<br/>Merge and record dispositions"]
-    V["Independently verify against<br/>manuscript evidence"]
-    D["Develop concrete revision proposals<br/>Draft the bilingual report"]
-    B["Check preservation of findings,<br/>evidence and revision proposals"]
-    OUT["Finalize the bilingual Markdown report<br/>Generate and inspect the PDF page by page"]
+    L["Language<br/>Wording, notation<br/>and formatting"]
+    M["Freeze original findings<br/>Merge and record decisions"]
+    V["Independent verification<br/>against manuscript evidence"]
+    D["Propose revisions<br/>Draft the bilingual report"]
+    B["Check preservation<br/>Findings, evidence, revisions"]
+    OUT["Bilingual Markdown<br/>PDF and page inspection"]
 
     F --> O --> C
     C --> R
