@@ -1,7 +1,7 @@
 # MentorTrace development workspace
 
 This directory is the isolated development workspace for MentorTrace v1.1.0.
-The current development version is 1.1.0-dev; it is not a published release.
+The current prerelease version is 1.1.0-dev.1; it is not a stable release.
 
 - Make subsequent development changes in this directory.
 - Preserve the v1.0.0 release directory and its ZIP unchanged.

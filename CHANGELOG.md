@@ -1,6 +1,6 @@
 # Changelog / 版本变更
 
-## 1.1.0-dev — development, not a stable release / 开发版
+## 1.1.0-dev.1 — pre-release / 预发布版
 
 The complete development tree is independently runnable. Download the full repository and install its documented dependencies; it does not require an installed v1.0.0 copy. The initial diagnosis rules and both frozen corpora are unchanged.
 
