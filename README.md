@@ -1,8 +1,10 @@
 # MentorTrace
 
-Version: [v1.0.0](VERSION)
+Version: [v1.1.0-dev](VERSION)
 
 [English](README.md) | [简体中文](README.zh-CN.md)
+
+Development status: the stable baseline is `v1.0.0`; ongoing work is on the `dev` branch. See [changes and migration notes](CHANGELOG.md) and the [development validation record](docs/validation-v1.1.0-dev.json). Other audit documents in `docs/` describe the v1.0.0 baseline. The development version is independently runnable, but improvements in diagnostic quality, live latency and usage have not been established by controlled comparisons.
 
 MentorTrace helps authors review research papers and develop concrete revision suggestions. It draws review concerns from an academic supervisor's actual comments and successive manuscript revisions, alongside cases from published papers the supervisor considers well written, to examine a new manuscript's argument, technical support, organization and expression. Each comment identifies the relevant manuscript passage and its supporting grounds. The results are delivered as bilingual English–Chinese Markdown and PDF reports with specific revision suggestions.
 
@@ -24,7 +26,7 @@ The current implementation runs as a **Codex skill with a Python workflow** and 
 Ask Codex to download the repository and prepare the environment:
 
 ```text
-Download the complete https://github.com/stevenyyzhang/MentorTrace repository locally, configure its required dependencies, check the environment, and tell me which repository directory to open in Codex.
+Download the complete dev branch of https://github.com/stevenyyzhang/MentorTrace locally, configure its required dependencies, check the environment, and tell me which repository directory to open in Codex. For the stable version, use the v1.0.0 release instead.
 ```
 
 Once setup is ready, open the downloaded repository root in Codex, place your PDF in a local `workspaces/` directory, and use the review prompt below. See [Dependencies and execution guide](#dependencies-and-execution-guide) for dependencies and model access.
@@ -60,10 +62,11 @@ flowchart TB
     T["Technical<br/>Relationships<br/>and reasoning"]
     A["Advisor<br/>Independent<br/>concern review"]
     L["Language<br/>Wording, notation<br/>and formatting"]
-    M["Freeze original findings<br/>Merge and record decisions"]
+    M["Freeze source findings<br/>Review execution and merge"]
     V["Independent verification<br/>against manuscript evidence"]
+    Q["Judge source requirements<br/>Freeze source review"]
     D["Propose revisions<br/>Draft the bilingual report"]
-    B["Check preservation<br/>Findings, evidence, revisions"]
+    B["Compare requirements<br/>Check final facts and wording"]
     OUT["Bilingual Markdown<br/>PDF and page inspection"]
 
     F --> O --> C
@@ -75,13 +78,13 @@ flowchart TB
     T --> M
     A --> M
     L --> M
-    M --> V --> D --> B --> OUT
+    M --> V --> Q --> D --> B --> OUT
 
     classDef input fill:#f8fafc,stroke:#94a3b8,color:#0f172a;
     classDef review fill:#eff6ff,stroke:#60a5fa,color:#172554;
     classDef output fill:#ecfdf5,stroke:#34d399,color:#064e3b;
     class F input;
-    class O,C,R,T,A,L,M,V,D,B review;
+    class O,C,R,T,A,L,M,V,Q,D,B review;
     class OUT output;
 ```
 
@@ -94,7 +97,7 @@ Arrows before review show the main input dependencies: object and task planning 
 | Advisor | Full manuscript, current batch of supervisor concerns | Independently check comprehension and technical issues using concerns distilled from historical revisions. |
 | Language | Full manuscript, text units to inspect | Check language, notation, terminology consistency and formatting. |
 
-Models perform all four review lanes. Historical concerns and paper cases guide the questions; every final finding still needs specific evidence from the new manuscript. Models use supporting tools to develop revision proposals, check preservation of findings, and inspect the reports. See the [execution guide](.agents/skills/mentortrace/references/execution.md) for details.
+Models perform all four review lanes. Historical concerns and paper cases guide the questions; every final finding still needs specific evidence from the new manuscript. In this development version, reviewers inspect actual initial execution after its freeze, adjudicate changed source requirements before comparing their final delivery, and review the final report facts, conditions and wording. Tools check source hashes, accounting and exact excerpts; they do not certify scientific correctness. These changes still need controlled manuscript replay. See the [execution guide](.agents/skills/mentortrace/references/execution.md) for details.
 
 ## Report contents
 

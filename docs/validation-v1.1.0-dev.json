@@ -1,0 +1,58 @@
+{
+  "version": "1.1.0-dev",
+  "validated_at_utc": "2026-10-06T02:50:10.784697+00:00",
+  "offline_tests": {
+    "count": 100,
+    "status": "pass",
+    "suites": [
+      "test_execution_efficiency",
+      "test_adapter",
+      "test_public_release",
+      "test_preservation",
+      "test_merge_obligations",
+      "test_delivery_integration",
+      "test_section_review"
+    ],
+    "model_calls": 0
+  },
+  "tested_code_files": [
+    {
+      "path": "scripts/execution_policy.py",
+      "sha256": "58b705f58cdd9c47a5f6f8da4c1c16e5c0a3a4c38f5a56a3a44a1abb2e25c372"
+    },
+    {
+      "path": "scripts/codex_adapter.py",
+      "sha256": "e7a59fe5077f4f1edb119c7e33f0b5956cf5d974d3130398c67e0163b7834ad4"
+    },
+    {
+      "path": "scripts/model_adapter.py",
+      "sha256": "ade04c466d4d499ffa9b34ae6cf7a17a6ceb24bf8473cefa7d35dc15c57467d2"
+    },
+    {
+      "path": "scripts/run_authorized_stage.py",
+      "sha256": "b612635d8d8f1d629662f994176c7055637bce7786e3e9fb45a2844db23816f2"
+    },
+    {
+      "path": "scripts/prepare_delivery_delta.py",
+      "sha256": "f386db20267c16f60f9bb1599b162e85945011976aa7a773a7a8e674d954a700"
+    },
+    {
+      "path": "scripts/prepare_revision_proposals.py",
+      "sha256": "64f78fe2205d245f95042f582e89e7f821a8a695d172b4925a2e0820d8f89f03"
+    },
+    {
+      "path": "tests/test_execution_efficiency.py",
+      "sha256": "fa1bca4e945efee84b1d0f1a7c633558850b95416656273d29ff9137021200a8"
+    },
+    {
+      "path": "tests/test_adapter.py",
+      "sha256": "7429c028c26fdab24d3a3361bd6ae2975d96a047e90a0a508789418822e0282f"
+    }
+  ],
+  "provenance": "Recorded offline execution-efficiency and delivery-invariant validation; code hashes checked before dev publication. README, changelog and heading edits were checked separately and do not constitute a new model review.",
+  "limits": [
+    "Synthetic offline tests do not establish diagnostic quality or measured live latency/usage savings.",
+    "No additional paid model calls were made for publication.",
+    "Older docs/validation.json and publication-audit.json describe the v1.0.0 baseline."
+  ]
+}

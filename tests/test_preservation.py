@@ -14,6 +14,31 @@ audit = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(audit)
 
 
+def complete_target_actions(ledger):
+    """Complete synthetic heading/instruction records; tests add facts explicitly."""
+    ledger['target_review'] = {
+        'reviewer': 'synthetic final-text review',
+        'assertion_completeness': 'All blocks and draft constituents inspected; factual cases are recorded separately.',
+        'semantic_review': 'Synthetic actions and headings retain their meaning and local draft conditions.'}
+    for row in ledger['target_units']:
+        row['review'] = {
+            'reviewed_sha256': row['sha256'],
+            'reason': 'Synthetic heading, label or editorial instruction; no implemented result asserted.',
+            'meaning_check': 'The instruction and its stated scope are unchanged.',
+            'style_check': 'The synthetic wording is direct and readable.'}
+        if row['kind'] == 'suggested_wording':
+            row['review']['assertion_completeness'] = 'All constituent blocks have their own factual/action review.'
+        else:
+            row['review'].update(classification='action', assertions=[])
+
+
+def factual_assertion(ledger, quote, status='supported', **details):
+    row = next(row for row in ledger['target_units'] if row['kind'] == 'block' and quote in row['text'])
+    row['review'].update(classification='factual', reason='Review the exact factual assertion rather than its verb tense.',
+                         assertions=[{'quote': quote, 'status': status, 'reason': 'Exact assertion and its stated scope inspected.', **details}])
+    return row
+
+
 class DeliveryAudit(unittest.TestCase):
     def setUp(self):
         self.tmp = tempfile.TemporaryDirectory()
@@ -27,6 +52,42 @@ class DeliveryAudit(unittest.TestCase):
         self.ledger['scope_review'] = {'reviewer':'synthetic test', 'source_completeness':'Both obligations supplied.', 'semantic_review':'Both copied unchanged.'}
         for row in self.ledger['units']:
             row['components'] = [{'source_quote':row['text'], 'obligation':row['text'], 'status':'retained', 'target_quotes':[row['text']], 'reason':'Unchanged obligation.'}]
+        complete_target_actions(self.ledger)
+
+    def test_v2_is_default_and_frozen_v1_is_readable(self):
+        self.assertEqual(self.ledger['version'], 2)
+        legacy = copy.deepcopy(self.ledger)
+        legacy['version'] = 1
+        legacy.pop('target_units')
+        legacy.pop('target_review')
+        result = audit.validate(legacy, self.report)
+        self.assertEqual(result['status'], 'records_validated')
+        self.assertIn('without a target factual inventory', result['limitation'])
+        with self.assertRaisesRegex(ValueError, 'requires a version 2'):
+            audit.validate(legacy, self.report, require_v2=True)
+
+    def test_separator_cannot_locate_an_obligation_in_either_version(self):
+        self.report.write_text(self.report.read_text(encoding='utf-8') + '\n\n---', encoding='utf-8')
+        self.ledger['report_sha256'] = audit.digest(self.report)
+        self.ledger['units'][0]['components'][0]['target_quotes'] = ['---']
+        for version in (1, 2):
+            with self.subTest(version=version):
+                ledger = copy.deepcopy(self.ledger)
+                ledger['version'] = version
+                with self.assertRaisesRegex(ValueError, 'Separator-only'):
+                    audit.validate(ledger, self.report)
+
+    def test_frozen_v1_mixed_excerpts_pass_but_v2_rejects_separator_extras(self):
+        self.report.write_text(self.report.read_text(encoding='utf-8') + '\n\n---', encoding='utf-8')
+        self.ledger['report_sha256'] = audit.digest(self.report)
+        self.ledger['units'][0]['components'][0]['target_quotes'].append('---')
+        legacy = copy.deepcopy(self.ledger)
+        legacy['version'] = 1
+        result = audit.validate(legacy, self.report)
+        self.assertEqual(result['status'], 'records_validated')
+        self.assertFalse(result['semantic_correctness_verified'])
+        with self.assertRaisesRegex(ValueError, 'Separator-only'):
+            audit.validate(self.ledger, self.report)
 
     def test_valid_then_dropped_parameter_detail(self):
         audit.validate(self.ledger, self.report)
@@ -75,6 +136,169 @@ class DeliveryAudit(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn('needs obligations', result.stderr)
         self.assertFalse(output.exists())
+
+
+class FinalTargetEvidence(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+        self.source = self.root/'manuscript.txt'
+        self.report = self.root/'report.md'
+
+    def make_ledger(self, source, report=None, target_quote=None):
+        self.source.write_text(source, encoding='utf-8')
+        self.report.write_text(source if report is None else report, encoding='utf-8')
+        ledger = audit.initialize(self.report, [self.source])
+        ledger['scope_review'] = {'reviewer': 'synthetic test', 'source_completeness': 'All supplied source blocks inspected.',
+                                  'semantic_review': 'Source requirements retained in the indicated synthetic passages.'}
+        for row in ledger['units']:
+            row['components'] = [{'source_quote': row['text'], 'obligation': row['text'], 'status': 'retained',
+                                  'target_quotes': [target_quote or row['text']], 'reason': 'The cited passage retains the source requirement.'}]
+        complete_target_actions(ledger)
+        return ledger
+
+    def evidence(self, quote, basis='manuscript', path=None):
+        path = self.source if path is None else path
+        return {'path': str(path), 'sha256': audit.digest(path), 'quote': quote, 'basis': basis}
+
+    def conditional_ledger(self):
+        action = 'Evaluate the procedure with the full model.'
+        condition = 'Use this sentence only after the author confirms the procedure was evaluated with the full model.'
+        assertion = 'For the extended setting, we evaluate the procedure with the full model.'
+        report = (action + '\n\n##### Conditional assessment draft\n\n**Use:** ' + condition +
+                  '\n\n**Suggested wording / 建议文本:**\n\n' + assertion)
+        ledger = self.make_ledger(action, report, action)
+        condition_row = next(row for row in ledger['target_units'] if row['text'] == '**Use:** ' + condition)
+        row = factual_assertion(ledger, assertion, status='conditional',
+                                condition={'target_unit_id': condition_row['id'], 'quote': condition,
+                                           'reason': 'This exact procedure sentence depends on the named author confirmation.'})
+        return ledger, row
+
+    def test_source_backed_present_tense_passes(self):
+        statement = 'We apply the stated linear filter.'
+        ledger = self.make_ledger(statement, '# Supported draft\n\n' + statement)
+        factual_assertion(ledger, statement, evidence=[self.evidence(statement)])
+        result = audit.validate(ledger, self.report, require_v2=True)
+        self.assertEqual(result['status'], 'records_validated')
+        self.assertIn('not a proof', result['limitation'])
+
+    def test_direct_derivation_present_tense_passes(self):
+        statement = 'For x=0, the product xy is zero.'
+        ledger = self.make_ledger(statement)
+        derivation = self.root/'derivation.txt'
+        derivation.write_text('Substituting x=0 into the supplied product xy gives zero.', encoding='utf-8')
+        factual_assertion(ledger, statement, evidence=[self.evidence(
+            'Substituting x=0 into the supplied product xy gives zero.', basis='direct_derivation', path=derivation)])
+        audit.validate(ledger, self.report)
+
+    def test_factual_assertion_requires_evidence(self):
+        statement = 'We evaluate the procedure with the full model.'
+        ledger = self.make_ledger(statement)
+        factual_assertion(ledger, statement, evidence=[])
+        with self.assertRaisesRegex(ValueError, 'needs evidence'):
+            audit.validate(ledger, self.report)
+
+    def test_missing_or_invented_source_cannot_support_assertion(self):
+        statement = 'We apply the stated linear filter.'
+        ledger = self.make_ledger(statement)
+        row = factual_assertion(ledger, statement, evidence=[self.evidence(statement)])
+        row['review']['assertions'][0]['evidence'][0]['path'] = str(self.root/'missing.txt')
+        with self.assertRaisesRegex(ValueError, 'Evidence source missing'):
+            audit.validate(ledger, self.report)
+        row['review']['assertions'][0]['evidence'] = [self.evidence('All extended-setting evaluations were completed.')]
+        with self.assertRaisesRegex(ValueError, 'Evidence excerpt absent'):
+            audit.validate(ledger, self.report)
+
+    def test_supporting_source_change_invalidates_review(self):
+        statement = 'We apply the stated linear filter.'
+        ledger = self.make_ledger(statement)
+        support = self.root/'support.txt'
+        support.write_text(statement, encoding='utf-8')
+        factual_assertion(ledger, statement, evidence=[self.evidence(statement, path=support)])
+        support.write_text('The chosen filter is not identified.', encoding='utf-8')
+        with self.assertRaisesRegex(ValueError, 'Evidence source changed'):
+            audit.validate(ledger, self.report)
+
+    def test_conditional_present_tense_draft_passes(self):
+        ledger, _ = self.conditional_ledger()
+        result = audit.validate(ledger, self.report)
+        self.assertEqual(result['suggested_wording_passages'], 1)
+
+    def test_condition_must_be_visible_and_local(self):
+        ledger, row = self.conditional_ledger()
+        row['review']['assertions'][0]['condition']['quote'] = 'The author confirmed all experiments were completed.'
+        with self.assertRaisesRegex(ValueError, 'Author condition excerpt absent'):
+            audit.validate(ledger, self.report)
+        ledger, row = self.conditional_ledger()
+        row['review']['assertions'][0]['condition'] = {
+            'target_unit_id': ledger['target_units'][0]['id'],
+            'quote': ledger['target_units'][0]['text'], 'reason': 'Claimed generic condition elsewhere.'}
+        with self.assertRaisesRegex(ValueError, 'attached locally'):
+            audit.validate(ledger, self.report)
+
+    def test_unresolved_fact_requires_visible_notice(self):
+        ledger, row = self.conditional_ledger()
+        assertion = row['review']['assertions'][0]
+        assertion['status'] = 'unresolved'
+        with self.assertRaisesRegex(ValueError, 'Unresolved fact/action needs'):
+            audit.validate(ledger, self.report)
+        assertion['unresolved_notice'] = assertion.pop('condition')
+        audit.validate(ledger, self.report)
+
+    def test_must_to_we_edit_fails_even_after_report_hash_update(self):
+        action = 'Evaluate the procedure with the full model.'
+        draft = 'For the extended setting, the procedure must be evaluated with the full model.'
+        report = action + '\n\n##### Assessment repair\n\n**Suggested wording / 建议文本:**\n\n' + draft
+        ledger = self.make_ledger(action, report, action)
+        audit.validate(ledger, self.report)
+        self.report.write_text(report.replace('the procedure must be evaluated',
+                                              'we evaluate the procedure'), encoding='utf-8')
+        ledger['report_sha256'] = audit.digest(self.report)
+        with self.assertRaisesRegex(ValueError, 'Final target block missing or changed'):
+            audit.validate(ledger, self.report)
+
+    def test_copying_new_inventory_does_not_refresh_old_reviews(self):
+        ledger, _ = self.conditional_ledger()
+        old_reviews = {row['id']: row['review'] for row in ledger['target_units']}
+        self.report.write_text(self.report.read_text(encoding='utf-8').replace('we evaluate', 'we validate'), encoding='utf-8')
+        ledger['report_sha256'] = audit.digest(self.report)
+        ledger['target_units'] = [{**row, 'review': old_reviews[row['id']]} for row in audit.target_inventory(self.report)]
+        with self.assertRaisesRegex(ValueError, 'Target review missing or stale'):
+            audit.validate(ledger, self.report)
+
+    def test_new_fact_and_missing_block_require_target_review(self):
+        action = 'Specify the window convention.'
+        ledger = self.make_ledger(action)
+        self.report.write_text(action + '\n\nAll assessments have been completed.', encoding='utf-8')
+        ledger['report_sha256'] = audit.digest(self.report)
+        with self.assertRaisesRegex(ValueError, 'Final target block missing or changed'):
+            audit.validate(ledger, self.report)
+        ledger = self.make_ledger(action)
+        ledger['target_units'].pop()
+        with self.assertRaisesRegex(ValueError, 'Final target block missing or changed'):
+            audit.validate(ledger, self.report)
+
+    def test_blank_target_review_cannot_be_delivered(self):
+        action = 'Specify the window convention.'
+        ledger = self.make_ledger(action)
+        ledger['target_units'][0]['review'] = {}
+        with self.assertRaisesRegex(ValueError, 'Target review missing or stale'):
+            audit.validate(ledger, self.report)
+
+    def test_grouped_draft_covers_each_paragraph_and_formula(self):
+        action = 'State the exact normalization ratio.'
+        report = (action + '\n\n##### Ratio draft\n\n**Suggested wording / 建议文本:**\n\n'
+                  'Specify the normalization factor.\n\n$$q=a/b.$$\n\nState its normalization.\n\n'
+                  '##### Next comment\n\nRetain the next definition.')
+        ledger = self.make_ledger(action, report, action)
+        draft = next(row for row in ledger['target_units'] if row['kind'] == 'suggested_wording')
+        self.assertEqual(len(draft['member_ids']), 3)
+        factual_assertion(ledger, '$$q=a/b.$$', status='conditional', condition={
+            'target_unit_id': draft['member_ids'][0], 'quote': 'Specify the normalization factor.',
+            'reason': 'Synthetic draft intentionally lacks a local author confirmation.'})
+        with self.assertRaisesRegex(ValueError, 'attached locally'):
+            audit.validate(ledger, self.report)
 
 
 class ApplicabilityAudit(unittest.TestCase):

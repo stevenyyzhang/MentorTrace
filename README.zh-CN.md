@@ -1,8 +1,10 @@
 # MentorTrace
 
-版本：[v1.0.0](VERSION)
+版本：[v1.1.0-dev](VERSION)
 
 [English](README.md) | [简体中文](README.zh-CN.md)
+
+开发状态：稳定基线为 `v1.0.0`，后续开发在 `dev` 分支进行。参见[变更与迁移说明](CHANGELOG.md)和[开发版验证记录](docs/validation-v1.1.0-dev.json)。`docs/` 中其他审核文档描述的是 v1.0.0 基线。开发版可独立运行，审阅质量、实际耗时和额度消耗的改进尚未通过受控对照验证。
 
 MentorTrace 帮助作者审阅论文并形成具体修改建议。它从真实导师批注和多轮修改记录中提炼审阅关注点，并结合导师认可的已发表论文案例，检查新稿的论证、技术、组织和表达问题。审阅意见对应稿件中的具体位置和依据，最终生成包含修改建议的中英双语 Markdown 与 PDF 报告。
 
@@ -24,7 +26,7 @@ MentorTrace 帮助作者审阅论文并形成具体修改建议。它从真实�
 可以直接让 Codex 帮助下载并准备运行环境：
 
 ```text
-请将 https://github.com/stevenyyzhang/MentorTrace 完整下载到本地，配置 MentorTrace 所需依赖，检查运行环境，并告诉我应在 Codex 中打开哪个仓库目录。
+请将 https://github.com/stevenyyzhang/MentorTrace 的 dev 分支完整下载到本地，配置 MentorTrace 所需依赖，检查运行环境，并告诉我应在 Codex 中打开哪个仓库目录。如需稳定版本，请改用 v1.0.0 Release。
 ```
 
 准备完成后，在 Codex 中打开下载好的仓库根目录，将 PDF 稿件放入本地 `workspaces/` 文件夹，再使用下方的审阅提示词。所需依赖与模型访问见[依赖与详细执行指南](#依赖与详细执行指南)。
@@ -60,10 +62,11 @@ flowchart TB
     T["Technical<br/>技术关系与论证"]
     A["Advisor<br/>独立核查导师审阅关注点"]
     L["Language<br/>语言、符号与格式"]
-    M["冻结原始意见<br/>合并并记录处理去向"]
+    M["冻结原始意见<br/>核查执行并合并"]
     V["结合稿件证据<br/>独立复核"]
+    Q["裁定原始具体要求<br/>冻结来源复核"]
     D["形成具体修改建议<br/>整理双语报告草稿"]
-    B["核对意见与依据<br/>检查修改建议是否保留"]
+    B["对照要求是否保留<br/>核查最终事实与措辞"]
     OUT["确认双语 Markdown 报告<br/>生成 PDF 并逐页检查"]
 
     F --> O --> C
@@ -75,13 +78,13 @@ flowchart TB
     T --> M
     A --> M
     L --> M
-    M --> V --> D --> B --> OUT
+    M --> V --> Q --> D --> B --> OUT
 
     classDef input fill:#f8fafc,stroke:#94a3b8,color:#0f172a;
     classDef review fill:#eff6ff,stroke:#60a5fa,color:#172554;
     classDef output fill:#ecfdf5,stroke:#34d399,color:#064e3b;
     class F input;
-    class O,C,R,T,A,L,M,V,D,B review;
+    class O,C,R,T,A,L,M,V,Q,D,B review;
     class OUT output;
 ```
 
@@ -94,7 +97,7 @@ flowchart TB
 | Advisor | 完整稿件、本批导师审阅关注点 | 从历史修改提炼的关注点出发，独立检查阅读理解和技术问题。 |
 | Language | 完整稿件、待检查的文本单元 | 检查语言、符号、术语一致性与格式问题。 |
 
-四路审阅均由模型执行。历史关注点与论文案例提供判断线索，每条最终意见仍须有新稿中的具体证据；修改建议、意见保留核对和报告检查由模型结合工具完成。详细执行说明见 [运行指南](.agents/skills/mentortrace/references/execution.md)。
+四路审阅均由模型执行。历史关注点与论文案例提供判断线索，每条最终意见仍须有新稿中的具体证据；此开发版在初始结果冻结后核查实际执行，先裁定有变化的原始具体要求，再对照最终交付，并核查报告事实、条件和措辞。工具验证来源哈希、对应记录和摘录，不能证明科学判断正确；改进效果仍需受控稿件回放。详细执行说明见 [运行指南](.agents/skills/mentortrace/references/execution.md)。
 
 ## 最终报告包含什么
 

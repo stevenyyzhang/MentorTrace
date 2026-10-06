@@ -237,6 +237,18 @@ def validate(stage,x,context):
    if d['status']=='withdrawn':
     require(not d['output_ids'] and bool(d.get('evidence')),'Withdrawal lacks evidence')
     for evidence in d['evidence']:anchor(evidence,pages)
+   if context.get('consolidation_review'):
+    if d['status']=='unresolved':require(not d['output_ids'],'Unresolved disposition cannot assert a retained finding')
+    if d['status'] in ['narrowed','withdrawn']:
+     require(isinstance(d.get('evidence'),list) and d['evidence'],'Changed requirement lacks manuscript evidence')
+     for evidence in d['evidence']:anchor(evidence,pages)
+     original=next(f for f in context['input_findings'] if f['id']==d['input_id'])
+     excluded=d.get('excluded_requirements')
+     require(isinstance(excluded,list) and excluded,'Changed requirement must identify excluded source clauses')
+     source_fields=[str(original.get(k,'')) for k in ['relation','gap','closure_goal']]
+     for clause in excluded:
+      require(isinstance(clause,dict) and isinstance(clause.get('source_quote'),str) and clause['source_quote'].strip() and any(clause['source_quote'] in field for field in source_fields),'Excluded clause is not an exact source requirement')
+      require(isinstance(clause.get('reason'),str) and clause['reason'].strip(),'Excluded clause lacks rationale')
    targeted.update(d['output_ids'])
   for f in x['findings']:
    anchor(f['anchor'],pages)
@@ -402,7 +414,7 @@ def create_run(paper,knowledge,run,batch_ids=None,arm='H',generic_passes=4,max_e
   require(read(DEFAULT_GOODPAPER/'manifest.json')['role']=='goodpaper_task_cases','Wrong good-paper case package')
   shutil.copytree(DEFAULT_GOODPAPER,run/'inputs/goodpaper')
  save(run/'inputs/protocol.json',{'product':'MentorTrace V1','mode':'diagnose_only','arm':'H','stages':STAGES,'workflow_version':2,'advisor_independent':True,'concern_count':len(archive),'knowledge_source_scope':manifest.get('scope','not declared; no held-out claim'),'max_evidence_calls':max_evidence_calls,'max_prompt_bytes':950000,'max_images':15,'token_and_model_context_fit':'requires transport preflight; byte bound is not token bound','transport':'explicit JSON files; cloud transport not invoked'})
- protocol=read(run/'inputs/protocol.json');protocol['organization_review']=1;protocol['section_review']=1;protocol['whole_manuscript_structure']=1;protocol['reader_multiscale']=3;protocol['technical_applicability']=1
+ protocol=read(run/'inputs/protocol.json');protocol['organization_review']=1;protocol['section_review']=1;protocol['whole_manuscript_structure']=1;protocol['reader_multiscale']=3;protocol['technical_applicability']=1;protocol['consolidation_review']=1
  protocol['goodpaper_case_mode']='task_routed_reader_technical_v1' if goodpaper_cases else 'off'
  save(run/'inputs/protocol.json',protocol)
  if batch_ids is not None:
@@ -423,7 +435,7 @@ def create_generic_run(paper,run,passes):
  for name in ['reader-structure.md','technical-checks.md','technical-applicability.md','diagnosis-contract.md','merge-verify.md','language-surface.md','section-argument.md','reader-checklist.md']:
   p=run/'inputs/skill/references'/name;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/'.agents/skills/mentortrace/references'/name,p)
  save(run/'inputs/protocol.json',{'product':'MentorTrace V1','mode':'diagnose_only','arm':'G',
-  'workflow_version':2,'organization_review':1,'section_review':1,'whole_manuscript_structure':1,'reader_multiscale':3,'technical_applicability':1,
+  'workflow_version':2,'organization_review':1,'section_review':1,'whole_manuscript_structure':1,'reader_multiscale':3,'technical_applicability':1,'consolidation_review':1,
   'stages':['objects','reader','technical']+[f'supplement_{n}' for n in range(1,passes+1)]+['language','merge','verify'],
   'max_prompt_bytes':950000,'max_images':15,'knowledge_policy':'No advisor archive, cards, comments, histories, reference patterns or target answers in this package; independent generic technical passes'})
  freeze(run/'inputs');save(run/'state.json',{'status':'ready','completed':[],'pending_evidence':[]})
@@ -545,6 +557,7 @@ def context_for(run,stage):
   location='batches' if (run/'inputs/batches').exists() else 'knowledge'
   ctx['cards']=read(run/f'inputs/{location}/batch_{stage.rsplit("_",1)[1]}.json')
  elif stage in ['merge','verify']:
+  if read(run/'inputs/protocol.json').get('consolidation_review'):ctx['consolidation_review']=1
   if stage=='merge':
    branches=[read(run/f'calls/{s}/response.json') for s in branch_stages(run)]
    ctx['objects'] += [o for b in branches for o in b.get('new_objects',[])]
@@ -570,7 +583,7 @@ def context_for(run,stage):
    wanted={cid for c in ctx['source_evidence'] for cid in c['card_ids']}
    ctx['cards']=[]
    ctx['historical_reference_ids']=sorted(wanted)
-   ctx['verification_note']='No previous self-evaluation, severity or pass labels supplied.'
+   ctx['verification_note']=('Structured judgment, severity and pass fields are omitted. Source explanations can contain previous conclusions and must be rechecked against the manuscript.' if ctx.get('consolidation_review') else 'No previous self-evaluation, severity or pass labels supplied.')
  return ctx
 
 def next_request(run):
@@ -613,6 +626,8 @@ def prepare_stage_request(run,stage):
  if read(run/'inputs/protocol.json')['arm']=='G':names=[n for n in names if n!='advisor-evidence.md']
  modules={name:(run/'inputs/skill/references'/name).read_text(encoding='utf-8') for name in names}
  instruction=SURFACE if stage=='language' else PLAN if stage=='objects' else MERGE if stage in ['merge','verify'] else CHECK
+ if ctx.get('consolidation_review'):
+  instruction+='\nChanged-requirement protocol: narrowed and withdrawn dispositions require evidence:[{page,quote} or {page,kind:"image",description}] and excluded_requirements:[{source_quote,reason}]. Each source_quote is an exact nonempty excerpt from that input finding relation, gap or closure_goal identifying what was excluded. Evidence must refer to the current manuscript, not a prior verdict. An unresolved disposition has output_ids:[]. Ordinary retained/merged accounting does not certify semantic completeness; complete the separate source-requirement audit before author delivery.'
  if read(run/'inputs/protocol.json').get('workflow_version',1)>=2:
   if stage=='objects':instruction=PLAN.replace('["reader","technical","supplement"]','["reader","technical"]')+'\n'+PLAN_ACTION
   if independent_stage(run,stage):instruction=ADVISOR_SCHEMA.replace('advisor:',stage+':')

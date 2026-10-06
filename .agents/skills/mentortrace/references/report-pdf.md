@@ -18,6 +18,7 @@ From the MentorTrace root, with Pandoc, Chrome/Chromium and a Python environment
 python .agents/skills/mentortrace/scripts/render_bilingual_report.py `
   --markdown runs/<run>/report_bilingual.md `
   --preservation-audit runs/<run>/delivery_audit.json `
+  --requirements-audit workspaces/<audit>/B.json `
   --output-dir runs/<run>
 ```
 
@@ -48,4 +49,4 @@ Render all PDF pages to images and inspect long headings, SHA wrapping, Chinese/
 
 ## Preservation prerequisite
 
-Before rendering, complete references/delivery-preservation.md and pass --preservation-audit AUDIT.json to render_bilingual_report.py. This argument is required for both HTML-only and PDF exports; validation runs before output files are written. Existing frozen report files remain unchanged.
+Before rendering, complete references/delivery-preservation.md and pass --preservation-audit DELIVERY.json plus --requirements-audit B.json to render_bilingual_report.py. The first must be a completed version 2 final-text audit; the second must be a delivery-ready consolidation comparison bound to this exact report and the same final review. Both are required for HTML-only and PDF exports and are checked before any output writes. Existing frozen report files remain unchanged.

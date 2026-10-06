@@ -6,6 +6,7 @@ import os
 from pathlib import Path
 from urllib import error, request
 import mentortrace_v1 as m
+from execution_policy import validate_authorization
 
 def post(path, payload):
     key = os.environ.get('OPENAI_API_KEY')
@@ -17,6 +18,8 @@ def post(path, payload):
         return json.load(response)
 
 def make_payload(run, req, settings):
+    validate_authorization(settings.get('settings_authorization'), settings.get('model'),
+                           settings.get('reasoning_effort'), settings.get('service_tier', 'default'))
     m.require(isinstance(settings.get('model'), str) and settings['model'], 'Set an explicit model')
     m.require(isinstance(settings.get('max_output_tokens'), int) and settings['max_output_tokens'] > 0, 'Set output budget')
     m.require(isinstance(settings.get('context_window'), int) and settings['context_window'] > settings['max_output_tokens'], 'Set verified model context limit')
@@ -26,6 +29,7 @@ def make_payload(run, req, settings):
         m.require(m.sha(p) == image['sha256'], 'Image hash changed')
         content.append({'type': 'input_image', 'image_url': 'data:image/png;base64,' + base64.b64encode(p.read_bytes()).decode(), 'detail': 'high'})
     return {**({'reasoning': {'effort': settings['reasoning_effort']}} if settings.get('reasoning_effort') else {}), 'model': settings['model'], 'input': [{'role': 'user', 'content': content}],
+            'service_tier': settings.get('service_tier', 'default'),
             'tools': [], 'tool_choice': 'none', 'store': False, 'truncation': 'disabled',
             'max_output_tokens': settings['max_output_tokens'], 'text': {'format': {'type': 'json_object'}}}
 
@@ -56,6 +60,13 @@ def run_one(run, settings, *, project, sender=post):
         response = sender('/responses', payload)
         m.save(folder / 'provider_response.json', response)
         m.require(response.get('status') == 'completed', 'Provider response incomplete or failed')
+        returned_effort = (response.get('reasoning') or {}).get('effort')
+        m.require(returned_effort is None or returned_effort == settings['reasoning_effort'],
+                  'Provider returned an unapproved reasoning effort; inspect without automatic retry')
+        returned_tier = response.get('service_tier')
+        m.require(settings.get('service_tier', 'default') != 'default' or
+                  returned_tier not in {'fast', 'priority'},
+                  'Provider returned an unapproved increased-usage tier; inspect without automatic retry')
         blocks = [b for item in response.get('output', []) if item.get('type') == 'message' for b in item.get('content', [])]
         m.require(not any(b.get('type') == 'refusal' for b in blocks), 'Provider refused')
         text = ''.join(b['text'] for b in blocks if b.get('type') == 'output_text')
@@ -63,6 +74,10 @@ def run_one(run, settings, *, project, sender=post):
         raw = folder / 'provider_text.json'
         raw.write_text(text, encoding='utf-8')
         m.accept_response(run, raw, {'kind': 'openai_responses', 'model': response.get('model', settings['model']),
+            'reasoning_effort': settings['reasoning_effort'], 'requested_service_tier': settings.get('service_tier', 'default'),
+            'returned_service_tier': response.get('service_tier'),
+            'returned_reasoning_effort': returned_effort,
+            'settings_authorization_sha256': validate_authorization(settings['settings_authorization'], settings['model'], settings['reasoning_effort'], settings.get('service_tier', 'default')),
             'response_id': response.get('id'), 'usage': response.get('usage'), 'input_tokens_preflight': count['input_tokens'],
             'fresh_context': True, 'tools': [], 'request_sha256': m.sha(folder / 'provider_payload.json')})
     except (ValueError, KeyError, error.HTTPError) as exc:

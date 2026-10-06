@@ -3,7 +3,7 @@ name: mentortrace
 description: Diagnose academic manuscripts with independent Reader, Technical, Advisor and Language reviews; by default retrieve task-matched exemplary-paper cases into Reader and Technical for evidence-grounded findings and revision proposals. Automatic manuscript editing is not integrated.
 ---
 
-# MentorTrace 1.0
+# MentorTrace 1.1 development
 
 Use the four-lane diagnosis workflow below. This repository-scoped skill is discovered from .agents/skills. Keep the full repository and resolve runtime paths from its root. Reading it does not constitute running the workflow. The default CLI creates independent-Advisor runs; frozen older runs retain their original protocol. Read the [execution guide](references/execution.md) for commands and transport boundaries. Project paths below resolve against the MentorTrace root.
 
@@ -13,15 +13,21 @@ For autonomous diagnosis, use the fixed manuscript without its target comments, 
 
 Confirm the available manuscript version and scope from supplied files. Ask only for essential missing input: which version when ambiguous, or unreadable/missing manuscript content. Do not invent the author's implementation or results. Do not require target advisor comments for autonomous diagnosis.
 
+## Execution efficiency
+
+Apply [execution efficiency](references/execution-efficiency.md) when submitting, resuming or postprocessing reviews. Reuse valid stage outputs with their original settings/provenance; renew only reviews affected by changed text, context, evidence or applicable rules. Submit complete task-relevant evidence, group related final-text checks, and use concise evidence-focused records. Batch complete packets to verified capacity and run independent batches with bounded concurrency. Keep initial lanes and Phase A/B isolated, preserve their full required coverage, and use local programs for mechanical checks. Inspect failed/uncertain attempts before retrying; stop after required delivery checks pass.
+
+Use Standard by default. Fast requires explicit user authorization naming the tier and accepting its additional usage; urgency, acceleration requests and deadlines are not authorization. Any reasoning-effort change, upward or downward, also requires explicit user authorization naming the new effort. Preserve the authorized model/effort across stages; never lower effort automatically to save time or usage. These rules travel with this skill and apply to isolated CLI and alternative transports without changing users' global settings.
+
 ## Route the diagnosis
 
 1. **Freeze inputs.** Register one readable manuscript version, page text/images, knowledge snapshot, hashes, model/effort, capacity plan and family policy. Keep target comments, scoring answers and future target versions out of review requests. A directory scan does not prove the model saw a file.
 2. **Plan general checks without verdicts.** Preserve both ends of each relationship, the actual conclusion and its conditions. Planning serves Reader and Technical; it is not a mandatory inventory for Advisor. In case-enhanced mode, freeze a separate task-to-case route from this plan before either lane runs.
 3. **Run four isolated lanes**, following the table below. Reader and Technical may add targets. Advisor independently creates and judges its own relation inventory; it does not attach cards to the general plan. Every Advisor batch reads the same full manuscript. Complete the frozen coverage plan without requiring a problem per card.
 4. **Respect evidence availability.** Public cards contain analytical abstractions, not private histories. Request historical follow-up only when a separately supplied package explicitly declares those fields available. Otherwise preserve unknown/unfinished outcomes. Follow-ups are not independent initial discovery.
-5. **Freeze raw findings.** Preserve original lane responses, additional targets, evidence findings, language uncertainty and coverage. A relation, a check and a reportable finding are different records.
+5. **Freeze raw findings.** Preserve original lane responses, additional targets, evidence findings, language uncertainty and coverage. A relation, a check and a reportable finding are different records. Review the actual initial execution against its frozen targets and manuscript support before integration, following execution.md. Distinguish unattempted task scope from completed-but-unknown judgment; source-ID coverage alone does not prove each relation was answered.
 6. **Organize and independently verify.** Apply [merge and verify](references/merge-verify.md). Deduplicate the same requirement; retain independently answerable gaps and concrete closure goals. Verify against the manuscript in a fresh context, retaining source links and evidence for withdrawals. Fewer findings is not a quality target.
-7. **Audit delivery and freeze.** Check that supported specific requirements survived into the author-facing output. If re-reviewing the same manuscript, compare the newly frozen findings with the prior report only after independent discovery; give every prior item an evidence-based retained, covered, rejected or unresolved disposition before replacing its report. A changed model output alone does not justify silently losing a language correction. If reorganization is needed, preserve the prior version and create a source-traceable new version without target-directed questions. Deliver the three author-facing comment categories under report-language.md, with unresolved items and coverage limits.
+7. **Audit delivery and freeze.** Complete the two-phase source-requirement comparison and version 2 final-text review in [delivery preservation](references/delivery-preservation.md). Judge original changed requirements before viewing the changed output, then bind coverage to the actual final report. Review its facts, both-language meaning and direct wording after the last edit. Check that supported specific requirements survived into the author-facing output. If re-reviewing the same manuscript, compare the newly frozen findings with the prior report only after independent discovery; give every prior item an evidence-based retained, covered, rejected or unresolved disposition before replacing its report. A changed model output alone does not justify silently losing a language correction. If reorganization is needed, preserve the prior version and create a source-traceable new version without target-directed questions. Deliver the three author-facing comment categories under report-language.md, with unresolved items and coverage limits.
 8. **Score only when requested, after delivery freeze.** Use a separate context for target advisor comments/problem chains. Fix applicability and counting rules before comparing scores; multiple findings matching one chain count once. Report full, partial and miss separately. Reorganization or grading changes are not new autonomous discoveries.
 
 | Lane | Review input | Responsibility |
@@ -56,6 +62,8 @@ Use [section argument and information selection](references/section-argument.md)
 Reader coverage separates passage job from structural scope and includes system models, problem formulations, methods, theory and experiments, not only abstracts/introduction/contributions. Advisor independently uses historical concerns at their relevant scope; the Reader coverage framework does not become its prescribed inventory. Keep Technical's validity and evidence remit unchanged.
 
 ## Deliverable
+
+Apply the concise revision-request rules in [report language](references/report-language.md): missing author facts and insertion locations belong in Suggested revision / 建议修改, never a separate author-information field. Coordinate overlapping drafts and all affected claim occurrences under [repair boundary](references/repair-contract.md). Keep routine language explanations brief while preserving exact corrections and locations. Final review checks these decisions through the existing delivery audits.
 
 Check sentence/paragraph order through Reader and independent Advisor evidence: distinguish information present somewhere from information available where needed. Preserve concrete optional rearrangements through merge and verification and deliver them separately from confirmed content problems, following the Reader and merge references.
 
