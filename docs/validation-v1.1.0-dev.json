@@ -18,35 +18,44 @@
   "tested_code_files": [
     {
       "path": "scripts/execution_policy.py",
-      "sha256": "58b705f58cdd9c47a5f6f8da4c1c16e5c0a3a4c38f5a56a3a44a1abb2e25c372"
+      "tested_workspace_sha256": "58b705f58cdd9c47a5f6f8da4c1c16e5c0a3a4c38f5a56a3a44a1abb2e25c372",
+      "published_sha256": "58b705f58cdd9c47a5f6f8da4c1c16e5c0a3a4c38f5a56a3a44a1abb2e25c372"
     },
     {
       "path": "scripts/codex_adapter.py",
-      "sha256": "e7a59fe5077f4f1edb119c7e33f0b5956cf5d974d3130398c67e0163b7834ad4"
+      "tested_workspace_sha256": "e7a59fe5077f4f1edb119c7e33f0b5956cf5d974d3130398c67e0163b7834ad4",
+      "published_sha256": "e7a59fe5077f4f1edb119c7e33f0b5956cf5d974d3130398c67e0163b7834ad4"
     },
     {
       "path": "scripts/model_adapter.py",
-      "sha256": "ade04c466d4d499ffa9b34ae6cf7a17a6ceb24bf8473cefa7d35dc15c57467d2"
+      "tested_workspace_sha256": "ade04c466d4d499ffa9b34ae6cf7a17a6ceb24bf8473cefa7d35dc15c57467d2",
+      "published_sha256": "ade04c466d4d499ffa9b34ae6cf7a17a6ceb24bf8473cefa7d35dc15c57467d2"
     },
     {
       "path": "scripts/run_authorized_stage.py",
-      "sha256": "b612635d8d8f1d629662f994176c7055637bce7786e3e9fb45a2844db23816f2"
+      "tested_workspace_sha256": "b612635d8d8f1d629662f994176c7055637bce7786e3e9fb45a2844db23816f2",
+      "published_sha256": "b612635d8d8f1d629662f994176c7055637bce7786e3e9fb45a2844db23816f2"
     },
     {
       "path": "scripts/prepare_delivery_delta.py",
-      "sha256": "f386db20267c16f60f9bb1599b162e85945011976aa7a773a7a8e674d954a700"
+      "tested_workspace_sha256": "f386db20267c16f60f9bb1599b162e85945011976aa7a773a7a8e674d954a700",
+      "published_sha256": "f386db20267c16f60f9bb1599b162e85945011976aa7a773a7a8e674d954a700"
     },
     {
       "path": "scripts/prepare_revision_proposals.py",
-      "sha256": "64f78fe2205d245f95042f582e89e7f821a8a695d172b4925a2e0820d8f89f03"
+      "tested_workspace_sha256": "64f78fe2205d245f95042f582e89e7f821a8a695d172b4925a2e0820d8f89f03",
+      "published_sha256": "8670da9537e86958ce9aff7df8576a6cad7a9ebfd7a9cc8fb3643c89eb357fa5",
+      "difference": "Git-normalized CRLF to LF; no code-content change"
     },
     {
       "path": "tests/test_execution_efficiency.py",
-      "sha256": "fa1bca4e945efee84b1d0f1a7c633558850b95416656273d29ff9137021200a8"
+      "tested_workspace_sha256": "fa1bca4e945efee84b1d0f1a7c633558850b95416656273d29ff9137021200a8",
+      "published_sha256": "fa1bca4e945efee84b1d0f1a7c633558850b95416656273d29ff9137021200a8"
     },
     {
       "path": "tests/test_adapter.py",
-      "sha256": "7429c028c26fdab24d3a3361bd6ae2975d96a047e90a0a508789418822e0282f"
+      "tested_workspace_sha256": "7429c028c26fdab24d3a3361bd6ae2975d96a047e90a0a508789418822e0282f",
+      "published_sha256": "7429c028c26fdab24d3a3361bd6ae2975d96a047e90a0a508789418822e0282f"
     }
   ],
   "provenance": "Recorded offline execution-efficiency and delivery-invariant validation; code hashes checked before dev publication. README, changelog and heading edits were checked separately and do not constitute a new model review.",
