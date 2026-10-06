@@ -4,7 +4,7 @@ Version: [v1.0.0](VERSION)
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-MentorTrace derives judgment patterns from an academic supervisor's actual comments and successive manuscript revisions, and draws on published papers that supervisor considers well written to help authors identify problems in a new manuscript's argument, technical support, organization and expression. During review, it follows arguments, technical relationships and revision clues, repeatedly asking why an explanation is still insufficient, which link is missing, and what would justify a change. Each comment and revision suggestion is tied to specific manuscript passages and judgment grounds, and the final output is a bilingual English–Chinese Markdown and PDF report with concrete revision suggestions.
+MentorTrace helps authors review research papers and develop concrete revision suggestions. It draws review concerns from an academic supervisor's actual comments and successive manuscript revisions, alongside cases from published papers the supervisor considers well written, to examine a new manuscript's argument, technical support, organization and expression. Each comment identifies the relevant manuscript passage and its supporting grounds. The results are delivered as bilingual English–Chinese Markdown and PDF reports with specific revision suggestions.
 
 The current implementation runs as a **Codex skill with a Python workflow** and accepts **PDF manuscripts**. **LaTeX source input and output** are planned. It produces revision guidance and reports; automatically applying changes to the manuscript is not yet integrated.
 
