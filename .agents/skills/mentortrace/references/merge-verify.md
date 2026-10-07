@@ -1,5 +1,7 @@
 # Merge and independently verify
 
+Apply source-fidelity.md alongside the consolidation and delivery contracts. New verification protocols account for every incoming finding and every verification discovery in source_fidelity_checks. For a formula-dependent verdict, record the observed decisive original expression, symbol roles, exact page-image hash and any extraction difference. Page evidence contradicting the premise requires withdrawal or supported narrowing; unreadable decisive notation remains unresolved. Retaining earlier findings or matching their wording is not evidence that their source transcription is correct.
+
 When language findings are supplied, preserve their finding_type=surface, category and suggested_text fields in every retained output. Keep them separate from technical findings and retain every occurrence anchor. Definite small errors are reportable regardless of importance; do not withdraw them for being minor. Uncertain language/notation items and optional style suggestions remain separately visible, not promoted to confirmed defects.
 
 Freeze branch findings before integration. Consolidate by object, relationship, gap and closure goal, not topic alone. A local technical error does not automatically answer a question about the overall explanation; complete parameter reporting does not settle realism.

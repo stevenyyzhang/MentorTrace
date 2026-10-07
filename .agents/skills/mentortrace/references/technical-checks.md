@@ -8,6 +8,8 @@ Original pages govern formulas; extraction corruption is not an author error. Ma
 
 ## Choose a relationship before a verdict
 
+Follow source-fidelity.md before judging a formula-dependent relationship. Read the original page and record the decisive expression and the symbols that control the proposed verdict, including delimiter scope, absolute values/norms, conjugation, signs, indices and operators. Put this observation in the existing check explanation/evidence fields; an extraction-only transcription is insufficient. Seek the page evidence that could contradict the alleged defect. If symbols are unreadable, keep validity unknown and request a readable local view rather than infer missing notation.
+
 | Manuscript object | Relationship to reconstruct | Sufficient evidence may include |
 |---|---|---|
 | Receiver or estimator | observations → identifiable quantities → quantities actually consumed | Explicit observation model, information timing and detector input; an identifiable aggregate can suffice even if components are unknown |

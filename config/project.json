@@ -1,6 +1,6 @@
 {
   "name": "MentorTrace",
-  "version": "1.0.0",
+  "version": "1.1.0-dev.2",
   "candidate_skill": ".agents/skills/mentortrace",
   "model_calls_enabled": false,
   "default_knowledge": "corpus/advisor-concerns-v1",

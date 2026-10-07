@@ -21,6 +21,8 @@ Use Standard by default. Fast requires explicit user authorization naming the ti
 
 ## Route the diagnosis
 
+Apply [source fidelity](references/source-fidelity.md): extracted text locates evidence; original page images govern decisive glyphs and physical word placement. New runs freeze a neutral surface-candidate inventory for Language and require formula-dependent verification records. Inspect the decisive original expression before alleging a mathematical defect, and carry checked transcriptions into report quotations. These runtime gates establish record coverage and hash binding, not visual truth or complete error recall.
+
 1. **Freeze inputs.** Register one readable manuscript version, page text/images, knowledge snapshot, hashes, model/effort, capacity plan and family policy. Keep target comments, scoring answers and future target versions out of review requests. A directory scan does not prove the model saw a file.
 2. **Plan general checks without verdicts.** Preserve both ends of each relationship, the actual conclusion and its conditions. Planning serves Reader and Technical; it is not a mandatory inventory for Advisor. In case-enhanced mode, freeze a separate task-to-case route from this plan before either lane runs.
 3. **Run four isolated lanes**, following the table below. Reader and Technical may add targets. Advisor independently creates and judges its own relation inventory; it does not attach cards to the general plan. Every Advisor batch reads the same full manuscript. Complete the frozen coverage plan without requiring a problem per card.

@@ -1,10 +1,10 @@
 # MentorTrace
 
-Version: [v1.1.0-dev.1](VERSION)
+Version: [v1.1.0-dev.2](VERSION)
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-Pre-release status: `v1.1.0-dev.1` is a development snapshot for testing. The stable version is `v1.0.0`; ongoing work is on the `dev` branch. See [changes and migration notes](CHANGELOG.md) and the [development validation record](docs/validation-v1.1.0-dev.json). Other audit documents in `docs/` describe the v1.0.0 baseline. The development version is independently runnable, but improvements in diagnostic quality, live latency and usage have not been established by controlled comparisons.
+Pre-release status: `v1.1.0-dev.2` is a development snapshot for testing. The stable version is `v1.0.0`; ongoing work is on the `dev` branch. See [changes and migration notes](CHANGELOG.md) and the [current validation record](docs/validation-v1.1.0-dev.2.json). The earlier development record and other audit documents retain their original baseline scope. The development version is independently runnable, but improvements in diagnostic quality, live latency and usage have not been established by controlled comparisons.
 
 MentorTrace derives judgment patterns from an academic supervisor's actual comments and successive manuscript revisions, and draws on published papers that supervisor considers well written to help authors identify problems in a new manuscript's argument, technical support, organization and expression. During review, it follows the manuscript's argument chains, technical relationships and revision cues, continually asking whether explanations are sufficient, whether arguments are complete, and whether conclusions are supported by evidence. Each review comment identifies the relevant manuscript passage, explains the issue and its basis, and provides concrete revision suggestions. The results are organized into bilingual English–Chinese Markdown and PDF reports.
 

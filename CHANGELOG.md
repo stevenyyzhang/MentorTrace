@@ -1,5 +1,23 @@
 # Changelog / 版本变更
 
+## 1.1.0-dev.2 — pre-release / 预发布版
+
+2026-10-07. Source-fidelity development update, published as a new prerelease from the dev branch. Earlier release records retain their historical baseline scope.
+
+- Add source-fidelity rules: raw extraction is a locator; page images govern decisive notation. Formula-dependent verification records bind observed expressions and symbol roles to page-image hashes.
+- Freeze neutral inline split-word candidates and require Language to dispose of each with image evidence; page-level coverage alone is insufficient.
+- Carry checked source transcriptions into report drafting and require readjudication of affected comments/actions when correcting a quotation contradicts their premise.
+- Preserve frozen older protocol contracts and existing consolidation, Phase A/B and version 2 delivery gates. Both frozen corpora are unchanged. Local contract tests do not establish improved review accuracy or complete recall.
+
+- 新增源文保真规则：提取文本用于定位，原页决定关键符号；依赖公式的复核记录将所见原式、符号作用与页图哈希绑定。
+- 冻结中性的行内断词候选，Language 须逐项依据页图处置，整页已检查不能代替候选核查。
+- 报告起草复用已核对的原文转写；修正摘录后若推翻意见前提，须重新裁定相关意见和修改动作。
+- 保留旧冻结协议及现有合并、Phase A/B 和 v2 交付门槛；两套冻结语料未改。本地协议测试不能证明审阅准确率或召回率提升。
+
+Local validation on 2026-10-07: 62 scoped tests passed across source fidelity, surface review, pipeline, consolidation, delivery integration and execution efficiency. Relevant Python syntax, skill scalar frontmatter and local links passed checks. A local manuscript regression located the demonstrated inline split-word candidate. No new model review or report regeneration was performed. Publication-specific checks are recorded in docs/validation-v1.1.0-dev.2.json.
+
+2026-10-07 本地验证：源文保真、语言审阅、流程、合并、交付集成和执行效率的 62 项局部测试通过，相关 Python 语法、Skill 标量元数据和本地链接检查通过。本地稿件回归检查定位到已知的行内断词候选。本次未调用模型重新审阅或重新生成报告。发布检查见 docs/validation-v1.1.0-dev.2.json。
+
 ## 1.1.0-dev.1 — pre-release / 预发布版
 
 The complete development tree is independently runnable. Download the full repository and install its documented dependencies; it does not require an installed v1.0.0 copy. The initial diagnosis rules and both frozen corpora are unchanged.

@@ -12,6 +12,8 @@ Create a new run with scripts/mentortrace_v1.py create --paper PACKAGE --run RUN
 
 ## Review stages and isolation
 
+New protocols enable source_fidelity: 1 and freeze inputs/source_fidelity.json from raw page text and image hashes. This adds deterministic inline split-word candidates to Language only, plus formula-source records in Verify; source-fidelity.md also guides Technical, Advisor, consolidation and drafting. Candidate dispositions and formula records are validated on acceptance. The program does not rewrite extraction, perform OCR or certify the reviewer's visual judgment. Frozen older protocols retain their existing request/response contracts.
+
 Use next --run RUN to prepare one request, then accept --run RUN --response RESPONSE.json. Preserve the original response before any normalization. Each initial lane uses a fresh context: Reader and Technical receive the target plan and only their selected cases; each Advisor batch receives the full manuscript and its complete card batch without the plan or prior opinions; Language receives manuscript text units and images without cards or plan. Complete the manifest-defined Advisor batch coverage, not a fixed number of defects.
 
 After accepting objects, use route-input --run RUN, read case_route_input.json and write a selection with source_plan_sha256, reader, technical and skipped_entries. Each route names target object_ids, task, entry_ids, case_ids, reason and sufficiency_question. Freeze it with route-cases --run RUN --route SELECTION.json. Empty routes are valid when unused entries have reasons. IDs and links are executable checks; semantic task matching still requires review. Source examples prompt a target question; no alternative answer is required.

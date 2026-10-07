@@ -1,5 +1,7 @@
 # Delivery preservation review
 
+Apply source-fidelity.md to Original quotations and formula-related assertions in addition to Phase A/B and the version 2 final-text ledger. Reuse the checked source transcription, compare the rendered decisive glyphs against the bound original page, and keep repeated quotations consistent. A preserved earlier requirement does not certify its source accuracy. If a quotation correction contradicts a finding's premise, readjudicate the finding and affected shared actions before delivering the corrected report.
+
 Run after frozen initial discovery and fresh verification, before author-facing Markdown delivery or HTML/PDF export. Preserve original responses and earlier reports. Do not feed an earlier report into the initial lanes. Structural record validation is separate from the reviewer's substantive judgment.
 
 ## Review the source requirements before their delivery

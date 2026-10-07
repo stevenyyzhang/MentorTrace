@@ -1,5 +1,7 @@
 # Full-text language and surface QA
 
+Apply source-fidelity.md and separately dispose of every supplied source candidate. A page-level checked status does not account for an inline split-word candidate. Inspect its physical location on the page to distinguish an unintended hyphen/space, normal line-end division, a legitimate compound and extraction corruption. Preserve raw text; do not silently join words before checking. These candidates supplement the complete language read and do not enumerate every possible spelling or typography problem.
+
 Inspect every supplied text block and all corresponding page-image content, including captions, tables, equations, headings and references. This lane is independent of object planning and advisor cards. Coverage records certify processing accounting, not zero missed errors; unreadable text stays unreadable and unprocessed text stays unfinished.
 
 Check spelling and obvious typos; grammar (agreement, articles, number, tense and prepositions); incomplete or malformed sentences; notation consistency; cross-reference targets; and formatting conventions. Record definite small errors regardless of technical importance. Valid but awkward prose belongs in optional_suggestions, not the error list. Verify broken extraction, ligatures and line-end hyphens against page images before attributing an error to the author.

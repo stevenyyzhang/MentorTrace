@@ -15,6 +15,7 @@ from pathlib import Path
 import goodpaper_runtime as goodpaper
 import reader_multiscale as multiscale
 import technical_applicability as applicability
+import source_fidelity as fidelity
 
 ROOT=Path(__file__).resolve().parents[1]
 DEFAULT_KNOWLEDGE=ROOT/'corpus/advisor-concerns-v1'
@@ -116,6 +117,7 @@ def import_paper(body,images,source_pdf,dest,expected_pdf_hash,development_mater
   entries.append({'page':n,'path':'images/'+p.name,'sha256':sha(target)})
  save(dest/'manifest.json',{'role':'review_manuscript','source_pdf_sha256':expected_pdf_hash,
   'source_body_sha256':sha(body),'pages':len(pages),'images':entries,
+  'text_role':'Raw extraction for navigation/prose; formula glyph fidelity is not certified. Original page images govern mathematical judgments.',
   'annotation_policy':'Caller-supplied page images; source PDF not available to generation. Caller must verify annotation removal, image/body correspondence and burned-in text before live review.',
   'development_material':bool(development_material)})
  freeze(dest)
@@ -262,6 +264,8 @@ def validate(stage,x,context):
      target=next(f for f in x['findings'] if f['id']==fid)
      require(target.get('finding_type')=='surface','Surface finding lost category or merged into technical finding')
      require(target.get('suggested_text') and target.get('category'),'Surface correction lost')
+  if stage=='verify' and context.get('source_fidelity'):
+   fidelity.validate_formula_checks(x,context,pages,anchor)
   return
  new=x.get('new_objects',[]);validate_objects(new,pages)
  old={o['id']:o for o in context['objects']};newids=ids(new,'new objects')
@@ -349,6 +353,7 @@ def validate_surface(x,context,pages):
  for c in coverage:
   for fid in c['finding_ids']:require(c['unit_id'] in next(f for f in x['findings'] if f['id']==fid)['unit_ids'],'Surface reverse link missing')
  require(isinstance(x.get('uncertain_items'),list) and isinstance(x.get('optional_suggestions'),list),'Separate uncertainty and style suggestions')
+ if context.get('source_fidelity'):fidelity.validate_candidates(x,context,pages,anchor)
 
 SURFACE="""Inspect every supplied text_unit and the corresponding page images, including captions, equations and references. No planner objects or advisor cards are supplied. Output {coverage:[{unit_id,status:'checked|unreadable|unfinished',reason,finding_ids:[]}],findings:[{id:'language:F1',finding_type:'surface',category:'spelling|grammar|sentence|notation|reference|formatting',unit_ids:[],anchor:{page,quote},relation,gap,impact,closure_goal,suggested_text}],uncertain_items:[],optional_suggestions:[],limits:[]}. Each unit exactly once, including empty/unreadable pages. Text units are extraction blocks, not guaranteed semantic paragraphs. Follow language-surface.md's two reads: reconstruct continuous prose against the page images, then inspect each readable sentence for reference and agreement, determiners, verb/preposition patterns, parallel structure and meaningful tense; sweep headings, captions and repeated terms separately. A checked coverage reason names what was actually attempted; unfinished or unreadable scope must not be marked checked. These checks are candidate prompts, not automatic errors or quotas. Only definite errors belong in findings; valid but awkward style goes to optional_suggestions, author-dependent technical meaning to uncertain_items with a concrete check request. Preserve all occurrence locations. Cross-check extraction artifacts against images. Suggested text is a proposal, never an applied edit."""
 
@@ -414,7 +419,7 @@ def create_run(paper,knowledge,run,batch_ids=None,arm='H',generic_passes=4,max_e
   require(read(DEFAULT_GOODPAPER/'manifest.json')['role']=='goodpaper_task_cases','Wrong good-paper case package')
   shutil.copytree(DEFAULT_GOODPAPER,run/'inputs/goodpaper')
  save(run/'inputs/protocol.json',{'product':'MentorTrace V1','mode':'diagnose_only','arm':'H','stages':STAGES,'workflow_version':2,'advisor_independent':True,'concern_count':len(archive),'knowledge_source_scope':manifest.get('scope','not declared; no held-out claim'),'max_evidence_calls':max_evidence_calls,'max_prompt_bytes':950000,'max_images':15,'token_and_model_context_fit':'requires transport preflight; byte bound is not token bound','transport':'explicit JSON files; cloud transport not invoked'})
- protocol=read(run/'inputs/protocol.json');protocol['organization_review']=1;protocol['section_review']=1;protocol['whole_manuscript_structure']=1;protocol['reader_multiscale']=3;protocol['technical_applicability']=1;protocol['consolidation_review']=1
+ protocol=read(run/'inputs/protocol.json');protocol['organization_review']=1;protocol['section_review']=1;protocol['whole_manuscript_structure']=1;protocol['reader_multiscale']=3;protocol['technical_applicability']=1;protocol['consolidation_review']=1;protocol['source_fidelity']=1
  protocol['goodpaper_case_mode']='task_routed_reader_technical_v1' if goodpaper_cases else 'off'
  save(run/'inputs/protocol.json',protocol)
  if batch_ids is not None:
@@ -424,6 +429,7 @@ def create_run(paper,knowledge,run,batch_ids=None,arm='H',generic_passes=4,max_e
   for n,batch in enumerate(batch_ids,1):save(run/f'inputs/batches/batch_{n}.json',[byid[i] for i in batch])
   protocol=read(run/'inputs/protocol.json');protocol['stages']=['objects','reader','technical']+[f'supplement_{n}' for n in range(1,len(batch_ids)+1)]+['language','merge','verify']
   protocol['batch_policy']='capacity-planned complete cards';save(run/'inputs/protocol.json',protocol)
+ freeze_source_inventory(run)
  freeze(run/'inputs');save(run/'state.json',{'status':'ready','completed':[],'pending_evidence':[]})
 
 def create_generic_run(paper,run,passes):
@@ -432,13 +438,20 @@ def create_generic_run(paper,run,passes):
  run.mkdir(parents=True);shutil.copytree(paper,run/'inputs/paper')
  save(run/'inputs/knowledge/manifest.json',{'role':'generic_no_advisor','count':0,'batches':[]})
  for n in range(1,passes+1):save(run/f'inputs/batches/batch_{n}.json',[])
- for name in ['reader-structure.md','technical-checks.md','technical-applicability.md','diagnosis-contract.md','merge-verify.md','language-surface.md','section-argument.md','reader-checklist.md']:
+ for name in ['reader-structure.md','technical-checks.md','technical-applicability.md','diagnosis-contract.md','merge-verify.md','language-surface.md','section-argument.md','reader-checklist.md','source-fidelity.md']:
   p=run/'inputs/skill/references'/name;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/'.agents/skills/mentortrace/references'/name,p)
  save(run/'inputs/protocol.json',{'product':'MentorTrace V1','mode':'diagnose_only','arm':'G',
-  'workflow_version':2,'organization_review':1,'section_review':1,'whole_manuscript_structure':1,'reader_multiscale':3,'technical_applicability':1,'consolidation_review':1,
+  'workflow_version':2,'organization_review':1,'section_review':1,'whole_manuscript_structure':1,'reader_multiscale':3,'technical_applicability':1,'consolidation_review':1,'source_fidelity':1,
   'stages':['objects','reader','technical']+[f'supplement_{n}' for n in range(1,passes+1)]+['language','merge','verify'],
   'max_prompt_bytes':950000,'max_images':15,'knowledge_policy':'No advisor archive, cards, comments, histories, reference patterns or target answers in this package; independent generic technical passes'})
+ freeze_source_inventory(run)
  freeze(run/'inputs');save(run/'state.json',{'status':'ready','completed':[],'pending_evidence':[]})
+
+def freeze_source_inventory(run):
+ save(run/'inputs/source_fidelity.json',{'version':1,'source_body_sha256':sha(run/'inputs/paper/body.json'),
+      'page_images':read(run/'inputs/paper/manifest.json')['images'],
+      'surface_candidates':fidelity.surface_candidates(read(run/'inputs/paper/body.json')),
+      'limit':'Candidate accounting and source hashes only; no OCR correction or visual verification has occurred.'})
 
 def multiscale_enabled(run):
  protocol=read(Path(run)/'inputs/protocol.json')
@@ -522,6 +535,12 @@ def linked_cards(run,wanted):
 
 def context_for(run,stage):
  ctx={'manuscript':read(run/'inputs/paper/body.json')}
+ if read(run/'inputs/protocol.json').get('source_fidelity'):
+  ctx['source_fidelity']=1
+  if stage in ['language','verify']:
+   source=read(run/'inputs/source_fidelity.json')
+   ctx['source_page_images']=source['page_images']
+   if stage=='language':ctx['source_candidates']=source['surface_candidates']
  if stage in ['objects','technical'] and read(run/'inputs/protocol.json').get('technical_applicability'):ctx['technical_applicability']=1
  if stage=='reader' and read(run/'inputs/protocol.json').get('section_review'):ctx['section_review']=1
  if stage in ['objects','reader'] and multiscale_enabled(run):
@@ -616,6 +635,7 @@ def prepare_stage_request(run,stage):
  run=Path(run).resolve();verify_frozen(run/'inputs')
  ctx=context_for(run,stage);kind='supplement' if stage.startswith(('supplement','evidence_')) else stage
  names=list(MODULES[kind])
+ if ctx.get('source_fidelity') and kind in ['technical','supplement','language','merge','verify']:names.append('source-fidelity.md')
  if ctx.get('technical_applicability'):names.append('technical-applicability.md')
  if multiscale_enabled(run) and stage in ['objects','reader']:names.append('reader-checklist.md')
  section_review=read(run/'inputs/protocol.json').get('section_review')
@@ -626,6 +646,9 @@ def prepare_stage_request(run,stage):
  if read(run/'inputs/protocol.json')['arm']=='G':names=[n for n in names if n!='advisor-evidence.md']
  modules={name:(run/'inputs/skill/references'/name).read_text(encoding='utf-8') for name in names}
  instruction=SURFACE if stage=='language' else PLAN if stage=='objects' else MERGE if stage in ['merge','verify'] else CHECK
+ if ctx.get('source_fidelity'):
+  if stage=='language':instruction+='\n'+fidelity.SURFACE_SCHEMA
+  if stage=='verify':instruction+='\n'+fidelity.VERIFY_SCHEMA
  if ctx.get('consolidation_review'):
   instruction+='\nChanged-requirement protocol: narrowed and withdrawn dispositions require evidence:[{page,quote} or {page,kind:"image",description}] and excluded_requirements:[{source_quote,reason}]. Each source_quote is an exact nonempty excerpt from that input finding relation, gap or closure_goal identifying what was excluded. Evidence must refer to the current manuscript, not a prior verdict. An unresolved disposition has output_ids:[]. Ordinary retained/merged accounting does not certify semantic completeness; complete the separate source-requirement audit before author delivery.'
  if read(run/'inputs/protocol.json').get('workflow_version',1)>=2:

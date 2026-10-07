@@ -1,0 +1,79 @@
+{
+  "version": "1.1.0-dev.2",
+  "validated_at_utc": "2026-10-07T07:05:40.493811+00:00",
+  "scoped_regression": {
+    "count": 62,
+    "status": "pass",
+    "suites": [
+      "test_source_fidelity",
+      "test_surface",
+      "test_pipeline",
+      "test_consolidation_contract",
+      "test_delivery_integration",
+      "test_execution_efficiency"
+    ],
+    "provenance": "Executed on this development tree before the publication-only version/documentation edits; results reused with original scope."
+  },
+  "publication_tests": {
+    "count": 8,
+    "status": "pass",
+    "suites": [
+      "test_public_release"
+    ]
+  },
+  "local_checks": {
+    "python_syntax": "pass",
+    "skill_frontmatter_and_links": "pass",
+    "known_inline_split_candidate": "located in a local manuscript regression; no private source distributed"
+  },
+  "tested_code_files": [
+    {
+      "path": "scripts/source_fidelity.py",
+      "tested_workspace_sha256": "2bfd573513c7916ae3b79166dac82f98a5f989a1f57f62642f42c5226f0eb0e2",
+      "published_sha256": "2bfd573513c7916ae3b79166dac82f98a5f989a1f57f62642f42c5226f0eb0e2",
+      "normalization": "CRLF to LF only, when applicable"
+    },
+    {
+      "path": "scripts/mentortrace_v1.py",
+      "tested_workspace_sha256": "0487c652b4f60c65aa196d1ca736b23e0833d76fc4a3398cf7aef4677c86099d",
+      "published_sha256": "0487c652b4f60c65aa196d1ca736b23e0833d76fc4a3398cf7aef4677c86099d",
+      "normalization": "CRLF to LF only, when applicable"
+    },
+    {
+      "path": "scripts/prepare_paper.py",
+      "tested_workspace_sha256": "09fa29d26dc8feac91c28a6bb642dcd1211090c60a57b4d3c579c54b86cb8c8a",
+      "published_sha256": "09fa29d26dc8feac91c28a6bb642dcd1211090c60a57b4d3c579c54b86cb8c8a",
+      "normalization": "CRLF to LF only, when applicable"
+    },
+    {
+      "path": "scripts/prepare_revision_proposals.py",
+      "tested_workspace_sha256": "e74560563b93e0ac04726cd2b5cd0e50f3703d9f34940d96f0dfc8c3db2907e7",
+      "published_sha256": "a0bf10d3cfe3aa1ae2106026c127fd00a374e8c3dd0c8cacba6b4020964053b2",
+      "normalization": "CRLF to LF only, when applicable"
+    },
+    {
+      "path": "tests/test_source_fidelity.py",
+      "tested_workspace_sha256": "792823cf80c02098d436d31c447618ab088ea24b0766b904fb5299c5f5aa1721",
+      "published_sha256": "792823cf80c02098d436d31c447618ab088ea24b0766b904fb5299c5f5aa1721",
+      "normalization": "CRLF to LF only, when applicable"
+    },
+    {
+      "path": "tests/test_pipeline.py",
+      "tested_workspace_sha256": "3e1bcbd6d447aaf0e5b3531e059cef4f53d8c8ccb71f0754a64192fc26a08f3e",
+      "published_sha256": "3e1bcbd6d447aaf0e5b3531e059cef4f53d8c8ccb71f0754a64192fc26a08f3e",
+      "normalization": "CRLF to LF only, when applicable"
+    },
+    {
+      "path": "tests/test_execution_efficiency.py",
+      "tested_workspace_sha256": "c5ca11be51dabeaec39e178e6516f673d06ac3faef5cbe2a9c81e79ba9a330fa",
+      "published_sha256": "c5ca11be51dabeaec39e178e6516f673d06ac3faef5cbe2a9c81e79ba9a330fa",
+      "normalization": "CRLF to LF only, when applicable"
+    }
+  ],
+  "model_calls": 0,
+  "limits": [
+    "Offline record tests do not establish diagnostic quality, visual transcription accuracy or complete recall.",
+    "No new model review or report regeneration was performed for this prerelease.",
+    "Earlier validation records retain their original baseline scope."
+  ]
+}

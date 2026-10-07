@@ -1,5 +1,7 @@
 # Author-facing bilingual report rules
 
+For source quotations, follow source-fidelity.md. Original must reproduce the verified manuscript expression, including decisive delimiters, operators and indices; reuse a checked transcription when supplied. Do not copy corrupted extracted math into the report. Inspect the rendered formula against the original page. Correcting a source quotation also requires checking its comment, suggested revisions and shared actions; a contradicted premise cannot survive as a confirmed defect merely because the quote was repaired.
+
 Apply these rules after the findings and their source dispositions are frozen. They govern the author-facing Markdown and any HTML/PDF export; they do not alter evidence judgments, finding counts, or advisor-comparison policy.
 
 Do not include a “Reading order / 阅读方式” paragraph explaining grouping, numbering, section sequence or navigation in the author-facing usage notes. Apply those organization rules directly to the report.

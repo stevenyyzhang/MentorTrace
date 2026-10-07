@@ -14,7 +14,7 @@ def prepare(run,out):
  final=m.read(run/'calls/verify/response.json')
  out.mkdir(parents=True)
  shutil.copytree(run/'inputs/paper',out/'inputs/paper')
- for name in ['section-argument.md','report-language.md','reader-checklist.md','repair-contract.md','delivery-preservation.md','execution-efficiency.md']:
+ for name in ['section-argument.md','report-language.md','reader-checklist.md','repair-contract.md','delivery-preservation.md','execution-efficiency.md','source-fidelity.md']:
   src=m.ROOT/'.agents/skills/mentortrace/references'/name
   shutil.copyfile(src,out/'inputs'/name)
  m.save(out/'inputs/verified.json',final)
@@ -48,13 +48,20 @@ def prepare(run,out):
 '''
  # Preserve established drafting references without repeating the separate
  # delivery-audit procedure inside the generation request.
- for name in ['section-argument.md','report-language.md','reader-checklist.md','repair-contract.md']:
+ for name in ['section-argument.md','report-language.md','reader-checklist.md','repair-contract.md','source-fidelity.md']:
   prompt+='\n'+name+'\n'+(out/'inputs'/name).read_text(encoding='utf-8')
  compact=lambda value:__import__('json').dumps(value,ensure_ascii=False,separators=(',',':'))
  prompt+='\nKeep explanations concise and evidence-focused; do not reproduce private audit deliberation. This pass combines supported drafting, both-language meaning and natural wording checks; later final-text verification remains independent.'
  # All verified finding/organization fields stay intact. Unresolved
  # dispositions are already supplied in the complete coverage packet.
  draft_final={key:value for key,value in final.items() if key!='dispositions'}
+ if final.get('source_fidelity_checks'):
+  links={d['input_id']:d['output_ids'] for d in final['dispositions']}
+  final_ids={f['id'] for f in final['findings']}
+  draft_final['source_fidelity_checks']=[
+   {**row,'finding_ids':links.get(row['input_id'],[row['input_id']] if row['input_id'] in final_ids else [])}
+   for row in final['source_fidelity_checks']]
+ prompt+='\nFor Original quotations, reuse the checked expressions in source_fidelity_checks linked through finding_ids. Verify decisive symbols and their rendered form against the supplied original page images. Unavailable or conflicting source quotations remain unresolved; do not invent a transcription. A corrected quotation that contradicts the finding requires readjudication of the comment and related revision actions.'
  prompt+='\nVERIFIED REVIEW\n'+compact(draft_final)+'\nMANUSCRIPT\n'+compact(paper)
  prompt+='\nCOVERAGE AND PENDING ITEMS\n'+compact(m.read(out/'inputs/coverage_and_pending.json'))
  if (out/'inputs/case_relation_references.json').exists():

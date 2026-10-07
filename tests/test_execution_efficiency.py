@@ -262,7 +262,12 @@ class DraftInputPreservation(unittest.TestCase):
         prompt = fixtures.m.read(request_path)['prompt']
         supplied, _ = json.JSONDecoder().raw_decode(prompt.split('\nVERIFIED REVIEW\n', 1)[1])
         verified = fixtures.m.read(final_path)
-        self.assertEqual(supplied, {key: value for key, value in verified.items() if key != 'dispositions'})
+        original_fields = {key: value for key, value in supplied.items() if key != 'source_fidelity_checks'}
+        self.assertEqual(original_fields, {key: value for key, value in verified.items()
+                                          if key not in {'dispositions', 'source_fidelity_checks'}})
+        if 'source_fidelity_checks' in verified:
+            self.assertEqual([{key: value for key, value in row.items() if key != 'finding_ids'}
+                              for row in supplied['source_fidelity_checks']], verified['source_fidelity_checks'])
         coverage, _ = json.JSONDecoder().raw_decode(prompt.split('\nCOVERAGE AND PENDING ITEMS\n', 1)[1])
         self.assertEqual(coverage['unresolved_dispositions'],
                          [row for row in verified['dispositions'] if row['status'] == 'unresolved'])

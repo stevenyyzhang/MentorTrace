@@ -42,7 +42,8 @@ def prepare(source, output, *, text_tool='pdftotext', image_tool='pdftoppm', dpi
         m.save(body, [{'page': number, 'text': text} for number, text in enumerate(texts, 1)])
         m.import_paper(body, normalized, source, output, m.sha(source))
     return {'pages': len(texts), 'annotation_objects_removed': True,
-            'required_manual_check': 'Inspect burned-in comments, text/image correspondence and equation readability.'}
+            'text_extraction_fidelity': 'Not certified; raw extraction locates evidence, original page images govern glyphs.',
+            'required_manual_check': 'Inspect burned-in comments, text/image correspondence, decisive formula delimiters/operators and the physical placement of split words.'}
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)

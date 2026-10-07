@@ -11,11 +11,17 @@ A={'page':1,'quote':'The receiver observes y.'}
 O={'id':'O1','anchor':A,'relation':'observation -> detector input','passage_job':'state information conditions','lanes':['reader','technical','supplement']}
 
 def answer(stage,ctx):
- if stage=='language':return {'coverage':[{'unit_id':u['id'],'status':'checked','reason':'synthetic clean text','finding_ids':[]} for u in ctx['text_units']],'findings':[],'uncertain_items':[],'optional_suggestions':[],'limits':[]}
+ if stage=='language':
+  result={'coverage':[{'unit_id':u['id'],'status':'checked','reason':'synthetic clean text','finding_ids':[]} for u in ctx['text_units']],'findings':[],'uncertain_items':[],'optional_suggestions':[],'limits':[]}
+  if ctx.get('source_fidelity'):result['source_candidate_dispositions']=[]
+  return result
  if stage=='objects':return {'technical_configurations':[{'id':'K1','object_ids':['O1'],'anchors':[A],'configuration':'receiver observation','operation':'detector input','question':'Is observation accessible?'}],'technical_configuration_exclusions':[],'objects':[copy.deepcopy(O)],'section_jobs':[{'pages':[1],'job':'model','object_ids':['O1']}],'reader_scope_plan':[{'id':'U1','anchors':[A],'chapter_tasks':['system_model'],'scales':['reading_point'],'task':'Reconstruct receiver input','object_ids':['O1']}], 'reader_editorial_plan':[{'id':'E1','unit_ids':['U1'],'focus':'first_use','anchors':[A],'question':'Is the observation available before the detector uses it?','candidate_alternative':{'operation':'add','source':'receiver observation sentence','destination':'immediately before detector use','expected_reader_gain':'supply input availability','possible_cost':'one explanatory clause'}}], 'reader_editorial_exclusions':[],'limits':[]}
  if stage in ['merge','verify']:
   f={'id':stage+':F1','anchor':A,'relation':'observation -> detector input','gap':'SYNTHETIC_GAP_SENTINEL','impact':'execution unknown','closure_goal':'identify input','new_in_stage':False}
-  return {'findings':[f],'dispositions':[{'input_id':i['id'],'status':'merged' if stage=='merge' else 'retained','output_ids':[f['id']],'reason':'same synthetic relation','evidence':[]} for i in ctx['input_findings']],'limits':[]}
+  result={'findings':[f],'dispositions':[{'input_id':i['id'],'status':'merged' if stage=='merge' else 'retained','output_ids':[f['id']],'reason':'same synthetic relation','evidence':[]} for i in ctx['input_findings']],'limits':[]}
+  if stage=='verify' and ctx.get('source_fidelity'):
+   result['source_fidelity_checks']=[{'input_id':i['id'],'status':'not_formula_dependent','reason':'Synthetic prose-only observation fixture.'} for i in ctx['input_findings']]
+  return result
  cards=ctx.get('cards',[]);cid=stage+':C1';fid=stage+':F1'
  result={'new_objects':[],'checks':[{'id':cid,'object_id':'O1','anchor':A,'execution':'completed','judgment':'gap','author_explanation':'observes y','required_relation':'observation -> detector input','counterevidence':[],'reason':'fixture gap','card_ids':[c['id'] for c in cards],'finding_ids':[fid],'local_support':[],'later_support':[]}],
   'findings':[{'id':fid,'object_id':'O1','anchor':A,'relation':'observation -> detector input','gap':'SYNTHETIC_GAP_SENTINEL','impact':'execution unknown','closure_goal':'identify input','check_ids':[cid]}],
