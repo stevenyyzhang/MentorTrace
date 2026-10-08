@@ -163,22 +163,7 @@ MentorTrace/
 
 The corpora draw on two sets of manuscript materials:
 
-**Papers from the research group revised by the supervisor.** The baseline covers **18 papers** with multiple available annotated or revised versions. The additional intake contains **6 new source groups** (two short/extended manuscripts share one research lineage), plus supplements to an existing paper and duplicate material. Source-group count is not independent-research count. Actual comments, student responses and subsequent revisions inform the historical review concerns, judgment grounds, insufficient responses and applicability boundaries. These concerns cover both reader comprehension and technical arguments, such as concept explanations, information links, assumptions, derivations and supported claim scope. Their topics overlap with Reader and Technical, but Advisor uses them independently; they have no one-to-one mapping to published cases. Separate revision phases of the same paper count as one paper. Only anonymized, generalized analytical records are distributed; original manuscripts, verbatim comments and private revision histories are not publicly distributed. Learning here means consulting analytical records, not fine-tuning model parameters.
-
-Advisor now defaults to [`advisor-concerns-v4`](corpus/advisor-concerns-v4/manifest.json): **493 complete concerns = 437 preserved cards + 56 additions**, arranged in 17 runtime batches. Admissions use joint feedback context, observed revision responses and complete six-field comparisons; unattributed LaTeX changes alone do not establish mentor requirements. Version histories and identity evidence remain in local private records. The added collection is training-exposed; related drafts and short/extended papers cannot serve as independent unseen-family evaluation samples.
-
-Read all six decision fields together:
-
-| Field | Meaning |
-| --- | --- |
-| `core_question` | Underlying review question |
-| `new_manuscript_check` | When to check it in a new manuscript |
-| `relationship_to_check` | Objects, conditions and relationships to connect |
-| `historically_insufficient_response` | Historical gap or insufficient response, with its scope |
-| `potentially_sufficient_response` | Conditional analyst proposal for closing the requirement |
-| `applicability_boundary` | Limits, exceptions and evidence that cannot be assumed |
-
-Each field contains English `text`, analytical `basis` and anonymous `source_ids`. `evidence_status` distinguishes analyst abstraction, withheld historical evidence, training exposure and unestablished advisor acceptance. Anonymous IDs do not disclose source identities. See the [corpus field specification](docs/corpus-format.md).
+**Papers from the research group revised by the supervisor.** The current source materials cover **24 papers**, each with multiple available annotated or revised versions. Actual comments, student responses and subsequent revisions inform the historical review concerns, judgment grounds, insufficient responses and applicability boundaries. These concerns cover both reader comprehension and technical arguments, such as concept explanations, information links, assumptions, derivations and supported claim scope. Their topics overlap with Reader and Technical, but Advisor uses them independently; they have no one-to-one mapping to published cases. Separate revision phases of the same paper count as one paper. Only anonymized, generalized analytical records are distributed; original manuscripts, verbatim comments and private revision histories are not publicly distributed. Learning here means consulting analytical records, not fine-tuning model parameters.
 
 **Published papers the supervisor considers well written.** The current cases cover **52 papers**, primarily in wireless communications. Reader and Technical cases are developed from specific arguments and writing passages: Reader cases concern explanations, information arrangement and comprehension; Technical cases concern technical relationships, prerequisites, argument support and claim scope. Models produced the case analyses; these have not received item-by-item supervisor confirmation. Recommending a paper does not imply endorsing every case interpretation. Cases retain public bibliographic references. Original paper PDFs are not bundled.
 
