@@ -63,7 +63,13 @@ def audit(root=ROOT, deny_terms=()):
                 inspect(value)
         inventory.append({'path': rel, 'bytes': path.stat().st_size,
                           'sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
-    for folder in ['corpus/advisor-concerns-v1', 'corpus/published-cases-v1']:
+    folders = ['corpus/advisor-concerns-v1', 'corpus/published-cases-v1']
+    corpus_root = root / 'corpus'
+    if corpus_root.is_dir():
+        folders += sorted('corpus/' + p.name for p in corpus_root.iterdir()
+                          if p.is_dir() and re.fullmatch(r'advisor-concerns-v[0-9]+', p.name)
+                          and 'corpus/' + p.name not in folders)
+    for folder in folders:
         package = root / folder
         if not (package / 'FREEZE.json').exists():
             findings.append({'file': folder, 'rule': 'missing_frozen_corpus'})

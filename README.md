@@ -1,10 +1,10 @@
 # MentorTrace
 
-Version: [v1.1.0-dev.2](VERSION)
+Version: [v1.1.0-dev.3](VERSION)
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-Pre-release status: `v1.1.0-dev.2` is a development snapshot for testing. The stable version is `v1.0.0`; ongoing work is on the `dev` branch. See [changes and migration notes](CHANGELOG.md) and the [current validation record](docs/validation-v1.1.0-dev.2.json). The earlier development record and other audit documents retain their original baseline scope. The development version is independently runnable, but improvements in diagnostic quality, live latency and usage have not been established by controlled comparisons.
+Pre-release status: `v1.1.0-dev.3` is a development snapshot for testing. The stable version is `v1.0.0`; ongoing work is on the `dev` branch. See [changes and migration notes](CHANGELOG.md) and the [current validation record](docs/validation-v1.1.0-dev.3.json). The earlier development record and other audit documents retain their original baseline scope. The development version is independently runnable, but improvements in diagnostic quality, live latency and usage have not been established by controlled comparisons.
 
 MentorTrace derives judgment patterns from an academic supervisor's actual comments and successive manuscript revisions, and draws on published papers that supervisor considers well written to help authors identify problems in a new manuscript's argument, technical support, organization and expression. During review, it follows the manuscript's argument chains, technical relationships and revision cues, continually asking whether explanations are sufficient, whether arguments are complete, and whether conclusions are supported by evidence. Each review comment identifies the relevant manuscript passage, explains the issue and its basis, and provides concrete revision suggestions. The results are organized into bilingual English–Chinese Markdown and PDF reports.
 
@@ -142,7 +142,10 @@ MentorTrace/
 │   └── ...                        Other validation and transport tools
 ├── config/                        Project and optional model settings
 ├── corpus/
-│   ├── advisor-concerns-v1/        Analysis of supervisor comments and revisions
+│   ├── advisor-concerns-v1/        Preserved baseline of 437 concerns
+│   ├── advisor-concerns-v2/        Preserved 481-card snapshot
+│   ├── advisor-concerns-v3/        Preserved 490-card snapshot
+│   ├── advisor-concerns-v4/        Current default: 493 conditional concerns
 │   └── published-cases-v1/         Published-paper cases, indexes and citations
 ├── examples/                      Fictional bilingual report examples
 ├── docs/                          Corpus fields, case checks and validation
@@ -160,7 +163,22 @@ MentorTrace/
 
 The corpora draw on two sets of manuscript materials:
 
-**Papers from the research group revised by the supervisor.** The current source materials cover **18 papers**, each with multiple available annotated or revised versions. Actual comments, student responses and subsequent revisions inform the historical review concerns, judgment grounds, insufficient responses and applicability boundaries. These concerns cover both reader comprehension and technical arguments, such as concept explanations, information links, assumptions, derivations and supported claim scope. Their topics overlap with Reader and Technical, but Advisor uses them independently; they have no one-to-one mapping to published cases. Separate revision phases of the same paper count as one paper. Only anonymized, generalized analytical records are distributed; original manuscripts, verbatim comments and private revision histories are not publicly distributed. Learning here means consulting analytical records, not fine-tuning model parameters.
+**Papers from the research group revised by the supervisor.** The baseline covers **18 papers** with multiple available annotated or revised versions. The additional intake contains **6 new source groups** (two short/extended manuscripts share one research lineage), plus supplements to an existing paper and duplicate material. Source-group count is not independent-research count. Actual comments, student responses and subsequent revisions inform the historical review concerns, judgment grounds, insufficient responses and applicability boundaries. These concerns cover both reader comprehension and technical arguments, such as concept explanations, information links, assumptions, derivations and supported claim scope. Their topics overlap with Reader and Technical, but Advisor uses them independently; they have no one-to-one mapping to published cases. Separate revision phases of the same paper count as one paper. Only anonymized, generalized analytical records are distributed; original manuscripts, verbatim comments and private revision histories are not publicly distributed. Learning here means consulting analytical records, not fine-tuning model parameters.
+
+Advisor now defaults to [`advisor-concerns-v4`](corpus/advisor-concerns-v4/manifest.json): **493 complete concerns = 437 preserved cards + 56 additions**, arranged in 17 runtime batches. Admissions use joint feedback context, observed revision responses and complete six-field comparisons; unattributed LaTeX changes alone do not establish mentor requirements. Version histories and identity evidence remain in local private records. The added collection is training-exposed; related drafts and short/extended papers cannot serve as independent unseen-family evaluation samples.
+
+Read all six decision fields together:
+
+| Field | Meaning |
+| --- | --- |
+| `core_question` | Underlying review question |
+| `new_manuscript_check` | When to check it in a new manuscript |
+| `relationship_to_check` | Objects, conditions and relationships to connect |
+| `historically_insufficient_response` | Historical gap or insufficient response, with its scope |
+| `potentially_sufficient_response` | Conditional analyst proposal for closing the requirement |
+| `applicability_boundary` | Limits, exceptions and evidence that cannot be assumed |
+
+Each field contains English `text`, analytical `basis` and anonymous `source_ids`. `evidence_status` distinguishes analyst abstraction, withheld historical evidence, training exposure and unestablished advisor acceptance. Anonymous IDs do not disclose source identities. See the [corpus field specification](docs/corpus-format.md).
 
 **Published papers the supervisor considers well written.** The current cases cover **52 papers**, primarily in wireless communications. Reader and Technical cases are developed from specific arguments and writing passages: Reader cases concern explanations, information arrangement and comprehension; Technical cases concern technical relationships, prerequisites, argument support and claim scope. Models produced the case analyses; these have not received item-by-item supervisor confirmation. Recommending a paper does not imply endorsing every case interpretation. Cases retain public bibliographic references. Original paper PDFs are not bundled.
 

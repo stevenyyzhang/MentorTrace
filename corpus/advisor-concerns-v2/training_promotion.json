@@ -1,0 +1,184 @@
+{
+  "authorization": {
+    "user_request": "Continue development from the existing prerelease and integrate newly supplied historical mentor-concern evidence; proceed without further human confirmation."
+  },
+  "promoted_cards": {
+    "C0438": {
+      "source_group": "TADD",
+      "card_sha256": "13e8dbed3617d66fad65075ebb86ae85f3c24364f2817e3cb2677ef1ef43acc0"
+    },
+    "C0439": {
+      "source_group": "TADD",
+      "card_sha256": "56a74d0bda884c08a5449cfcdbb89860e352ed3a494e0701090fb73c0d59c169"
+    },
+    "C0440": {
+      "source_group": "TADD",
+      "card_sha256": "781270291e65f0afcc74a701fdea2f770b01d14387dfbc2e5296e207726e2ba5"
+    },
+    "C0441": {
+      "source_group": "TADD",
+      "card_sha256": "7308c2c0ca5aaa2f5bc545a8a27aae60116b6b77ae772cdef948a0d860965408"
+    },
+    "C0442": {
+      "source_group": "TADD",
+      "card_sha256": "4c01ea8142162c3b9100c9e0724b7588eb7d31205f1d4a614f3465a6bdb9ba65"
+    },
+    "C0443": {
+      "source_group": "TADD",
+      "card_sha256": "9bf419dcca6fcfbc4f39b289431598e494c6263592067a46585bc149f9b17390"
+    },
+    "C0444": {
+      "source_group": "TADD",
+      "card_sha256": "d8fbbc7e0edec28493f48ac884427890f3aaaef0b4cfda89641fed0e1e6af3a0"
+    },
+    "C0445": {
+      "source_group": "TADD",
+      "card_sha256": "1c71de407baefb53ab4df98f1891fc8440bbefad67ce552fe20ab9737b0fd6e0"
+    },
+    "C0446": {
+      "source_group": "TADD",
+      "card_sha256": "ceca3d583d3ec40756ee3db9bb65693c3946d3988cc5bc1b636a222327928ee5"
+    },
+    "C0447": {
+      "source_group": "TADD",
+      "card_sha256": "da4e55ae9f8790714010387702870cb7c2dda63e6b8c1268ee231c6d7429d5c4"
+    },
+    "C0448": {
+      "source_group": "TADD",
+      "card_sha256": "752adb4a9cd95af50dde706f605dd74a297ba9b4d943822cde3de0a43b8c44ea"
+    },
+    "C0449": {
+      "source_group": "TADD",
+      "card_sha256": "9fa76c167a9f2ec1dbf6eb27b0c20f735370b5fcc32b49c4ec28e05d2e7f9897"
+    },
+    "C0450": {
+      "source_group": "TADD",
+      "card_sha256": "5160504cc904489866d586e9c5e43a466162c4aeb27edb9945d4a0b7804e32fc"
+    },
+    "C0451": {
+      "source_group": "TADD",
+      "card_sha256": "9346a3e62b9d8c23e7378e235b1eeb95baca647536de6d5662ef0b13a95e812c"
+    },
+    "C0452": {
+      "source_group": "TADD",
+      "card_sha256": "c6b3fec0570602d33f7cdeeb91db86b644a25385c1707f58b61f0dba28a71376"
+    },
+    "C0453": {
+      "source_group": "TADD",
+      "card_sha256": "b29ef0720b8ed0c7568d10b3035d2517d02017976ef76db3c3f921a7db7b17df"
+    },
+    "C0454": {
+      "source_group": "TADD",
+      "card_sha256": "8ac484eb5fd5a20557c1a788b475e04ab5541081b624f8c00143d53582eb5dd2"
+    },
+    "C0455": {
+      "source_group": "TADD",
+      "card_sha256": "c26c0759641c86f15a99dc9923c8b932910af3ea7d2297e9dad65df756c05592"
+    },
+    "C0456": {
+      "source_group": "TADD",
+      "card_sha256": "c36956e3dd6f9ead098b2861adc62a9b6933acf1564140c324eaa007ab9b9572"
+    },
+    "C0457": {
+      "source_group": "TADD",
+      "card_sha256": "ac83cb3dda843311fb17fb83f7434005babe6cf6cb6a0f11d34cd5796d2fcc56"
+    },
+    "C0458": {
+      "source_group": "TADD",
+      "card_sha256": "c8fb4f72df25964af6e1ea410a8fff8693438c5400a081d7dad8213b912e1b4c"
+    },
+    "C0459": {
+      "source_group": "TADD",
+      "card_sha256": "f0e9a1615507f2f1883cefc5b4fb5c41304d464064a014c63ec7b00034b2d831"
+    },
+    "C0460": {
+      "source_group": "TADD",
+      "card_sha256": "500ecc3bae8ee86d1f9a12299eab5ae77c81283708c52f324250dd41d9403935"
+    },
+    "C0461": {
+      "source_group": "TADD",
+      "card_sha256": "cf29483a0cc077bfa7a15d484620a03517fbef12b30d3f044ea41d074ce1db5b"
+    },
+    "C0462": {
+      "source_group": "TADD",
+      "card_sha256": "8a247d8cce7c52c345b49cb0faf325101ae3a8bcbb60565a629c853cb773059d"
+    },
+    "C0463": {
+      "source_group": "TADD",
+      "card_sha256": "8bbcc89efd0b5dae093c358f68ea94276318465eb67800fc3c597ce48457d5a9"
+    },
+    "C0464": {
+      "source_group": "TADD",
+      "card_sha256": "630b1e477b8cc832964ff570ec64b72e63f01376c796073326219b7740ca2526"
+    },
+    "C0465": {
+      "source_group": "TADD",
+      "card_sha256": "cdf11fb6dfcc7d094a931c6ae5d38fe8cabe4f249a60a03cc6fc795a99c643ba"
+    },
+    "C0466": {
+      "source_group": "TADD",
+      "card_sha256": "46139e3a15fe3c0317ac03957d3c5a5b49384f73699ccef01ca433aca4cba8d6"
+    },
+    "C0467": {
+      "source_group": "TADD",
+      "card_sha256": "26c6bb3a5248a6080437e856731d2db42436cb5cc3e16af41e5d0fdda55e7952"
+    },
+    "C0468": {
+      "source_group": "TADD",
+      "card_sha256": "0fc11fe95199ad0a39e6f626f20183ecf9e2d4f1361762b61715f6af12bbdc6e"
+    },
+    "C0469": {
+      "source_group": "TADD",
+      "card_sha256": "1a290b21e63e42d8a66ddcb7264a19983cd3b7d6721d1e29e7c3a0b04feb9308"
+    },
+    "C0470": {
+      "source_group": "TADD",
+      "card_sha256": "0b775969fcb9c2a40ac5e86def4af6ea0915728b0fe3c63c1455ae5546fd5890"
+    },
+    "C0471": {
+      "source_group": "TADD",
+      "card_sha256": "4ec5b0cfa6b752d9e110a180c7d6c7793c2d622be0db10d61455f452bc937cfe"
+    },
+    "C0472": {
+      "source_group": "TADD",
+      "card_sha256": "502f3ee56315803118b9d2829e4f3dfe82840880e5b7c4ed0f3dd08a8670628b"
+    },
+    "C0473": {
+      "source_group": "TADD",
+      "card_sha256": "94b255e5a1d8065e0498f2c456bc40c81a3067151f43a2917348202ba5445bb9"
+    },
+    "C0474": {
+      "source_group": "TADD",
+      "card_sha256": "81d86371591cf02d810ec13791cb87610f5187a7d8357ea4893628a80fa1be5c"
+    },
+    "C0475": {
+      "source_group": "TADD",
+      "card_sha256": "96089c48b2851e78d3459e3e62df11fdf77fbbad00f447728d99bb46c6ec1251"
+    },
+    "C0476": {
+      "source_group": "TADD",
+      "card_sha256": "473a991fe24f9ae96df4d8a89446b651fae48a46f8532a788c65eaa08e5ba3c8"
+    },
+    "C0477": {
+      "source_group": "TADD",
+      "card_sha256": "58b13e0fae98a8773caa0949588ebd2b1157874b2fe12e8f618ec2e80f7696b6"
+    },
+    "C0478": {
+      "source_group": "TADD",
+      "card_sha256": "7514525df82aef4a5a2a4ae8e584e4b79e1142d9b2594baf914997a75911d6c5"
+    },
+    "C0479": {
+      "source_group": "TADD",
+      "card_sha256": "485fd8599e1fb3f8b219e0df63734bb8f2b21354cf8aa57d1ea5a195cbc42a97"
+    },
+    "C0480": {
+      "source_group": "TADD",
+      "card_sha256": "43bc4c1f53bb396f1787ff81e87b7273819c8cd285e43d7c4061541770c25c19"
+    },
+    "C0481": {
+      "source_group": "TADD",
+      "card_sha256": "eeebfc705705e8e6fd0d546e1f06683dc5eb102437e2cb13eaaaf32719fc1cd1"
+    }
+  },
+  "evaluation_boundary": "The added training collection is exposed. Private mapping is withheld; target-family separation must be established independently. Related drafts are not independent evaluation samples."
+}

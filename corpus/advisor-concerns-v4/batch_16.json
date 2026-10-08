@@ -1,0 +1,1784 @@
+[
+  {
+    "id": "C0451",
+    "core_question": {
+      "text": "Is the relationship between an estimation error and its estimate stated with the conditions needed by the downstream analysis?",
+      "basis": "analyst_abstraction_from_confirmed_advisor_requirement",
+      "source_ids": [
+        "SRCADD001401"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A rate or estimator argument uses independence or lack of correlation between an estimate and its estimation error, while a simulation checks a weaker property.",
+      "basis": "analyst_conditional_transfer_trigger",
+      "source_ids": [
+        "SRCADD001401"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "The named estimator and error definition, their joint statistical assumptions, the property used downstream, and the property actually tested.",
+      "basis": "analyst_abstraction_of_relation_from_confirmed_feedback",
+      "source_ids": [
+        "SRCADD001401"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The error was defined before the later independence assertion; the mentor asked to state the relationship at the definition and provide an uncorrelatedness simulation. The manuscript already asserted independence later.",
+      "basis": "historical_manuscript_state_not_an_invented_failed_reply",
+      "source_ids": [
+        "SRCADD001401"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State the required relationship at its use and justify it under the actual estimator and joint model; report precisely whether numerical evidence tests correlation, covariance, or a stronger distributional property.",
+      "basis": "analyst_sufficiency_criterion_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD001401"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "An uncorrelatedness simulation does not by itself prove independence. Gaussian-MMSE arguments require their applicable joint model; the historical scalar estimator and its universal optimality have not been certified.",
+      "basis": "analyst_boundary_from_source_context_and_uncertainty",
+      "source_ids": [
+        "SRCADD001401"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0451",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0452",
+    "core_question": {
+      "text": "Does numerical validation test the stated estimation-error formula using observations generated from the original model and the same estimator?",
+      "basis": "analyst_abstraction_from_confirmed_advisor_requirement",
+      "source_ids": [
+        "SRCADD001501"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "An analytical estimator-error expression is supplied without a matching original-model experiment, or simulations may use a proxy that already assumes the desired approximation.",
+      "basis": "analyst_conditional_transfer_trigger",
+      "source_ids": [
+        "SRCADD001501"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Original stochastic model, generated channel and observation, stated estimator, defined error, and the analytical versus empirical error statistic.",
+      "basis": "analyst_abstraction_of_relation_from_confirmed_feedback",
+      "source_ids": [
+        "SRCADD001501"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The draft defined the estimator and error covariance, but the mentor still requested a Monte Carlo result generated from the source expression, estimated by the source expression, and compared with the source expression. No such matching result is established in this packet.",
+      "basis": "historical_manuscript_state_not_an_invented_failed_reply",
+      "source_ids": [
+        "SRCADD001501"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Generate from the stated original model, apply the specified observation and estimator chain, and compare the same identified matrix or scalar error statistic across analytical and empirical results.",
+      "basis": "analyst_sufficiency_criterion_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD001501"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "the source expression is an error covariance while the raw comment calls it MSE; any trace or component statistic must be explicit. A matching finite simulation does not prove an asymptotic theorem or certify that the estimator is globally MMSE.",
+      "basis": "analyst_boundary_from_source_context_and_uncertainty",
+      "source_ids": [
+        "SRCADD001501"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0452",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0453",
+    "core_question": {
+      "text": "Does a stated limiting performance result identify and justify the limit of any residual dimension-dependent scalar?",
+      "basis": "analyst_abstraction_from_confirmed_advisor_requirement",
+      "source_ids": [
+        "SRCADD001601"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A quantity is said to converge to a result that still contains a size-dependent normalized trace or coefficient.",
+      "basis": "analyst_conditional_transfer_trigger",
+      "source_ids": [
+        "SRCADD001601"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Performance limit, the residual normalized scalar sequence, its convergence or other claimed asymptotic meaning, and the supporting conditions.",
+      "basis": "analyst_abstraction_of_relation_from_confirmed_feedback",
+      "source_ids": [
+        "SRCADD001601"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The displayed limiting SINR still contained tr(D_k)/N. The mentor asked to write its limit and explain existence even without a closed-form value.",
+      "basis": "historical_manuscript_state_not_an_invented_failed_reply",
+      "source_ids": [
+        "SRCADD001601"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State the limiting scalar and its justified conditions, or explicitly state a dimension-dependent asymptotic approximation if that is the actual result.",
+      "basis": "analyst_sufficiency_criterion_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD001601"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Lack of a closed form does not preclude convergence, but boundedness alone does not certify it. The raw /k versus /N inconsistency and the claimed support from the source expression remain unverified; no corrected historical proof is invented.",
+      "basis": "analyst_boundary_from_source_context_and_uncertainty",
+      "source_ids": [
+        "SRCADD001601"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0453",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0454",
+    "core_question": {
+      "text": "Are cross terms removed from an expansion controlled in the normalized regime used by the claimed result?",
+      "basis": "analyst_abstraction_from_confirmed_advisor_requirement",
+      "source_ids": [
+        "SRCADD001701"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A norm, power, or performance expansion retains squared components but drops their cross products inside a limiting argument.",
+      "basis": "analyst_conditional_transfer_trigger",
+      "source_ids": [
+        "SRCADD001701"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "The full expansion, cross terms, weights and normalization, and the conditions needed for their claimed disappearance.",
+      "basis": "analyst_abstraction_of_relation_from_confirmed_feedback",
+      "source_ids": [
+        "SRCADD001701"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The visible a source draft step retained direct and reflected squared terms but dropped their cross products; the mentor asked that the direct/reflected product also be shown to vanish.",
+      "basis": "historical_manuscript_state_not_an_invented_failed_reply",
+      "source_ids": [
+        "SRCADD001701"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Identify the omitted products and justify their normalized limits under the same weights, growth regime, and assumptions as the enclosing calculation.",
+      "basis": "analyst_sufficiency_criterion_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD001701"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "The mentor shorthand is not an unconditional finite-channel zero-product statement. The original weighted expression and N-squared normalization govern the local step. The packet does not certify that proof or infer that every cross term can be discarded.",
+      "basis": "analyst_boundary_from_source_context_and_uncertainty",
+      "source_ids": [
+        "SRCADD001701"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0454",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0455",
+    "core_question": {
+      "text": "Does the experiment identify which inputs are held fixed and which variables are resampled?",
+      "basis": "analyst_abstraction_from_confirmed_advisor_requirement",
+      "source_ids": [
+        "SRCADD001801"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A stochastic simulation uses both random realizations and statistical or structural parameters, but its procedure leaves the conditioning unclear.",
+      "basis": "analyst_conditional_transfer_trigger",
+      "source_ids": [
+        "SRCADD001801"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "The generated parameters, repeated random draws, empirical statistic and conditional claim being evaluated.",
+      "basis": "analyst_relation_abstraction",
+      "source_ids": [
+        "SRCADD001801"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The manuscript described an empirical distribution without saying whether correlation matrices were fixed while channels were resampled; the mentor asked between these two procedures explicitly.",
+      "basis": "historical_manuscript_state_not_invented_response",
+      "source_ids": [
+        "SRCADD001801"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Specify generation order, fixed inputs and resampling layers so the empirical comparison can be interpreted against the analytical claim. Verify this description against the actual procedure when available.",
+      "basis": "analyst_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD001801"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A clarified sampling description does not prove an almost-sure uniform bound, supply absent code or validate the physical model. Alternative sampling designs can be legitimate for different questions.",
+      "basis": "analyst_boundary_from_source_context",
+      "source_ids": [
+        "SRCADD001801"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0455",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0456",
+    "core_question": {
+      "text": "Is the stated lack of correlation between vectors supported by the full cross-covariance object?",
+      "basis": "analyst_abstraction_from_confirmed_advisor_requirement",
+      "source_ids": [
+        "SRCADD001901"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A vector independence or decorrelation argument relies on a zero scalar inner-product expectation.",
+      "basis": "analyst_conditional_transfer_trigger",
+      "source_ids": [
+        "SRCADD001901"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "The vectors, all cross-coordinate covariances and any joint-distribution premise needed to infer independence.",
+      "basis": "analyst_relation_abstraction",
+      "source_ids": [
+        "SRCADD001901"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The source evaluated a scalar inner-product expectation and concluded the channel vectors were uncorrelated; the mentor explicitly requested a zero matrix instead.",
+      "basis": "historical_manuscript_state_not_invented_response",
+      "source_ids": [
+        "SRCADD001901"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Derive the complete cross-covariance matrix from the specified shared and independent factors, and separately justify any step from decorrelation to independence.",
+      "basis": "analyst_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD001901"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Zero cross-covariance does not generally imply independence. Joint Gaussianity and finite-versus-asymptotic scope must be established separately; selected coordinate plots are not a full joint-law proof.",
+      "basis": "analyst_boundary_from_source_context",
+      "source_ids": [
+        "SRCADD001901"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0456",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0457",
+    "core_question": {
+      "text": "Do the plotted variables test the same joint relationship used by the argument?",
+      "basis": "analyst_abstraction_from_confirmed_advisor_requirement",
+      "source_ids": [
+        "SRCADD002001"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "An argument concerns several entities or a stacked random object, while its numerical example uses coordinates from only one entity.",
+      "basis": "analyst_conditional_transfer_trigger",
+      "source_ids": [
+        "SRCADD002001"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "The claimed joint object, the chosen projection, within-entity behavior and cross-entity relationship.",
+      "basis": "analyst_relation_abstraction",
+      "source_ids": [
+        "SRCADD002001"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The original example plotted two coordinates of one channel. The mentor requested a pair spanning two users and later asked to retain both within-user and cross-user examples.",
+      "basis": "historical_manuscript_state_not_invented_response",
+      "source_ids": [
+        "SRCADD002001"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Identify the projected variables and show examples addressing the relevant within- and cross-entity relationships, with each panel tied to the claim it illustrates.",
+      "basis": "analyst_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD002001"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Selected projections supply examples, not a proof of the entire high-dimensional joint law or independence. Historical example sizes are not universal thresholds.",
+      "basis": "analyst_boundary_from_source_context",
+      "source_ids": [
+        "SRCADD002001"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0457",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0458",
+    "core_question": {
+      "text": "Is the reference distribution specified consistently with the example being tested?",
+      "basis": "analyst_abstraction_from_confirmed_advisor_requirement",
+      "source_ids": [
+        "SRCADD002101"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "An empirical distribution is compared with a named parametric law whose parameters or status as a reference are unspecified.",
+      "basis": "analyst_conditional_transfer_trigger",
+      "source_ids": [
+        "SRCADD002101"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "The variables under test, the fixed setup, the reference-law parameters and the empirical comparison.",
+      "basis": "analyst_relation_abstraction",
+      "source_ids": [
+        "SRCADD002101"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The source displayed a Gaussian density with an unspecified covariance matrix. The mentor asked for the actual distribution determined by the setup; student discussion also distinguished a reference assumption from a known empirical law.",
+      "basis": "historical_manuscript_state_not_invented_response",
+      "source_ids": [
+        "SRCADD002101"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State the parameter values or their derivation for the reference and describe the comparison as evidence about the approximation under that setup.",
+      "basis": "analyst_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD002101"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Independent coordinates can still have a diagonal covariance matrix; the historical rhetorical objection does not abolish covariance. Parameter matching and a good fit do not certify the full asymptotic theorem.",
+      "basis": "analyst_boundary_from_source_context",
+      "source_ids": [
+        "SRCADD002101"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0458",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0459",
+    "core_question": {
+      "text": "Does the numerical comparison address the final analytical result rather than only its intermediate assumptions?",
+      "basis": "analyst_abstraction_from_confirmed_advisor_requirement",
+      "source_ids": [
+        "SRCADD002201"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A final performance formula is presented after approximation or model-validation figures, without a comparison for that formula.",
+      "basis": "analyst_conditional_transfer_trigger",
+      "source_ids": [
+        "SRCADD002201"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "The analytical performance expression, its conditions and the matching finite-system empirical performance.",
+      "basis": "analyst_relation_abstraction",
+      "source_ids": [
+        "SRCADD002201"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The source contained Gaussian-fit and singular-value examples. The mentor separately requested a figure verifying the rate theorem.",
+      "basis": "historical_manuscript_state_not_invented_response",
+      "source_ids": [
+        "SRCADD002201"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Compare the theorem expression with numerical performance computed under matching model, power, estimation and dimension settings, and report the residual gap within the tested range.",
+      "basis": "analyst_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD002201"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A finite comparison is evidence within its conditions, not proof of an asymptotic theorem. Later student proof figures do not establish mentor acceptance or an executable simulation.",
+      "basis": "analyst_boundary_from_source_context",
+      "source_ids": [
+        "SRCADD002201"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0459",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0460",
+    "core_question": {
+      "text": "Is the claimed nonconvexity explained for the actual constraint direction?",
+      "basis": "analyst_abstraction_from_confirmed_advisor_requirement",
+      "source_ids": [
+        "SRCADD002301"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "An optimization method justifies a relaxation or approximation by calling a quadratic constraint nonconvex.",
+      "basis": "analyst_conditional_transfer_trigger",
+      "source_ids": [
+        "SRCADD002301"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "The function curvature, inequality orientation and resulting feasible set.",
+      "basis": "analyst_relation_abstraction",
+      "source_ids": [
+        "SRCADD002301"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The source already said the quadratic right-hand side was convex but not concave; the mentor sharpened the explanation at the constraint. A wholly missing explanation is not established.",
+      "basis": "historical_manuscript_state_not_invented_response",
+      "source_ids": [
+        "SRCADD002301"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State the relevant curvature and show why the stated inequality has the problematic feasible-set form, before choosing the remedy.",
+      "basis": "analyst_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD002301"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Convexity of one function alone does not classify every surrounding problem. The original explanation may only need clearer placement; no solver validity or general transfer to different objectives is certified.",
+      "basis": "analyst_boundary_from_source_context",
+      "source_ids": [
+        "SRCADD002301"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0460",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0461",
+    "core_question": {
+      "text": "Which original constraints remain satisfied after recovery from a relaxed solution?",
+      "basis": "analyst_abstraction_from_confirmed_advisor_requirement",
+      "source_ids": [
+        "SRCADD002401"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A lifted optimization drops a structural constraint and then calls its recovered vector a solution of the original problem.",
+      "basis": "analyst_conditional_transfer_trigger",
+      "source_ids": [
+        "SRCADD002401"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "The relaxation, the rank or structure of its solution, the recovery step, recovered variables and original constraints.",
+      "basis": "analyst_relation_abstraction",
+      "source_ids": [
+        "SRCADD002401"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The source proved an amplitude bound for a leading-eigenvector recovery while describing original feasibility. The mentor requested explicit rank-one versus higher-rank treatment and a constraint-satisfaction statement.",
+      "basis": "historical_manuscript_state_not_invented_response",
+      "source_ids": [
+        "SRCADD002401"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Distinguish exact recovery conditions from approximate recovery, verify each claimed constraint for the recovered variables and disclose any recomputation of other variables or remaining feasibility conditions.",
+      "basis": "analyst_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD002401"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A bound on coefficient amplitudes does not establish rate feasibility at unchanged powers. Exactness requires valid reformulation and rank conditions; recovery alone does not certify global optimality.",
+      "basis": "analyst_boundary_from_source_context",
+      "source_ids": [
+        "SRCADD002401"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0461",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0462",
+    "core_question": {
+      "text": "How does the missing observation feature create the stated inference difficulty?",
+      "basis": "paper_local_concern_abstraction",
+      "source_ids": [
+        "SRCADD002501"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A method claims a different sensing modality makes association harder or makes an existing technique unusable.",
+      "basis": "analyst_suggested_transfer_check",
+      "source_ids": [
+        "SRCADD002501"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "The discriminating feature, observed measurements, correspondence ambiguity and method response.",
+      "basis": "paper_local_relationship_abstraction",
+      "source_ids": [
+        "SRCADD002501"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The source named unavailable texture; the mentor requested an example explaining what texture contributes to matching and what remains available in the new modality.",
+      "basis": "observed_manuscript_and_feedback_not_invented_student_reply",
+      "source_ids": [
+        "SRCADD002501"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Show a concrete correspondence ambiguity and explain which feature would resolve it, which feature is absent and what information the proposed method actually uses.",
+      "basis": "analyst_suggested_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD002501"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Do not turn a modality contrast into a universal impossibility, privacy guarantee or weather guarantee. This concern is about the stated feature-dependent mechanism.",
+      "basis": "evidence_and_scope_boundary",
+      "source_ids": [
+        "SRCADD002501"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0462",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0463",
+    "core_question": {
+      "text": "Which model restrictions are genuinely required by the algorithm?",
+      "basis": "paper_local_concern_abstraction",
+      "source_ids": [
+        "SRCADD002601"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A manuscript presents a particular geometry or parameter restriction without saying whether the method depends on it.",
+      "basis": "analyst_suggested_transfer_check",
+      "source_ids": [
+        "SRCADD002601"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Model restriction, parameterization, algorithm operations and claimed applicability.",
+      "basis": "paper_local_relationship_abstraction",
+      "source_ids": [
+        "SRCADD002601"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The mentor asked whether the method needed the selected array and how different spacings would change the reparameterized algorithm.",
+      "basis": "observed_manuscript_and_feedback_not_invented_student_reply",
+      "source_ids": [
+        "SRCADD002601"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State the required structural premises, derive the parameter mapping under them and identify what changes when those premises are relaxed.",
+      "basis": "analyst_suggested_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD002601"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A new symbol or student explanation does not prove general applicability. Angle-domain and observation-noise consequences require their own evidence.",
+      "basis": "evidence_and_scope_boundary",
+      "source_ids": [
+        "SRCADD002601"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0463",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0464",
+    "core_question": {
+      "text": "Do equivalent vector or matrix representations preserve an explicit entry correspondence?",
+      "basis": "paper_local_concern_abstraction",
+      "source_ids": [
+        "SRCADD002701"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A derivation flattens, permutes or reparameterizes a structured object before using it in estimation.",
+      "basis": "analyst_suggested_transfer_check",
+      "source_ids": [
+        "SRCADD002701"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Original entries, transformation, new ordering and subsequent model operations.",
+      "basis": "paper_local_relationship_abstraction",
+      "source_ids": [
+        "SRCADD002701"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The source inserted a permutation and later used an ambiguous array-vector order; the mentor asked how the entries correspond and offered explicit alternatives.",
+      "basis": "observed_manuscript_and_feedback_not_invented_student_reply",
+      "source_ids": [
+        "SRCADD002701"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Define the index map or transformation and use that order consistently in the measurement operator, unknown vector and derived expressions.",
+      "basis": "analyst_suggested_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD002701"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Equivalent notation requires a consistent map. A clearer ordering expression alone does not certify all statistical or algorithmic consequences.",
+      "basis": "evidence_and_scope_boundary",
+      "source_ids": [
+        "SRCADD002701"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0464",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0465",
+    "core_question": {
+      "text": "Are current observations and retained historical state being distinguished?",
+      "basis": "paper_local_concern_abstraction",
+      "source_ids": [
+        "SRCADD002801"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A sequential estimator updates accumulated identities or counts while some objects can disappear from the current observations.",
+      "basis": "analyst_suggested_transfer_check",
+      "source_ids": [
+        "SRCADD002801"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Current detection, accumulated identities, new/legacy definitions and state-update policy.",
+      "basis": "paper_local_relationship_abstraction",
+      "source_ids": [
+        "SRCADD002801"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The mentor questioned whether a cumulative count contradicted missed detections and whether reassociation could change earlier identities; the source mixed current and historical sets.",
+      "basis": "observed_manuscript_and_feedback_not_invented_student_reply",
+      "source_ids": [
+        "SRCADD002801"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Define both sets, state the retention and revision policy, and derive the update under that policy with explicit missing-observation handling.",
+      "basis": "analyst_suggested_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD002801"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A monotone retained count is not a monotone true detected population. Different association representations need an explicit equivalence, and revisable history needs a different update analysis.",
+      "basis": "evidence_and_scope_boundary",
+      "source_ids": [
+        "SRCADD002801"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0465",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0466",
+    "core_question": {
+      "text": "What inference behaviour does each objective term impose?",
+      "basis": "paper_local_concern_abstraction",
+      "source_ids": [
+        "SRCADD002901"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A fitting or association objective combines residual and model-size terms without showing their respective roles or dependence on the decisions.",
+      "basis": "analyst_suggested_transfer_check",
+      "source_ids": [
+        "SRCADD002901"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Decision variables, residual term, complexity or count term, weighting and resulting tradeoff.",
+      "basis": "paper_local_relationship_abstraction",
+      "source_ids": [
+        "SRCADD002901"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The source gave a residual/count score, but the mentor asked why residual alone was inadequate and how the new-object count depended on the current association.",
+      "basis": "observed_manuscript_and_feedback_not_invented_student_reply",
+      "source_ids": [
+        "SRCADD002901"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Explain each term through its effect on candidate solutions, state its dependence on the decision variables and show how the weighting balances the intended behaviours.",
+      "basis": "analyst_suggested_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD002901"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A prose rationale is not proof that a particular sign or weight is valid. Degenerate cases and statistical interpretations need separate evidence if claimed.",
+      "basis": "evidence_and_scope_boundary",
+      "source_ids": [
+        "SRCADD002901"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0466",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0467",
+    "core_question": {
+      "text": "Does the stated aggregation order match the nonlinear decisions in the method?",
+      "basis": "paper_local_concern_abstraction",
+      "source_ids": [
+        "SRCADD003001"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A diagram or explanation combines thresholded outputs while the formula thresholds only after accumulating raw evidence.",
+      "basis": "analyst_suggested_transfer_check",
+      "source_ids": [
+        "SRCADD003001"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Per-step evidence, aggregation operator, threshold decision and final output.",
+      "basis": "paper_local_relationship_abstraction",
+      "source_ids": [
+        "SRCADD003001"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The mentor noted that two individually subthreshold contributions can exceed threshold after summation, contradicting a detected-point combination explanation.",
+      "basis": "observed_manuscript_and_feedback_not_invented_student_reply",
+      "source_ids": [
+        "SRCADD003001"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State and preserve the order of evidence accumulation and thresholding, and make the diagram, formula and implementation describe the same operation.",
+      "basis": "analyst_suggested_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD003001"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Thresholding and summation generally need not commute. The conceptual objection does not certify which operation the unavailable implementation actually performs.",
+      "basis": "evidence_and_scope_boundary",
+      "source_ids": [
+        "SRCADD003001"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0467",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0468",
+    "core_question": {
+      "text": "What benefit does sequential processing provide beyond the same final batch operation?",
+      "basis": "paper_local_concern_abstraction",
+      "source_ids": [
+        "SRCADD003101"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "An algorithm advertises sequential processing while its final output is an order-independent sum and no intermediate use is stated.",
+      "basis": "analyst_suggested_transfer_check",
+      "source_ids": [
+        "SRCADD003101"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Per-step outputs, accumulation rule, final batch result and claimed operational benefit.",
+      "basis": "paper_local_relationship_abstraction",
+      "source_ids": [
+        "SRCADD003101"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The mentor asked why the grid procedure needed a sequential description if it only summed all per-slot maps for one final output.",
+      "basis": "observed_manuscript_and_feedback_not_invented_student_reply",
+      "source_ids": [
+        "SRCADD003101"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State whether intermediate results are needed and what operational benefit the sequence provides, and identify conditions under which the final operation is equivalent to a batch sum.",
+      "basis": "analyst_suggested_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD003101"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "This concern applies to the actual additive procedure. Nonlinear or history-dependent inference is not presumed batch-equivalent.",
+      "basis": "evidence_and_scope_boundary",
+      "source_ids": [
+        "SRCADD003101"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0468",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0469",
+    "core_question": {
+      "text": "Can the numerical result be traced through the same observation and inference chain as the method?",
+      "basis": "paper_local_concern_abstraction",
+      "source_ids": [
+        "SRCADD003201"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A simulation presents highly accurate final reconstructions without explaining per-step visibility, noise, measurement generation or intermediate decisions.",
+      "basis": "analyst_suggested_transfer_check",
+      "source_ids": [
+        "SRCADD003201"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Ground truth, visible and detected contributors, generated channels and signals, estimated measurements, aggregation and displayed result.",
+      "basis": "paper_local_relationship_abstraction",
+      "source_ids": [
+        "SRCADD003201"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The mentor asked which points were observed, how signals were generated and how nearly perfect reconstruction related to the stated measurement resolution and thresholds.",
+      "basis": "observed_manuscript_and_feedback_not_invented_student_reply",
+      "source_ids": [
+        "SRCADD003201"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Describe the data-generation and inference sequence under explicit geometry and parameters, distinguish intermediate maps from thresholded results and explain accuracy within the tested conditions.",
+      "basis": "analyst_suggested_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD003201"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A written simulation protocol does not verify unavailable code or data. Historical parameter values and attractive plots are not universal accuracy or feasibility guarantees.",
+      "basis": "evidence_and_scope_boundary",
+      "source_ids": [
+        "SRCADD003201"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0469",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0470",
+    "core_question": {
+      "text": "Does the proof establish both implications with the same object semantics?",
+      "basis": "paper_local_concern_abstraction",
+      "source_ids": [
+        "SRCADD003301"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A result claims necessity and sufficiency while its proof shows one direction or uses set membership to represent repeated measurements.",
+      "basis": "analyst_suggested_transfer_check",
+      "source_ids": [
+        "SRCADD003301"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Claimed equivalence, forward and reverse implications, collection equality and multiplicity.",
+      "basis": "paper_local_relationship_abstraction",
+      "source_ids": [
+        "SRCADD003301"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The mentor asked for both necessity and sufficiency and specifically noted that repeated distances must occur the same number of times.",
+      "basis": "observed_manuscript_and_feedback_not_invented_student_reply",
+      "source_ids": [
+        "SRCADD003301"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Prove each implication under identical premises and use a representation that preserves every relevant repeated observation.",
+      "basis": "analyst_suggested_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD003301"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Two written proof sections do not certify correctness. Ordinary set membership can be insufficient when multiplicity matters.",
+      "basis": "evidence_and_scope_boundary",
+      "source_ids": [
+        "SRCADD003301"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0470",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0471",
+    "core_question": {
+      "text": "What is quantified over in the guarantee and what does the evidence establish?",
+      "basis": "paper_local_concern_abstraction",
+      "source_ids": [
+        "SRCADD003401"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A paper moves between testing a given data instance, guaranteeing all configurations and measuring an event frequency.",
+      "basis": "analyst_suggested_transfer_check",
+      "source_ids": [
+        "SRCADD003401"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Fixed observations, configuration domain, topology assumptions, probability law and proof or empirical evidence.",
+      "basis": "paper_local_relationship_abstraction",
+      "source_ids": [
+        "SRCADD003401"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The mentor distinguished detecting ghosts for given ranges from stronger topology results regardless of target locations, then requested a separate numerical probability study.",
+      "basis": "observed_manuscript_and_feedback_not_invented_student_reply",
+      "source_ids": [
+        "SRCADD003401"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State each quantifier and sampling law, align the algorithm or proof with that claim and report empirical frequency within the tested distribution.",
+      "basis": "analyst_suggested_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD003401"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Finite simulations do not prove universal or almost-sure statements. A source theorem or mentor rewrite is not automatically certified.",
+      "basis": "evidence_and_scope_boundary",
+      "source_ids": [
+        "SRCADD003401"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0471",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0472",
+    "core_question": {
+      "text": "Does the complexity account follow actual candidate generation, pruning and expensive conditional solves?",
+      "basis": "paper_local_concern_abstraction",
+      "source_ids": [
+        "SRCADD003501",
+        "SRCADD003502",
+        "SRCADD003503"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A method compares exhaustive and iterative searches or claims that added information reduces computational work.",
+      "basis": "analyst_suggested_transfer_check",
+      "source_ids": [
+        "SRCADD003501",
+        "SRCADD003502",
+        "SRCADD003503"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Information-based feasibility pruning, candidate count per iteration, repeated conditional solves, stopping or protected-set rules and cost per solve.",
+      "basis": "paper_local_relationship_abstraction",
+      "source_ids": [
+        "SRCADD003501",
+        "SRCADD003502",
+        "SRCADD003503"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The sources needed explicit accounting of localization solves and candidate searches; additional sum-range constraints and single-anchor removal changed the candidates actually evaluated.",
+      "basis": "observed_manuscript_and_feedback_not_invented_student_reply",
+      "source_ids": [
+        "SRCADD003501",
+        "SRCADD003502",
+        "SRCADD003503"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Trace candidate generation and justified pruning, count repeated solves under the actual stopping and protection rules, and distinguish worst-case analysis from measured runtime.",
+      "basis": "analyst_suggested_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD003501",
+        "SRCADD003502",
+        "SRCADD003503"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Fewer candidates do not certify better solutions or runtime gains without solve cost. Pruning must preserve intended candidates under the observation-error model; a written count does not verify unavailable code.",
+      "basis": "evidence_and_scope_boundary",
+      "source_ids": [
+        "SRCADD003501",
+        "SRCADD003502",
+        "SRCADD003503"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0472",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0473",
+    "core_question": {
+      "text": "Do the cost matrix and assignment constraints refer to the same objects?",
+      "basis": "paper_local_concern_abstraction",
+      "source_ids": [
+        "SRCADD003601"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A matching method introduces a cost table and binary variables with ambiguous indices or inconsistent assignment meaning.",
+      "basis": "analyst_suggested_transfer_check",
+      "source_ids": [
+        "SRCADD003601"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Row objects, column observations, conditional cost, indicator semantics and one-to-one constraints.",
+      "basis": "paper_local_relationship_abstraction",
+      "source_ids": [
+        "SRCADD003601"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The mentor corrected target versus measurement indexing and reversed indicator descriptions before explaining the assignment problem.",
+      "basis": "observed_manuscript_and_feedback_not_invented_student_reply",
+      "source_ids": [
+        "SRCADD003601"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Define each matrix axis and indicator explicitly, derive costs under the actual provisional state and connect row and column constraints to the intended matching.",
+      "basis": "analyst_suggested_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD003601"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A conditional cost is not known ground-truth error. A correct assignment formulation does not validate seed estimates or an objective substitution.",
+      "basis": "evidence_and_scope_boundary",
+      "source_ids": [
+        "SRCADD003601"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0473",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0474",
+    "core_question": {
+      "text": "How does the method use the remaining observations after initialization?",
+      "basis": "paper_local_concern_abstraction",
+      "source_ids": [
+        "SRCADD003701"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A reduced-complexity estimator initializes from a subset and extends assignments without explaining the final parameter fit or candidate selection.",
+      "basis": "analyst_suggested_transfer_check",
+      "source_ids": [
+        "SRCADD003701"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Seed observations, provisional parameters, remaining assignments, full-data refit and final score.",
+      "basis": "paper_local_relationship_abstraction",
+      "source_ids": [
+        "SRCADD003701"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The mentor asked to recompute locations after assignments at the remaining nodes and select candidates using the residual across all nodes.",
+      "basis": "observed_manuscript_and_feedback_not_invented_student_reply",
+      "source_ids": [
+        "SRCADD003701"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Specify the initialization, extension, all-data refit and consistent final scoring, identifying any approximation relative to the original joint objective.",
+      "basis": "analyst_suggested_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD003701"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Refitting and candidate selection do not guarantee a global optimum. Absolute and squared losses are not interchangeable without justification.",
+      "basis": "evidence_and_scope_boundary",
+      "source_ids": [
+        "SRCADD003701"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0474",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0475",
+    "core_question": {
+      "text": "Does the probability factorization respect how the derived objects are constructed?",
+      "basis": "paper_local_concern_abstraction",
+      "source_ids": [
+        "SRCADD003801"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A proof assumes independence for a region, event or estimate that depends on other random variables.",
+      "basis": "analyst_suggested_transfer_check",
+      "source_ids": [
+        "SRCADD003801"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Underlying random variables, derived feasible region, conditioning information and probability factorization.",
+      "basis": "paper_local_relationship_abstraction",
+      "source_ids": [
+        "SRCADD003801"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The mentor noted that ghost coordinates depend on the true coordinates and asked for the set and dependency to be stated.",
+      "basis": "observed_manuscript_and_feedback_not_invented_student_reply",
+      "source_ids": [
+        "SRCADD003801"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Express the construction and conditional distribution explicitly and justify independence only for variables that actually satisfy it under the model.",
+      "basis": "analyst_suggested_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD003801"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Independent primitive variables do not imply independent derived events or estimates. A conditional integral alone does not certify the proof.",
+      "basis": "evidence_and_scope_boundary",
+      "source_ids": [
+        "SRCADD003801"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0475",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0476",
+    "core_question": {
+      "text": "Does the observation model reflect the changed physical environment?",
+      "basis": "paper_local_concern_abstraction",
+      "source_ids": [
+        "SRCADD003901"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A manuscript extends prior work to additional propagation or contributor types while retaining the old observation-to-parameter relationship.",
+      "basis": "analyst_suggested_transfer_check",
+      "source_ids": [
+        "SRCADD003901"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Physical contributors, missing paths, signal terms, path length and useful target information.",
+      "basis": "paper_local_relationship_abstraction",
+      "source_ids": [
+        "SRCADD003901"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The source added reflectors but reused a prior model; the mentor asked for a new received-signal expression and separate LOS, NLOS and clutter relationships.",
+      "basis": "observed_manuscript_and_feedback_not_invented_student_reply",
+      "source_ids": [
+        "SRCADD003901"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Derive the observation model for the new contributors and visibility assumptions, showing which paths encode the desired parameter and which introduce bias or unrelated data.",
+      "basis": "analyst_suggested_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD003901"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A proposed signal decomposition does not certify propagation assumptions or permit treating every nonzero path as useful target information.",
+      "basis": "evidence_and_scope_boundary",
+      "source_ids": [
+        "SRCADD003901"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0476",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0477",
+    "core_question": {
+      "text": "Does an exact physical identity remain exact after separate measurements?",
+      "basis": "paper_local_concern_abstraction",
+      "source_ids": [
+        "SRCADD004001"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A method equates independently estimated quantities because their true physical parameters satisfy an identity.",
+      "basis": "analyst_suggested_transfer_check",
+      "source_ids": [
+        "SRCADD004001"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "True geometric relation, measurement channels, separate estimates, error terms and consistency tolerance.",
+      "basis": "paper_local_relationship_abstraction",
+      "source_ids": [
+        "SRCADD004001"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The mentor explicitly said direct and sum distances are calculated from different channels, so the proposed exact estimated relation is not right.",
+      "basis": "observed_manuscript_and_feedback_not_invented_student_reply",
+      "source_ids": [
+        "SRCADD004001"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Write the true identity and the estimated relation separately, propagate the relevant errors and justify any consistency test or tolerance.",
+      "basis": "analyst_suggested_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD004001"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Do not assume independent errors or exact estimate equality. A tolerance needs evidence under the actual estimation model.",
+      "basis": "evidence_and_scope_boundary",
+      "source_ids": [
+        "SRCADD004001"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0477",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0478",
+    "core_question": {
+      "text": "What relation connects the number of observed measurements to the number of physical objects?",
+      "basis": "paper_local_concern_abstraction",
+      "source_ids": [
+        "SRCADD004101"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A manuscript infers object count from a measurement-set size despite multiple observations per object or missing and spurious observations.",
+      "basis": "analyst_suggested_transfer_check",
+      "source_ids": [
+        "SRCADD004101"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Physical objects, path multiplicity, observation cardinality, missing detections and count inference.",
+      "basis": "paper_local_relationship_abstraction",
+      "source_ids": [
+        "SRCADD004101"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The mentor emphasized that multipath alone makes the range-set size insufficient to reveal target count, even before missed detections and false alarms.",
+      "basis": "observed_manuscript_and_feedback_not_invented_student_reply",
+      "source_ids": [
+        "SRCADD004101"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Describe the observation multiplicity and detection mechanisms and explain the evidence and assumptions by which the count is inferred.",
+      "basis": "analyst_suggested_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD004101"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Perfect estimation does not remove physical multiplicity. A count objective does not certify correct count identification.",
+      "basis": "evidence_and_scope_boundary",
+      "source_ids": [
+        "SRCADD004101"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0478",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0479",
+    "core_question": {
+      "text": "Are scores compared across differently sized candidate sets on a justified scale?",
+      "basis": "paper_local_concern_abstraction",
+      "source_ids": [
+        "SRCADD004201"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A selection rule compares aggregate fitting errors for sets with different numbers of observations.",
+      "basis": "analyst_suggested_transfer_check",
+      "source_ids": [
+        "SRCADD004201"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Observation count, aggregate residual, normalization and remaining composition effects.",
+      "basis": "paper_local_relationship_abstraction",
+      "source_ids": [
+        "SRCADD004201"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The mentor requested normalization and later narrowed its stated purpose from removing dependence to reducing dependence on subset size.",
+      "basis": "observed_manuscript_and_feedback_not_invented_student_reply",
+      "source_ids": [
+        "SRCADD004201"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State the normalization and comparison rationale and analyze or test the remaining dependence on composition, geometry and noise.",
+      "basis": "analyst_suggested_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD004201"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Dividing by count does not establish independence, unbiasedness or optimal selection.",
+      "basis": "evidence_and_scope_boundary",
+      "source_ids": [
+        "SRCADD004201"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0479",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0480",
+    "core_question": {
+      "text": "Are extra-information assumptions enforced as algorithm invariants?",
+      "basis": "paper_local_concern_abstraction",
+      "source_ids": [
+        "SRCADD004301"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A variant relies on a trusted or specially measured subset that a generic pruning rule could remove.",
+      "basis": "analyst_suggested_transfer_check",
+      "source_ids": [
+        "SRCADD004301"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Operating scenario, available side information, protected subset and feasible retained states.",
+      "basis": "paper_local_relationship_abstraction",
+      "source_ids": [
+        "SRCADD004301"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The mentor requested distinct passive and active-information cases and a constraint preventing removal of the protected subset.",
+      "basis": "observed_manuscript_and_feedback_not_invented_student_reply",
+      "source_ids": [
+        "SRCADD004301"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State how the additional information is acquired and enforce the protected-set inclusion in every candidate and returned state.",
+      "basis": "analyst_suggested_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD004301"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Side information cannot be assumed available merely because a second algorithm is named; feasibility and implementation remain separate checks.",
+      "basis": "evidence_and_scope_boundary",
+      "source_ids": [
+        "SRCADD004301"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0480",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  }
+]

@@ -1,0 +1,592 @@
+[
+  {
+    "id": "C0481",
+    "core_question": {
+      "text": "How does an inaccurate preprocessing input bias the final measurement?",
+      "basis": "paper_local_concern_abstraction",
+      "source_ids": [
+        "SRCADD004401"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "An estimator removes a nuisance offset using side information that is itself erroneous.",
+      "basis": "analyst_suggested_transfer_check",
+      "source_ids": [
+        "SRCADD004401"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Input position error, predicted direct delay, estimated offset, reflected delay and recovered range.",
+      "basis": "paper_local_relationship_abstraction",
+      "source_ids": [
+        "SRCADD004401"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The mentor asked to explain how poor GPS information leads to a wrong direct delay, timing estimate and range, motivating anchor removal.",
+      "basis": "observed_manuscript_and_feedback_not_invented_student_reply",
+      "source_ids": [
+        "SRCADD004401"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Propagate the input error through each preprocessing relation and distinguish virtual reparameterization from actual offset recovery.",
+      "basis": "analyst_suggested_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD004401"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A shifted-channel representation or subtraction alone does not establish synchronization accuracy or a calibrated range-error law.",
+      "basis": "evidence_and_scope_boundary",
+      "source_ids": [
+        "SRCADD004401"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0481",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0482",
+    "core_question": {
+      "text": "Which unwanted contributions does each coexistence or interference-suppression mechanism actually remove?",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0001"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A multi-function system uses frequency separation, physical isolation or cancellation while simplifying its received-signal model.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0001"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Transmitter and receiver roles, signal bands, interfering paths, the mechanism applied to each path and the residual model.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0001"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The source already described separate bands and antennas; the mentor rewrote the account to distinguish cross-band separation from same-band self-interference and its additional treatment.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0001"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Trace each relevant signal to the receiving chain, state which mechanism excludes or suppresses it, and retain or justify the residual terms under the actual operating conditions.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0001"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Frequency separation does not establish universal interference freedom. A local duplex-label correction or proposed cancellation method is not a certified hardware-performance claim.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0001"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted joint historical-context reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Related revisions are dependent evidence; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0482",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0483",
+    "core_question": {
+      "text": "Can the physical separation required by an implementation coexist with the geometric approximation used in its analysis?",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0002"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Hardware elements must be separated for one operational reason but are treated as colocated or equidistant in the model.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0002"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Implementation separation, relevant physical scale, object distance, approximation error and the simplified geometric quantity.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0002"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The source already invoked a remote target; repeated edits connected the antenna separation and its numerical scale to the condition supporting equal target distances.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0002"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State both scale comparisons and explain the accuracy needed for the modeled task; keep numerical examples and the adopted approximation consistent with that regime.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0002"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "No historical separation value is universal. A small relative geometric difference does not by itself prove adequate phase accuracy, interference suppression or estimator performance.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0002"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted joint historical-context reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Related revisions are dependent evidence; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0483",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0484",
+    "core_question": {
+      "text": "Do explanatory examples distinguish an intrinsic ambiguity from an error-induced failure?",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0003"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A method discussion attributes failure to multiple causes that its examples do not separate.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0003"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Shared configuration, ideal observations, alternate feasible explanations, introduced error and the resulting inference outcome.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0003"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The mentor requested both an ambiguity that persists without noise and a case that is unambiguous ideally but can fail with error; later edits clarified the concrete assignments.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0003"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Choose valid examples that isolate the claimed causes, state the observation conditions and verify each displayed outcome; identify any requested comparison still absent.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0003"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A feasible counterexample establishes that instance, not a general failure probability. Do not treat quantization-free and additive-noise-free observations as interchangeable.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0003"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted joint historical-context reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Related revisions are dependent evidence; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0484",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0485",
+    "core_question": {
+      "text": "Does an algorithm provide the evidence required for an existence, uniqueness or ambiguity decision, rather than merely return one solution?",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0004"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A solver that finds a feasible estimate is also claimed to determine whether alternative physical explanations exist.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0004"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Decision question, complete candidate domain, feasibility against all observations, distinct physical solutions and reported outcome.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0004"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The mentor asked how the matching solver would detect multiple noiseless solutions, then described candidate generation and validation against remaining observations.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0004"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Specify the candidate coverage or exclusion argument, validate candidates against the full observation set and distinguish relabelings from different physical solutions before making the decision.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0004"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "One feasible solution does not establish uniqueness, and failure of a local solver does not establish nonexistence. Historical enumeration instructions are not a proof of completeness.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0004"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted joint historical-context reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Related revisions are dependent evidence; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0485",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0486",
+    "core_question": {
+      "text": "Do definitions reconstruct the dependency among physical objects, derived quantities and available information?",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0005"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "All relevant symbols are defined, but a sequence of independent definition sentences obscures how the quantities arise from one another.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0005"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Physical entities and geometry, true and estimated quantities, derived measurements, their availability and the inference task.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0005"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The source already defined positions, errors and distances; the mentor explicitly requested logical connections rather than parallel definitions and later relocated related path quantities.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0005"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Introduce the quantities along their actual dependence, explain each conversion or uncertainty and connect the final available observations to the task while retaining precise definitions.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0005"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "This is not a demand for every definition at the beginning or for one paragraph template. Existing clear equations and transitions may already establish the chain.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0005"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted joint historical-context reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Related revisions are dependent evidence; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0486",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0487",
+    "core_question": {
+      "text": "Can a reader understand a mathematically dense section's purpose and main operation before completing its derivations?",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0006"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A method section introduces elaborate objectives, scores or auxiliary variables before stating what the reader is meant to learn or what the method does.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0006"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Section task, available inputs, main operation and output, first-pass explanation and supporting derivation.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0006"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The source supplied a detailed joint formulation and sequential derivations; the mentor explicitly said a scanning reader could not identify the section's purpose and requested a brief operational explanation first.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0006"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Give a supported concise account of the task and main idea, then organize necessary mathematics around it so detailed reading adds justification rather than first revealing the purpose.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0006"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "No fixed length or ban on mathematical exposition is implied. A good existing overview may suffice, and simplification must preserve assumptions and independently answerable requirements.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0006"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted joint historical-context reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Related revisions are dependent evidence; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0487",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0488",
+    "core_question": {
+      "text": "Does a claim that more observations improve performance retain the quality conditions motivating the selection policy?",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0007"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "An estimator tries to retain many nodes or measurements while discarding unreliable ones, using a generic more-data benefit as motivation.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0007"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Observation quantity, information quality, estimation objective, selection action and the conditional benefit being claimed.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0007"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The mentor added the accurate-position premise to the benefit of more anchors and later restored that qualification when describing the retained users.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0007"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State which observation-quality conditions support the quantity benefit, explain how the selection policy addresses their violation, and delimit the claim using applicable analysis or evidence.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0007"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "More selected observations or lower residual alone does not establish better ground-truth accuracy. The historical statement is not a universal monotonicity theorem.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0007"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted joint historical-context reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Related revisions are dependent evidence; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0488",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0489",
+    "core_question": {
+      "text": "Have recurring presentation conventions been checked consistently across equivalent manuscript elements and revisions?",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0008"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Local corrections recur in index terms, citations, abbreviations, notation styling or cross-references governed by an identifiable convention.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0008"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Applicable convention, equivalent occurrences, local correction, document-wide consistency and revision-dependent references.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0008"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The mentor requested whole-paper checks after local abbreviation and superscript edits; conference-reference formatting was raised again in a later draft.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0008"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Identify the applicable conventions, check all equivalent occurrences and use traceable cross-references while preserving legitimate exceptions and distinct symbol roles.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0008"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "No historical capitalization, abbreviation or punctuation rule is universal. A formatting correction does not imply a technical defect or establish that every later occurrence remained wrong.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0008"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted joint historical-context reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Related revisions are dependent evidence; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0489",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0490",
+    "core_question": {
+      "text": "Does a normalization connect the scale of the original quantity to the analytical object and the subsequent operation it enables?",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0009"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A manuscript rescales observations or parameters for a limit analysis and claims that the rescaled object is estimable or usable.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0009"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Original quantity, growth scale, chosen rescaling, finite or limiting behavior and the estimator or processing role.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0009"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The source already offered a normalization rationale through bounds; the advisor supplied a finite-valued estimation explanation and related relocation requests. The stronger local requirement is an analyst interpretation of that context.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0009"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Explain the relevant scale with supported results and connect the rescaled object's behavior to its intended analytical or operational role, retaining the actual regime.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0009"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Do not require the historical square-root factor, infer a new capability from rescaling alone, or claim the source had no explanation when one existed elsewhere.",
+      "basis": "assisted_historical_abstraction; transfer_and_sufficiency_are_analyst_proposals",
+      "source_ids": [
+        "SRCJNT0009"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted joint historical-context reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Related revisions are dependent evidence; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0490",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  }
+]

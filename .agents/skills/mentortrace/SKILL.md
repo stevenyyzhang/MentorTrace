@@ -1,6 +1,6 @@
 ---
 name: mentortrace
-description: Diagnose academic manuscripts with independent Reader, Technical, Advisor and Language reviews; by default retrieve task-matched exemplary-paper cases into Reader and Technical for evidence-grounded findings and revision proposals. Automatic manuscript editing is not integrated.
+description: Diagnose academic manuscripts with independent Reader, Technical, Advisor and Language reviews; retrieve task-matched exemplary-paper cases for evidence-grounded findings and revision proposals. Also extract conditional concerns from explicitly supplied historical feedback and manuscript revisions. Automatic manuscript editing is not integrated.
 ---
 
 # MentorTrace 1.1 development
@@ -10,6 +10,8 @@ Use the four-lane diagnosis workflow below. This repository-scoped skill is disc
 ## Start from the user's task
 
 For autonomous diagnosis, use the fixed manuscript without its target comments, scoring answers or future versions. For an explanation of supplied comments, disclose that it is assisted interpretation and not autonomous discovery. For drafting or applied edits, explain the current implementation boundary and use [repair boundary](references/repair-contract.md) to formulate a supported revision plan; the V1 runner does not apply edits.
+
+For explicitly requested learning from historical annotated papers or LaTeX revisions, read [historical training intake](references/historical-training-intake.md). This mode produces source-linked conditional concerns and version histories; keep its private annotations and later drafts separate from autonomous target diagnosis.
 
 Confirm the available manuscript version and scope from supplied files. Ask only for essential missing input: which version when ambiguous, or unreadable/missing manuscript content. Do not invent the author's implementation or results. Do not require target advisor comments for autonomous diagnosis.
 
@@ -51,7 +53,7 @@ Before author-facing Markdown/HTML/PDF delivery, use [source-to-report preservat
 
 ## Public knowledge boundaries
 
-Load the manifest-defined public concern package at `corpus/advisor-concerns-v1/`. Its six English decision fields preserve conditional analytical distinctions. Anonymous source IDs support internal links, not public identification of the private source manuscripts. These cards contain no original annotations, marked manuscript text, neighboring passages or private revision histories. They are analyst abstractions, not mentor-certified rules. Treat withheld history as unavailable; do not invent it or infer advisor acceptance.
+Load the manifest-defined public concern package at `corpus/advisor-concerns-v4/`. It preserves the original 437 cards and adds 56 conditional historical abstractions, including twelve additions restored or extracted during the joint-context and admission reviews. The older `advisor-concerns-v1/`, `advisor-concerns-v2/` and `advisor-concerns-v3/` snapshots remain available for frozen runs and comparisons. Its six English decision fields preserve conditional analytical distinctions. Anonymous source IDs support internal links, not public identification of the private source manuscripts. These cards contain no original annotations, marked manuscript text, neighboring passages or private revision histories. They are analyst abstractions, not mentor-certified rules. Treat withheld history as unavailable; do not invent it or infer advisor acceptance. The added training collection is exposed; it cannot establish unseen-family review performance.
 
 The published-case summaries at `corpus/published-cases-v1/` are enabled by default for new runs. Select task-matched Reader and Technical cases after the neutral plan; freeze the selection before either lane. Zero matches still require complete generic checks. The manifest states actual case counts. These English records provide original analytical summaries and verified public citations, not source PDFs, full-page transcriptions or private-feedback companions. Read their complete summary, candidate sufficiency questions, evidence classes and boundaries. Case IDs are provenance, not defect evidence or Advisor card IDs. See [Reader routing](references/goodpaper-reader.md) and [Technical routing](references/goodpaper-technical.md).
 

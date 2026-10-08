@@ -1,0 +1,24 @@
+{
+  "files": {
+    "archive.json": "4d1c92659288ab3726af7cbf5dae76261bbfaedca4f233b93b29898fa87ccf09",
+    "batch_1.json": "6331def005ba2e26fbe12f4d5efcf732588abbe31042f564f63ef7191dceada4",
+    "batch_10.json": "230180cd0884c2576b9a243e689f3d3599054ec0960cc8cf070a3d6ddff09539",
+    "batch_11.json": "296ee8258a774dc310bb36cb6161d0865bb8196713a4160ec1e50e805cc5351f",
+    "batch_12.json": "c8d5b3995366c8df0b6febc3a01cca9ccbe3e9423a76c43c913a84c930d79e91",
+    "batch_13.json": "a0486d36fab7000a940d7ebc0986017e3657b7b5aad3b29be72dbd8ed6df2247",
+    "batch_14.json": "275436f716456309bc169baf863995e24573a59c668d61d8ab3e0541c1b2486c",
+    "batch_15.json": "1cd65245a9fcf0e1659bc2f929a318276d9f290faaa6ce8635d59f3c8e88d358",
+    "batch_16.json": "bc574b2a15082017e0c3ecd267ff236b5b61fef2cb2d6fe8a525d615b020832a",
+    "batch_17.json": "9b0d5b760c72fa464fb8c74500de4610d7e81d88d3ae1ff4895ce797f7582283",
+    "batch_2.json": "6ff230fefe2e061a47a6329ebd510a8574a10ac16fba21a6f27c72ab210f590c",
+    "batch_3.json": "45b1fd9a211876d5c12fb37ef91af8eb530fa74b25741c0ce2be3888f5d11cb4",
+    "batch_4.json": "a32e4041d7c3ed016a91b606803fa2246ebe732cc2cd8aad562d0ff93cfa43ba",
+    "batch_5.json": "7368b8fc59f1909372fd6a79d455c2755fc207fd4c5855b6500fb24e2c3e2c6b",
+    "batch_6.json": "4ea4b413ccc93cd4d1fb715af7b18c429ac5b83e31467f1d5f02f768303f67e7",
+    "batch_7.json": "e6aef90b4e9aae0d89e8bc4ffaf99f59a02a42cef08e38b4b7ecb5d173205651",
+    "batch_8.json": "267a4b4a7302a3d17efdd7fc713c9adb8a131002b509b93cab9a04250366734f",
+    "batch_9.json": "7494616256172e25c55aaad6daf8c315732bddefe72c7731678680048e56111e",
+    "manifest.json": "0f12b32aaabfeb340e8273ea2b9dd22e24fe85dea15a17df112a1774ccec7c74",
+    "training_promotion.json": "a861ffd5997a42194f7cdc4dbde9cfbc25d556ab663229e4374dae5d29d7b504"
+  }
+}

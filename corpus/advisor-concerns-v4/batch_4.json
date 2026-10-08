@@ -1,0 +1,2599 @@
+[
+  {
+    "id": "C0091",
+    "core_question": {
+      "text": "Identify the increment over an established earlier manuscript.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00695",
+        "SRC00688",
+        "SRC00689",
+        "SRC00690",
+        "SRC00634",
+        "SRC00633"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "When an earlier work is confirmed as the source of an extension, compare inherited, modified, and new results regardless of contribution-list format.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00695",
+        "SRC00688",
+        "SRC00689",
+        "SRC00690",
+        "SRC00634",
+        "SRC00633"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Current claims map to what the earlier manuscript already established.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00695",
+        "SRC00688",
+        "SRC00689",
+        "SRC00690",
+        "SRC00634",
+        "SRC00633"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "An extension listed new scenarios and algorithms, but its relation to the earlier manuscript remained unverified despite citation and reuse requests.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00695",
+        "SRC00688",
+        "SRC00689",
+        "SRC00690",
+        "SRC00634",
+        "SRC00633"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Compare the confirmed earlier text item by item, listing retained results, additions, and strengthened guarantees.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00695",
+        "SRC00688",
+        "SRC00689",
+        "SRC00690",
+        "SRC00634",
+        "SRC00633"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "An unverified citation may not identify the intended source; new headings and added assumptions alone do not establish novelty without comparison.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00695",
+        "SRC00688",
+        "SRC00689",
+        "SRC00690",
+        "SRC00634",
+        "SRC00633"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Annotations and their visual context were individually examined across revisions, including prior calibrated candidates. A sentence-level comparison against an independent earlier manuscript was not established. Removed proofs establish scope changes only. Disappearing annotations do not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0091",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0092",
+    "core_question": {
+      "text": "Explain why an extension's added problem matters.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00695",
+        "SRC00688",
+        "SRC00689",
+        "SRC00690",
+        "SRC00634",
+        "SRC00633"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check added conditions and formulas presented as contributions without explaining the limitation they address.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00695",
+        "SRC00688",
+        "SRC00689",
+        "SRC00690",
+        "SRC00634",
+        "SRC00633"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "New environmental difficulties motivate specific problems or analyses that earlier results did not answer.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00695",
+        "SRC00688",
+        "SRC00689",
+        "SRC00690",
+        "SRC00634",
+        "SRC00633"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "More realistic propagation and missing-data settings were named, but the need for the added problem and idealized analysis remained unclear.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00695",
+        "SRC00688",
+        "SRC00689",
+        "SRC00690",
+        "SRC00634",
+        "SRC00633"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State what the earlier problem cannot answer under the new conditions and what the new problem or analysis supplies.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00695",
+        "SRC00688",
+        "SRC00689",
+        "SRC00690",
+        "SRC00634",
+        "SRC00633"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Do not invent prior-method failures; the earlier text or explicit current evidence must establish the limitation and novelty boundary.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00695",
+        "SRC00688",
+        "SRC00689",
+        "SRC00690",
+        "SRC00634",
+        "SRC00633"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Annotations and their visual context were individually examined across revisions, including prior calibrated candidates. A sentence-level comparison against an independent earlier manuscript was not established. Removed proofs establish scope changes only. Disappearing annotations do not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0092",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0093",
+    "core_question": {
+      "text": "A parameter definition is not a transform derivation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00696"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check causal transitions from definitions to results that depend on a separate operation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00696"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "A bandwidth identity and an inverse-transform signal representation require distinct explanatory roles.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00696"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A bandwidth definition was used as the causal introduction to a time-domain OFDM expression.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00696"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Place the definition where relevant and explain the inverse transform, or use an accurate noncausal transition.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00696"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "The definition need not be deleted, and the transition issue does not establish an erroneous signal equation or accepted repair.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00696"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Annotations and their visual context were individually examined across revisions, including prior calibrated candidates. A sentence-level comparison against an independent earlier manuscript was not established. Removed proofs establish scope changes only. Disappearing annotations do not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0093",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0094",
+    "core_question": {
+      "text": "Avoid purposeless rewriting of unchanged mature explanations.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00697",
+        "SRC00688",
+        "SRC00689",
+        "SRC00690",
+        "SRC00634",
+        "SRC00633"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "When extending work, check substantial rewording of unchanged models without a new explanatory need.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00697",
+        "SRC00688",
+        "SRC00689",
+        "SRC00690",
+        "SRC00634",
+        "SRC00633"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Writing effort should clarify actual changes while retaining still-applicable explanations.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00697",
+        "SRC00688",
+        "SRC00689",
+        "SRC00690",
+        "SRC00634",
+        "SRC00633"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Repeated feedback requested reuse of mature descriptions, but comparison with the earlier manuscript and later implementation were not established.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00697",
+        "SRC00688",
+        "SRC00689",
+        "SRC00690",
+        "SRC00634",
+        "SRC00633"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Verify continued applicability, preserve necessary explanations, and focus edits on changed dependencies, subject to applicable submission rules.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00697",
+        "SRC00688",
+        "SRC00689",
+        "SRC00690",
+        "SRC00634",
+        "SRC00633"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "This local advice is not universal publication permission; new synchronization or visibility assumptions may require coupled edits, and a temporarily absent section does not establish permanent withdrawal.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00697",
+        "SRC00688",
+        "SRC00689",
+        "SRC00690",
+        "SRC00634",
+        "SRC00633"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Annotations and their visual context were individually examined across revisions, including prior calibrated candidates. A sentence-level comparison against an independent earlier manuscript was not established. Removed proofs establish scope changes only. Disappearing annotations do not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0094",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0095",
+    "core_question": {
+      "text": "Separate execution knowledge from equation validity.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00698"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check knowledge-sharing assumptions offered as reasons for physical or algebraic equalities.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00698"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Stacking and definitions establish equations; knowing design matrices enables later estimation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00698"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Shared transmitted signals were stated as the apparent reason a stacked observation equation followed.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00698"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Explain the stacking algebra separately and state how sharing makes required matrices known for estimation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00698"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Keep relevant sharing assumptions; equation validity, matrix availability, and estimability are distinct, even if later reparameterization changes the estimated object.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00698"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Annotations and their visual context were individually examined across revisions, including prior calibrated candidates. A sentence-level comparison against an independent earlier manuscript was not established. Removed proofs establish scope changes only. Disappearing annotations do not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0095",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0096",
+    "core_question": {
+      "text": "Explain ideal localization before association obstacles.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00699",
+        "SRC00543",
+        "SRC00544",
+        "SRC00550",
+        "SRC00584",
+        "SRC00588",
+        "SRC00630",
+        "SRC00585",
+        "SRC00589",
+        "SRC00590"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check method summaries that list difficulties before showing how ideal inputs produce the target result.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00699",
+        "SRC00543",
+        "SRC00544",
+        "SRC00550",
+        "SRC00584",
+        "SRC00588",
+        "SRC00630",
+        "SRC00585",
+        "SRC00589",
+        "SRC00590"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Valid measurements first support localization; nuisance paths and unknown association then obstruct that operation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00699",
+        "SRC00543",
+        "SRC00544",
+        "SRC00550",
+        "SRC00584",
+        "SRC00588",
+        "SRC00630",
+        "SRC00585",
+        "SRC00589",
+        "SRC00590"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A two-stage overview moved from collecting distances directly to nuisance categories and association difficulty.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00699",
+        "SRC00543",
+        "SRC00544",
+        "SRC00550",
+        "SRC00584",
+        "SRC00588",
+        "SRC00630",
+        "SRC00585",
+        "SRC00589",
+        "SRC00590"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Briefly connect target-related distance measurements to location, then introduce invalid paths and mismatching obstacles.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00699",
+        "SRC00543",
+        "SRC00544",
+        "SRC00550",
+        "SRC00584",
+        "SRC00588",
+        "SRC00630",
+        "SRC00585",
+        "SRC00589",
+        "SRC00590"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Existing later equations must be acknowledged; the overview needs a conceptual bridge, not the entire solver.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00699",
+        "SRC00543",
+        "SRC00544",
+        "SRC00550",
+        "SRC00584",
+        "SRC00588",
+        "SRC00630",
+        "SRC00585",
+        "SRC00589",
+        "SRC00590"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Annotations and their visual context were individually examined across revisions, including prior calibrated candidates. A sentence-level comparison against an independent earlier manuscript was not established. Removed proofs establish scope changes only. Disappearing annotations do not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0096",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0097",
+    "core_question": {
+      "text": "Connect sparsity to its mathematical definition.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00700"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check physical intuition presented as sparsity without clarifying its relation to few nonzero components.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00700"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Few nonzero entries define sparsity; physical scarcity may explain it and motivate sparse estimation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00700"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Sparsity, scarce reflectors, and few nonzero entries were presented as disconnected facts.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00700"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State the mathematical property directly, describe physical scarcity as a possible cause, and connect it to the estimator.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00700"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Existing sparsity discussion must be acknowledged; the feedback did not clearly require deleting the physical intuition.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00700"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Annotations and their visual context were individually examined across revisions, including prior calibrated candidates. A sentence-level comparison against an independent earlier manuscript was not established. Removed proofs establish scope changes only. Disappearing annotations do not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0097",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0098",
+    "core_question": {
+      "text": "A nuisance-path length is not necessarily target-range error.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00701",
+        "SRC00657",
+        "SRC00658",
+        "SRC00659",
+        "SRC00529",
+        "SRC00661",
+        "SRC00662",
+        "SRC00663",
+        "SRC00664"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check variables called error without a reference truth when equations instead represent a separate physical path.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00701",
+        "SRC00657",
+        "SRC00658",
+        "SRC00659",
+        "SRC00529",
+        "SRC00661",
+        "SRC00662",
+        "SRC00663",
+        "SRC00664"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Independent path quantities differ from deviations relative to a specified true value and from estimation error.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00701",
+        "SRC00657",
+        "SRC00658",
+        "SRC00659",
+        "SRC00529",
+        "SRC00661",
+        "SRC00662",
+        "SRC00663",
+        "SRC00664"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A nuisance path's total length was labeled random target-range error while a separate estimation-error variable also existed.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00701",
+        "SRC00657",
+        "SRC00658",
+        "SRC00659",
+        "SRC00529",
+        "SRC00661",
+        "SRC00662",
+        "SRC00663",
+        "SRC00664"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Name each quantity by its physical path and reference, distinguishing total path length, excess length, and estimation error.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00701",
+        "SRC00657",
+        "SRC00658",
+        "SRC00659",
+        "SRC00529",
+        "SRC00661",
+        "SRC00662",
+        "SRC00663",
+        "SRC00664"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Do not rename every nuisance term as noise or bias; reused category labels can change meaning and should not be matched automatically.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00701",
+        "SRC00657",
+        "SRC00658",
+        "SRC00659",
+        "SRC00529",
+        "SRC00661",
+        "SRC00662",
+        "SRC00663",
+        "SRC00664"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Annotations and their visual context were individually examined across revisions, including prior calibrated candidates. A sentence-level comparison against an independent earlier manuscript was not established. Removed proofs establish scope changes only. Disappearing annotations do not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0098",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0099",
+    "core_question": {
+      "text": "Distinguish absent paths from missed detections.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00702",
+        "SRC00582",
+        "SRC00583",
+        "SRC00585",
+        "SRC00586",
+        "SRC00587"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "When missing observations arise from physical absence or estimation failure, check each event and its role under precision assumptions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00702",
+        "SRC00582",
+        "SRC00583",
+        "SRC00585",
+        "SRC00586",
+        "SRC00587"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Empty physical support differs from an existing path estimated as zero; perfect estimation does not create paths.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00702",
+        "SRC00582",
+        "SRC00583",
+        "SRC00585",
+        "SRC00586",
+        "SRC00587"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Notation separated true and estimated values, but occlusion and detection failures remained mixed and unsupported cross-link detection implications persisted.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00702",
+        "SRC00582",
+        "SRC00583",
+        "SRC00585",
+        "SRC00586",
+        "SRC00587"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Define true values, estimates, invisibility, and misses under each assumption, and show which observations reach the range sets.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00702",
+        "SRC00582",
+        "SRC00583",
+        "SRC00585",
+        "SRC00586",
+        "SRC00587"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Perfect estimation does not imply universal visibility; detector-level implications require separate conditions even when mechanisms share a missing-value code.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00702",
+        "SRC00582",
+        "SRC00583",
+        "SRC00585",
+        "SRC00586",
+        "SRC00587"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Annotations and their visual context were individually examined across revisions, including prior calibrated candidates. A sentence-level comparison against an independent earlier manuscript was not established. Removed proofs establish scope changes only. Disappearing annotations do not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0099",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0100",
+    "core_question": {
+      "text": "Explain the dependency order from ranging to localization.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00703",
+        "SRC00582",
+        "SRC00629",
+        "SRC00588",
+        "SRC00630",
+        "SRC00585",
+        "SRC00589",
+        "SRC00590",
+        "SRC00587",
+        "SRC00631",
+        "SRC00684"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check parallel task lists whose input and output relationships are unrecoverable.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00703",
+        "SRC00582",
+        "SRC00629",
+        "SRC00588",
+        "SRC00630",
+        "SRC00585",
+        "SRC00589",
+        "SRC00590",
+        "SRC00587",
+        "SRC00631",
+        "SRC00684"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Measurement sets support valid-path selection, association, and localization through specified dependencies.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00703",
+        "SRC00582",
+        "SRC00629",
+        "SRC00588",
+        "SRC00630",
+        "SRC00585",
+        "SRC00589",
+        "SRC00590",
+        "SRC00587",
+        "SRC00631",
+        "SRC00684"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A joint-task overview and later data transfer existed, but flow clarification did not separately resolve the valid-observation domain.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00703",
+        "SRC00582",
+        "SRC00629",
+        "SRC00588",
+        "SRC00630",
+        "SRC00585",
+        "SRC00589",
+        "SRC00590",
+        "SRC00587",
+        "SRC00631",
+        "SRC00684"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State what each stage produces and how effective paths and associations determine localization inputs.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00703",
+        "SRC00582",
+        "SRC00629",
+        "SRC00588",
+        "SRC00630",
+        "SRC00585",
+        "SRC00589",
+        "SRC00590",
+        "SRC00587",
+        "SRC00631",
+        "SRC00684"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "An explanatory sequence need not force serial computation; check workflow and observation-domain consistency separately, permitting equivalent valid-index sets.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00703",
+        "SRC00582",
+        "SRC00629",
+        "SRC00588",
+        "SRC00630",
+        "SRC00585",
+        "SRC00589",
+        "SRC00590",
+        "SRC00587",
+        "SRC00631",
+        "SRC00684"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Annotations and their visual context were individually examined across revisions, including prior calibrated candidates. A sentence-level comparison against an independent earlier manuscript was not established. Removed proofs establish scope changes only. Disappearing annotations do not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0100",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0101",
+    "core_question": {
+      "text": "Target-specific availability restricts association and localization.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00703",
+        "SRC00582",
+        "SRC00629",
+        "SRC00588",
+        "SRC00630",
+        "SRC00585",
+        "SRC00589",
+        "SRC00590",
+        "SRC00587",
+        "SRC00631",
+        "SRC00684"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check missing-data models using all sensors unconditionally in measurement constraints.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00703",
+        "SRC00582",
+        "SRC00629",
+        "SRC00588",
+        "SRC00630",
+        "SRC00585",
+        "SRC00589",
+        "SRC00590",
+        "SRC00587",
+        "SRC00631",
+        "SRC00684"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Link availability determines legitimate association indices and distance equations.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00703",
+        "SRC00582",
+        "SRC00629",
+        "SRC00588",
+        "SRC00630",
+        "SRC00585",
+        "SRC00589",
+        "SRC00590",
+        "SRC00587",
+        "SRC00631",
+        "SRC00684"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Missing links were acknowledged and zero-coded, but equations and cross-link implications still blurred visibility and detection.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00703",
+        "SRC00582",
+        "SRC00629",
+        "SRC00588",
+        "SRC00630",
+        "SRC00585",
+        "SRC00589",
+        "SRC00590",
+        "SRC00587",
+        "SRC00631",
+        "SRC00684"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Define target-specific available measurements or an equivalent indicator and use their scope consistently in every equation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00703",
+        "SRC00582",
+        "SRC00629",
+        "SRC00588",
+        "SRC00630",
+        "SRC00585",
+        "SRC00589",
+        "SRC00590",
+        "SRC00587",
+        "SRC00631",
+        "SRC00684"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A particular set symbol is unnecessary; workflow edits alone do not resolve domain errors, and references must remain within the actual available domain.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00703",
+        "SRC00582",
+        "SRC00629",
+        "SRC00588",
+        "SRC00630",
+        "SRC00585",
+        "SRC00589",
+        "SRC00590",
+        "SRC00587",
+        "SRC00631",
+        "SRC00684"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Annotations and their visual context were individually examined across revisions, including prior calibrated candidates. A sentence-level comparison against an independent earlier manuscript was not established. Removed proofs establish scope changes only. Disappearing annotations do not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0101",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0102",
+    "core_question": {
+      "text": "Error bounds do not imply universal target separation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00704",
+        "SRC00634",
+        "SRC00705"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check jumps from precision differences to all targets being separable or some observations necessarily colliding.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00704",
+        "SRC00634",
+        "SRC00705"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Precision bounds, geometric separation, and quantized collisions are distinct assumptions or consequences.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00704",
+        "SRC00634",
+        "SRC00705"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Distance-error bounds motivated separation assumptions; shortening the account did not provide geometric or collision support.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00704",
+        "SRC00634",
+        "SRC00705"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Identify extra scene assumptions and actual quantization consequences, with justified thresholds and geometry.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00704",
+        "SRC00634",
+        "SRC00705"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "The inferred concern is context-supported rather than an explicit finding that the assumption is false; threshold formulas and mathematical intent remain unverified.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00704",
+        "SRC00634",
+        "SRC00705"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Annotations and their visual context were individually examined across revisions, including prior calibrated candidates. A sentence-level comparison against an independent earlier manuscript was not established. Removed proofs establish scope changes only. Disappearing annotations do not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0102",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0103",
+    "core_question": {
+      "text": "Separate measurement-stage outputs from subsequent inference.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00706"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check observation-acquisition sections that prematurely develop later association variables and optimizations.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00706"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "A stage's output and information properties define the next stage's decisions and constraints.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00706"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Measurement-set definitions were followed immediately by association and localization optimization within the acquisition stage.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00706"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "End acquisition with its observation set and relevant information properties; place later constraints in their inference stage with necessary cross-references.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00706"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Overviews may preview later stages; early definitions are not categorically wrong, and temporary section absence does not establish withdrawal or accepted repair.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00706"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Annotations and their visual context were individually examined across revisions, including prior calibrated candidates. A sentence-level comparison against an independent earlier manuscript was not established. Removed proofs establish scope changes only. Disappearing annotations do not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0103",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0104",
+    "core_question": {
+      "text": "Establish input delivery before explaining central inference.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00707"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check distributed descriptions where a processor's task precedes the explanation of its incoming data.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00707"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Delivered observations and their remaining unknowns support the processor's association task.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00707"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The data-transfer statement existed but followed the association discussion.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00707"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State what is sent, by whom, to whom, and what remains unknown before describing central processing.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00707"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "This is an explanatory-order issue, not evidence that data were never transmitted.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00707"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Annotations and their visual context were individually examined across revisions, including prior calibrated candidates. A sentence-level comparison against an independent earlier manuscript was not established. Removed proofs establish scope changes only. Disappearing annotations do not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0104",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0105",
+    "core_question": {
+      "text": "Test equivalence between estimation errors and physical nuisances.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00708",
+        "SRC00582",
+        "SRC00585",
+        "SRC00589"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check mechanisms declared equivalent solely because they add or remove observations.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00708",
+        "SRC00582",
+        "SRC00585",
+        "SRC00589"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Equivalence requires preservation of properties used by downstream algorithms or guarantees.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00708",
+        "SRC00582",
+        "SRC00585",
+        "SRC00589"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "False alarms and misses were mapped to nuisance paths and missing links without verifying relevant downstream properties.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00708",
+        "SRC00582",
+        "SRC00585",
+        "SRC00589"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "List preserved set or statistical properties; if only set-level compatibility is justified, restrict the equivalence to that level.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00708",
+        "SRC00582",
+        "SRC00585",
+        "SRC00589"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Shared missing-data handling does not establish statistical equivalence; removing an analysis-exemption claim is withdrawal rather than proof, and no new experiment requirement should be invented.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00708",
+        "SRC00582",
+        "SRC00585",
+        "SRC00589"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Annotations and their visual context were individually examined across revisions, including prior calibrated candidates. A sentence-level comparison against an independent earlier manuscript was not established. Removed proofs establish scope changes only. Disappearing annotations do not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0105",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0106",
+    "core_question": {
+      "text": "Perfect measurement precision differs from complete visibility.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00709",
+        "SRC00710"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "When ideal-precision analysis follows a missing-data model, check whether coverage assumptions also change.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00709",
+        "SRC00710"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Precision and measurement existence separately determine theorem or example scope.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00709",
+        "SRC00710"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Zero range error was assumed while equations used every sensor despite allowed partial visibility.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00709",
+        "SRC00710"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Declare full-coverage special cases or restrict equations to available target-specific measurements, aligning quantifiers.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00709",
+        "SRC00710"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Perfect range estimates do not imply complete coverage; removed ideal analysis is a scope change, and later minimum-visibility conditions cannot retroactively validate it.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00709",
+        "SRC00710"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Annotations and their visual context were individually examined across revisions, including prior calibrated candidates. A sentence-level comparison against an independent earlier manuscript was not established. Removed proofs establish scope changes only. Disappearing annotations do not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0106",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0107",
+    "core_question": {
+      "text": "Carry observation availability into actual localization constraints.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00711",
+        "SRC00629",
+        "SRC00583",
+        "SRC00587",
+        "SRC00631",
+        "SRC00684"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check constraints using a different unexplained domain from the availability description.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00711",
+        "SRC00629",
+        "SRC00583",
+        "SRC00587",
+        "SRC00631",
+        "SRC00684"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Available measurements or equivalent valid indicators determine each localization equation's legitimate indices.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00711",
+        "SRC00629",
+        "SRC00583",
+        "SRC00587",
+        "SRC00631",
+        "SRC00684"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A nonzero indicator selected distances, but its meaning mixed path absence and missed detection and supported unjustified cross-link implications.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00711",
+        "SRC00629",
+        "SRC00583",
+        "SRC00587",
+        "SRC00631",
+        "SRC00684"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Use a consistent target-specific availability set or explicit equivalent condition at the constraints and subsequent indices.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00711",
+        "SRC00629",
+        "SRC00583",
+        "SRC00587",
+        "SRC00631",
+        "SRC00684"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A nonzero indicator is not inherently wrong; its semantics must stay consistent, and no universal set notation is required.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00711",
+        "SRC00629",
+        "SRC00583",
+        "SRC00587",
+        "SRC00631",
+        "SRC00684"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Annotations and their visual context were individually examined across revisions, including prior calibrated candidates. A sentence-level comparison against an independent earlier manuscript was not established. Removed proofs establish scope changes only. Disappearing annotations do not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0107",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0108",
+    "core_question": {
+      "text": "Propagate power normalization to distributions and simulations.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00712",
+        "SRC00713",
+        "SRC00714",
+        "SRC00715",
+        "SRC00716"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "When observation scale matters, check physical power and signal/noise normalization whether explicit, implicit, or omitted.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00712",
+        "SRC00713",
+        "SRC00714",
+        "SRC00715",
+        "SRC00716"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Physical power determines scaled observations, effective channel and noise laws, and simulation conventions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00712",
+        "SRC00713",
+        "SRC00714",
+        "SRC00715",
+        "SRC00716"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Missing transmit power was questioned while an author response said simulations already used noise normalization.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00712",
+        "SRC00713",
+        "SRC00714",
+        "SRC00715",
+        "SRC00716"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Choose an explicit-power or normalized model and propagate it consistently to probability laws and simulations.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00712",
+        "SRC00713",
+        "SRC00714",
+        "SRC00715",
+        "SRC00716"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Local approval does not validate the full manuscript; unchanged text is not another repair. Some source authorship is uncertain, so author responses and unverified attribution must remain distinct from advisor instructions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00712",
+        "SRC00713",
+        "SRC00714",
+        "SRC00715",
+        "SRC00716"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Available revisions, annotations, and visual context were examined while preserving a missing-revision gap. Uncertain local responses remain unknown. New annotations on unchanged text do not count as repairs. All mathematics, external sources, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0108",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0109",
+    "core_question": {
+      "text": "Explain how erroneous historical estimates become available side information.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00717",
+        "SRC00718",
+        "SRC00719",
+        "SRC00720",
+        "SRC00721",
+        "SRC00722",
+        "SRC00723",
+        "SRC00724",
+        "SRC00725",
+        "SRC00726"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "When prior estimates or residuals enter current estimation through temporal correlation, check their actual source and statistical relationship.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00717",
+        "SRC00718",
+        "SRC00719",
+        "SRC00720",
+        "SRC00721",
+        "SRC00722",
+        "SRC00723",
+        "SRC00724",
+        "SRC00725",
+        "SRC00726"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "A previous true state generates estimates and residuals whose joint statistics inform the current input.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00717",
+        "SRC00718",
+        "SRC00719",
+        "SRC00720",
+        "SRC00721",
+        "SRC00722",
+        "SRC00723",
+        "SRC00724",
+        "SRC00725",
+        "SRC00726"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Historical errors were acknowledged, but claimed statistical equivalence did not identify which available quantities represented the true state.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00717",
+        "SRC00718",
+        "SRC00719",
+        "SRC00720",
+        "SRC00721",
+        "SRC00722",
+        "SRC00723",
+        "SRC00724",
+        "SRC00725",
+        "SRC00726"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Explain the state-evolution relation and obtainable estimate-plus-residual construction; at method entry, state its source, use, and subsequent design questions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00717",
+        "SRC00718",
+        "SRC00719",
+        "SRC00720",
+        "SRC00721",
+        "SRC00722",
+        "SRC00723",
+        "SRC00724",
+        "SRC00725",
+        "SRC00726",
+        "SRC00727",
+        "SRC00728"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Correlation does not remove estimation error. Separate author explanations from advisor edits and retain uncertain source authorship rather than asserting advisor origin.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00717",
+        "SRC00718",
+        "SRC00719",
+        "SRC00720",
+        "SRC00721",
+        "SRC00722",
+        "SRC00723",
+        "SRC00724",
+        "SRC00725",
+        "SRC00726"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Available revisions, annotations, and visual context were examined while preserving a missing-revision gap. Uncertain local responses remain unknown. New annotations on unchanged text do not count as repairs. All mathematics, external sources, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0109",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0110",
+    "core_question": {
+      "text": "Motivate denoisers from their actual subproblems.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00729",
+        "SRC00730",
+        "SRC00731",
+        "SRC00732",
+        "SRC00733",
+        "SRC00734",
+        "SRC00735",
+        "SRC00736",
+        "SRC00737",
+        "SRC00738"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check transitions from global optimization to estimators or denoisers, including alternatives under differing prior knowledge.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00729",
+        "SRC00730",
+        "SRC00731",
+        "SRC00732",
+        "SRC00733",
+        "SRC00734",
+        "SRC00735",
+        "SRC00736",
+        "SRC00737",
+        "SRC00738"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Equivalent observations and information conditions determine local losses, denoisers, and their global algorithm roles.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00729",
+        "SRC00730",
+        "SRC00731",
+        "SRC00732",
+        "SRC00733",
+        "SRC00734",
+        "SRC00735",
+        "SRC00736",
+        "SRC00737",
+        "SRC00738",
+        "SRC00739",
+        "SRC00740"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A global regularized objective was used to motivate local denoisers without identifying their common input.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00729",
+        "SRC00730",
+        "SRC00731",
+        "SRC00732",
+        "SRC00733",
+        "SRC00734",
+        "SRC00735",
+        "SRC00736",
+        "SRC00737",
+        "SRC00738"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Start from the shared equivalent observation, explain optimization under unknown priors and conditional-risk design under known priors, align any shared event partitions, and reconnect to the global method.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00729",
+        "SRC00730",
+        "SRC00731",
+        "SRC00732",
+        "SRC00733",
+        "SRC00734",
+        "SRC00735",
+        "SRC00736",
+        "SRC00737",
+        "SRC00738",
+        "SRC00739",
+        "SRC00740"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A closed-form formula does not replace an objective definition; historical event counts and notation need not be copied into other manuscripts.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00729",
+        "SRC00730",
+        "SRC00731",
+        "SRC00732",
+        "SRC00733",
+        "SRC00734",
+        "SRC00735",
+        "SRC00736",
+        "SRC00737",
+        "SRC00738"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Available revisions, annotations, and visual context were examined while preserving a missing-revision gap. Uncertain local responses remain unknown. New annotations on unchanged text do not count as repairs. All mathematics, external sources, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0110",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0111",
+    "core_question": {
+      "text": "Separate historical strength classification from activity detection.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00741",
+        "SRC00742",
+        "SRC00743",
+        "SRC00744",
+        "SRC00745",
+        "SRC00746",
+        "SRC00747"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "When previous estimate strength or labels choose current thresholds, check any separate detection rule.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00741",
+        "SRC00742",
+        "SRC00743",
+        "SRC00744",
+        "SRC00745",
+        "SRC00746",
+        "SRC00747"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Historical inputs and classification criteria select current thresholds that support a distinct detection decision.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00741",
+        "SRC00742",
+        "SRC00743",
+        "SRC00744",
+        "SRC00745",
+        "SRC00746",
+        "SRC00747"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Threshold selection used historical estimate strength but was described as using previously detected activity without showing criterion equivalence.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00741",
+        "SRC00742",
+        "SRC00743",
+        "SRC00744",
+        "SRC00745",
+        "SRC00746",
+        "SRC00747"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Specify the quantities, rules, strict or non-strict inequalities, and any claimed likelihood-test equivalence.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00741",
+        "SRC00742",
+        "SRC00743",
+        "SRC00744",
+        "SRC00745",
+        "SRC00746",
+        "SRC00747"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Physical activity, estimated strength, and detection results are distinct even when described with the same active/inactive labels.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00741",
+        "SRC00742",
+        "SRC00743",
+        "SRC00744",
+        "SRC00745",
+        "SRC00746",
+        "SRC00747"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Available revisions, annotations, and visual context were examined while preserving a missing-revision gap. Uncertain local responses remain unknown. New annotations on unchanged text do not count as repairs. All mathematics, external sources, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0111",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0112",
+    "core_question": {
+      "text": "Separate optimization variables from physical truth.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00748",
+        "SRC00749"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check symbols used for both true quantities and decision variables, including grouped regularization.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00748",
+        "SRC00749"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Physical truth is estimated by a variable or mapping governed by a defined loss and regularizer.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00748",
+        "SRC00749"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A true quantity appeared as the optimization variable; an author response questioned the norm in a single-group penalty.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00748",
+        "SRC00749"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State whether the estimator or denoising map is optimized and verify group structure and norms.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00748",
+        "SRC00749"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "An author's correction is not an advisor statement or established proof; some source attribution remains uncertain.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00748",
+        "SRC00749"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Available revisions, annotations, and visual context were examined while preserving a missing-revision gap. Uncertain local responses remain unknown. New annotations on unchanged text do not count as repairs. All mathematics, external sources, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0112",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0113",
+    "core_question": {
+      "text": "Bind optimality to an objective and feasible domain.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00750",
+        "SRC00751",
+        "SRC00752",
+        "SRC00753"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Whenever a parameter or solution is called optimal, check its objective, domain, and supporting conditions even if some are missing.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00750",
+        "SRC00751",
+        "SRC00752",
+        "SRC00753"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "The objective and feasible set determine any event-weighted loss, valid substitutions, optimality reasoning, and existence of an admissible solution.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00750",
+        "SRC00751",
+        "SRC00752",
+        "SRC00753",
+        "SRC00754"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "An optimal threshold was introduced before defining the risk being optimized.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00750",
+        "SRC00751",
+        "SRC00752",
+        "SRC00753"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Define the objective and variable range first; make event probabilities and branch losses traceable, justify substitutions, and establish optimality and domain-specific existence using the actual proof method.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00750",
+        "SRC00751",
+        "SRC00752",
+        "SRC00753",
+        "SRC00754"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Convexity alone does not ensure a positive stationary point; no universal risk choice, event count, differentiation method, or historical notation is required.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00750",
+        "SRC00751",
+        "SRC00752",
+        "SRC00753",
+        "SRC00754"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Available revisions, annotations, and visual context were examined while preserving a missing-revision gap. Uncertain local responses remain unknown. New annotations on unchanged text do not count as repairs. All mathematics, external sources, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0113",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0114",
+    "core_question": {
+      "text": "Separate conditional risk from averaged risk.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00755",
+        "SRC00756",
+        "SRC00757",
+        "SRC00758",
+        "SRC00759",
+        "SRC00760",
+        "SRC00761",
+        "SRC00762"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "When decisions condition on observed information but parameter selection averages over it, check each risk's randomness and conditions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00755",
+        "SRC00756",
+        "SRC00757",
+        "SRC00758",
+        "SRC00759",
+        "SRC00760",
+        "SRC00761",
+        "SRC00762"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Fixed side information determines conditional loss; event probabilities and losses combine into population risk averaged over side information.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00755",
+        "SRC00756",
+        "SRC00757",
+        "SRC00758",
+        "SRC00759",
+        "SRC00760",
+        "SRC00761",
+        "SRC00762",
+        "SRC00754",
+        "SRC00763",
+        "SRC00764",
+        "SRC00765",
+        "SRC00766",
+        "SRC00767",
+        "SRC00768",
+        "SRC00769",
+        "SRC00770",
+        "SRC00771"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Risk conditional on a historical observation was mixed with risk averaged over that observation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00755",
+        "SRC00756",
+        "SRC00757",
+        "SRC00758",
+        "SRC00759",
+        "SRC00760",
+        "SRC00761",
+        "SRC00762"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State random variables and conditioning for each expectation; derive event errors from the actual estimator and make probabilities used in the argument locally traceable.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00755",
+        "SRC00756",
+        "SRC00757",
+        "SRC00758",
+        "SRC00759",
+        "SRC00760",
+        "SRC00761",
+        "SRC00762",
+        "SRC00754",
+        "SRC00763",
+        "SRC00764",
+        "SRC00765",
+        "SRC00766",
+        "SRC00767",
+        "SRC00768",
+        "SRC00769",
+        "SRC00770",
+        "SRC00771"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Identically named risks may define different optimization problems; distinguish author responses and uncertain source attribution from advisor requirements.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00755",
+        "SRC00756",
+        "SRC00757",
+        "SRC00758",
+        "SRC00759",
+        "SRC00760",
+        "SRC00761",
+        "SRC00762"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Available revisions, annotations, and visual context were examined while preserving a missing-revision gap. Uncertain local responses remain unknown. New annotations on unchanged text do not count as repairs. All mathematics, external sources, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0114",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0115",
+    "core_question": {
+      "text": "Distribution optimization changes both losses and event probabilities.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00772",
+        "SRC00773",
+        "SRC00774",
+        "SRC00775",
+        "SRC00776"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check distribution optimization of event-weighted branch risks.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00772",
+        "SRC00773",
+        "SRC00774",
+        "SRC00775",
+        "SRC00776"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "The channel distribution affects detection probabilities, branch losses, and total risk.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00772",
+        "SRC00773",
+        "SRC00774",
+        "SRC00775",
+        "SRC00776"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Branch errors were maximized while their distribution-dependent probability weights were ignored.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00772",
+        "SRC00773",
+        "SRC00774",
+        "SRC00775",
+        "SRC00776"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Include both dependencies, or justify a probability-invariance approximation with its conditions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00772",
+        "SRC00773",
+        "SRC00774",
+        "SRC00775",
+        "SRC00776"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Near-perfect detection does not make weights distribution-independent at every SNR; some authorship is uncertain and identified author responses are not advisor instructions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00772",
+        "SRC00773",
+        "SRC00774",
+        "SRC00775",
+        "SRC00776"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Available revisions, annotations, and visual context were examined while preserving a missing-revision gap. Uncertain local responses remain unknown. New annotations on unchanged text do not count as repairs. All mathematics, external sources, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0115",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0116",
+    "core_question": {
+      "text": "Distinguish exact worst-case results from approximate ones.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00777",
+        "SRC00778",
+        "SRC00779",
+        "SRC00780",
+        "SRC00781",
+        "SRC00782",
+        "SRC00783",
+        "SRC00784",
+        "SRC00785",
+        "SRC00786",
+        "SRC00787",
+        "SRC00788",
+        "SRC00789"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check minimax or guarantee claims using solutions from simplified models.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00777",
+        "SRC00778",
+        "SRC00779",
+        "SRC00780",
+        "SRC00781",
+        "SRC00782",
+        "SRC00783",
+        "SRC00784",
+        "SRC00785",
+        "SRC00786",
+        "SRC00787",
+        "SRC00788",
+        "SRC00789"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "The exact minimax problem differs from a surrogate distribution and the threshold optimal under that surrogate.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00777",
+        "SRC00778",
+        "SRC00779",
+        "SRC00780",
+        "SRC00781",
+        "SRC00782",
+        "SRC00783",
+        "SRC00784",
+        "SRC00785",
+        "SRC00786",
+        "SRC00787",
+        "SRC00788",
+        "SRC00789"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A result without side information was reused with side information under notation implying exact optimality.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00777",
+        "SRC00778",
+        "SRC00779",
+        "SRC00780",
+        "SRC00781",
+        "SRC00782",
+        "SRC00783",
+        "SRC00784",
+        "SRC00785",
+        "SRC00786",
+        "SRC00787",
+        "SRC00788",
+        "SRC00789"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Label the approximate distribution and its corresponding optimizer and restrict the guarantee accordingly.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00777",
+        "SRC00778",
+        "SRC00779",
+        "SRC00780",
+        "SRC00781",
+        "SRC00782",
+        "SRC00783",
+        "SRC00784",
+        "SRC00785",
+        "SRC00786",
+        "SRC00787",
+        "SRC00788",
+        "SRC00789"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "An approximate label does not prove tightness or a general worst-case performance guarantee.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00777",
+        "SRC00778",
+        "SRC00779",
+        "SRC00780",
+        "SRC00781",
+        "SRC00782",
+        "SRC00783",
+        "SRC00784",
+        "SRC00785",
+        "SRC00786",
+        "SRC00787",
+        "SRC00788",
+        "SRC00789"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Available revisions, annotations, and visual context were examined while preserving a missing-revision gap. Uncertain local responses remain unknown. New annotations on unchanged text do not count as repairs. All mathematics, external sources, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0116",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0117",
+    "core_question": {
+      "text": "Diverging vector norms do not specify component distributions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00790",
+        "SRC00791",
+        "SRC00792",
+        "SRC00793",
+        "SRC00794",
+        "SRC00795",
+        "SRC00796"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check whole-vector limits used to infer component laws or independence.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00790",
+        "SRC00791",
+        "SRC00792",
+        "SRC00793",
+        "SRC00794",
+        "SRC00795",
+        "SRC00796"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Norm divergence, a joint law, product assumptions, and state simplification require separate justification.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00790",
+        "SRC00791",
+        "SRC00792",
+        "SRC00793",
+        "SRC00794",
+        "SRC00795",
+        "SRC00796"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A diverging norm was treated as if it established identical independent component behavior, although one component can cause divergence.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00790",
+        "SRC00791",
+        "SRC00792",
+        "SRC00793",
+        "SRC00794",
+        "SRC00795",
+        "SRC00796"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Define scalar laws and their product measure and justify the chosen limiting construction within the model.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00790",
+        "SRC00791",
+        "SRC00792",
+        "SRC00793",
+        "SRC00794",
+        "SRC00795",
+        "SRC00796"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Point mass at infinity is a limiting description, not a certified ordinary finite-power distribution.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00790",
+        "SRC00791",
+        "SRC00792",
+        "SRC00793",
+        "SRC00794",
+        "SRC00795",
+        "SRC00796"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Available revisions, annotations, and visual context were examined while preserving a missing-revision gap. Uncertain local responses remain unknown. New annotations on unchanged text do not count as repairs. All mathematics, external sources, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0117",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0118",
+    "core_question": {
+      "text": "Distinguish a distribution from a family of distributions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00797",
+        "SRC00798",
+        "SRC00756",
+        "SRC00799",
+        "SRC00800",
+        "SRC00801",
+        "SRC00802",
+        "SRC00803",
+        "SRC00804"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check random variables, admissible distribution sets, and extrema over distributions together.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00797",
+        "SRC00798",
+        "SRC00756",
+        "SRC00799",
+        "SRC00800",
+        "SRC00801",
+        "SRC00802",
+        "SRC00803",
+        "SRC00804"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "A random vector has a specific law drawn from a family over which a supremum is taken.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00797",
+        "SRC00798",
+        "SRC00756",
+        "SRC00799",
+        "SRC00800",
+        "SRC00801",
+        "SRC00802",
+        "SRC00803",
+        "SRC00804"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A vector was said to follow a distribution family rather than a particular member.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00797",
+        "SRC00798",
+        "SRC00756",
+        "SRC00799",
+        "SRC00800",
+        "SRC00801",
+        "SRC00802",
+        "SRC00803",
+        "SRC00804"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Separate the random object, probability measure, product measure, and optimization set.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00797",
+        "SRC00798",
+        "SRC00756",
+        "SRC00799",
+        "SRC00800",
+        "SRC00801",
+        "SRC00802",
+        "SRC00803",
+        "SRC00804"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "This distinction defines the minimax domain rather than merely improving notation; uncertain source authorship and author responses do not establish advisor requirements.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00797",
+        "SRC00798",
+        "SRC00756",
+        "SRC00799",
+        "SRC00800",
+        "SRC00801",
+        "SRC00802",
+        "SRC00803",
+        "SRC00804"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Available revisions, annotations, and visual context were examined while preserving a missing-revision gap. Uncertain local responses remain unknown. New annotations on unchanged text do not count as repairs. All mathematics, external sources, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0118",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0119",
+    "core_question": {
+      "text": "Average heterogeneous users correctly in state evolution.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00805",
+        "SRC00806",
+        "SRC00807",
+        "SRC00808"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check unified errors or state evolution when participants have differing attenuation or statistics.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00805",
+        "SRC00806",
+        "SRC00807",
+        "SRC00808"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "User-specific conditions determine local errors, their population average, and the large-system limit.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00805",
+        "SRC00806",
+        "SRC00807",
+        "SRC00808"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A homogeneous state-evolution formula was applied while retaining heterogeneous path losses.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00805",
+        "SRC00806",
+        "SRC00807",
+        "SRC00808"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Give the appropriate user average or attenuation distribution and state the limiting assumptions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00805",
+        "SRC00806",
+        "SRC00807",
+        "SRC00808"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "An unknown prior does not remove the need to account for heterogeneity; distinguish author responses and unresolved authorship from advisor instructions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00805",
+        "SRC00806",
+        "SRC00807",
+        "SRC00808"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Available revisions, annotations, and visual context were examined while preserving a missing-revision gap. Uncertain local responses remain unknown. New annotations on unchanged text do not count as repairs. All mathematics, external sources, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0119",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0120",
+    "core_question": {
+      "text": "Shared thresholds need conditions, not removed subscripts.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00809",
+        "SRC00810",
+        "SRC00811",
+        "SRC00812"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check shared parameters or selectors despite different per-object risks or input statistics.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00809",
+        "SRC00810",
+        "SRC00811",
+        "SRC00812"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Statistical differences determine whether risks justify shared values or independent thresholds.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00809",
+        "SRC00810",
+        "SRC00811",
+        "SRC00812"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A selector depended on user information while threshold values were claimed user-independent without an explanation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00809",
+        "SRC00810",
+        "SRC00811",
+        "SRC00812"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Distinguish information-dependent selection from shared threshold values and supply assumptions or optimization support.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00809",
+        "SRC00810",
+        "SRC00811",
+        "SRC00812"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Different-strength users may need different thresholds; sharing is not universal, and uncertain attribution must not be promoted to advisor instruction.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00809",
+        "SRC00810",
+        "SRC00811",
+        "SRC00812"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Available revisions, annotations, and visual context were examined while preserving a missing-revision gap. Uncertain local responses remain unknown. New annotations on unchanged text do not count as repairs. All mathematics, external sources, and advisor acceptance were not certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0120",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  }
+]

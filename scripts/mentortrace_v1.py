@@ -18,7 +18,7 @@ import technical_applicability as applicability
 import source_fidelity as fidelity
 
 ROOT=Path(__file__).resolve().parents[1]
-DEFAULT_KNOWLEDGE=ROOT/'corpus/advisor-concerns-v1'
+DEFAULT_KNOWLEDGE=ROOT/'corpus/advisor-concerns-v4'
 DEFAULT_GOODPAPER=ROOT/'corpus/published-cases-v1'
 STAGES=['objects','reader','technical','supplement_1','supplement_2','supplement_3','supplement_4','language','merge','verify']
 FIELDS=['core_question','new_manuscript_check','relationship_to_check','historically_insufficient_response','potentially_sufficient_response','applicability_boundary']

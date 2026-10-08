@@ -1,0 +1,61 @@
+[
+  {
+    "id": "C0481",
+    "core_question": {
+      "text": "How does an inaccurate preprocessing input bias the final measurement?",
+      "basis": "paper_local_concern_abstraction",
+      "source_ids": [
+        "SRCADD004401"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "An estimator removes a nuisance offset using side information that is itself erroneous.",
+      "basis": "analyst_suggested_transfer_check",
+      "source_ids": [
+        "SRCADD004401"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Input position error, predicted direct delay, estimated offset, reflected delay and recovered range.",
+      "basis": "paper_local_relationship_abstraction",
+      "source_ids": [
+        "SRCADD004401"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The mentor asked to explain how poor GPS information leads to a wrong direct delay, timing estimate and range, motivating anchor removal.",
+      "basis": "observed_manuscript_and_feedback_not_invented_student_reply",
+      "source_ids": [
+        "SRCADD004401"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Propagate the input error through each preprocessing relation and distinguish virtual reparameterization from actual offset recovery.",
+      "basis": "analyst_suggested_sufficiency_not_advisor_acceptance",
+      "source_ids": [
+        "SRCADD004401"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A shifted-channel representation or subtraction alone does not establish synchronization accuracy or a calibrated range-error law.",
+      "basis": "evidence_and_scope_boundary",
+      "source_ids": [
+        "SRCADD004401"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Assisted historical source reading and local mechanical validation; mathematical correctness, independent audit and diagnostic efficacy are not certified.",
+      "source_material": "private_feedback_not_redistributed",
+      "support_scope": "Conditional historical examples. Versions are dependent; cross-paper independence is not certified.",
+      "training_exposed_group": "TADD"
+    },
+    "deferred_evidence": {
+      "card_id": "C0481",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  }
+]

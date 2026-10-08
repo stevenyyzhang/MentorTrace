@@ -1,5 +1,21 @@
 # Changelog / 版本变更
 
+## 1.1.0-dev.3 — development update / 开发版更新
+
+2026-10-08. Corpus integration on the dev branch, based on 1.1.0-dev.2. This update does not create a stable release or replace earlier tagged snapshots.
+
+- Default Advisor runs and project configuration now use advisor-concerns-v4: 493 complete English cards, preserving the original 437 and adding 56 conditional abstractions. The 481-card and 490-card intermediate snapshots remain available for frozen runs; published-case contents are unchanged.
+- Apply historical-intake rules to supplied PDF feedback and LaTeX variants: read related edits jointly, retain version responses and corrections, verify blank-mark links, and distinguish diff inventories from actual semantic reading. Unknown modifiers and unresolved evidence remain unknown.
+- Synchronize both READMEs with actual source grouping, six decision fields, snapshot counts and training-exposure limits. Public records use opaque source links; manuscripts, verbatim feedback, identities, filenames, local paths and private version histories remain local.
+- Run scoped integrity, public-file anonymity and runtime integration checks. These checks do not establish scientific correctness, complete concern recall or improved diagnostic quality. No new model review is performed.
+
+- Advisor 与项目配置默认使用 v4：493 条完整英文卡片，保留原 437 条，新增 56 条；481 条和 490 条中间快照继续供冻结运行使用，已发表论文案例内容不变。
+- 混合 PDF/LaTeX 历史提炼联合读取相关修改，保留版本回应与后续修正，验证空白标记的实际关联，并区分差异清单与语义阅读；修改者未知及未解证据继续如实保留。
+- 中英 README 同步来源分组、六字段、快照数量及训练暴露边界。公开记录使用匿名来源链接，原稿、批注原文、身份、原文件名、本机路径与私有版本历史仅在本地保存。
+- 完成相关完整性、公开文件匿名性和运行集成检查；这些检查不证明数学正确、concern 无遗漏或诊断质量提升。本次未调用模型重新审稿。
+
+Current scoped validation is recorded in [validation-v1.1.0-dev.3.json](docs/validation-v1.1.0-dev.3.json). Earlier validation documents retain their historical scope.
+
 ## 1.1.0-dev.2 — pre-release / 预发布版
 
 2026-10-07. Source-fidelity development update, published as a new prerelease from the dev branch. Earlier release records retain their historical baseline scope.
