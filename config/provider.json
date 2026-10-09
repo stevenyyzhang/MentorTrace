@@ -2,8 +2,10 @@
   "enabled": false,
   "model": "gpt-6-sol",
   "reasoning_effort": "xhigh",
+  "service_tier": "default",
+  "settings_authorization": null,
   "context_window": null,
   "max_output_tokens": 16000,
   "safety_margin_tokens": 2048,
-  "note": "Verify account access and context capacity before enabling. Input-token preflight also sends manuscript content to the service. Credentials belong only in the local environment."
+  "note": "Verify account access and context capacity before enabling; supply the recorded explicit user model/effort/tier choice in settings_authorization. Fast/priority additionally requires explicit acceptance of additional usage. Never infer authorization from urgency or change effort automatically. Input-token preflight also sends manuscript content to the service. Credentials belong only in the local environment."
 }

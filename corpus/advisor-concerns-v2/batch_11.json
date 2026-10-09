@@ -1,0 +1,2344 @@
+[
+  {
+    "id": "C0301",
+    "core_question": {
+      "text": "Before reusing a subset from one target, how is an erroneous subset with accidentally small residual detected, and what happens after rejection?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02085",
+        "SRC02086"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A locally ambiguous estimate produces a global shared configuration that is subsequently fixed across multiple objects.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02085",
+        "SRC02086"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Generate a candidate from one target, fix it while recomputing feasible associations for another, test residuals, reuse on success, and regenerate after failure.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02085",
+        "SRC02086"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Cross-target validation existed, but candidate generation, fixed variables, error propagation, and failure control flow were not connected clearly.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02085",
+        "SRC02086"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Specify fixed and reoptimized variables, exclusivity constraints, thresholds, failure branches, and fallback after exhausting targets; threshold success is not a mathematical guarantee.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02085",
+        "SRC02086"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Cross-target validation applies when configuration sharing can propagate errors; inconsistent comment indices require interpretation rather than literal copying.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02085",
+        "SRC02086"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. No clear fallback covers exhausted targets or repeated failures; increment-before-check may reference uncomputed residuals; threshold success does not prove reliability.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0301",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0302",
+    "core_question": {
+      "text": "Can necessary triangle inequalities from available geometry eliminate impossible candidate range associations?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02085"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A method enumerates range associations and has geometry and measurements from which necessary feasibility conditions might be derived.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02085"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Available geometry and ranges yield necessary inequalities restricting candidate associations, with allowances for measurement and anchor-position errors.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02085"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Index ranges and non-reuse constraints alone omitted a newly requested geometric filter; no failed implementation is documented.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02085"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Derive and implement justified necessary inequalities with tolerances when conditions permit, or explain why geometric filtering is unsuitable.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02085"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Do not invent omitted formulas. Unreliable anchor geometry can make hard filtering reject true solutions; not every association problem has triangle constraints.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02085"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. Specific conditions and tolerances were not supplied, and an explanation for omitting the filter is absent.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0302",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0303",
+    "core_question": {
+      "text": "How do already localized targets and their associations constrain the remaining-target problem after validating a shared anchor subset?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02086"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A staged algorithm fixes a shared configuration, solves some objects, and jointly handles the rest without reusing assigned measurements.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02086"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Save the validated subset and solved associations, exclude solved objects and occupied observations, solve remaining associations/positions, and aggregate all position outputs.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02086"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The remaining-target problem and exclusions existed, but their connection to stopping state, final steps, and pseudocode was unclear.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02086"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Specify saved state at stopping, remaining objects and feasible associations, the referenced solver's problem, and complete pseudocode outputs.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02086"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "The number of initially solved objects follows the validation procedure, not a universal rule. Check inconsistent index and variable usage semantically.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02086"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. Historical comment indices are inconsistent; later numbering is more coherent but not literal compliance. An undefined stopping index and stopping-check order affect final inputs.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0303",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0304",
+    "core_question": {
+      "text": "Does the abstract explain why accurate path ranging leaves anchor-position uncertainty and how the proposed method addresses it?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02087",
+        "SRC02088",
+        "SRC02089",
+        "SRC02090"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Localization uses measured propagation paths and inaccurate reference-node positions, while the abstract describes only procedural stages.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02087",
+        "SRC02088",
+        "SRC02089",
+        "SRC02090"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Accurate path distances do not remove dependence on reference positions; treating uncertain reference positions as jointly estimated quantities explains the mechanism.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02087",
+        "SRC02088",
+        "SRC02089",
+        "SRC02090"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Announcing a robust two-stage localization protocol described an action without explaining how it addresses reference-position error.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02089"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Briefly distinguish the error sources, explain why joint estimation is needed, and identify its observational basis.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02087",
+        "SRC02088",
+        "SRC02089",
+        "SRC02090"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "This applies when measurements and reference-position knowledge jointly determine localization; accurate ranging does not universally require anchor correction.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02087",
+        "SRC02088",
+        "SRC02089",
+        "SRC02090"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. Explicit acceptance of the final abstract is not recorded.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0304",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0305",
+    "core_question": {
+      "text": "Why does joint estimation penalize reference-position deviation, how do statistical models determine weights, and what happens if that term is removed?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02091",
+        "SRC02092",
+        "SRC02093",
+        "SRC02094"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "An objective combines physical-measurement fit and reference-position deviation using error statistics as coefficients.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02091",
+        "SRC02092",
+        "SRC02093",
+        "SRC02094"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Derive one estimation criterion from range and position observation models; explain variance-dependent trust and coupling after removal of position-information constraints.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02091",
+        "SRC02092",
+        "SRC02093",
+        "SRC02094"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Calling the position term helpful regularization did not justify its inclusion or explain removal consequences.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02093"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "For independent errors, derive negative log likelihood and interpret weights; analyze lost constraints without the position term using qualified identifiability reasoning or comparisons.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02091",
+        "SRC02092",
+        "SRC02093",
+        "SRC02094"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Other justified criteria need not use maximum likelihood. The intended error type in an ambiguous large-noise example must remain uncertain.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02091",
+        "SRC02092",
+        "SRC02093",
+        "SRC02094"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. Removal consequences and relative variance effects remain unexplained; the large-noise example is ambiguous, and a weighting simplification is an analyst observation.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0305",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0306",
+    "core_question": {
+      "text": "How are the reference-node position-error statistics treated as known inputs obtained?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02095",
+        "SRC02096",
+        "SRC02097",
+        "SRC02098",
+        "SRC02099"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "An external error statistic is assumed known; its source, knowledge status, and acquisition method must support the quantity actually used.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02095",
+        "SRC02096",
+        "SRC02097",
+        "SRC02098",
+        "SRC02099"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Connect available calibration data or models to the used statistic, distinguishing unknown true positions from known error statistics.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02095",
+        "SRC02096",
+        "SRC02097",
+        "SRC02098",
+        "SRC02099"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Vague references to measured perturbations or environmental models remained unintelligible and recurred in revision.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02096",
+        "SRC02098"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Explain suitable calibration data, estimation steps, or cited model outputs, and state whether estimated statistics are treated as fixed known inputs.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02095",
+        "SRC02096",
+        "SRC02097",
+        "SRC02098",
+        "SRC02099"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A justified known-statistic assumption is acceptable; every paper need not measure satellite-positioning error or jointly estimate variance.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02095",
+        "SRC02096",
+        "SRC02097",
+        "SRC02098",
+        "SRC02099"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. Calibration-data provenance and the mapping from environmental models to the used statistic remain unspecified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0306",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0307",
+    "core_question": {
+      "text": "Is the information flow from received signals through path ranges and distributed-node outputs to cooperative localization concrete and continuous?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02100",
+        "SRC02101",
+        "SRC02102",
+        "SRC02103",
+        "SRC02104",
+        "SRC02105",
+        "SRC02106",
+        "SRC02107",
+        "SRC02108",
+        "SRC02109",
+        "SRC02110",
+        "SRC02111"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Distributed received signals yield intermediate observations that feed a joint estimator.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02100",
+        "SRC02101",
+        "SRC02102",
+        "SRC02103",
+        "SRC02104",
+        "SRC02105",
+        "SRC02106",
+        "SRC02107",
+        "SRC02108",
+        "SRC02109",
+        "SRC02110",
+        "SRC02111"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Propagation paths generate signals, signals yield path measurements, and shared or aggregated node measurements become localization inputs for the same objects.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02100",
+        "SRC02101",
+        "SRC02102",
+        "SRC02103",
+        "SRC02104",
+        "SRC02105",
+        "SRC02106",
+        "SRC02107",
+        "SRC02108",
+        "SRC02109",
+        "SRC02110",
+        "SRC02111"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Generic sensing language failed to connect to defined distances; cooperative localization language still omitted ranging and sharing stages.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02101",
+        "SRC02111"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State each stage's input, physical meaning, output, and cross-node transfer, with matching equations and symbols.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02100",
+        "SRC02101",
+        "SRC02102",
+        "SRC02103",
+        "SRC02104",
+        "SRC02105",
+        "SRC02106",
+        "SRC02107",
+        "SRC02108",
+        "SRC02109",
+        "SRC02110",
+        "SRC02111"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "No particular central node or two-stage architecture is required; explain the method's actual information dependencies.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02100",
+        "SRC02101",
+        "SRC02102",
+        "SRC02103",
+        "SRC02104",
+        "SRC02105",
+        "SRC02106",
+        "SRC02107",
+        "SRC02108",
+        "SRC02109",
+        "SRC02110",
+        "SRC02111"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. A requested description of the sharing step was not implemented in the observed revision.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0307",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0308",
+    "core_question": {
+      "text": "Does the system name match its transmitter, receivers, and target-reflected propagation topology?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02102",
+        "SRC02112",
+        "SRC02113",
+        "SRC02114"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A localization system uses a named station topology with a shared transmitter and multiple receivers.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02102",
+        "SRC02112",
+        "SRC02113",
+        "SRC02114"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Match topology terminology to transmitter/receiver counts and actual propagation paths, rather than substituting a downstream geometric solver's name.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02102",
+        "SRC02112",
+        "SRC02113",
+        "SRC02114"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Emphasis on anchors and geometric localization left propagation roles unclear; a terminology-check request remained unresolved.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02112"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Describe transmission, reception, and paths, and verify topology terminology against the applicable definition.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02102",
+        "SRC02112",
+        "SRC02113",
+        "SRC02114"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A particular multi-station term is not required for other systems; this historical case lacks independent terminology verification.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02102",
+        "SRC02112",
+        "SRC02113",
+        "SRC02114"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. Direct evidence of terminology verification is absent.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0308",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0309",
+    "core_question": {
+      "text": "Does a scalar transmit/receive signal model state its antenna-configuration assumptions?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02115",
+        "SRC02116"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Wireless nodes are modeled using scalar samples without clearly stated hardware configuration.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02115",
+        "SRC02116"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Antenna configuration must support the signal dimensions and observation model.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02115",
+        "SRC02116"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Listing node counts alone did not establish the single-antenna assumption.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02115",
+        "SRC02116"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State the actual configuration and explain combining or antenna selection if it produces a scalar equivalent model.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02115",
+        "SRC02116"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Other systems need not use single antennas; multiple antennas can support justified scalar equivalent models.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02115",
+        "SRC02116"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. No additional local unresolved limitation is recorded.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0309",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0310",
+    "core_question": {
+      "text": "Is an adopted channel-estimation ranging approach situated in appropriate literature rather than attributed solely to one source?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02117",
+        "SRC02118"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "An existing channel-estimation-to-delay approach is attributed narrowly to one prior work.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02117",
+        "SRC02118"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Cited sources must actually follow the relevant technical route and support the method's provenance and reuse.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02117",
+        "SRC02118"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Attribution to a single paper left related work on the same route unaddressed.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02118"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Verify representative sources using the same route and explain which elements are adopted; do not add unconfirmed citations from memory.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02117",
+        "SRC02118"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Citation count is not the criterion; uncertain recollection is not a verified bibliographic requirement.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02117",
+        "SRC02118"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. The cited papers' full texts were unavailable for checking technical-route details.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0310",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0311",
+    "core_question": {
+      "text": "Can the distance vector used for localization actually be obtained from the stated channel-estimation procedure?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02119",
+        "SRC02120",
+        "SRC02121",
+        "SRC02122"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A downstream algorithm requires a measurement vector generated through sparse estimation or feature extraction.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02119",
+        "SRC02120",
+        "SRC02121",
+        "SRC02122"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Show the transformation from estimator output to observations; nonzero channel coefficients differ from distances derived from their support locations.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02119",
+        "SRC02120",
+        "SRC02121",
+        "SRC02122"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A prose statement about extracting delays and distances omitted the sparse-estimation problem and estimate definition, although an earlier method description existed.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02120"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Connect signal, channel estimation, tap-location conversion, and distance-vector definition through compact, dimensionally consistent equations.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02119",
+        "SRC02120",
+        "SRC02121",
+        "SRC02122"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Do not repeat the entire established ranging algorithm. Ambiguous wording equating distances with coefficients requires interpretation using surrounding formulas.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02119",
+        "SRC02120",
+        "SRC02121",
+        "SRC02122"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. The sparse estimator's input domain and sensing matrix must remain consistent with the received-signal model.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0311",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0312",
+    "core_question": {
+      "text": "Are measurement acquisition, target identity association, and noisy physical observation equations introduced in their knowledge-dependency order?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02123",
+        "SRC02124",
+        "SRC02125",
+        "SRC02126",
+        "SRC02094",
+        "SRC02127",
+        "SRC02128",
+        "SRC02129",
+        "SRC02130",
+        "SRC02131"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Preprocessing produces unlabeled multi-target measurements whose association to objects is later treated as unknown.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02123",
+        "SRC02124",
+        "SRC02125",
+        "SRC02126",
+        "SRC02094",
+        "SRC02127",
+        "SRC02128",
+        "SRC02129",
+        "SRC02130",
+        "SRC02131"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Unordered observations lack true target labels; association selects an observation before relating it to target-indexed prediction and noise.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02123",
+        "SRC02124",
+        "SRC02125",
+        "SRC02126",
+        "SRC02094",
+        "SRC02127",
+        "SRC02128",
+        "SRC02129",
+        "SRC02130",
+        "SRC02131"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Introducing target-indexed estimates too early implied known association; discussing knowledge status before defining association variables compounded ambiguity.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02123",
+        "SRC02131"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Distinguish unassociated observations, selection variables, selected scalar measurements, and physical quantities, then identify known and unknown quantities.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02123",
+        "SRC02124",
+        "SRC02125",
+        "SRC02126",
+        "SRC02094",
+        "SRC02127",
+        "SRC02128",
+        "SRC02129",
+        "SRC02130",
+        "SRC02131"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Reliable identity labels need not be treated as unknown; theoretical target labels must still be distinguished from identities available to the algorithm.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02123",
+        "SRC02124",
+        "SRC02125",
+        "SRC02126",
+        "SRC02094",
+        "SRC02127",
+        "SRC02128",
+        "SRC02129",
+        "SRC02130",
+        "SRC02131"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. No additional local unresolved limitation is recorded.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0312",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0313",
+    "core_question": {
+      "text": "Is joint maximum likelihood constructed consistently from available observations, unknown parameters, independence assumptions, and association constraints?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02132",
+        "SRC02133",
+        "SRC02134",
+        "SRC02094",
+        "SRC02135",
+        "SRC02136",
+        "SRC02137",
+        "SRC02138",
+        "SRC02139",
+        "SRC02140",
+        "SRC02141",
+        "SRC02142",
+        "SRC02143",
+        "SRC02144",
+        "SRC02145",
+        "SRC02146",
+        "SRC02147",
+        "SRC02148",
+        "SRC02149",
+        "SRC02150",
+        "SRC02151"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Joint estimation combines discrete matching and continuous positions using path measurements and external position estimates.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02132",
+        "SRC02133",
+        "SRC02134",
+        "SRC02094",
+        "SRC02135",
+        "SRC02136",
+        "SRC02137",
+        "SRC02138",
+        "SRC02139",
+        "SRC02140",
+        "SRC02141",
+        "SRC02142",
+        "SRC02143",
+        "SRC02144",
+        "SRC02145",
+        "SRC02146",
+        "SRC02147",
+        "SRC02148",
+        "SRC02149",
+        "SRC02150",
+        "SRC02151"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Separate observations from parameters; justify density products through independence; explain one-to-one matching constraints; omit only terms independent of every optimized variable.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02132",
+        "SRC02133",
+        "SRC02134",
+        "SRC02094",
+        "SRC02135",
+        "SRC02136",
+        "SRC02137",
+        "SRC02138",
+        "SRC02139",
+        "SRC02140",
+        "SRC02141",
+        "SRC02142",
+        "SRC02143",
+        "SRC02144",
+        "SRC02145",
+        "SRC02146",
+        "SRC02147",
+        "SRC02148",
+        "SRC02149",
+        "SRC02150",
+        "SRC02151"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Parameter-oriented likelihood notation and prematurely expanded matrix constraints obscured observation conditioning; the availability of estimates rather than true positions also remained unclear.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02132",
+        "SRC02094",
+        "SRC02137"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Define joint density from both observation-generating models, explain independence and each constraint, and derive the equivalent objective while distinguishing scalar factors from vector densities.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02132",
+        "SRC02133",
+        "SRC02134",
+        "SRC02094",
+        "SRC02135",
+        "SRC02136",
+        "SRC02137",
+        "SRC02138",
+        "SRC02139",
+        "SRC02140",
+        "SRC02141",
+        "SRC02142",
+        "SRC02143",
+        "SRC02144",
+        "SRC02145",
+        "SRC02146",
+        "SRC02147",
+        "SRC02148",
+        "SRC02149",
+        "SRC02150",
+        "SRC02151"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Likelihood as a function of parameters is valid; this concern addresses explanatory order and conditioning ambiguity, not a universal notation prohibition.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02132",
+        "SRC02133",
+        "SRC02134",
+        "SRC02094",
+        "SRC02135",
+        "SRC02136",
+        "SRC02137",
+        "SRC02138",
+        "SRC02139",
+        "SRC02140",
+        "SRC02141",
+        "SRC02142",
+        "SRC02143",
+        "SRC02144",
+        "SRC02145",
+        "SRC02146",
+        "SRC02147",
+        "SRC02148",
+        "SRC02149",
+        "SRC02150",
+        "SRC02151"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. The relationship between scalar Gaussian factors and the joint range-vector density remains unclear.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0313",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0314",
+    "core_question": {
+      "text": "Why study both known and unknown association, and are their physical conditions reflected in the contribution structure?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02152",
+        "SRC02153",
+        "SRC02154",
+        "SRC02155",
+        "SRC02156",
+        "SRC02131",
+        "SRC02157",
+        "SRC02158",
+        "SRC02159",
+        "SRC02160",
+        "SRC02161"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "One estimation task has separate problems or algorithms for known and unknown matching.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02152",
+        "SRC02153",
+        "SRC02154",
+        "SRC02155",
+        "SRC02156",
+        "SRC02131",
+        "SRC02157",
+        "SRC02158",
+        "SRC02159",
+        "SRC02160",
+        "SRC02161"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Historical state or distinguishable observations determine association knowledge, which determines unknowns and algorithm branches; contributions should explain why both are studied.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02152",
+        "SRC02153",
+        "SRC02154",
+        "SRC02155",
+        "SRC02156",
+        "SRC02131",
+        "SRC02157",
+        "SRC02158",
+        "SRC02159",
+        "SRC02160",
+        "SRC02161"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Special-to-general ordering and later tracking/static examples did not place the rationale where contributions introduced the branches.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02153",
+        "SRC02155",
+        "SRC02161"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Briefly explain the conditions for both knowledge states in the contribution introduction, align later branches, and qualify easy-association claims.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02152",
+        "SRC02153",
+        "SRC02154",
+        "SRC02155",
+        "SRC02156",
+        "SRC02131",
+        "SRC02157",
+        "SRC02158",
+        "SRC02159",
+        "SRC02160",
+        "SRC02161"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Motion does not guarantee known association, and static targets can have identity information; historical examples are not universal theorems.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02152",
+        "SRC02153",
+        "SRC02154",
+        "SRC02155",
+        "SRC02156",
+        "SRC02131",
+        "SRC02157",
+        "SRC02158",
+        "SRC02159",
+        "SRC02160",
+        "SRC02161"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. The restructuring request has no observed follow-up, and claims of easily known association remain too absolute.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0314",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0315",
+    "core_question": {
+      "text": "How does sparse channel estimation produce the required number of ranges, and how is the target count known or obtained?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02162",
+        "SRC02121",
+        "SRC02122",
+        "SRC02163",
+        "SRC02164",
+        "SRC02165",
+        "SRC02166",
+        "SRC02167"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Preprocessing uses sparse estimation while later matching assumes the observation count exactly equals the object count.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02162",
+        "SRC02121",
+        "SRC02122",
+        "SRC02163",
+        "SRC02164",
+        "SRC02165",
+        "SRC02166",
+        "SRC02167"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Align target-count knowledge, estimated support size, measurement-output count, and matching dimensions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02162",
+        "SRC02121",
+        "SRC02122",
+        "SRC02163",
+        "SRC02164",
+        "SRC02165",
+        "SRC02166",
+        "SRC02167"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Stating that a solution is sparse did not explain why it provides the required output count.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02163",
+        "SRC02164"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State whether object count is known or estimated; give output-selection rules and conditions, including extra steps or assumptions when sparse optimization does not guarantee that count.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02162",
+        "SRC02121",
+        "SRC02122",
+        "SRC02163",
+        "SRC02164",
+        "SRC02165",
+        "SRC02166",
+        "SRC02167"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Regularization tuning need not achieve every desired support size; a matching number of nonzeros does not prove correct target recovery.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02162",
+        "SRC02121",
+        "SRC02122",
+        "SRC02163",
+        "SRC02164",
+        "SRC02165",
+        "SRC02166",
+        "SRC02167"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. An operational parameter-selection rule and handling of exceptions to the required support count are absent.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0315",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0316",
+    "core_question": {
+      "text": "Is ranging-noise power explicitly identified as a known input when used in maximum-likelihood weights?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02168"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A noise variance is a fixed objective weight while optimization variables contain other states only.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02168"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Variance defining likelihood and weighted residuals must be declared given or explicitly estimated.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02168"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Defining noise power without stating its knowledge status left the objective's inputs incomplete.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02168"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Declare ranging variance known or describe its estimation treatment, consistently with the optimized variables.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02168"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A knowledge-status request does not by itself require new variance-estimation experiments or every possible calibration check.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02168"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. No additional local unresolved limitation is recorded.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0316",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0317",
+    "core_question": {
+      "text": "Does the practical contribution explain how target-related ranges refine external position estimates, beyond claiming robustness to anchor errors?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02090",
+        "SRC02169",
+        "SRC02170",
+        "SRC02171",
+        "SRC02172",
+        "SRC02173",
+        "SRC02174",
+        "SRC02175",
+        "SRC02176",
+        "SRC02177",
+        "SRC02178"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A method jointly estimates target states and uncertain reference-node states and reports both errors.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02090",
+        "SRC02169",
+        "SRC02170",
+        "SRC02171",
+        "SRC02172",
+        "SRC02173",
+        "SRC02174",
+        "SRC02175",
+        "SRC02176",
+        "SRC02177",
+        "SRC02178"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "The same path observations constrain target positions and add reference-position information; claimed refinement should connect this mechanism to evidence.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02090",
+        "SRC02169",
+        "SRC02170",
+        "SRC02171",
+        "SRC02172",
+        "SRC02173",
+        "SRC02174",
+        "SRC02175",
+        "SRC02176",
+        "SRC02177",
+        "SRC02178"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "General robustness claims and a separate practical-benefit paragraph omitted the range-based reference-position correction mechanism from the joint-estimation contribution.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02174",
+        "SRC02177",
+        "SRC02178"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Connect joint unknowns, added distance constraints, and both performance outcomes, qualified by information availability and identifiability.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02090",
+        "SRC02169",
+        "SRC02170",
+        "SRC02171",
+        "SRC02172",
+        "SRC02173",
+        "SRC02174",
+        "SRC02175",
+        "SRC02176",
+        "SRC02177",
+        "SRC02178"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Refining positions supplied by a positioning system does not imply improving its infrastructure or guaranteeing accuracy gains in every scenario.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02090",
+        "SRC02169",
+        "SRC02170",
+        "SRC02171",
+        "SRC02172",
+        "SRC02173",
+        "SRC02174",
+        "SRC02175",
+        "SRC02176",
+        "SRC02177",
+        "SRC02178"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. The contribution still needs the explicit connection from distance information to reference-position correction.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0317",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0318",
+    "core_question": {
+      "text": "Does the algorithm overview separately explain how continuous nonconvexity and integer decisions are handled?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02179",
+        "SRC02180"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A principal algorithm addresses both continuous nonconvex functions and discrete decisions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02179",
+        "SRC02180"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Explain the appropriate approximation of nonconvex terms, the discrete subproblem, and the distinct roles of nested iterations.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02179",
+        "SRC02180"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Naming an approximation problem and outer approximation supplied method labels without explaining their mechanisms.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02179"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Briefly explain local bounds or convexification and solution exchange between fixed-association continuous problems and mixed-integer linear problems; qualify the convergence target.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02179",
+        "SRC02180"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Use the actual mechanism rather than mandated terminology. Discrete association alone does not explain nonconvex continuous distance residuals.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02179",
+        "SRC02180"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. Inner and outer optimality and convergence targets remain unclear; an unexplained deletion does not establish a separate convergence concern.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0318",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0319",
+    "core_question": {
+      "text": "Does related work describe specific system models and anchor-error treatments sufficiently to support comparison?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02175"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Several localization families are compared against a system with reference-position uncertainty.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02175"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "For literature establishing research differences, connect observation structure, estimated quantities, and error treatment to later applicability comparisons.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02175"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Numerous citations and a broad shared approximation description did not explain representative works' actual models and methods.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02175"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Choose directly relevant examples, accurately explain their measurements, unknowns, and solution approaches, then compare on that basis.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02175"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "An exhaustive survey is unnecessary; the manuscript's account is not independent verification of the original papers.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02175"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. Original paper texts were unavailable for external verification of the summaries.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0319",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0320",
+    "core_question": {
+      "text": "Is a prior method's transfer limitation explained by measurement geometry rather than an application label?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02175",
+        "SRC02181",
+        "SRC02182"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Direct-distance methods are compared with observations comprising sums of propagation-segment lengths, supporting a claim of nontransferability.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02175",
+        "SRC02181",
+        "SRC02182"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Connect observation functions, geometric constraints, and the structures prior algorithms require to identify derivations or solver steps needing change.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02175",
+        "SRC02181",
+        "SRC02182"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Naming different range types and rejecting an application category did not explain why the geometric difference matters.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02181",
+        "SRC02182"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Compare direct-distance and path-sum equations, identify the prior method's structural dependence, and describe necessary adaptation under specific observation conditions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02175",
+        "SRC02181",
+        "SRC02182"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "An application category does not invalidate all prior localization methods; special topologies may preserve applicability depending on observation definitions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02175",
+        "SRC02181",
+        "SRC02182"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. The algorithmic consequence of geometry remains unexplained; one unselected comment's location was reconstructed from imagery and nearby explicit feedback.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0320",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0321",
+    "core_question": {
+      "text": "Has the reason prior work knows or does not require association been verified, rather than described as ignoring association?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02175",
+        "SRC02183",
+        "SRC02184",
+        "SRC02185",
+        "SRC02186"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Related work is classified as using known matching while the new method emphasizes passive-object identity ambiguity.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02175",
+        "SRC02183",
+        "SRC02184",
+        "SRC02185",
+        "SRC02186"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Active behavior, identifiable signatures, and target count determine whether association is known or irrelevant; claimed limitations must follow these conditions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02175",
+        "SRC02183",
+        "SRC02184",
+        "SRC02185",
+        "SRC02186"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Describing prior work as ignoring association substituted an unverified explanation for its actual information assumptions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02184",
+        "SRC02186"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Check original target types and identity mechanisms, cite evidence, and compare their information conditions with passive unlabeled echoes.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02175",
+        "SRC02183",
+        "SRC02184",
+        "SRC02185",
+        "SRC02186"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A suggested active-target explanation is provisional, not an established literature fact or a universal requirement to solve unknown association.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02175",
+        "SRC02183",
+        "SRC02184",
+        "SRC02185",
+        "SRC02186"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. Whether the original work uses active targets or omits passive-target association remains unverified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0321",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0322",
+    "core_question": {
+      "text": "Is estimated nonzero channel support incorrectly presented as an unconditional exact equivalent of real target paths?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02187",
+        "SRC02188",
+        "SRC02189",
+        "SRC02190"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A noisy estimator's nonzero outputs identify physical objects or paths through a necessary-and-sufficient claim.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02187",
+        "SRC02188",
+        "SRC02189",
+        "SRC02190"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Distinguish true support from estimated support; physical interpretation requires estimation quality or recovery assumptions, not optimization alone.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02187",
+        "SRC02188",
+        "SRC02189",
+        "SRC02190"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Exact equivalence wording omitted the estimation assumptions needed to connect output support with actual paths.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02187",
+        "SRC02189"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State the correspondence as conditional or approximate and, where needed, explain resolution, detection errors, and merged paths.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02187",
+        "SRC02188",
+        "SRC02189",
+        "SRC02190"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A universal support-recovery theorem is unnecessary; an ideal noiseless physical model can justify stronger correspondence.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02187",
+        "SRC02188",
+        "SRC02189",
+        "SRC02190"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. Conditions supporting accurate estimation remain unspecified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0322",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0323",
+    "core_question": {
+      "text": "Under what conditions is localization feasible, are they practical, and what happens when they fail?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02191"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Localization or joint estimation depends on measurement counts, correspondences, or node information, requiring clarity about feasibility, identifiability, and attainable accuracy.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02191"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Define successful-use conditions, assess their deployment plausibility, and specify executable failure handling or applicability limits.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02191"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "An optimization formulation and constraints did not supply the requested conditions or handling of unsuitable cases.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02191"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Distinguish a nonempty constraint set, parameter identifiability, and attainable precision; address the intended meaning with conditions, practical discussion, and fallback where appropriate.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02191"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Unbounded position variables and permutation constraints can make formal feasibility weaker than accurate localization; do not invent a minimum-anchor theorem.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02191"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. The comment's exact problem reference and intended meaning of feasibility are ambiguous; conditions, practical satisfaction, and failure handling lack added discussion.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0323",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0324",
+    "core_question": {
+      "text": "Is terminal-assisted localization motivated through coverage needs, infrastructure constraints, and communication/sensing roles rather than terminal abundance alone?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02175",
+        "SRC02192",
+        "SRC02193",
+        "SRC02194",
+        "SRC02195",
+        "SRC02196",
+        "SRC02197",
+        "SRC02198",
+        "SRC02199",
+        "SRC02200",
+        "SRC02201",
+        "SRC02202",
+        "SRC02203",
+        "SRC02204",
+        "SRC02205"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Distributed terminals supplement fixed infrastructure for wide-area localization while reusing a communication network.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02175",
+        "SRC02192",
+        "SRC02193",
+        "SRC02194",
+        "SRC02195",
+        "SRC02196",
+        "SRC02197",
+        "SRC02198",
+        "SRC02199",
+        "SRC02200",
+        "SRC02201",
+        "SRC02202",
+        "SRC02203",
+        "SRC02204",
+        "SRC02205"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Connect coverage to required observations, deployment and visibility to observation shortages, and terminal reception roles to additional paths compatible with communications.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02175",
+        "SRC02192",
+        "SRC02193",
+        "SRC02194",
+        "SRC02195",
+        "SRC02196",
+        "SRC02197",
+        "SRC02198",
+        "SRC02199",
+        "SRC02200",
+        "SRC02201",
+        "SRC02202",
+        "SRC02203",
+        "SRC02204",
+        "SRC02205"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "General claims about sparse infrastructure and dense terminals, plus a new architecture label, omitted concrete observation and deployment dependencies.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02175",
+        "SRC02195",
+        "SRC02202"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State observation requirements for the actual localization method and their deployment basis; explain additional terminal paths and distinct communication and sensing roles using the diagram.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02175",
+        "SRC02192",
+        "SRC02193",
+        "SRC02194",
+        "SRC02195",
+        "SRC02196",
+        "SRC02197",
+        "SRC02198",
+        "SRC02199",
+        "SRC02200",
+        "SRC02201",
+        "SRC02202",
+        "SRC02203",
+        "SRC02204",
+        "SRC02205"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Illustrative station counts and spacings require method-, dimension-, and network-specific verification; they are not universal thresholds or impossibility claims.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02175",
+        "SRC02192",
+        "SRC02193",
+        "SRC02194",
+        "SRC02195",
+        "SRC02196",
+        "SRC02197",
+        "SRC02198",
+        "SRC02199",
+        "SRC02200",
+        "SRC02201",
+        "SRC02202",
+        "SRC02203",
+        "SRC02204",
+        "SRC02205"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. Observation conditions and deployment evidence remain absent; diagram-role introduction and local literature additions have no observed subsequent revision.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0324",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0325",
+    "core_question": {
+      "text": "Does the system diagram convey visiting targets, hovering to sense, uploading during transfer, and completing the mission?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02206",
+        "SRC02207",
+        "SRC02208"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A mobile platform sequentially serves objects and delivers data; check whether available scene illustrations and explanations convey service, motion, delivery, and completion. If a timing figure is provided, check agreement between the figures.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02206",
+        "SRC02207",
+        "SRC02208"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Connect served objects, hovering positions, visit order, data delivery during motion, and the receiver; captions and symbols should support that process.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02206",
+        "SRC02207",
+        "SRC02208"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Adding targets, a trajectory, and sensing/upload arrows still did not show the action sequence from hovering through transfer and upload.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02207",
+        "SRC02208"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Use representative targets and successive positions or timing marks to show a complete service-transfer-upload cycle, data origin/destination, and endpoint; align complementary figures.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02206",
+        "SRC02207",
+        "SRC02208"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A requested example target count or visual style is not universal, and static systems need not show movement sequences.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02206",
+        "SRC02207",
+        "SRC02208"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. The final diagram image is unavailable, preventing confirmation that the added sequence requirement was satisfied.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0325",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0326",
+    "core_question": {
+      "text": "When multiple sensing points surround a target, are visit rules and task-completion conditions introduced with them?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02209",
+        "SRC02210"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Several candidate service positions are defined per object while selection and accumulated-completion constraints appear later.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02209",
+        "SRC02210"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Connect the initial candidate-set definition to selectable subsets, each service contribution, and overall completion so readers know required visits.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02209",
+        "SRC02210"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Rules appearing later did not resolve ambiguity when the candidate points were first introduced.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02209",
+        "SRC02210"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Explain selection and completion at first definition; if simplifying to one designed service position per target, state one service per target and update constraints consistently.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02209",
+        "SRC02210"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Neither single- nor multi-point models are mandatory; later model simplification does not establish that the original multi-point model was explained adequately.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02209",
+        "SRC02210"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. No additional local unresolved limitation is recorded.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0326",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0327",
+    "core_question": {
+      "text": "What physical work does baseline sensing time represent, and under which conditions is it defined?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02211",
+        "SRC02212",
+        "SRC02213",
+        "SRC02214"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A predefined baseline duration and success probability jointly determine service time.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02211",
+        "SRC02212",
+        "SRC02213",
+        "SRC02214"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Connect baseline duration to standard acquisition or ideal sensing, required usable data, and actual or expected service duration.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02211",
+        "SRC02212",
+        "SRC02213",
+        "SRC02214"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A preset-parameter declaration and generic minimum sensing time did not identify the required acquisition work.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02211",
+        "SRC02212",
+        "SRC02213",
+        "SRC02214"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "At first use, define the basic acquisition operation, required output, and ideal or single-attempt conditions, then connect it to actual duration.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02211",
+        "SRC02212",
+        "SRC02213",
+        "SRC02214"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Imaging examples need not apply to nonimaging tasks; use an interpretable workload for the actual task.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02211",
+        "SRC02212",
+        "SRC02213",
+        "SRC02214"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. No additional local unresolved limitation is recorded.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0327",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0328",
+    "core_question": {
+      "text": "Why should lower sensing success probability increase expected acquisition cost for a fixed usable-output requirement, and do the formulas reflect that?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02215",
+        "SRC02216",
+        "SRC02217"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Spatial position changes success probability while service time or acquisition volume is optimized for fixed usable output.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02215",
+        "SRC02216",
+        "SRC02217"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Specify attempts or repeated acquisition so expected workload and time reflect lower success probability at constant required output.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02215",
+        "SRC02216",
+        "SRC02217"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Scaling time and output downward with success probability implied shorter service at less favorable sensing positions and omitted inverse-probability acquisition cost.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02215",
+        "SRC02216",
+        "SRC02217"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Under repeated attempts, define attempt duration, success events, and fixed output requirements; derive expected attempts and inverse-probability time, qualifying use of expected instead of random duration.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02215",
+        "SRC02216",
+        "SRC02217"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Inverse-probability scaling requires a suitable retry or throughput model; expected acquired volume is not automatically the amount requiring upload.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02215",
+        "SRC02216",
+        "SRC02217"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. The retry mechanism is not derived, and replacing random duration with its expectation is claimed without qualification.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0328",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0329",
+    "core_question": {
+      "text": "Does data volume denote fixed task output, maximum collectible data, or probability-adjusted production, and what determines it physically?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02212",
+        "SRC02217",
+        "SRC02218",
+        "SRC02219"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Usable-data requirements, acquired volume, and success probability together determine transmission load.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02212",
+        "SRC02217",
+        "SRC02218",
+        "SRC02219"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Distinguish required usable output from acquisition effort, tie bits to output specifications, and align upload load with that meaning.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02212",
+        "SRC02217",
+        "SRC02218",
+        "SRC02219"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A maximum-volume explanation remained physically unclear; after fixing volume, a generic accuracy-based explanation still failed to identify output-resolution requirements.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02212",
+        "SRC02217",
+        "SRC02218",
+        "SRC02219"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "For imaging, define required usable bits through output specifications; let probability affect acquisition effort rather than arbitrarily shrinking task output, or justify a maximum-volume model.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02212",
+        "SRC02217",
+        "SRC02218",
+        "SRC02219"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Variable compression, resolution, or quality can justify variable data volume, provided output specifications and bit counts are related explicitly.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02212",
+        "SRC02217",
+        "SRC02218",
+        "SRC02219"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. Expected total acquisition volume and final usable output are not explicitly distinguished, although the duration model already carries reduced-success cost.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0329",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0330",
+    "core_question": {
+      "text": "If variable flight altitude is readily supported, why study fixed altitude and what design relationships would the extension change?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02220"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "A geometric degree of freedom is fixed while a footnote claims easy extension to optimizing it.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02220"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Extension claims must match scope; explain effects on sensing, communication, motion constraints, and solution design if the extension is excluded.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02220"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "An unsupported easy-extension statement received no clear explanatory follow-up.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02220"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Explain the fixed-altitude purpose; remove unsupported ease claims or specify three-dimensional variables, constraints, and algorithm changes; include the extension if truly straightforward.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02220"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Fixed altitude was explicitly permissible; every trajectory study need not optimize altitude. Ambiguous wording within this discussion should not create a separate rate concern.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC02220"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit are recorded; independent complete semantic certification and transfer validation are not established. Why the claimed simple extension is omitted and what its route or limitations are remain unexplained.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0330",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  }
+]

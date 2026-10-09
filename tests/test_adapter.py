@@ -13,6 +13,9 @@ class Adapter(unittest.TestCase):
  def setUp(self):
   self.fixture=t.Pipeline();self.fixture.setUp();self.run=self.fixture.run
   self.settings={'enabled':True,'model':'synthetic-model','context_window':10000,'max_output_tokens':1000,'safety_margin_tokens':100}
+  self.settings.update(reasoning_effort='xhigh', settings_authorization={
+   'authorized_by':'user','user_statement':'Synthetic fixture: explicitly use synthetic-model, xhigh and Standard.',
+   'model':'synthetic-model','reasoning_effort':'xhigh','service_tier':'default'})
   self.project={'model_calls_enabled':True};self.calls=[]
  def tearDown(self):self.fixture.tearDown()
  def fake(self,path,payload):
@@ -45,6 +48,28 @@ class Adapter(unittest.TestCase):
  def test_incomplete_provider_not_accepted(self):
   def incomplete(path,payload):return {'input_tokens':100} if path.endswith('input_tokens') else {'status':'incomplete','output':[]}
   with self.assertRaisesRegex(ValueError,'incomplete'):a.run_one(self.run,self.settings,project=self.project,sender=incomplete)
+  self.assertEqual(t.m.read(self.run/'state.json')['completed'],[])
+ def test_fast_without_explicit_extra_usage_stops_before_preflight(self):
+  self.settings['service_tier']='fast'
+  with self.assertRaisesRegex(ValueError,'service_tier'):
+   a.run_one(self.run,self.settings,project=self.project,sender=self.fake)
+  self.assertEqual(self.calls,[])
+ def test_returned_effort_change_is_not_accepted_or_retried(self):
+  def changed(path,payload):
+   response=self.fake(path,payload)
+   if path.endswith('/responses'):response['reasoning']={'effort':'high'}
+   return response
+  with self.assertRaisesRegex(ValueError,'unapproved reasoning effort'):
+   a.run_one(self.run,self.settings,project=self.project,sender=changed)
+  self.assertEqual(len(self.calls),2)
+  self.assertEqual(t.m.read(self.run/'state.json')['completed'],[])
+ def test_returned_fast_for_standard_is_not_accepted(self):
+  def changed(path,payload):
+   response=self.fake(path,payload)
+   if path.endswith('/responses'):response['service_tier']='priority'
+   return response
+  with self.assertRaisesRegex(ValueError,'unapproved increased-usage tier'):
+   a.run_one(self.run,self.settings,project=self.project,sender=changed)
   self.assertEqual(t.m.read(self.run/'state.json')['completed'],[])
 
 if __name__=='__main__':unittest.main(verbosity=2)

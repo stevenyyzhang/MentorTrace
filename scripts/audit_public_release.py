@@ -63,7 +63,13 @@ def audit(root=ROOT, deny_terms=()):
                 inspect(value)
         inventory.append({'path': rel, 'bytes': path.stat().st_size,
                           'sha256': hashlib.sha256(path.read_bytes()).hexdigest()})
-    for folder in ['corpus/advisor-concerns-v1', 'corpus/published-cases-v1']:
+    folders = ['corpus/advisor-concerns-v1', 'corpus/published-cases-v1']
+    corpus_root = root / 'corpus'
+    if corpus_root.is_dir():
+        folders += sorted('corpus/' + p.name for p in corpus_root.iterdir()
+                          if p.is_dir() and re.fullmatch(r'advisor-concerns-v[0-9]+', p.name)
+                          and 'corpus/' + p.name not in folders)
+    for folder in folders:
         package = root / folder
         if not (package / 'FREEZE.json').exists():
             findings.append({'file': folder, 'rule': 'missing_frozen_corpus'})
@@ -77,7 +83,7 @@ def audit(root=ROOT, deny_terms=()):
             target = (package / rel).resolve()
             if not target.is_relative_to(package.resolve()) or not target.is_file() or hashlib.sha256(target.read_bytes()).hexdigest() != digest:
                 findings.append({'file': folder, 'rule': 'freeze_hash_mismatch'})
-    return {'version': '1.0.0', 'status': 'pass' if not findings else 'fail',
+    return {'version': (root/'VERSION').read_text(encoding='utf-8').strip() if (root/'VERSION').is_file() else 'not_declared', 'status': 'pass' if not findings else 'fail',
             'scanned_files': len(inventory), 'corpus_json_files': corpus_files,
             'findings': findings, 'inventory': inventory,
             'limits': 'Automated rules complement semantic abstraction review; they do not certify legal rights or diagnostic equivalence.'}

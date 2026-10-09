@@ -1,0 +1,2838 @@
+[
+  {
+    "id": "C0241",
+    "core_question": {
+      "text": "Do candidate counts exclude coincident solutions and enforce physical feasibility?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01709",
+        "SRC01720",
+        "SRC01721",
+        "SRC01722",
+        "SRC01723",
+        "SRC01724",
+        "SRC01725",
+        "SRC01710",
+        "SRC01711",
+        "SRC01712",
+        "SRC01713",
+        "SRC01714",
+        "SRC01715",
+        "SRC01706",
+        "SRC01716",
+        "SRC01707",
+        "SRC01717",
+        "SRC01708",
+        "SRC01718",
+        "SRC01719",
+        "SRC01726",
+        "SRC01727",
+        "SRC01728",
+        "SRC01729"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check whether nominally different constructions coincide or cease to be realizable.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01709",
+        "SRC01720",
+        "SRC01721",
+        "SRC01722",
+        "SRC01723",
+        "SRC01724",
+        "SRC01725",
+        "SRC01710",
+        "SRC01711",
+        "SRC01712",
+        "SRC01713",
+        "SRC01714",
+        "SRC01715",
+        "SRC01706",
+        "SRC01716",
+        "SRC01707",
+        "SRC01717",
+        "SRC01708",
+        "SRC01718",
+        "SRC01719",
+        "SRC01726",
+        "SRC01727",
+        "SRC01728",
+        "SRC01729"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Candidate transformations, physical realization, distinct values, degenerate merging, and actual solution count.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01709",
+        "SRC01720",
+        "SRC01721",
+        "SRC01722",
+        "SRC01723",
+        "SRC01724",
+        "SRC01725",
+        "SRC01710",
+        "SRC01711",
+        "SRC01712",
+        "SRC01713",
+        "SRC01714",
+        "SRC01715",
+        "SRC01706",
+        "SRC01716",
+        "SRC01707",
+        "SRC01717",
+        "SRC01708",
+        "SRC01718",
+        "SRC01719",
+        "SRC01726",
+        "SRC01727",
+        "SRC01728",
+        "SRC01729"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Counting groups or transformations did not resolve coincident angles or insufficient array space.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01709",
+        "SRC01720",
+        "SRC01721",
+        "SRC01722",
+        "SRC01723",
+        "SRC01724",
+        "SRC01725",
+        "SRC01710",
+        "SRC01711",
+        "SRC01712",
+        "SRC01713",
+        "SRC01714",
+        "SRC01715",
+        "SRC01706",
+        "SRC01716",
+        "SRC01707",
+        "SRC01717",
+        "SRC01708",
+        "SRC01718",
+        "SRC01719",
+        "SRC01726",
+        "SRC01727",
+        "SRC01728",
+        "SRC01729"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "List realizable candidates, distinctness conditions, degenerate cases, and array-size requirements; distinguish lower bounds from exact counts.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01709",
+        "SRC01720",
+        "SRC01721",
+        "SRC01722",
+        "SRC01723",
+        "SRC01724",
+        "SRC01725",
+        "SRC01710",
+        "SRC01711",
+        "SRC01712",
+        "SRC01713",
+        "SRC01714",
+        "SRC01715",
+        "SRC01706",
+        "SRC01716",
+        "SRC01707",
+        "SRC01717",
+        "SRC01708",
+        "SRC01718",
+        "SRC01719",
+        "SRC01726",
+        "SRC01727",
+        "SRC01728",
+        "SRC01729"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "At least eight is not exactly eight; a nominal eight-way construction need not yield eight distinct feasible angles in every case.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01709",
+        "SRC01720",
+        "SRC01721",
+        "SRC01722",
+        "SRC01723",
+        "SRC01724",
+        "SRC01725",
+        "SRC01710",
+        "SRC01711",
+        "SRC01712",
+        "SRC01713",
+        "SRC01714",
+        "SRC01715",
+        "SRC01706",
+        "SRC01716",
+        "SRC01707",
+        "SRC01717",
+        "SRC01708",
+        "SRC01718",
+        "SRC01719",
+        "SRC01726",
+        "SRC01727",
+        "SRC01728",
+        "SRC01729"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local revision relationships and selected visual evidence, including strategy and control-experiment figures, were checked. Applicability boundaries remain analytical judgments; full mathematics, citations, and experimental data were not certified. Silence does not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0241",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0242",
+    "core_question": {
+      "text": "Do privacy alternatives remain feasible under every publicly known design restriction?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01730",
+        "SRC01731",
+        "SRC01732",
+        "SRC01733",
+        "SRC01734",
+        "SRC01735",
+        "SRC01736",
+        "SRC01737",
+        "SRC01738",
+        "SRC01739",
+        "SRC01740",
+        "SRC01741",
+        "SRC01742",
+        "SRC01743",
+        "SRC01744",
+        "SRC01745",
+        "SRC01746",
+        "SRC01747",
+        "SRC01725",
+        "SRC01748"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check whether strengthening a method narrows its public strategy set and thereby removes counted adversarial candidates.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01730",
+        "SRC01731",
+        "SRC01732",
+        "SRC01733",
+        "SRC01734",
+        "SRC01735",
+        "SRC01736",
+        "SRC01737",
+        "SRC01738",
+        "SRC01739",
+        "SRC01740",
+        "SRC01741",
+        "SRC01742",
+        "SRC01743",
+        "SRC01744",
+        "SRC01745",
+        "SRC01746",
+        "SRC01747",
+        "SRC01725",
+        "SRC01748"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Public subset, true strategy, identical-observation alternative, membership in that subset, and coverage across angles.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01730",
+        "SRC01731",
+        "SRC01732",
+        "SRC01733",
+        "SRC01734",
+        "SRC01735",
+        "SRC01736",
+        "SRC01737",
+        "SRC01738",
+        "SRC01739",
+        "SRC01740",
+        "SRC01741",
+        "SRC01742",
+        "SRC01743",
+        "SRC01744",
+        "SRC01745",
+        "SRC01746",
+        "SRC01747",
+        "SRC01725",
+        "SRC01748"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Enhanced definitions and recursion appeared before basic candidates, preventing verification of information consistency.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01730",
+        "SRC01731",
+        "SRC01732",
+        "SRC01733",
+        "SRC01734",
+        "SRC01735",
+        "SRC01736",
+        "SRC01737",
+        "SRC01738",
+        "SRC01739",
+        "SRC01740",
+        "SRC01741",
+        "SRC01742",
+        "SRC01743",
+        "SRC01744",
+        "SRC01745",
+        "SRC01746",
+        "SRC01747",
+        "SRC01725",
+        "SRC01748"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Require each alternative to match the observation and all public restrictions; explain why constructions remain in the announced set.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01730",
+        "SRC01731",
+        "SRC01732",
+        "SRC01733",
+        "SRC01734",
+        "SRC01735",
+        "SRC01736",
+        "SRC01737",
+        "SRC01738",
+        "SRC01739",
+        "SRC01740",
+        "SRC01741",
+        "SRC01742",
+        "SRC01743",
+        "SRC01744",
+        "SRC01745",
+        "SRC01746",
+        "SRC01747",
+        "SRC01725",
+        "SRC01748"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "More strategies do not automatically imply more distinct angles; separate within-group, cross-group, and degenerate counts.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01730",
+        "SRC01731",
+        "SRC01732",
+        "SRC01733",
+        "SRC01734",
+        "SRC01735",
+        "SRC01736",
+        "SRC01737",
+        "SRC01738",
+        "SRC01739",
+        "SRC01740",
+        "SRC01741",
+        "SRC01742",
+        "SRC01743",
+        "SRC01744",
+        "SRC01745",
+        "SRC01746",
+        "SRC01747",
+        "SRC01725",
+        "SRC01748"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local revision relationships and selected visual evidence, including strategy and control-experiment figures, were checked. Applicability boundaries remain analytical judgments; full mathematics, citations, and experimental data were not certified. Silence does not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0242",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0243",
+    "core_question": {
+      "text": "Is the unit used to measure enhancement defined before its claimed effect?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01734",
+        "SRC01735",
+        "SRC01736",
+        "SRC01737",
+        "SRC01738",
+        "SRC01740",
+        "SRC01730",
+        "SRC01741",
+        "SRC01742",
+        "SRC01731",
+        "SRC01732",
+        "SRC01743",
+        "SRC01733",
+        "SRC01744",
+        "SRC01745",
+        "SRC01746",
+        "SRC01747",
+        "SRC01725",
+        "SRC01748"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check metrics or improvement levels based on not-yet-defined candidate structures.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01734",
+        "SRC01735",
+        "SRC01736",
+        "SRC01737",
+        "SRC01738",
+        "SRC01740",
+        "SRC01730",
+        "SRC01741",
+        "SRC01742",
+        "SRC01731",
+        "SRC01732",
+        "SRC01743",
+        "SRC01733",
+        "SRC01744",
+        "SRC01745",
+        "SRC01746",
+        "SRC01747",
+        "SRC01725",
+        "SRC01748"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Basic candidates, strategy groups, counting unit, enhancement baseline, and construction output.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01734",
+        "SRC01735",
+        "SRC01736",
+        "SRC01737",
+        "SRC01738",
+        "SRC01740",
+        "SRC01730",
+        "SRC01741",
+        "SRC01742",
+        "SRC01731",
+        "SRC01732",
+        "SRC01743",
+        "SRC01733",
+        "SRC01744",
+        "SRC01745",
+        "SRC01746",
+        "SRC01747",
+        "SRC01725",
+        "SRC01748"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "An undefined group-count parameter was converted directly into a multiple of distinct angles.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01734",
+        "SRC01735",
+        "SRC01736",
+        "SRC01737",
+        "SRC01738",
+        "SRC01740",
+        "SRC01730",
+        "SRC01741",
+        "SRC01742",
+        "SRC01731",
+        "SRC01732",
+        "SRC01743",
+        "SRC01733",
+        "SRC01744",
+        "SRC01745",
+        "SRC01746",
+        "SRC01747",
+        "SRC01725",
+        "SRC01748"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Define the counting unit, internal solution counts and coincidences, then connect enhancement to actual ambiguity.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01734",
+        "SRC01735",
+        "SRC01736",
+        "SRC01737",
+        "SRC01738",
+        "SRC01740",
+        "SRC01730",
+        "SRC01741",
+        "SRC01742",
+        "SRC01731",
+        "SRC01732",
+        "SRC01743",
+        "SRC01733",
+        "SRC01744",
+        "SRC01745",
+        "SRC01746",
+        "SRC01747",
+        "SRC01725",
+        "SRC01748"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Moving a definition from an appendix may be insufficient; explain its relationship to the effect users care about.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01734",
+        "SRC01735",
+        "SRC01736",
+        "SRC01737",
+        "SRC01738",
+        "SRC01740",
+        "SRC01730",
+        "SRC01741",
+        "SRC01742",
+        "SRC01731",
+        "SRC01732",
+        "SRC01743",
+        "SRC01733",
+        "SRC01744",
+        "SRC01745",
+        "SRC01746",
+        "SRC01747",
+        "SRC01725",
+        "SRC01748"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local revision relationships and selected visual evidence, including strategy and control-experiment figures, were checked. Applicability boundaries remain analytical judgments; full mathematics, citations, and experimental data were not certified. Silence does not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0243",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0244",
+    "core_question": {
+      "text": "What genuine new difficulty justifies a large-scale or complex-setting section?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01749",
+        "SRC01750"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check whether increased scale changes computation, information, performance, or feasibility.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01749",
+        "SRC01750"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Original coverage, changed parameters, resulting bottleneck, and the added result or method.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01749",
+        "SRC01750"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A costly enumeration claim followed by compressed sufficient conditions and utilization plots did not explain how the scale obstacle was resolved.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01749",
+        "SRC01750"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State the old bottleneck, altered search space, applicability, and complexity evidence, or narrow the section's claim.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01749",
+        "SRC01750"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Scale analysis need not have its own section; deleting a section does not remove the need for complexity evidence.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01749",
+        "SRC01750"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local revision relationships and selected visual evidence, including strategy and control-experiment figures, were checked. Applicability boundaries remain analytical judgments; full mathematics, citations, and experimental data were not certified. Silence does not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0244",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0245",
+    "core_question": {
+      "text": "Do experiments establish the basic promise before isolating enhancement gains?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01751"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check evidence for basic guarantees when only enhanced or complicated cases are shown.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01751"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Basic theoretical promise, enumerable small example, noisy performance, design-size changes, and controlled enhancement comparison.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01751"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Adding a basic-section heading or reusing an old example did not supply a matched comparison with enhancement.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01751"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Show basic outputs and enumerable actual candidates first, then compare enhancements under controlled dimensions and separate noiseless and noisy evidence.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01751"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A possibly mistaken comment does not establish a noiseless-only requirement; extensive sampling cannot replace a full-domain theorem.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01751"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local revision relationships and selected visual evidence, including strategy and control-experiment figures, were checked. Applicability boundaries remain analytical judgments; full mathematics, citations, and experimental data were not certified. Silence does not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0245",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0246",
+    "core_question": {
+      "text": "Does the new privacy mechanism follow from the adversary's observation chain and controllable information?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01752",
+        "SRC01753",
+        "SRC01754",
+        "SRC01755",
+        "SRC01756",
+        "SRC01757",
+        "SRC01758",
+        "SRC01759",
+        "SRC01562",
+        "SRC01760",
+        "SRC01761",
+        "SRC01553",
+        "SRC01762",
+        "SRC01763",
+        "SRC01764",
+        "SRC01765",
+        "SRC01766",
+        "SRC01767",
+        "SRC01768",
+        "SRC01527",
+        "SRC01769",
+        "SRC01770",
+        "SRC01771",
+        "SRC01772",
+        "SRC01773",
+        "SRC01774",
+        "SRC01775",
+        "SRC01776",
+        "SRC01777",
+        "SRC01778",
+        "SRC01779",
+        "SRC01780",
+        "SRC01781",
+        "SRC01782",
+        "SRC01783",
+        "SRC01784",
+        "SRC01785",
+        "SRC01786",
+        "SRC01787",
+        "SRC01788"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Trace what existing protections change and which remaining freedom supports the new objective.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01752",
+        "SRC01753",
+        "SRC01754",
+        "SRC01755",
+        "SRC01756",
+        "SRC01757",
+        "SRC01758",
+        "SRC01759",
+        "SRC01562",
+        "SRC01760",
+        "SRC01761",
+        "SRC01553",
+        "SRC01762",
+        "SRC01763",
+        "SRC01764",
+        "SRC01765",
+        "SRC01766",
+        "SRC01767",
+        "SRC01768",
+        "SRC01527",
+        "SRC01769",
+        "SRC01770",
+        "SRC01771",
+        "SRC01772",
+        "SRC01773",
+        "SRC01774",
+        "SRC01775",
+        "SRC01776",
+        "SRC01777",
+        "SRC01778",
+        "SRC01779",
+        "SRC01780",
+        "SRC01781",
+        "SRC01782",
+        "SRC01783",
+        "SRC01784",
+        "SRC01785",
+        "SRC01786",
+        "SRC01787",
+        "SRC01788"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Protected physical attribute, signal-based inference, prior protection point, controllable pilot or spatial mapping, and proposed mechanism.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01752",
+        "SRC01753",
+        "SRC01754",
+        "SRC01755",
+        "SRC01756",
+        "SRC01757",
+        "SRC01758",
+        "SRC01759",
+        "SRC01562",
+        "SRC01760",
+        "SRC01761",
+        "SRC01553",
+        "SRC01762",
+        "SRC01763",
+        "SRC01764",
+        "SRC01765",
+        "SRC01766",
+        "SRC01767",
+        "SRC01768",
+        "SRC01527",
+        "SRC01769",
+        "SRC01770",
+        "SRC01771",
+        "SRC01772",
+        "SRC01773",
+        "SRC01774",
+        "SRC01775",
+        "SRC01776",
+        "SRC01777",
+        "SRC01778",
+        "SRC01779",
+        "SRC01780",
+        "SRC01781",
+        "SRC01782",
+        "SRC01783",
+        "SRC01784",
+        "SRC01785",
+        "SRC01786",
+        "SRC01787",
+        "SRC01788"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "General statements about unencryptable physical information did not connect attack inputs with the proposed hidden quantity.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01752",
+        "SRC01753",
+        "SRC01754",
+        "SRC01755",
+        "SRC01756",
+        "SRC01757",
+        "SRC01758",
+        "SRC01759",
+        "SRC01562",
+        "SRC01760",
+        "SRC01761",
+        "SRC01553",
+        "SRC01762",
+        "SRC01763",
+        "SRC01764",
+        "SRC01765",
+        "SRC01766",
+        "SRC01767",
+        "SRC01768",
+        "SRC01527",
+        "SRC01769",
+        "SRC01770",
+        "SRC01771",
+        "SRC01772",
+        "SRC01773",
+        "SRC01774",
+        "SRC01775",
+        "SRC01776",
+        "SRC01777",
+        "SRC01778",
+        "SRC01779",
+        "SRC01780",
+        "SRC01781",
+        "SRC01782",
+        "SRC01783",
+        "SRC01784",
+        "SRC01785",
+        "SRC01786",
+        "SRC01787",
+        "SRC01788"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Reconstruct observation-to-parameter inference, identify what can change and why, and verify external standards and prior work separately.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01752",
+        "SRC01753",
+        "SRC01754",
+        "SRC01755",
+        "SRC01756",
+        "SRC01757",
+        "SRC01758",
+        "SRC01759",
+        "SRC01562",
+        "SRC01760",
+        "SRC01761",
+        "SRC01553",
+        "SRC01762",
+        "SRC01763",
+        "SRC01764",
+        "SRC01765",
+        "SRC01766",
+        "SRC01767",
+        "SRC01768",
+        "SRC01527",
+        "SRC01769",
+        "SRC01770",
+        "SRC01771",
+        "SRC01772",
+        "SRC01773",
+        "SRC01774",
+        "SRC01775",
+        "SRC01776",
+        "SRC01777",
+        "SRC01778",
+        "SRC01779",
+        "SRC01780",
+        "SRC01781",
+        "SRC01782",
+        "SRC01783",
+        "SRC01784",
+        "SRC01785",
+        "SRC01786",
+        "SRC01787",
+        "SRC01788"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Not every sensing-privacy method must conceal all channel information; requirements depend on the observation and threat model.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01752",
+        "SRC01753",
+        "SRC01754",
+        "SRC01755",
+        "SRC01756",
+        "SRC01757",
+        "SRC01758",
+        "SRC01759",
+        "SRC01562",
+        "SRC01760",
+        "SRC01761",
+        "SRC01553",
+        "SRC01762",
+        "SRC01763",
+        "SRC01764",
+        "SRC01765",
+        "SRC01766",
+        "SRC01767",
+        "SRC01768",
+        "SRC01527",
+        "SRC01769",
+        "SRC01770",
+        "SRC01771",
+        "SRC01772",
+        "SRC01773",
+        "SRC01774",
+        "SRC01775",
+        "SRC01776",
+        "SRC01777",
+        "SRC01778",
+        "SRC01779",
+        "SRC01780",
+        "SRC01781",
+        "SRC01782",
+        "SRC01783",
+        "SRC01784",
+        "SRC01785",
+        "SRC01786",
+        "SRC01787",
+        "SRC01788"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local revision relationships and selected visual evidence, including strategy and control-experiment figures, were checked. Applicability boundaries remain analytical judgments; full mathematics, citations, and experimental data were not certified. Silence does not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0246",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0247",
+    "core_question": {
+      "text": "Is the role of observation-length assumptions explained when the estimation task appears?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01789",
+        "SRC01596"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check dimension or sample assumptions that are stated remotely from the inputs they constrain.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01789",
+        "SRC01596"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Observation length, unknown dimension, required estimation conditions, endpoint capabilities, and placement of assumptions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01789",
+        "SRC01596"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A dimension condition appeared only in theoretical text or a footnote, leaving its estimation role unexplained.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01789",
+        "SRC01596"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Explain the condition near input definitions and separately check rank, noise, and identifiability.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01789",
+        "SRC01596"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Observation length at least equal to unknown dimension is only a dimension relation, not proof of rank or accuracy; an informal strict inequality is not automatically the correct threshold.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01789",
+        "SRC01596"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local revision relationships and selected visual evidence, including strategy and control-experiment figures, were checked. Applicability boundaries remain analytical judgments; full mathematics, citations, and experimental data were not certified. Silence does not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0247",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0248",
+    "core_question": {
+      "text": "Does a simplified propagation model explicitly limit the conclusions?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01790",
+        "SRC01791"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check omitted physical mechanisms against stated scope.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01790",
+        "SRC01791"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Research objective, propagation simplification, observation model, and conclusion coverage.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01790",
+        "SRC01791"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A line-of-sight formula appeared without stating that other paths were excluded to focus the analysis.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01790",
+        "SRC01791"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State retained paths and the reason for simplification before the model, and keep conclusions within that scope.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01790",
+        "SRC01791"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Making an assumption explicit does not require solving multipath or establish that the simplification holds everywhere.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01790",
+        "SRC01791"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local revision relationships and selected visual evidence, including strategy and control-experiment figures, were checked. Applicability boundaries remain analytical judgments; full mathematics, citations, and experimental data were not certified. Silence does not establish acceptance.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0248",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0249",
+    "core_question": {
+      "text": "Who combines which observations to produce a cooperation benefit?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01792",
+        "SRC01793",
+        "SRC01794",
+        "SRC01795"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "For fusion or cooperation claims, identify information providers, aggregation location, and supported inference.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01792",
+        "SRC01793",
+        "SRC01794",
+        "SRC01795"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Echoes from multiple sensing nodes, central collection, joint localization, and the actual processing entity.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01792",
+        "SRC01793",
+        "SRC01794",
+        "SRC01795"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Attributing benefit merely to node cooperation did not identify the information flow.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01792",
+        "SRC01795"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Explain observation sources, fusion node, and joint task in motivation consistently with the model.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01792",
+        "SRC01793",
+        "SRC01794",
+        "SRC01795"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Every mention of cooperation need not repeat the workflow; cooperation does not universally guarantee a gain.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01792",
+        "SRC01793",
+        "SRC01794",
+        "SRC01795"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit were performed; complete independent semantic certification was not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0249",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0250",
+    "core_question": {
+      "text": "Why does limited link capacity make compression a design variable alongside transmission?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01796",
+        "SRC01797",
+        "SRC01798",
+        "SRC01799",
+        "SRC01800",
+        "SRC01801",
+        "SRC01802",
+        "SRC01803",
+        "SRC01804",
+        "SRC01805",
+        "SRC01806"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check joint signal-generation and information-transport design in resource-limited distributed observation systems.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01796",
+        "SRC01797",
+        "SRC01798",
+        "SRC01799",
+        "SRC01800",
+        "SRC01801",
+        "SRC01802",
+        "SRC01803",
+        "SRC01804",
+        "SRC01805",
+        "SRC01806"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Capacity limit, compressed bits, compression noise in central observations, strategy-dependent distortion, and joint design variables.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01796",
+        "SRC01797",
+        "SRC01798",
+        "SRC01799",
+        "SRC01800",
+        "SRC01801",
+        "SRC01802",
+        "SRC01803",
+        "SRC01804",
+        "SRC01805",
+        "SRC01806"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Listing transmission and aggregation effects or ending with nonapplicability of prior work did not connect missing capacity constraints to joint design.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01798",
+        "SRC01800",
+        "SRC01805"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Connect resource limits, distortion, variables, and objective using the current model, and align literature limitations with that problem.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01796",
+        "SRC01797",
+        "SRC01798",
+        "SRC01799",
+        "SRC01800",
+        "SRC01801",
+        "SRC01802",
+        "SRC01803",
+        "SRC01804",
+        "SRC01805",
+        "SRC01806"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Not every constrained system requires joint optimization; motivation does not prove global optimality or guaranteed gains.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01796",
+        "SRC01797",
+        "SRC01798",
+        "SRC01799",
+        "SRC01800",
+        "SRC01801",
+        "SRC01802",
+        "SRC01803",
+        "SRC01804",
+        "SRC01805",
+        "SRC01806"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit were performed; complete independent semantic certification was not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0250",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0251",
+    "core_question": {
+      "text": "Does a performance-bound review cover relevant bounds and optimization results before defining their limitations?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01807",
+        "SRC01808",
+        "SRC01809",
+        "SRC01810",
+        "SRC01811",
+        "SRC01812",
+        "SRC01813",
+        "SRC01814",
+        "SRC01815",
+        "SRC01816",
+        "SRC01817",
+        "SRC01818"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "When bounds are central, check representative results, assumptions, limitations, and the claimed gap.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01807",
+        "SRC01808",
+        "SRC01809",
+        "SRC01810",
+        "SRC01811",
+        "SRC01812",
+        "SRC01813",
+        "SRC01814",
+        "SRC01815",
+        "SRC01816",
+        "SRC01817",
+        "SRC01818"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Contribution type, comparable prior results, their conditions, and the new gap.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01807",
+        "SRC01808",
+        "SRC01809",
+        "SRC01810",
+        "SRC01811",
+        "SRC01812",
+        "SRC01813",
+        "SRC01814",
+        "SRC01815",
+        "SRC01816",
+        "SRC01817",
+        "SRC01818"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Adding bound citations while retaining lengthy algorithm taxonomy and undescribed references did not establish the relevant comparison.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01809",
+        "SRC01810",
+        "SRC01811"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Organize around the research objective; describe each relevant result's target, metric, and constraints, prioritizing direct comparisons when space is limited.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01807",
+        "SRC01808",
+        "SRC01809",
+        "SRC01810",
+        "SRC01811",
+        "SRC01812",
+        "SRC01813",
+        "SRC01814",
+        "SRC01815",
+        "SRC01816",
+        "SRC01817",
+        "SRC01818"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Algorithm reviews remain appropriate when algorithms are actual comparison objects; omission for space does not imply invalidity.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01807",
+        "SRC01808",
+        "SRC01809",
+        "SRC01810",
+        "SRC01811",
+        "SRC01812",
+        "SRC01813",
+        "SRC01814",
+        "SRC01815",
+        "SRC01816",
+        "SRC01817",
+        "SRC01818"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit were performed; complete independent semantic certification was not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0251",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0252",
+    "core_question": {
+      "text": "What observation and design changes follow from multiple simultaneous transmitters?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01807",
+        "SRC01819",
+        "SRC01820",
+        "SRC01821",
+        "SRC01822",
+        "SRC01823",
+        "SRC01824",
+        "SRC01825",
+        "SRC01826",
+        "SRC01827"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check comparisons between one transmitter with multiple receivers and multiple simultaneous sensing transmitters.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01807",
+        "SRC01819",
+        "SRC01820",
+        "SRC01821",
+        "SRC01822",
+        "SRC01823",
+        "SRC01824",
+        "SRC01825",
+        "SRC01826",
+        "SRC01827"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Transmitter and receiver roles, cross-node echo terms, bound formulation, and coupled transmission-compression variables.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01807",
+        "SRC01819",
+        "SRC01820",
+        "SRC01821",
+        "SRC01822",
+        "SRC01823",
+        "SRC01824",
+        "SRC01825",
+        "SRC01826",
+        "SRC01827"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Saying cooperation was not fully exploited, or merely mentioning cross-node echoes, left architectural differences unclear.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01822",
+        "SRC01824",
+        "SRC01825",
+        "SRC01827"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Verify prior roles and trace added echo terms into the performance bound and joint variables; narrow unsupported priority claims.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01807",
+        "SRC01819",
+        "SRC01820",
+        "SRC01821",
+        "SRC01822",
+        "SRC01823",
+        "SRC01824",
+        "SRC01825",
+        "SRC01826",
+        "SRC01827"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Node count alone is not fundamental novelty; corresponding observation or optimization changes are needed, and cited sources remain independently unverified.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01807",
+        "SRC01819",
+        "SRC01820",
+        "SRC01821",
+        "SRC01822",
+        "SRC01823",
+        "SRC01824",
+        "SRC01825",
+        "SRC01826",
+        "SRC01827"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit were performed; complete independent semantic certification was not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0252",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0253",
+    "core_question": {
+      "text": "Does an array extension distinguish added information from added design freedom?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01807",
+        "SRC01823",
+        "SRC01824",
+        "SRC01825",
+        "SRC01826",
+        "SRC01827",
+        "SRC01828"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check scalar-to-array generalization involving spatial transmission and compression.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01807",
+        "SRC01823",
+        "SRC01824",
+        "SRC01825",
+        "SRC01826",
+        "SRC01827",
+        "SRC01828"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Array reception and angular information, spatial transmit controls, compression directions, and joint sensing performance.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01807",
+        "SRC01823",
+        "SRC01824",
+        "SRC01825",
+        "SRC01826",
+        "SRC01827",
+        "SRC01828"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Emphasizing angles or multiple targets alone left the separate receive-information and transmit-design changes unclear.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01807",
+        "SRC01827"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Explain new observables and controllable spatial variables separately, checking them against the closest prior model.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01807",
+        "SRC01823",
+        "SRC01824",
+        "SRC01825",
+        "SRC01826",
+        "SRC01827",
+        "SRC01828"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Not every array extension is a major contribution, and systems without spatial design variables need not use this rationale.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01807",
+        "SRC01823",
+        "SRC01824",
+        "SRC01825",
+        "SRC01826",
+        "SRC01827",
+        "SRC01828"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit were performed; complete independent semantic certification was not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0253",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0254",
+    "core_question": {
+      "text": "Are prior target counts and detection-versus-localization tasks correctly assigned to each study?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01807",
+        "SRC01829",
+        "SRC01830",
+        "SRC01831",
+        "SRC01832",
+        "SRC01823",
+        "SRC01824",
+        "SRC01825",
+        "SRC01826"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Verify gaps attributed to changes in target number or inference task.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01807",
+        "SRC01829",
+        "SRC01830",
+        "SRC01831",
+        "SRC01832",
+        "SRC01823",
+        "SRC01824",
+        "SRC01825",
+        "SRC01826"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Each reference's target count and task, current localization parameters and bound, and valid scope of the gap.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01807",
+        "SRC01829",
+        "SRC01830",
+        "SRC01831",
+        "SRC01832",
+        "SRC01823",
+        "SRC01824",
+        "SRC01825",
+        "SRC01826"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Conflicting source descriptions were collapsed into an unsupported claim that all compared studies used a single target.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01830",
+        "SRC01832",
+        "SRC01825"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Read each original study, describe its task and count separately, and combine verified differences with observation or design changes when needed.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01807",
+        "SRC01829",
+        "SRC01830",
+        "SRC01831",
+        "SRC01832",
+        "SRC01823",
+        "SRC01824",
+        "SRC01825",
+        "SRC01826"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Conflicting feedback cannot establish the reference's actual scope; an unexplained deletion does not resolve that uncertainty.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01807",
+        "SRC01829",
+        "SRC01830",
+        "SRC01831",
+        "SRC01832",
+        "SRC01823",
+        "SRC01824",
+        "SRC01825",
+        "SRC01826"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit were performed; complete independent semantic certification was not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0254",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0255",
+    "core_question": {
+      "text": "Is the narrowband-versus-wideband localization comparison grounded in actual information mechanisms?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01825"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check array-angle localization compared with waveform-based wideband localization.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01825"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Prior bandwidth assumptions, current narrowband model, available localization information, and applicability.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01825"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A final comparison omitted bandwidth and mechanism differences between the current model and closest work.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01825"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Verify prior models and state both bandwidth assumptions and available information, explaining effects on derivation or design.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01825"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Not every localization paper needs this comparison; a numerical bandwidth value alone does not establish the model class.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01825"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit were performed; complete independent semantic certification was not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0255",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0256",
+    "core_question": {
+      "text": "Does comparison distinguish a shared capacity budget from separate node budgets?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01825"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check resource constraints before comparing distributed compression designs.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01825"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Shared capacity permitting redistribution, per-node limits, and their different feasible sets.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01825"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Generic references to limited capacity and bit allocation erased the budget-structure difference.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01825"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Verify prior constraints and compare budget structures and their implications for cross-node allocation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01825"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Separate budgets are not inherently superior and do not alone establish algorithm novelty; use each paper's actual structure.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01825"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit were performed; complete independent semantic certification was not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0256",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0257",
+    "core_question": {
+      "text": "Does a bound contribution specify its genuine extension rather than claim generic complexity?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01833",
+        "SRC01834",
+        "SRC01835",
+        "SRC01836",
+        "SRC01837",
+        "SRC01838"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check generalizations across nodes, targets, or random parameters.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01833",
+        "SRC01834",
+        "SRC01835",
+        "SRC01836",
+        "SRC01837",
+        "SRC01838"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Prior result's conditions, new estimation conditions, resulting bound scope, and actual derivational difficulty.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01833",
+        "SRC01834",
+        "SRC01835",
+        "SRC01836",
+        "SRC01837",
+        "SRC01838"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Calling a result a generalization or much more complicated did not clarify the extension.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01834",
+        "SRC01836"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State the target and relation to a classical baseline concisely, explaining actual new difficulties where appropriate.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01833",
+        "SRC01834",
+        "SRC01835",
+        "SRC01836",
+        "SRC01837",
+        "SRC01838"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Famous classical references can be appropriate in contributions; editorial advice does not establish a universal citation prohibition.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01833",
+        "SRC01834",
+        "SRC01835",
+        "SRC01836",
+        "SRC01837",
+        "SRC01838"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit were performed; complete independent semantic certification was not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0257",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0258",
+    "core_question": {
+      "text": "Does an algorithm contribution connect difficulty, blockwise mechanisms, and guarantee scope?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01839",
+        "SRC01840",
+        "SRC01841",
+        "SRC01842",
+        "SRC01843",
+        "SRC01844",
+        "SRC01845"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check contribution claims for coupled nonconvex optimization using alternating blocks and convex surrogates.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01839",
+        "SRC01840",
+        "SRC01841",
+        "SRC01842",
+        "SRC01843",
+        "SRC01844",
+        "SRC01845"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Coupled variables, fixing one block, surrogate treatment of the remaining block, and conditional local guarantees.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01839",
+        "SRC01840",
+        "SRC01841",
+        "SRC01842",
+        "SRC01843",
+        "SRC01844",
+        "SRC01845"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Method names and a claim of decoupling did not explain the actual block-specific optimization guarantee.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01841",
+        "SRC01845"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Connect each difficulty to its treatment and state only guarantees supported by the technical analysis.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01839",
+        "SRC01840",
+        "SRC01841",
+        "SRC01842",
+        "SRC01843",
+        "SRC01844",
+        "SRC01845"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Alternating blocks do not remove original coupling; local subproblem guarantees do not establish joint global optimality.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01839",
+        "SRC01840",
+        "SRC01841",
+        "SRC01842",
+        "SRC01843",
+        "SRC01844",
+        "SRC01845"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit were performed; complete independent semantic certification was not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0258",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0259",
+    "core_question": {
+      "text": "If numerical results are a separate contribution, is the claimed gain quantitative and meaningful?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01846",
+        "SRC01847"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check stand-alone numerical-contribution claims against relevant baselines and actual results.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01846",
+        "SRC01847"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Numerical claim, baseline matching the central hypothesis, conditions, and verifiable improvement.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01846",
+        "SRC01847"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Qualitative claims of large gains or near-realization omitted actual measured improvements.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01847"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Remove the separate numerical contribution or report a genuine, reproducible gain under a justified baseline and conditions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01846",
+        "SRC01847"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "An illustrative percentage is not a required outcome; not every validation must use a single-node comparison.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01846",
+        "SRC01847"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit were performed; complete independent semantic certification was not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0259",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0260",
+    "core_question": {
+      "text": "Are random and deterministic unknown parameters distinguished before expectations and bounds?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01848",
+        "SRC01849",
+        "SRC01850",
+        "SRC01851",
+        "SRC01852",
+        "SRC01853",
+        "SRC01854"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check probability assumptions when formulas average unknown parameters.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01848",
+        "SRC01849",
+        "SRC01850",
+        "SRC01851",
+        "SRC01852",
+        "SRC01853",
+        "SRC01854"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Parameter definitions and distributions, channel dependence, expectation variables, and bound formulation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01848",
+        "SRC01849",
+        "SRC01850",
+        "SRC01851",
+        "SRC01852",
+        "SRC01853",
+        "SRC01854"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Randomness assumptions existed but appeared after the first expectation formula.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01848"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Declare distributions and deterministic unknowns at first modeling use, consistently across summaries, rate formulas, and bounds.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01848",
+        "SRC01849",
+        "SRC01850",
+        "SRC01851",
+        "SRC01852",
+        "SRC01853",
+        "SRC01854"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Unknown does not mean random; clear forward references can suffice, and deterministic models need not invent priors.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01848",
+        "SRC01849",
+        "SRC01850",
+        "SRC01851",
+        "SRC01852",
+        "SRC01853",
+        "SRC01854"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit were performed; complete independent semantic certification was not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0260",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0261",
+    "core_question": {
+      "text": "Does a Fisher-information reparameterization identify changed and retained parameters?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01855"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check parameter vectors and Jacobians in information-bound transformations.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01855"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Original target coordinates, intermediate angles, retained attenuation parameters, and information-matrix mapping.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01855"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Definitions and formulas did not directly explain how the two vectors differed.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01855"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Identify replaced and retained components and align Jacobian dimensions with definitions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01855"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A prose explanation does not certify every Jacobian dimension; the concern does not necessarily require a new derivation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01855"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit were performed; complete independent semantic certification was not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0261",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0262",
+    "core_question": {
+      "text": "Do classical and prior-informed bounds use comparable parameter and randomness conditions?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01856",
+        "SRC01857",
+        "SRC01858",
+        "SRC01859",
+        "SRC01860",
+        "SRC01861",
+        "SRC01862"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check claims comparing classical bounds with bounds using known priors.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01856",
+        "SRC01857",
+        "SRC01858",
+        "SRC01859",
+        "SRC01860",
+        "SRC01861",
+        "SRC01862"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Deterministic unknown parameters, random parameters with distributions, estimation targets, and node assumptions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01856",
+        "SRC01857",
+        "SRC01858",
+        "SRC01859",
+        "SRC01860",
+        "SRC01861",
+        "SRC01862"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Angle-versus-position or single-versus-multiple-node comparisons omitted the deterministic-versus-random distinction.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01857",
+        "SRC01859",
+        "SRC01860",
+        "SRC01861"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Verify parameters, randomness, and prior assumptions in each reference, then describe extensions consistently.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01856",
+        "SRC01857",
+        "SRC01858",
+        "SRC01859",
+        "SRC01860",
+        "SRC01861",
+        "SRC01862"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "This is a verification requirement rather than independent literature certification; angle bounds and position bounds are not interchangeable.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01856",
+        "SRC01857",
+        "SRC01858",
+        "SRC01859",
+        "SRC01860",
+        "SRC01861",
+        "SRC01862"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit were performed; complete independent semantic certification was not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0262",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0263",
+    "core_question": {
+      "text": "Is a claimed higher-dimensional extension supported by definitions and transformation steps?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01863"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check brief remarks extending coordinates, parameters, or dimension.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01863"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "New geometric parameters, revised parameter vector and Jacobian, and resulting bound.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01863"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Introducing new symbols and calling an extension straightforward replaced the necessary explanation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01863"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Withdraw an unsupported extension or provide the added definitions and information transformation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01863"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "An unexpanded extension is not proof of impossibility; a lower-dimensional paper need not add a higher-dimensional analysis.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01863"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit were performed; complete independent semantic certification was not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0263",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0264",
+    "core_question": {
+      "text": "Can an expected surrogate bound be explained directly through pointwise bounds?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01864"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check whether elementary expected tangent bounds are unnecessarily presented as extra theorems.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01864"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Per-realization tangent upper bound, expectation under the same distribution, and expected-objective bound.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01864"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Additional formal results obscured the basic pointwise bound and preservation under expectation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01864"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State the pointwise bound, expectation monotonicity, expansion point, conditions, and final surrogate directly.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01864"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Genuine interchange-of-limit or convergence questions may still require independent results.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01864"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit were performed; complete independent semantic certification was not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0264",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0265",
+    "core_question": {
+      "text": "Is the feasible-set direction of surrogate constraints explicit?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01865",
+        "SRC01866"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check convex proxy constraints replacing nonconvex constraints.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01865",
+        "SRC01866"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Original function bounded by proxy, proxy below limit, and feasibility for the original subproblem.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01865",
+        "SRC01866"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A local inequality was not connected clearly to feasibility of the computed solution.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01866"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State the upper bound and resulting feasible-set inclusion while preserving all other constraints.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01865",
+        "SRC01866"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Conservative inner approximation does not enlarge the feasible set or prove global optimality.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01865",
+        "SRC01866"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit were performed; complete independent semantic certification was not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0265",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0266",
+    "core_question": {
+      "text": "What operations make a structure-based low-complexity method effective?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01867",
+        "SRC01868",
+        "SRC01869",
+        "SRC01870",
+        "SRC01871",
+        "SRC01872",
+        "SRC01873",
+        "SRC01874",
+        "SRC01875",
+        "SRC01876",
+        "SRC01877",
+        "SRC01878",
+        "SRC01879",
+        "SRC01880",
+        "SRC01881",
+        "SRC01882",
+        "SRC01883",
+        "SRC01884",
+        "SRC01885"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check estimation, transformation, reduced variables, and the search cost they replace.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01867",
+        "SRC01868",
+        "SRC01869",
+        "SRC01870",
+        "SRC01871",
+        "SRC01872",
+        "SRC01873",
+        "SRC01874",
+        "SRC01875",
+        "SRC01876",
+        "SRC01877",
+        "SRC01878",
+        "SRC01879",
+        "SRC01880",
+        "SRC01881",
+        "SRC01882",
+        "SRC01883",
+        "SRC01884",
+        "SRC01885"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Few effective quantization directions, costly full-dimensional search, reliable structural estimation, and compression-dimension reduction.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01867",
+        "SRC01868",
+        "SRC01869",
+        "SRC01870",
+        "SRC01871",
+        "SRC01872",
+        "SRC01873",
+        "SRC01874",
+        "SRC01875",
+        "SRC01876",
+        "SRC01877",
+        "SRC01878",
+        "SRC01879",
+        "SRC01880",
+        "SRC01881",
+        "SRC01882",
+        "SRC01883",
+        "SRC01884",
+        "SRC01885"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Motivation facts and technical details existed, but summaries still called the method efficient without its actual operation chain.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01869",
+        "SRC01878",
+        "SRC01884"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Explain structural evidence, estimation conditions, transformation, and variable reduction; retain this chain concisely in summaries and support it numerically.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01867",
+        "SRC01868",
+        "SRC01869",
+        "SRC01870",
+        "SRC01871",
+        "SRC01872",
+        "SRC01873",
+        "SRC01874",
+        "SRC01875",
+        "SRC01876",
+        "SRC01877",
+        "SRC01878",
+        "SRC01879",
+        "SRC01880",
+        "SRC01881",
+        "SRC01882",
+        "SRC01883",
+        "SRC01884",
+        "SRC01885"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Specific angle-based names are unnecessary; structural estimates must fit the model, and large arrays do not ensure universal accuracy.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01867",
+        "SRC01868",
+        "SRC01869",
+        "SRC01870",
+        "SRC01871",
+        "SRC01872",
+        "SRC01873",
+        "SRC01874",
+        "SRC01875",
+        "SRC01876",
+        "SRC01877",
+        "SRC01878",
+        "SRC01879",
+        "SRC01880",
+        "SRC01881",
+        "SRC01882",
+        "SRC01883",
+        "SRC01884",
+        "SRC01885"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit were performed; complete independent semantic certification was not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0266",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0267",
+    "core_question": {
+      "text": "Why is a receive transformation semi-unitary, and what changes if that condition is relaxed?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01886",
+        "SRC01887"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check orthonormality constraints when transformed noise is still modeled as white.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01886",
+        "SRC01887"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Transformation condition, output covariance proportional to the Gram matrix, and identity covariance under semi-unitarity.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01886",
+        "SRC01887"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A request for justification did not supply a complete general-matrix noise correction.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01887"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Justify choosing a semi-unitary basis without loss, or permit general matrices and update noise and rate expressions consistently.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01886",
+        "SRC01887"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A question about the condition does not establish that semi-unitarity is mathematically wrong.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01886",
+        "SRC01887"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit were performed; complete independent semantic certification was not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0267",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0268",
+    "core_question": {
+      "text": "Is the prior-information term consistent after a parameter-estimation stage?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01888",
+        "SRC01889",
+        "SRC01890"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check bounds that use priors after observations have already informed later processing.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01888",
+        "SRC01889",
+        "SRC01890"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Information used in preliminary estimation, subsequent conditional parameter distribution, and prior Fisher information.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01888",
+        "SRC01889",
+        "SRC01890"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Reusing an earlier formula, or treating a tentative equality in feedback as proven, left conditioning unresolved.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01890"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State what information the later bound conditions on, define the distribution and prior term, and explain any update and information use.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01888",
+        "SRC01889",
+        "SRC01890"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Neither an unchanged prior nor an updated prior is automatically correct merely because estimation occurred first.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01888",
+        "SRC01889",
+        "SRC01890"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit were performed; complete independent semantic certification was not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0268",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0269",
+    "core_question": {
+      "text": "Can a reduced-dimensional information formula be obtained through verified substitutions?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01891",
+        "SRC01892",
+        "SRC01893",
+        "SRC01894",
+        "SRC01895"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check claims that a transformed model inherits an earlier bound without a proof.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01891",
+        "SRC01892",
+        "SRC01893",
+        "SRC01894",
+        "SRC01895"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Linear observation transform, transformed mean and derivatives, transformed noise covariance, and reusable information formula.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01891",
+        "SRC01892",
+        "SRC01893",
+        "SRC01894",
+        "SRC01895"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Citing an earlier proposition and omitting proof did not justify a tentative replacement rule.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01892"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "List dimensionally consistent substitutions and identify preserved derivation steps without unnecessarily repeating the entire proof.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01891",
+        "SRC01892",
+        "SRC01893",
+        "SRC01894",
+        "SRC01895"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Similar forms do not make substitutions correct; tentative feedback formulas remain unverified candidates.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01891",
+        "SRC01892",
+        "SRC01893",
+        "SRC01894",
+        "SRC01895"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit were performed; complete independent semantic certification was not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0269",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0270",
+    "core_question": {
+      "text": "Can derivative matrices and projectors be identified where key subspace formulas use them?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01896",
+        "SRC01897",
+        "SRC01898"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check unfamiliar operators whose definitions are remote from a theorem or construction.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01896",
+        "SRC01897",
+        "SRC01898"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Each key operator, its object, definition and dimensions, and interpretable subspace conditions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01896",
+        "SRC01897",
+        "SRC01898"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A derivative matrix was defined earlier, yet readers could not locate its meaning at a later formula.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01896",
+        "SRC01898"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Provide the projector expression and a reminder or clear reference for the derivative matrix, checking array dimensions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01896",
+        "SRC01897",
+        "SRC01898"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Common notation need not be repeatedly defined; a retrieval problem is not necessarily a missing definition throughout the paper.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC01896",
+        "SRC01897",
+        "SRC01898"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Source and coverage checks and a declared local audit were performed; complete independent semantic certification was not established.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0270",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  }
+]

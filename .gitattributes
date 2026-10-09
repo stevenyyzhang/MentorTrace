@@ -1,2 +1,4 @@
 * text=auto eol=lf
 *.pdf binary
+# Frozen corpus hashes bind exact bytes; do not normalize these files.
+corpus/** -text whitespace=cr-at-eol

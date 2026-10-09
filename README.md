@@ -1,9 +1,12 @@
 # MentorTrace
 
-Version: [v1.0.0](VERSION)
+Version: [v1.1.0-dev.3](VERSION)
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
+The `main` branch contains the latest development version. For stable use, download the [v1.0.0 Release](https://github.com/stevenyyzhang/MentorTrace/releases/tag/v1.0.0). Published versions are preserved as tags and ZIP archives in [Releases](https://github.com/stevenyyzhang/MentorTrace/releases); use a specific tag or archive to keep your installation on that version as `main` changes.
+
+Pre-release status: `v1.1.0-dev.3` is a development snapshot for testing, not a stable release. See [changes and migration notes](CHANGELOG.md) and the [current validation record](docs/validation-v1.1.0-dev.3.json). The earlier development record and other audit documents retain their original baseline scope. The development version is independently runnable, but improvements in diagnostic quality, live latency and usage have not been established by controlled comparisons.
 MentorTrace derives judgment patterns from an academic supervisor's actual comments and successive manuscript revisions, and draws on published papers that supervisor considers well written to help authors identify problems in a new manuscript's argument, technical support, organization and expression. During review, it follows the manuscript's argument chains, technical relationships and revision cues, continually asking whether explanations are sufficient, whether arguments are complete, and whether conclusions are supported by evidence. Each review comment identifies the relevant manuscript passage, explains the issue and its basis, and provides concrete revision suggestions. The results are organized into bilingual English–Chinese Markdown and PDF reports.
 
 The current implementation runs as a **Codex skill with a Python workflow** and accepts **PDF manuscripts**. **LaTeX source input and output** are planned. It produces revision guidance and reports; automatically applying changes to the manuscript is not yet integrated.
@@ -24,8 +27,10 @@ The current implementation runs as a **Codex skill with a Python workflow** and 
 Ask Codex to download the repository and prepare the environment:
 
 ```text
-Download the complete https://github.com/stevenyyzhang/MentorTrace repository locally, configure its required dependencies, check the environment, and tell me which repository directory to open in Codex.
+Download the complete main branch of https://github.com/stevenyyzhang/MentorTrace locally, configure its required dependencies, check the environment, and tell me which repository directory to open in Codex.
 ```
+
+For the stable version, replace "main branch" in that prompt with "v1.0.0 Release".
 
 Once setup is ready, open the downloaded repository root in Codex, place your PDF in a local `workspaces/` directory, and use the review prompt below. See [Dependencies and execution guide](#dependencies-and-execution-guide) for dependencies and model access.
 
@@ -60,10 +65,11 @@ flowchart TB
     T["Technical<br/>Relationships<br/>and reasoning"]
     A["Advisor<br/>Independent<br/>concern review"]
     L["Language<br/>Wording, notation<br/>and formatting"]
-    M["Freeze original findings<br/>Merge and record decisions"]
+    M["Freeze source findings<br/>Review execution and merge"]
     V["Independent verification<br/>against manuscript evidence"]
+    Q["Judge source requirements<br/>Freeze source review"]
     D["Propose revisions<br/>Draft the bilingual report"]
-    B["Check preservation<br/>Findings, evidence, revisions"]
+    B["Compare requirements<br/>Check final facts and wording"]
     OUT["Bilingual Markdown<br/>PDF and page inspection"]
 
     F --> O --> C
@@ -75,13 +81,13 @@ flowchart TB
     T --> M
     A --> M
     L --> M
-    M --> V --> D --> B --> OUT
+    M --> V --> Q --> D --> B --> OUT
 
     classDef input fill:#f8fafc,stroke:#94a3b8,color:#0f172a;
     classDef review fill:#eff6ff,stroke:#60a5fa,color:#172554;
     classDef output fill:#ecfdf5,stroke:#34d399,color:#064e3b;
     class F input;
-    class O,C,R,T,A,L,M,V,D,B review;
+    class O,C,R,T,A,L,M,V,Q,D,B review;
     class OUT output;
 ```
 
@@ -94,7 +100,7 @@ Arrows before review show the main input dependencies: object and task planning 
 | Advisor | Full manuscript, current batch of supervisor concerns | Independently check comprehension and technical issues using concerns distilled from historical revisions. |
 | Language | Full manuscript, text units to inspect | Check language, notation, terminology consistency and formatting. |
 
-Models perform all four review lanes. Historical concerns and paper cases guide the questions; every final finding still needs specific evidence from the new manuscript. Models use supporting tools to develop revision proposals, check preservation of findings, and inspect the reports. See the [execution guide](.agents/skills/mentortrace/references/execution.md) for details.
+Models perform all four review lanes. Historical concerns and paper cases guide the questions; every final finding still needs specific evidence from the new manuscript. In this development version, reviewers inspect actual initial execution after its freeze, adjudicate changed source requirements before comparing their final delivery, and review the final report facts, conditions and wording. Tools check source hashes, accounting and exact excerpts; they do not certify scientific correctness. These changes still need controlled manuscript replay. See the [execution guide](.agents/skills/mentortrace/references/execution.md) for details.
 
 ## Report contents
 
@@ -139,7 +145,10 @@ MentorTrace/
 │   └── ...                        Other validation and transport tools
 ├── config/                        Project and optional model settings
 ├── corpus/
-│   ├── advisor-concerns-v1/        Analysis of supervisor comments and revisions
+│   ├── advisor-concerns-v1/        Preserved baseline of 437 concerns
+│   ├── advisor-concerns-v2/        Preserved 481-card snapshot
+│   ├── advisor-concerns-v3/        Preserved 490-card snapshot
+│   ├── advisor-concerns-v4/        Current default: 493 conditional concerns
 │   └── published-cases-v1/         Published-paper cases, indexes and citations
 ├── examples/                      Fictional bilingual report examples
 ├── docs/                          Corpus fields, case checks and validation
@@ -157,7 +166,7 @@ MentorTrace/
 
 The corpora draw on two sets of manuscript materials:
 
-**Papers from the research group revised by the supervisor.** The current source materials cover **18 papers**, each with multiple available annotated or revised versions. Actual comments, student responses and subsequent revisions inform the historical review concerns, judgment grounds, insufficient responses and applicability boundaries. These concerns cover both reader comprehension and technical arguments, such as concept explanations, information links, assumptions, derivations and supported claim scope. Their topics overlap with Reader and Technical, but Advisor uses them independently; they have no one-to-one mapping to published cases. Separate revision phases of the same paper count as one paper. Only anonymized, generalized analytical records are distributed; original manuscripts, verbatim comments and private revision histories are not publicly distributed. Learning here means consulting analytical records, not fine-tuning model parameters.
+**Papers from the research group revised by the supervisor.** The current source materials cover **24 papers**, each with multiple available annotated or revised versions. Actual comments, student responses and subsequent revisions inform the historical review concerns, judgment grounds, insufficient responses and applicability boundaries. These concerns cover both reader comprehension and technical arguments, such as concept explanations, information links, assumptions, derivations and supported claim scope. Their topics overlap with Reader and Technical, but Advisor uses them independently; they have no one-to-one mapping to published cases. Separate revision phases of the same paper count as one paper. Only anonymized, generalized analytical records are distributed; original manuscripts, verbatim comments and private revision histories are not publicly distributed. Learning here means consulting analytical records, not fine-tuning model parameters.
 
 **Published papers the supervisor considers well written.** The current cases cover **52 papers**, primarily in wireless communications. Reader and Technical cases are developed from specific arguments and writing passages: Reader cases concern explanations, information arrangement and comprehension; Technical cases concern technical relationships, prerequisites, argument support and claim scope. Models produced the case analyses; these have not received item-by-item supervisor confirmation. Recommending a paper does not imply endorsing every case interpretation. Cases retain public bibliographic references. Original paper PDFs are not bundled.
 

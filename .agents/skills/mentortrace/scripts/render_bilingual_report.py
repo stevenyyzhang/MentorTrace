@@ -390,10 +390,35 @@ def print_pdf(chrome: str, html_path: Path, pdf_path: Path, markdown: str,
             return len(reader.pages)
 
 
+def validate_delivery(markdown_path, preservation_path, requirements_path=None):
+    """Validate the actual report against both frozen audit records before export."""
+    from audit_report_preservation import read, validate
+    ledger = read(preservation_path)
+    preservation = validate(ledger, markdown_path, require_v2=True)
+    if requirements_path is None:
+        raise ValueError("New delivery needs --requirements-audit with a report-bound consolidation review")
+    import importlib.util
+    module_path = Path(__file__).resolve().parents[4] / "scripts" / "audit_merge_obligations.py"
+    if not module_path.is_file():
+        raise ValueError("Consolidation checker unavailable; keep the complete MentorTrace repository")
+    spec = importlib.util.spec_from_file_location("mentortrace_delivery_obligations", module_path)
+    obligations = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(obligations)
+    upstream = obligations.read(requirements_path)
+    consolidation = obligations.validate(upstream, report_path=markdown_path, require_ready=True)
+    package = obligations.read(Path(upstream["audit_directory"]) / "package.json")
+    final_hash = package["source_files"]["final.json"]
+    if not any(source["sha256"] == final_hash for source in ledger["sources"]):
+        raise ValueError("Delivery sources do not include the final review bound by the consolidation audit")
+    return {"preservation": preservation, "consolidation": consolidation,
+            "semantic_correctness_verified": False}
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--markdown", type=Path, required=True, help="Frozen bilingual Markdown report")
     parser.add_argument("--preservation-audit", type=Path, required=True, help="Completed source-to-report preservation ledger")
+    parser.add_argument("--requirements-audit", type=Path, help="Completed report-bound phase B consolidation ledger")
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--name", default="report_bilingual", help="Output basename")
     parser.add_argument("--pandoc", help="Path to pandoc executable")
@@ -405,8 +430,7 @@ def main() -> None:
     args = parser.parse_args()
 
     markdown_path = args.markdown.resolve(strict=True)
-    from audit_report_preservation import read, validate
-    validate(read(args.preservation_audit), markdown_path)
+    validate_delivery(markdown_path, args.preservation_audit, args.requirements_audit)
     output_dir = args.output_dir.resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
     html_path = output_dir / f"{args.name}.html"

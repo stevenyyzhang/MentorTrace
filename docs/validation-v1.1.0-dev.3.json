@@ -1,0 +1,50 @@
+{
+  "version": "1.1.0-dev.3",
+  "validated_at_utc": "2026-10-08T06:27:55.242950+00:00",
+  "scope": "Corpus integration, public anonymity and task-relevant skill/documentation changes from dev.2; not a behavioral evaluation.",
+  "cards": 493,
+  "added_cards": 56,
+  "runtime_batches": 17,
+  "original_437_and_previous_490_unchanged": true,
+  "original_frozen_corpora_bytes_unchanged": true,
+  "complete_fields_order_coverage_and_promotion_hashes": "passed",
+  "tests": {
+    "training_intake": {
+      "passed": 3
+    },
+    "public_release_and_pipeline": {
+      "passed": 30
+    },
+    "total_passed": 33
+  },
+  "python_syntax": "passed for the three task-relevant public scripts",
+  "skill_frontmatter": "Scalar name/description and scaffold checks passed; bundled quick_validate unavailable because PyYAML is not installed.",
+  "local_links": "passed for the changed READMEs, corpus specification, changelog and skill references",
+  "anonymity": {
+    "semantic_new_card_review": "All 56 complete six-field abstractions checked for identifying details.",
+    "private_identity_title_filename_path_and_raw_source_hash_checks": "passed",
+    "private_corpus_field_exclusion": "passed",
+    "verbatim_feedback_12_word_scan": "no candidates",
+    "git_submission_scope": "Explicit public allowlist; private inputs, identity/source mapping and analysis records excluded."
+  },
+  "offline_advisor_input_preflight": {
+    "status": "Reused unchanged hash-bound saved request check",
+    "complete_card_ids": 493,
+    "batches": 17,
+    "provenance": "Previously completed local input-contract preflight; not a new model run."
+  },
+  "external_model_calls": 0,
+  "limits": [
+    "No independent semantic audit or scientific certification.",
+    "No complete concern-recall or diagnostic-efficacy claim.",
+    "Unexplained marks, full TeX lineage and modifiers retain uncertainty.",
+    "Unseen-family eligibility and actual model-context fit remain unestablished.",
+    "Existing unrelated development changes are excluded from this commit."
+  ],
+  "git_byte_preservation": {
+    "rule": "Disable Git text normalization for frozen corpus paths.",
+    "reason": "Four local frozen JSON files contain CRLF; ordinary Git normalization changes their hashes.",
+    "old_frozen_corpus_files_modified": false,
+    "verification": "Committed Git tree, public snapshot and checked working files match byte-for-byte; snapshot freeze checks pass."
+  }
+}

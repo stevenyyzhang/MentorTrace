@@ -1,0 +1,2785 @@
+[
+  {
+    "id": "C0001",
+    "core_question": {
+      "text": "Distinguish a known distribution from an unknown realization.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00001",
+        "SRC00002",
+        "SRC00003",
+        "SRC00004",
+        "SRC00005",
+        "SRC00006"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "When priors, historical estimates, or statistics are inputs, check what is known and how it is obtained.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00001",
+        "SRC00002",
+        "SRC00003",
+        "SRC00004",
+        "SRC00005",
+        "SRC00006"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Historical observations inform prior parameters; the current state remains an estimation target.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00001",
+        "SRC00002",
+        "SRC00003",
+        "SRC00004",
+        "SRC00005",
+        "SRC00006"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A historical prior was described without clarifying its known information; a real coordinate was assigned a complex-Gaussian label.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00001",
+        "SRC00002",
+        "SRC00003",
+        "SRC00004",
+        "SRC00005",
+        "SRC00006"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Separate known distribution parameters from unknown current values, explain prior construction, and retain uncertainty in prior errors.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00001",
+        "SRC00002",
+        "SRC00003",
+        "SRC00004",
+        "SRC00005",
+        "SRC00006"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A suggested complex-Gaussian notation does not establish the correct distribution for real coordinates; historical data availability is conditional.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00001",
+        "SRC00002",
+        "SRC00003",
+        "SRC00004",
+        "SRC00005",
+        "SRC00006"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0001",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0002",
+    "core_question": {
+      "text": "Establish participants, activity, observations, and tasks together.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00007",
+        "SRC00008",
+        "SRC00009",
+        "SRC00010",
+        "SRC00011",
+        "SRC00012",
+        "SRC00013",
+        "SRC00014",
+        "SRC00015",
+        "SRC00016",
+        "SRC00017",
+        "SRC00018",
+        "SRC00019",
+        "SRC00020",
+        "SRC00021",
+        "SRC00022",
+        "SRC00023",
+        "SRC00024",
+        "SRC00025",
+        "SRC00026",
+        "SRC00027",
+        "SRC00028",
+        "SRC00029"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "When participants generate or exchange observations, check their actions and relation to estimation tasks, regardless of whether equations are present.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00007",
+        "SRC00008",
+        "SRC00009",
+        "SRC00010",
+        "SRC00011",
+        "SRC00012",
+        "SRC00013",
+        "SRC00014",
+        "SRC00015",
+        "SRC00016",
+        "SRC00017",
+        "SRC00018",
+        "SRC00019",
+        "SRC00020",
+        "SRC00021",
+        "SRC00022",
+        "SRC00023",
+        "SRC00024",
+        "SRC00025",
+        "SRC00026",
+        "SRC00027",
+        "SRC00028",
+        "SRC00029"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Who transmits what and when, who receives it, and what each observation supports estimating.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00007",
+        "SRC00008",
+        "SRC00009",
+        "SRC00010",
+        "SRC00011",
+        "SRC00012",
+        "SRC00013",
+        "SRC00014",
+        "SRC00015",
+        "SRC00016",
+        "SRC00017",
+        "SRC00018",
+        "SRC00019",
+        "SRC00020",
+        "SRC00021",
+        "SRC00022",
+        "SRC00023",
+        "SRC00024",
+        "SRC00025",
+        "SRC00026",
+        "SRC00027",
+        "SRC00028",
+        "SRC00029"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Participants and signal equations were present, but intermittent activity and the estimation tasks were introduced without a coherent connection.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00007",
+        "SRC00008",
+        "SRC00009",
+        "SRC00010",
+        "SRC00011",
+        "SRC00012",
+        "SRC00013",
+        "SRC00014",
+        "SRC00015",
+        "SRC00016",
+        "SRC00017",
+        "SRC00018",
+        "SRC00019",
+        "SRC00020",
+        "SRC00021",
+        "SRC00022",
+        "SRC00023",
+        "SRC00024",
+        "SRC00025",
+        "SRC00026",
+        "SRC00027",
+        "SRC00028",
+        "SRC00029"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Connect activity, pilots, scattering, reception, and estimation through participant behavior.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00007",
+        "SRC00008",
+        "SRC00009",
+        "SRC00010",
+        "SRC00011",
+        "SRC00012",
+        "SRC00013",
+        "SRC00014",
+        "SRC00015",
+        "SRC00016",
+        "SRC00017",
+        "SRC00018",
+        "SRC00019",
+        "SRC00020",
+        "SRC00021",
+        "SRC00022",
+        "SRC00023",
+        "SRC00024",
+        "SRC00025",
+        "SRC00026",
+        "SRC00027",
+        "SRC00028",
+        "SRC00029"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "No fixed paragraph template is required; word-order edits alone do not establish a technical judgment.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00007",
+        "SRC00008",
+        "SRC00009",
+        "SRC00010",
+        "SRC00011",
+        "SRC00012",
+        "SRC00013",
+        "SRC00014",
+        "SRC00015",
+        "SRC00016",
+        "SRC00017",
+        "SRC00018",
+        "SRC00019",
+        "SRC00020",
+        "SRC00021",
+        "SRC00022",
+        "SRC00023",
+        "SRC00024",
+        "SRC00025",
+        "SRC00026",
+        "SRC00027",
+        "SRC00028",
+        "SRC00029"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0002",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0003",
+    "core_question": {
+      "text": "Connect random paths and fading assumptions to physical events.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00030",
+        "SRC00031",
+        "SRC00032",
+        "SRC00033",
+        "SRC00034",
+        "SRC00035",
+        "SRC00036",
+        "SRC00037",
+        "SRC00038",
+        "SRC00039",
+        "SRC00040",
+        "SRC00041"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check distributions that lack identifiable physical events, parameter meanings, or availability conditions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00030",
+        "SRC00031",
+        "SRC00032",
+        "SRC00033",
+        "SRC00034",
+        "SRC00035",
+        "SRC00036",
+        "SRC00037",
+        "SRC00038",
+        "SRC00039",
+        "SRC00040",
+        "SRC00041"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Path existence determines an indicator; fading distributions and hyperparameters determine its contribution to the signal.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00030",
+        "SRC00031",
+        "SRC00032",
+        "SRC00033",
+        "SRC00034",
+        "SRC00035",
+        "SRC00036",
+        "SRC00037",
+        "SRC00038",
+        "SRC00039",
+        "SRC00040",
+        "SRC00041"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Indicators and distributions were given, but path-existence meaning and the physical basis for scattering statistics remained unclear.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00030",
+        "SRC00031",
+        "SRC00032",
+        "SRC00033",
+        "SRC00034",
+        "SRC00035",
+        "SRC00036",
+        "SRC00037",
+        "SRC00038",
+        "SRC00039",
+        "SRC00040",
+        "SRC00041"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Define the indicator's physical event, fading law, and hyperparameters; separate assuming a model from validating it.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00030",
+        "SRC00031",
+        "SRC00032",
+        "SRC00033",
+        "SRC00034",
+        "SRC00035",
+        "SRC00036",
+        "SRC00037",
+        "SRC00038",
+        "SRC00039",
+        "SRC00040",
+        "SRC00041"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "The original scattering references and estimation methods were not checked; independence and indexed variances require separate mathematical verification.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00030",
+        "SRC00031",
+        "SRC00032",
+        "SRC00033",
+        "SRC00034",
+        "SRC00035",
+        "SRC00036",
+        "SRC00037",
+        "SRC00038",
+        "SRC00039",
+        "SRC00040",
+        "SRC00041"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0003",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0004",
+    "core_question": {
+      "text": "Does known geometry determine the complete channel?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00042",
+        "SRC00043",
+        "SRC00044"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check claims equating known geometry, statistics, or an intermediate quantity with a fully known algorithm input.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00042",
+        "SRC00043",
+        "SRC00044"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Geometry determines array responses; activity, path existence, and fading determine coefficients; together they determine the channel.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00042",
+        "SRC00043",
+        "SRC00044"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Joint localization and channel estimation were presented without explaining what channel information remained unknown after localization.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00042",
+        "SRC00043",
+        "SRC00044"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Identify which channel components follow from geometry and which depend on other unknowns.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00042",
+        "SRC00043",
+        "SRC00044"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Redundancy depends on the actual model; neither complete CSI from position nor its impossibility is a universal rule.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00042",
+        "SRC00043",
+        "SRC00044"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0004",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0005",
+    "core_question": {
+      "text": "Why introduce dependent auxiliary variables?",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00045",
+        "SRC00046"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "When variables appear redundant, check their roles in representation, factorization, and computation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00045",
+        "SRC00046"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Original unknowns generate auxiliary variables that support computation and map back to the desired estimate.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00045",
+        "SRC00046"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Derived quantities were defined, but their computational purpose beyond the original dependent variables was unexplained.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00045",
+        "SRC00046"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Explain the representation or factorization step served by each auxiliary variable.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00045",
+        "SRC00046"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Statistical dependence or deterministic relationships do not invalidate joint modeling; estimation need not involve only independent variables.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00045",
+        "SRC00046"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0005",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0006",
+    "core_question": {
+      "text": "Global observation availability requires communication assumptions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00047"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check transport and information-loss assumptions when centralized algorithms consume observations or states from distributed nodes.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00047"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Local observations pass through communication links before becoming centrally available information.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00047"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Observation concatenation was used after merely stating that nodes forward their data.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00047"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State how observations reach the processor and whether transmission preserves them, then restrict global-data use accordingly.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00047"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "An explicitly declared ideal link can define a valid scope; every method need not model finite-capacity links.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00047"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0006",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0007",
+    "core_question": {
+      "text": "Define variables according to their later uses.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00048",
+        "SRC00049",
+        "SRC00050",
+        "SRC00051",
+        "SRC00052",
+        "SRC00053",
+        "SRC00054",
+        "SRC00055",
+        "SRC00056",
+        "SRC00057",
+        "SRC00058",
+        "SRC00059",
+        "SRC00060",
+        "SRC00061",
+        "SRC00062",
+        "SRC00063",
+        "SRC00064"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check excessive notation and estimation targets whose definitions require repeated searching.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00048",
+        "SRC00049",
+        "SRC00050",
+        "SRC00051",
+        "SRC00052",
+        "SRC00053",
+        "SRC00054",
+        "SRC00055",
+        "SRC00056",
+        "SRC00057",
+        "SRC00058",
+        "SRC00059",
+        "SRC00060",
+        "SRC00061",
+        "SRC00062",
+        "SRC00063",
+        "SRC00064"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Each later use or target needs a necessary definition and recoverable expression; unused symbols can be removed.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00048",
+        "SRC00049",
+        "SRC00050",
+        "SRC00051",
+        "SRC00052",
+        "SRC00053",
+        "SRC00054",
+        "SRC00055",
+        "SRC00056",
+        "SRC00057",
+        "SRC00058",
+        "SRC00059",
+        "SRC00060",
+        "SRC00061",
+        "SRC00062",
+        "SRC00063",
+        "SRC00064"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Many positions and channel quantities were introduced without distinguishing direct targets from deferrable intermediate definitions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00048",
+        "SRC00049",
+        "SRC00050",
+        "SRC00051",
+        "SRC00052",
+        "SRC00053",
+        "SRC00054",
+        "SRC00055",
+        "SRC00056",
+        "SRC00057",
+        "SRC00058",
+        "SRC00059",
+        "SRC00060",
+        "SRC00061",
+        "SRC00062",
+        "SRC00063",
+        "SRC00064"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Provide retrievable expressions for estimation targets and retain intermediate variables needed by derivations.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00048",
+        "SRC00049",
+        "SRC00050",
+        "SRC00051",
+        "SRC00052",
+        "SRC00053",
+        "SRC00054",
+        "SRC00055",
+        "SRC00056",
+        "SRC00057",
+        "SRC00058",
+        "SRC00059",
+        "SRC00060",
+        "SRC00061",
+        "SRC00062",
+        "SRC00063",
+        "SRC00064"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Final outputs are not the only legitimate variables; a local retention comment with uncertain scope does not establish global acceptance.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00048",
+        "SRC00049",
+        "SRC00050",
+        "SRC00051",
+        "SRC00052",
+        "SRC00053",
+        "SRC00054",
+        "SRC00055",
+        "SRC00056",
+        "SRC00057",
+        "SRC00058",
+        "SRC00059",
+        "SRC00060",
+        "SRC00061",
+        "SRC00062",
+        "SRC00063",
+        "SRC00064"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0007",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0008",
+    "core_question": {
+      "text": "A joint-method advantage needs an identified lost relationship.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00065",
+        "SRC00066",
+        "SRC00067",
+        "SRC00068",
+        "SRC00069",
+        "SRC00070",
+        "SRC00071",
+        "SRC00072",
+        "SRC00073",
+        "SRC00074",
+        "SRC00075"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check whether claims of joint, cooperative, or end-to-end benefit identify information lost by separate processing.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00065",
+        "SRC00066",
+        "SRC00067",
+        "SRC00068",
+        "SRC00069",
+        "SRC00070",
+        "SRC00071",
+        "SRC00072",
+        "SRC00073",
+        "SRC00074",
+        "SRC00075"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Each sequential order uses particular information; lost dependencies or feedback motivate the joint mechanism under stated conditions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00065",
+        "SRC00066",
+        "SRC00067",
+        "SRC00068",
+        "SRC00069",
+        "SRC00070",
+        "SRC00071",
+        "SRC00072",
+        "SRC00073",
+        "SRC00074",
+        "SRC00075"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The joint algorithm was proposed without explaining both natural sequential alternatives and their information losses.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00065",
+        "SRC00066",
+        "SRC00067",
+        "SRC00068",
+        "SRC00069",
+        "SRC00070",
+        "SRC00071",
+        "SRC00072",
+        "SRC00073",
+        "SRC00074",
+        "SRC00075"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Specify information available in each order, the feedback each misses, and conditions supporting any gain.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00065",
+        "SRC00066",
+        "SRC00067",
+        "SRC00068",
+        "SRC00069",
+        "SRC00070",
+        "SRC00071",
+        "SRC00072",
+        "SRC00073",
+        "SRC00074",
+        "SRC00075"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Coupling alone does not guarantee superiority; comparators, priors, and resource budgets must match.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00065",
+        "SRC00066",
+        "SRC00067",
+        "SRC00068",
+        "SRC00069",
+        "SRC00070",
+        "SRC00071",
+        "SRC00072",
+        "SRC00073",
+        "SRC00074",
+        "SRC00075"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0008",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0009",
+    "core_question": {
+      "text": "Close the chain from estimation targets through criteria to computation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00076",
+        "SRC00077",
+        "SRC00078",
+        "SRC00079",
+        "SRC00080",
+        "SRC00081",
+        "SRC00082",
+        "SRC00083",
+        "SRC00084",
+        "SRC00085",
+        "SRC00086",
+        "SRC00087",
+        "SRC00088",
+        "SRC00089",
+        "SRC00090"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "For probabilistic or optimization tasks, check every output's criterion and computational object. For dependent modules, also check the overall processing flow without waiting for a suspected omission.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00076",
+        "SRC00077",
+        "SRC00078",
+        "SRC00079",
+        "SRC00080",
+        "SRC00081",
+        "SRC00082",
+        "SRC00083",
+        "SRC00084",
+        "SRC00085",
+        "SRC00086",
+        "SRC00087",
+        "SRC00088",
+        "SRC00089",
+        "SRC00090",
+        "SRC00091"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Outputs determine loss or estimation criteria, required posteriors or approximations, and algorithmic updates and information flow.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00076",
+        "SRC00077",
+        "SRC00078",
+        "SRC00079",
+        "SRC00080",
+        "SRC00081",
+        "SRC00082",
+        "SRC00083",
+        "SRC00084",
+        "SRC00085",
+        "SRC00086",
+        "SRC00087",
+        "SRC00088",
+        "SRC00089",
+        "SRC00090",
+        "SRC00091"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A state posterior was given, but its estimator criterion and treatment of other outputs were unclear.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00076",
+        "SRC00077",
+        "SRC00078",
+        "SRC00079",
+        "SRC00080",
+        "SRC00081",
+        "SRC00082",
+        "SRC00083",
+        "SRC00084",
+        "SRC00085",
+        "SRC00086",
+        "SRC00087",
+        "SRC00088",
+        "SRC00089",
+        "SRC00090"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State each output's criterion, required posterior, and approximation target; outline module order and information flow before dense update equations.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00076",
+        "SRC00077",
+        "SRC00078",
+        "SRC00079",
+        "SRC00080",
+        "SRC00081",
+        "SRC00082",
+        "SRC00083",
+        "SRC00084",
+        "SRC00085",
+        "SRC00086",
+        "SRC00087",
+        "SRC00088",
+        "SRC00089",
+        "SRC00090",
+        "SRC00091"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "MAP and MMSE are specific choices; a scalar marginal posterior does not itself imply independent estimation or ignored correlations.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00076",
+        "SRC00077",
+        "SRC00078",
+        "SRC00079",
+        "SRC00080",
+        "SRC00081",
+        "SRC00082",
+        "SRC00083",
+        "SRC00084",
+        "SRC00085",
+        "SRC00086",
+        "SRC00087",
+        "SRC00088",
+        "SRC00089",
+        "SRC00090"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0009",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0010",
+    "core_question": {
+      "text": "Conditioning can change the distribution class.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00092"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check reused distribution labels after conditioning, marginalization, or variable transformations.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00092"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Identify random quantities, fixed conditioning values, and remaining uncertainty before naming a conditional distribution or message.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00092"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A Bernoulli-Gaussian label was retained after conditioning on quantities responsible for the mixture.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00092"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Reidentify remaining randomness after each operation rather than reusing a label in place of derivation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00092"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A conditional factor with a fixed binary indicator differs from a mixture message formed by summing over that indicator.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00092"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0010",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0011",
+    "core_question": {
+      "text": "Explain probabilistic factors for deterministic relationships.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00093",
+        "SRC00046",
+        "SRC00094"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check deterministic derived quantities introduced as graphical-model nodes without a representation or computational purpose.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00093",
+        "SRC00046",
+        "SRC00094"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "A deterministic transformation becomes a delta constraint in an augmented factorization used for marginalization.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00093",
+        "SRC00046",
+        "SRC00094"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A transformed variable was deterministic given its parent, yet its conditional factor was introduced without explanation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00093",
+        "SRC00046",
+        "SRC00094"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Explain the delta constraint and how the augmented factorization supports posterior computation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00093",
+        "SRC00046",
+        "SRC00094"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Deterministic variables can have degenerate conditional distributions; a questioning comment does not prohibit such representations.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00093",
+        "SRC00046",
+        "SRC00094"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0011",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0012",
+    "core_question": {
+      "text": "Factorization does not establish easy marginal inference.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00095",
+        "SRC00096",
+        "SRC00097",
+        "SRC00094",
+        "SRC00098",
+        "SRC00099",
+        "SRC00100",
+        "SRC00101"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "When auxiliary variables, joint distributions, or factor graphs are introduced for posterior estimation, check what they enable and how the required marginal is computed.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00095",
+        "SRC00096",
+        "SRC00097",
+        "SRC00094",
+        "SRC00098",
+        "SRC00099",
+        "SRC00100",
+        "SRC00101",
+        "SRC00102"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "The original objective motivates augmentation and factorization; remaining marginalization difficulty motivates computational methods where necessary.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00095",
+        "SRC00096",
+        "SRC00097",
+        "SRC00094",
+        "SRC00098",
+        "SRC00099",
+        "SRC00100",
+        "SRC00101"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "The joint density and factors were listed without showing which difficulty they resolved or left unresolved.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00095",
+        "SRC00096",
+        "SRC00097",
+        "SRC00094",
+        "SRC00098",
+        "SRC00099",
+        "SRC00100",
+        "SRC00101"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Connect targets, auxiliaries, and conditional relations; explain marginal or MMSE computation. State remaining difficulty and approximation steps when present, but accept justified exact computation without inventing obstacles.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00095",
+        "SRC00096",
+        "SRC00097",
+        "SRC00094",
+        "SRC00098",
+        "SRC00099",
+        "SRC00100",
+        "SRC00101",
+        "SRC00102"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A readable joint representation proves neither tractability nor impossibility of closed form; rhetorical impossibility is not a mathematical proof.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00095",
+        "SRC00096",
+        "SRC00097",
+        "SRC00094",
+        "SRC00098",
+        "SRC00099",
+        "SRC00100",
+        "SRC00101"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0012",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0013",
+    "core_question": {
+      "text": "Tie algorithm selection and approximations to concrete computation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00103",
+        "SRC00104",
+        "SRC00105"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check necessity or efficiency claims supported only by algorithm names rather than targets, assumptions, or bottlenecks.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00103",
+        "SRC00104",
+        "SRC00105"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "The computational bottleneck determines applicable methods, approximation targets, cost, and accuracy.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00103",
+        "SRC00104",
+        "SRC00105"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Message passing was described as inexpensive without explaining its choice relative to alternative approximate methods or its approximation target.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00103",
+        "SRC00104",
+        "SRC00105"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Connect the chosen method to the distributions, nonlinearities, and computation barriers involved.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00103",
+        "SRC00104",
+        "SRC00105"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Non-Gaussian channels do not categorically rule out approximate message passing; denoisers and approximations require specific checks.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00103",
+        "SRC00104",
+        "SRC00105"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0013",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0014",
+    "core_question": {
+      "text": "Baselines need executable input-to-output chains.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00106",
+        "SRC00107",
+        "SRC00108",
+        "SRC00109",
+        "SRC00110",
+        "SRC00111",
+        "SRC00112",
+        "SRC00113"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check methods described only by names or sequential task labels without recoverable intermediate data flow.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00106",
+        "SRC00107",
+        "SRC00108",
+        "SRC00109",
+        "SRC00110",
+        "SRC00111",
+        "SRC00112",
+        "SRC00113"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Baseline inputs produce estimates, association steps, subsequent solutions, and comparable outputs.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00106",
+        "SRC00107",
+        "SRC00108",
+        "SRC00109",
+        "SRC00110",
+        "SRC00111",
+        "SRC00112",
+        "SRC00113"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Names and ordering were supplied, but cross-node angle association and remaining-variable estimation were unclear.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00106",
+        "SRC00107",
+        "SRC00108",
+        "SRC00109",
+        "SRC00110",
+        "SRC00111",
+        "SRC00112",
+        "SRC00113"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Trace actual inputs, intermediate estimates, association, and later steps for each comparator.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00106",
+        "SRC00107",
+        "SRC00108",
+        "SRC00109",
+        "SRC00110",
+        "SRC00111",
+        "SRC00112",
+        "SRC00113"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Match baseline identity by operations rather than numbering across revisions; a citation does not verify reproduction.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00106",
+        "SRC00107",
+        "SRC00108",
+        "SRC00109",
+        "SRC00110",
+        "SRC00111",
+        "SRC00112",
+        "SRC00113"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0014",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0015",
+    "core_question": {
+      "text": "Define metric randomness, normalization, and comparability.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00114",
+        "SRC00115",
+        "SRC00116",
+        "SRC00117"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check unexplained differences in averaging, units, or normalization across random estimation tasks.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00114",
+        "SRC00115",
+        "SRC00116",
+        "SRC00117"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "The error target and random sources determine expectation scope, units, normalization, and interpretation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00114",
+        "SRC00115",
+        "SRC00116",
+        "SRC00117"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "One error metric explicitly averaged randomness while another random-target metric did not; normalization differences were unexplained.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00114",
+        "SRC00115",
+        "SRC00116",
+        "SRC00117"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State which random quantities are averaged and each metric's units and normalization.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00114",
+        "SRC00115",
+        "SRC00116",
+        "SRC00117"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Different tasks may use different suitable metrics; the decibel conversion for an RMSE ratio differs from an MSE ratio.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00114",
+        "SRC00115",
+        "SRC00116",
+        "SRC00117"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0015",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0016",
+    "core_question": {
+      "text": "Experiments should explain who benefits, why, and when.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00066",
+        "SRC00069",
+        "SRC00118",
+        "SRC00119"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "When experiments support a mechanism or advantage, check affected tasks, benefit conditions, and whether comparisons separate relevant factors.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00066",
+        "SRC00069",
+        "SRC00118",
+        "SRC00119"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Structural differences affect tasks under parameter conditions; controlled comparisons support gain attribution.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00066",
+        "SRC00069",
+        "SRC00118",
+        "SRC00119"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Better curves and improvement with added resources did not explain the value of joint processing.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00066",
+        "SRC00069",
+        "SRC00118",
+        "SRC00119"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Test the affected tasks, proposed mechanism, and applicable conditions with comparisons supporting attribution; a one-factor sweep is one possible design.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00066",
+        "SRC00069",
+        "SRC00118",
+        "SRC00119"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Predicted sequential-method behavior remains a hypothesis until tested; numerical gains and causal attribution need data, and other discriminating designs are valid.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00066",
+        "SRC00069",
+        "SRC00118",
+        "SRC00119"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0016",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0017",
+    "core_question": {
+      "text": "Scale labels must identify the correct system object.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00120",
+        "SRC00121",
+        "SRC00122",
+        "SRC00123",
+        "SRC00124",
+        "SRC00125",
+        "SRC00126",
+        "SRC00127",
+        "SRC00128"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check whether labels such as massive, wideband, or distributed correspond to model scale or mechanisms.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00120",
+        "SRC00121",
+        "SRC00122",
+        "SRC00123",
+        "SRC00124",
+        "SRC00125",
+        "SRC00126",
+        "SRC00127",
+        "SRC00128"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "A scenario label maps to the relevant participant, parameter, and task implication.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00120",
+        "SRC00121",
+        "SRC00122",
+        "SRC00123",
+        "SRC00124",
+        "SRC00125",
+        "SRC00126",
+        "SRC00127",
+        "SRC00128"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A scale label was attached to the wrong population; later feedback corrected an earlier parameter interpretation.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00120",
+        "SRC00121",
+        "SRC00122",
+        "SRC00123",
+        "SRC00124",
+        "SRC00125",
+        "SRC00126",
+        "SRC00127",
+        "SRC00128"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Bind the scale claim to the correct participant and model parameter while respecting subsequent corrections.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00120",
+        "SRC00121",
+        "SRC00122",
+        "SRC00123",
+        "SRC00124",
+        "SRC00125",
+        "SRC00126",
+        "SRC00127",
+        "SRC00128"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Earlier feedback is not an immutable terminology rule when later evidence corrects it.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00120",
+        "SRC00121",
+        "SRC00122",
+        "SRC00123",
+        "SRC00124",
+        "SRC00125",
+        "SRC00126",
+        "SRC00127",
+        "SRC00128"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0017",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0018",
+    "core_question": {
+      "text": "Motivation must connect resources and architecture.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00129",
+        "SRC00130",
+        "SRC00123",
+        "SRC00131",
+        "SRC00132",
+        "SRC00133",
+        "SRC00134",
+        "SRC00135",
+        "SRC00136",
+        "SRC00137",
+        "SRC00138"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check application or technology labels that do not explain the opportunity created by the available resources.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00129",
+        "SRC00130",
+        "SRC00123",
+        "SRC00131",
+        "SRC00132",
+        "SRC00133",
+        "SRC00134",
+        "SRC00135",
+        "SRC00136",
+        "SRC00137",
+        "SRC00138"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Unused resources, coverage, and fusion conditions enable functions with a bounded benefit scope.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00129",
+        "SRC00130",
+        "SRC00123",
+        "SRC00131",
+        "SRC00132",
+        "SRC00133",
+        "SRC00134",
+        "SRC00135",
+        "SRC00136",
+        "SRC00137",
+        "SRC00138"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Architectures were listed inconsistently without explaining how uplink access resources could support localization.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00129",
+        "SRC00130",
+        "SRC00123",
+        "SRC00131",
+        "SRC00132",
+        "SRC00133",
+        "SRC00134",
+        "SRC00135",
+        "SRC00136",
+        "SRC00137",
+        "SRC00138"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Explain the added function from actual resources and architecture; support numerical benefits separately.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00129",
+        "SRC00130",
+        "SRC00123",
+        "SRC00131",
+        "SRC00132",
+        "SRC00133",
+        "SRC00134",
+        "SRC00135",
+        "SRC00136",
+        "SRC00137",
+        "SRC00138"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Resource reuse alone does not establish a specified performance gain, even if feedback proposes one.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00129",
+        "SRC00130",
+        "SRC00123",
+        "SRC00131",
+        "SRC00132",
+        "SRC00133",
+        "SRC00134",
+        "SRC00135",
+        "SRC00136",
+        "SRC00137",
+        "SRC00138"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0018",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0019",
+    "core_question": {
+      "text": "Organize related work around applicability differences.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00139",
+        "SRC00140",
+        "SRC00141",
+        "SRC00142",
+        "SRC00143",
+        "SRC00144",
+        "SRC00145",
+        "SRC00146",
+        "SRC00147",
+        "SRC00148",
+        "SRC00149",
+        "SRC00150",
+        "SRC00151",
+        "SRC00152"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "When related work establishes a gap, check tasks, information assumptions, architectures, and capabilities rather than citation counts.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00139",
+        "SRC00140",
+        "SRC00141",
+        "SRC00142",
+        "SRC00143",
+        "SRC00144",
+        "SRC00145",
+        "SRC00146",
+        "SRC00147",
+        "SRC00148",
+        "SRC00149",
+        "SRC00150",
+        "SRC00151",
+        "SRC00152"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Tasks and information conditions determine architectural and methodological limits that motivate the new obstacle.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00139",
+        "SRC00140",
+        "SRC00141",
+        "SRC00142",
+        "SRC00143",
+        "SRC00144",
+        "SRC00145",
+        "SRC00146",
+        "SRC00147",
+        "SRC00148",
+        "SRC00149",
+        "SRC00150",
+        "SRC00151",
+        "SRC00152"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Methods were cataloged without using differences in statistics, deployment, bounds, or algorithms to position the study.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00139",
+        "SRC00140",
+        "SRC00141",
+        "SRC00142",
+        "SRC00143",
+        "SRC00144",
+        "SRC00145",
+        "SRC00146",
+        "SRC00147",
+        "SRC00148",
+        "SRC00149",
+        "SRC00150",
+        "SRC00151",
+        "SRC00152"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Compare work by information conditions, tasks, and architecture, with source facts matching the attributed capabilities.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00139",
+        "SRC00140",
+        "SRC00141",
+        "SRC00142",
+        "SRC00143",
+        "SRC00144",
+        "SRC00145",
+        "SRC00146",
+        "SRC00147",
+        "SRC00148",
+        "SRC00149",
+        "SRC00150",
+        "SRC00151",
+        "SRC00152"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Suggested authors or venues are not universal citation rules; applicability claims remain unverified without reading the references.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00139",
+        "SRC00140",
+        "SRC00141",
+        "SRC00142",
+        "SRC00143",
+        "SRC00144",
+        "SRC00145",
+        "SRC00146",
+        "SRC00147",
+        "SRC00148",
+        "SRC00149",
+        "SRC00150",
+        "SRC00151",
+        "SRC00152"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0019",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0020",
+    "core_question": {
+      "text": "Explain information exchange before implementation techniques.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00153",
+        "SRC00154",
+        "SRC00155",
+        "SRC00156",
+        "SRC00157",
+        "SRC00158",
+        "SRC00159",
+        "SRC00160",
+        "SRC00161"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check contribution lists whose individual claims do not reveal how the overall problem is solved.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00153",
+        "SRC00154",
+        "SRC00155",
+        "SRC00156",
+        "SRC00157",
+        "SRC00158",
+        "SRC00159",
+        "SRC00160",
+        "SRC00161"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Subtask outputs inform each other, potentially improving estimates through an explicitly described mechanism.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00153",
+        "SRC00154",
+        "SRC00155",
+        "SRC00156",
+        "SRC00157",
+        "SRC00158",
+        "SRC00159",
+        "SRC00160",
+        "SRC00161"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A model and algorithm techniques were listed without explaining how the modules cooperate.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00153",
+        "SRC00154",
+        "SRC00155",
+        "SRC00156",
+        "SRC00157",
+        "SRC00158",
+        "SRC00159",
+        "SRC00160",
+        "SRC00161"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Explain what information modules provide each other, then state implementation techniques and remaining difficulties.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00153",
+        "SRC00154",
+        "SRC00155",
+        "SRC00156",
+        "SRC00157",
+        "SRC00158",
+        "SRC00159",
+        "SRC00160",
+        "SRC00161"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Not every paper needs iteration; separating mechanism from implementation does not establish novelty.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00153",
+        "SRC00154",
+        "SRC00155",
+        "SRC00156",
+        "SRC00157",
+        "SRC00158",
+        "SRC00159",
+        "SRC00160",
+        "SRC00161"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0020",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0021",
+    "core_question": {
+      "text": "Figures need identifiable objects and a reading purpose.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00162",
+        "SRC00163",
+        "SRC00164",
+        "SRC00165",
+        "SRC00166",
+        "SRC00167"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check figures supporting important judgments when size, merging, or style choices obscure comparisons or structure.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00162",
+        "SRC00163",
+        "SRC00164",
+        "SRC00165",
+        "SRC00166",
+        "SRC00167"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "The intended judgment determines necessary objects, comparisons, layout, and visual encoding.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00162",
+        "SRC00163",
+        "SRC00164",
+        "SRC00165",
+        "SRC00166",
+        "SRC00167"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "System diagrams, factor graphs, and simulation curves existed, but horizontal space, printing, and curve density remained problematic.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00162",
+        "SRC00163",
+        "SRC00164",
+        "SRC00165",
+        "SRC00166",
+        "SRC00167"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Choose layout and encoding for the reader's task, then verify legibility.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00162",
+        "SRC00163",
+        "SRC00164",
+        "SRC00165",
+        "SRC00166",
+        "SRC00167"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A suggestion to avoid subfigures is context-specific; retained subfigures and a local positive comment establish neither print acceptance nor approval of the full model.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00162",
+        "SRC00163",
+        "SRC00164",
+        "SRC00165",
+        "SRC00166",
+        "SRC00167"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0021",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0022",
+    "core_question": {
+      "text": "Keep probability notation consistent with the represented object.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00168",
+        "SRC00169",
+        "SRC00170",
+        "SRC00171",
+        "SRC00172",
+        "SRC00173",
+        "SRC00174",
+        "SRC00175",
+        "SRC00176"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check notation across scalar and vector quantities and across distribution declarations and density evaluations.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00168",
+        "SRC00169",
+        "SRC00170",
+        "SRC00171",
+        "SRC00172",
+        "SRC00173",
+        "SRC00174",
+        "SRC00175",
+        "SRC00176"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Object dimension and usage determine arguments, means, covariance parameters, and later references.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00168",
+        "SRC00169",
+        "SRC00170",
+        "SRC00171",
+        "SRC00172",
+        "SRC00173",
+        "SRC00174",
+        "SRC00175",
+        "SRC00176"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Distribution conventions varied between argument-bearing and parameter-only forms, while vector distributions used scalar-style parameters.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00168",
+        "SRC00169",
+        "SRC00170",
+        "SRC00171",
+        "SRC00172",
+        "SRC00173",
+        "SRC00174",
+        "SRC00175",
+        "SRC00176"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Declare a convention and keep arguments, means, and covariance types consistent for each object.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00168",
+        "SRC00169",
+        "SRC00170",
+        "SRC00171",
+        "SRC00172",
+        "SRC00173",
+        "SRC00174",
+        "SRC00175",
+        "SRC00176"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Visible notation unification does not certify all probability expressions; inferred checks cannot fill in an unstated editorial reason.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00168",
+        "SRC00169",
+        "SRC00170",
+        "SRC00171",
+        "SRC00172",
+        "SRC00173",
+        "SRC00174",
+        "SRC00175",
+        "SRC00176"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0022",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0023",
+    "core_question": {
+      "text": "Explicit angle inversion requires a domain and branch.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00177",
+        "SRC00178",
+        "SRC00179",
+        "SRC00180"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check equivalence conditions when implicit geometric relations become explicit parameters or inverse trigonometric formulas.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00177",
+        "SRC00178",
+        "SRC00179",
+        "SRC00180"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Geometric relations determine inverse variables only within stated branches and angle domains used downstream.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00177",
+        "SRC00178",
+        "SRC00179",
+        "SRC00180"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Feedback requested an explicit angle definition. The editorial reason was not established; inversion-domain and branch checks are analyst extensions rather than confirmed historical objections.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00177",
+        "SRC00178",
+        "SRC00179",
+        "SRC00180"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Define the angle and its domain, then check whether array or localization calculations need excluded branches.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00177",
+        "SRC00178",
+        "SRC00179",
+        "SRC00180"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "An explicit inverse rewrite does not prove globally unique localization; branch checks are analytical extensions rather than a documented reason for the edit.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00177",
+        "SRC00178",
+        "SRC00179",
+        "SRC00180"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0023",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0024",
+    "core_question": {
+      "text": "Citations must support the method actually used.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00181",
+        "SRC00182",
+        "SRC00183",
+        "SRC00184",
+        "SRC00185",
+        "SRC00186",
+        "SRC00187",
+        "SRC00188",
+        "SRC00189"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check mismatches among method names, citations, direct outputs, and borrowed algorithmic steps.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00181",
+        "SRC00182",
+        "SRC00183",
+        "SRC00184",
+        "SRC00185",
+        "SRC00186",
+        "SRC00187",
+        "SRC00188",
+        "SRC00189"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "The implemented algorithm and its direct estimate determine the appropriate primary support.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00181",
+        "SRC00182",
+        "SRC00183",
+        "SRC00184",
+        "SRC00185",
+        "SRC00186",
+        "SRC00187",
+        "SRC00188",
+        "SRC00189"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "An angle-estimation reference did not clearly identify the adopted method's original source, and a citation remained unresolved.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00181",
+        "SRC00182",
+        "SRC00183",
+        "SRC00184",
+        "SRC00185",
+        "SRC00186",
+        "SRC00187",
+        "SRC00188",
+        "SRC00189"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Identify the used method and output, resolve citations, and verify their support.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00181",
+        "SRC00182",
+        "SRC00183",
+        "SRC00184",
+        "SRC00185",
+        "SRC00186",
+        "SRC00187",
+        "SRC00188",
+        "SRC00189"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Changing method labels and retaining a citation does not certify its content; original references were not independently checked.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00181",
+        "SRC00182",
+        "SRC00183",
+        "SRC00184",
+        "SRC00185",
+        "SRC00186",
+        "SRC00187",
+        "SRC00188",
+        "SRC00189"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0024",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0025",
+    "core_question": {
+      "text": "Expected pilot energy differs from realized normalization.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00190"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check whether random-element variances are treated as a deterministic norm for every generated sample.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00190"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Generation statistics determine expected energy; realized norms and normalization determine transmitted power.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00190"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A variance-based energy construction was described as unit power for every realized pilot.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00190"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Distinguish expected squared norm from each sample's squared norm and state the actual normalization procedure.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00190"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Removing the per-sample claim establishes the edit, not its unstated rationale; retained variance and power scaling need independent verification.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00190"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0025",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0026",
+    "core_question": {
+      "text": "Deleting parameter learning changes availability claims.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00191"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "When a learning step is removed but its parameters remain in use, check how those parameters are now provided.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00191"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Required hyperparameters must be inputs, assumptions, or externally estimated quantities within a stated scope.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00191"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A hyperparameter-learning section was removed by a short instruction without an explanation of the replacement source.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00191"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State the parameters' current status and retain unknown editorial intent rather than inventing a reason for deletion.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00191"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A footnote saying learning could estimate parameters is not a validated acquisition algorithm; deletion does not establish that the removed method is useless.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00191"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local concern chains were compared semantically. External references, mathematical proofs, and experiments were not independently certified. Missing editorial reasons remain unknown.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0026",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0027",
+    "core_question": {
+      "text": "Architectural properties need actual mathematical constraints.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00192"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "When hardware or network structure motivates a mathematical property, check the justified operations and constraints.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00192"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Physical architecture determines allowed operations, matrix constraints, and their later use.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00192"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Elementwise descriptions and a full-matrix label did not isolate the constraints actually used in design.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00192"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "State circuit assumptions, resulting scattering-matrix constraints, and their computational role.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00192"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Matrix density does not establish unitarity; retain only properties actually justified and used.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00192"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local text and feedback were compared across revisions. Cited literature, complete derivations, figure dimensions, and net benefits were not independently certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0027",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0028",
+    "core_question": {
+      "text": "State why an omitted path is negligible.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00193",
+        "SRC00194",
+        "SRC00195"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check the justification when a model excludes a process or term.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00193",
+        "SRC00194",
+        "SRC00195"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Deployment geometry and relative attenuation determine the omitted path and the model's scope.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00193",
+        "SRC00194",
+        "SRC00195"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Retained paths were listed without explaining a neglected reflection sequence at the relevant model description.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00193",
+        "SRC00194",
+        "SRC00195"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Give the deployment conditions and attenuation rationale, and delimit applicability.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00193",
+        "SRC00194",
+        "SRC00195"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "A modeling footnote is an asserted rationale rather than an error bound or proof of negligibility for every deployment.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00193",
+        "SRC00194",
+        "SRC00195"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local text and feedback were compared across revisions. Cited literature, complete derivations, figure dimensions, and net benefits were not independently certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0028",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0029",
+    "core_question": {
+      "text": "Use common expressions for genuinely shared structure.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00196",
+        "SRC00197"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check repeated derivations differing only in names or indices when repetition obscures comparison.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00196",
+        "SRC00197"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Shared structure permits unified indexing while differing conditions remain explicit.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00196",
+        "SRC00197"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "Similar reflected channels were derived separately, leaving readers to recognize their common form.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00196",
+        "SRC00197"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Unify indexing when dimensions and assumptions agree, and state exceptions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00196",
+        "SRC00197"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "Different assumptions or dimensions can require separate formulas; a distinct higher-order path should not be forced into the common expression.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00196",
+        "SRC00197"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local text and feedback were compared across revisions. Cited literature, complete derivations, figure dimensions, and net benefits were not independently certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0029",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  },
+  {
+    "id": "C0030",
+    "core_question": {
+      "text": "Comparisons should isolate the added structure.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00198",
+        "SRC00199",
+        "SRC00200",
+        "SRC00201",
+        "SRC00202",
+        "SRC00203",
+        "SRC00204",
+        "SRC00205"
+      ]
+    },
+    "new_manuscript_check": {
+      "text": "Check experiments or literature comparisons that change several system conditions or leave comparator identity vague.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00198",
+        "SRC00199",
+        "SRC00200",
+        "SRC00201",
+        "SRC00202",
+        "SRC00203",
+        "SRC00204",
+        "SRC00205"
+      ]
+    },
+    "relationship_to_check": {
+      "text": "Comparator differences and shared scale variables determine the claimed incremental benefit and cost.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00198",
+        "SRC00199",
+        "SRC00200",
+        "SRC00201",
+        "SRC00202",
+        "SRC00203",
+        "SRC00204",
+        "SRC00205"
+      ]
+    },
+    "historically_insufficient_response": {
+      "text": "A comparison changed both node count and matrix structure; a later comparator still lacked common-variable overhead and source support.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00198",
+        "SRC00199",
+        "SRC00200",
+        "SRC00201",
+        "SRC00202",
+        "SRC00203",
+        "SRC00204",
+        "SRC00205"
+      ]
+    },
+    "potentially_sufficient_response": {
+      "text": "Compare architecture and matrix-structure changes separately, with common parameters, assumptions, and overhead expressions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00198",
+        "SRC00199",
+        "SRC00200",
+        "SRC00201",
+        "SRC00202",
+        "SRC00203",
+        "SRC00204",
+        "SRC00205"
+      ]
+    },
+    "applicability_boundary": {
+      "text": "No universal baseline set is prescribed; asymptotic-order claims need the original sources and their conditions.",
+      "basis": "analyst_abstraction_from_private_feedback",
+      "source_ids": [
+        "SRC00198",
+        "SRC00199",
+        "SRC00200",
+        "SRC00201",
+        "SRC00202",
+        "SRC00203",
+        "SRC00204",
+        "SRC00205"
+      ]
+    },
+    "evidence_status": {
+      "candidate_status": "public_abstracted_candidate",
+      "advisor_acceptance": "not_established",
+      "historical_evidence_public": false,
+      "verification_scope": "Local text and feedback were compared across revisions. Cited literature, complete derivations, figure dimensions, and net benefits were not independently certified.",
+      "source_material": "private_feedback_not_redistributed"
+    },
+    "deferred_evidence": {
+      "card_id": "C0030",
+      "fields": [],
+      "status": "unavailable_in_public_distribution; preserve uncertainty"
+    }
+  }
+]
