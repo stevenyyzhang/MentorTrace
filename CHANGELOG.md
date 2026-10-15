@@ -1,12 +1,51 @@
 # Changelog / 版本变更
 
-## Repository workflow — 2026-10-09 / 仓库更新方式
+## 1.1.0 — release / 正式版
 
-- Merge the previously published development branch into main, preserving both commit histories. Main now carries ongoing development; stable installations use a specific Release tag or ZIP archive.
-- Update both READMEs and repository instructions. Existing release tags and assets are unchanged. This migration does not create a new stable release or change the published development code and corpora.
+2026-10-15. Bundle the admission-reviewed 1,581-record Expression library with the skill. New CLI runs use it by default for independent Advisor review and related drafting; --expression selects another snapshot and --no-expression creates an explicit baseline. Update the bilingual README with concise changes from 1.0 and plain definitions of Concern and Expression. Ship only the current Concern v4; retain v1–v3 in historical releases or local archives. Preserve existing frozen runs, source evidence, historical releases and actual model provenance.
 
-- 将此前已公开的开发分支合并到 main，保留双方提交历史。后续开发直接更新 main；稳定使用按指定 Release 标签或 ZIP 压缩包安装。
-- 同步中英文 README 与仓库工作约定。已有发布标签及附件保持不变；本次迁移不发布新的正式版，不改动已公开开发版的代码和语料。
+2026-10-15。将准入复查保留的 1,581 条 Expression 与 skill 同仓分发，新 CLI 运行默认用于 Advisor 独立审阅及后续起草；`--expression` 可替换快照，`--no-expression` 可建立禁用对照。双语 README 改为简要版本增量，并解释 Concern 与 Expression 的含义和来源。正式包只带当前 Concern v4，v1–v3 留在历史发布或本地归档中。旧冻结运行、原始证据、历史版本与实际模型来源记录保留。
+
+## 1.1.0-dev.4 — editorial learning and source transfer / 行文学习与来源迁移
+
+2026-10-13 editorial selection: new runs use Reader v4 (a grounded no-change baseline and nullable candidate) and editorial selection v1 (merge/verify decision groups with source dispositions and a compatible preferred path). Apply the same net-benefit rule to Concern, Expression and good-paper transfer. Preserve frozen v1–v3 protocols and old reports. The separate V8 49-comment re-adjudication is a scoped recovery exercise, not a new four-module benchmark or evidence of general improvement.
+
+2026-10-13 篇章取舍：新运行启用 Reader v4，允许有原文依据的保留决定；合并和验证按读者任务形成决策组，记录首选路径、收益、代价和放弃方案的依据。Concern、Expression 与优秀论文迁移采用同一收益判断。旧运行与原报告保留；V8 的49条重判仅属本次限定范围处理，不充当新的四模块评测或普遍改进证据。
+
+2026-10-09 paragraph follow-up: resolve 13 review samples under delegated assistant judgment; independently learn four omitted long mentor annotations, admit three bounded paragraph/section examples and hold one unresolved definition/theorem candidate. Activate the 238-record private snapshot. Preserve exact mentor proposals and distinguish observed later bodies, unknown writers and subsequent mentor corrections. Require Expression-led intake and exclude held operations from transfer. Prior snapshots and A/B/C outputs remain unchanged.
+
+2026-10-09 段落学习补充：按用户委托复核13个样例，独立补学四条遗漏的导师长批注，三条有条件入库、一条定义与定理依赖未解决而暂存，私有运行库增至238条。完整导师提议、后续正文、未知执笔者及后续导师纠正分别留存；Expression需独立选材，暂缓动作不能迁移。旧快照及A/B/C输出保留。
+
+2026-10-09 authorized tranche completed: learn 89 selected source packets, preserve 236 local Expression records, and freeze a reviewed runtime snapshot with 235 records after holding one. Complete the connected 12-Concern/20-Expression audit and scoped A/B/C comparison. A/B are broadly tied in auxiliary assessment; C has broader coverage, overlap and additional calls/input. Preserve actual mentor text, original outputs, authorization and usage. Full historical review and stable mentor fit remain unvalidated.
+
+2026-10-09 本轮授权范围完成：89个选定来源包学习留存236条局部Expression，关联核对后235条进入新运行快照，1条暂停迁移，旧快照保留。完成12条Concern/20条Expression核对及三组开发比较；辅助判断A/B基本持平，C覆盖更广且有重复和额外调用。实际导师原文、原始输出、授权和用量均留存；完整历史复核与稳定导师偏好仍未验证。
+
+2026-10-08 subsequent authorized implementation: add private Expression snapshots,
+independent Advisor task retrieval and source-bound drafting attribution. Bind original
+published-page prose to selected cases. Actual mentor proposals remain distinct from
+model analysis and new suggested prose. Real source learning and a scoped A/B/C
+development comparison have private audit records; legacy protocols stay compatible.
+
+2026-10-08 后续授权实施：新增私有 Expression 快照、Advisor 独立篇章任务检索和起草归因，绑定优秀论文原页文本。导师实际提议、模型分析和新稿建议分别保存。来源学习及三组开发对照保留私有审核记录；不宣称已验证导师风格或已完成全部历史材料整理。详见[实际接入与限制](docs/expression-integration-dev.4.md)。
+
+2026-10-08 naming update: the four review modules are Reader, Expert, Advisor and Editor. Rename current skill references and synchronize prompts, diagrams, configuration, status output and documentation. New requests carry explicit module names; historical `technical`/`language` serialization identifiers and frozen request contents remain compatible. The proposed mentor expression-example library is named Expression; no training or model review is started by this rename. Earlier packaged snapshots retain their original names and validation scope.
+
+2026-10-08 名称更新：四个审阅模块统一为 Reader、Expert、Advisor、Editor，同步当前 Skill 文件、提示词、架构图、配置和状态输出。旧运行标识及冻结请求保留兼容；计划中的导师表达案例库统一称为 Expression，本次更名没有启动训练。此前已打包快照保持其原有名称与验证范围。
+
+2026-10-08. Built on the dev.3 public snapshot, retaining its 493-card concern corpus and published-case bytes. Earlier releases and frozen reviews remain unchanged.
+
+- Learn editorial episodes with explicit before/context/feedback/after/follow-up evidence, component authorship, chronology, source-family dependence and conflicts. A local preparation/check tool creates private candidate lessons; it does not promote them or infer mentor acceptance.
+- New runs record source-to-target writing distinctions in Reader and independent Advisor, including selection, emphasis, paragraph roles and coordinated repairs. Every optional organization proposal links to its evidence. Sufficient, nonmatching, unknown and unfinished outcomes remain valid.
+- Preserve these records through both finding and optional-suggestion dispositions. Drafting receives full connected Reader accounts and complete relevant concern fields, with duplicate raw diagnostics kept in the private audit file. Attribute actual report wording to target evidence and recorded source use; legacy associations remain explicitly weaker.
+- Preserve lane isolation, frozen legacy protocols, unvalidated-recipe exclusion and existing delivery gates. No additional review lane or automatic model call is introduced. Local attribution checking complements the independent semantic/final-text audits.
+- The working tree already contained report-language and proposal-preparation edits beyond dev.3. They were preserved, not credited as newly implemented here.
+
+- 在 dev.3 上补上“历史修改事件→条件性行文认识→本稿具体动作→实际建议文本”的记录与运行链路；保留 493 条 concern 和原案例库，不用增加数量代替学习。
+- 新稿审阅对案例迁移、导师 concern 的篇章作用及可选篇章动作留存来源；起草恢复完整相关材料，并明确旧运行未记录的来源影响。
+- 初次机制实现完成本地协议与来源追踪验证；该阶段没有重新训练模型或重新审稿。后续授权调用见上方日期记录，仍未证实导师偏好或因果质量提升。
+
+See [design and limits](docs/editorial-learning-dev.4.md) and [validation](docs/validation-v1.1.0-dev.4.json).
+
 
 ## 1.1.0-dev.3 — development update / 开发版更新
 

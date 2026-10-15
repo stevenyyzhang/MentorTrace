@@ -3,6 +3,7 @@ import argparse
 import shutil
 from pathlib import Path
 import mentortrace_v1 as m
+import writing_transfer as writing
 
 def prepare(run,out):
  run=Path(run).resolve();out=Path(out).resolve()
@@ -18,6 +19,8 @@ def prepare(run,out):
   src=m.ROOT/'.agents/skills/mentortrace/references'/name
   shutil.copyfile(src,out/'inputs'/name)
  m.save(out/'inputs/verified.json',final)
+ m.save(out/'inputs/writing_evidence.json',writing.packet(run,m))
+ shutil.copyfile(m.ROOT/'.agents/skills/mentortrace/references/writing-transfer.md',out/'inputs/writing-transfer.md')
  language_path=run/'calls/language/response.json'
  language=m.read(language_path) if language_path.exists() else {}
  protocol=m.read(run/'inputs/protocol.json')
@@ -52,6 +55,20 @@ def prepare(run,out):
   prompt+='\n'+name+'\n'+(out/'inputs'/name).read_text(encoding='utf-8')
  compact=lambda value:__import__('json').dumps(value,ensure_ascii=False,separators=(',',':'))
  prompt+='\nKeep explanations concise and evidence-focused; do not reproduce private audit deliberation. This pass combines supported drafting, both-language meaning and natural wording checks; later final-text verification remains independent.'
+ evidence=m.read(out/'inputs/writing_evidence.json')
+ if evidence.get('expression_version'):
+  shutil.copyfile(m.ROOT/'.agents/skills/mentortrace/references/expression.md',out/'inputs/expression.md')
+  m.freeze(out/'inputs')
+  prompt+='\n'+(out/'inputs/expression.md').read_text(encoding='utf-8')
+ if evidence.get('expression_realization'):
+  import expression_realization as realization
+  shutil.copyfile(m.ROOT/'.agents/skills/mentortrace/references/expression-realization.md',out/'inputs/expression-realization.md')
+  m.freeze(out/'inputs')
+  prompt+='\n'+realization.SCHEMA+'\n'+(out/'inputs/expression-realization.md').read_text(encoding='utf-8')
+  m.save(out/'realization_review_contract.json',{'version':1,'required':True,
+    'schema':realization.REVIEW_SCHEMA,'scope':'Extend the existing final-text facts/meaning/style review; not a new discovery lane.'})
+ prompt+='\n'+(writing.EXPRESSION_DRAFT_SCHEMA if evidence.get('expression_version') else writing.DRAFT_SCHEMA)+'\n'+(out/'inputs/writing-transfer.md').read_text(encoding='utf-8')
+ prompt+='\nWRITING EVIDENCE (LINKED SOURCES, NOT TARGET FACTS)\n'+compact(writing.draft_view(m.read(out/'inputs/writing_evidence.json')))
  # All verified finding/organization fields stay intact. Unresolved
  # dispositions are already supplied in the complete coverage packet.
  draft_final={key:value for key,value in final.items() if key!='dispositions'}
@@ -65,7 +82,7 @@ def prepare(run,out):
  prompt+='\nVERIFIED REVIEW\n'+compact(draft_final)+'\nMANUSCRIPT\n'+compact(paper)
  prompt+='\nCOVERAGE AND PENDING ITEMS\n'+compact(m.read(out/'inputs/coverage_and_pending.json'))
  if (out/'inputs/case_relation_references.json').exists():
-  prompt+='\nCITED SOURCE RELATION RECONSTRUCTIONS (ANALYST INTERPRETATIONS, NOT REQUIRED TARGET ORDER)\n'+compact(m.read(out/'inputs/case_relation_references.json'))
+  # Full connected case accounts above supersede the legacy relation-only view.
   prompt+='\nDevelop revisions from verified target requirements and available target facts. Source organization does not establish a uniquely correct target order. Do not manufacture an alternative for every case or delay required information merely to create a comparison. Preserve necessary information and dependencies in any proposed target revision; reject a proposal when these cannot be established.'
  images=[{**x,'path':'inputs/paper/'+x['path']} for x in m.read(out/'inputs/paper/manifest.json')['images']]
  m.save(out/'request.json',{'stage':'revision_proposals','prompt':prompt,'images':images,'tools_allowed':False,

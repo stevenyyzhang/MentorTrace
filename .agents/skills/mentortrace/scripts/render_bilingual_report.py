@@ -95,7 +95,33 @@ def group_finding_sections(card: html.HtmlElement) -> None:
         card.insert(card.index(boundary), html.Element("div", {"class": "language-divider"}))
 
 
+def normalize_revision_fields(markdown: str) -> str:
+    """One label per action block; inline for a single prose paragraph."""
+    blocks = [block.strip() for block in re.split(r"\n[ \t]*\n", markdown.strip()) if block.strip()]
+    output = []
+    field = re.compile(r"^\*\*(Suggested revision|建议修改)[:：]\*\*\s*(.*)$", re.S)
+    i = 0
+    while i < len(blocks):
+        match = field.match(blocks[i])
+        if not match:
+            output.append(blocks[i]); i += 1; continue
+        key = match[1]; paragraphs = [match[2]] if match[2].strip() else []
+        i += 1
+        while i < len(blocks):
+            candidate = blocks[i]; another = field.match(candidate)
+            if another and another[1] == key:
+                if another[2].strip(): paragraphs.append(another[2])
+                i += 1; continue
+            if re.match(r"^(?:#{1,6} |\*\*|---|___|<)", candidate): break
+            paragraphs.append(candidate); i += 1
+        label = "**" + key + ("：" if key == "建议修改" else ":") + "**"
+        simple = len(paragraphs) == 1 and not re.match(r"^(?:[-*+] |\d+[.)] |```|\$\$|>)", paragraphs[0])
+        output.append(label + (" " + paragraphs[0] if simple else "\n\n" + "\n\n".join(paragraphs)))
+    return "\n\n".join(output) + "\n"
+
+
 def build_html(markdown: str, css_name: str, pandoc: str) -> tuple[str, int, int]:
+    markdown = normalize_revision_fields(markdown)
     # GFM recognizes dollar math; normalize both TeX delimiter forms for
     # rendering only, without changing the frozen Markdown.
     render_markdown = re.sub(r"\\\((.+?)\\\)", lambda m: "$" + m.group(1).strip() + "$", markdown, flags=re.S)
@@ -324,6 +350,21 @@ def build_html(markdown: str, css_name: str, pandoc: str) -> tuple[str, int, int
                 report.insert(report.index(child), coverage_parent)
         if coverage_parent is not None:
             coverage_parent.append(child)
+
+    for parent in list(report.iter()):
+        active = None
+        for child in list(parent):
+            if child.tag != "p":
+                active = None
+                continue
+            text = "".join(child.itertext()).strip()
+            if text in ("Suggested revision:", "建议修改：", "建议修改:"):
+                active = "en" if text.startswith("Suggested") else "zh"
+                child.set("class", active + " revision-label")
+            elif active and child.find("strong") is None:
+                child.set("class", active + " revision-body")
+            else:
+                active = None
 
     page = html.Element("html", {"lang": "en"})
     head = html.Element("head")

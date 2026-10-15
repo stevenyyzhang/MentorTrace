@@ -1,5 +1,90 @@
 # Execution guide
 
+## Reviewer names and compatibility
+
+Use Reader, Expert, Advisor and Editor as the module names. New runs freeze
+`module_naming_version: 1` and the corresponding `module_names` map; generated
+requests and CLI summaries expose `module_name`. Stable storage/schema IDs remain
+`reader`, `technical`, `supplement_*` and `language`. The `expert` and `editor`
+aliases are accepted by request preparation and `run_authorized_stage.py --stage`;
+response IDs still use the namespaces specified in the request. Case-route JSON
+continues to use `technical` for the Expert lane. This changes names, not scope,
+independence, model settings or saved evidence.
+
+Current references are `expert-checks.md`, `goodpaper-expert.md` and
+`editor-surface.md`. Old runs resolve the original filenames inside their own
+frozen skill snapshots, keeping old request bytes and hashes intact. Frozen corpus
+filenames, historical validation records and report content categories are retained;
+“Content and technical comments” and “Language and presentation comments” describe
+the comments, not module names.
+
+## Bundled Expression and optional original case passages
+
+Normal review needs no Expression setup:
+`python scripts/mentortrace_v1.py create --paper PACKAGE --run RUN`.
+This freezes the bundled 1,581-record `corpus/advisor-expression-v1` and adds `advisor_tasks` before the
+general object plan. It maps the target independently for Advisor, without previous
+lane findings. Accepted tasks are matched through both target-task retrieval and
+linked Concern IDs; `expression_route.json` records candidate terms, assignments,
+selected IDs and source/map hashes. Complete task and selected-example dispositions
+with each Advisor batch. Concern batch coverage remains unchanged.
+
+Use `--expression-mode draft_only` for the B comparison: the same baseline discovery
+stages run, and Expression is retrieved only for frozen final requirements during
+drafting. Use `--no-expression` for the A baseline; the default `advisor_and_draft`
+mode is C. `--expression PATH` explicitly selects a different frozen public or private
+snapshot. A missing or corrupted default library stops creation. These switches do not
+establish causal improvement or equal runtime cost.
+
+Add `--case-passages PRIVATE_PASSAGES` when locally bound original published-paper
+page text is available. Its case snapshot hash must match the selected public case
+library. Only Reader/Expert selected cases receive original anchor and neighboring
+pages; Advisor does not receive this inventory. No original PDF text enters public
+corpus snapshots. Original source extraction is not new glyph or theorem certification.
+
+Expression snapshots use `expression_runtime.py` for evidence, identity, text and
+source-hash checks. Full connected examples and original context enter
+`writing_evidence.json`; proposal responses give `expression_ids` and concrete
+`expression_uses` alongside actual report excerpts. Use `writing_transfer.py
+audit-proposals` to check source links. Independent factual/meaning review is still
+required. Preserve each prior run and snapshot. Original case passages and private
+Expression overrides remain opt-in; the public Expression library is bundled and enabled.
+
+## dev.4 writing transfer records
+
+New H/G runs freeze `writing_transfer: 1`; older frozen runs keep their schemas.
+Reader and independent Advisor load writing-transfer.md. Each selected Reader case
+has a target transfer/keep/nonmatch record; Advisor classifies editorial scope in
+its existing card dispositions, with transfer records for linked editorial concerns.
+Every optional organization suggestion links to an anchored transfer. Full source
+accounts remain isolated in their original lanes. Writing-transfer accounting alone
+adds no model stage; selecting Expression in Advisor adds the internal task-map
+stage described above.
+
+`export` writes `writing_transfer.json`, with raw-to-final links through both content
+and optional dispositions. Draft preparation freezes `inputs/writing_evidence.json`
+and requests `revision_attribution` for actual report excerpts. This includes sources
+connected through retained raw requirements; old runs are explicitly marked as
+lacking dev.4 transfer records. Validate a proposal response before final delivery:
+
+```powershell
+python scripts/writing_transfer.py audit-proposals --delivery <proposal-folder> --response <response.json>
+```
+
+This checks attribution links and target anchors; the existing independent source,
+Phase A/B and final-text delivery audits remain required. A later report edit needs
+a new attribution check. For read-only provenance inspection of a completed run:
+
+```powershell
+python scripts/writing_transfer.py trace --run <completed-run> --out <new-trace.json>
+```
+
+Explicit historical learning uses `scripts/editorial_learning.py prepare --episodes
+<private-episodes.json> --out <new-folder>`, then `check --packet <folder> --response
+<lessons.json>`. See editorial-learning.md for episode and lesson evidence boundaries.
+Preparation makes no model call. Keep both outputs private. Actual improvement still
+needs a controlled semantic evaluation; schema success is not learned mentor fit.
+
 Resolve paths from the full repository root. Python 3.10+, prepared manuscript pages, both frozen public corpora, and an explicitly authorized model transport are needed. The runner creates requests and validates responses; it does not automatically send manuscripts or modify their files.
 
 For transport, resumption and postprocessing, apply [execution efficiency](execution-efficiency.md). Keep model/effort fixed unless the user explicitly authorizes the new settings. Standard is the default; Fast requires explicit tier and additional-usage authorization, never an inference from urgency.
@@ -12,15 +97,15 @@ Create a new run with scripts/mentortrace_v1.py create --paper PACKAGE --run RUN
 
 ## Review stages and isolation
 
-New protocols enable source_fidelity: 1 and freeze inputs/source_fidelity.json from raw page text and image hashes. This adds deterministic inline split-word candidates to Language only, plus formula-source records in Verify; source-fidelity.md also guides Technical, Advisor, consolidation and drafting. Candidate dispositions and formula records are validated on acceptance. The program does not rewrite extraction, perform OCR or certify the reviewer's visual judgment. Frozen older protocols retain their existing request/response contracts.
+New protocols enable source_fidelity: 1 and freeze inputs/source_fidelity.json from raw page text and image hashes. This adds deterministic inline split-word candidates to Editor only, plus formula-source records in Verify; source-fidelity.md also guides Expert, Advisor, consolidation and drafting. Candidate dispositions and formula records are validated on acceptance. The program does not rewrite extraction, perform OCR or certify the reviewer's visual judgment. Frozen older protocols retain their existing request/response contracts.
 
-Use next --run RUN to prepare one request, then accept --run RUN --response RESPONSE.json. Preserve the original response before any normalization. Each initial lane uses a fresh context: Reader and Technical receive the target plan and only their selected cases; each Advisor batch receives the full manuscript and its complete card batch without the plan or prior opinions; Language receives manuscript text units and images without cards or plan. Complete the manifest-defined Advisor batch coverage, not a fixed number of defects.
+Use next --run RUN to prepare one request, then accept --run RUN --response RESPONSE.json. Preserve the original response before any normalization. Each initial lane uses a fresh context: Reader and Expert receive the target plan and only their selected cases; each Advisor batch receives the full manuscript and its complete card batch without the plan or prior opinions; Editor receives manuscript text units and images without cards or plan. Complete the manifest-defined Advisor batch coverage, not a fixed number of defects.
 
 After accepting objects, use route-input --run RUN, read case_route_input.json and write a selection with source_plan_sha256, reader, technical and skipped_entries. Each route names target object_ids, task, entry_ids, case_ids, reason and sufficiency_question. Freeze it with route-cases --run RUN --route SELECTION.json. Empty routes are valid when unused entries have reasons. IDs and links are executable checks; semantic task matching still requires review. Source examples prompt a target question; no alternative answer is required.
 
 The public concern package cannot supply private historical evidence. Cards declare that limitation. Do not request unavailable histories or count them as checked; retain affected uncertainty. An explicitly supplied private package may support bounded follow-ups, which are logged separately from initial discovery. The target manuscript remains the evidence for every reported defect.
 
-The four lanes are followed by raw freeze, a source-execution review, merge, fresh verification, requirement comparison, final-text review and author-facing report freeze. After raw freeze, inspect whether the planned and independently created relations were actually answered: compare the original target with the evidence/reason, including compound tasks, current claim scope and conditional proof versus premise declaration. Record the inspected source IDs, evidence, unresolved or unattempted parts and review limits in a private initial_execution_review record. Completed accounting does not establish substantive completeness; completed plus unknown is valid. A sampling review must disclose its coverage. A missing review task is not an author error. Carry justified later additions into the merge/verify trace without rewriting frozen initial outputs or expanding every unknown into a finding. Technical checks actual configurations and operation prerequisites; Reader records multiscale comprehension and editorial alternatives. Advisor remains independent. Do not truncate evidence to fit a request: preflight actual text, images, model context and output reserve. Failure and uncertain transport attempts require inspection; retry is explicit and archives the prior attempt.
+The four lanes are followed by raw freeze, a source-execution review, merge, fresh verification, requirement comparison, final-text review and author-facing report freeze. After raw freeze, inspect whether the planned and independently created relations were actually answered: compare the original target with the evidence/reason, including compound tasks, current claim scope and conditional proof versus premise declaration. Record the inspected source IDs, evidence, unresolved or unattempted parts and review limits in a private initial_execution_review record. Completed accounting does not establish substantive completeness; completed plus unknown is valid. A sampling review must disclose its coverage. A missing review task is not an author error. Carry justified later additions into the merge/verify trace without rewriting frozen initial outputs or expanding every unknown into a finding. Expert checks actual configurations and operation prerequisites; Reader records multiscale comprehension and editorial alternatives. Advisor remains independent. Do not truncate evidence to fit a request: preflight actual text, images, model context and output reserve. Failure and uncertain transport attempts require inspection; retry is explicit and archives the prior attempt.
 
 ## Optional transport
 
@@ -38,4 +123,4 @@ Complete the separate A/B consolidation review and version 2 final-text preserva
 
 ## Public release limitations
 
-Public cards are conditional analytical abstractions. Source histories are withheld, and all original Reader/Technical case identities and paired companion summaries are retained as English analytical records, without source passages. Schema tests verify accounting and boundaries, not technical truth or equivalence to the private release. Anonymous IDs cannot establish unseen-source-family eligibility. The repository contains no source manuscript PDFs or private historical mapping.
+Public cards are conditional analytical abstractions. Source histories are withheld, and all original Reader/Expert case identities and paired companion summaries are retained as English analytical records, without source passages. Schema tests verify accounting and boundaries, not technical truth or equivalence to the private release. Anonymous IDs cannot establish unseen-source-family eligibility. The repository contains no source manuscript PDFs or private historical mapping.

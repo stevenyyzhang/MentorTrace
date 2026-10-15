@@ -39,12 +39,12 @@ def validate_routes(route, library, objects, plan_sha):
             require(bool(item.get('case_ids')) and set(item['case_ids']) <= set(cases), f'Unknown {lane} case')
             require(set(item.get('entry_ids', [])) <= set(entries), f'Unknown {lane} entry')
             if lane == 'technical':
-                require(bool(item.get('entry_ids')), 'Technical case requires a navigation entry')
-                require(all(any(cid in entries[eid]['candidate_case_ids'] for eid in item['entry_ids']) for cid in item['case_ids']), 'Technical case does not belong to selected entry')
+                require(bool(item.get('entry_ids')), 'Expert case requires a navigation entry')
+                require(all(any(cid in entries[eid]['candidate_case_ids'] for eid in item['entry_ids']) for cid in item['case_ids']), 'Expert case does not belong to selected entry')
                 for cid in item.get('companion_ids', []):
                     require(cid in companions and companions[cid]['paired_from'] in item['case_ids'], 'Unknown or unrelated companion')
             else:
-                require(not item.get('companion_ids'), 'Reader cannot load Technical companions')
+                require(not item.get('companion_ids'), 'Reader cannot load Expert companions')
     require(isinstance(route.get('skipped_entries'), list), 'Missing skipped-entry reasons')
     selected = {(lane, eid) for lane in ['reader', 'technical'] for item in route[lane] for eid in item.get('entry_ids', [])}
     skipped = {(item.get('lane'), item.get('entry_id')) for item in route['skipped_entries'] if item.get('reason')}
@@ -78,3 +78,19 @@ def selected_for_lane(library, route, lane):
     return {'selection_basis': 'frozen target tasks; analyst reconstructions prompt questions, not verdicts or required target order',
             'routes': route[lane], 'complete_cases': records,
             'same_task_companions': [execution_view(companions[cid], 'full_source_record', True) for cid in companion_ids]}
+
+
+def with_passages(selection, passage_library):
+    """Add actual private source text to selected cases without changing public cases."""
+    library=Path(passage_library)
+    require(read(library/'manifest.json')['role']=='private_published_case_passages','Wrong case-passage library')
+    sources=read(library/'sources.json');links=read(library/'case_links.json')
+    for record in selection['complete_cases']+selection['same_task_companions']:
+        link=links.get(record['case_id'])
+        require(link and link['paper_id']==record['paper_id'],'Case passage belongs to a different paper')
+        source=sources[link['paper_id']]
+        wanted={n for p in link['anchor_pages'] for n in [p-1,p,p+1] if 0<n<=source['page_count']}
+        record['source_passages']={k:v for k,v in source.items() if k not in {'source_path','pages'}}
+        record['source_passages']['anchor_pages']=link['anchor_pages']
+        record['source_passages']['pages']=[p for p in source['pages'] if p['page'] in wanted]
+    return selection

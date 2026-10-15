@@ -71,6 +71,36 @@ class Organization(unittest.TestCase):
   self.assertNotIn('input_organization_suggestions',ctx)
   self.assertNotIn('objects',ctx)
 
+ def test_incorporated_organization_is_a_content_source(self):
+  ctx={'manuscript':[{'page':1,'text':A['quote']}], 'input_findings':[],
+       'input_organization_suggestions':[suggestion('reader')]}
+  for stage in ['merge','verify']:
+   finding={'id':stage+':F1','anchor':A,'relation':'Existing definition precedes its dependent explanation.',
+            'gap':'The first use currently precedes the definition.',
+            'impact':'The reader must search backward.', 'closure_goal':'Place the existing definition before its first use.'}
+   x={'findings':[finding],'dispositions':[], 'organization_dispositions':[{
+       'input_id':'reader:G1','status':'incorporated','output_ids':[finding['id']],
+       'reason':'The same requirement is preserved as a content finding.','evidence':[A]}]}
+   m.validate(stage,x,ctx)
+   unrelated=copy.deepcopy(finding);unrelated['id']=stage+':F2'
+   x['findings'].append(unrelated)
+   with self.assertRaisesRegex(ValueError,'Unmapped finding must be marked new'):
+    m.validate(stage,x,ctx)
+
+ def test_retained_organization_can_keep_separate_content_links(self):
+  ctx={'manuscript':[{'page':1,'text':A['quote']}],'input_findings':[],
+       'input_organization_suggestions':[suggestion('reader')]}
+  finding={'id':'merge:F1','anchor':A,'relation':'The relocated claim still needs qualification.',
+           'gap':'Its qualification is not supplied.','impact':'Relocation alone does not resolve claim scope.',
+           'closure_goal':'Preserve the qualification with the relocated passage.'}
+  x={'findings':[finding],'dispositions':[],'organization_suggestions':[suggestion('merge')],
+     'organization_dispositions':[{'input_id':'reader:G1','status':'merged','output_ids':['merge:G1'],
+       'content_output_ids':['merge:F1'],'reason':'The optional relocation and separate qualification both survive.','evidence':[A]}]}
+  m.validate('merge',x,ctx)
+  x['organization_dispositions'][0]['content_output_ids']=['merge:unknown']
+  with self.assertRaisesRegex(ValueError,'Organization content link'):
+   m.validate('merge',x,ctx)
+
  def test_legacy_protocol_does_not_gain_new_prompt_fields(self):
   protocol=m.read(self.run/'inputs/protocol.json');protocol.pop('organization_review')
   m.save(self.run/'inputs/protocol.json',protocol);m.freeze(self.run/'inputs')

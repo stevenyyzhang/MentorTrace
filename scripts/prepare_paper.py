@@ -24,7 +24,9 @@ def prepare(source, output, *, text_tool='pdftotext', image_tool='pdftoppm', dpi
         clean = work / 'annotation-free.pdf'
         with clean.open('wb') as stream:
             writer.write(stream)
-        result = subprocess.run([text_tool, '-layout', str(clean), '-'], check=True, capture_output=True, encoding='utf-8', errors='replace')
+        # Reading order keeps paragraphs continuous across multi-column pages.
+        # Physical layout and mathematical glyphs remain governed by page images.
+        result = subprocess.run([text_tool, str(clean), '-'], check=True, capture_output=True, encoding='utf-8', errors='replace')
         texts = result.stdout.split('\f')
         if texts and not texts[-1].strip():
             texts.pop()

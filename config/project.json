@@ -1,10 +1,17 @@
 {
   "name": "MentorTrace",
-  "version": "1.1.0-dev.3",
+  "version": "1.1.0",
   "candidate_skill": ".agents/skills/mentortrace",
+  "module_names": {
+    "reader": "Reader",
+    "technical": "Expert",
+    "supplement": "Advisor",
+    "language": "Editor"
+  },
   "model_calls_enabled": false,
   "default_knowledge": "corpus/advisor-concerns-v4",
   "goodpaper_knowledge": "corpus/published-cases-v1",
+  "expression_knowledge": "corpus/advisor-expression-v1",
   "initial_mode": "diagnose_only",
-  "publication_scope": "English analytical abstractions and cited case summaries; no private historical text"
+  "publication_scope": "English analytical corpora, cited case summaries and reviewed minimized Expression examples; no original pages, editorial comments or private mappings"
 }

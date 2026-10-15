@@ -1,0 +1,61 @@
+{
+  "role": "public_advisor_expression",
+  "schema_version": 2,
+  "count": 1581,
+  "source_records": 2438,
+  "semantic_reviewed": 2438,
+  "concern_catalog_count": 493,
+  "editorial_comment_policy": "analytical_operations_only",
+  "private_raw_pages": false,
+  "private_original_mapping": false,
+  "private_images": false,
+  "publication_permission": "user_authorized_public_distribution",
+  "status": "released",
+  "expression_realization": 1,
+  "language_feature_count": 1863,
+  "analytical_operation_features": 323,
+  "review_requested_model_settings": [
+    {
+      "requested_model": "gpt-6-astra",
+      "reasoning_effort": "low",
+      "requested_service_tier": "default",
+      "reviewed_records": 355
+    },
+    {
+      "requested_model": "gpt-6-astra",
+      "reasoning_effort": "medium",
+      "requested_service_tier": "default",
+      "reviewed_records": 451
+    },
+    {
+      "requested_model": "gpt-6.1-sol",
+      "reasoning_effort": "high",
+      "requested_service_tier": "default",
+      "reviewed_records": 600
+    },
+    {
+      "requested_model": "gpt-6.1-sol",
+      "reasoning_effort": "medium",
+      "requested_service_tier": "default",
+      "reviewed_records": 68
+    },
+    {
+      "requested_model": "gpt-6.1-sol",
+      "reasoning_effort": "xhigh",
+      "requested_service_tier": "default",
+      "reviewed_records": 964
+    }
+  ],
+  "limits": [
+    "Only admission-reviewed minimized records are distributed; retained mentor-body and author-edit excerpts keep their evidence roles.",
+    "Editorial instructions are disclosed only as analytical operations; no raw comment examples.",
+    "New semantic admission and full supplied-Concern comparison reuse valid previous attribution and quote checks.",
+    "Local conditional cases do not establish general mentor preference, acceptance or better rewriting.",
+    "Distribution follows the project owner instruction; this records authorization, not independent certification of third-party rights."
+  ],
+  "distribution_authorization": {
+    "kind": "project_owner_instruction",
+    "date": "2026-10-15",
+    "scope": "Distribute the reviewed 1581-record minimized Expression library together with MentorTrace v1.1.0 in the same public repository."
+  }
+}

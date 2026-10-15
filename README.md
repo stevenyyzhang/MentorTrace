@@ -1,15 +1,19 @@
 # MentorTrace
 
-Version: [v1.1.0-dev.3](VERSION)
+Version: [v1.1.0](VERSION)
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-The `main` branch contains the latest development version. For stable use, download the [v1.0.0 Release](https://github.com/stevenyyzhang/MentorTrace/releases/tag/v1.0.0). Published versions are preserved as tags and ZIP archives in [Releases](https://github.com/stevenyyzhang/MentorTrace/releases); use a specific tag or archive to keep your installation on that version as `main` changes.
 
-Pre-release status: `v1.1.0-dev.3` is a development snapshot for testing, not a stable release. See [changes and migration notes](CHANGELOG.md) and the [current validation record](docs/validation-v1.1.0-dev.3.json). The earlier development record and other audit documents retain their original baseline scope. The development version is independently runnable, but improvements in diagnostic quality, live latency and usage have not been established by controlled comparisons.
 MentorTrace derives judgment patterns from an academic supervisor's actual comments and successive manuscript revisions, and draws on published papers that supervisor considers well written to help authors identify problems in a new manuscript's argument, technical support, organization and expression. During review, it follows the manuscript's argument chains, technical relationships and revision cues, continually asking whether explanations are sufficient, whether arguments are complete, and whether conclusions are supported by evidence. Each review comment identifies the relevant manuscript passage, explains the issue and its basis, and provides concrete revision suggestions. The results are organized into bilingual English–Chinese Markdown and PDF reports.
 
 The current implementation runs as a **Codex skill with a Python workflow** and accepts **PDF manuscripts**. **LaTeX source input and output** are planned. It produces revision guidance and reports; automatically applying changes to the manuscript is not yet integrated.
+
+## Changes from 1.0 to 1.1
+
+- **Two mentor libraries:** 493 Concern records describe what to explain or justify; 1,581 Expression examples show concrete wording, syntax and paragraph operations. Both ship with the skill and are enabled by default.
+- **Organization and revision:** check paragraph tasks, information selection and transitions; draft concrete passages for retained issues and coordinate duplicate or conflicting suggestions.
+- **Consistent modules and reports:** Reader, Expert, Advisor and Editor, with refined bilingual comments and suggested-revision presentation.
 
 ## Contents
 
@@ -27,10 +31,8 @@ The current implementation runs as a **Codex skill with a Python workflow** and 
 Ask Codex to download the repository and prepare the environment:
 
 ```text
-Download the complete main branch of https://github.com/stevenyyzhang/MentorTrace locally, configure its required dependencies, check the environment, and tell me which repository directory to open in Codex.
+Download the complete MentorTrace v1.1.0 repository or release package from https://github.com/stevenyyzhang/MentorTrace locally, verify VERSION, configure its required dependencies, check the environment, and tell me which repository directory to open in Codex.
 ```
-
-For the stable version, replace "main branch" in that prompt with "v1.0.0 Release".
 
 Once setup is ready, open the downloaded repository root in Codex, place your PDF in a local `workspaces/` directory, and use the review prompt below. See [Dependencies and execution guide](#dependencies-and-execution-guide) for dependencies and model access.
 
@@ -62,9 +64,9 @@ flowchart TB
     O["Object and task plan"]
     C["Select and freeze cases"]
     R["Reader<br/>Comprehension<br/>and organization"]
-    T["Technical<br/>Relationships<br/>and reasoning"]
-    A["Advisor<br/>Independent<br/>concern review"]
-    L["Language<br/>Wording, notation<br/>and formatting"]
+    T["Expert<br/>Relationships<br/>and reasoning"]
+    A["Advisor<br/>Independent review<br/>Concern + Expression"]
+    L["Editor<br/>Wording, notation<br/>and formatting"]
     M["Freeze source findings<br/>Review execution and merge"]
     V["Independent verification<br/>against manuscript evidence"]
     Q["Judge source requirements<br/>Freeze source review"]
@@ -91,16 +93,16 @@ flowchart TB
     class OUT output;
 ```
 
-Arrows before review show the main input dependencies: object and task planning and case selection serve Reader and Technical only. Advisor starts independently from the full manuscript and its current batch of supervisor concerns.
+Arrows before review show the main input dependencies: object and task planning and case selection serve Reader and Expert only. Advisor starts independently from the full manuscript, its current Concern batch and relevant examples from the bundled Expression library. Relevant Expression evidence also supports post-verification drafting.
 
 | Module | Main inputs | Function |
 | --- | --- | --- |
 | Reader | Full manuscript, object and task plan, Reader cases | Check comprehension, argument flow and organization; identify explanatory gaps. |
-| Technical | Full manuscript, object and task plan, Technical cases | Check technical relationships, assumptions, applicability and support for conclusions. |
-| Advisor | Full manuscript, current batch of supervisor concerns | Independently check comprehension and technical issues using concerns distilled from historical revisions. |
-| Language | Full manuscript, text units to inspect | Check language, notation, terminology consistency and formatting. |
+| Expert | Full manuscript, object and task plan, Expert cases | Check technical relationships, assumptions, applicability and support for conclusions. |
+| Advisor | Full manuscript, Concern requirements and relevant Expression examples | Independently check historical concerns and applicable wording or paragraph operations; retain only suggestions supported by the new manuscript. |
+| Editor | Full manuscript, text units to inspect | Check language, notation, terminology consistency and formatting. |
 
-Models perform all four review lanes. Historical concerns and paper cases guide the questions; every final finding still needs specific evidence from the new manuscript. In this development version, reviewers inspect actual initial execution after its freeze, adjudicate changed source requirements before comparing their final delivery, and review the final report facts, conditions and wording. Tools check source hashes, accounting and exact excerpts; they do not certify scientific correctness. These changes still need controlled manuscript replay. See the [execution guide](.agents/skills/mentortrace/references/execution.md) for details.
+Models perform all four review lanes. Historical concerns and paper cases guide the questions; every final finding still needs specific evidence from the new manuscript. In v1.1.0, reviewers inspect actual initial execution after its freeze, adjudicate changed source requirements before comparing their final delivery, and review the final report facts, conditions and wording. Tools check source hashes, accounting and exact excerpts; they do not certify scientific correctness. These changes still need controlled manuscript replay. See the [execution guide](.agents/skills/mentortrace/references/execution.md) for details.
 
 ## Report contents
 
@@ -145,10 +147,8 @@ MentorTrace/
 │   └── ...                        Other validation and transport tools
 ├── config/                        Project and optional model settings
 ├── corpus/
-│   ├── advisor-concerns-v1/        Preserved baseline of 437 concerns
-│   ├── advisor-concerns-v2/        Preserved 481-card snapshot
-│   ├── advisor-concerns-v3/        Preserved 490-card snapshot
 │   ├── advisor-concerns-v4/        Current default: 493 conditional concerns
+│   ├── advisor-expression-v1/      Enabled by default: 1,581 mentor expression examples
 │   └── published-cases-v1/         Published-paper cases, indexes and citations
 ├── examples/                      Fictional bilingual report examples
 ├── docs/                          Corpus fields, case checks and validation
@@ -166,9 +166,9 @@ MentorTrace/
 
 The corpora draw on two sets of manuscript materials:
 
-**Papers from the research group revised by the supervisor.** The current source materials cover **24 papers**, each with multiple available annotated or revised versions. Actual comments, student responses and subsequent revisions inform the historical review concerns, judgment grounds, insufficient responses and applicability boundaries. These concerns cover both reader comprehension and technical arguments, such as concept explanations, information links, assumptions, derivations and supported claim scope. Their topics overlap with Reader and Technical, but Advisor uses them independently; they have no one-to-one mapping to published cases. Separate revision phases of the same paper count as one paper. Only anonymized, generalized analytical records are distributed; original manuscripts, verbatim comments and private revision histories are not publicly distributed. Learning here means consulting analytical records, not fine-tuning model parameters.
+**Papers from the research group revised by the supervisor.** The materials cover **24 papers**, each with multiple available annotated or revised versions. They support two linked libraries: **Concern** records describe what the mentor asks authors to explain or justify, together with judgment grounds and applicability boundaries, such as concepts, information links, assumptions, derivations and claim support; **Expression** records preserve mentor-proposed wording, syntax and conditional deletion, movement or paragraph restructuring derived from actual edits. Concern guides what to check; Expression guides how to express it. Records may link across libraries or stand independently, and Advisor and later drafting use them according to the target manuscript. Separate revision phases of the same paper count as one paper. Original manuscripts, literal mentor comments and private revision histories are excluded. Needed manuscript/author excerpts in Expression remain separately labeled from analyst accounts. Learning means retrieving examples for model reference, not fine-tuning parameters.
 
-**Published papers the supervisor considers well written.** The current cases cover **52 papers**, primarily in wireless communications. Reader and Technical cases are developed from specific arguments and writing passages: Reader cases concern explanations, information arrangement and comprehension; Technical cases concern technical relationships, prerequisites, argument support and claim scope. Models produced the case analyses; these have not received item-by-item supervisor confirmation. Recommending a paper does not imply endorsing every case interpretation. Cases retain public bibliographic references. Original paper PDFs are not bundled.
+**Published papers the supervisor considers well written.** The current cases cover **52 papers**, primarily in wireless communications. Reader and Expert cases are developed from specific arguments and writing passages: Reader cases concern explanations, information arrangement and comprehension; Expert cases concern technical relationships, prerequisites, argument support and claim scope. Models produced the case analyses; these have not received item-by-item supervisor confirmation. Recommending a paper does not imply endorsing every case interpretation. Cases retain public bibliographic references. Original paper PDFs are not bundled.
 
 Cases record source observations and analytical summaries, including relationships or approaches recurring across multiple papers. They do not establish strengths shared by every paper or automatically prove that one writing approach is better. Source facts, analyst interpretations and transfer judgments are distinguished; applicability must be checked against the new manuscript.
 
@@ -189,6 +189,6 @@ If the skill is missing, check that the complete repository root is open. Repair
 
 ## Privacy and license
 
-Private manuscripts, original comments, marked passages, neighboring source text, identity mappings, private revision histories and local paper paths are excluded. Inputs, reports, logs and credentials remain local. Inspect actual files before publishing: Git ignore rules do not remove tracked content.
+Original manuscripts, literal mentor comments, source pages, identity mappings, private revision histories and local paper paths are excluded. Expression contains only admission-reviewed accounts and separately labeled necessary manuscript excerpts. Inputs, reports, logs and credentials remain local. Inspect actual files before publishing: Git ignore rules do not remove tracked content.
 
 Code, skill instructions and documentation use [MIT](LICENSE). Original analytical records under `corpus/` use [CC BY 4.0](LICENSE-CORPUS.md); copying, modifying or redistributing them requires project attribution, source citations and change notices. Original paper rights remain with their rights holders; see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

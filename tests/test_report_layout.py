@@ -206,3 +206,25 @@ It is small under the stated condition: \( -66.99\,\mathrm{dB}\).
         self.assertIn('Conditional broader claim',''.join(drafts[0].itertext()))
 
 if __name__=='__main__':unittest.main()
+
+
+class RevisionFieldLayout(unittest.TestCase):
+    def test_single_paragraph_inline_and_multiple_paragraphs_below(self):
+        single = "**建议修改：**\n\n保留原句，仅修正冠词。\n"
+        self.assertEqual(renderer.normalize_revision_fields(single), "**建议修改：** 保留原句，仅修正冠词。\n")
+        multi = "**Suggested revision:** First action.\n\n**Suggested revision:** Second action.\n\n**审阅意见：** 解释。\n"
+        result = renderer.normalize_revision_fields(multi)
+        self.assertEqual(result.count("**Suggested revision:**"), 1)
+        self.assertIn("**Suggested revision:**\n\nFirst action.\n\nSecond action.", result)
+        self.assertIn("**审阅意见：** 解释。", result)
+
+    def test_math_block_stays_separate_and_format_is_idempotent(self):
+        source = "**Suggested revision:**\n\n$$\nx=1\n$$\n\n**审阅意见：** 核对定义。\n"
+        result = renderer.normalize_revision_fields(source)
+        self.assertIn("**Suggested revision:**\n\n$$", result)
+        self.assertEqual(result, renderer.normalize_revision_fields(result))
+
+    def test_extra_blank_lines_do_not_absorb_the_next_heading(self):
+        text = "**建议修改：**\n\n仅修正冠词。\n\n\n#### 2. Next / 下一条\n"
+        result = renderer.normalize_revision_fields(text)
+        self.assertTrue(result.startswith("**建议修改：** 仅修正冠词。\n\n####"))

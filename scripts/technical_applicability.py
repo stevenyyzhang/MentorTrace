@@ -26,7 +26,7 @@ def configurations(rows, objects, pages, anchor):
         require(not any(k in row for k in ('judgment', 'outcome', 'gap', 'repair')),
                 'Configuration plan must not pre-judge')
         require(row.get('object_ids') and set(row['object_ids']) <= allowed,
-                'Configuration references non-Technical object')
+                'Configuration references non-Expert object')
         require(row.get('anchors'), 'Configuration needs setting/operation anchors')
         for a in row['anchors']:
             anchor(a, pages)
@@ -44,14 +44,14 @@ def validate_plan(x, pages, anchor):
     allowed = {o['id'] for o in x['objects'] if 'technical' in o['lanes']}
     require(excluded <= allowed and not excluded & covered,
             'Configuration exclusions conflict with coverage')
-    require(covered | excluded == allowed, 'Technical applicability inventory omits object')
+    require(covered | excluded == allowed, 'Expert applicability inventory omits object')
     require(all(isinstance(r.get('reason'), str) and r['reason'].strip() for r in exclusions),
             'Configuration exclusion needs a reason')
 
 
 def validate_review(x, context, pages, anchor):
     review = x.get('configuration_review')
-    require(isinstance(review, dict), 'Missing Technical configuration review')
+    require(isinstance(review, dict), 'Missing Expert configuration review')
     planned = context['technical_configurations']
     additions = review.get('additional_configurations')
     names, _ = configurations(additions, context['objects'] + x.get('new_objects', []), pages, anchor)
@@ -79,7 +79,7 @@ def validate_review(x, context, pages, anchor):
                 'Invalid configuration finding links')
         # A check can legitimately connect the planned setting to an additional
         # dependency, such as noise normalization used by an SNR calculation.
-        # All IDs are already validated against this Technical response above.
+        # All IDs are already validated against this Expert response above.
         outcome = row.get('outcome')
         require(outcome in {'sufficient', 'gap', 'unknown', 'not_applicable', 'unfinished'},
                 'Invalid configuration outcome')

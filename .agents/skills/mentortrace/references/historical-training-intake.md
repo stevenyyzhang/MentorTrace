@@ -26,6 +26,8 @@ Keep branch, conflict-copy, backup and archive variants. Link a local source res
 
 ## Conditional extraction and admission
 
+For paragraph, argument, emphasis, selection or wording feedback, additionally use [editorial learning](editorial-learning.md). Preserve the actual edit episode and its conditional reader-task distinction before compressing it to the six concern fields. A concern that preserves a technical question can still omit the mentor's presentation requirement; compare both requirements explicitly. The episode tool prepares and checks private evidence records without making a model call or admitting a corpus change.
+
 Apply the existing six decision fields together: core question, new-manuscript check, relationship, historically insufficient response, potentially sufficient response and applicability boundary. Separate explicit feedback, observed manuscript state, student response and analyst transfer/sufficiency suggestions. If an explanation already exists, acknowledge it and ask whether its meaning, placement or support needs improvement. A later new request is not a failed earlier student response.
 
 Do not turn a tentative question, contextual example, rhetorical counterexample, proposed parameter or formula edit into a mathematical fact. Hold an unsupported literal rule while preserving any defensible underlying question privately. A changed draft, local acknowledgment, silence, publication or abandonment does not prove advisor acceptance or scientific correctness.

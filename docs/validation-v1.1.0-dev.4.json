@@ -1,0 +1,81 @@
+{
+  "version": "1.1.0-dev.4",
+  "baseline": "1.1.0-dev.3",
+  "scope": "Editorial learning, runtime transfer, lineage and draft attribution; offline implementation validation only",
+  "tests": {
+    "unique_scoped_tests": 95,
+    "modules": {
+      "test_writing_transfer": 8,
+      "test_editorial_learning": 4,
+      "test_pipeline": 22,
+      "test_section_review": 5,
+      "test_organization": 4,
+      "test_public_release": 8,
+      "test_delivery_integration": 5,
+      "test_independent": 8,
+      "test_reader_multiscale": 11,
+      "test_execution_efficiency": 16,
+      "test_consolidation_contract": 4
+    },
+    "status": "passed after correcting one stale dev.2+ source-policy key expectation in the independence test",
+    "execution_batches": [
+      {
+        "tests": 56,
+        "passed": 56
+      },
+      {
+        "tests": 51,
+        "passed": 50,
+        "failed": 1,
+        "cause": "Existing independence fixture expected no source_fidelity key; dev.3 already includes it."
+      },
+      {
+        "tests": 30,
+        "passed": 30,
+        "purpose": "Affected regression checks after correction and compact drafting view."
+      }
+    ]
+  },
+  "python_syntax": "passed for changed Python files",
+  "dev3_snapshot_unchanged": true,
+  "frozen_corpus_bytes_unchanged": true,
+  "concern_count": 493,
+  "legacy_draft_preflight": {
+    "source_protocol": 0,
+    "raw_lineages": 171,
+    "recorded_transfers": 0,
+    "reader_sources": 5,
+    "advisor_sources": 83,
+    "prompt_bytes": 580211,
+    "model_called": false,
+    "context_fit_verified": false
+  },
+  "external_model_calls": 0,
+  "behavioral_quality": "not_established",
+  "preexisting_development_changes_preserved": [
+    "scripts/prepare_revision_proposals.py",
+    ".agents/skills/mentortrace/references/report-language.md"
+  ],
+  "limits": [
+    "No fresh manuscript review or held-out quality comparison.",
+    "No new corpus snapshot or full historical re-learning claimed.",
+    "Contract checks cannot establish semantic truth, mentor preference, causal contribution or writing improvement.",
+    "Actual model context fit remains subject to transport preflight."
+  ],
+  "public_audit": {
+    "version": "1.1.0-dev.4",
+    "status": "pass",
+    "scanned_files": 183,
+    "corpus_json_files": 91,
+    "findings": [],
+    "limits": "Automated rules complement semantic abstraction review; they do not certify legal rights or diagnostic equivalence."
+  },
+  "changed_local_links": {
+    "status": "passed",
+    "errors": []
+  },
+  "skill_validation": {
+    "bundled_quick_validate": "unavailable: PyYAML missing; no dependency installed",
+    "fallback": "Existing plain-scalar frontmatter, allowed keys, name/description and placeholder checks passed; changed local links passed."
+  }
+}

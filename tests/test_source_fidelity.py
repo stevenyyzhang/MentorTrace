@@ -59,7 +59,7 @@ class SourceFidelity(unittest.TestCase):
 
     def test_definite_candidate_becomes_anchored_surface_finding(self):
         ctx, result = self.surface_answer('definite_error')
-        with self.assertRaisesRegex(ValueError, 'must become a Language finding'):
+        with self.assertRaisesRegex(ValueError, 'must become a Editor finding'):
             m.validate('language', result, ctx)
         result['findings'] = [{'id': 'language:F1', 'finding_type': 'surface', 'category': 'spelling',
                                'unit_ids': ['p1:u1'], 'anchor': {'page': 1, 'quote': 'resolu- tion'},

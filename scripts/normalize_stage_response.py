@@ -9,6 +9,7 @@ import copy
 import unicodedata
 import hashlib
 import json
+import re
 from pathlib import Path
 
 import mentortrace_v1 as mentortrace
@@ -43,15 +44,40 @@ def normalize(run: Path, stage: str, raw_path: Path):
     changes = []
     unresolved = []
     type_changes = []
+    configuration = candidate.get('configuration_review', {})
+    configuration_items = configuration.get('items', []) if isinstance(configuration, dict) else []
+    if isinstance(configuration_items, list):
+        for index, item in enumerate(configuration_items):
+            if not isinstance(item, dict) or not isinstance(item.get('evidence'), list):
+                continue
+            for evidence_index, value in enumerate(item['evidence']):
+                if not isinstance(value, str):
+                    continue
+                match = re.match(r'^Page\s+([1-9]\d*)\s+[^\d–-]', value)
+                if not match or len(re.findall(r'\bPage\s+\d+\b', value)) != 1:
+                    continue
+                if re.match(r'^Page\s+\d+\s+(?:and|or|to)\s+\d', value):
+                    continue
+                page = int(match.group(1))
+                if page not in pages:
+                    continue
+                converted = {'page': page, 'kind': 'image',
+                    'description': 'Model-provided page locator (not a literal quotation or certified transcription): ' + value}
+                item['evidence'][evidence_index] = converted
+                type_changes.append({'path': f'configuration_review.items[{index}].evidence[{evidence_index}]',
+                    'from': value, 'to': converted,
+                    'reason': 'Explicit single available-page location serialized as an image locator. Complete original description retained; no inferred page, quotation or judgment.'})
     for path, anchor in iter_anchors(candidate):
-        try:
-            mentortrace.anchor(anchor, pages)
-            continue
-        except ValueError as error:
-            reason = str(error)
         page = anchor.get("page")
         quote = anchor.get("quote", "")
         source = pages.get(page, "")
+        try:
+            mentortrace.anchor(anchor, pages)
+            if quote and quote in source:
+                continue
+            reason = "Native normalized match is not a literal extraction quote"
+        except ValueError as error:
+            reason = str(error)
         if not source or not quote:
             unresolved.append({"path": path, "page": page, "reason": reason})
             continue
@@ -70,6 +96,13 @@ def normalize(run: Path, stage: str, raw_path: Path):
                         "old_quote": quote, "exact_frozen_page_quote": replacement,
                         "reason": "Complete unique match after whitespace, soft-hyphen and Unicode compatibility normalization; no fuzzy fragment or image conversion."})
     for index, suggestion in enumerate(candidate.get("organization_suggestions", [])):
+        for field in ["current_order", "proposed_order", "reason"]:
+            value = suggestion.get(field)
+            if isinstance(value, list) and value and all(isinstance(item, str) and item.strip() for item in value):
+                suggestion[field] = "\n".join(value)
+                type_changes.append({"path": f"organization_suggestions[{index}].{field}",
+                                     "from": value, "to": suggestion[field],
+                                     "reason": "Ordered nonempty prose list serialized without changing its content."})
         links = suggestion.get("affected_links")
         if isinstance(links, list) and all(isinstance(link, str) for link in links):
             suggestion["affected_links"] = "; ".join(links)
@@ -80,6 +113,15 @@ def normalize(run: Path, stage: str, raw_path: Path):
             suggestion["conditions"] = "; ".join(conditions)
             type_changes.append({"path": f"organization_suggestions[{index}].conditions",
                                  "from": conditions, "to": suggestion["conditions"]})
+    for index, transfer in enumerate(candidate.get("writing_transfers", [])):
+        for field in ["learned_distinction", "reader_task", "current_handling",
+                      "proposed_action", "preserved_dependencies", "limits"]:
+            value = transfer.get(field)
+            if isinstance(value, list) and value and all(isinstance(item, str) and item.strip() for item in value):
+                transfer[field] = "\n".join(value)
+                type_changes.append({"path": f"writing_transfers[{index}].{field}",
+                                     "from": value, "to": transfer[field],
+                                     "reason": "Ordered nonempty text list serialized without adding or removing content; source excerpts and judgments unchanged."})
     evidence = candidate.get("evidence_requests")
     if isinstance(evidence, list) and evidence and all(isinstance(item, str) for item in evidence):
         limits = candidate.setdefault("limits", [])
@@ -103,7 +145,7 @@ def normalize(run: Path, stage: str, raw_path: Path):
     log_path.write_text(json.dumps({
         "model_output_sha256": hashlib.sha256(raw_path.read_bytes()).hexdigest(),
         "normalized_response_sha256": hashlib.sha256(output_path.read_bytes()).hexdigest(),
-        "policy": "Only complete unique text alignment under declared normalization is allowed; schema repairs are logged. No target-specific overrides, image conversions or judgment changes. Finding content is unchanged.",
+        "policy": "Only complete unique text alignment under declared normalization is allowed; schema repairs are logged. Explicit single-page location descriptions may be serialized as image locators with the entire original description retained. No target-specific overrides, quotation-to-image conversions or judgment changes. Finding content is unchanged.",
         "changes": changes,
         "type_changes": type_changes,
         "unresolved": unresolved,
@@ -117,9 +159,10 @@ def main():
     parser.add_argument("--stage", required=True)
     parser.add_argument("--raw", type=Path)
     args = parser.parse_args()
+    args.stage = mentortrace.naming.stage_id(args.stage)
     raw = args.raw or (args.run / "calls" / args.stage / "codex-authorized/final_text.json")
     output, changed, unresolved = normalize(args.run, args.stage, raw)
-    print(json.dumps({"stage": args.stage, "changed": changed,
+    print(json.dumps({"stage": args.stage, "module_name": mentortrace.naming.display_name(args.stage), "changed": changed,
                       "unresolved": len(unresolved), "output": str(output)}))
 
 

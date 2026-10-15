@@ -1,14 +1,14 @@
-# MentorTrace repository
+# MentorTrace v1.1.0 workspace
 
-The main branch carries ongoing MentorTrace development.
-The current prerelease version is 1.1.0-dev.3; it is not a stable release.
+This directory contains the MentorTrace v1.1.0 release source.
+It was promoted from 1.1.0-dev.4 on 2026-10-15 at the user's request.
 
-- Make subsequent development changes on main; a separate dev branch is not required.
-- Preserve published version tags and release archives. Publish each new version under a new tag with its own archive rather than replacing an earlier release.
+- Make subsequent development changes in this directory.
 - Preserve the v1.0.0 release directory and its ZIP unchanged.
 - Do not modify or publish private source materials or the v0.8 archive.
-- Existing audit documents describe the v1.0.0 baseline. They do not certify this development version; rerun applicable audits before release.
-- Post-discovery consolidation, final-text delivery, wording and source-fidelity improvements are under validation. New protocols add Language source candidates and formula-source verification records. The original frozen corpora remain unchanged; new development runs use the additional advisor-concerns-v4 snapshot with disclosed training exposure. Behavioral quality has not been established by offline contract tests.
+- Normal new CLI runs use the reviewed public `corpus/advisor-expression-v1` by default. Only this minimized snapshot is distributed; original historical inputs and private mappings remain private.
+- Existing audit documents retain their declared version and scope; rerun applicable release checks. Version promotion does not establish additional behavioral validation.
+- Post-discovery consolidation, final-text delivery, wording and source-fidelity improvements are under validation. New protocols add Editor source candidates and formula-source verification records. The original frozen corpora remain unchanged; new development runs use the additional advisor-concerns-v4 snapshot with disclosed training exposure. Behavioral quality has not been established by offline contract tests.
 
 ## Service tier authorization
 

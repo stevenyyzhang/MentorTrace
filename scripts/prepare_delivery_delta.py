@@ -107,6 +107,27 @@ def prepare(previous_ledger, previous_report, report, source_paths=None, assessm
         candidate_sources -= affected_sources
     carried_targets = candidate_targets if assessment is not None else set()
     carried_sources = candidate_sources if assessment is not None else set()
+    language_pending=[]
+    if previous.get('language_realization_required') or 'language_realization' in previous:
+        fresh['language_realization_required']=True
+        binding=copy.deepcopy(previous.get('language_realization',{}))
+        old_review=binding.get('review',{});carried_groups=[]
+        if binding.get('response') and Path(binding['response']['path']).is_file():
+            response=audit.read(binding['response']['path'])
+            for draft in response.get('language_realizations',[]):
+                texts=[p['text'] for p in draft.get('passages',[])]
+                contexts_for_draft={row['context_id'] for row in previous['target_units']
+                    if any(text in row['text'] or row['text'] in text for text in texts)}
+                safe=(previous_valid and assessment is not None and same_sources and texts and
+                    contexts_for_draft and contexts_for_draft<=safe_contexts and
+                    not any(row['context_id'] in contexts_for_draft and row['id'] in affected_targets
+                            for row in fresh['target_units']) and unchanged_evidence(binding))
+                old_group=next((g for g in old_review.get('groups',[]) if g['draft_label']==draft['draft_label']),None)
+                if safe and old_group:carried_groups.append(old_group)
+                else:language_pending.append(draft['draft_label'])
+        binding['review']={'reviewer':'','groups':carried_groups,
+            'carried_reviewer':old_review.get('reviewer'),'pending_draft_labels':language_pending}
+        fresh['language_realization']=binding
     for row in fresh['target_units']:
         if row['id'] in carried_targets:
             row['review'] = copy.deepcopy(old_targets[row['id']]['review'])
@@ -131,6 +152,7 @@ def prepare(previous_ledger, previous_report, report, source_paths=None, assessm
         'pending_source_ids': [row['id'] for row in fresh['units'] if row['id'] not in carried_sources],
         'pending_target_ids': [row['id'] for row in fresh['target_units'] if row['id'] not in carried_targets],
         'global_scope_review_pending': True, 'report_bound_B_review_required': True,
+        'pending_language_draft_labels':language_pending,
         'semantic_correctness_verified': False}
     return fresh, plan
 

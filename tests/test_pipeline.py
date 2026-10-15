@@ -1,5 +1,6 @@
 """Synthetic contract tests. These do not measure manuscript review quality."""
 import copy
+import hashlib
 import importlib.util
 import tempfile
 import unittest
@@ -19,6 +20,7 @@ def answer(stage,ctx):
  if stage in ['merge','verify']:
   f={'id':stage+':F1','anchor':A,'relation':'observation -> detector input','gap':'SYNTHETIC_GAP_SENTINEL','impact':'execution unknown','closure_goal':'identify input','new_in_stage':False}
   result={'findings':[f],'dispositions':[{'input_id':i['id'],'status':'merged' if stage=='merge' else 'retained','output_ids':[f['id']],'reason':'same synthetic relation','evidence':[]} for i in ctx['input_findings']],'limits':[]}
+  if ctx.get('editorial_selection'):result['editorial_selection']=[]
   if stage=='verify' and ctx.get('source_fidelity'):
    result['source_fidelity_checks']=[{'input_id':i['id'],'status':'not_formula_dependent','reason':'Synthetic prose-only observation fixture.'} for i in ctx['input_findings']]
   return result
@@ -57,6 +59,15 @@ def answer(stage,ctx):
    if o['id']=='O1':continue
    c=copy.deepcopy(result['checks'][0]);c['id']=stage+':C'+str(len(result['checks'])+1);c['object_id']=o['id']
    result['checks'].append(c);result['findings'][0]['check_ids'].append(c['id'])
+ if ctx.get('writing_transfer'):
+  result['writing_transfers']=[]
+  for d in result['card_dispositions']:d['writing_scope']='content_only'
+  for n,case in enumerate(ctx.get('goodpaper_cases',{}).get('complete_cases',[]),1):
+   result['writing_transfers'].append({'id':stage+':W'+str(n),'source_kind':'published_case','source_id':case['case_id'],
+     'source_excerpt':case['full_case']['full_relation_chain'],'learned_distinction':'Synthetic source distinction.',
+     'scope':'paragraph','target_anchors':[],'reader_task':'Synthetic fixture task','current_handling':'One sentence only.',
+     'decision':'not_applicable','proposed_action':'Keep the synthetic sentence.','preserved_dependencies':'No change.',
+     'check_ids':[],'finding_ids':[],'suggestion_ids':[],'limits':'Synthetic contract fixture only.'})
  return result
 
 class Pipeline(unittest.TestCase):
@@ -67,6 +78,11 @@ class Pipeline(unittest.TestCase):
   paper=self.root/'paper';m.save(paper/'body.json',[{'page':1,'text':A['quote']}])
   m.save(paper/'manifest.json',{'role':'review_manuscript','images':[]});m.freeze(paper)
   self.run=self.root/'run';m.create_run(paper,self.root/'knowledge',self.run,goodpaper_cases=False)
+  # Existing tests exercise the dev.3 contract. New transfer tests explicitly
+  # enable the dev.4 protocol; do not silently rewrite their old fixtures.
+  protocol=m.read(self.run/'inputs/protocol.json');protocol.pop('writing_transfer')
+  protocol.pop('editorial_selection',None);protocol['reader_multiscale']=3
+  m.save(self.run/'inputs/protocol.json',protocol);m.freeze(self.run/'inputs')
  def tearDown(self):self.tmp.cleanup()
  def advance(self):
   r=m.next_request(self.run);x=answer(r['stage'],m.context_for(self.run,r['stage']))
@@ -82,6 +98,25 @@ class Pipeline(unittest.TestCase):
    self.advance()
   self.assertIsNone(m.next_request(self.run));self.assertEqual(len(m.read(self.run/'findings_raw.json')),6)
   self.assertEqual(m.read(self.run/'state.json')['status'],'complete')
+ def test_capacity_receipt_preserves_default_limit_and_binds_complete_source(self):
+  while m.next_request(self.run)['stage']!='merge':self.advance()
+  protocol=m.read(self.run/'inputs/protocol.json');protocol['max_prompt_bytes']=1
+  m.save(self.run/'inputs/protocol.json',protocol);m.freeze(self.run/'inputs')
+  with self.assertRaisesRegex(ValueError,'byte budget exceeded'):m.next_request(self.run)
+  request=m.next_request(self.run,capacity_plan_only=True)
+  self.assertGreater(request['utf8_bytes'],1)
+  context=m.context_for(self.run,'merge');folder=self.root/'capacity-receipt'
+  m.save(folder/'source_context.json',context)
+  m.save(folder/'receipt.json',{'stage':'merge','source_context_sha256':hashlib.sha256(m.dump(context).encode()).hexdigest(),
+                             'actual_model_calls':['synthetic-contract-only'],'not_a_single_model_output':True})
+  m.freeze(folder)
+  bad=copy.deepcopy(context);bad['input_findings']=[]
+  m.save(folder/'source_context.json',bad);m.freeze(folder)
+  with self.assertRaisesRegex(ValueError,'source context changed'):
+   m.accept_response(self.run,answer('merge',context),{'kind':'capacity_consolidation','model_called':False},capacity_plan=folder/'receipt.json')
+  m.save(folder/'source_context.json',context);m.freeze(folder)
+  m.accept_response(self.run,answer('merge',context),{'kind':'capacity_consolidation','model_called':False},capacity_plan=folder/'receipt.json')
+  self.assertIn('merge',m.read(self.run/'state.json')['completed'])
  def test_variable_batch_count_preserves_coverage(self):
   run=self.root/'adaptive';m.create_run(self.root/'paper',self.root/'knowledge',run,[['T0','T1','T2'],['T3']],goodpaper_cases=False);self.run=run
   seen=[]

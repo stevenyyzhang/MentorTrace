@@ -61,7 +61,7 @@ def validate_candidates(response, context, pages, anchor):
         _require(isinstance(fids, list) and isinstance(uids, list), 'Candidate disposition needs explicit links')
         _require(set(fids) <= set(findings) and set(uids) <= set(uncertain), 'Unknown source candidate output')
         if row['status'] == 'definite_error':
-            _require(fids and not uids, 'Definite source error must become a Language finding')
+            _require(fids and not uids, 'Definite source error must become a Editor finding')
             _require(all(findings[f]['anchor']['page'] == ref['page'] for f in fids), 'Candidate finding has a different page')
         elif row['status'] == 'unresolved':
             _require(uids and not fids, 'Unresolved source candidate needs a visible uncertainty record')

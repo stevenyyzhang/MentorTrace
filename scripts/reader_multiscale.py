@@ -23,6 +23,19 @@ def unique(items, key, label):
     return set(values)
 
 
+def validate_candidate(item, version):
+    if version >= 4 and 'candidate_alternative' in item and item['candidate_alternative'] is None:
+        require(isinstance(item.get('no_candidate_reason'), str) and item['no_candidate_reason'].strip(),
+                'Null editorial candidate lacks manuscript-specific reason')
+        return
+    alt=item.get('candidate_alternative')
+    require(isinstance(alt,dict) and all(isinstance(alt.get(k),str) and alt[k].strip()
+        for k in ['operation','source','destination','expected_reader_gain','possible_cost']),
+        'Missing editorial counterfactual')
+    require(alt['operation'] in {'delete','compress','move','add','merge','rewrite'},
+        'Invalid editorial counterfactual operation')
+
+
 def validate_units(units, objects, pages, anchor):
     names=unique(units,'id','Reader scope units')
     allowed={o['id'] for o in objects if 'reader' in o['lanes']}
@@ -55,12 +68,7 @@ def validate_editorial_plan(x,units,pages,anchor,version=2):
         require(isinstance(item.get('question'),str) and item['question'].strip(),'Missing editorial question')
         require(item.get('anchors'),'Editorial target lacks anchors')
         if version>=3:
-            alt=item.get('candidate_alternative')
-            require(isinstance(alt,dict) and all(isinstance(alt.get(k),str) and alt[k].strip()
-                for k in ['operation','source','destination','expected_reader_gain','possible_cost']),
-                'Missing editorial counterfactual')
-            require(alt['operation'] in {'delete','compress','move','add','merge','rewrite'},
-                'Invalid editorial counterfactual operation')
+            validate_candidate(item, version)
         require(not any(k in item for k in ['decision','judgment','gap','action','suggestion']),
                 'Editorial plan must not pre-judge')
         for a in item['anchors']:anchor(a,pages)
@@ -153,12 +161,7 @@ def validate_editorial_review(x,context,pages,anchor,checks,finds,suggestions,un
     all_targets=source['reader_editorial_plan']
     if version>=3:
         for item in all_targets:
-            alt=item.get('candidate_alternative')
-            require(isinstance(alt,dict) and all(isinstance(alt.get(k),str) and alt[k].strip()
-                for k in ['operation','source','destination','expected_reader_gain','possible_cost']),
-                'Missing editorial counterfactual')
-            require(alt['operation'] in {'delete','compress','move','add','merge','rewrite'},
-                'Invalid editorial counterfactual operation')
+            validate_candidate(item, version)
     target_ids=unique(all_targets,'id','Reader editorial targets')
     original={t['id'] for t in context['reader_editorial_plan']}
     for item in additions:
@@ -198,3 +201,10 @@ def validate_editorial_review(x,context,pages,anchor,checks,finds,suggestions,un
 
 # Expected gains and feasible orderings are hypotheses, not planner verdicts.
 READER_SCHEMA_V3 += "\nAn alternative is a proposal, not a known reasonable ordering. Check whether it preserves necessary information, dependencies and supported author meaning before preferring it. Reject an infeasible proposal without treating its failure as proof that the current order is uniquely correct. Do not create a worse order merely to validate the current passage. Unknown feasibility stays unknown; no revision quota."
+
+# New runs may inspect an editorial question without inventing an edit to test.
+# Keep v1-v3 prompts and validation available for frozen runs.
+PLAN_SCHEMA_V4 = PLAN_SCHEMA_V2 + '''\nEDITORIAL SELECTION PLAN v4: Keep the current arrangement as the baseline. For each target, supply candidate_alternative:{operation,source,destination,expected_reader_gain,possible_cost} only when there is a manuscript-grounded plausible change worth comparing. Otherwise explicitly return candidate_alternative:null and no_candidate_reason explaining the existing support and why no concrete alternative warrants testing. Do not manufacture an edit per question or source case. Candidate operations are delete/compress/move/add/merge/rewrite. A candidate's gain and feasibility remain hypotheses, not planner verdicts. A normal floating display is not evidence of an order defect; inspect its callout and argumentative role. Do not derive alternatives from prior reviews.'''
+READER_SCHEMA_V4 = READER_SCHEMA_V2.replace(
+    'For every target, compare the current arrangement with a proposed alternative whose feasibility is still to be checked;',
+    'For every target, assess the current arrangement; compare a grounded alternative when one exists;') + '''\nEDITORIAL SELECTION AUDIT v4: Also return alternative_evaluation:{tested_change,reader_gain,reader_cost,verdict_reason}. For a null planned candidate, tested_change may state that no change is proposed, with specific manuscript support; an invented rewrite is not required. When a candidate exists, test its actual source/destination and transitions, definitions, citations and page constraints against keeping the original. Keep is a substantive valid outcome when an alternative is merely equivalent, shifts reading effort elsewhere, duplicates an existing explanation, or offers insufficient gain for its disruption. Understandability alone neither proves optimality nor warrants revision. Recommend an optional change only for a concrete worthwhile net reader benefit; necessary repair requires an actual unsupported dependency. Alternatives for one reader task are competing options, not independent problems: select a preferred compatible path and give the other options' disposition in the evidence account. An independent content requirement survives rejection of its proposed relocation. Additional discovery is allowed; no minimum or maximum issue count, and final-version status never settles correctness.'''

@@ -103,14 +103,14 @@ def execute_request(run, request, args, authorization):
     output_path, _, unresolved = normalize_stage_response.normalize(run, stage, model_output_path)
     mentortrace.require(not unresolved, f'Unresolved source anchors in {stage}; inspect normalization log')
     mentortrace.validate(stage, mentortrace.read(output_path), mentortrace.context_for(run, stage))
-    return {'stage': stage, 'output': str(output_path), 'model_output': str(model_output_path),
+    return {'stage': stage, 'module_name': mentortrace.naming.display_name(stage), 'output': str(output_path), 'model_output': str(model_output_path),
             'usage': usage, 'reused': cached is not None}
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--run", type=Path, required=True)
-    parser.add_argument("--stage", help="Prefetch an independent Advisor batch before its turn")
+    parser.add_argument("--stage", help="Stage ID (expert/editor aliases supported); independent Advisor batches may be prefetched")
     parser.add_argument("--attempt-name", default="codex-authorized",
                         help="New transport folder for a reconciled failed network attempt")
     parser.add_argument("--model", default="gpt-6-sol")
@@ -172,7 +172,7 @@ def main():
     call_dir = model_output_path.parent
     usage = result['usage']
     if stage != next_request["stage"]:
-        print(json.dumps({"prefetched": stage, "output": str(output_path)}))
+        print(json.dumps({"prefetched": stage, "module_name": mentortrace.naming.display_name(stage), "output": str(output_path)}))
         return
     mentortrace.accept_response(run, output_path, {
         "kind": "isolated_codex_cli",
@@ -189,7 +189,7 @@ def main():
         "user_authorized_manuscript_disclosure": True,
     })
     response = mentortrace.read(stage_dir / "response.json")
-    print(json.dumps({"accepted": stage, "findings": len(response.get("findings", []))}))
+    print(json.dumps({"accepted": stage, "module_name": mentortrace.naming.display_name(stage), "findings": len(response.get("findings", []))}))
 
 
 if __name__ == "__main__":

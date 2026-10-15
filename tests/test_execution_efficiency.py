@@ -103,7 +103,7 @@ class ReuseAndConcurrency(unittest.TestCase):
             stages.main()
         self.assertEqual(invoke.call_count, 4)
         self.assertEqual(fixtures.m.read(fixture.run / 'state.json')['completed'], ['objects'])
-        fixture.advance(); fixture.advance()  # Reader and Technical accepted sequentially
+        fixture.advance(); fixture.advance()  # Reader and Expert accepted sequentially
         with patch.object(sys, 'argv', argv), patch.object(stages.codex_adapter, 'invoke') as invoke, \
              contextlib.redirect_stdout(io.StringIO()):
             stages.main()

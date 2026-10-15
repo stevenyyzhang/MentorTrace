@@ -1,17 +1,42 @@
 ---
 name: mentortrace
-description: Diagnose academic manuscripts with independent Reader, Technical, Advisor and Language reviews; retrieve task-matched exemplary-paper cases for evidence-grounded findings and revision proposals. Also extract conditional concerns from explicitly supplied historical feedback and manuscript revisions. Automatic manuscript editing is not integrated.
+description: Diagnose academic manuscripts with independent Reader, Expert, Advisor and Editor reviews; retrieve task-matched exemplary-paper cases for evidence-grounded findings and revision proposals. Also extract conditional Concern records and preserve actual mentor Expression examples from explicitly supplied historical feedback and revisions. Automatic manuscript editing is not integrated.
 ---
 
-# MentorTrace 1.1 development
+# MentorTrace 1.1.0
+
+The four review modules are **Reader, Expert, Advisor and Editor**. Expert performs technical review; Editor handles language and surface checks. Their serialized stage IDs remain `technical` and `language` for compatibility with frozen runs. **Concern** records describe what the mentor asks authors to explain or justify. **Expression** records preserve concrete mentor-proposed wording and paragraph actions. Normal CLI runs load the bundled 1,581-record `corpus/advisor-expression-v1` for independent Advisor review and related drafting; read [Expression](references/expression.md) for its source and transfer boundaries.
+
+Before admitting or transferring an Expression, identify the concrete wording or
+paragraph operation it adds and compare it with applicable Concerns using the
+[admission boundary](references/expression.md#expression-admission-and-concern-overlap).
+An attributable edit alone does not establish a reusable expression feature.
+
+For mentor-guided English drafting with an `expression_realization: 1` snapshot,
+apply [concrete language realization](references/expression-realization.md) after
+the revision scope is fixed. Retrieve by passage job and language function, retain
+appropriate mentor lexical/syntactic features in the actual replacement passages,
+and verify their realization within the existing final-text review. Source matches
+do not require extra findings or edits to retained passages.
 
 Use the four-lane diagnosis workflow below. This repository-scoped skill is discovered from .agents/skills. Keep the full repository and resolve runtime paths from its root. Reading it does not constitute running the workflow. The default CLI creates independent-Advisor runs; frozen older runs retain their original protocol. Read the [execution guide](references/execution.md) for commands and transport boundaries. Project paths below resolve against the MentorTrace root.
 
 ## Start from the user's task
 
+For ordinary review, use the bundled Expression library without extra setup. Verify its
+freeze and declared format when creating the run. `--expression PATH` selects another
+explicitly supplied snapshot; `--no-expression` creates an explicit baseline. A missing or
+changed default snapshot must be reported, not silently replaced with a Concern-only run.
+Read `private/config/editorial_sources.json` only when the user explicitly selects private
+historical sources; its existence alone does not override the public default or authorize
+cloud transmission. Public examples do not supply omitted pages, private annotations or
+an accepted final mentor revision. Preserve existing frozen runs when changing defaults.
+
 For autonomous diagnosis, use the fixed manuscript without its target comments, scoring answers or future versions. For an explanation of supplied comments, disclose that it is assisted interpretation and not autonomous discovery. For drafting or applied edits, explain the current implementation boundary and use [repair boundary](references/repair-contract.md) to formulate a supported revision plan; the V1 runner does not apply edits.
 
 For explicitly requested learning from historical annotated papers or LaTeX revisions, read [historical training intake](references/historical-training-intake.md). This mode produces source-linked conditional concerns and version histories; keep its private annotations and later drafts separate from autonomous target diagnosis.
+
+When using local published-paper originals, select the private source-passage snapshot with `--case-passages`. Reader and Expert receive only passages for their frozen selected cases. Actual source prose, analyst reconstructions and generated target revisions remain distinct; source facts and a source sentence order cannot establish a target defect. Full connected Reader passages continue into post-freeze drafting.
 
 Confirm the available manuscript version and scope from supplied files. Ask only for essential missing input: which version when ambiguous, or unreadable/missing manuscript content. Do not invent the author's implementation or results. Do not require target advisor comments for autonomous diagnosis.
 
@@ -23,11 +48,11 @@ Use Standard by default. Fast requires explicit user authorization naming the ti
 
 ## Route the diagnosis
 
-Apply [source fidelity](references/source-fidelity.md): extracted text locates evidence; original page images govern decisive glyphs and physical word placement. New runs freeze a neutral surface-candidate inventory for Language and require formula-dependent verification records. Inspect the decisive original expression before alleging a mathematical defect, and carry checked transcriptions into report quotations. These runtime gates establish record coverage and hash binding, not visual truth or complete error recall.
+Apply [source fidelity](references/source-fidelity.md): extracted text locates evidence; original page images govern decisive glyphs and physical word placement. New runs freeze a neutral surface-candidate inventory for Editor and require formula-dependent verification records. Inspect the decisive original expression before alleging a mathematical defect, and carry checked transcriptions into report quotations. These runtime gates establish record coverage and hash binding, not visual truth or complete error recall.
 
 1. **Freeze inputs.** Register one readable manuscript version, page text/images, knowledge snapshot, hashes, model/effort, capacity plan and family policy. Keep target comments, scoring answers and future target versions out of review requests. A directory scan does not prove the model saw a file.
-2. **Plan general checks without verdicts.** Preserve both ends of each relationship, the actual conclusion and its conditions. Planning serves Reader and Technical; it is not a mandatory inventory for Advisor. In case-enhanced mode, freeze a separate task-to-case route from this plan before either lane runs.
-3. **Run four isolated lanes**, following the table below. Reader and Technical may add targets. Advisor independently creates and judges its own relation inventory; it does not attach cards to the general plan. Every Advisor batch reads the same full manuscript. Complete the frozen coverage plan without requiring a problem per card.
+2. **Plan general checks without verdicts.** Preserve both ends of each relationship, the actual conclusion and its conditions. Planning serves Reader and Expert; it is not a mandatory inventory for Advisor. In case-enhanced mode, freeze a separate task-to-case route from this plan before either lane runs.
+3. **Run four isolated lanes**, following the table below. Reader and Expert may add targets. Advisor independently creates and judges its own relation inventory; it does not attach cards to the general plan. Every Advisor batch reads the same full manuscript. Complete the frozen coverage plan without requiring a problem per card.
 4. **Respect evidence availability.** Public cards contain analytical abstractions, not private histories. Request historical follow-up only when a separately supplied package explicitly declares those fields available. Otherwise preserve unknown/unfinished outcomes. Follow-ups are not independent initial discovery.
 5. **Freeze raw findings.** Preserve original lane responses, additional targets, evidence findings, language uncertainty and coverage. A relation, a check and a reportable finding are different records. Review the actual initial execution against its frozen targets and manuscript support before integration, following execution.md. Distinguish unattempted task scope from completed-but-unknown judgment; source-ID coverage alone does not prove each relation was answered.
 6. **Organize and independently verify.** Apply [merge and verify](references/merge-verify.md). Deduplicate the same requirement; retain independently answerable gaps and concrete closure goals. Verify against the manuscript in a fresh context, retaining source links and evidence for withdrawals. Fewer findings is not a quality target.
@@ -37,33 +62,35 @@ Apply [source fidelity](references/source-fidelity.md): extracted text locates e
 | Lane | Review input | Responsibility |
 |---|---|---|
 | [Reader / Structure](references/reader-structure.md) | Full manuscript/images + general plan; selected [Reader cases](references/goodpaper-reader.md) only in case-enhanced mode; no other initial lane findings | Attempt key reader tasks; locate support, reading friction and necessary missing connections for the intended audience |
-| [Technical](references/technical-checks.md) | Full manuscript/images + general plan; selected [Technical cases](references/goodpaper-technical.md) only in case-enhanced mode; no other initial lane findings | Information availability, mechanisms, assumptions, operations and supported claims |
+| [Expert](references/expert-checks.md) | Full manuscript/images + general plan; selected [Expert cases](references/goodpaper-expert.md) only in case-enhanced mode; no other initial lane findings | Information availability, mechanisms, assumptions, operations and supported claims |
 | [Advisor](references/advisor-evidence.md) | Full manuscript/images + current card batch; **no general plan or earlier findings** | Historical distinctions → independently located manuscript relations → evidence-based judgments |
-| [Language / Surface](references/language-surface.md) | Full manuscript/images and text blocks; no plan or cards | Definite language, notation, reference and formatting errors; uncertainty and optional style separate |
+| [Editor / Surface](references/editor-surface.md) | Full manuscript/images and text blocks; no plan or cards | Definite language, notation, reference and formatting errors; uncertainty and optional style separate |
 
-The [diagnosis contract](references/diagnosis-contract.md) governs content-lane evidence and judgments; it is not another review lane. Language uses its own coverage contract and records definite small errors regardless of importance. Full coverage does not guarantee zero missed errors. Input isolation matters whether calls run sequentially or concurrently.
+The [diagnosis contract](references/diagnosis-contract.md) governs content-lane evidence and judgments; it is not another review lane. Editor uses its own coverage contract and records definite small errors regardless of importance. Full coverage does not guarantee zero missed errors. Input isolation matters whether calls run sequentially or concurrently.
 
 ## Runtime completeness and delivery preservation
 
 After findings are frozen, apply the revision scope and completeness check in [repair boundary](references/repair-contract.md) to every retained content/technical and organization comment or coordinated group. Select and deliver the supported repair at sentence, paragraph or action-only scope, or identify missing author facts; verify that the report actually contains that deliverable before its preservation audit.
 
-New runs enable [actual-setting applicability](references/technical-applicability.md) for planning and Technical. Inspect actual baseline/ablation/experiment configurations against operation prerequisites, not merely general relationship coverage. Advisor remains independent of that inventory. Older frozen runs retain their protocol.
+New runs enable [actual-setting applicability](references/technical-applicability.md) for planning and Expert. Inspect actual baseline/ablation/experiment configurations against operation prerequisites, not merely general relationship coverage. Advisor remains independent of that inventory. Older frozen runs retain their protocol.
 
 Before author-facing Markdown/HTML/PDF delivery, use [source-to-report preservation](references/delivery-preservation.md), including earlier delivered reports for re-reviews. This records conditions, decisive evidence and repair actions separately; a topic-level match is insufficient. The executable check validates accounting records, while semantic fidelity still needs review.
 
 ## Public knowledge boundaries
 
-Load the manifest-defined public concern package at `corpus/advisor-concerns-v4/`. It preserves the original 437 cards and adds 56 conditional historical abstractions, including twelve additions restored or extracted during the joint-context and admission reviews. The older `advisor-concerns-v1/`, `advisor-concerns-v2/` and `advisor-concerns-v3/` snapshots remain available for frozen runs and comparisons. Its six English decision fields preserve conditional analytical distinctions. Anonymous source IDs support internal links, not public identification of the private source manuscripts. These cards contain no original annotations, marked manuscript text, neighboring passages or private revision histories. They are analyst abstractions, not mentor-certified rules. Treat withheld history as unavailable; do not invent it or infer advisor acceptance. The added training collection is exposed; it cannot establish unseen-family review performance.
+Load the manifest-defined public concern package at `corpus/advisor-concerns-v4/`. It preserves the original 437 cards and adds 56 conditional historical abstractions, including twelve additions restored or extracted during the joint-context and admission reviews. Earlier snapshots are retained in historical releases or local archives, not bundled with v1.1.0. Its six English decision fields preserve conditional analytical distinctions. Anonymous source IDs support internal links, not public identification of the private source manuscripts. These cards contain no original annotations, marked manuscript text, neighboring passages or private revision histories. They are analyst abstractions, not mentor-certified rules. Treat withheld history as unavailable; do not invent it or infer advisor acceptance. The added training collection is exposed; it cannot establish unseen-family review performance.
 
-The published-case summaries at `corpus/published-cases-v1/` are enabled by default for new runs. Select task-matched Reader and Technical cases after the neutral plan; freeze the selection before either lane. Zero matches still require complete generic checks. The manifest states actual case counts. These English records provide original analytical summaries and verified public citations, not source PDFs, full-page transcriptions or private-feedback companions. Read their complete summary, candidate sufficiency questions, evidence classes and boundaries. Case IDs are provenance, not defect evidence or Advisor card IDs. See [Reader routing](references/goodpaper-reader.md) and [Technical routing](references/goodpaper-technical.md).
+The published-case summaries at `corpus/published-cases-v1/` are enabled by default for new runs. Select task-matched Reader and Expert cases after the neutral plan; freeze the selection before either lane. Zero matches still require complete generic checks. The manifest states actual case counts. These English records provide original analytical summaries and verified public citations, not source PDFs, full-page transcriptions or private-feedback companions. Read their complete summary, candidate sufficiency questions, evidence classes and boundaries. Case IDs are provenance, not defect evidence or Advisor card IDs. See [Reader routing](references/goodpaper-reader.md) and [Expert routing](references/goodpaper-expert.md).
 
 Public analytical abstractions do not establish diagnostic accuracy or better recall. Private source-family identities are not distributed; held-out eligibility must be established using an independently maintained private registry, not inferred from anonymous IDs. Do not include target comments, future versions or scoring answers in autonomous review requests.
 
 ## Section and whole-paper reading
 
+New dev.4 runs freeze `writing_transfer: 1`. Apply [writing transfer](references/writing-transfer.md) in Reader, independent Advisor and drafting. Learn sentence/paragraph roles, information selection, emphasis and argument dependencies from complete supplied source accounts; test each against the target's own facts and existing arrangement. Advisor records editorial versus content-only scope in its existing concern dispositions. Preserve source-to-action records through raw freeze and link them to the final report's actual revision wording. The runner validates links and scope, not improved writing or established mentor preference. For historical learning, use [editorial episode learning](references/editorial-learning.md); preserve before/context/feedback/after/follow-up and uncertainty before admitting a reusable distinction. Do not count added checks or cases as learned preferences.
+
 Use [section argument and information selection](references/section-argument.md) alongside Reader and independent Advisor checks. Reader records section syntheses and a whole-paper summary-to-evidence map; Advisor applies related concerns independently at their natural scope. Preserve necessary and optional section-level revisions through merge/verification. Draft supported replacement passages only after diagnosis freeze when requested.
 
-Reader coverage separates passage job from structural scope and includes system models, problem formulations, methods, theory and experiments, not only abstracts/introduction/contributions. Advisor independently uses historical concerns at their relevant scope; the Reader coverage framework does not become its prescribed inventory. Keep Technical's validity and evidence remit unchanged.
+Reader coverage separates passage job from structural scope and includes system models, problem formulations, methods, theory and experiments, not only abstracts/introduction/contributions. Advisor independently uses historical concerns at their relevant scope; the Reader coverage framework does not become its prescribed inventory. Keep Expert's validity and evidence remit unchanged.
 
 ## Deliverable
 
@@ -85,4 +112,4 @@ For every author-facing bilingual report, use the [bilingual report language rul
 
 ### Generic Reader multiscale coverage
 
-For new runs with `reader_multiscale: 3`, planning and Reader load [reader-checklist.md](references/reader-checklist.md). Inventory actual chapter tasks, structural scales and relationships; reconstruct understanding with evidence, including sufficient and unfinished outcomes. Plan a separate manuscript-specific editorial pass for first-use, figure/table placement, paragraph handoffs, section arrangement and information selection. Freeze an anchored candidate change per applicable editorial target, treat its expected gain as a hypothesis, check preservation of prerequisites, and compare its gain, cost and affected links with the current arrangement; a sufficient comprehension judgment does not settle its arrangement. Account for each candidate as retained, necessary repair, optional improvement or unresolved with evidence. Good-paper cases augment this coverage and never replace it. Frozen older runs retain their original protocol.
+New runs use `reader_multiscale: 4` and `editorial_selection: 1`. Planning and Reader load [reader-checklist.md](references/reader-checklist.md), inventory actual chapter tasks, structural scales and relationships, and reconstruct understanding with evidence, including sufficient and unfinished outcomes. Inspect first use, display placement, paragraph handoffs, section arrangement and information selection separately from comprehension. Keeping the current arrangement is the baseline; an editorial question need not produce an edit. Freeze a grounded candidate when one is worth testing, otherwise an explicit null candidate with a manuscript-specific reason. Compare actual reader gain with transition, repetition, emphasis and space costs. Reader and Advisor distinguish necessary repairs, useful optional changes and equivalent style. Concern, Expression and good-paper examples guide questions and phrasing without obligating revisions. Merge and verify record decision groups, choose one compatible path per task, and explicitly dispose of competing proposals; independent content requirements survive. Preserve these groups in `organization_review.json`. Coverage is not a comment-count target. Frozen older runs retain their original protocol.

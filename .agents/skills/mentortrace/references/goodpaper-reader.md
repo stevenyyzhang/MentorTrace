@@ -2,6 +2,12 @@
 
 The public library contains English analyst-written summaries with public citations. It contains no original selected paragraphs or neighboring page transcriptions. Consult its manifest for case counts; navigation entries are tasks, not requirements for every manuscript.
 
+An explicitly selected private case-passage snapshot may additionally supply actual
+original anchor and neighboring page text under `source_passages`. Read it in context
+when borrowing sentence roles, information selection or wording; distinguish it from
+the analyst account. A source's actual prose is not mentor-authored evidence. Preserve
+its extraction/reading limits and use target facts for any newly generated replacement.
+
 Route after identifying an actual target reader task and comprehension dependency. Match the reader task, reconstructed relation and applicability boundary. A topic or chapter label alone is insufficient. A route records a `sufficiency_question`, without declaring a verdict or manufacturing a reasonable alternative. Read the selected summary and its `analysis_status`; do not pretend the omitted source paragraph was read. See case-evidence.md for evidence classes.
 
 Judge the current manuscript from its own sentences, figures and legitimate forward references. Formulas, tables, captions and nearby prose may already provide sufficient information. Separate necessary explanation from optional preference. A summary can sharpen a check or recognize sufficiency; it need not create a finding. Zero matches remain valid and generic checks continue.

@@ -1,10 +1,17 @@
 # Repair boundary — later integration
 
+Authorized post-freeze proposal drafting is prepared by
+`scripts/prepare_revision_proposals.py`; automatic application to the manuscript
+remains separate. With an enhanced Expression snapshot, implement the agreed
+passage changes using the concrete language contract in
+[expression-realization.md](expression-realization.md). Keep technical facts fixed;
+do not manufacture an algorithmic sequence or stronger result to fit a mentor frame.
+
 The first MentorTrace V1 trial is diagnosis-only. Do not generate applied edits as a side effect of review. For an authorized repair, reuse the existing candidate-manuscript owner and stale-version checks; do not create a second current manuscript.
 
 Each repair links a confirmed finding, closure goal, exact source version, bounded diff, evidence and affected locations. Definitions and assumptions may affect equations, algorithms and conclusions; changed metrics may affect figures and summaries; moved material may leave dangling dependencies. Verify the exact candidate after editing. Record unsatisfied goals and missing author evidence, never invent results to close a concern.
 
-V1 can state a closure goal and a supported revision plan; automated patch application and integration with the old candidate-manuscript owner are deferred. Do not claim the project-local runner supports full drafting or final manuscript generation.
+V1 can state a closure goal and a supported revision plan; automated patch application and integration with the old candidate-manuscript owner are deferred. The post-freeze proposal helper can prepare supported replacement passages; it does not generate or maintain an applied final manuscript.
 
 A repair plan should distinguish an editorial change supported by existing content, a technical correction requiring author confirmation of implementation, and an evidence gap requiring new results. Map affected definitions, method steps, experiments and claims before suggesting changes. Preserve a valid explanation if rephrasing would only replace vocabulary without improving its task.
 

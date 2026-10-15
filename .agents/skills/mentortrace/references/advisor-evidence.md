@@ -1,5 +1,7 @@
 # Conditional advisor evidence
 
+Concern and Expression are complementary evidence sources, not two votes that compel an edit. Read the target's existing explanation first. A mentor's source change can teach what to inspect or how to phrase an adopted repair without showing that the same change benefits this manuscript. Retain a no-change/equivalent-style disposition when appropriate. Recommend an optional change only for a concrete net reader benefit after disruption, repetition, emphasis and space costs. For multiple sources or placements serving one reader task, select a preferred compatible path and account for unselected alternatives; do not multiply comments by source count. Keep independently justified technical or explanatory requirements separate from the choice of placement.
+
 Use supplied card decision fields, including evidence status and applicability limits. Do not replace cards with titles or double-count overlapping archives. Follow the frozen family policy: held-out review excludes target-family evidence; explicitly authorized development inclusion must be disclosed. Grouping is navigation, not grounds to discard variants.
 
 ## Independent discovery before alignment

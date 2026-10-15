@@ -8,20 +8,22 @@ Inspect and transcribe the decisive expression from its original page before all
 
 If the page contradicts the allegation, withdraw it or narrow it to a separately supported requirement. Repeated lane agreement does not settle shared extraction corruption. For unreadable glyphs, obtain a sharper local render/crop or permitted source; retain uncertainty if still insufficient. Never guess an expression or add external calls without applicable authorization. Alternative extraction/OCR can flag discrepancies but cannot replace page inspection.
 
+When text and a low-resolution image appear to disagree on a meaning-bearing glyph, render a sharper detail from the same original PDF before correcting a quotation or alleging an author error. Supply that detail alongside the full original page, and bind it to the PDF hash, page, render settings and image hash. Preserve any mistaken intermediate transcription and explicitly supersede it. Reviewer agreement does not replace this primary-page check.
+
 New `source_fidelity: 1` protocols require Verify's `source_fidelity_checks` for every input finding and each new finding. Formula rows record the expression, decisive symbols, image hash and extraction comparison; non-formula rows explain that classification. The runner rejects missing records, stale hashes, retained contradicted premises and confirmed outputs based on unreadable formulas. Visual transcription and correct formula/non-formula classification still need substantive review.
 
 ## Surface candidates without silent normalization
 
 At creation the runner scans raw text for alphabetic fragments separated by a hyphen and horizontal whitespace within one extracted line. `inputs/source_fidelity.json` retains exact spans, page, offsets and context. The scan does not certify physical same-line placement or author error, and does not cover all split words or spelling errors.
 
-Language inspects each candidate on the page and returns `source_candidate_dispositions`:
+Editor inspects each candidate on the page and returns `source_candidate_dispositions`:
 
-- `definite_error`: unintended split visible on the page; link a Language finding with observed spelling and correction.
+- `definite_error`: unintended split visible on the page; link a Editor finding with observed spelling and correction.
 - `valid_source`: intentional compound, notation or valid layout; explain the observed placement.
 - `extraction_artifact`: the page is correct and extraction created the anomaly; explain the difference.
 - `unresolved`: source or intended term cannot be resolved; link an anchored uncertainty item.
 
-A normal word broken at the physical line end may be reconstructed for reading. A hyphen and space inside the physical line needs a separate judgment before joining fragments. Legitimate compounds/notation may retain hyphens. Dispose of every candidate, including non-errors, while continuing the complete Language read. Whole-page `checked` status does not dispose of candidates. Never use earlier reports or advisor answers for this initial inspection.
+A normal word broken at the physical line end may be reconstructed for reading. A hyphen and space inside the physical line needs a separate judgment before joining fragments. Legitimate compounds/notation may retain hyphens. Dispose of every candidate, including non-errors, while continuing the complete Editor read. Whole-page `checked` status does not dispose of candidates. Never use earlier reports or advisor answers for this initial inspection.
 
 ## Report quotations
 

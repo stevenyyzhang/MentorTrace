@@ -14,21 +14,27 @@ import unicodedata
 from pathlib import Path
 import goodpaper_runtime as goodpaper
 import reader_multiscale as multiscale
+import editorial_selection
 import technical_applicability as applicability
 import source_fidelity as fidelity
+import writing_transfer as writing
+import module_names as naming
+import expression_runtime as expression
 
 ROOT=Path(__file__).resolve().parents[1]
 DEFAULT_KNOWLEDGE=ROOT/'corpus/advisor-concerns-v4'
 DEFAULT_GOODPAPER=ROOT/'corpus/published-cases-v1'
+DEFAULT_EXPRESSION=ROOT/'corpus/advisor-expression-v1'
 STAGES=['objects','reader','technical','supplement_1','supplement_2','supplement_3','supplement_4','language','merge','verify']
 FIELDS=['core_question','new_manuscript_check','relationship_to_check','historically_insufficient_response','potentially_sufficient_response','applicability_boundary']
 JUDGMENTS={'sufficient','gap','unknown','not_applicable'}
 MODULES={
+ 'advisor_tasks':['expression.md','diagnosis-contract.md'],
  'objects':['reader-structure.md','diagnosis-contract.md'],
  'reader':['reader-structure.md','diagnosis-contract.md'],
- 'technical':['technical-checks.md','diagnosis-contract.md'],
- 'supplement':['advisor-evidence.md','technical-checks.md','diagnosis-contract.md'],
- 'language':['language-surface.md'],
+ 'technical':['expert-checks.md','diagnosis-contract.md'],
+ 'supplement':['advisor-evidence.md','expert-checks.md','diagnosis-contract.md'],
+ 'language':['editor-surface.md'],
  'merge':['merge-verify.md','diagnosis-contract.md'],
  'verify':['merge-verify.md','diagnosis-contract.md']}
 
@@ -168,6 +174,10 @@ def validate_organization(stage,x,context,pages):
   require(d['status'] in ['retained','merged','incorporated','withdrawn','unresolved'] and bool(d.get('reason')),
           'Invalid organization disposition')
   targets=set(d['output_ids'])
+  content=d.get('content_output_ids',[])
+  require(isinstance(content,list) and len(content)==len(set(content)) and set(content)<=findings,
+          'Organization content link needs an existing content finding')
+  require(not content or d['status'] in ['retained','merged'],'Inactive organization disposition has content output')
   if d['status'] in ['retained','merged']:
    require(bool(targets) and targets<=sids,'Retained organization suggestion lost')
   elif d['status']=='incorporated':
@@ -180,6 +190,7 @@ def validate_organization(stage,x,context,pages):
   targeted.update(targets&sids)
  for item in suggestions:
   if item['id'] not in targeted:require(item.get('new_in_stage') is True,'New organization suggestion must be marked new')
+ if context.get('editorial_selection'):editorial_selection.validate(x,context,pages,anchor)
 
 def validate_reading_review(x,context,pages):
  record=x.get('reading_review')
@@ -206,8 +217,11 @@ def validate_reading_review(x,context,pages):
  if context.get('reader_multiscale'):multiscale.validate_review(x,context,pages,anchor)
 
 def validate(stage,x,context):
+ stage=naming.stage_id(stage)
  pages={p['page']:p['text'] for p in context['manuscript']}
  require(isinstance(x,dict),'Response must be JSON object')
+ if stage=='advisor_tasks':
+  expression.validate_tasks(x,context['manuscript'],anchor);return
  require(not any(k in x for k in ['edits','replacement','candidate_manuscript']),'Diagnosis-only response must not apply edits')
  if stage.startswith('supplement_') and 'objects' not in context:
   normalized=adapt_independent(stage,x,context)
@@ -230,7 +244,8 @@ def validate(stage,x,context):
   input_ids=ids(context['input_findings'],'input findings');finds=ids(x['findings'],'findings')
   dispositions=x['dispositions'];require(len(dispositions)==len(input_ids),'Missing or duplicate disposition')
   require({d['input_id'] for d in dispositions}==input_ids,'Disposition coverage mismatch')
-  targeted=set()
+  targeted={fid for d in x.get('organization_dispositions',[]) if d['status']=='incorporated' for fid in d['output_ids']}
+  targeted.update(fid for d in x.get('organization_dispositions',[]) for fid in d.get('content_output_ids',[]))
   for d in dispositions:
    require(d['status'] in ['retained','merged','narrowed','withdrawn','unresolved'],'Invalid disposition')
    require(bool(d['reason']),'Missing disposition rationale')
@@ -323,6 +338,7 @@ def validate(stage,x,context):
    require(set(u.get('object_ids',[]))<=set(objects),'Case usage cites unknown object')
  if stage=='reader' and context.get('section_review'):validate_reading_review(x,context,pages)
  if stage=='technical' and context.get('technical_applicability'):applicability.validate_review(x,context,pages,anchor)
+ if context.get('writing_transfer'):writing.validate(stage,x,context,pages,anchor)
 
 def surface_units(pages):
  result=[]
@@ -397,7 +413,7 @@ def adapt_independent(stage,raw,context):
  for d in x['card_dispositions']:d['object_ids']=d.pop('relation_ids')
  return x
 
-def create_run(paper,knowledge,run,batch_ids=None,arm='H',generic_passes=4,max_evidence_calls=6,goodpaper_cases=True):
+def create_run(paper,knowledge,run,batch_ids=None,arm='H',generic_passes=4,max_evidence_calls=6,goodpaper_cases=True,expression_library=None,expression_mode='advisor_and_draft',case_passages=None):
  paper=Path(paper).resolve();knowledge=Path(knowledge).resolve();run=Path(run).resolve()
  verify_frozen(paper);verify_frozen(knowledge)
  require(read(paper/'manifest.json')['role']=='review_manuscript','Wrong paper role')
@@ -419,8 +435,10 @@ def create_run(paper,knowledge,run,batch_ids=None,arm='H',generic_passes=4,max_e
   require(read(DEFAULT_GOODPAPER/'manifest.json')['role']=='goodpaper_task_cases','Wrong good-paper case package')
   shutil.copytree(DEFAULT_GOODPAPER,run/'inputs/goodpaper')
  save(run/'inputs/protocol.json',{'product':'MentorTrace V1','mode':'diagnose_only','arm':'H','stages':STAGES,'workflow_version':2,'advisor_independent':True,'concern_count':len(archive),'knowledge_source_scope':manifest.get('scope','not declared; no held-out claim'),'max_evidence_calls':max_evidence_calls,'max_prompt_bytes':950000,'max_images':15,'token_and_model_context_fit':'requires transport preflight; byte bound is not token bound','transport':'explicit JSON files; cloud transport not invoked'})
- protocol=read(run/'inputs/protocol.json');protocol['organization_review']=1;protocol['section_review']=1;protocol['whole_manuscript_structure']=1;protocol['reader_multiscale']=3;protocol['technical_applicability']=1;protocol['consolidation_review']=1;protocol['source_fidelity']=1
+ protocol=read(run/'inputs/protocol.json');protocol['organization_review']=1;protocol['section_review']=1;protocol['whole_manuscript_structure']=1;protocol['reader_multiscale']=4;protocol['editorial_selection']=1;protocol['technical_applicability']=1;protocol['consolidation_review']=1;protocol['source_fidelity']=1
  protocol['goodpaper_case_mode']='task_routed_reader_technical_v1' if goodpaper_cases else 'off'
+ protocol['writing_transfer']=1
+ protocol['module_naming_version']=1;protocol['module_names']=dict(naming.NAMES)
  save(run/'inputs/protocol.json',protocol)
  if batch_ids is not None:
   cards=all_runtime_cards(run);byid={c['id']:c for c in cards}
@@ -429,6 +447,25 @@ def create_run(paper,knowledge,run,batch_ids=None,arm='H',generic_passes=4,max_e
   for n,batch in enumerate(batch_ids,1):save(run/f'inputs/batches/batch_{n}.json',[byid[i] for i in batch])
   protocol=read(run/'inputs/protocol.json');protocol['stages']=['objects','reader','technical']+[f'supplement_{n}' for n in range(1,len(batch_ids)+1)]+['language','merge','verify']
   protocol['batch_policy']='capacity-planned complete cards';save(run/'inputs/protocol.json',protocol)
+ if case_passages is not None:
+  require(goodpaper_cases,'Source passages need case mode')
+  source=Path(case_passages).resolve();verify_frozen(source)
+  require(read(source/'manifest.json')['case_snapshot_freeze_sha256']==sha(run/'inputs/goodpaper/FREEZE.json'),'Case passage snapshot does not match case library')
+  shutil.copytree(source,run/'inputs/case_passages')
+  protocol=read(run/'inputs/protocol.json');protocol['case_passages_version']=1;save(run/'inputs/protocol.json',protocol)
+ if expression_library is not None:
+  source=Path(expression_library).resolve();verify_frozen(source)
+  import public_expression as public
+  source_role=read(source/'manifest.json')['role']
+  require(source_role=='private_advisor_expression' or source_role in public.ROLES,'Wrong Expression source role')
+  if source_role in public.ROLES:public.check_library(source,{c['id'] for c in read(run/'inputs/knowledge/archive.json')})
+  require(expression_mode in {'advisor_and_draft','draft_only'},'Invalid Expression mode')
+  shutil.copytree(source,run/'inputs/expression')
+  protocol=read(run/'inputs/protocol.json')
+  protocol['expression_version']=1;protocol['expression_mode']=expression_mode
+  protocol['expression_source_freeze_sha256']=sha(source/'FREEZE.json')
+  if expression_mode=='advisor_and_draft':protocol['stages'].insert(0,'advisor_tasks')
+  save(run/'inputs/protocol.json',protocol)
  freeze_source_inventory(run)
  freeze(run/'inputs');save(run/'state.json',{'status':'ready','completed':[],'pending_evidence':[]})
 
@@ -438,10 +475,10 @@ def create_generic_run(paper,run,passes):
  run.mkdir(parents=True);shutil.copytree(paper,run/'inputs/paper')
  save(run/'inputs/knowledge/manifest.json',{'role':'generic_no_advisor','count':0,'batches':[]})
  for n in range(1,passes+1):save(run/f'inputs/batches/batch_{n}.json',[])
- for name in ['reader-structure.md','technical-checks.md','technical-applicability.md','diagnosis-contract.md','merge-verify.md','language-surface.md','section-argument.md','reader-checklist.md','source-fidelity.md']:
+ for name in ['reader-structure.md','expert-checks.md','technical-applicability.md','diagnosis-contract.md','merge-verify.md','editor-surface.md','section-argument.md','reader-checklist.md','source-fidelity.md','writing-transfer.md']:
   p=run/'inputs/skill/references'/name;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/'.agents/skills/mentortrace/references'/name,p)
  save(run/'inputs/protocol.json',{'product':'MentorTrace V1','mode':'diagnose_only','arm':'G',
-  'workflow_version':2,'organization_review':1,'section_review':1,'whole_manuscript_structure':1,'reader_multiscale':3,'technical_applicability':1,'consolidation_review':1,'source_fidelity':1,
+  'workflow_version':2,'organization_review':1,'section_review':1,'whole_manuscript_structure':1,'reader_multiscale':4,'editorial_selection':1,'technical_applicability':1,'consolidation_review':1,'source_fidelity':1,'writing_transfer':1,'module_naming_version':1,'module_names':dict(naming.NAMES),
   'stages':['objects','reader','technical']+[f'supplement_{n}' for n in range(1,passes+1)]+['language','merge','verify'],
   'max_prompt_bytes':950000,'max_images':15,'knowledge_policy':'No advisor archive, cards, comments, histories, reference patterns or target answers in this package; independent generic technical passes'})
  freeze_source_inventory(run)
@@ -463,7 +500,7 @@ def goodpaper_enabled(run):
 def case_route_input(run):
  run=Path(run).resolve();verify_frozen(run/'inputs')
  require(goodpaper_enabled(run),'This run has no good-paper case mode')
- require(read(run/'state.json')['completed']==['objects'],'Route cases immediately after the object plan and before Reader/Technical')
+ require([s for s in read(run/'state.json')['completed'] if s!='advisor_tasks']==['objects'],'Route cases immediately after the object plan and before Reader/Expert')
  source=run/'calls/objects/response.json'
  result=goodpaper.route_input(run/'inputs/goodpaper',read(source)['objects'])
  if multiscale_enabled(run):
@@ -486,7 +523,7 @@ def case_route_input(run):
 def freeze_case_route(run,selection):
  run=Path(run).resolve();verify_frozen(run/'inputs')
  require(goodpaper_enabled(run),'This run has no good-paper case mode')
- require(read(run/'state.json')['completed']==['objects'],'Case routing must precede Reader and Technical')
+ require([s for s in read(run/'state.json')['completed'] if s!='advisor_tasks']==['objects'],'Case routing must precede Reader and Expert')
  target=run/'case_route.json'
  require(not target.exists(),'Case route is already frozen; create a new run to change it')
  source=run/'calls/objects/response.json'
@@ -534,7 +571,15 @@ def linked_cards(run,wanted):
  return [archive[c['id']] if c['id'] in expanded else c for c in all_runtime_cards(run) if c['id'] in wanted]
 
 def context_for(run,stage):
+ stage=naming.stage_id(stage)
  ctx={'manuscript':read(run/'inputs/paper/body.json')}
+ protocol=read(run/'inputs/protocol.json')
+ if protocol.get('editorial_selection') and (stage in ['reader','merge','verify'] or stage.startswith(('supplement_','evidence_'))):
+  ctx['editorial_selection']=protocol['editorial_selection']
+ if stage=='advisor_tasks':return ctx
+ if protocol.get('expression_mode')=='advisor_and_draft' and stage.startswith(('supplement_','evidence_')):
+  ctx.update(expression.stage_context(run,stage))
+ if read(run/'inputs/protocol.json').get('writing_transfer') and (stage=='reader' or stage.startswith(('supplement_','evidence_'))):ctx['writing_transfer']=1
  if read(run/'inputs/protocol.json').get('source_fidelity'):
   ctx['source_fidelity']=1
   if stage in ['language','verify']:
@@ -563,6 +608,8 @@ def context_for(run,stage):
  if stage in ['reader','technical'] and goodpaper_enabled(run):
   verify_case_route(run)
   ctx['goodpaper_cases']=goodpaper.selected_for_lane(run/'inputs/goodpaper',read(run/'case_route.json'),stage)
+  if protocol.get('case_passages_version'):
+   ctx['goodpaper_cases']=goodpaper.with_passages(ctx['goodpaper_cases'],run/'inputs/case_passages')
  if stage.startswith('evidence_'):
   pending=read(run/'state.json')['pending_evidence'][0]
   ctx['cards']=[c for c in read(run/'inputs/knowledge/archive.json') if c['id']==pending['card_id']]
@@ -591,6 +638,8 @@ def context_for(run,stage):
    ctx['integration_evidence_policy']='Judge the frozen findings against the current manuscript and supplied checks. Historical cards remain in discovery logs; their IDs are provenance, not additional proof of a current defect.'
   else:
    ctx['input_findings']=read(run/'calls/merge/response.json')['findings']
+   if ctx.get('editorial_selection'):
+    ctx['prior_editorial_selection']=read(run/'calls/merge/response.json').get('editorial_selection',[])
    if read(run/'inputs/protocol.json').get('organization_review'):
     ctx['input_organization_suggestions']=read(run/'calls/merge/response.json').get('organization_suggestions',[])
    branches=[read(run/f'calls/{s}/response.json') for s in branch_stages(run)]
@@ -605,7 +654,7 @@ def context_for(run,stage):
    ctx['verification_note']=('Structured judgment, severity and pass fields are omitted. Source explanations can contain previous conclusions and must be rechecked against the manuscript.' if ctx.get('consolidation_review') else 'No previous self-evaluation, severity or pass labels supplied.')
  return ctx
 
-def next_request(run):
+def next_request(run,capacity_plan_only=False):
  run=Path(run).resolve();verify_frozen(run/'inputs');state=read(run/'state.json')
  if goodpaper_enabled(run) and 'objects' in state['completed']:verify_case_route(run)
  stages=read(run/'inputs/protocol.json')['stages']
@@ -628,24 +677,31 @@ def next_request(run):
   p=run/'findings_raw.json'
   if p.exists():require(read(p)==raw,'Raw findings changed before merge')
   else:save(p,raw);save(run/'RAW_FREEZE.json',{'sha256':sha(p),'stage':'before_merge'})
- return prepare_stage_request(run,stage)
+ return prepare_stage_request(run,stage,capacity_plan_only=capacity_plan_only)
 
-def prepare_stage_request(run,stage):
+def prepare_stage_request(run,stage,capacity_plan_only=False):
  """Materialize a request; independent branches only depend on frozen objects/input."""
+ stage=naming.stage_id(stage)
  run=Path(run).resolve();verify_frozen(run/'inputs')
+ current_names=bool(read(run/'inputs/protocol.json').get('module_naming_version'))
  ctx=context_for(run,stage);kind='supplement' if stage.startswith(('supplement','evidence_')) else stage
  names=list(MODULES[kind])
+ if ctx.get('writing_transfer'):names.append('writing-transfer.md')
  if ctx.get('source_fidelity') and kind in ['technical','supplement','language','merge','verify']:names.append('source-fidelity.md')
  if ctx.get('technical_applicability'):names.append('technical-applicability.md')
  if multiscale_enabled(run) and stage in ['objects','reader']:names.append('reader-checklist.md')
  section_review=read(run/'inputs/protocol.json').get('section_review')
  if section_review and kind in ['objects','reader','supplement','merge','verify']:names.append('section-argument.md')
  if goodpaper_enabled(run) and stage in ['reader','technical']:
-  names.append('goodpaper-reader.md' if stage=='reader' else 'goodpaper-technical.md')
+  names.append('goodpaper-reader.md' if stage=='reader' else 'goodpaper-expert.md')
   names.append('case-evidence.md')
  if read(run/'inputs/protocol.json')['arm']=='G':names=[n for n in names if n!='advisor-evidence.md']
+ names=[naming.reference_name(name,current_names) for name in names]
  modules={name:(run/'inputs/skill/references'/name).read_text(encoding='utf-8') for name in names}
- instruction=SURFACE if stage=='language' else PLAN if stage=='objects' else MERGE if stage in ['merge','verify'] else CHECK
+ instruction=expression.TASK_SCHEMA if stage=='advisor_tasks' else SURFACE if stage=='language' else PLAN if stage=='objects' else MERGE if stage in ['merge','verify'] else CHECK
+ if ctx.get('expression_version'):
+  names.append('expression.md')
+  modules['expression.md']=(run/'inputs/skill/references/expression.md').read_text(encoding='utf-8')
  if ctx.get('source_fidelity'):
   if stage=='language':instruction+='\n'+fidelity.SURFACE_SCHEMA
   if stage=='verify':instruction+='\n'+fidelity.VERIFY_SCHEMA
@@ -670,29 +726,53 @@ def prepare_stage_request(run,stage):
    instruction+='\nWhole-manuscript structural coverage: separate passage job from structural scope. In section_job/synthesis state the actual job and relevant argument-unit/subsection/section/cross-section scope. Cover substantive system model, formulation, method, theory and experiment sections where present, not only front matter. In paragraph_roles explain dependencies, and in selection assess necessary retained content, missing links and justified compression/movement. Short units also qualify. Record sufficient reconstructions and explicit unfinished scope; no mandatory rewrite or fixed order. Technical validity remains the separate Technical lane remit.'
  if goodpaper_enabled(run) and stage in ['reader','technical']:
   instruction+='\nGOOD-PAPER TASK CASES: Only selected source-relation reconstructions in INPUT.goodpaper_cases are supplied. These are analyst interpretations, not author-certified rules or measured reader benefits. They prompt questions and never establish a defect. Target sufficiency hypotheses must be tested using actual target support and dependencies; neither a source order nor an alternative imagined by an analyst is automatically correct. No alternative or issue is required per case. Preserve technical limits and use the target manuscript as the sole verdict evidence. Return case_usage:[{case_id,object_ids:[],effect:"new_check|sharpened_check|sufficiency_recognition|not_applicable",reason}] covering each supplied case exactly once. Do not put good-paper IDs into historical card_ids. Do not invent target facts or copy source numbers. A task with no selected case still gets its ordinary assigned checks.'
+  if read(run/'inputs/protocol.json').get('case_passages_version'):
+   instruction=instruction.replace('Only selected source-relation reconstructions in INPUT.goodpaper_cases are supplied.',
+    'Selected case analyses and separately marked original source_passages are supplied in INPUT.goodpaper_cases.')
+   instruction+='\nRead actual source passage context to compare information selection, sentence roles, dependency order and expression. Original page text is extraction, not newly certified glyph transcription or mentor wording. Adapt supported structure/wording to target facts; preserve source-specific limits and do not reintroduce withheld writing recipes. Distinguish an excerpt of source_passages from an excerpt of analyst summary in learned_distinction.'
  if multiscale_enabled(run) and stage in ['objects','reader']:
   version=read(run/'inputs/protocol.json')['reader_multiscale']
-  if stage=='objects':schema=multiscale.PLAN_SCHEMA_V3 if version>=3 else multiscale.PLAN_SCHEMA_V2 if version>=2 else multiscale.PLAN_SCHEMA
-  else:schema=multiscale.READER_SCHEMA_V3 if version>=3 else multiscale.READER_SCHEMA_V2 if version>=2 else multiscale.READER_SCHEMA
+  if stage=='objects':schema=multiscale.PLAN_SCHEMA_V4 if version>=4 else multiscale.PLAN_SCHEMA_V3 if version>=3 else multiscale.PLAN_SCHEMA_V2 if version>=2 else multiscale.PLAN_SCHEMA
+  else:schema=multiscale.READER_SCHEMA_V4 if version>=4 else multiscale.READER_SCHEMA_V3 if version>=3 else multiscale.READER_SCHEMA_V2 if version>=2 else multiscale.READER_SCHEMA
   instruction+='\n'+schema
+ if ctx.get('editorial_selection'):
+  instruction+='\n'+editorial_selection.BRANCH_SCHEMA
+  if stage in ['merge','verify']:instruction+='\n'+editorial_selection.MERGE_SCHEMA
  if ctx.get('technical_applicability'):instruction+='\n'+(applicability.PLAN_SCHEMA if stage=='objects' else applicability.REVIEW_SCHEMA)
+ if ctx.get('writing_transfer'):instruction+='\n'+writing.review_schema(ctx)
+ if ctx.get('expression_version'):instruction+='\n'+expression.transfer_schema(ctx)
+ if current_names:
+  instruction=naming.current_instructions(instruction)
+  instruction='REVIEW MODULE: '+naming.display_name(stage)+'\nThe four review modules are Reader, Expert, Advisor and Editor. The stage IDs technical/language and related JSON keys remain stable serialization identifiers for Expert/Editor; retain the supplied ID namespaces.\n'+instruction
  compact=stage in ['merge','verify'] and bool(read(run/'inputs/protocol.json').get('technical_applicability'))
  serialize=(lambda value:json.dumps(value,ensure_ascii=False,separators=(',',':'))) if compact else dump
  prompt=BASE+'\nSTAGE '+stage+'\n'+instruction.replace('STAGE:',stage+':')+'\nMODULES\n'+serialize(modules)+'\nINPUT\n'+serialize(ctx)
  protocol=read(run/'inputs/protocol.json');images=read(run/'inputs/paper/manifest.json')['images']
- require(len(prompt.encode('utf-8'))<=protocol['max_prompt_bytes'],'Request byte budget exceeded; do not truncate')
+ oversized=len(prompt.encode('utf-8'))>protocol['max_prompt_bytes']
+ require(not oversized or (capacity_plan_only and stage in ['merge','verify']),'Request byte budget exceeded; do not truncate')
  require(len(images)<=protocol['max_images'],'Image budget exceeded')
  req={'stage':stage,'prompt':prompt,'images':[{'page':x['page'],'path':'inputs/paper/'+x['path'],'sha256':x['sha256']} for x in images],
   'module_hashes':{n:hashlib.sha256(t.encode()).hexdigest() for n,t in modules.items()},
   'card_ids':[c['id'] for c in ctx.get('cards',[])],'object_ids':[o['id'] for o in ctx.get('objects',[])],
   'tools_allowed':False,'utf8_bytes':len(prompt.encode('utf-8')),'model_context_fit_verified':False}
+ if current_names:req['module_name']=naming.display_name(stage)
  p=run/'calls'/stage/'request.json'
  if p.exists():require(read(p)==req,'Request changed across resume')
  else:save(p,req)
  return req
 
-def accept_response(run,response,transport_record=None):
- run=Path(run).resolve();req=next_request(run);require(req is not None,'Run already complete')
+def accept_response(run,response,transport_record=None,capacity_plan=None):
+ run=Path(run).resolve()
+ if capacity_plan is not None:
+  plan=Path(capacity_plan);verify_frozen(plan.parent);receipt=read(plan)
+  require((transport_record or {}).get('kind') in ['capacity_consolidation','verified_reuse'],'Capacity plan needs explicit composite provenance')
+  require(receipt['stage'] in ['merge','verify'],'Capacity plans only support consolidation')
+  context=context_for(run,receipt['stage'])
+  require(read(plan.parent/'source_context.json')==context,'Capacity source context changed')
+  require(receipt['source_context_sha256']==hashlib.sha256(dump(context).encode()).hexdigest(),'Capacity receipt context hash mismatch')
+  require(receipt.get('not_a_single_model_output') is True and isinstance(receipt.get('actual_model_calls'),list) and receipt['actual_model_calls'],'Capacity receipt needs original call provenance')
+ req=next_request(run,capacity_plan_only=capacity_plan is not None);require(req is not None,'Run already complete')
+ if capacity_plan is not None:require(req['stage']==receipt['stage'],'Capacity receipt stage mismatch')
  stage=req['stage'];folder=run/'calls'/stage
  require(not (folder/'raw_response.json').exists(),'A response already exists; inspect rejection, never overwrite')
  save(folder/'transport.json',transport_record or {'kind':'external_response_import','provider_usage':'unavailable','independent_execution_verified':False})
@@ -733,6 +813,7 @@ def export_report(run):
  frozen=read(run/'RESULT_FREEZE.json')
  require(sha(run/'final.json')==frozen['final'] and sha(run/'findings_raw.json')==frozen['raw'],'Final output changed')
  raw=read(run/'findings_raw.json');merged=read(run/'calls/merge/response.json');final=read(run/'final.json')
+ if read(run/'inputs/protocol.json').get('writing_transfer'):save(run/'writing_transfer.json',writing.packet(run))
  rows=[]
  if goodpaper_enabled(run):
   verify_case_route(run)
@@ -757,7 +838,7 @@ def export_report(run):
        'limits':'Coverage records do not certify editorial quality. Final dispositions govern delivered suggestions.'})
  save(run/'trace.json',{'raw_to_final':rows,'merge_additions':[f['id'] for f in merged['findings'] if f.get('new_in_stage')], 'verification_additions':[f['id'] for f in final['findings'] if f.get('new_in_stage')]})
  lines=['# MentorTrace internal review record','',f'Raw findings: {len(raw)}; final findings: {len(final["findings"])}. Counts do not establish quality.','', 'This record contains no advisor-match score. See trace.json for dispositions.','']
- if goodpaper_enabled(run):lines+=['Reader and Technical used frozen task-matched case routes; see case_retrieval.json.','']
+ if goodpaper_enabled(run):lines+=['Reader and Expert used frozen task-matched case routes; see case_retrieval.json.','']
  for f in sorted(final['findings'],key=lambda f:f.get('finding_type')=='surface'):
   if f.get('finding_type')=='surface':
    lines += [f"### Language and presentation error {f['id']} ({f['category']})",f"- Suggested wording: {f['suggested_text']}"]
@@ -767,6 +848,9 @@ def export_report(run):
                 'merge_dispositions':merged.get('organization_dispositions',[]),
                 'verification_dispositions':final.get('organization_dispositions',[]),
                 'final_suggestions':final.get('organization_suggestions',[])}
+  if read(run/'inputs/protocol.json').get('editorial_selection'):
+   organization['merge_selection']=merged.get('editorial_selection',[])
+   organization['verified_selection']=final.get('editorial_selection',[])
   save(run/'organization_review.json',organization)
   if organization['final_suggestions']:
    lines+=['## Optional organization and flow suggestions','', 'These suggestions are separate from confirmed findings.','']
@@ -783,6 +867,11 @@ def main():
  p=sub.add_parser('import-knowledge');p.add_argument('--source',type=Path,required=True);p.add_argument('--dest',type=Path,required=True);p.add_argument('--batch-size',type=int,default=40);p.add_argument('--promotion-registry',type=Path);p.add_argument('--max-batch-bytes',type=int)
  p=sub.add_parser('import-paper');p.add_argument('--body',type=Path,required=True);p.add_argument('--images',type=Path,required=True);p.add_argument('--pdf',type=Path,required=True);p.add_argument('--pdf-sha256',required=True);p.add_argument('--dest',type=Path,required=True);p.add_argument('--development-material',action='store_true',help='Mark an explicitly designated development manuscript')
  p=sub.add_parser('create');p.add_argument('--paper',type=Path,required=True);p.add_argument('--knowledge',type=Path,default=DEFAULT_KNOWLEDGE);p.add_argument('--run',type=Path,required=True);p.add_argument('--max-evidence-calls',type=int,default=6);p.add_argument('--goodpaper-cases',action=argparse.BooleanOptionalAction,default=True,help='Use task-routed cases by default; --no-goodpaper-cases creates an explicit case-free baseline')
+ expression_options=p.add_mutually_exclusive_group()
+ expression_options.add_argument('--expression',type=Path,default=DEFAULT_EXPRESSION,help='Expression snapshot override; defaults to the bundled public library for Advisor and drafting')
+ expression_options.add_argument('--no-expression',dest='expression',action='store_const',const=None,help='Explicit baseline without Expression; completed runs are unchanged')
+ p.add_argument('--expression-mode',choices=['advisor_and_draft','draft_only'],default='advisor_and_draft')
+ p.add_argument('--case-passages',type=Path,help='Private source-page text for selected public cases')
  p=sub.add_parser('route-input');p.add_argument('--run',type=Path,required=True)
  p=sub.add_parser('route-cases');p.add_argument('--run',type=Path,required=True);p.add_argument('--route',type=Path,required=True)
  p=sub.add_parser('next');p.add_argument('--run',type=Path,required=True)
@@ -792,12 +881,12 @@ def main():
  args=parser.parse_args()
  if args.action=='import-knowledge':import_knowledge(args.source,args.dest,batch_size=args.batch_size,promotion_registry=args.promotion_registry,max_batch_bytes=args.max_batch_bytes)
  elif args.action=='import-paper':import_paper(args.body,args.images,args.pdf,args.dest,args.pdf_sha256,development_material=args.development_material)
- elif args.action=='create':create_run(args.paper,args.knowledge,args.run,max_evidence_calls=args.max_evidence_calls,goodpaper_cases=args.goodpaper_cases)
+ elif args.action=='create':create_run(args.paper,args.knowledge,args.run,max_evidence_calls=args.max_evidence_calls,goodpaper_cases=args.goodpaper_cases,expression_library=args.expression,expression_mode=args.expression_mode,case_passages=args.case_passages)
  elif args.action=='route-input':
   item=case_route_input(args.run);print(dump({'path':str(Path(args.run).resolve()/'case_route_input.json'),'objects':len(item['objects']),'reader_cases':len(item['reader_index']['cases']),'technical_cases':len(item['technical_index']['cases'])}))
  elif args.action=='route-cases':freeze_case_route(args.run,read(args.route));print(dump({'status':'frozen','route_sha256':sha(Path(args.run)/'case_route.json')}))
  elif args.action=='next':
-  r=next_request(args.run);print(dump({'stage':r['stage'],'bytes':r['utf8_bytes'],'cards':len(r['card_ids'])} if r else {'status':'complete'}))
+  r=next_request(args.run);print(dump({'stage':r['stage'],'module_name':naming.display_name(r['stage']),'bytes':r['utf8_bytes'],'cards':len(r['card_ids'])} if r else {'status':'complete'}))
  elif args.action=='retry':retry_failed(args.run)
  elif args.action=='export':export_report(args.run)
  else:accept_response(args.run,args.response)

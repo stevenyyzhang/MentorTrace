@@ -116,6 +116,38 @@ class PublicRelease(unittest.TestCase):
             self.assertIn('private_or_source_excerpt_field', rules)
             self.assertIn('non_english_corpus', rules)
 
+    def test_explicit_page_description_keeps_ambiguous_evidence_and_unmatched_quote(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root / 'inputs/paper').mkdir(parents=True)
+            (root / 'inputs/paper/body.json').write_text(
+                json.dumps([{'page': 1, 'text': 'Original source text.'},
+                            {'page': 2, 'text': 'Another available page.'}]), encoding='utf-8')
+            descriptions = ['Page 2 (8) and its surrounding definition.',
+                            'Page 1 and 2 contain the prerequisites.',
+                            'Page 1–2 describe the algorithm.',
+                            'Page 1 (8), continued on Page 2.',
+                            'Page 9 (8) defines the quantity.',
+                            'The algorithm is on an unspecified page.']
+            original = {'configuration_review': {'items': [
+                {'verdict': 'unresolved', 'evidence': descriptions}]},
+                'anchor': {'page': 1, 'quote': 'An invented quotation.'}}
+            raw = root / 'raw.json'
+            raw.write_text(json.dumps(original), encoding='utf-8')
+            raw_bytes = raw.read_bytes()
+            result, count, unresolved = normalize.normalize(root, 'technical', raw)
+            candidate = json.loads(result.read_text())
+            item = candidate['configuration_review']['items'][0]
+            self.assertEqual(item['verdict'], 'unresolved')
+            self.assertEqual(item['evidence'][0]['page'], 2)
+            self.assertEqual(item['evidence'][0]['kind'], 'image')
+            self.assertTrue(item['evidence'][0]['description'].endswith(descriptions[0]))
+            self.assertEqual(item['evidence'][1:], descriptions[1:])
+            self.assertEqual(candidate['anchor'], original['anchor'])
+            self.assertEqual(count, 0)
+            self.assertEqual(len(unresolved), 1)
+            self.assertEqual(raw.read_bytes(), raw_bytes)
+
 
 if __name__ == '__main__':
     unittest.main()

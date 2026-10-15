@@ -9,6 +9,7 @@ import argparse
 import hashlib
 import json
 import re
+import sys
 from pathlib import Path
 
 
@@ -142,6 +143,26 @@ def initialize(report, source_paths):
             'target_units': [{**u, 'review': {}} for u in target_inventory(report)]}
 
 
+def language_module():
+    # Resolve against this skill checkout, never an unrelated global installation.
+    scripts=Path(__file__).resolve().parents[4]/'scripts'
+    if str(scripts) not in sys.path:sys.path.insert(0,str(scripts))
+    import expression_realization
+    return expression_realization
+
+
+def attach_language(ledger, response, evidence):
+    module=language_module()
+    require(module.read(evidence).get('expression_realization')==1,'Language evidence lacks realization protocol')
+    module.validate_draft(module.read(response),module.read(evidence))
+    ledger['language_realization_required']=True
+    ledger['language_realization']={
+        'response':{'path':str(Path(response).resolve()),'sha256':digest(response)},
+        'evidence':{'path':str(Path(evidence).resolve()),'sha256':digest(evidence)},
+        'review':{'reviewer':'','groups':[]}}
+    return ledger
+
+
 def validate_evidence(entries, message, factual=False):
     require(isinstance(entries, list) and bool(entries), message)
     for entry in entries:
@@ -225,6 +246,10 @@ def validate_target_review(ledger, report):
                 local_notice(assertion.get('condition'), row, 'Author condition')
             else:
                 local_notice(assertion.get('unresolved_notice'), row, 'Unresolved fact/action')
+    require(not ledger.get('language_realization_required') or 'language_realization' in ledger,
+            'Required language realization review missing')
+    if 'language_realization' in ledger:
+        language_module().validate_delivery_binding(ledger['language_realization'],Path(report).read_text(encoding='utf-8-sig'))
     return {'target_blocks': len(blocks_by_id),
             'suggested_wording_passages': sum(row['kind'] == 'suggested_wording' for row in expected)}
 
@@ -279,13 +304,19 @@ def main():
     parser.add_argument('--ledger', type=Path, required=True)
     parser.add_argument('--source', type=Path, action='append', default=[])
     parser.add_argument('--require-v2', action='store_true', help='Reject legacy ledgers for new report delivery')
+    parser.add_argument('--language-response', type=Path)
+    parser.add_argument('--language-evidence', type=Path)
     args = parser.parse_args()
     if args.command == 'init':
         if args.ledger.exists():
             raise FileExistsError('Preserve the existing ledger; choose a new filename')
         if not args.source:
             parser.error('init requires --source')
-        args.ledger.write_text(json.dumps(initialize(args.report, args.source), ensure_ascii=False, indent=2), encoding='utf-8')
+        if bool(args.language_response)!=bool(args.language_evidence):
+            parser.error('Supply both language response and evidence')
+        ledger=initialize(args.report,args.source)
+        if args.language_response:attach_language(ledger,args.language_response,args.language_evidence)
+        args.ledger.write_text(json.dumps(ledger, ensure_ascii=False, indent=2), encoding='utf-8')
     else:
         print(json.dumps(validate(read(args.ledger), args.report, require_v2=args.require_v2), ensure_ascii=False))
 

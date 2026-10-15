@@ -1,0 +1,83 @@
+{
+  "source_packets_complete": 89,
+  "source_families": 5,
+  "admitted_local_examples": 236,
+  "held_candidates": 28,
+  "scopes": {
+    "sentence": 77,
+    "argument_unit": 66,
+    "paragraph": 70,
+    "section": 13,
+    "whole_paper": 6,
+    "cross_section": 4
+  },
+  "expression_without_concern": 160,
+  "related_concern_count": 27,
+  "published_source_papers": 52,
+  "published_case_links": 246,
+  "full_493_semantic_audit_complete": false,
+  "full_historical_expression_coverage": false,
+  "version": "1.1.0-dev.4",
+  "date": "2026-10-09",
+  "local_contract_tests": 75,
+  "legacy_requests_byte_identical": 10,
+  "public_frozen_corpora_unchanged": 5,
+  "private_source_paths_and_text_included": false,
+  "evaluation_complete": true,
+  "evaluation_scope": "Completed scoped Advisor A/B/C development comparison; not full four-module or held-out evaluation",
+  "held_out_equal_budget_evaluation_complete": false,
+  "mentor_fit_validated": false,
+  "production_validation_complete": false,
+  "development_comparison": {
+    "manuscript_pages": 5,
+    "concern_cards": 12,
+    "eligible_pilot_expression_records": 37,
+    "A": {
+      "raw_findings": 6,
+      "raw_optional_suggestions": 1,
+      "required_actions": 6,
+      "optional_actions": 1,
+      "draft_entries": 7
+    },
+    "B": {
+      "requirements_identical_to_A": true,
+      "draft_entries": 7
+    },
+    "C": {
+      "raw_findings": 9,
+      "raw_optional_suggestions": 3,
+      "required_actions": 11,
+      "optional_actions": 4,
+      "draft_entries": 15
+    },
+    "auxiliary_result": "A/B broadly tied; C broader coverage with overlap and extra calls/input; no causal attribution or mentor preference certification"
+  },
+  "quality_claim": "Source transfer and limited development behavior documented; stable mentor fit and causal quality improvement not established",
+  "reviewed_runtime_records": 238,
+  "post_audit_held_records": 1,
+  "connected_semantic_audit": {
+    "concern_cards": 12,
+    "expression_records": 20,
+    "full_493_complete": false,
+    "source_glyphs_certified": false,
+    "followup": "Selected original page marks checked locally; actual mentor text unchanged"
+  },
+  "latest_affected_tests": 13,
+  "latest_affected_tests_passed": true,
+  "paragraph_followup": {
+    "selected_long_annotations": 4,
+    "admitted": 3,
+    "held": 1,
+    "runtime_records": 238,
+    "exact_mentor_text_preserved": true,
+    "assistant_sample_resolutions": 13,
+    "human_itemwise_preference_judgments_received": false,
+    "observed_later_body_pairs": 4,
+    "after_body_writers_confirmed": 0,
+    "independent_learning_calls": 1,
+    "expression_intake_independent_from_concern_selection": true,
+    "held_operations_excluded_from_transfer": true,
+    "frozen_prior_snapshots_preserved": true,
+    "new_target_effect_evaluation_completed": false
+  }
+}

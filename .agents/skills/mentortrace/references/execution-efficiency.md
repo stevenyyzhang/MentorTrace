@@ -22,7 +22,7 @@ Inspect `pending.json` and complete a copy of `assessment.template.json`: its bo
 
 ## Supply complete relevant evidence
 
-Initial Reader, Technical, Advisor and Language retain their full manuscript/image contracts; Advisor keeps complete assigned cards, and A retains the full manuscript. For targeted delivery work, include the complete source requirement, relevant final fields, report context, exact evidence and required cross-section prerequisites. Do not repeatedly submit all old reports, raw lanes, audit logs or unrelated cards. A path/hash/ID does not give an isolated reviewer access to its contents. Supply the content or inspected page actually needed. If relevance cannot safely be bounded, broaden the packet rather than truncate it.
+Initial Reader, Expert, Advisor and Editor retain their full manuscript/image contracts; Advisor keeps complete assigned cards, and A retains the full manuscript. For targeted delivery work, include the complete source requirement, relevant final fields, report context, exact evidence and required cross-section prerequisites. Do not repeatedly submit all old reports, raw lanes, audit logs or unrelated cards. A path/hash/ID does not give an isolated reviewer access to its contents. Supply the content or inspected page actually needed. If relevance cannot safely be bounded, broaden the packet rather than truncate it.
 
 ## Combine related checks and keep records concise
 

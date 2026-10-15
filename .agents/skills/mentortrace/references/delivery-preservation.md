@@ -1,5 +1,7 @@
 # Delivery preservation review
 
+For editorial suggestions, preservation means accountable adjudication rather than compulsory publication of every candidate. Test current-manuscript sufficiency and the proposed change's net gain before checking output preservation. Supported no-change, equivalent-style and unselected alternatives need evidence-based dispositions. The delivered set must implement a compatible preferred path per reader task without duplicated or conflicting replacements. Check that separately justified content requirements survive a rejected move. Do not use comment totals or final-draft status as evidence of correctness, and do not certify an entire report from a scoped editorial re-adjudication.
+
 Apply source-fidelity.md to Original quotations and formula-related assertions in addition to Phase A/B and the version 2 final-text ledger. Reuse the checked source transcription, compare the rendered decisive glyphs against the bound original page, and keep repeated quotations consistent. A preserved earlier requirement does not certify its source accuracy. If a quotation correction contradicts a finding's premise, readjudicate the finding and affected shared actions before delivering the corrected report.
 
 Run after frozen initial discovery and fresh verification, before author-facing Markdown delivery or HTML/PDF export. Preserve original responses and earlier reports. Do not feed an earlier report into the initial lanes. Structural record validation is separate from the reviewer's substantive judgment.
@@ -36,6 +38,14 @@ Preserve the actual defect, applicable setting, negation, necessary/sufficient c
 
 ## Final-text facts, meaning and wording
 
+For proposals with `expression_realization: 1`, initialize this same ledger with
+`--language-response` and `--language-evidence`. Complete the attached language
+realization review alongside facts, meaning and style, using
+[expression-realization.md](expression-realization.md). The reviewer checks actual
+target sentences, source genre and adaptations; source IDs or word overlap are
+insufficient. Reject unimplemented claims and preserve explicit nonuse. Bind both
+input hashes and renew affected passage/feature reviews after any text change.
+
 Every `target_units` block has its exact text and hash. Its `review` records `reviewed_sha256`, `classification` (factual, non_factual, action or explanatory), `reason`, `assertions`, `meaning_check` and `style_check`. Classify by meaning, not by the presence of a verb, pronoun or tense. Each factual assertion needs its exact local `quote`, a reason and one of:
 
 - `supported`: textual evidence `{path,sha256,quote,basis}`; basis is manuscript or direct_derivation. A requested future action is not evidence of its implementation. A derivation may support a mathematical assertion; it cannot establish author implementation history or a measured experimental outcome.
@@ -51,6 +61,10 @@ New author delivery requires both the report-bound B consolidation record and th
 ## Coordinated action and concision review
 
 Use the existing component comparisons and final-text meaning/style reviews for these checks; do not add a new audit stage or author-facing checklist. Verify that a shortened or alternative request still answers every supported independent question, with evidence for any relaxation. Check claim corrections across all affected manuscript occurrences against one supported conclusion, preserving legitimate differences in meaning. Check that plans and overlapping replacements can be applied together, or are explicitly separate alternatives. Put missing author facts and insertion locations in Suggested revision / 建议修改 or shared revision actions, with no separate author-information field. Review concise language comments for exact corrections and all occurrence anchors. Remove redundant explanations, repeated checklists and duplicate drafts while retaining locally necessary use conditions. Any resulting text change still requires the affected bound review to be renewed.
+
+Distinguish the manuscript's stated aim from its demonstrated result and any guarantee. When narrowing an unsupported success claim or shortening a method preview, retain the source-supported aim explicitly in the actual replacement; describing its decision mechanism alone may lose that aim. Preserve that distinction in every supplied language and mutually exclusive alternative. Do not invent a new aim from a historical example, or strengthen an aim into evidence of successful identification.
+
+When a broad replacement consumes a sentence also named by another revision action, identify that overlap explicitly. Apply the broad replacement once and carry each still-required local correction into its new passage or a specifically retained location; retire the instruction to edit a sentence that no longer exists. Select mutually exclusive conventions before coordinating their dependent formulas and descriptions. A general request to "coordinate" does not establish where the surviving correction will be implemented.
 
 ## Limits
 

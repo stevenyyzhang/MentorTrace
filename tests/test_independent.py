@@ -13,7 +13,8 @@ class Independent(unittest.TestCase):
  def test_advisor_before_planning_and_no_prior_findings(self):
   req=m.prepare_stage_request(self.run,'supplement_1')
   ctx=json.loads(req['prompt'].split('\nINPUT\n')[1])
-  self.assertEqual(set(ctx),{'manuscript','cards'})
+  self.assertEqual(set(ctx),{'manuscript','cards','source_fidelity'})
+  self.assertEqual(ctx['source_fidelity'],1)  # Frozen dev.2+ source policy, no other lane data.
   self.assertEqual(req['object_ids'],[])
   self.advance();self.advance();self.advance()
   self.assertEqual(req,m.next_request(self.run))
