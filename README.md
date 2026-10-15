@@ -9,7 +9,7 @@ MentorTrace derives judgment patterns from an academic supervisor's actual comme
 
 The current implementation runs as a **Codex skill with a Python workflow** and accepts **PDF manuscripts**. **LaTeX source input and output** are planned. It produces revision guidance and reports; automatically applying changes to the manuscript is not yet integrated.
 
-## Changes from 1.0 to 1.1
+## Changes from 1.0.0 to 1.1.0
 
 - **Two mentor libraries:** 493 Concern records describe what to explain or justify; 1,581 Expression examples show concrete wording, syntax and paragraph operations. Both ship with the skill and are enabled by default.
 - **Organization and revision:** check paragraph tasks, information selection and transitions; draft concrete passages for retained issues and coordinate duplicate or conflicting suggestions.
