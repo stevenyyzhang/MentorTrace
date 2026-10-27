@@ -15,8 +15,6 @@ MentorTrace 从真实学术导师的批注与多轮修改记录中提炼判断�
 - **自适应分批与并行**：按模型容量和审阅负担自动分批，独立任务默认最多三路并行，减少重复输入与等待。
 - **精简检查与报告**：合并重复检查和说明，保留完整覆盖、核验要求及中英双语修改建议。
 
-容量预留、完整来源覆盖和旧冻结运行保持原有约束。最新组合流程已完成离线检查；耗时取决于稿件、模型和必要补查。详见[运行流程](.agents/skills/mentortrace/references/review-workflow.md)、[分批规则](.agents/skills/mentortrace/references/advisor-batching.md)和[完整请求容量](.agents/skills/mentortrace/references/request-capacity.md)。
-
 ## 1.1.0 相比 1.0.0
 
 - **导师双库指导**：493 条 Concern（导师审阅关注点，指导检查什么）和 1,581 条 Expression（导师表达案例，指导怎样措辞或调整段落）随 skill 一并提供，默认启用。
