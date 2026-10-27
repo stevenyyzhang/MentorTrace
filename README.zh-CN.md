@@ -66,6 +66,7 @@ config:
   htmlLabels: false
   flowchart:
     htmlLabels: false
+    wrappingWidth: 220
 ---
 flowchart TB
     F["PDF 稿件准备<br/>冻结稿件、语料与规则"]

@@ -66,6 +66,7 @@ config:
   htmlLabels: false
   flowchart:
     htmlLabels: false
+    wrappingWidth: 220
 ---
 flowchart TB
     F["Prepare PDF inputs<br/>Freeze inputs and rules"]
