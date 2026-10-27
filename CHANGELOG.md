@@ -4,6 +4,8 @@
 
 2026-10-27.
 
+Release package follow-up: simplify both READMEs, synchronize project version metadata, check the tokenizer dependency, and remove the tests' reliance on a pre-existing private directory. All 410 offline tests pass in an isolated extracted package; no original-project file access or model calls. / 发布包修订：精简双语 README，统一项目版本号，补全 tokenizer 依赖检查，移除测试对预先存在的 private 目录的依赖。隔离解压包通过全部 410 项离线测试，不读取原项目文件，不调用模型。
+
 - Preserve all 493 Concerns and 1,581 Expressions in direct independent Advisor review, with distinct requirement and expression responsibilities and reviewed conditional links.
 - Detect model capacity and apply complete-request token/image/output/system and transport budgets across new adaptive runs. Minimize Advisor batches, prefer at most 12 and automatically permit necessary overflow; preserve reserves and historical protocols.
 - Reduce repeated input/output with reversible references, separate review/draft views, explicit grouped judgments and program-generated exact locators. Missing work never becomes an implicit pass.

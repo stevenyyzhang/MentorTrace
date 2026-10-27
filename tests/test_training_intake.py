@@ -38,6 +38,12 @@ def annotated_pdf():
 
 
 class TrainingIntake(unittest.TestCase):
+    def setUp(self):
+        private = ROOT / "private"
+        if not private.exists():
+            private.mkdir()
+            self.addCleanup(private.rmdir)
+
     def test_readonly_scan_deduplicates_archive_aliases_without_advisor_attribution(self):
         with tempfile.TemporaryDirectory(dir=ROOT / "private") as temp:
             base = Path(temp)

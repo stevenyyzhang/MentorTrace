@@ -6,7 +6,7 @@ import sys
 
 if __name__ == '__main__':
     packages = {}
-    for name in ['lxml', 'pypdf']:
+    for name in ['lxml', 'pypdf', 'tiktoken']:
         try:
             packages[name] = importlib.metadata.version(name)
         except importlib.metadata.PackageNotFoundError:

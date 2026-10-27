@@ -17,6 +17,7 @@ class ModuleNames(unittest.TestCase):
         self.assertEqual(protocol['module_naming_version'], 1)
         self.assertEqual(protocol['module_names'], m.naming.NAMES)
         config = m.read(Path(__file__).resolve().parents[1]/'config/project.json')
+        self.assertEqual(config['version'], (m.ROOT / 'VERSION').read_text().strip())
         self.assertEqual(config['module_names'], m.naming.NAMES)
         fixture.Pipeline.advance(self)
         for alias, stage, display, reference in [
