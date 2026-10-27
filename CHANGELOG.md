@@ -64,7 +64,7 @@ development comparison have private audit records; legacy protocols stay compati
 - 新稿审阅对案例迁移、导师 concern 的篇章作用及可选篇章动作留存来源；起草恢复完整相关材料，并明确旧运行未记录的来源影响。
 - 初次机制实现完成本地协议与来源追踪验证；该阶段没有重新训练模型或重新审稿。后续授权调用见上方日期记录，仍未证实导师偏好或因果质量提升。
 
-See [validation](docs/validation-v1.1.0-dev.4.json).
+Validation records are retained in the historical release.
 
 
 ## 1.1.0-dev.3 — development update / 开发版更新
@@ -81,7 +81,7 @@ See [validation](docs/validation-v1.1.0-dev.4.json).
 - 中英 README 同步来源分组、六字段、快照数量及训练暴露边界。公开记录使用匿名来源链接，原稿、批注原文、身份、原文件名、本机路径与私有版本历史仅在本地保存。
 - 完成相关完整性、公开文件匿名性和运行集成检查；这些检查不证明数学正确、concern 无遗漏或诊断质量提升。本次未调用模型重新审稿。
 
-Current scoped validation is recorded in [validation-v1.1.0-dev.3.json](docs/validation-v1.1.0-dev.3.json). Earlier validation documents retain their historical scope.
+The scoped validation record remains available in the historical release. Earlier validation documents retain their historical scope.
 
 ## 1.1.0-dev.2 — pre-release / 预发布版
 
@@ -97,9 +97,9 @@ Current scoped validation is recorded in [validation-v1.1.0-dev.3.json](docs/val
 - 报告起草复用已核对的原文转写；修正摘录后若推翻意见前提，须重新裁定相关意见和修改动作。
 - 保留旧冻结协议及现有合并、Phase A/B 和 v2 交付门槛；两套冻结语料未改。本地协议测试不能证明审阅准确率或召回率提升。
 
-Local validation on 2026-10-07: 62 scoped tests passed across source fidelity, surface review, pipeline, consolidation, delivery integration and execution efficiency. Relevant Python syntax, skill scalar frontmatter and local links passed checks. A local manuscript regression located the demonstrated inline split-word candidate. No new model review or report regeneration was performed. Publication-specific checks are recorded in docs/validation-v1.1.0-dev.2.json.
+Local validation on 2026-10-07: 62 scoped tests passed across source fidelity, surface review, pipeline, consolidation, delivery integration and execution efficiency. Relevant Python syntax, skill scalar frontmatter and local links passed checks. A local manuscript regression located the demonstrated inline split-word candidate. No new model review or report regeneration was performed. Publication-specific checks remain in the historical release.
 
-2026-10-07 本地验证：源文保真、语言审阅、流程、合并、交付集成和执行效率的 62 项局部测试通过，相关 Python 语法、Skill 标量元数据和本地链接检查通过。本地稿件回归检查定位到已知的行内断词候选。本次未调用模型重新审阅或重新生成报告。发布检查见 docs/validation-v1.1.0-dev.2.json。
+2026-10-07 本地验证：源文保真、语言审阅、流程、合并、交付集成和执行效率的 62 项局部测试通过，相关 Python 语法、Skill 标量元数据和本地链接检查通过。本地稿件回归检查定位到已知的行内断词候选。本次未调用模型重新审阅或重新生成报告。发布检查记录保留在历史版本中。
 
 ## 1.1.0-dev.1 — pre-release / 预发布版
 
@@ -155,9 +155,9 @@ The complete development tree is independently runnable. Download the full repos
 
 ### Validation status / 验证状态
 
-A recorded set of 100 relevant offline tests passed on 2026-10-06. See `docs/validation-v1.1.0-dev.json` for scope and provenance. Publication checks validate file inventories, hashes and frozen corpus boundaries. These checks do not establish scientific judgment, bilingual equivalence or independent-model quality. Controlled comparisons of diagnostic quality, live elapsed time and usage savings remain pending. Other audit documents in `docs/` describe the v1.0.0 baseline.
+A recorded set of 100 relevant offline tests passed on 2026-10-06; scope and provenance remain in the historical release. Publication checks validate file inventories, hashes and frozen corpus boundaries. These checks do not establish scientific judgment, bilingual equivalence or independent-model quality. Controlled comparisons of diagnostic quality, live elapsed time and usage savings remain pending. Earlier audit records describe the v1.0.0 baseline.
 
-2026-10-06 已记录 100 项相关离线测试通过，范围和来源见 `docs/validation-v1.1.0-dev.json`。公开文件检查验证文件清单、哈希和冻结语料边界，不能证明科学判断、双语等价或独立模型审核质量。审阅质量、实际耗时与额度节省仍待受控对照验证。`docs/` 中其他审核文档描述的是 v1.0.0 基线。
+2026-10-06 已记录 100 项相关离线测试通过，范围和来源保留在历史版本中。公开文件检查验证文件清单、哈希和冻结语料边界，不能证明科学判断、双语等价或独立模型审核质量。审阅质量、实际耗时与额度节省仍待受控对照验证。更早的审核记录描述的是 v1.0.0 基线。
 
 ## 1.0.0 — stable tagged baseline / 稳定标签基线
 
