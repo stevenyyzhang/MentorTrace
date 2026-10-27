@@ -15,7 +15,7 @@ The current implementation runs as a **Codex skill with a Python workflow** and 
 - **Adaptive batching and concurrency:** size batches by model capacity and review workload, with up to three independent tasks running concurrently by default to reduce repeated input and waiting.
 - **Leaner checks and reports:** combine repeated checks and explanations while retaining complete coverage, verification requirements and bilingual revision suggestions.
 
-Capacity reserves, complete source coverage and frozen historical runs retain their contracts. The latest combined workflow has offline validation; elapsed time depends on the paper, model and necessary follow-ups, with no guaranteed two-hour runtime. See [workflow](.agents/skills/mentortrace/references/review-workflow.md), [batching](.agents/skills/mentortrace/references/advisor-batching.md) and [complete-request capacity](.agents/skills/mentortrace/references/request-capacity.md).
+Capacity reserves, complete source coverage and frozen historical runs retain their contracts. The latest combined workflow has offline validation; elapsed time depends on the paper, model and necessary follow-ups. See [workflow](.agents/skills/mentortrace/references/review-workflow.md), [batching](.agents/skills/mentortrace/references/advisor-batching.md) and [complete-request capacity](.agents/skills/mentortrace/references/request-capacity.md).
 
 ## Changes from 1.0.0 to 1.1.0
 

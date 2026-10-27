@@ -36,8 +36,8 @@ are limited-depth assessments, not exhaustive application audits. Clear repairs
 and worthwhile optional improvements retain full source and manuscript evidence.
 Concern review and Reader/Expert remain unchanged. Follow the brief protocol in
 [Advisor output](references/advisor-output.md#brief-expression-assessment).
-Disclose this reduced depth in report coverage. Do not claim a two-hour completion
-guarantee or convert omitted judgments into no-change decisions.
+Disclose this reduced depth in report coverage. Do not promise a fixed completion
+time or convert omitted judgments into no-change decisions.
 
 New runs also pin `advisor_efficiency: 1`. Read related expression-operation
 families together in the same Advisor call. These are routing hints, never merged

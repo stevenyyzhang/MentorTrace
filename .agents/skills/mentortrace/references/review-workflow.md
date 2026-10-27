@@ -154,4 +154,4 @@ assessment of affected scope, including bilingual counterparts, shared actions
 and cross-section dependencies. Combine coverage/facts/meaning/language renewal
 in one pass; retain valid unaffected judgments with original provenance. Format
 reconciliation stays local and preserves raw output. Stop after required checks
-pass. Two hours is an unverified runtime target, not permission to waive checks.
+pass. Runtime targets do not permit waiving required checks.
