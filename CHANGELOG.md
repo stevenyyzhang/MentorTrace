@@ -46,7 +46,7 @@ published-page prose to selected cases. Actual mentor proposals remain distinct 
 model analysis and new suggested prose. Real source learning and a scoped A/B/C
 development comparison have private audit records; legacy protocols stay compatible.
 
-2026-10-08 后续授权实施：新增私有 Expression 快照、Advisor 独立篇章任务检索和起草归因，绑定优秀论文原页文本。导师实际提议、模型分析和新稿建议分别保存。来源学习及三组开发对照保留私有审核记录；不宣称已验证导师风格或已完成全部历史材料整理。详见[实际接入与限制](docs/expression-integration-dev.4.md)。
+2026-10-08 后续授权实施：新增私有 Expression 快照、Advisor 独立篇章任务检索和起草归因，绑定优秀论文原页文本。导师实际提议、模型分析和新稿建议分别保存。来源学习及三组开发对照保留私有审核记录；不宣称已验证导师风格或已完成全部历史材料整理。
 
 2026-10-08 naming update: the four review modules are Reader, Expert, Advisor and Editor. Rename current skill references and synchronize prompts, diagrams, configuration, status output and documentation. New requests carry explicit module names; historical `technical`/`language` serialization identifiers and frozen request contents remain compatible. The proposed mentor expression-example library is named Expression; no training or model review is started by this rename. Earlier packaged snapshots retain their original names and validation scope.
 
@@ -64,7 +64,7 @@ development comparison have private audit records; legacy protocols stay compati
 - 新稿审阅对案例迁移、导师 concern 的篇章作用及可选篇章动作留存来源；起草恢复完整相关材料，并明确旧运行未记录的来源影响。
 - 初次机制实现完成本地协议与来源追踪验证；该阶段没有重新训练模型或重新审稿。后续授权调用见上方日期记录，仍未证实导师偏好或因果质量提升。
 
-See [design and limits](docs/editorial-learning-dev.4.md) and [validation](docs/validation-v1.1.0-dev.4.json).
+See [validation](docs/validation-v1.1.0-dev.4.json).
 
 
 ## 1.1.0-dev.3 — development update / 开发版更新
