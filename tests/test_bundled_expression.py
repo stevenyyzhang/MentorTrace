@@ -35,15 +35,15 @@ class BundledExpression(unittest.TestCase):
         run, result = self.create()
         self.assertEqual(result.returncode, 0, result.stderr)
         protocol = workflow.read(run / 'inputs/protocol.json')
-        self.assertEqual(protocol['stages'][0], 'advisor_tasks')
+        self.assertEqual(protocol['stages'][0], 'objects')
+        self.assertTrue(protocol['advisor_direct_fulltext'])
         self.assertEqual(protocol['expression_mode'], 'advisor_and_draft')
         self.assertEqual(workflow.read(run / 'inputs/expression/manifest.json')['count'], 1581)
         self.assertEqual(workflow.sha(run / 'inputs/expression/FREEZE.json'),
                          workflow.sha(workflow.DEFAULT_EXPRESSION / 'FREEZE.json'))
         self.assertFalse((run / 'inputs/expression/episodes.json').exists())
-        request = workflow.next_request(run)
-        self.assertEqual(request['stage'], 'advisor_tasks')
-        self.assertLessEqual(request['utf8_bytes'], protocol['max_prompt_bytes'])
+        with self.assertRaisesRegex(ValueError, 'Plan full Advisor'):
+            workflow.next_request(run)
 
     def test_no_expression_creates_explicit_baseline(self):
         run, result = self.create('--no-expression')

@@ -34,6 +34,16 @@ def prepare(run,out):
   'reader_review':m.read(run/'reading_review.json') if (run/'reading_review.json').exists() else None,
   'review_provenance':m.read(run/'review_provenance.json') if (run/'review_provenance.json').exists() else None,
   'instruction':'Report factual coverage and still-unresolved items separately. Do not repeat an uncertainty already resolved by a frozen finding; do not promote pending items to confirmed errors.'})
+ if protocol.get('review_efficiency')==1:
+  import review_workflow
+  reviewed=review_workflow.validated_source_review(run/'initial_review.json')
+  coverage=m.read(out/'inputs/coverage_and_pending.json')
+  coverage['initial_execution_observations']={
+   'checks':[r for r in reviewed['execution_reviews'] if r['status']!='completed' or r.get('issues')],
+   'scope':[r for r in reviewed['stage_scope_reviews'] if r.get('issues') or r.get('unresolved_ids')],
+   'source_sha256':m.sha(run/'initial_review.json'),
+   'policy':'Reconcile these original source-review observations against the actual verified review. A previously unattempted task is not an author error. Report only remaining uncertainty; do not repeat observations already resolved with evidence in verification.'}
+  m.save(out/'inputs/coverage_and_pending.json',coverage)
  if (run/'case_route.json').exists() and (run/'inputs/goodpaper').exists():
   selected=m.goodpaper.selected_for_lane(run/'inputs/goodpaper',m.read(run/'case_route.json'),'reader')['complete_cases']
   references=[{'case_id':case['case_id'],'public_source':case['public_source'],
@@ -55,6 +65,9 @@ def prepare(run,out):
   prompt+='\n'+name+'\n'+(out/'inputs'/name).read_text(encoding='utf-8')
  compact=lambda value:__import__('json').dumps(value,ensure_ascii=False,separators=(',',':'))
  prompt+='\nKeep explanations concise and evidence-focused; do not reproduce private audit deliberation. This pass combines supported drafting, both-language meaning and natural wording checks; later final-text verification remains independent.'
+ if protocol.get('report_concision')==1:
+  import report_concision
+  prompt+='\n'+report_concision.DRAFT_INSTRUCTIONS
  evidence=m.read(out/'inputs/writing_evidence.json')
  if evidence.get('expression_version'):
   shutil.copyfile(m.ROOT/'.agents/skills/mentortrace/references/expression.md',out/'inputs/expression.md')
@@ -67,8 +80,10 @@ def prepare(run,out):
   prompt+='\n'+realization.SCHEMA+'\n'+(out/'inputs/expression-realization.md').read_text(encoding='utf-8')
   m.save(out/'realization_review_contract.json',{'version':1,'required':True,
     'schema':realization.REVIEW_SCHEMA,'scope':'Extend the existing final-text facts/meaning/style review; not a new discovery lane.'})
- prompt+='\n'+(writing.EXPRESSION_DRAFT_SCHEMA if evidence.get('expression_version') else writing.DRAFT_SCHEMA)+'\n'+(out/'inputs/writing-transfer.md').read_text(encoding='utf-8')
- prompt+='\nWRITING EVIDENCE (LINKED SOURCES, NOT TARGET FACTS)\n'+compact(writing.draft_view(m.read(out/'inputs/writing_evidence.json')))
+ prompt+='\n'+writing.draft_schema(evidence)+'\n'+(out/'inputs/writing-transfer.md').read_text(encoding='utf-8')
+ instruction_before_data=prompt
+ draft_evidence=writing.draft_view(m.read(out/'inputs/writing_evidence.json'))
+ prompt+='\nWRITING EVIDENCE (LINKED SOURCES, NOT TARGET FACTS)\n'+compact(draft_evidence)
  # All verified finding/organization fields stay intact. Unresolved
  # dispositions are already supplied in the complete coverage packet.
  draft_final={key:value for key,value in final.items() if key!='dispositions'}
@@ -84,9 +99,24 @@ def prepare(run,out):
  if (out/'inputs/case_relation_references.json').exists():
   # Full connected case accounts above supersede the legacy relation-only view.
   prompt+='\nDevelop revisions from verified target requirements and available target facts. Source organization does not establish a uniquely correct target order. Do not manufacture an alternative for every case or delay required information merely to create a comparison. Preserve necessary information and dependencies in any proposed target revision; reject a proposal when these cannot be established.'
+ if protocol.get('review_efficiency')==1 or protocol.get('request_capacity')==1:
+  import advisor_wire
+  payload={'writing_evidence_linked_sources_not_target_facts':draft_evidence,'verified_review':draft_final,
+           'manuscript':paper,'coverage_and_pending':m.read(out/'inputs/coverage_and_pending.json')}
+  wire=advisor_wire.pack(payload);m.require(advisor_wire.unpack(wire)==payload,'Draft compression changed source values')
+  prompt=instruction_before_data+'\nReuse checked source_fidelity_checks for Original quotations and inspect decisive glyphs against original page images. Unavailable or conflicting quotations remain unresolved; never invent a transcription. A corrected source that contradicts a finding requires readjudication. Develop revisions from actual verified requirements and available target facts; source organization is not a required target order. Preserve necessary information and dependencies.\nLOSSLESS INPUT: exact_shared_values_v1 uses definitions and data. Resolve every $same reference and $rows table literally into complete values. All linked sources, verified fields, manuscript and pending coverage remain intact.\nINPUT\n'+compact(wire)
+  m.save(out/'lossless_input_receipt.json',{'complete_roundtrip':True,'source_value_sha256':__import__('hashlib').sha256(compact(payload).encode()).hexdigest(),'model_calls':0})
  images=[{**x,'path':'inputs/paper/'+x['path']} for x in m.read(out/'inputs/paper/manifest.json')['images']]
- m.save(out/'request.json',{'stage':'revision_proposals','prompt':prompt,'images':images,'tools_allowed':False,
-   'model_context_fit_verified':False,'transport_note':'Preflight and authorized transport required; preparation makes no external call.'})
+ request={'stage':'revision_proposals','prompt':prompt,'images':images,'tools_allowed':False,
+   'model_context_fit_verified':False,'transport_note':'Preflight and authorized transport required; preparation makes no external call.'}
+ if (protocol.get('review_efficiency')==1 or protocol.get('request_capacity')==1) and (run/'automatic_capacity.json').exists():
+  import request_capacity
+  policy=m.read(run/'automatic_capacity.json');m.save(out/'automatic_capacity.json',policy)
+  if protocol.get('request_capacity')==1 and not request_capacity.capacity.estimate(prompt,len(images),policy)['fits']:
+   import draft_capacity
+   request['capacity_plan']=draft_capacity.prepare(out,instruction_before_data,payload,images,policy,request)
+  else:request_capacity.preflight(request,policy,out/'capacity_preflight.json')
+ m.save(out/'request.json',request)
  return out/'request.json'
 
 if __name__=='__main__':

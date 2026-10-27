@@ -2,7 +2,7 @@
   {
     "id": "C0211",
     "core_question": {
-      "text": "Does rate-distortion analysis lead back to practical codebook design?",
+      "text": "Does auxiliary analysis lead back to the unresolved practical design choice?",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01395",
@@ -13,7 +13,7 @@
       ]
     },
     "new_manuscript_check": {
-      "text": "Check the link between codebook size, surrogate analysis, allocation, and implemented integer bits.",
+      "text": "Trace the original design question through analytical simplification and back to implementation.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01395",
@@ -24,7 +24,7 @@
       ]
     },
     "relationship_to_check": {
-      "text": "Undetermined codebook size, analytically difficult practical quantizer, Gaussian proxy, rate allocation, and codebook size.",
+      "text": "Unresolved design choice, analytical difficulty, proxy assumptions, derived decision and implemented choice.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01395",
@@ -35,7 +35,7 @@
       ]
     },
     "historically_insufficient_response": {
-      "text": "Separate codebook and rate-distortion sections obscured how bit allocation determines codebook size.",
+      "text": "Separately presented design and analysis sections obscured how the analytical result informs the practical choice.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01395",
@@ -46,7 +46,7 @@
       ]
     },
     "potentially_sufficient_response": {
-      "text": "Identify the unresolved size choice, explain how proxy analysis supplies allocation, and map it back to bits and codebooks.",
+      "text": "Identify the unresolved choice, explain what the auxiliary analysis supplies, and map that result back to implementation.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01395",
@@ -57,7 +57,7 @@
       ]
     },
     "applicability_boundary": {
-      "text": "A student's question is not advisor endorsement; analytical convenience does not prove actual quantizer performance.",
+      "text": "A question is not an endorsement; analytical convenience does not establish practical performance.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01395",
@@ -2233,7 +2233,7 @@
   {
     "id": "C0236",
     "core_question": {
-      "text": "Are computational difficulty and observation nonidentifiability treated as different privacy claims?",
+      "text": "Are computational difficulty, uniqueness and statistical uncertainty distinguished rather than conflated?",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01553",
@@ -2296,7 +2296,7 @@
       ]
     },
     "new_manuscript_check": {
-      "text": "Distinguish computation budgets, mathematical identifiability, statistical error, and auxiliary information.",
+      "text": "Distinguish resource-limited computation, uniqueness, statistical uncertainty and auxiliary information.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01553",
@@ -2359,7 +2359,7 @@
       ]
     },
     "relationship_to_check": {
-      "text": "Observation model, legitimate uniqueness with a key, compatible adversarial candidates without it, and noise and prior conditions.",
+      "text": "Claimed property, information available to each role, relevant alternatives and stated operating conditions.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01553",
@@ -2422,7 +2422,7 @@
       ]
     },
     "historically_insufficient_response": {
-      "text": "Noiseless uniqueness definitions were mixed with computational-hardness analogies or broader abstract claims.",
+      "text": "A narrowly defined property was mixed with an analogy or a broader summary claim.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01553",
@@ -2485,7 +2485,7 @@
       ]
     },
     "potentially_sufficient_response": {
-      "text": "State legitimate angle uniqueness and adversarial multiple-angle criteria in the noiseless scope, define applicable strategy sets, verify physically feasible examples and citations, and align all summaries with the threat model.",
+      "text": "State the intended criterion and scope, verify admissible examples and citations, and align summaries with the assumptions.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01553",
@@ -2550,7 +2550,7 @@
       ]
     },
     "applicability_boundary": {
-      "text": "Multiple solutions need not be equally probable and do not establish complete resistance to realistic attacks.",
+      "text": "Several admissible alternatives need not be equally probable and do not establish a broader practical guarantee.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01553",

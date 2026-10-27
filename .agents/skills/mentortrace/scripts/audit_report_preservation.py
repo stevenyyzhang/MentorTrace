@@ -182,6 +182,12 @@ def validate_evidence(entries, message, factual=False):
 
 
 def validate_target_review(ledger, report):
+    reuse_context=None
+    if ledger.get('verified_review_reuse'):
+        # This records reuse of an earlier accepted judgment, never fresh evidence.
+        language_module()  # establish this checkout's scripts path
+        import verification_basis
+        reuse_context=verification_basis.validate(ledger['verified_review_reuse'])
     expected = target_inventory(report)
     rows = ledger.get('target_units')
     require(isinstance(rows, list) and bool(expected), 'Missing final target inventory')
@@ -238,10 +244,13 @@ def validate_target_review(ledger, report):
                     assertion['quote'] in row['text'], 'Target assertion excerpt absent: ' + row['id'])
             require(has_text(assertion.get('reason')), 'Target assertion needs a review rationale')
             status = assertion.get('status')
-            require(status in {'supported', 'conditional', 'unresolved'}, 'Unprocessed target assertion')
+            require(status in {'supported', 'conditional', 'unresolved', 'reused_verified'}, 'Unprocessed target assertion')
             if status == 'supported':
                 validate_evidence(assertion.get('evidence'),
                                   'Supported target assertion needs evidence', factual=True)
+            elif status == 'reused_verified':
+                import verification_basis
+                verification_basis.validate_reference(assertion,reuse_context)
             elif status == 'conditional':
                 local_notice(assertion.get('condition'), row, 'Author condition')
             else:
@@ -250,8 +259,11 @@ def validate_target_review(ledger, report):
             'Required language realization review missing')
     if 'language_realization' in ledger:
         language_module().validate_delivery_binding(ledger['language_realization'],Path(report).read_text(encoding='utf-8-sig'))
-    return {'target_blocks': len(blocks_by_id),
+    result={'target_blocks': len(blocks_by_id),
             'suggested_wording_passages': sum(row['kind'] == 'suggested_wording' for row in expected)}
+    if reuse_context is not None:
+        result['reused_verified_assertions']=sum(a.get('status')=='reused_verified' for row in rows for a in row.get('review',{}).get('assertions',[]))
+    return result
 
 
 def validate(ledger, report, require_v2=False):

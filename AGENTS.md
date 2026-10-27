@@ -1,18 +1,12 @@
-# MentorTrace v1.1.0 workspace
+# MentorTrace working rules
 
-This directory contains the MentorTrace v1.1.0 release source.
-It was promoted from 1.1.0-dev.4 on 2026-10-15 at the user's request.
-
-- Make subsequent development changes in this directory.
-- Preserve the v1.0.0 release directory and its ZIP unchanged.
-- Do not modify or publish private source materials or the v0.8 archive.
-- Normal new CLI runs use the reviewed public `corpus/advisor-expression-v1` by default. Only this minimized snapshot is distributed; original historical inputs and private mappings remain private.
-- Existing audit documents retain their declared version and scope; rerun applicable release checks. Version promotion does not establish additional behavioral validation.
-- Post-discovery consolidation, final-text delivery, wording and source-fidelity improvements are under validation. New protocols add Editor source candidates and formula-source verification records. The original frozen corpora remain unchanged; new development runs use the additional advisor-concerns-v4 snapshot with disclosed training exposure. Behavioral quality has not been established by offline contract tests.
-
-## Service tier authorization
-
-- Default model requests to Standard (`service_tier="default"`), including isolated Codex CLI subprocesses.
-- Requests to accelerate work or meet a deadline do not authorize Fast, priority, or another service tier that increases usage charges.
-- Enable an increased-usage tier only after explicit user authorization for that tier and its additional usage. Preserve the requested model and reasoning effort independently.
-- Any reasoning-effort change, including a downgrade, requires explicit user authorization naming the new effort. Performance goals and ambiguous keywords never authorize settings changes.
+- Start from the files relevant to the user's task; avoid unrelated refactors or broad scans.
+- Diagnose with code, configuration and saved evidence before changing behavior. Preserve user changes and frozen historical runs.
+- Keep complete source coverage, explicit unknown/unfinished states, Advisor isolation and capacity reserves. Never manufacture missing judgments or silently discard evidence.
+- Use the actual authorized model and reasoning effort. Default to Standard (`service_tier="default"`); higher-priced tiers and effort changes require explicit user authorization.
+- Reuse valid completed outputs with their real settings and provenance. Inspect uncertain calls before retrying; do not blindly repeat model work.
+- Prefer deterministic local checks for hashes, IDs, schemas and exact references. These checks do not certify semantic correctness.
+- Keep private manuscripts, source mappings, credentials and run artifacts outside the public distribution. Run `scripts/audit_public_release.py` before publication; do not rely on ignore rules to remove tracked material.
+- Run relevant offline tests after changes. Do not invoke review models or publish unless authorized by the current user request.
+- New adaptive runs follow `.agents/skills/mentortrace/SKILL.md` and its referenced execution, capacity and delivery contracts. Old frozen protocols retain their original contracts.
+- Initial and independent post-processing calls use separate contexts and at most three workers by default; dependent phases wait for complete validated inputs. Both final delivery gates remain required.

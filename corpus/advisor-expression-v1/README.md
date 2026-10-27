@@ -1,7 +1,7 @@
 # MentorTrace Expression v1
 
 This bundled library contains 1,581 admission-reviewed conditional Expression
-records and 1,863 supported language or paragraph-operation features. The full
+records and 1,863 stored language or paragraph-operation features; eligibility depends on the supplied evidence. The full
 493-card Concern catalog was supplied during admission review. Items adding no
 independent expression feature and uncertain items are not included.
 
@@ -20,3 +20,20 @@ Project-authored analytical fields follow LICENSE-CORPUS.md. Retained historical
 source excerpts do not acquire that license merely by inclusion; see
 THIRD_PARTY_NOTICES.md at the repository root. Public inclusion follows the
 project owner's instruction recorded in manifest.json.
+
+## Local disclosure abstraction — 2026-10-26
+
+Selected technical connections have been replaced with analyst placeholders.
+Changed examples are labeled `adapted_example`, have no historical pair binding,
+and cannot supply verbatim mentor wording. Their dependent literal-language
+features are withheld by the existing runtime; their conditional analytical
+accounts remain available. Unchanged examples retain their original roles.
+The manifest records the affected IDs and prior snapshot hash. Earlier model
+review metadata describes the earlier snapshot, not this local edit.
+No new model evaluation or source-permission certification is claimed.
+
+A second local review on 2026-10-26 also removed residual paraphrases,
+model-property clues and a construction detail within the selected clusters.
+General technical vocabulary and reusable conditional editing rules remain.
+This reduces reconstruction clues; it does not certify anonymity or zero
+disclosure when combined with external material or earlier snapshots.

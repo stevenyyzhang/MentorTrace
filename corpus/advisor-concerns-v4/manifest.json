@@ -1,6 +1,6 @@
 {
   "role": "training_reference",
-  "source_sha256": "2d5f4d4bbf0df55d735a786a8c0dc97c8be7df7504c442e0fd29c1d2f78417b3",
+  "source_sha256": "ce0ff423b1e4e49be74eb4f42208ff6c4c8eac0222805c3f7443071037564604",
   "count": 493,
   "batches": [
     {
@@ -614,5 +614,17 @@
   "source_reference_semantics": "Anonymous opaque provenance links; private mapping withheld.",
   "scope": "493 complete conditional cards: previous 490 unchanged, three restored admissions; 56 additions from the new collection.",
   "baseline_snapshot": "advisor-concerns-v1",
-  "previous_snapshot": "advisor-concerns-v3"
+  "previous_snapshot": "advisor-concerns-v3",
+  "disclosure_generalization": {
+    "date": "2026-10-26",
+    "ids": [
+      "C0185",
+      "C0191",
+      "C0202",
+      "C0211",
+      "C0236",
+      "C0246"
+    ],
+    "limits": "Targeted abstraction, not complete public disclosure certification."
+  }
 }

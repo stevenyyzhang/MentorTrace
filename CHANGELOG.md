@@ -1,5 +1,23 @@
 # Changelog / 版本变更
 
+## 1.2.0 — Adaptive review and concurrent checks / 自适应审阅与并行检查
+
+2026-10-27.
+
+- Preserve all 493 Concerns and 1,581 Expressions in direct independent Advisor review, with distinct requirement and expression responsibilities and reviewed conditional links.
+- Detect model capacity and apply complete-request token/image/output/system and transport budgets across new adaptive runs. Minimize Advisor batches, prefer at most 12 and automatically permit necessary overflow; preserve reserves and historical protocols.
+- Reduce repeated input/output with reversible references, separate review/draft views, explicit grouped judgments and program-generated exact locators. Missing work never becomes an implicit pass.
+- Default initial lanes and independent source/delivery check packets to three isolated workers. Retain sequential dependencies, cached-result provenance and inspect-first failure handling.
+- Carry connected complete Expression sources into drafting. Combine related post-processing checks, explicitly reuse unchanged verified claims, and shorten repetitive reports while retaining both languages and both delivery gates.
+- Validate offline contracts, source integrity and saved-result compatibility. Latest end-to-end runtime and semantic quality are not newly measured by this release.
+
+- Advisor 保留全部 493 条 Concern 和 1,581 条 Expression，直接独立审阅全文，明确问题检查与具体表达指导的分工，关联保留适用条件。
+- 新自适应运行统一读取模型容量，检查完整请求与传输限制；Advisor 尽量减少批数，优先不超过 12 批，必要时自动增加，预留与历史协议不变。
+- 用可还原引用、审阅／起草视图、明确的分组判断及程序定位减少重复；未完成内容不冒充已审阅。
+- 初审与独立后处理分包默认最多三路并行；依赖阶段顺序执行，保留缓存来源和失败记录，不自动重试。
+- 相关完整 Expression 材料继续参与起草；合并相关检查，明确复用未变化的核验判断，减少报告重复，保留双语与两道交付校验。
+- 完成离线协议、来源完整性和保存结果兼容性验证；本次发布不代表最新完整流程耗时或语义质量已经重新实测。
+
 ## 1.1.0 — release / 正式版
 
 2026-10-15. Bundle the admission-reviewed 1,581-record Expression library with the skill. New CLI runs use it by default for independent Advisor review and related drafting; --expression selects another snapshot and --no-expression creates an explicit baseline. Update the bilingual README with concise changes from 1.0 and plain definitions of Concern and Expression. Ship only the current Concern v4; retain v1–v3 in historical releases or local archives. Preserve existing frozen runs, source evidence, historical releases and actual model provenance.

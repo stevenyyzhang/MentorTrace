@@ -6260,10 +6260,10 @@
     "examples": [
       {
         "id": "EX00132:E1",
-        "kind": "verbatim_mentor_prose",
-        "text": "the BSs send downlink communication signals to the mobile users, while the mobile users send uplink communication signals to the BSs.",
-        "function": "Express two reciprocal directions with parallel sender, signal, and recipient complements.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "the [first participants] send [information] to the [second participants], while the [second participants] send [information] to the [first participants].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
@@ -6292,7 +6292,7 @@
         "kind": "syntax",
         "operation": "Replace collective activity wording with parallel clauses that state reciprocal sender-to-recipient directions.",
         "id": "EX00132:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       },
       {
         "conditions": [
@@ -14659,10 +14659,10 @@
     "examples": [
       {
         "id": "EX00319:E1",
-        "kind": "verbatim_mentor_fragment",
-        "text": "i.e., a correlation matrix C\\in \\mathbb{C}^{N\\times N} is expressed as C_{i,j}=.... if and .... if.",
-        "function": "Retain the actual generic definition template and its unfilled cases.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "i.e., a [defined object] is expressed as [case one] if [condition one] and [case two] if [condition two].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -14684,7 +14684,7 @@
         "kind": "syntax",
         "operation": "Introduce the generic object and its dimensions before presenting its entry rules by cases.",
         "id": "EX00319:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -15588,10 +15588,10 @@
     "examples": [
       {
         "id": "EX00337:E1",
-        "kind": "verbatim_mentor_prose",
-        "text": "Then, we will characterize the optimal MMSE channel estimators and quantify the mean-squared error (MSE) for channel estimation.",
-        "function": "Complete handoff naming two analytical deliverables.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "Then, we will characterize the [analytical deliverable] and quantify the [corresponding performance metric].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -15611,7 +15611,7 @@
         "kind": "syntax",
         "operation": "Coordinate two deliverable verbs under one subject and auxiliary.",
         "id": "EX00337:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -17043,10 +17043,10 @@
     "examples": [
       {
         "id": "EX00363:E1",
-        "kind": "verbatim_mentor_fragment",
-        "text": "In this section, we characterize the closed-form user rate expressions under our considered asymptotic regime",
-        "function": "Lead with a deliverable while retaining its regime qualification.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "In this section, we characterize the [analytical expressions] under our considered [regime].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
@@ -17119,10 +17119,10 @@
     "examples": [
       {
         "id": "EX00364:E3",
-        "kind": "verbatim_mentor_fragment",
-        "text": "In this paper, we assume that the MRC receivers are used at the BS based on the estimated channels",
-        "function": "Declare the receiver choice and its information basis.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "In this paper, we assume that the [specified processing method] is used based on the [established inputs].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
@@ -21082,10 +21082,10 @@
     "examples": [
       {
         "id": "EX00445:E1",
-        "kind": "verbatim_mentor_prose",
-        "text": "Due to the convexity of b^TA_kb over b, at any point \\hat{b}, its first-order approximation always serves as a lower bound to it:",
-        "function": "Explain the standard supporting-bound role and introduce its display.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "Due to the [established mathematical property], at any [admissible point], the [defined approximation] serves as a [qualified bound]:",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -21108,7 +21108,7 @@
         "kind": "syntax",
         "operation": "Replace the chronological author-action lead-in with a reason-first role statement ending in a display-introducing colon.",
         "id": "EX00445:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -23446,7 +23446,7 @@
     ],
     "do_not_transfer": [
       "Do not copy an unsupported excess judgment.",
-      "Do not turn the local rationale into a privacy guarantee."
+      "Do not turn the local rationale into a guarantee."
     ],
     "facts_and_qualifications": [
       "The proposal does not establish the magnitude or truth of the substantive concern."
@@ -23482,8 +23482,8 @@
           "Any judgment of excess is independently supported."
         ],
         "do_not_transfer": [
-          "Do not infer a universal privacy violation.",
-          "Do not infer that limiting detail guarantees privacy."
+          "Do not infer a universal violation.",
+          "Do not infer that limiting detail guarantees the desired property."
         ],
         "evidence_example_ids": [
           "EX00489:E1"
@@ -25916,10 +25916,10 @@
     "examples": [
       {
         "id": "EX00544:E1",
-        "kind": "verbatim_mentor_prose",
-        "text": "Suppose that the BSs can perfectly estimate the range of targets, i.e., \\bar{d}_{m,k}=d_{m,k}, \\forall m, k.",
-        "function": "Complete hypothetical premise with an explanatory equality and explicit index scope.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "Suppose that the [participants] can perfectly obtain the [specified quantities], i.e., [the corresponding ideal equality].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -25943,7 +25943,7 @@
         "kind": "qualification",
         "operation": "Open the local premise with a supposition clause and attach an explanatory equality followed by its index scope.",
         "id": "EX00544:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -28729,10 +28729,10 @@
     "examples": [
       {
         "id": "EX00600:E1",
-        "kind": "verbatim_mentor_prose",
-        "text": "let N and Delta f denote the number of sub-carriers and the sub-carrier spacing, respectively, such that the channel bandwidth is B=N Delta f.",
-        "function": "Provide a complete generic parameter definition with an ordered correspondence and derived relationship.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "let [first symbol] and [second symbol] denote [first quantity] and [second quantity], respectively, such that [their established relationship].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -28755,7 +28755,7 @@
         "kind": "syntax",
         "operation": "Share one definition predicate across two ordered symbol-meaning pairs, then append their derived relationship in a subordinate clause.",
         "id": "EX00600:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -33517,10 +33517,10 @@
     "examples": [
       {
         "id": "EX00732:E2",
-        "kind": "verbatim_mentor_fragment",
-        "text": "Define h_{u,m}=[] as the L-tap multi-path channel from BS u to BS m, where h_{u,m,l} denotes ...",
-        "function": "Provide the proposed object-definition and component-explanation scaffold.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "Define [symbol] as the [specified object], where [component symbol] denotes [component definition].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
@@ -33550,7 +33550,7 @@
         "kind": "syntax",
         "operation": "Combine the parent definition and component explanation in adjacent clauses.",
         "id": "EX00732:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       },
       {
         "conditions": [
@@ -37845,10 +37845,10 @@
     "examples": [
       {
         "id": "EX00835:E1",
-        "kind": "verbatim_mentor_prose",
-        "text": "Because the BSs are not perfectly synchronized in practice, define the sampling timing offset (STO) between BS u and BS m as tau_{u,m} OFDM sample periods, \\forall u,m.",
-        "function": "Complete generic proposed sentence combining practical cause, definition and units.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "Because the [participants] do not satisfy the [ideal condition] in practice, define the [discrepancy] between [participants] as [symbol and unit].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -37871,7 +37871,7 @@
         "kind": "syntax",
         "operation": "Use a finite causal clause before the definition and place the units immediately after the symbol.",
         "id": "EX00835:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -42505,10 +42505,10 @@
     "examples": [
       {
         "id": "EX00938:E1",
-        "kind": "verbatim_mentor_prose",
-        "text": "For convenience, for each user k, we define a binary activity indicator alpha_k, which is equal to one when user k is active, and zero otherwise.",
-        "function": "Provide a complete standard definition with entity scope and explicit binary semantics.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "For convenience, for each [entity], we define a binary indicator [symbol], which is equal to one when [condition holds], and zero otherwise.",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -42530,7 +42530,7 @@
         "kind": "syntax",
         "operation": "Use a scoped definition clause followed by a relative clause and an otherwise alternative.",
         "id": "EX00938:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -44211,10 +44211,10 @@
       },
       {
         "id": "EX00967:E3",
-        "kind": "verbatim_mentor_fragment",
-        "text": "Therefore, to obtain the MMSE estimators, we need to calculate the conditional probability density functions (PDFs)",
-        "function": "State the estimator-to-density computation dependency.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "Therefore, to obtain the [desired result], we need to calculate the [required intermediate quantities].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -53663,10 +53663,10 @@
     "examples": [
       {
         "id": "EX01140:E1",
-        "kind": "verbatim_mentor_prose",
-        "text": "define H_0 and H_1 as the events that a user is inactive and active, respectively.",
-        "function": "Define two labels and explicitly map their event meanings.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "define [first event] and [second event] as the events that [first condition] and [second condition] hold, respectively.",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
@@ -53696,7 +53696,7 @@
         "kind": "syntax",
         "operation": "Express the existing event meanings through a paired definition with an ordered correspondence marker.",
         "id": "EX01140:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       },
       {
         "conditions": [
@@ -53961,10 +53961,10 @@
     "examples": [
       {
         "id": "EX01145:E1",
-        "kind": "verbatim_mentor_prose",
-        "text": "The design of the denoisers depends on the knowledge about channel distribution.",
-        "function": "Name the information dependency organizing the following cases.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "The design of the [components] depends on the knowledge about the [relevant input property].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -53987,7 +53987,7 @@
         "kind": "syntax",
         "operation": "Place a standalone dependency sentence before the first conditional case, with the design activity as subject and available knowledge as its complement.",
         "id": "EX01145:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -54325,9 +54325,9 @@
       "Do not remove later overlapping text without a separate supported edit."
     ],
     "facts_and_qualifications": [
-      "The opening deletion and proposal have an explicit linkage.",
-      "The selected examples are actual proposed body fragments.",
-      "The adapted opening example is not selected."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "design question",
@@ -54339,12 +54339,13 @@
     "limits": [
       "Unfinished notation and citation slots are excluded.",
       "No optimizing-distribution or guarantee claim is admitted.",
-      "Application and adoption remain unconfirmed."
+      "Application and adoption remain unconfirmed.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01151",
     "scope": "paragraph",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0113",
@@ -54362,10 +54363,10 @@
       },
       {
         "id": "EX01151:E2",
-        "kind": "verbatim_mentor_fragment",
-        "text": "in this section, we apply the minimax approach to design the threshold.",
-        "function": "State a method and its design purpose actively.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "in this section, we apply the [design approach] to design the threshold.",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. State a method and its design purpose actively.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
@@ -54414,7 +54415,7 @@
         "kind": "syntax",
         "operation": "Use an author-action subject and an infinitive purpose clause to state the method's role.",
         "id": "EX01151:L2",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       },
       {
         "conditions": [
@@ -56024,9 +56025,9 @@
       "Do not infer deletion of a displayed objective."
     ],
     "facts_and_qualifications": [
-      "The evidence is proposed body prose.",
-      "The original highlight does not establish a complete replacement boundary.",
-      "Ambiguous event notation and informal mathematical expressions are excluded from transfer."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "coordinated subject",
@@ -56037,12 +56038,13 @@
     ],
     "limits": [
       "The substantive dependence requirement is already covered by Concern.",
-      "No mathematical correction, adoption, or general mentor preference is certified."
+      "No mathematical correction, adoption, or general mentor preference is certified.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01184",
     "scope": "paragraph",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0111",
@@ -56077,10 +56079,10 @@
       },
       {
         "id": "EX01184:E4",
-        "kind": "verbatim_mentor_fragment",
-        "text": "it is non-trivial to find the least-favorable distribution",
-        "function": "Names the unresolved analytical task.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "it is non-trivial to find the [reference model]",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Names the unresolved analytical task.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -56097,9 +56099,6 @@
           "Do not infer a complete replacement boundary from highlight coverage."
         ],
         "evidence_example_ids": [
-          "EX01184:E1",
-          "EX01184:E2",
-          "EX01184:E3",
           "EX01184:E4"
         ],
         "frame": "[Paired components with shared dependence] -> [mechanism for one dependence] -> [causal return to the same pair and unresolved task].",
@@ -56107,7 +56106,7 @@
         "kind": "paragraph",
         "operation": "Introduce the component pair together, place the mechanism in the middle, and return to that pair in the closing rationale.",
         "id": "EX01184:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -56289,10 +56288,9 @@
       "Do not supply an absent comparator."
     ],
     "facts_and_qualifications": [
-      "The replacement linkage is supplied, but no complete public before-and-after pair is selected.",
-      "The complete existing design-intent example is preserved by its ID.",
-      "Source grammatical defects are not silently repaired.",
-      "The final practical comparison has unspecified support and comparator."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "causal clause",
@@ -56304,12 +56302,13 @@
     ],
     "limits": [
       "The selected forms do not certify numerical feasibility or practical performance.",
-      "Adoption and general personal preference remain unconfirmed."
+      "Adoption and general personal preference remain unconfirmed.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01188",
     "scope": "paragraph",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0009",
@@ -56345,10 +56344,10 @@
       },
       {
         "id": "EX01188:E4",
-        "kind": "verbatim_mentor_prose",
-        "text": "Note that this denoiser is designed to improve the worst-case MSE.",
-        "function": "States a generic design purpose without asserting an achieved gain.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "Note that this denoiser is designed to improve the [specified performance criterion].",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. States a generic design purpose without asserting an achieved gain.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
@@ -56411,15 +56410,14 @@
           "Do not complete the selected practical fragment as a new quotation."
         ],
         "evidence_example_ids": [
-          "EX01188:E4",
-          "EX01188:E5"
+          "EX01188:E4"
         ],
         "frame": "[Method] is designed to [objective]. In practice, [operating distribution] may not follow [design assumption].",
         "function": "Place a design-intent statement beside a modal qualification of practical applicability.",
         "kind": "qualification",
         "operation": "Follow the design-intent sentence with a practical-context sentence that retains the possibility of departure from the design assumption.",
         "id": "EX01188:L3",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -56865,9 +56863,9 @@
       "Do not treat the input's qualified status as weakening an otherwise exact conditional calculation."
     ],
     "facts_and_qualifications": [
-      "The display deletion and paragraph replacement are distinct actions.",
-      "The paragraph replacement has explicit reply linkage.",
-      "The retained feature concerns the handoff's syntax rather than a general deletion preference."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "enabling premise",
@@ -56879,12 +56877,13 @@
     "limits": [
       "No replacement equation or complete public historical sentence is supplied.",
       "The wording does not certify the mathematical result.",
-      "Actual application and adoption remain unconfirmed."
+      "Actual application and adoption remain unconfirmed.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01199",
     "scope": "argument_unit",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0041",
@@ -56910,10 +56909,10 @@
       },
       {
         "id": "EX01199:E3",
-        "kind": "verbatim_mentor_fragment",
-        "text": "under the approximate least-favorable channel distribution",
-        "function": "Retains the evaluation condition and its status qualification.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "under the [specified reference model]",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Retains the evaluation condition and its status qualification.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -56931,8 +56930,6 @@
           "Do not combine the selected fragments into a newly claimed historical quotation."
         ],
         "evidence_example_ids": [
-          "EX01199:E1",
-          "EX01199:E2",
           "EX01199:E3"
         ],
         "frame": "With [enabling result], we are able to characterize [target] under [qualified evaluation condition]",
@@ -56940,7 +56937,7 @@
         "kind": "syntax",
         "operation": "Compress the handoff into a fronted enabling phrase, a main clause naming the analytical task, and a final phrase carrying its existing evaluation condition.",
         "id": "EX01199:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -57774,9 +57771,9 @@
       "Do not infer an established extremal distribution from its mention in a lead-in."
     ],
     "facts_and_qualifications": [
-      "The complete selected sentence is proposed body wording.",
-      "The accompanying instruction is excluded.",
-      "No completed optimization display is supplied."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "optimization lead-in",
@@ -57785,12 +57782,13 @@
     ],
     "limits": [
       "The mathematical formulation and optimality are unverified.",
-      "Actual application and adoption are unconfirmed."
+      "Actual application and adoption are unconfirmed.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01217",
     "scope": "argument_unit",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0113",
@@ -57799,10 +57797,10 @@
     "examples": [
       {
         "id": "EX01217:E1",
-        "kind": "verbatim_mentor_prose",
-        "text": "Then, the optimal threshold for the least-favorable distribution can be obtained by solving the following problem",
-        "function": "Introduce the target and the procedure before a display.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "Then, the optimal threshold for the [reference model] can be obtained by solving the following problem",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Introduce the target and the procedure before a display.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -57824,7 +57822,7 @@
         "kind": "syntax",
         "operation": "Make the target the subject of a passive acquisition clause and connect it to the next display with a by-solving complement.",
         "id": "EX01217:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -62126,10 +62124,10 @@
     "examples": [
       {
         "id": "EX01284:E2",
-        "kind": "verbatim_mentor_prose",
-        "text": "the weights associated with the penalty of the elements that are more likely to be zero are set to be larger values.",
-        "function": "Specify the adjusted quantity, uncertain target property, and direction of adjustment.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "the [quantities] associated with [targets] that are more likely to [have a property] are set to [comparatively adjusted values].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -62153,7 +62151,7 @@
         "kind": "syntax",
         "operation": "Use an association phrase and a target relative clause before the passive adjustment predicate.",
         "id": "EX01284:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       },
       {
         "conditions": [
@@ -62171,7 +62169,7 @@
         "kind": "qualification",
         "operation": "Place the likelihood qualifier inside the target-defining relative clause.",
         "id": "EX01284:L2",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -73057,10 +73055,10 @@
       },
       {
         "id": "EX01489:E3",
-        "kind": "verbatim_mentor_prose",
-        "text": "where rho>0 is a given coefficient to control the sparsity of the estimated channels.",
-        "function": "Explain the coefficient's positivity and intended role after a formulation.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "where [positive parameter] is a given coefficient to control the [specified property].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -73104,7 +73102,7 @@
         "kind": "qualification",
         "operation": "Use one post-formulation clause to combine the coefficient's stated domain, supplied status, and intended role.",
         "id": "EX01489:L2",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -74690,18 +74688,18 @@
     "examples": [
       {
         "id": "EX01520:E1",
-        "kind": "verbatim_mentor_fragment",
-        "text": "In this paper, we focus on the networked sensing technique",
-        "function": "Declare the technique being examined without retaining a reference placeholder.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "In this paper, we focus on the [specified technique]",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
         "id": "EX01520:E2",
-        "kind": "verbatim_mentor_fragment",
-        "text": "where multiple base stations can share their sensing information obtained from echo signals to jointly localize the targets.",
-        "function": "Complete operational definition clause naming actors, information source, and joint purpose.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "where [participants] can share [information] obtained from [observations] to jointly [perform the task].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -74726,7 +74724,7 @@
         "kind": "syntax",
         "operation": "Follow a direct focus declaration with a where clause ordered as participants, sharing action, information source, and joint purpose.",
         "id": "EX01520:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -77127,10 +77125,10 @@
       },
       {
         "id": "EX01556:E2",
-        "kind": "verbatim_mentor_fragment",
-        "text": "transmits with identical power at all its assigned sub-carriers N_m, which is denoted by p_m.",
-        "function": "Preserves the complete predicate's equality domain and subsequent parameter naming.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "operates with identical [quantity] over all its assigned [resources], which is denoted by [symbol].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -77172,7 +77170,7 @@
         "kind": "syntax",
         "operation": "Place the parameter-naming relative clause after the physical restriction it labels.",
         "id": "EX01556:L2",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -83552,10 +83550,10 @@
       },
       {
         "id": "EX01682:E2",
-        "kind": "verbatim_mentor_fragment",
-        "text": "CIR of our considered OFDM system, containing the strength and delay information of each channel tap, is ",
-        "function": "Complete proposed subject, contents appositive, and singular verb.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "the [representation] of our considered [system], containing the [specified component information], is",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": "EX01682:PAIR16-A"
       }
     ],
@@ -88523,28 +88521,28 @@
     "before_account": "Estimator details precede input preparation, while a combined opening frames implementation through resource analysis.",
     "observed_change": "The feedback specifies an input-preparation account, an estimation account using its output, and a subsequent resource-analysis unit.",
     "changed_relationship": "The input-producing explanation becomes a prerequisite to the estimator explanation, and resource analysis follows the explained implementation.",
-    "after_account": "The proposed exposition places quantization before estimation from its output and separates the later resource discussion. Applied reorganization is unconfirmed.",
+    "after_account": "The proposed exposition places input preparation before dependent processing from its output and separates the later resource discussion. Applied reorganization is unconfirmed.",
     "operations": [
-      "Arrange the implementation account as input quantization followed by estimation from the resulting observations, and place resource analysis in a separate subsequent unit."
+      "Arrange the implementation account as input preparation followed by estimation from the resulting observations, and place resource analysis in a separate subsequent unit."
     ],
     "transfer_conditions": [
-      "The actual procedure supplies quantized observations to the estimator.",
+      "The actual procedure supplies prepared observations to the estimator.",
       "The detailed explanation presents dependent units in an obstructive order.",
       "An earlier overview may already state the correct runtime dependency."
     ],
     "do_not_transfer": [
       "Do not impose this sequence on a different information-processing chain.",
       "Do not treat a reading difficulty as evidence of an implementation error.",
-      "Do not infer a preferred quantizer, estimator, or heading."
+      "Do not infer a preferred input-processing method, estimator, or heading."
     ],
     "facts_and_qualifications": [
       "Existing overview text already describes the intended operational dependency.",
       "The retained feature is an analytical structural operation.",
-      "The shared feedback also addresses error assumptions, which are outside this feature."
+      "The shared feedback also addresses additional modeling assumptions, which are outside this feature."
     ],
     "retrieval_terms": [
       "input preparation",
-      "quantization before estimation",
+      "input preparation before dependent processing",
       "exposition order",
       "dependent explanation",
       "algorithm before resource analysis"
@@ -88568,7 +88566,7 @@
     "language_features": [
       {
         "conditions": [
-          "The estimator consumes quantized observations.",
+          "The estimator consumes prepared observations.",
           "The detailed exposition delays input preparation until after dependent estimation material.",
           "The resource analysis can follow a sufficiently explained implementation."
         ],
@@ -88579,13 +88577,13 @@
         ],
         "evidence_account": {
           "field": "operations",
-          "quote": "Arrange the implementation account as input quantization followed by estimation from the resulting observations, and place resource analysis in a separate subsequent unit."
+          "quote": "Arrange the implementation account as input preparation followed by estimation from the resulting observations, and place resource analysis in a separate subsequent unit."
         },
         "evidence_example_ids": [],
-        "frame": "Input quantization -> estimation from the resulting observations -> separate resource analysis",
+        "frame": "Input input preparation -> estimation from the resulting observations -> separate resource analysis",
         "function": "Establish an estimator's input-producing explanation before its consuming explanation and subsequent resource analysis.",
         "kind": "paragraph",
-        "operation": "Arrange the implementation account as input quantization followed by estimation from the resulting observations, and place resource analysis in a separate subsequent unit.",
+        "operation": "Arrange the implementation account as input preparation followed by estimation from the resulting observations, and place resource analysis in a separate subsequent unit.",
         "id": "EX01779:L1",
         "evidence_status": "source_reviewed_analytical_operation_no_literal_comment_disclosed"
       }
@@ -89164,7 +89162,7 @@
     "transfer_conditions": [
       "The consequence follows from the declared assumption.",
       "The representation must be decoded before reconstruction.",
-      "Quantization distortion remains in the model."
+      "The distinct preparation error remains in the model."
     ],
     "do_not_transfer": [
       "Do not infer distortion-free recovery.",
@@ -89207,10 +89205,10 @@
       },
       {
         "id": "EX01791:E2",
-        "kind": "verbatim_mentor_fragment",
-        "text": "are error-free such that the BS can perfectly decode the quantization bits",
-        "function": "Assumed link property and its restricted bit-decoding consequence.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "are [free from the specified error] such that the [receiver] can perfectly recover the [transmitted representation]",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
@@ -89227,7 +89225,7 @@
         "conditions": [
           "The stated link assumption supports the decoding consequence.",
           "The receiver procedure has the stated dependency.",
-          "Quantization distortion remains represented."
+          "The distinct preparation error remains represented."
         ],
         "do_not_transfer": [
           "Do not treat the link idealization as a measured property.",
@@ -89505,10 +89503,9 @@
       "Do not treat an example use as verified optimization benefit."
     ],
     "facts_and_qualifications": [
-      "The replacement is explicitly linked to the marked opening.",
-      "The selected body fragments preserve their existing text and genre.",
-      "The sequence is an analytical account of the complete proposal.",
-      "The upstream handoff deletion and this replacement are parts of one proposed reorganization."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "analytical section opening",
@@ -89520,12 +89517,13 @@
     "limits": [
       "No complete public replacement paragraph is selected.",
       "The scientific scope and approximation quality remain unverified.",
-      "Application and acceptance are unconfirmed."
+      "Application and acceptance are unconfirmed.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01798",
     "scope": "paragraph",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0188",
@@ -89536,18 +89534,18 @@
     "examples": [
       {
         "id": "EX01798:E1",
-        "kind": "verbatim_mentor_fragment",
-        "text": "In this section, we approximately characterize the rate-distortion trade-off",
-        "function": "States the section action with an explicit approximation qualifier.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "In this section, we approximately characterize the [performance trade-off]",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. States the section action with an explicit approximation qualifier.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
         "id": "EX01798:E2",
-        "kind": "verbatim_mentor_fragment",
-        "text": "Such an approximation of the rate-distortion trade-off is useful",
-        "function": "Refers back to the qualified characterization before explaining its use.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "Such an approximation of the [performance trade-off] is useful",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Refers back to the qualified characterization before explaining its use.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -89595,7 +89593,7 @@
         "kind": "qualification",
         "operation": "Place the approximation adverb directly before the characterization verb.",
         "id": "EX01798:L2",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       },
       {
         "conditions": [
@@ -89616,7 +89614,7 @@
         "kind": "transition",
         "operation": "Begin the application sentence with a demonstrative noun phrase that repeats the characterization's approximation status.",
         "id": "EX01798:L3",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -89639,8 +89637,9 @@
       "Do not extend the edit beyond its selected span."
     ],
     "facts_and_qualifications": [
-      "The existing before and replacement examples have an explicit pairing.",
-      "The replacement is heading wording."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "heading focus",
@@ -89649,12 +89648,13 @@
       "local heading replacement"
     ],
     "limits": [
-      "The example establishes a local proposal, not adoption or a general stylistic preference."
+      "The example establishes a local proposal, not adoption or a general stylistic preference.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01799",
     "scope": "section",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0215",
@@ -89663,19 +89663,19 @@
     "examples": [
       {
         "id": "EX01799:E1",
-        "kind": "verbatim_author_before",
-        "text": "Distortion-Rate Derivation",
-        "function": "Marked process-focused heading suffix.",
+        "kind": "adapted_example",
+        "text": "[relationship derivation]",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Marked process-focused heading suffix.",
         "body_form_allowed": false,
-        "pair_id": "EX01799:PAIR06a"
+        "pair_id": null
       },
       {
         "id": "EX01799:E2",
-        "kind": "verbatim_mentor_fragment",
-        "text": "Rate-Distortion Trade-off",
-        "function": "Proposed relationship-focused heading suffix.",
-        "body_form_allowed": true,
-        "pair_id": "EX01799:PAIR06a"
+        "kind": "adapted_example",
+        "text": "[performance trade-off]",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Proposed relationship-focused heading suffix.",
+        "body_form_allowed": false,
+        "pair_id": null
       }
     ],
     "language_features": [
@@ -89698,7 +89698,7 @@
         "kind": "lexical",
         "operation": "Replace the selected process-focused heading suffix with a suffix naming the relationship under analysis.",
         "id": "EX01799:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -89724,9 +89724,9 @@
       "Do not duplicate existing rationale solely to follow this sequence."
     ],
     "facts_and_qualifications": [
-      "The selected evidence is proposed manuscript prose.",
-      "The property-contrast fragment contains an unresolved placeholder.",
-      "No complete historical paragraph pair is selected."
+      "Examples labeled adapted_example are analyst abstractions with technical content withheld; they are not historical quotations.",
+      "Unchanged verbatim examples retain their source roles. Adapted examples establish no historical replacement pair.",
+      "The analytical edit account is conditional; adoption and scientific validity remain unconfirmed."
     ],
     "retrieval_terms": [
       "model adoption",
@@ -89737,12 +89737,14 @@
     ],
     "limits": [
       "The form does not validate the surrogate or its retained properties.",
-      "Application and adoption are unconfirmed."
+      "Application and adoption are unconfirmed.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax.",
+      "Adapted examples cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01800",
     "scope": "argument_unit",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0187",
@@ -89753,26 +89755,26 @@
     "examples": [
       {
         "id": "EX01800:E1",
-        "kind": "verbatim_mentor_fragment",
-        "text": "it is thus hard to characterize the rate-distortion trade-off",
-        "function": "Connects a stated obstacle to analytical difficulty.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "it is thus hard to characterize the [performance trade-off]",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Connects a stated obstacle to analytical difficulty.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
         "id": "EX01800:E2",
-        "kind": "verbatim_mentor_prose",
-        "text": "In this paper, we adopt a similar approach to characterize the rate-distortion trade-off under the Gaussian test channel model.",
-        "function": "States adoption of an analytical approach under a named model.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "In this paper, we adopt a similar approach to characterize the [performance trade-off] under the [analysis model].",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. States adoption of an analytical approach under a named model.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
         "id": "EX01800:E3",
-        "kind": "verbatim_mentor_fragment",
-        "text": "has the same covariance matrix as ... but is assumed to be Gaussian distributed",
-        "function": "Distinguishes a claimed shared property from an imposed distributional assumption.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "has the same [retained property] as [comparison object] but is assumed to have [additional model property]",
+        "function": "Analyst abstraction; not a historical quotation. Distinguishes a claimed shared property from an imposed distributional assumption.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -89797,7 +89799,7 @@
         "kind": "sentence_order",
         "operation": "Place the analytical-consequence sentence immediately before the sentence announcing adoption of the model.",
         "id": "EX01800:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       },
       {
         "conditions": [
@@ -89806,7 +89808,7 @@
         ],
         "do_not_transfer": [
           "Do not complete the unresolved comparison placeholder.",
-          "Do not infer Gaussianity or source independence for the practical quantizer.",
+          "Do not transfer assumptions of an analytical model to a practical implementation.",
           "Do not treat the fragment as a completed scientific definition."
         ],
         "evidence_example_ids": [
@@ -89817,14 +89819,14 @@
         "kind": "qualification",
         "operation": "Place the retained-property predicate and the assumed-property predicate in the same contrasting clause.",
         "id": "EX01800:L2",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
   {
     "title": "Combine governing conditions in a direct formula lead",
     "section_task": "Introduce a conditional expression efficiently.",
-    "before_account": "Several preparatory sentences distributed the roadmap, notation choice, estimator setup, and covariance introduction.",
+    "before_account": "Several preparatory sentences distributed the roadmap, notation choice, estimator setup, and intermediate matrix introduction.",
     "observed_change": "A linked proposal combined model context and estimator dependence before the formula statement.",
     "changed_relationship": "The conditions became the entry to the expression rather than separate preparatory announcements.",
     "after_account": "A conditional lead was proposed; the mathematical conclusion and scientific relabeling remain unresolved.",
@@ -89841,8 +89843,9 @@
       "Do not remove a required definition through compression."
     ],
     "facts_and_qualifications": [
-      "The selected example is an actual proposed manuscript lead.",
-      "It is a fragment, not a reconstructed replacement paragraph."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "conditional formula lead",
@@ -89852,12 +89855,13 @@
     ],
     "limits": [
       "The retained syntax supplies no mathematical result.",
-      "Application and adoption are unconfirmed."
+      "Application and adoption are unconfirmed.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01803",
     "scope": "paragraph",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0039",
@@ -89868,10 +89872,10 @@
     "examples": [
       {
         "id": "EX01803:E1",
-        "kind": "verbatim_mentor_fragment",
-        "text": "Under the above Gaussian test channel, it can be shown that if the MMSE estimator is adopted,",
-        "function": "Combines model context with an explicit estimator condition.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "Under the above [analysis model], it can be shown that if the MMSE estimator is adopted,",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Combines model context with an explicit estimator condition.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -89884,7 +89888,7 @@
         ],
         "do_not_transfer": [
           "Do not infer equivalence between linear and unrestricted estimators.",
-          "Do not equate quantization error with estimation error.",
+          "Do not equate input-preparation error with estimation error.",
           "Do not delete the only definition of a surviving symbol."
         ],
         "evidence_example_ids": [
@@ -89895,7 +89899,7 @@
         "kind": "syntax",
         "operation": "Combine the model context and estimator condition in a single lead before the formula subject.",
         "id": "EX01803:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -90000,9 +90004,9 @@
       "Do not interpret the stated objective as an achieved optimum."
     ],
     "facts_and_qualifications": [
-      "The selected excerpts anchor the start and end of a longer proposed sequence.",
-      "The intervening opposing-effect sentence is present in the supplied annotation.",
-      "No adapted example is selected."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "same-variable sequence",
@@ -90012,12 +90016,13 @@
     ],
     "limits": [
       "The form does not establish the scientific relationships.",
-      "Application and adoption are unconfirmed."
+      "Application and adoption are unconfirmed.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01806",
     "scope": "argument_unit",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0188",
@@ -90028,18 +90033,18 @@
     "examples": [
       {
         "id": "EX01806:E1",
-        "kind": "verbatim_mentor_fragment",
-        "text": "Note that to improve the estimation accuracy, a smaller quantization noise power is preferred",
-        "function": "Introduces a preference through its performance purpose.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "Note that to improve the estimation accuracy, a smaller [design variable] is preferred",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Introduces a preference through its performance purpose.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
         "id": "EX01806:E2",
-        "kind": "verbatim_mentor_prose",
-        "text": "Therefore, we should carefully optimize the quantization noise power to achieve the best rate-distortion trade-off.",
-        "function": "Hands off from a stated trade-off to an optimization objective.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "Therefore, we should carefully optimize the [design variable] to achieve the best [performance trade-off].",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Hands off from a stated trade-off to an optimization objective.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -90065,7 +90070,7 @@
         "kind": "sentence_order",
         "operation": "Keep the same variable as the subject of the benefit and cost sentences, then place the optimization handoff after both.",
         "id": "EX01806:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -90089,9 +90094,9 @@
       "Do not infer a stronger optimality guarantee."
     ],
     "facts_and_qualifications": [
-      "The body replacement has an explicit linkage.",
-      "The selected evidence supports the direct task clause.",
-      "The heading and incomplete assumption lead are not retained as separate features."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "direct decision variables",
@@ -90101,12 +90106,13 @@
     ],
     "limits": [
       "The clause does not define a complete new formulation.",
-      "Application and adoption are unconfirmed."
+      "Application and adoption are unconfirmed.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01807",
     "scope": "section",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0113",
@@ -90116,10 +90122,10 @@
     "examples": [
       {
         "id": "EX01807:E3",
-        "kind": "verbatim_mentor_fragment",
-        "text": "optimize the quantization noise powers",
-        "function": "Names the decision variables immediately after the task verb.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "optimize the [design variables]",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Names the decision variables immediately after the task verb.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -90143,7 +90149,7 @@
         "kind": "syntax",
         "operation": "Replace the delayed equivalence route with a direct verb-object clause naming the formulation's decision variables.",
         "id": "EX01807:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -90513,18 +90519,18 @@
     "examples": [
       {
         "id": "EX01817:E1",
-        "kind": "verbatim_author_before",
-        "text": "the quantization bits are mapped to the QAM constellation symbols",
-        "function": "Original passive mapping clause.",
+        "kind": "adapted_example",
+        "text": "the [input representation] is mapped to the [transmitted representation]",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
         "body_form_allowed": false,
         "pair_id": "EX01817:PAIR16a"
       },
       {
         "id": "EX01817:E2",
-        "kind": "verbatim_mentor_fragment",
-        "text": "all the users can modulate their quantization bits onto quadrature amplitude modulation (QAM) symbols",
-        "function": "Proposed actor-led modal clause for the same mapping action.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "all the [participants] can map their [input representation] onto [transmitted symbols]",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": "EX01817:PAIR16a"
       }
     ],
@@ -90548,7 +90554,7 @@
         "kind": "syntax",
         "operation": "Recast the passive data-subject clause as an actor-subject clause with a modal, an action verb, and an onto complement.",
         "id": "EX01817:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -90705,9 +90711,9 @@
       },
       {
         "id": "EX01826:E7",
-        "kind": "verbatim_author_before",
-        "text": "overall time for pilot and quantization bits",
-        "function": "Marked comparison-label fragment.",
+        "kind": "adapted_example",
+        "text": "overall time for [first operation] and [second operation]",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
         "body_form_allowed": false,
         "pair_id": "EX01826:PAIR21d"
       },
@@ -90903,9 +90909,9 @@
       "Do not present the remaining heading as mentor-authored prose."
     ],
     "facts_and_qualifications": [
-      "Both selected examples are deleted author wording.",
-      "No replacement heading or deletion rationale is supplied.",
-      "The model explanation remains present in the supplied body context."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "heading compression",
@@ -90916,12 +90922,13 @@
     ],
     "limits": [
       "This is a local deletion pattern, not a broader concision preference.",
-      "Application and acceptance are unconfirmed."
+      "Application and acceptance are unconfirmed.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01830",
     "scope": "section",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [],
     "examples": [
@@ -90935,9 +90942,9 @@
       },
       {
         "id": "EX01830:E2",
-        "kind": "verbatim_author_deletion",
-        "text": "UNDER GAUSSIAN TEST CHANNEL",
-        "function": "Marked standard modeling qualifier selected for deletion.",
+        "kind": "adapted_example",
+        "text": "UNDER [analysis model]",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Marked standard modeling qualifier selected for deletion.",
         "body_form_allowed": false,
         "pair_id": null
       }
@@ -90956,7 +90963,6 @@
           "Keep a modifier when it is necessary to identify the section's scope."
         ],
         "evidence_example_ids": [
-          "EX01830:E1",
           "EX01830:E2"
         ],
         "frame": "[Status adjective] [topic noun phrase] [model prepositional phrase] → [topic noun phrase]",
@@ -90964,7 +90970,7 @@
         "kind": "syntax",
         "operation": "Delete the marked prenominal status adjective and trailing model phrase while retaining the topical noun phrase.",
         "id": "EX01830:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -91596,9 +91602,9 @@
       "Do not infer an exact resource conversion or global optimum."
     ],
     "facts_and_qualifications": [
-      "The source supports coordinated actions at distinct locations.",
-      "The sentence sequence is present in proposed body prose.",
-      "The constructions are local examples."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "optimization opening",
@@ -91608,12 +91614,13 @@
     ],
     "limits": [
       "The final assembled wording and adoption are unconfirmed.",
-      "The resource consequences are not independently validated here."
+      "The resource consequences are not independently validated here.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01841",
     "scope": "argument_unit",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0211",
@@ -91622,10 +91629,10 @@
     "examples": [
       {
         "id": "EX01841:E1",
-        "kind": "verbatim_mentor_fragment",
-        "text": "characterize the rate-distortion trade-off",
-        "function": "Name the joint explanatory role of supporting relations.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "characterize the [performance trade-off]",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Name the joint explanatory role of supporting relations.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
@@ -91646,10 +91653,10 @@
       },
       {
         "id": "EX01841:E4",
-        "kind": "verbatim_mentor_fragment",
-        "text": "by designing the quantization noise power",
-        "function": "Express a design variable as the means rather than the goal.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "by designing the [design variable]",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Express a design variable as the means rather than the goal.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -91685,16 +91692,14 @@
           "Do not infer a general preference from the common connectors."
         ],
         "evidence_example_ids": [
-          "EX01841:E1",
-          "EX01841:E2",
-          "EX01841:E3"
+          "EX01841:E1"
         ],
         "frame": "Joint recap, conditional resource consequence, contrasting error consequence.",
         "function": "Develop a recap into a conditional benefit and its associated cost.",
         "kind": "sentence_order",
         "operation": "State the conditional benefit before introducing the associated cost.",
         "id": "EX01841:L2",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       },
       {
         "conditions": [
@@ -91713,7 +91718,7 @@
         "kind": "syntax",
         "operation": "Assign the design action to the means adjunct rather than the main goal position.",
         "id": "EX01841:L3",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -92281,8 +92286,9 @@
       "Do not infer a running-prose form solely from a heading."
     ],
     "facts_and_qualifications": [
-      "The selected example is a running-prose insertion.",
-      "The heading addition supplies contextual scope alignment."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "coordinated purpose",
@@ -92292,12 +92298,13 @@
     ],
     "limits": [
       "The coordination is a local expression example.",
-      "An applied heading, introduction, and acceptance remain unconfirmed."
+      "An applied heading, introduction, and acceptance remain unconfirmed.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01850",
     "scope": "section",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0211",
@@ -92306,10 +92313,10 @@
     "examples": [
       {
         "id": "EX01850:E1",
-        "kind": "verbatim_mentor_fragment",
-        "text": "rate-distortion characterization and",
-        "function": "Add an analytical purpose before the design purpose.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "[relationship characterization] and",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Add an analytical purpose before the design purpose.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -92332,7 +92339,7 @@
         "kind": "syntax",
         "operation": "Place the analytical task first and the design task second under a shared purpose preposition.",
         "id": "EX01850:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -92501,8 +92508,9 @@
       "Do not infer deletion of an unmarked reference."
     ],
     "facts_and_qualifications": [
-      "The phrase replacement is explicitly paired.",
-      "The named model uses standard field vocabulary."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "governing model",
@@ -92513,12 +92521,13 @@
     "limits": [
       "Application and adoption are unconfirmed.",
       "The wording does not establish model accuracy.",
-      "No general personal preference is established."
+      "No general personal preference is established.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01854",
     "scope": "sentence",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0187",
@@ -92531,15 +92540,15 @@
         "text": "based on",
         "function": "Deleted basis phrase.",
         "body_form_allowed": false,
-        "pair_id": "EX01854:PAIR1"
+        "pair_id": null
       },
       {
         "id": "EX01854:E2",
-        "kind": "verbatim_mentor_fragment",
-        "text": "under the Gaussian test channel model",
-        "function": "Proposed governing-model qualification.",
-        "body_form_allowed": true,
-        "pair_id": "EX01854:PAIR1"
+        "kind": "adapted_example",
+        "text": "under the [analysis model]",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Proposed governing-model qualification.",
+        "body_form_allowed": false,
+        "pair_id": null
       }
     ],
     "language_features": [
@@ -92553,7 +92562,6 @@
           "Do not infer that the model accurately describes every practical implementation."
         ],
         "evidence_example_ids": [
-          "EX01854:E1",
           "EX01854:E2"
         ],
         "frame": "under [named governing model]",
@@ -92561,7 +92569,7 @@
         "kind": "qualification",
         "operation": "Replace the broad basis phrase with a prepositional qualifier naming the governing model.",
         "id": "EX01854:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -92654,9 +92662,9 @@
       "Do not add punctuation to the selected historical example."
     ],
     "facts_and_qualifications": [
-      "The replacement has an explicit reply connection to the deletion.",
-      "Supplied contextual feedback separately addresses a definition affected by the deletion.",
-      "The selected lead-in has no terminal punctuation."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "formalization bridge",
@@ -92666,12 +92674,13 @@
     ],
     "limits": [
       "The contextual definition is not admitted as a separate example.",
-      "A complete replacement pair, applied paragraph, and acceptance remain unconfirmed."
+      "A complete replacement pair, applied paragraph, and acceptance remain unconfirmed.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01857",
     "scope": "argument_unit",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0211",
@@ -92680,10 +92689,10 @@
     "examples": [
       {
         "id": "EX01857:E1",
-        "kind": "verbatim_mentor_prose",
-        "text": "Mathematically, the above rate-distortion trade-off can be characterized by the following optimization problem",
-        "function": "Bridge the preceding explanation and the upcoming formal problem.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "Mathematically, the above [performance trade-off] can be characterized by the following optimization problem",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Bridge the preceding explanation and the upcoming formal problem.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -92707,7 +92716,7 @@
         "kind": "transition",
         "operation": "Replace repeated author-intent introductions with a lead-in that makes the relationship its subject and points both backward and forward.",
         "id": "EX01857:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -92754,10 +92763,10 @@
     "examples": [
       {
         "id": "EX01858:E1",
-        "kind": "verbatim_mentor_fragment",
-        "text": "is the given time constraint for quantization bit transmission.",
-        "function": "Definition predicate stating the parameter's supplied status and purpose.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "is the given time constraint for [the specified transmission].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -92779,7 +92788,7 @@
         "kind": "syntax",
         "operation": "Use a copular predicate with a status modifier and an activity complement.",
         "id": "EX01858:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -92800,8 +92809,8 @@
       "Any required statistical assumptions have independent support."
     ],
     "do_not_transfer": [
-      "Do not infer error independence from scalar quantization alone.",
-      "Do not infer independent source signals from separate quantization operations.",
+      "Do not infer error independence from the specified componentwise operation alone.",
+      "Do not infer independent underlying quantities from separate processing operations.",
       "Do not stitch the selected fragments into a historical replacement paragraph."
     ],
     "facts_and_qualifications": [
@@ -92832,18 +92841,18 @@
     "examples": [
       {
         "id": "EX01859:E1",
-        "kind": "verbatim_mentor_fragment",
-        "text": "Because each user adopts scalar quantization",
-        "function": "Name the actor and procedure in a causal opening.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "Because each [participant] adopts the [specified processing operation]",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
         "id": "EX01859:E2",
-        "kind": "verbatim_mentor_fragment",
-        "text": "Last, because different users independently quantize their received signals,",
-        "function": "Mark the final stage and its procedural premise.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "Last, because different [participants] separately perform [the stated operation],",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -92865,7 +92874,7 @@
         "kind": "syntax",
         "operation": "Replace a nominal causal opener with a finite clause whose subject names the actor and whose verb names the procedure.",
         "id": "EX01859:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       },
       {
         "conditions": [
@@ -92885,7 +92894,7 @@
         "kind": "transition",
         "operation": "Introduce the final aggregation with a final-stage marker followed by its procedural premise.",
         "id": "EX01859:L2",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -92911,9 +92920,9 @@
       "Do not treat common orientation wording as a general personal preference."
     ],
     "facts_and_qualifications": [
-      "The examples are proposed body wording.",
-      "The bound statement requires its applicable mathematical premises.",
-      "A broader algorithm introduction already existed."
+      "Examples labeled adapted_example are analyst abstractions with technical content withheld; they are not historical quotations.",
+      "Unchanged verbatim examples retain their source roles. Adapted examples establish no historical replacement pair.",
+      "The analytical edit account is conditional; adoption and scientific validity remain unconfirmed."
     ],
     "retrieval_terms": [
       "surrogate construction",
@@ -92923,12 +92932,14 @@
     ],
     "limits": [
       "No complete applied replacement paragraph is available.",
-      "The mathematical derivation is not independently certified."
+      "The mathematical derivation is not independently certified.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax.",
+      "Adapted examples cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01861",
     "scope": "argument_unit",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0137",
@@ -92938,48 +92949,48 @@
     "examples": [
       {
         "id": "EX01861:E1",
-        "kind": "verbatim_mentor_prose",
-        "text": "MM is an iterative algorithm.",
-        "function": "Orient the reader before introducing iteration mechanics.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "[Named method] is an iterative algorithm.",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Orient the reader before introducing iteration mechanics.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
         "id": "EX01861:E2",
-        "kind": "verbatim_mentor_fragment",
-        "text": "its first order Taylor expansion serves as its upper bound and can thus be used as its surrogate function.",
-        "function": "Connect the construction's bound property to its algorithmic role.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "[construction] has [established mathematical property] and can thus be used for [algorithmic role].",
+        "function": "Analyst abstraction; not a historical quotation. Connect the construction's bound property to its algorithmic role.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
         "id": "EX01861:E3",
-        "kind": "verbatim_mentor_prose",
-        "text": "Then, under the s-th iteration of the MM algorithm, we need to solve the following problem",
-        "function": "Introduce minimization after the construction stage.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "Then, under the s-th iteration of [iterative algorithm], we need to solve the following problem",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Introduce minimization after the construction stage.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
     "language_features": [
       {
         "conditions": [
-          "The asserted bound is valid on the stated domain.",
-          "The algorithmic use follows from that bound."
+          "The stated mathematical property is established on the applicable domain.",
+          "The proposed algorithmic role follows from that property."
         ],
         "do_not_transfer": [
-          "Do not assert the bound for an objective lacking the required properties.",
+          "Do not assert a property without its necessary assumptions.",
           "Do not turn permitted use into a convergence or optimality guarantee."
         ],
         "evidence_example_ids": [
           "EX01861:E2"
         ],
-        "frame": "A construction serves as a bound and can consequently serve an algorithmic role.",
+        "frame": "[Construction] has [established property] and can thus serve [algorithmic role].",
         "function": "Connect an established mathematical role to a permitted algorithmic use.",
         "kind": "syntax",
-        "operation": "Place the bound role before the permitted use and connect them with a modal consequence clause.",
+        "operation": "State the established property before its permitted use, connected by a modal consequence clause.",
         "id": "EX01861:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       },
       {
         "conditions": [
@@ -92992,7 +93003,6 @@
         ],
         "evidence_example_ids": [
           "EX01861:E1",
-          "EX01861:E2",
           "EX01861:E3"
         ],
         "frame": "Algorithm orientation → construction task → property and role → construction introduction → minimization handoff.",
@@ -93000,7 +93010,7 @@
         "kind": "sentence_order",
         "operation": "Arrange the local explanation so that construction precedes the iteration-specific minimization lead-in.",
         "id": "EX01861:L2",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -93026,9 +93036,8 @@
       "Do not generalize the separate attribution-word substitution."
     ],
     "facts_and_qualifications": [
-      "The selected fragments belong to one proposed body definition.",
-      "The original passage already contained the downstream calculation.",
-      "No complete replacement sentence is supplied."
+      "The algorithm identity is withheld in an analyst-adapted example; unchanged examples retain their source roles.",
+      "The local edit account does not establish adoption or technical correctness."
     ],
     "retrieval_terms": [
       "output definition",
@@ -93037,12 +93046,13 @@
       "repeated setup"
     ],
     "limits": [
-      "The fragments do not establish a completed output definition or accepted revision."
+      "The fragments do not establish a completed output definition or accepted revision.",
+      "Adapted examples cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01865",
     "scope": "argument_unit",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0009",
@@ -93059,10 +93069,10 @@
       },
       {
         "id": "EX01865:E2",
-        "kind": "verbatim_mentor_fragment",
-        "text": "obtained via the above MM algorithm. Then, we",
-        "function": "Link output provenance to the following author action.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "obtained via the above [iterative algorithm]. Then, we",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Link output provenance to the following author action.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -93079,7 +93089,6 @@
           "Do not treat the separate attribution substitution as a general lexical preference."
         ],
         "evidence_example_ids": [
-          "EX01865:E1",
           "EX01865:E2"
         ],
         "frame": "Output definition + algorithm-provenance modifier; next sentence introduces the consuming action.",
@@ -93087,7 +93096,7 @@
         "kind": "syntax",
         "operation": "Replace a generic closing lead-in with an output definition, its provenance, and a subsequent action handoff.",
         "id": "EX01865:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -93347,8 +93356,9 @@
       "Do not reconstruct a whole historical heading as a mentor quotation."
     ],
     "facts_and_qualifications": [
-      "Only the existing heading fragment is selected.",
-      "Other local heading edits are not retained as separate features."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "evaluation heading",
@@ -93357,12 +93367,13 @@
     ],
     "limits": [
       "No applied heading is available.",
-      "The heading does not validate the evaluation."
+      "The heading does not validate the evaluation.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01871",
     "scope": "sentence",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0199"
@@ -93370,10 +93381,10 @@
     "examples": [
       {
         "id": "EX01871:E3",
-        "kind": "verbatim_mentor_fragment",
-        "text": "for Quantization Bit Allocation",
-        "function": "Proposed application qualifier in a heading.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "for [resource allocation]",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Proposed application qualifier in a heading.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -93394,7 +93405,7 @@
         "kind": "syntax",
         "operation": "Place a for-phrase after the evaluation topic in the heading.",
         "id": "EX01871:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -93601,9 +93612,9 @@
       "Do not turn an aim into a claim of achieved global optimality."
     ],
     "facts_and_qualifications": [
-      "The selected pair contains an author clause and a proposed mentor replacement.",
-      "The purpose phrase records an intended objective.",
-      "Application and acceptance are unconfirmed."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "occasion to purpose",
@@ -93613,12 +93624,13 @@
     ],
     "limits": [
       "This common construction is supported as a local change.",
-      "It does not establish a general preference or solution guarantee."
+      "It does not establish a general preference or solution guarantee.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01876",
     "scope": "sentence",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0211"
@@ -93626,19 +93638,19 @@
     "examples": [
       {
         "id": "EX01876:E1",
-        "kind": "verbatim_author_before",
-        "text": "when the users quantize their received pilots.",
-        "function": "Supply the author setting clause replaced at the same location.",
+        "kind": "adapted_example",
+        "text": "when the [participants] process their [received inputs].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
         "body_form_allowed": false,
-        "pair_id": "EX01876:PAIR01"
+        "pair_id": null
       },
       {
         "id": "EX01876:E2",
-        "kind": "verbatim_mentor_fragment",
-        "text": "to achieve the best rate-distortion trade-off. ",
-        "function": "Replace the setting clause with the intended design purpose.",
-        "body_form_allowed": true,
-        "pair_id": "EX01876:PAIR01"
+        "kind": "adapted_example",
+        "text": "to achieve the best [performance trade-off]. ",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Replace the setting clause with the intended design purpose.",
+        "body_form_allowed": false,
+        "pair_id": null
       }
     ],
     "language_features": [
@@ -93654,7 +93666,6 @@
           "Do not transfer a superlative without a defined comparison scope."
         ],
         "evidence_example_ids": [
-          "EX01876:E1",
           "EX01876:E2"
         ],
         "frame": "[Choice to be determined] + to + [verb] + [objective].",
@@ -93662,7 +93673,7 @@
         "kind": "syntax",
         "operation": "Replace the finite when-clause with an infinitival purpose adjunct attached to determining the design choice.",
         "id": "EX01876:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -94010,28 +94021,28 @@
       "Do not generalize the formulation beyond its model."
     ],
     "facts_and_qualifications": [
-      "The selected examples are proposed mentor body fragments.",
-      "The model was already present in the preceding analysis.",
-      "The edit localizes the qualifier rather than establishing a new assumption.",
-      "Application and acceptance are unconfirmed."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "derivation to formulation",
       "transition by references",
       "recap compression",
       "model qualification",
-      "Gaussian test channel model"
+      "[analysis model]"
     ],
     "limits": [
       "The complete revised sentence is unavailable.",
       "The references remain unfilled.",
       "No technical formula, numerical finding or practical-validity claim is reproduced.",
-      "The forms are conditional local examples."
+      "The forms are conditional local examples.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01882",
     "scope": "paragraph",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0041",
@@ -94050,10 +94061,10 @@
       },
       {
         "id": "EX01882:E3",
-        "kind": "verbatim_mentor_fragment",
-        "text": "under the Gaussian test channel model",
-        "function": "State the model boundary of the formulation.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "under the [analysis model]",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. State the model boundary of the formulation.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -94097,7 +94108,7 @@
         "kind": "qualification",
         "operation": "Attach an under-model phrase to the characterized relationship in the formulation introduction.",
         "id": "EX01882:L2",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -94361,8 +94372,9 @@
       "Do not infer global optimality or independent participant optimization."
     ],
     "facts_and_qualifications": [
-      "Both original replacements are explicitly linked.",
-      "The selected examples retain their existing fragment boundaries."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "design object",
@@ -94370,12 +94382,13 @@
       "method scope"
     ],
     "limits": [
-      "No complete historical replacement pair or adopted sentence is asserted."
+      "No complete historical replacement pair or adopted sentence is asserted.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01890",
     "scope": "sentence",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0211",
@@ -94384,10 +94397,10 @@
     "examples": [
       {
         "id": "EX01890:E1",
-        "kind": "verbatim_mentor_fragment",
-        "text": "the quantization bit allocation policy for each user",
-        "function": "Name the design role and distributive ownership.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "the [resource allocation] policy for each user",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Name the design role and distributive ownership.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
@@ -94416,7 +94429,7 @@
         "kind": "syntax",
         "operation": "Replace the symbolic object of the task verb with a design-role noun phrase and a distributive complement.",
         "id": "EX01890:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       },
       {
         "conditions": [
@@ -94459,9 +94472,9 @@
       "Do not infer a general tense rule or compression preference."
     ],
     "facts_and_qualifications": [
-      "The noun replacements have separate explicit edit links.",
-      "The tail deletion is an independent action.",
-      "The auxiliary insertion is not admitted as a separate feature."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "method-linked error phrase",
@@ -94472,12 +94485,13 @@
     ],
     "limits": [
       "The account supplies no surrogate mechanism or performance guarantee.",
-      "Final punctuation, application, and adoption remain unconfirmed."
+      "Final punctuation, application, and adoption remain unconfirmed.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01891",
     "scope": "paragraph",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0191",
@@ -94486,18 +94500,18 @@
     "examples": [
       {
         "id": "EX01891:E1",
-        "kind": "verbatim_mentor_fragment",
-        "text": "the quantization errors under the Lloyd algorithm",
-        "function": "Identify the errors through their originating practical method.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "the [processing errors] under [named algorithm]",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
         "id": "EX01891:E4",
-        "kind": "verbatim_mentor_fragment",
-        "text": "the Lloyd algorithm",
-        "function": "Name the roadmap's target instead of identifying it only by a locator.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "[named algorithm]",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Name the roadmap's target instead of identifying it only by a locator.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -94521,7 +94535,7 @@
         "kind": "lexical",
         "operation": "Move method attribution into the error noun phrase and repeat the method noun at the later approximation target.",
         "id": "EX01891:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       },
       {
         "conditions": [
@@ -94568,9 +94582,9 @@
       "Do not present a grammatical revision as the original example."
     ],
     "facts_and_qualifications": [
-      "The proposal is an addition rather than a replacement of the bound definition.",
-      "The formal objective and constraint already appear in the source.",
-      "The complete selected sentence retains its original syntax and punctuation."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "optimization restatement",
@@ -94582,12 +94596,13 @@
     "limits": [
       "The historical sentence is not a universal grammar recommendation.",
       "The mathematics and solution guarantees are not certified.",
-      "Application and adoption remain unconfirmed."
+      "Application and adoption remain unconfirmed.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01892",
     "scope": "argument_unit",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0113",
@@ -94596,10 +94611,10 @@
     "examples": [
       {
         "id": "EX01892:E1",
-        "kind": "verbatim_mentor_prose",
-        "text": "In other words, we aim to characterize given the feedback time constraint, what is the minimum quantization MSE. ",
-        "function": "Restate the optimization as a fixed-resource and sought-minimum question.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "In other words, we aim to characterize given the [resource budget], what is the minimum [distortion measure]. ",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Restate the optimization as a fixed-resource and sought-minimum question.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -94623,7 +94638,7 @@
         "kind": "syntax",
         "operation": "Append a budget-first interpretation after the resource-bound definition.",
         "id": "EX01892:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -94648,9 +94663,9 @@
       "Do not interpret possibility wording as a global solution guarantee."
     ],
     "facts_and_qualifications": [
-      "The author tail and mentor lead-in have an explicit replacement link.",
-      "The selected author excerpt remains before-change evidence.",
-      "Separate applicability edits are not admitted as additional features."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "representative indexed formulation",
@@ -94663,12 +94678,13 @@
     "limits": [
       "The account does not certify decomposition or solution properties.",
       "The schematic frame is not a new historical example.",
-      "Application and adoption remain unconfirmed."
+      "Application and adoption remain unconfirmed.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01893",
     "scope": "argument_unit",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0044",
@@ -94681,15 +94697,15 @@
         "text": "by solving the following subproblems:",
         "function": "Supply the author display tail replaced locally.",
         "body_form_allowed": false,
-        "pair_id": "EX01893:PAIR02"
+        "pair_id": null
       },
       {
         "id": "EX01893:E2",
-        "kind": "verbatim_mentor_prose",
-        "text": "Specifically, the quantization bit allocation policy of user k can be obtained by solving the following sub-problem",
-        "function": "Introduce the representative policy owner and the displayed subproblem.",
-        "body_form_allowed": true,
-        "pair_id": "EX01893:PAIR02"
+        "kind": "adapted_example",
+        "text": "Specifically, the [resource allocation] policy of user k can be obtained by solving the following sub-problem",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Introduce the representative policy owner and the displayed subproblem.",
+        "body_form_allowed": false,
+        "pair_id": null
       }
     ],
     "language_features": [
@@ -94714,7 +94730,7 @@
         "kind": "syntax",
         "operation": "Replace a plural display tail with a policy-specific lead-in containing a specificity marker and a modal by-solving predicate.",
         "id": "EX01893:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -95722,9 +95738,9 @@
       "Do not invent a complete replacement sentence."
     ],
     "facts_and_qualifications": [
-      "Both selected fragments are body proposals.",
-      "The complete figure sentence's attachment is not resolved by these fragments.",
-      "Application and adoption remain unconfirmed."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "passive performance modifier",
@@ -95734,12 +95750,13 @@
     ],
     "limits": [
       "The forms do not establish normalization or error propagation.",
-      "The evidence supports local modifiers."
+      "The evidence supports local modifiers.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01909",
     "scope": "argument_unit",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0015",
@@ -95748,18 +95765,18 @@
     "examples": [
       {
         "id": "EX01909:E1",
-        "kind": "verbatim_mentor_fragment",
-        "text": "achieved by different quantization bit allocation schemes",
-        "function": "Name the varied policies associated with the reported performance.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "achieved by different [resource allocation] schemes",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Name the varied policies associated with the reported performance.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
         "id": "EX01909:E2",
-        "kind": "verbatim_mentor_fragment",
-        "text": "for quantizing the received signals",
-        "function": "Specify the metric's task and object.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "for [processing the received inputs]",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -95782,7 +95799,7 @@
         "kind": "syntax",
         "operation": "Replace the broad protocol qualifier with a passive modifier naming the policies that produce the compared performance.",
         "id": "EX01909:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       },
       {
         "conditions": [
@@ -95801,7 +95818,7 @@
         "kind": "qualification",
         "operation": "Insert a task-and-object qualifier after the metric name and before its definition predicate.",
         "id": "EX01909:L2",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -96705,18 +96722,18 @@
     "examples": [
       {
         "id": "EX01922:E1",
-        "kind": "verbatim_mentor_fragment",
-        "text": "the users can quantize better estimated channels",
-        "function": "Actor-action-object construction emphasizing the estimated input.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "the [participants] can process [improved input estimates]",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
         "id": "EX01922:E2",
-        "kind": "verbatim_mentor_fragment",
-        "text": "given the same number of quantization bits",
-        "function": "Resource condition attached to the proposed quality explanation.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "given the same [resource budget]",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -96741,7 +96758,7 @@
         "kind": "qualification",
         "operation": "Place the input-quality comparison in the object phrase and attach the resource condition through a postposed given phrase in the same clause.",
         "id": "EX01922:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -98687,9 +98704,9 @@
       "Do not remove validation from the document on the strength of summary compression."
     ],
     "facts_and_qualifications": [
-      "Only actual proposed body excerpts are selected.",
-      "The technical referent of the approximation qualifier remains unresolved.",
-      "The analytical paragraph example is not mentor evidence."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "purpose-led refinement",
@@ -98699,12 +98716,13 @@
     ],
     "limits": [
       "The unresolved technical qualifier is excluded from the transferable form.",
-      "Adoption and attained optimality are unconfirmed."
+      "Adoption and attained optimality are unconfirmed.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01959",
     "scope": "paragraph",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0113",
@@ -98730,10 +98748,10 @@
       },
       {
         "id": "EX01959:E3",
-        "kind": "verbatim_mentor_fragment",
-        "text": "to optimize the rate-distortion trade-off.",
-        "function": "Design-objective infinitive without an attainment guarantee.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "to optimize the [performance trade-off].",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Design-objective infinitive without an attainment guarantee.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -98750,8 +98768,6 @@
           "Do not use the unresolved approximation qualifier as a scientific model description."
         ],
         "evidence_example_ids": [
-          "EX01959:E1",
-          "EX01959:E2",
           "EX01959:E3"
         ],
         "frame": "Purpose-led refinement sentence → basis-led sentence coordinating characterization and design, ending in an objective infinitive.",
@@ -98759,7 +98775,7 @@
         "kind": "paragraph",
         "operation": "Order the summary as a purpose-led refinement sentence followed by a basis-led analysis-and-design sentence ending in an objective infinitive.",
         "id": "EX01959:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -98783,9 +98799,9 @@
       "Do not silently normalize the unresolved technical qualifier."
     ],
     "facts_and_qualifications": [
-      "The selected excerpts are actual proposed body fragments.",
-      "Participant-specific wording does not prove separability.",
-      "The technical approximation description remains unresolved."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "deliverable-oriented roadmap",
@@ -98794,12 +98810,13 @@
       "model as basis"
     ],
     "limits": [
-      "The complete replacement sentence and adoption are unconfirmed."
+      "The complete replacement sentence and adoption are unconfirmed.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX01962",
     "scope": "sentence",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0198",
@@ -98808,10 +98825,10 @@
     "examples": [
       {
         "id": "EX01962:E1",
-        "kind": "verbatim_mentor_fragment",
-        "text": "designs a quantization bit allocation method for each user",
-        "function": "Active design predicate naming a generic method and its user-specific scope.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "designs a [resource allocation] method for each user",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Active design predicate naming a generic method and its user-specific scope.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
@@ -98836,15 +98853,14 @@
           "Do not fill the basis attachment with an unresolved approximation claim."
         ],
         "evidence_example_ids": [
-          "EX01962:E1",
-          "EX01962:E2"
+          "EX01962:E1"
         ],
         "frame": "Section subject + active design predicate + method object + participant-scope modifier + basis attachment.",
         "function": "Make the method deliverable the roadmap's grammatical head and the model its supporting basis.",
         "kind": "syntax",
         "operation": "Replace the coordinated preparation predicates and passive tail with an active method-design predicate, followed by participant scope and a basis attachment.",
         "id": "EX01962:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -99091,10 +99107,10 @@
     "examples": [
       {
         "id": "EX01966:E1",
-        "kind": "verbatim_mentor_prose",
-        "text": "In TDD downlink systems, the above methods can be used for the BS to obtain the CSI based on channel reciprocity.",
-        "function": "Complete generic setting, recipient, goal, and enabling-condition sentence.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "In [systems satisfying the stated condition], the above methods can be used to obtain [information] based on [the established relationship].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
@@ -99133,7 +99149,7 @@
         "kind": "qualification",
         "operation": "Recast a concessive attribution as a setting-led capability clause with a recipient, an infinitival goal and a basis complement.",
         "id": "EX01966:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       },
       {
         "conditions": [
@@ -99231,10 +99247,10 @@
       },
       {
         "id": "EX01967:E4",
-        "kind": "verbatim_mentor_prose",
-        "text": "In particular, they are interested in reducing the overhead in the feedback phase, assuming the channels are already estimated by the users.",
-        "function": "Complete proposed sentence specifying the objective, phase, and prerequisite.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "In particular, they are interested in reducing the overhead in the [subsequent phase], assuming the [prerequisite information] is already available.",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": "EX01967:PAIR06"
       }
     ],
@@ -101812,18 +101828,18 @@
     "examples": [
       {
         "id": "EX02015:E1",
-        "kind": "verbatim_mentor_fragment",
-        "text": "Without IRS, channel estimation and feedback have been widely studied for downlink FDD systems",
-        "function": "Identify the original setting of prior work.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "Without [the additional component], [the baseline task] has been widely studied for [the baseline setting].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
         "id": "EX02015:E2",
-        "kind": "verbatim_mentor_prose",
-        "text": "In IRS-assisted network, we may apply the above strategy for channel estimation and feedback.",
-        "function": "Qualify possible reuse in another setting.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "In [the extended setting], we may apply the above strategy for [the stated task].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -101846,7 +101862,7 @@
         "kind": "sentence_order",
         "operation": "Place the original-setting statement before a separate sentence about possible application.",
         "id": "EX02015:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       },
       {
         "conditions": [
@@ -101864,7 +101880,7 @@
         "kind": "qualification",
         "operation": "Retain the possibility modal in a proposed application statement.",
         "id": "EX02015:L2",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -103056,9 +103072,9 @@
       },
       {
         "id": "EX02040:E3",
-        "kind": "verbatim_author_deletion",
-        "text": "the echo signals are strong enough for extracting sensing information over a quite long period.",
-        "function": "Identify the complete outcome clause marked for replacement.",
+        "kind": "adapted_example",
+        "text": "the [observations] are sufficiently [qualified] for extracting [information] over a [specified interval].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
         "body_form_allowed": false,
         "pair_id": "EX02040:PAIR02"
       },
@@ -104389,10 +104405,10 @@
       },
       {
         "id": "EX02061:E3",
-        "kind": "verbatim_mentor_prose",
-        "text": "In our considered OFDM system, each time slot consists of K OFDM symbols, while there are L sub-carriers in each symbol. ",
-        "function": "Define the standard nested resource hierarchy before the signal description.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "In our considered [system], each [unit] consists of [count] [subunits], while there are [count] [components] in each [subunit].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": "EX02061:PAIR05"
       },
       {
@@ -105442,7 +105458,7 @@
   {
     "title": "A procedure lead followed by a qualified handoff",
     "section_task": "Present estimation and its downstream use through explicit sentence roles.",
-    "before_account": "The paragraph introduces estimation, its outputs, and possible estimators before a limitation, without a sentence passing the estimates to tracking.",
+    "before_account": "The paragraph introduces estimation, its outputs, and possible estimators before a limitation, without a sentence passing the estimates to downstream processing.",
     "observed_change": "The proposals add a procedure announcement, replace an intention predicate with a first-step predicate, consolidate temporal scope, and insert a qualified next-step clause.",
     "changed_relationship": "The opening establishes the procedure, the action predicate marks its first step, and the transition assigns the estimates to a possible downstream consumer.",
     "after_account": "The proposed scaffold is recoverable, while input and reference placeholders remain unresolved. No complete applied paragraph is established.",
@@ -105498,7 +105514,7 @@
       {
         "id": "EX02079:E1",
         "kind": "verbatim_mentor_prose",
-        "text": "A conventional way to perform tracking based on ... is as follows.",
+        "text": "A conventional way to perform downstream processing based on ... is as follows.",
         "function": "Introduce a conventional procedure while retaining its unresolved information-source placeholder.",
         "body_form_allowed": true,
         "pair_id": null
@@ -105521,10 +105537,10 @@
       },
       {
         "id": "EX02079:E5",
-        "kind": "verbatim_mentor_prose",
-        "text": "Then, Kalman filter [] or data-driven based approach [] can leverage the estimated distances and angles for tracking the targets.",
-        "function": "Name possible trackers, their estimated inputs, and their purpose without guaranteeing an outcome.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "Then, [method A] or [method B] can use the [estimated outputs] for [the downstream task].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -105601,7 +105617,7 @@
         "do_not_transfer": [
           "Do not strengthen possible use into guaranteed success.",
           "Do not fill the reference placeholders with unchecked citations.",
-          "Do not equate estimation with the downstream tracking operation."
+          "Do not equate estimation with the downstream downstream processing operation."
         ],
         "evidence_example_ids": [
           "EX02079:E5"
@@ -105611,7 +105627,7 @@
         "kind": "transition",
         "operation": "Add a next-step clause with estimated inputs, a possible consumer, and a purpose complement.",
         "id": "EX02079:L4",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -106250,10 +106266,10 @@
       },
       {
         "id": "EX02091:E2",
-        "kind": "verbatim_mentor_prose",
-        "text": "To tackle the above issue, we apply the alternating optimization technique to solve this problem.",
-        "function": "Connect a standard method to the obstacle stated immediately before it.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "To tackle the above issue, we apply the [specified technique] to solve this problem.",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -110854,10 +110870,10 @@
     "examples": [
       {
         "id": "EX02173:E2",
-        "kind": "verbatim_mentor_prose",
-        "text": "The system is working in the FDD mode such that the BS and the UEs can potentially transmit radio signals at the same time but over different frequency bands.",
-        "function": "Complete proposed explanation preserving capability and its qualification.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "The system is working in the [specified mode] such that the [participants] can potentially [perform the action] under [the resource qualification].",
+        "function": "Analyst abstraction for conditional writing guidance; not a historical quotation.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -110879,7 +110895,7 @@
         "kind": "syntax",
         "operation": "Explain the operating label in a separate sentence with a consequence clause.",
         "id": "EX02173:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       },
       {
         "conditions": [
@@ -110898,7 +110914,7 @@
         "kind": "qualification",
         "operation": "Keep the capability modal and resource qualification within the same predicate.",
         "id": "EX02173:L2",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -120574,10 +120590,9 @@
       "Do not use an isolated relative connector as a complete mechanism attachment."
     ],
     "facts_and_qualifications": [
-      "The selected deletion remains author evidence.",
-      "The objective phrase is proposed mentor body wording.",
-      "The full linked insertion contains additional wording that is not reconstructed.",
-      "The preceding proposal supplies conditional context without automatic admission or confirmed adoption."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "explicit objective",
@@ -120588,12 +120603,13 @@
     ],
     "limits": [
       "The mechanism attachment is excluded from the retained features.",
-      "No complete historical replacement pair, adoption, or general concision preference is established."
+      "No complete historical replacement pair, adoption, or general concision preference is established.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX02361",
     "scope": "paragraph",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0215",
@@ -120612,10 +120628,10 @@
       },
       {
         "id": "EX02361:E2",
-        "kind": "verbatim_mentor_fragment",
-        "text": "localization privacy",
-        "function": "Name the objective in the existing complement position.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "[application objective]",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Name the objective in the existing complement position.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -120631,7 +120647,6 @@
           "Do not construct a new historical pair or complete replacement sentence."
         ],
         "evidence_example_ids": [
-          "EX02361:E1",
           "EX02361:E2"
         ],
         "frame": "[Demonstrative goal reference] -> [explicit objective noun phrase in the same complement position].",
@@ -120639,7 +120654,7 @@
         "kind": "lexical",
         "operation": "Replace the distant goal reference with the objective's name at method entry.",
         "id": "EX02361:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       },
       {
         "conditions": [
@@ -121345,12 +121360,13 @@
       "The purpose follows from the qualified account."
     ],
     "do_not_transfer": [
-      "Do not infer privacy from arbitrary randomness.",
+      "Do not infer effectiveness from the introduction of an unspecified design element.",
       "Do not merge unlinked annotations into an exact replacement pair."
     ],
     "facts_and_qualifications": [
-      "Only the connector substitution has an explicit replacement link.",
-      "The other insertions use previously reviewed placement bindings."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "such that",
@@ -121361,12 +121377,13 @@
     ],
     "limits": [
       "No complete accepted sentence or effectiveness guarantee is established.",
-      "The surrounding contextual proposal is not admitted as another example."
+      "The surrounding contextual proposal is not admitted as another example.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX02370",
     "scope": "sentence",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0233",
@@ -121407,10 +121424,10 @@
       },
       {
         "id": "EX02370:E5",
-        "kind": "verbatim_mentor_fragment",
-        "text": "to preserve localization privacy",
-        "function": "State the purpose in the separately proposed final phrase.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "to preserve [application objective]",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. State the purpose in the separately proposed final phrase.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -121438,7 +121455,7 @@
           "Both access conditions apply to the same information."
         ],
         "do_not_transfer": [
-          "Do not conflate public signals with a hidden assignment.",
+          "Do not conflate information available to different participants.",
           "Do not infer an access condition from the wording alone."
         ],
         "evidence_example_ids": [
@@ -121468,7 +121485,7 @@
         "kind": "sentence_order",
         "operation": "Position the purpose phrase at the end of the mechanism sentence.",
         "id": "EX02370:L3",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -121594,7 +121611,7 @@
       "The surrounding information assumptions support the contrast."
     ],
     "do_not_transfer": [
-      "Do not treat shared inputs as confidential because a relation among them is confidential.",
+      "Do not transfer an information-availability assumption from one object or relation to another.",
       "Do not repair unresolved technical wording inside an existing example.",
       "Do not construct a replacement pair from independent annotations."
     ],
@@ -124601,8 +124618,9 @@
       "Do not impose this sequence as a fixed abstract template."
     ],
     "facts_and_qualifications": [
-      "The selected examples are actual proposed body text.",
-      "The intervention example remains a complete sentence."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "contrastive opening",
@@ -124613,12 +124631,13 @@
     ],
     "limits": [
       "Adoption and a general mentor preference are unconfirmed.",
-      "The incomplete setting handoff is not completed here."
+      "The incomplete setting handoff is not completed here.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX02425",
     "scope": "argument_unit",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0138",
@@ -124627,10 +124646,10 @@
     "examples": [
       {
         "id": "EX02425:E1",
-        "kind": "verbatim_mentor_fragment",
-        "text": "While techniques to preserve information privacy, such as cryptography, have been widely investigated,",
-        "function": "Introduce established work in a contrastive subordinate clause.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "While techniques to preserve [another protection goal], such as [established technique], have been widely investigated,",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Introduce established work in a contrastive subordinate clause.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
@@ -124666,7 +124685,7 @@
         "kind": "syntax",
         "operation": "Use a fronted contrastive clause before the intervention statement.",
         "id": "EX02425:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       },
       {
         "conditions": [
@@ -125198,8 +125217,9 @@
       "Do not infer sentence splitting or punctuation beyond the supplied evidence."
     ],
     "facts_and_qualifications": [
-      "The connective replacement retains its existing historical pairing.",
-      "The deleted connective remains author evidence."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "functional analogy",
@@ -125209,12 +125229,13 @@
     ],
     "limits": [
       "These are local proposed forms, not a general preference.",
-      "Adoption and scientific guarantees are unconfirmed."
+      "Adoption and scientific guarantees are unconfirmed.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX02432",
     "scope": "argument_unit",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0233",
@@ -125227,15 +125248,15 @@
         "text": "while",
         "function": "Document the replaced connective.",
         "body_form_allowed": false,
-        "pair_id": "EX02432:PAIR4"
+        "pair_id": null
       },
       {
         "id": "EX02432:E2",
-        "kind": "verbatim_mentor_fragment",
-        "text": "Similar to cryptography for information privacy,",
-        "function": "Introduce a limited functional analogy.",
-        "body_form_allowed": true,
-        "pair_id": "EX02432:PAIR4"
+        "kind": "adapted_example",
+        "text": "Similar to [established approach in another domain],",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Introduce a limited functional analogy.",
+        "body_form_allowed": false,
+        "pair_id": null
       },
       {
         "id": "EX02432:E3",
@@ -125255,7 +125276,6 @@
           "Do not infer equivalent guarantees or shared properties beyond that respect."
         ],
         "evidence_example_ids": [
-          "EX02432:E1",
           "EX02432:E2"
         ],
         "frame": "Similar to [comparison system in a stated respect], [local explanation].",
@@ -125263,7 +125283,7 @@
         "kind": "transition",
         "operation": "Replace a generic connective with an explicit functional analogy cue.",
         "id": "EX02432:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       },
       {
         "conditions": [
@@ -125304,8 +125324,9 @@
       "Do not turn multiple compatible estimates into an inability to estimate."
     ],
     "facts_and_qualifications": [
-      "The selected examples are actual proposed body fragments.",
-      "The full outcome and information definition are not reconstructed."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "fronted condition",
@@ -125316,12 +125337,13 @@
     ],
     "limits": [
       "Adoption and mathematical guarantees are unconfirmed.",
-      "No complete public replacement pair is supplied."
+      "No complete public replacement pair is supplied.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX02433",
     "scope": "argument_unit",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0039",
@@ -125339,18 +125361,18 @@
       },
       {
         "id": "EX02433:E2",
-        "kind": "verbatim_mentor_fragment",
-        "text": "with the private key",
-        "function": "Introduce an information-availability condition.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "with [required information]",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Introduce an information-availability condition.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
         "id": "EX02433:E3",
-        "kind": "verbatim_mentor_fragment",
-        "text": "while without the private key",
-        "function": "Introduce a contrasting information condition.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "while without [required information]",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Introduce a contrasting information condition.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -125390,7 +125412,7 @@
         "kind": "qualification",
         "operation": "Use corresponding information phrases with a contrastive conjunction.",
         "id": "EX02433:L2",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -125760,8 +125782,9 @@
       "Do not universalize comparative difficulty language."
     ],
     "facts_and_qualifications": [
-      "Only the proposed body fragments are selected.",
-      "The cross-column deletion is one connected event."
+      "Examples labeled adapted_example are analyst abstractions with technical content withheld; they are not historical quotations.",
+      "Unchanged verbatim examples retain their source roles. Adapted examples establish no historical replacement pair.",
+      "The analytical edit account is conditional; adoption and scientific validity remain unconfirmed."
     ],
     "retrieval_terms": [
       "topic-to-challenge transition",
@@ -125772,12 +125795,13 @@
     ],
     "limits": [
       "No supporting example or citation is supplied.",
-      "Adoption is unconfirmed."
+      "Adoption is unconfirmed.",
+      "Adapted examples cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX02439",
     "scope": "paragraph",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0246"
@@ -125785,18 +125809,18 @@
     "examples": [
       {
         "id": "EX02439:E1",
-        "kind": "verbatim_mentor_fragment",
-        "text": "however, gives rise to more challenging privacy issues",
-        "function": "Introduce the challenge associated with the preceding topic.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "however, gives rise to [a separately supported challenge]",
+        "function": "Analyst abstraction; not a historical quotation. Introduce the challenge associated with the preceding topic.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
         "id": "EX02439:E2",
-        "kind": "verbatim_mentor_fragment",
-        "text": "not only eavesdropping the messages but also sensing the environment based on their received signals",
-        "function": "Name paired activities while retaining the observation basis.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "not only [first activity] but also [second activity] based on [their observation basis]",
+        "function": "Analyst abstraction; not a historical quotation. Name paired activities while retaining the observation basis.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -125817,7 +125841,7 @@
         "kind": "transition",
         "operation": "Place a contrastive marker after the topic and connect it to a consequence predicate.",
         "id": "EX02439:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       },
       {
         "conditions": [
@@ -125836,7 +125860,7 @@
         "kind": "syntax",
         "operation": "Use parallel activity phrases with a clearly scoped final modifier.",
         "id": "EX02439:L2",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -125862,9 +125886,9 @@
       "Do not universalize a baseline capability."
     ],
     "facts_and_qualifications": [
-      "The scope example remains a complete actual proposed sentence.",
-      "The progression is supported by proposed body text.",
-      "The admitted companion is used only to interpret context."
+      "Examples labeled adapted_example are analyst abstractions with technical content withheld; they are not historical quotations.",
+      "Unchanged verbatim examples retain their source roles. Adapted examples establish no historical replacement pair.",
+      "The analytical edit account is conditional; adoption and scientific validity remain unconfirmed."
     ],
     "retrieval_terms": [
       "motivation link",
@@ -125875,12 +125899,13 @@
     ],
     "limits": [
       "Supporting algorithm slots are incomplete.",
-      "Adoption and the research-maturity claim are unconfirmed."
+      "Adoption and the research-maturity claim are unconfirmed.",
+      "Adapted examples cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX02440",
     "scope": "argument_unit",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0138",
@@ -125898,10 +125923,10 @@
       },
       {
         "id": "EX02440:E2",
-        "kind": "verbatim_mentor_prose",
-        "text": "Specifically, this paper focuses on the localization application.",
-        "function": "State the application scope directly.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "Specifically, this paper focuses on [the selected application].",
+        "function": "Analyst abstraction; not a historical quotation. State the application scope directly.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
@@ -125926,16 +125951,14 @@
           "Do not use a maturity claim as verified literature evidence."
         ],
         "evidence_example_ids": [
-          "EX02440:E1",
-          "EX02440:E2",
-          "EX02440:E3"
+          "EX02440:E2"
         ],
         "frame": "[motivation link] -> [separate scope sentence] -> [necessary setup] -> [explicit question handoff]",
         "function": "Build a motivation-to-scope-to-question progression.",
         "kind": "paragraph",
         "operation": "Separate the scope sentence and place the question handoff after its necessary setup.",
         "id": "EX02440:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -126139,9 +126162,9 @@
       "Do not silently repair or assemble omitted source text."
     ],
     "facts_and_qualifications": [
-      "The deletion and replacement are explicitly linked.",
-      "The handoff is retained wording whose changed position supports the compression operation.",
-      "Selected excerpts remain unpaired fragments or a complete generic sentence according to their existing bindings."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "contribution opener",
@@ -126152,12 +126175,13 @@
     ],
     "limits": [
       "The complete technical replacement is not selected.",
-      "Application and acceptance are unconfirmed."
+      "Application and acceptance are unconfirmed.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX02443",
     "scope": "paragraph",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0215"
@@ -126173,10 +126197,10 @@
       },
       {
         "id": "EX02443:E2",
-        "kind": "verbatim_mentor_fragment",
-        "text": "together with the key such that",
-        "function": "Coordinates a second design object and introduces the intended goal.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "together with [the second design object] such that",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Coordinates a second design object and introduces the intended goal.",
+        "body_form_allowed": false,
         "pair_id": null
       },
       {
@@ -126200,7 +126224,6 @@
           "Do not reconstruct omitted source wording."
         ],
         "evidence_example_ids": [
-          "EX02443:E1",
           "EX02443:E2"
         ],
         "frame": "we aim to design [object A] together with [object B] such that [intended outcome]",
@@ -126208,7 +126231,7 @@
         "kind": "syntax",
         "operation": "Coordinate the design objects within one explicit goal sentence.",
         "id": "EX02443:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       },
       {
         "conditions": [
@@ -126221,16 +126244,14 @@
           "Do not impose the same compression on an opener that carries otherwise unavailable information."
         ],
         "evidence_example_ids": [
-          "EX02443:E1",
-          "EX02443:E2",
-          "EX02443:E3"
+          "EX02443:E2"
         ],
         "frame": "Design-goal sentence -> contribution-list handoff.",
         "function": "Turn a repeated method summary into an orientation for the contribution list.",
         "kind": "paragraph",
         "operation": "Compress the opener while retaining the list handoff at its end.",
         "id": "EX02443:L2",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -127286,8 +127307,9 @@
       "Do not remove modifiers that distinguish different objects."
     ],
     "facts_and_qualifications": [
-      "Both local replacement pairs are explicit.",
-      "No outcome claim is transferred."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "demonstrative",
@@ -127296,22 +127318,23 @@
       "reference continuity"
     ],
     "limits": [
-      "The evidence establishes a local parallel edit, not a general preference for demonstratives."
+      "The evidence establishes a local parallel edit, not a general preference for demonstratives.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX02465",
     "scope": "sentence",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [],
     "examples": [
       {
         "id": "EX02465:E1",
-        "kind": "verbatim_author_deletion",
-        "text": "the secret",
-        "function": "First repeated determiner phrase marked for replacement.",
+        "kind": "adapted_example",
+        "text": "[previously introduced object]",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. First repeated determiner phrase marked for replacement.",
         "body_form_allowed": false,
-        "pair_id": "EX02465:PAIR12"
+        "pair_id": null
       },
       {
         "id": "EX02465:E2",
@@ -127319,15 +127342,15 @@
         "text": "this",
         "function": "First proposed demonstrative.",
         "body_form_allowed": true,
-        "pair_id": "EX02465:PAIR12"
+        "pair_id": null
       },
       {
         "id": "EX02465:E3",
-        "kind": "verbatim_author_deletion",
-        "text": "the secret",
-        "function": "Second repeated determiner phrase marked for replacement.",
+        "kind": "adapted_example",
+        "text": "[previously introduced object]",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Second repeated determiner phrase marked for replacement.",
         "body_form_allowed": false,
-        "pair_id": "EX02465:PAIR13"
+        "pair_id": null
       },
       {
         "id": "EX02465:E4",
@@ -127335,7 +127358,7 @@
         "text": "this",
         "function": "Parallel demonstrative proposal.",
         "body_form_allowed": true,
-        "pair_id": "EX02465:PAIR13"
+        "pair_id": null
       }
     ],
     "language_features": [
@@ -127350,16 +127373,14 @@
         ],
         "evidence_example_ids": [
           "EX02465:E1",
-          "EX02465:E2",
-          "EX02465:E3",
-          "EX02465:E4"
+          "EX02465:E3"
         ],
         "frame": "[Antecedent introduction]; with this [noun] ... without this [noun].",
         "function": "Maintain one antecedent across a parallel contrast.",
         "kind": "syntax",
         "operation": "Use the same demonstrative determiner in both contrast arms while retaining their shared noun.",
         "id": "EX02465:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -127999,13 +128020,13 @@
       "The paragraph moves to a clearly named focal topic."
     ],
     "do_not_transfer": [
-      "Do not adopt the actual proposal as a grammatical model.",
-      "Do not attribute a corrected phrase to the mentor.",
+      "Do not attribute the analyst-created wording to the mentor.",
       "Do not infer scientific rejection of the removed objective."
     ],
     "facts_and_qualifications": [
-      "The selected fragments have different scopes and are not a complete historical replacement pair.",
-      "The abstract frame describes a role change rather than supplying replacement prose."
+      "Examples labeled adapted_example are analyst abstractions with technical content withheld; they are not historical quotations.",
+      "Unchanged verbatim examples retain their source roles. Adapted examples establish no historical replacement pair.",
+      "The analytical edit account is conditional; adoption and scientific validity remain unconfirmed."
     ],
     "retrieval_terms": [
       "topic adjunct",
@@ -128015,12 +128036,13 @@
     ],
     "limits": [
       "No complete revised paragraph is supplied.",
-      "Adoption and general stylistic preference are unconfirmed."
+      "Adoption and general stylistic preference are unconfirmed.",
+      "Adapted examples cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX02474",
     "scope": "paragraph",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0215"
@@ -128036,10 +128058,10 @@
       },
       {
         "id": "EX02474:E2",
-        "kind": "verbatim_mentor_fragment",
-        "text": "With regarding to privacy in localization, a",
-        "function": "Records the actual direct-domain proposal without grammatical correction.",
-        "body_form_allowed": true,
+        "kind": "adapted_example",
+        "text": "With regard to [the established topic], [the approach clause follows]",
+        "function": "Analyst-created grammatical topic handoff; the original technical topic and defective wording are not reproduced.",
+        "body_form_allowed": false,
         "pair_id": null
       }
     ],
@@ -128050,12 +128072,10 @@
           "The retained approach belongs to the named focal topic."
         ],
         "do_not_transfer": [
-          "Do not recommend the defective grammar of the actual proposal.",
-          "Do not treat the abstract frame as corrected mentor wording.",
+          "Do not attribute the grammatical analyst adaptation to the mentor.",
           "Do not remove an objective statement that readers still need."
         ],
         "evidence_example_ids": [
-          "EX02474:E1",
           "EX02474:E2"
         ],
         "frame": "[named-topic adjunct] + [retained first-approach clause]",
@@ -128063,7 +128083,7 @@
         "kind": "transition",
         "operation": "Compress the opening into a topic adjunct that leads directly into the retained approach sentence.",
         "id": "EX02474:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       }
     ]
   },
@@ -128546,9 +128566,9 @@
       "Do not turn a local adjective substitution into a general terminology rule."
     ],
     "facts_and_qualifications": [
-      "The selected relative clause preserves its source spelling.",
-      "The before fragment remains author-deletion evidence.",
-      "The implication-placement feature is analytical and supplies no historical consequence sentence."
+      "Examples labeled adapted_example were abstracted by the assistant on 2026-10-26; placeholders are not historical manuscript text.",
+      "Unchanged verbatim examples retain their source roles. Historical pairing is not asserted for adapted examples.",
+      "The analytical edit account describes a local proposal; adoption and technical correctness are unconfirmed."
     ],
     "retrieval_terms": [
       "observer relative clause",
@@ -128558,12 +128578,13 @@
     ],
     "limits": [
       "The research-specific consequence and formal result are excluded.",
-      "Adoption and general preference are unconfirmed."
+      "Adoption and general preference are unconfirmed.",
+      "Adapted examples and their dependent features are analytical aids only; they cannot establish literal mentor wording or verified body syntax."
     ],
     "id": "EX02481",
     "scope": "argument_unit",
     "publication_permission": "user_authorized_public_distribution",
-    "content_status": "admission_reviewed_minimized_public_release",
+    "content_status": "minimized_public_release_with_local_disclosure_abstraction",
     "preference_status": "local_example_not_verified_general_preference",
     "concern_ids": [
       "C0233",
@@ -128578,15 +128599,15 @@
         "text": "even with this set known,",
         "function": "Deleted author concessive; its underlying assumption is not thereby globally removed.",
         "body_form_allowed": false,
-        "pair_id": "EX02481:PAIR04"
+        "pair_id": null
       },
       {
         "id": "EX02481:E4",
-        "kind": "verbatim_mentor_fragment",
-        "text": "who dose not know which strategy is applied",
-        "function": "Proposed relative clause identifying missing choice information; source spelling retained.",
-        "body_form_allowed": true,
-        "pair_id": "EX02481:PAIR04"
+        "kind": "adapted_example",
+        "text": "who dose not know [the relevant unknown choice]",
+        "function": "Analyst abstraction of a historical example; not a verbatim quotation. Proposed relative clause identifying missing choice information; source spelling retained.",
+        "body_form_allowed": false,
+        "pair_id": null
       }
     ],
     "language_features": [
@@ -128601,7 +128622,6 @@
           "The abstract frame is not a corrected historical quotation."
         ],
         "evidence_example_ids": [
-          "EX02481:E3",
           "EX02481:E4"
         ],
         "frame": "[observer] + [relative clause describing the unknown applied choice] + [main predicate]",
@@ -128609,7 +128629,7 @@
         "kind": "syntax",
         "operation": "Replace the concessive aside with an observer-modifying relative clause specifying the unknown applied choice.",
         "id": "EX02481:L1",
-        "evidence_status": "source_supported_expression_admission_review_not_acceptance"
+        "evidence_status": "analyst_abstraction_not_literal_mentor_wording"
       },
       {
         "conditions": [

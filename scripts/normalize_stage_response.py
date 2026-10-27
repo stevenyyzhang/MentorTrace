@@ -40,6 +40,12 @@ def normalize(run: Path, stage: str, raw_path: Path):
     raw_path = raw_path.resolve()
     original = mentortrace.read(raw_path)
     candidate = copy.deepcopy(original)
+    output_expansion = None
+    if 'advisor_output_version' in original:
+        import advisor_output
+        candidate = advisor_output.expand(original, mentortrace.context_for(run, stage))
+        output_expansion = {'version': original['advisor_output_version'],
+                            'policy': 'Exact explicit references, row tables and deterministic metadata; no semantic repair.'}
     pages = {p["page"]: p["text"] for p in mentortrace.read(run / "inputs/paper/body.json")}
     changes = []
     unresolved = []
@@ -139,6 +145,13 @@ def normalize(run: Path, stage: str, raw_path: Path):
                 type_changes.append({"path": f"evidence_requests[{index}]",
                                      "change": "purpose renamed reason without changing its text"})
     folder = raw_path.parent
+    protocol_path = run/'inputs/protocol.json'
+    if stage.startswith('supplement_') and protocol_path.is_file() and mentortrace.read(protocol_path).get('advisor_output_contract'):
+        import advisor_output
+        context = mentortrace.context_for(run, stage)
+        inventory = advisor_output.preflight(candidate, context)
+        inventory['unresolved_anchors'] = unresolved
+        mentortrace.save(folder/'response_preflight.json', inventory)
     output_path = folder / "normalized_response.json"
     log_path = folder / "anchor_normalization.json"
     output_path.write_text(json.dumps(candidate, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -148,6 +161,7 @@ def normalize(run: Path, stage: str, raw_path: Path):
         "policy": "Only complete unique text alignment under declared normalization is allowed; schema repairs are logged. Explicit single-page location descriptions may be serialized as image locators with the entire original description retained. No target-specific overrides, quotation-to-image conversions or judgment changes. Finding content is unchanged.",
         "changes": changes,
         "type_changes": type_changes,
+        "output_expansion": output_expansion,
         "unresolved": unresolved,
     }, ensure_ascii=False, indent=2), encoding="utf-8")
     return output_path, len(changes), unresolved

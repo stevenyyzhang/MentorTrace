@@ -15447,7 +15447,7 @@
     "section_task": "Order detailed explanation by the estimator's data dependency before analyzing resources.",
     "retrieval_terms": [
       "input preparation",
-      "quantization before estimation",
+      "input preparation before dependent processing",
       "exposition order",
       "dependent explanation",
       "algorithm before resource analysis"
@@ -16408,7 +16408,7 @@
       "transition by references",
       "recap compression",
       "model qualification",
-      "Gaussian test channel model"
+      "[analysis model]"
     ],
     "concern_ids": [
       "C0041",

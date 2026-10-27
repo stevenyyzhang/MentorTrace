@@ -1,5 +1,12 @@
 # Delivery preservation review
 
+New `review_efficiency: 1` runs use the [combined review workflow](review-workflow.md)
+to produce A, B and final-text records without separate repeated model calls.
+Seed matching A from source/execution review; check genuinely new sources in an
+isolated delta. Generate B and final-text/language records in one delivery pass
+and still validate both. The requirements below remain authoritative; separate
+ledger files do not require separate calls for identical material.
+
 For editorial suggestions, preservation means accountable adjudication rather than compulsory publication of every candidate. Test current-manuscript sufficiency and the proposed change's net gain before checking output preservation. Supported no-change, equivalent-style and unselected alternatives need evidence-based dispositions. The delivered set must implement a compatible preferred path per reader task without duplicated or conflicting replacements. Check that separately justified content requirements survive a rejected move. Do not use comment totals or final-draft status as evidence of correctness, and do not certify an entire report from a scoped editorial re-adjudication.
 
 Apply source-fidelity.md to Original quotations and formula-related assertions in addition to Phase A/B and the version 2 final-text ledger. Reuse the checked source transcription, compare the rendered decisive glyphs against the bound original page, and keep repeated quotations consistent. A preserved earlier requirement does not certify its source accuracy. If a quotation correction contradicts a finding's premise, readjudicate the finding and affected shared actions before delivering the corrected report.
@@ -67,5 +74,15 @@ Distinguish the manuscript's stated aim from its demonstrated result and any gua
 When a broad replacement consumes a sentence also named by another revision action, identify that overlap explicitly. Apply the broad replacement once and carry each still-required local correction into its new passage or a specifically retained location; retire the instruction to edit a sentence that no longer exists. Select mutually exclusive conventions before coordinating their dependent formulas and descriptions. A general request to "coordinate" does not establish where the surviving correction will be implemented.
 
 ## Limits
+
+For new adaptive runs, the combined workflow may bind a frozen accepted Verify
+chain and record `reused_verified` assertions. Each requires an explicit comparison
+of the same claim, its conditions and uncertainty, and absence of new facts against
+the complete accepted `relation`, `gap` or `impact` field. This preserves an earlier
+judgment with provenance, not a fresh evidence check. Hashes alone never authorize
+reuse; future repair requests cannot ground claims about implemented changes.
+All other assertions retain the ordinary grounding/conditional/unresolved rules.
+See [combined workflow](review-workflow.md). Both coverage and preservation gates
+remain required, and inherited diagnostic errors remain a limitation of reuse.
 
 Version 1 ledgers remain readable as legacy accounting records; they have no final-text fact inventory and cannot satisfy new export requirements. Both checkers reject stale sources, missing accounting, invented excerpts and pending reviews. They cannot prove all clauses/assertions were identified, evidence establishes the conclusion, or the wording is natural. Passing returns records_validated with semantic_correctness_verified=false, never scientific truth, diagnostic recall or model independence. Record these limits honestly and disclose remaining checks.

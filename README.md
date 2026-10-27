@@ -1,6 +1,6 @@
 # MentorTrace
 
-Version: [v1.1.0](VERSION)
+Version: [v1.2.0](VERSION)
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
@@ -8,6 +8,17 @@ Version: [v1.1.0](VERSION)
 MentorTrace derives judgment patterns from an academic supervisor's actual comments and successive manuscript revisions, and draws on published papers that supervisor considers well written to help authors identify problems in a new manuscript's argument, technical support, organization and expression. During review, it follows the manuscript's argument chains, technical relationships and revision cues, continually asking whether explanations are sufficient, whether arguments are complete, and whether conclusions are supported by evidence. Each review comment identifies the relevant manuscript passage, explains the issue and its basis, and provides concrete revision suggestions. The results are organized into bilingual English–Chinese Markdown and PDF reports.
 
 The current implementation runs as a **Codex skill with a Python workflow** and accepts **PDF manuscripts**. **LaTeX source input and output** are planned. It produces revision guidance and reports; automatically applying changes to the manuscript is not yet integrated.
+
+## Changes from 1.1.0 to 1.2.0
+
+- **Complete libraries, distinct roles:** retain 493 Concerns and 1,581 Expressions. Advisor directly reviews the full manuscript without a preliminary task map. Concern tests requirements and problems; Expression compares concrete wording and paragraph operations. Reader/Expert retain object planning and case selection; their plans and conclusions are not supplied to Advisor.
+- **Automatic capacity and batching:** read the selected Codex model catalog capacity and check complete requests, images, output reserves and transport limits across stages, replacing the fixed 950,000-byte rejection in new adaptive runs. Minimize Advisor batches within capacity and workload limits, prefer at most 12, and automatically add necessary batches without asking users to configure them. Twelve source groups track provenance, not a fixed number of calls.
+- **Less repeated input and output:** use reversible references for repeated material, separate review and drafting views, and share repeated expression operations while retaining individual conditions and exceptions. Programs handle IDs, exact references and mechanical records. Missing judgments never count as reviewed. Brief non-action Expression records reduce audit detail; improved review quality is not established.
+- **Three concurrent workers by default:** after prerequisites, Reader, Expert, Advisor and Editor run in isolated contexts. Independent source-check and combined-delivery packets also use up to three workers. Dependent phases remain sequential; failed calls are not automatically retried.
+- **Expression remains involved in drafting:** after consolidation and verification, complete examples connected to retained items support concrete sentence and paragraph revisions. Each draft need not reload the entire library. Source-use records retain conditions and provenance.
+- **Leaner checks and reports:** combine related checks, explicitly reuse unchanged verified judgments, and ground new or changed claims. Reduce repeated explanations and overlapping rewrites; request exact missing facts and insertion locations instead of fill-in paragraphs. Preserve both languages and both delivery gates.
+
+Capacity reserves, complete source coverage and frozen historical runs retain their contracts. The latest combined workflow has offline validation; elapsed time depends on the paper, model and necessary follow-ups, with no guaranteed two-hour runtime. See [workflow](.agents/skills/mentortrace/references/review-workflow.md), [batching](.agents/skills/mentortrace/references/advisor-batching.md) and [complete-request capacity](.agents/skills/mentortrace/references/request-capacity.md).
 
 ## Changes from 1.0.0 to 1.1.0
 
@@ -31,7 +42,7 @@ The current implementation runs as a **Codex skill with a Python workflow** and 
 Ask Codex to download the repository and prepare the environment:
 
 ```text
-Download the complete MentorTrace v1.1.0 repository or release package from https://github.com/stevenyyzhang/MentorTrace locally, verify VERSION, configure its required dependencies, check the environment, and tell me which repository directory to open in Codex.
+Download the complete MentorTrace v1.2.0 repository or release package from https://github.com/stevenyyzhang/MentorTrace locally, verify VERSION, configure its required dependencies, check the environment, and tell me which repository directory to open in Codex.
 ```
 
 Once setup is ready, open the downloaded repository root in Codex, place your PDF in a local `workspaces/` directory, and use the review prompt below. See [Dependencies and execution guide](#dependencies-and-execution-guide) for dependencies and model access.
@@ -67,11 +78,11 @@ flowchart TB
     T["Expert<br/>Relationships<br/>and reasoning"]
     A["Advisor<br/>Independent review<br/>Concern + Expression"]
     L["Editor<br/>Wording, notation<br/>and formatting"]
-    M["Freeze source findings<br/>Review execution and merge"]
+    M["Consolidate retained findings"]
     V["Independent verification<br/>against manuscript evidence"]
-    Q["Judge source requirements<br/>Freeze source review"]
+    Q["Freeze initial results<br/>Source and execution checks<br/>Up to three independent packets"]
     D["Propose revisions<br/>Draft the bilingual report"]
-    B["Compare requirements<br/>Check final facts and wording"]
+    B["Coverage, facts and language checks<br/>Up to three independent packets"]
     OUT["Bilingual Markdown<br/>PDF and page inspection"]
 
     F --> O --> C
@@ -79,11 +90,11 @@ flowchart TB
     C --> T
     F ----> A
     F ----> L
-    R --> M
-    T --> M
-    A --> M
-    L --> M
-    M --> V --> Q --> D --> B --> OUT
+    R --> Q
+    T --> Q
+    A --> Q
+    L --> Q
+    Q --> M --> V --> D --> B --> OUT
 
     classDef input fill:#f8fafc,stroke:#94a3b8,color:#0f172a;
     classDef review fill:#eff6ff,stroke:#60a5fa,color:#172554;
@@ -93,7 +104,7 @@ flowchart TB
     class OUT output;
 ```
 
-Arrows before review show the main input dependencies: object and task planning and case selection serve Reader and Expert only. Advisor starts independently from the full manuscript, its current Concern batch and relevant examples from the bundled Expression library. Relevant Expression evidence also supports post-verification drafting.
+Arrows before review show data dependencies, not launch order. After prerequisites, the scheduler runs up to three initial calls concurrently: object and task planning and case selection serve Reader and Expert only. Advisor starts independently from the full manuscript, its current Concern batch and relevant examples from the bundled Expression library. Relevant Expression evidence also supports post-verification drafting.
 
 | Module | Main inputs | Function |
 | --- | --- | --- |
@@ -102,7 +113,7 @@ Arrows before review show the main input dependencies: object and task planning 
 | Advisor | Full manuscript, Concern requirements and relevant Expression examples | Independently check historical concerns and applicable wording or paragraph operations; retain only suggestions supported by the new manuscript. |
 | Editor | Full manuscript, text units to inspect | Check language, notation, terminology consistency and formatting. |
 
-Models perform all four review lanes. Historical concerns and paper cases guide the questions; every final finding still needs specific evidence from the new manuscript. In v1.1.0, reviewers inspect actual initial execution after its freeze, adjudicate changed source requirements before comparing their final delivery, and review the final report facts, conditions and wording. Tools check source hashes, accounting and exact excerpts; they do not certify scientific correctness. These changes still need controlled manuscript replay. See the [execution guide](.agents/skills/mentortrace/references/execution.md) for details.
+Models perform all four review lanes. Historical concerns and paper cases guide the questions; every final finding still needs specific evidence from the new manuscript. In v1.2.0, source requirements and execution are checked together after initial freeze, followed by consolidation, verification and drafting. Frozen reports receive combined coverage, facts, conditions, bilingual and expression-realization checks. Tools check source hashes, accounting and exact excerpts; they do not certify scientific correctness. These changes still need controlled manuscript replay. See the [execution guide](.agents/skills/mentortrace/references/execution.md) for details.
 
 ## Report contents
 

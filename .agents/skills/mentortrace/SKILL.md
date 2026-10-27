@@ -3,7 +3,7 @@ name: mentortrace
 description: Diagnose academic manuscripts with independent Reader, Expert, Advisor and Editor reviews; retrieve task-matched exemplary-paper cases for evidence-grounded findings and revision proposals. Also extract conditional Concern records and preserve actual mentor Expression examples from explicitly supplied historical feedback and revisions. Automatic manuscript editing is not integrated.
 ---
 
-# MentorTrace 1.1.0
+# MentorTrace 1.2.0
 
 The four review modules are **Reader, Expert, Advisor and Editor**. Expert performs technical review; Editor handles language and surface checks. Their serialized stage IDs remain `technical` and `language` for compatibility with frozen runs. **Concern** records describe what the mentor asks authors to explain or justify. **Expression** records preserve concrete mentor-proposed wording and paragraph actions. Normal CLI runs load the bundled 1,581-record `corpus/advisor-expression-v1` for independent Advisor review and related drafting; read [Expression](references/expression.md) for its source and transfer boundaries.
 
@@ -11,6 +11,53 @@ Before admitting or transferring an Expression, identify the concrete wording or
 paragraph operation it adds and compare it with applicable Concerns using the
 [admission boundary](references/expression.md#expression-admission-and-concern-overlap).
 An attributable edit alone does not establish a reusable expression feature.
+
+Within the same independent Advisor call, Concern tests whether requirements and
+relationships are sufficiently supported; Expression contributes specific wording,
+syntax, qualification, transitions or sentence/paragraph operations. Name what
+Expression adds beyond any Concern requirement, compare the actual target, and
+keep equivalent or unsuitable prose unchanged. An Expression may implement a
+necessary repair, independently support an optional improvement or identify a
+target-evidenced local expression error. Do not duplicate a generic requirement
+as another problem. Follow the versioned contribution accounting in
+[Advisor responsibilities](references/advisor-batching.md#source-responsibilities).
+
+New direct Advisor runs use [compact output records](references/advisor-output.md):
+write each actual target analysis once, retain explicit dispositions for every
+source/use, and let the program expand exact source/anchor references and mechanical
+links. All substantive evidence and ordinary validators remain required. Preserve
+frozen older protocols; offline replay is not a new review or measured speedup.
+
+New runs additionally pin `advisor_expression_brief: 1` to prioritize elapsed time.
+For non-action Expressions, this overrides the verbose per-case transfer/check
+requirement: record an explicit decision, one concise operation-based reason, and
+an actual anchor for KEEP. All sources and uses remain accounted for, but these
+are limited-depth assessments, not exhaustive application audits. Clear repairs
+and worthwhile optional improvements retain full source and manuscript evidence.
+Concern review and Reader/Expert remain unchanged. Follow the brief protocol in
+[Advisor output](references/advisor-output.md#brief-expression-assessment).
+Disclose this reduced depth in report coverage. Do not claim a two-hour completion
+guarantee or convert omitted judgments into no-change decisions.
+
+New runs also pin `advisor_efficiency: 1`. Read related expression-operation
+families together in the same Advisor call. These are routing hints, never merged
+evidence or automatic judgments. Keep each case's conditions and exceptions.
+Return explicit shared non-action groups only when the actual decision, reason
+and target support every named member. Detail actionable cases normally. The
+runtime view keeps operations, examples, feature/provenance information, conditions,
+facts and boundaries; five narrative/retrieval fields remain local. This narrower
+view can miss subtle contextual applications and must be disclosed in coverage.
+Use exact passage identifiers or explicit image-page locators rather than retyped
+quotations. See [shared guidance and object locators](references/advisor-output.md#shared-guidance-and-object-locators).
+
+When pinned, use the source-bound shared guidance catalogue prepared with the
+library: related-operation groups organize inspection, while every case retains
+its own conditions, exceptions, examples and explicit verdict. Do not regenerate
+this corpus comparison for each manuscript or quote canonical analyst guidance as
+mentor wording. Use supplied text/object IDs for evidence locations; equation and
+caption candidates still require page-image inspection, and ambiguous labels must
+not be treated as certified object identification. Frozen older runs keep their
+original protocol.
 
 For mentor-guided English drafting with an `expression_realization: 1` snapshot,
 apply [concrete language realization](references/expression-realization.md) after
@@ -42,7 +89,19 @@ Confirm the available manuscript version and scope from supplied files. Ask only
 
 ## Execution efficiency
 
+For normal public-corpus reviews, follow [Advisor grouping, capacity and workload](references/advisor-batching.md) before any review lane. Read the selected Codex model capacity automatically, without asking users for capacity numbers or batch approval. Minimize complete packets within the pinned capacity/workload bounds, preferring at most 12 packets. Automatically allow necessary extra packets when complete packing requires them; record the count/reason without asking the user. Never fill a smaller plan to 12. Do not hard-code Sol 6 or Astra 10: these are offline examples for one paper. Preserve all 493 Concerns, 1,581 Expressions, candidate associations and conditions, including unlinked cases. Each source requires an explicit result; missing results never imply review. Candidate associations are references with discounted selection cost, not mandatory separate judgments. Keep fixed groups as provenance, assign each primary Concern once, and preserve full context where needed. No Advisor task map or Reader/Expert plans constrain its full-manuscript review. Finalize and validate all packets before review, then repeat capacity/workload checks at submission. Exceeding 12 is not an error. Missing metadata or an indivisible source that cannot fit remains a genuine execution failure; preserve materials and report it without asking for routine parameter choices. Never truncate, lower reserves or change model/effort. Cached valid responses use no new submission slot. Host permissions remain in force. Reader/Expert and existing frozen runs retain their workflows.
+
 Apply [execution efficiency](references/execution-efficiency.md) when submitting, resuming or postprocessing reviews. Reuse valid stage outputs with their original settings/provenance; renew only reviews affected by changed text, context, evidence or applicable rules. Submit complete task-relevant evidence, group related final-text checks, and use concise evidence-focused records. Batch complete packets to verified capacity and run independent batches with bounded concurrency. Keep initial lanes and Phase A/B isolated, preserve their full required coverage, and use local programs for mechanical checks. Inspect failed/uncertain attempts before retrying; stop after required delivery checks pass.
+
+New adaptive runs pin `review_efficiency: 1` and follow the
+[combined review workflow](references/review-workflow.md): after the existing
+Reader/Expert object plan and case selection, run Reader/Expert, independent
+Advisor and Editor concurrently in separate contexts, defaulting to three workers.
+Combine source-only execution/requirement review; then combine report coverage,
+final facts, bilingual meaning/style and Expression realization. Programs expand
+only actual explicit judgments into the existing ledgers. Both delivery gates,
+complete source decisions, original provenance and capacity reserves remain
+mandatory. Offline replay is not a new review or a measured speedup.
 
 Use Standard by default. Fast requires explicit user authorization naming the tier and accepting its additional usage; urgency, acceleration requests and deadlines are not authorization. Any reasoning-effort change, upward or downward, also requires explicit user authorization naming the new effort. Preserve the authorized model/effort across stages; never lower effort automatically to save time or usage. These rules travel with this skill and apply to isolated CLI and alternative transports without changing users' global settings.
 
@@ -54,7 +113,7 @@ Apply [source fidelity](references/source-fidelity.md): extracted text locates e
 2. **Plan general checks without verdicts.** Preserve both ends of each relationship, the actual conclusion and its conditions. Planning serves Reader and Expert; it is not a mandatory inventory for Advisor. In case-enhanced mode, freeze a separate task-to-case route from this plan before either lane runs.
 3. **Run four isolated lanes**, following the table below. Reader and Expert may add targets. Advisor independently creates and judges its own relation inventory; it does not attach cards to the general plan. Every Advisor batch reads the same full manuscript. Complete the frozen coverage plan without requiring a problem per card.
 4. **Respect evidence availability.** Public cards contain analytical abstractions, not private histories. Request historical follow-up only when a separately supplied package explicitly declares those fields available. Otherwise preserve unknown/unfinished outcomes. Follow-ups are not independent initial discovery.
-5. **Freeze raw findings.** Preserve original lane responses, additional targets, evidence findings, language uncertainty and coverage. A relation, a check and a reportable finding are different records. Review the actual initial execution against its frozen targets and manuscript support before integration, following execution.md. Distinguish unattempted task scope from completed-but-unknown judgment; source-ID coverage alone does not prove each relation was answered.
+5. **Freeze raw findings.** Preserve original lane responses, additional targets, evidence findings, language uncertainty and coverage. A relation, a check and a reportable finding are different records. In new `review_efficiency: 1` runs, combine execution and source-requirement review in an isolated source-only pass, which may overlap merge and must finish before Verify. Earlier protocols retain their pre-integration execution review. Distinguish unattempted task scope from completed-but-unknown judgment; source-ID coverage alone does not prove each relation was answered.
 6. **Organize and independently verify.** Apply [merge and verify](references/merge-verify.md). Deduplicate the same requirement; retain independently answerable gaps and concrete closure goals. Verify against the manuscript in a fresh context, retaining source links and evidence for withdrawals. Fewer findings is not a quality target.
 7. **Audit delivery and freeze.** Complete the two-phase source-requirement comparison and version 2 final-text review in [delivery preservation](references/delivery-preservation.md). Judge original changed requirements before viewing the changed output, then bind coverage to the actual final report. Review its facts, both-language meaning and direct wording after the last edit. Check that supported specific requirements survived into the author-facing output. If re-reviewing the same manuscript, compare the newly frozen findings with the prior report only after independent discovery; give every prior item an evidence-based retained, covered, rejected or unresolved disposition before replacing its report. A changed model output alone does not justify silently losing a language correction. If reorganization is needed, preserve the prior version and create a source-traceable new version without target-directed questions. Deliver the three author-facing comment categories under report-language.md, with unresolved items and coverage limits.
 8. **Score only when requested, after delivery freeze.** Use a separate context for target advisor comments/problem chains. Fix applicability and counting rules before comparing scores; multiple findings matching one chain count once. Report full, partial and miss separately. Reorganization or grading changes are not new autonomous discoveries.
@@ -63,7 +122,7 @@ Apply [source fidelity](references/source-fidelity.md): extracted text locates e
 |---|---|---|
 | [Reader / Structure](references/reader-structure.md) | Full manuscript/images + general plan; selected [Reader cases](references/goodpaper-reader.md) only in case-enhanced mode; no other initial lane findings | Attempt key reader tasks; locate support, reading friction and necessary missing connections for the intended audience |
 | [Expert](references/expert-checks.md) | Full manuscript/images + general plan; selected [Expert cases](references/goodpaper-expert.md) only in case-enhanced mode; no other initial lane findings | Information availability, mechanisms, assumptions, operations and supported claims |
-| [Advisor](references/advisor-evidence.md) | Full manuscript/images + current card batch; **no general plan or earlier findings** | Historical distinctions → independently located manuscript relations → evidence-based judgments |
+| [Advisor](references/advisor-evidence.md) | Full manuscript/images + assigned complete Concerns and Expressions; **no preliminary task map, general plan or earlier findings** | Source distinctions and concrete operations → independently located manuscript relations → evidence-based judgments and optional improvements |
 | [Editor / Surface](references/editor-surface.md) | Full manuscript/images and text blocks; no plan or cards | Definite language, notation, reference and formatting errors; uncertainty and optional style separate |
 
 The [diagnosis contract](references/diagnosis-contract.md) governs content-lane evidence and judgments; it is not another review lane. Editor uses its own coverage contract and records definite small errors regardless of importance. Full coverage does not guarantee zero missed errors. Input isolation matters whether calls run sequentially or concurrently.
@@ -102,6 +161,12 @@ For each finding show its location, what the manuscript already supplies, the mi
 
 Identify anchored objects before judging them. Readers may know standard graduate-level domain concepts but not manuscript-specific assumptions or notation. Separate earlier-text accessibility from whole-paper support. Sufficient text and reasonable previews pass; unreadable evidence stays unknown.
 
+For new adaptive runs, follow the [combined workflow](references/review-workflow.md): retain independent initial review and Verify; after freeze, explicitly reuse unchanged verified diagnostic claims while grounding new or changed claims. Keep reports concise without losing requirements or bilingual content, and replace unsupported fill-in drafts with exact author actions. Never infer that a missing review result passed.
+
+Apply [complete-request capacity](references/request-capacity.md) to every stage in new adaptive runs. Use detected model and transport limits with unchanged reserves instead of the legacy byte cutoff. Automatically execute prepared complete-task partitions without asking users to confirm batching; preserve full evidence, source coverage and original outputs. Send prepared drafts with `run_prepared_draft.py`, including when a draft names a capacity plan. Both complete-report delivery gates still apply.
+
+For each prepared source-check or combined-delivery bundle, run `run_review_packet.py` without `--packet` to default to three isolated workers. Use its complete response list for phase assembly; do not proceed on failures or missing judgments. Keep dependent phases sequential as specified in [review workflow](references/review-workflow.md). Parallelism never grants permission for a new model setting or paid retry.
+
 Historical feedback is conditional evidence, not a required answer. Reference provenance and issue type are separate: an advisor-derived concern may be technical, explanatory, organizational, or stylistic. Revisions need actual task authorization; autonomous discovery and supplied-comment repair are distinct modes.
 
 Keep raw findings, later-added objects and verification discoveries separately traceable. Do not merge different relations simply because their topic or location is shared. Freeze supported review findings before drafting revisions, but do not turn these two processing stages into separate report parts. Present supported wording beside its numbered comment or after its group's shared revision plan. Where the manuscript lacks facts, identify the exact author-supplied condition, method step or evidence needed. After diagnosis freeze, use selected source relation reconstructions and verified target facts to develop revisions, following [repair boundary](references/repair-contract.md). Unvalidated editing recipes are excluded from execution inputs; see [case evidence](references/case-evidence.md). The runner does not automatically edit the manuscript.
@@ -113,3 +178,7 @@ For every author-facing bilingual report, use the [bilingual report language rul
 ### Generic Reader multiscale coverage
 
 New runs use `reader_multiscale: 4` and `editorial_selection: 1`. Planning and Reader load [reader-checklist.md](references/reader-checklist.md), inventory actual chapter tasks, structural scales and relationships, and reconstruct understanding with evidence, including sufficient and unfinished outcomes. Inspect first use, display placement, paragraph handoffs, section arrangement and information selection separately from comprehension. Keeping the current arrangement is the baseline; an editorial question need not produce an edit. Freeze a grounded candidate when one is worth testing, otherwise an explicit null candidate with a manuscript-specific reason. Compare actual reader gain with transition, repetition, emphasis and space costs. Reader and Advisor distinguish necessary repairs, useful optional changes and equivalent style. Concern, Expression and good-paper examples guide questions and phrasing without obligating revisions. Merge and verify record decision groups, choose one compatible path per task, and explicitly dispose of competing proposals; independent content requirements survive. Preserve these groups in `organization_review.json`. Coverage is not a comment-count target. Frozen older runs retain their original protocol.
+
+For stage-specific Expression content, follow [Review and drafting views](references/advisor-output.md#review-and-drafting-views): diagnose with the pinned review view and reload full selected frozen sources for post-merge drafting.
+
+For new Advisor runs, follow [Shared analyses and explicit source results](references/advisor-output.md#shared-analyses-and-explicit-source-results): one analysis per actual problem, explicit result for every source, and no assumed review of unused associations.

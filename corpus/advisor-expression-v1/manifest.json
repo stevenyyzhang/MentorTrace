@@ -51,11 +51,462 @@
     "Editorial instructions are disclosed only as analytical operations; no raw comment examples.",
     "New semantic admission and full supplied-Concern comparison reuse valid previous attribution and quote checks.",
     "Local conditional cases do not establish general mentor preference, acceptance or better rewriting.",
-    "Distribution follows the project owner instruction; this records authorization, not independent certification of third-party rights."
+    "Distribution follows the project owner instruction; this records authorization, not independent certification of third-party rights.",
+    "The 2026-10-26 local disclosure abstraction relabels altered examples as analyst adaptations. Dependent literal-language features are withheld by the existing runtime; analytical accounts remain usable."
   ],
   "distribution_authorization": {
     "kind": "project_owner_instruction",
     "date": "2026-10-15",
     "scope": "Distribute the reviewed 1581-record minimized Expression library together with MentorTrace v1.1.0 in the same public repository."
+  },
+  "disclosure_abstraction": {
+    "date": "2026-10-26",
+    "performed_by": "current_assistant_local_edit",
+    "basis": "User requested retaining most records and further abstracting potentially revealing content.",
+    "previous_records_sha256": "5832f492f73ab44ead00883a6d41aa4c1e48ba72c23df9fc18a92c0bb2eee31d",
+    "changed_records": 39,
+    "adapted_examples": 51,
+    "affected_features_analytical_only": 45,
+    "scope": "Selected model, optimization, resource-design and privacy-mechanism connections; not a new source-rights or scientific validation.",
+    "prior_model_review_scope": "Existing model-review settings describe the earlier snapshot, not these local edits.",
+    "changes": [
+      {
+        "id": "EX01151",
+        "adapted_example_ids": [
+          "EX01151:E2"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01151:L2"
+        ]
+      },
+      {
+        "id": "EX01184",
+        "adapted_example_ids": [
+          "EX01184:E4"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01184:L1"
+        ]
+      },
+      {
+        "id": "EX01188",
+        "adapted_example_ids": [
+          "EX01188:E4"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01188:L3"
+        ]
+      },
+      {
+        "id": "EX01199",
+        "adapted_example_ids": [
+          "EX01199:E3"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01199:L1"
+        ]
+      },
+      {
+        "id": "EX01217",
+        "adapted_example_ids": [
+          "EX01217:E1"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01217:L1"
+        ]
+      },
+      {
+        "id": "EX01798",
+        "adapted_example_ids": [
+          "EX01798:E1",
+          "EX01798:E2"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01798:L2",
+          "EX01798:L3"
+        ]
+      },
+      {
+        "id": "EX01799",
+        "adapted_example_ids": [
+          "EX01799:E1",
+          "EX01799:E2"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01799:L1"
+        ]
+      },
+      {
+        "id": "EX01800",
+        "adapted_example_ids": [
+          "EX01800:E1",
+          "EX01800:E2",
+          "EX01800:E3"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01800:L1",
+          "EX01800:L2"
+        ]
+      },
+      {
+        "id": "EX01803",
+        "adapted_example_ids": [
+          "EX01803:E1"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01803:L1"
+        ]
+      },
+      {
+        "id": "EX01806",
+        "adapted_example_ids": [
+          "EX01806:E1",
+          "EX01806:E2"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01806:L1"
+        ]
+      },
+      {
+        "id": "EX01807",
+        "adapted_example_ids": [
+          "EX01807:E3"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01807:L1"
+        ]
+      },
+      {
+        "id": "EX01830",
+        "adapted_example_ids": [
+          "EX01830:E2"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01830:L1"
+        ]
+      },
+      {
+        "id": "EX01841",
+        "adapted_example_ids": [
+          "EX01841:E1",
+          "EX01841:E4"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01841:L2",
+          "EX01841:L3"
+        ]
+      },
+      {
+        "id": "EX01850",
+        "adapted_example_ids": [
+          "EX01850:E1"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01850:L1"
+        ]
+      },
+      {
+        "id": "EX01854",
+        "adapted_example_ids": [
+          "EX01854:E2"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01854:L1"
+        ]
+      },
+      {
+        "id": "EX01857",
+        "adapted_example_ids": [
+          "EX01857:E1"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01857:L1"
+        ]
+      },
+      {
+        "id": "EX01861",
+        "adapted_example_ids": [
+          "EX01861:E1",
+          "EX01861:E2",
+          "EX01861:E3"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01861:L1",
+          "EX01861:L2"
+        ]
+      },
+      {
+        "id": "EX01865",
+        "adapted_example_ids": [
+          "EX01865:E2"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01865:L1"
+        ]
+      },
+      {
+        "id": "EX01871",
+        "adapted_example_ids": [
+          "EX01871:E3"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01871:L1"
+        ]
+      },
+      {
+        "id": "EX01876",
+        "adapted_example_ids": [
+          "EX01876:E2"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01876:L1"
+        ]
+      },
+      {
+        "id": "EX01882",
+        "adapted_example_ids": [
+          "EX01882:E3"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01882:L2"
+        ]
+      },
+      {
+        "id": "EX01890",
+        "adapted_example_ids": [
+          "EX01890:E1"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01890:L1"
+        ]
+      },
+      {
+        "id": "EX01891",
+        "adapted_example_ids": [
+          "EX01891:E1",
+          "EX01891:E4"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01891:L1"
+        ]
+      },
+      {
+        "id": "EX01892",
+        "adapted_example_ids": [
+          "EX01892:E1"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01892:L1"
+        ]
+      },
+      {
+        "id": "EX01893",
+        "adapted_example_ids": [
+          "EX01893:E2"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01893:L1"
+        ]
+      },
+      {
+        "id": "EX01909",
+        "adapted_example_ids": [
+          "EX01909:E1"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01909:L1"
+        ]
+      },
+      {
+        "id": "EX01959",
+        "adapted_example_ids": [
+          "EX01959:E3"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01959:L1"
+        ]
+      },
+      {
+        "id": "EX01962",
+        "adapted_example_ids": [
+          "EX01962:E1"
+        ],
+        "analytical_only_feature_ids": [
+          "EX01962:L1"
+        ]
+      },
+      {
+        "id": "EX02361",
+        "adapted_example_ids": [
+          "EX02361:E2"
+        ],
+        "analytical_only_feature_ids": [
+          "EX02361:L1"
+        ]
+      },
+      {
+        "id": "EX02370",
+        "adapted_example_ids": [
+          "EX02370:E5"
+        ],
+        "analytical_only_feature_ids": [
+          "EX02370:L3"
+        ]
+      },
+      {
+        "id": "EX02425",
+        "adapted_example_ids": [
+          "EX02425:E1"
+        ],
+        "analytical_only_feature_ids": [
+          "EX02425:L1"
+        ]
+      },
+      {
+        "id": "EX02432",
+        "adapted_example_ids": [
+          "EX02432:E2"
+        ],
+        "analytical_only_feature_ids": [
+          "EX02432:L1"
+        ]
+      },
+      {
+        "id": "EX02433",
+        "adapted_example_ids": [
+          "EX02433:E2",
+          "EX02433:E3"
+        ],
+        "analytical_only_feature_ids": [
+          "EX02433:L2"
+        ]
+      },
+      {
+        "id": "EX02439",
+        "adapted_example_ids": [
+          "EX02439:E1",
+          "EX02439:E2"
+        ],
+        "analytical_only_feature_ids": [
+          "EX02439:L1",
+          "EX02439:L2"
+        ]
+      },
+      {
+        "id": "EX02440",
+        "adapted_example_ids": [
+          "EX02440:E2"
+        ],
+        "analytical_only_feature_ids": [
+          "EX02440:L1"
+        ]
+      },
+      {
+        "id": "EX02443",
+        "adapted_example_ids": [
+          "EX02443:E2"
+        ],
+        "analytical_only_feature_ids": [
+          "EX02443:L1",
+          "EX02443:L2"
+        ]
+      },
+      {
+        "id": "EX02465",
+        "adapted_example_ids": [
+          "EX02465:E1",
+          "EX02465:E3"
+        ],
+        "analytical_only_feature_ids": [
+          "EX02465:L1"
+        ]
+      },
+      {
+        "id": "EX02474",
+        "adapted_example_ids": [
+          "EX02474:E2"
+        ],
+        "analytical_only_feature_ids": [
+          "EX02474:L1"
+        ]
+      },
+      {
+        "id": "EX02481",
+        "adapted_example_ids": [
+          "EX02481:E4"
+        ],
+        "analytical_only_feature_ids": [
+          "EX02481:L1"
+        ]
+      }
+    ],
+    "second_review": {
+      "date": "2026-10-26",
+      "performed_by": "current_assistant_local_review",
+      "previous_records_sha256": "6fe13e6867c405c31f5027da5f97c232d953d369840aca9f7807702b16691c91",
+      "changed_records": 6,
+      "changes": [
+        {
+          "id": "EX01800",
+          "adapted_example_ids": [
+            "EX01800:E3"
+          ],
+          "analytical_only_feature_ids": [
+            "EX01800:L2"
+          ]
+        },
+        {
+          "id": "EX01861",
+          "adapted_example_ids": [
+            "EX01861:E2"
+          ],
+          "analytical_only_feature_ids": [
+            "EX01861:L1"
+          ]
+        },
+        {
+          "id": "EX02370",
+          "adapted_example_ids": [],
+          "analytical_only_feature_ids": []
+        },
+        {
+          "id": "EX02439",
+          "adapted_example_ids": [
+            "EX02439:E1",
+            "EX02439:E2"
+          ],
+          "analytical_only_feature_ids": [
+            "EX02439:L1",
+            "EX02439:L2"
+          ]
+        },
+        {
+          "id": "EX02440",
+          "adapted_example_ids": [
+            "EX02440:E2"
+          ],
+          "analytical_only_feature_ids": [
+            "EX02440:L1"
+          ]
+        },
+        {
+          "id": "EX02474",
+          "adapted_example_ids": [
+            "EX02474:E2"
+          ],
+          "analytical_only_feature_ids": [
+            "EX02474:L1"
+          ]
+        }
+      ],
+      "method": "All-record mechanical screening plus semantic review of selected cross-record clusters and residual paraphrases; not independent full-source certification."
+    }
+  },
+  "disclosure_review": {
+    "version": 2,
+    "date": "2026-10-26",
+    "scope": "Generalized identified technical mechanisms and cross-record clues; not an anonymity or unpublished-information guarantee. Original case IDs and general domain remain.",
+    "additional_changed_records": 73,
+    "additional_adapted_examples": 34
   }
 }

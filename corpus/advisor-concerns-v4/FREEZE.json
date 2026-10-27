@@ -1,6 +1,6 @@
 {
   "files": {
-    "archive.json": "2d5f4d4bbf0df55d735a786a8c0dc97c8be7df7504c442e0fd29c1d2f78417b3",
+    "archive.json": "ce0ff423b1e4e49be74eb4f42208ff6c4c8eac0222805c3f7443071037564604",
     "batch_1.json": "6331def005ba2e26fbe12f4d5efcf732588abbe31042f564f63ef7191dceada4",
     "batch_10.json": "230180cd0884c2576b9a243e689f3d3599054ec0960cc8cf070a3d6ddff09539",
     "batch_11.json": "296ee8258a774dc310bb36cb6161d0865bb8196713a4160ec1e50e805cc5351f",
@@ -15,10 +15,10 @@
     "batch_4.json": "a32e4041d7c3ed016a91b606803fa2246ebe732cc2cd8aad562d0ff93cfa43ba",
     "batch_5.json": "7368b8fc59f1909372fd6a79d455c2755fc207fd4c5855b6500fb24e2c3e2c6b",
     "batch_6.json": "4ea4b413ccc93cd4d1fb715af7b18c429ac5b83e31467f1d5f02f768303f67e7",
-    "batch_7.json": "e6aef90b4e9aae0d89e8bc4ffaf99f59a02a42cef08e38b4b7ecb5d173205651",
-    "batch_8.json": "267a4b4a7302a3d17efdd7fc713c9adb8a131002b509b93cab9a04250366734f",
-    "batch_9.json": "7494616256172e25c55aaad6daf8c315732bddefe72c7731678680048e56111e",
-    "manifest.json": "7ff28723e1873c68cad541772211ed7de8fe583b00bb72fa07124104a075f03d",
+    "batch_7.json": "d2f3b0a3e68b57bfcf9eb53231e0db9dddab3162f4b696279b0a38deb2eff09c",
+    "batch_8.json": "91dccd72f3496373cd5043248553882e6859c0d1adece55554f02dc777a2e5b1",
+    "batch_9.json": "c24acfa3a2828d075ecb6bc8870284d4cba76fa375473b6f26e3b7df64e1fb29",
+    "manifest.json": "1a953ae0310135574a26b1b7e0dd56cb515bf987d17ca55221feb7c09bf23ba9",
     "training_promotion.json": "ea428f336bbed10fde4ba1d13d6ba6de04dd7f887b88aa81a1b049650fc3cbe1"
   }
 }

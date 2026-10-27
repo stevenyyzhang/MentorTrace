@@ -1,5 +1,10 @@
 # Execution guide
 
+New adaptive runs use [complete-request capacity](request-capacity.md) across all
+stages, including automatic consolidation and draft partitions when necessary.
+The legacy byte cutoff remains only for old frozen protocols. Do not request
+batching confirmation or send an oversized canonical request in place of its plan.
+
 ## Reviewer names and compatibility
 
 Use Reader, Expert, Advisor and Editor as the module names. New runs freeze
@@ -22,12 +27,20 @@ the comments, not module names.
 
 Normal review needs no Expression setup:
 `python scripts/mentortrace_v1.py create --paper PACKAGE --run RUN`.
-This freezes the bundled 1,581-record `corpus/advisor-expression-v1` and adds `advisor_tasks` before the
-general object plan. It maps the target independently for Advisor, without previous
-lane findings. Accepted tasks are matched through both target-task retrieval and
-linked Concern IDs; `expression_route.json` records candidate terms, assignments,
-selected IDs and source/map hashes. Complete task and selected-example dispositions
-with each Advisor batch. Concern batch coverage remains unchanged.
+This freezes the bundled 1,581-record `corpus/advisor-expression-v1`. New ordinary
+v1.2 runs create no Advisor task map: complete inventories and reviewed links
+feed local capacity/workload packing before the general object plan. Each Advisor
+batch independently checks the full manuscript with its complete Concerns and
+Expressions. Freeze source IDs, use assignments, both budgets and request hashes
+in `inputs/advisor_plan.json`; retain per-source and per-use dispositions. Legacy
+frozen runs retain their original task-map and retrieval contracts.
+
+New direct Advisor runs pin the [output contract](advisor-output.md). The original
+model envelope remains separate from its expanded, validated response. Shared
+analyses and source/passage references do not waive any source/use judgment.
+New CLI requests save/send exact UTF-8 bytes. Legacy Windows-newline completions
+may be reused only when the original prompt file hash, exact newline-normalized
+request, output hash, images and model/effort/tier all match. Preserve original audits.
 
 Use `--expression-mode draft_only` for the B comparison: the same baseline discovery
 stages run, and Expression is retrieved only for frozen final requirements during
@@ -58,8 +71,8 @@ has a target transfer/keep/nonmatch record; Advisor classifies editorial scope i
 its existing card dispositions, with transfer records for linked editorial concerns.
 Every optional organization suggestion links to an anchored transfer. Full source
 accounts remain isolated in their original lanes. Writing-transfer accounting alone
-adds no model stage; selecting Expression in Advisor adds the internal task-map
-stage described above.
+adds no model stage. New ordinary v1.2 Advisor runs also add no preliminary task-map
+stage; explicit legacy protocols preserve their frozen preparation stages.
 
 `export` writes `writing_transfer.json`, with raw-to-final links through both content
 and optional dispositions. Draft preparation freezes `inputs/writing_evidence.json`
@@ -93,9 +106,16 @@ For transport, resumption and postprocessing, apply [execution efficiency](execu
 
 Use scripts/prepare_paper.py to extract an annotation-free manuscript into consecutive page/text records and matching PNG images. Inspect the images for burned-in comments and confirm text-image correspondence. Extraction alone does not establish that annotations were removed or every equation was readable. Private inputs and runs belong in ignored workspaces/ and runs/.
 
-Create a new run with scripts/mentortrace_v1.py create --paper PACKAGE --run RUN. It validates frozen hashes, copies the English concern package and public case summaries, and freezes the skill and protocol. Missing or modified corpus files fail explicitly. Never migrate an existing frozen run in place. Select and record the actual model, reasoning effort, input capacity and output budget; user-interface selection does not configure a script.
+Create a new run with scripts/mentortrace_v1.py create --paper PACKAGE --run RUN. It validates frozen hashes, copies the English concern package and public case summaries, and freezes the skill and preparation protocol. Missing or modified corpus files fail explicitly. Never migrate an existing frozen run in place. Select and record the actual model and reasoning effort; user-interface selection does not configure a script. Normal v1.2 public runs follow [Advisor batching](advisor-batching.md): before any review call, the authorized runner automatically detects capacity, applies the pinned compact workload profile and freezes complete lossless packets without a task-map model call. Minimize complete Advisor packets under detected capacity and workload bounds, preferring no more than 12 packets and automatically allowing necessary overflow without confirmation. Freeze max(12, actual planned packets) submission slots; do not add paid automatic retries. Valid plans continue automatically; users need not choose a profile, enter capacity or approve individual batches. Sol 6/Astra 10 are examples, never hard-coded counts. If no permitted complete plan fits, stop before model work and report the saved obstacle once. Preserve the preparation freeze separately. Omit manual capacity flags for these runs. Explicit new Advisor attempts consume an atomic submission slot; cached valid results do not. Other lanes are outside this budget, and host permissions remain in effect.
 
 ## Review stages and isolation
+
+For new `review_efficiency: 1` runs, follow [combined review workflow](review-workflow.md).
+After object planning and case routing, the authorized runner automatically
+schedules Reader/Expert/Advisor/Editor in separate concurrent requests (three by
+default, fewer with `--workers`). Combine source-only execution/A inspection and
+finish it before Verify; combine B/final-text/language review after drafting.
+The older sequential description below applies to frozen older protocols.
 
 New protocols enable source_fidelity: 1 and freeze inputs/source_fidelity.json from raw page text and image hashes. This adds deterministic inline split-word candidates to Editor only, plus formula-source records in Verify; source-fidelity.md also guides Expert, Advisor, consolidation and drafting. Candidate dispositions and formula records are validated on acceptance. The program does not rewrite extraction, perform OCR or certify the reviewer's visual judgment. Frozen older protocols retain their existing request/response contracts.
 

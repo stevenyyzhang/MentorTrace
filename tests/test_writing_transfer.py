@@ -46,6 +46,18 @@ class WritingTransfer(unittest.TestCase):
         self.assertEqual(assignment['record_ids'],['EXP-1'])
         self.assertEqual(assignment['candidates'],[{'record_id':'EXP-1','selected':True,'score':7}])
 
+    def test_expression_contribution_survives_draft_projection_and_legacy_schema_is_preserved(self):
+        row=transfer(source_kind='mentor_expression',source_id='E1',
+            expression_contribution=dict(role='repair_realization',feature_ids=['E1:L1'],supporting_concern_ids=['C1']))
+        link=dict(raw_id='raw1',stage='reader',final_ids=['final1'],advisor_card_ids=['C1'],
+                  associated_case_ids=[],writing_transfer_ids=[row['id']],attribution_status='recorded_transfer_not_causal_proof')
+        evidence=dict(advisor_role_division=1,expression_version=1,raw_to_final=[link],writing_transfers=[row])
+        projected=w.draft_view(evidence)
+        self.assertEqual(projected['writing_transfers'][0]['expression_contribution'],row['expression_contribution'])
+        self.assertEqual(w.draft_schema({}),w.DRAFT_SCHEMA)
+        self.assertEqual(w.draft_schema({'expression_version':1}),w.EXPRESSION_DRAFT_SCHEMA)
+        self.assertIn('Concern records justify requirements',w.draft_schema(projected))
+
     def test_new_default_and_frozen_legacy_contracts(self):
         new = self.root / 'new'
         m.create_run(self.root / 'paper', self.root / 'knowledge', new, goodpaper_cases=False)

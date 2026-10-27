@@ -1,5 +1,14 @@
 # Author-facing bilingual report rules
 
+For new adaptive runs with `report_concision: 1`, explain each problem/consequence
+once in its Comment, then give concrete repair actions instead of repeating the
+diagnosis. Share common actions while retaining local conditions and both language
+tracks. Keep complete supported rewrites; when essential author facts are missing,
+name the required facts and insertion point instead of delivering a replacement
+paragraph filled with placeholders. Do not impose a page count or omit independent
+requirements, useful derivations or small errors. The combined delivery check
+explicitly reviews this contract without an extra model call.
+
 For source quotations, follow source-fidelity.md. Original must reproduce the verified manuscript expression, including decisive delimiters, operators and indices; reuse a checked transcription when supplied. Do not copy corrupted extracted math into the report. Inspect the rendered formula against the original page. Correcting a source quotation also requires checking its comment, suggested revisions and shared actions; a contradicted premise cannot survive as a confirmed defect merely because the quote was repaired.
 
 Apply these rules after the findings and their source dispositions are frozen. They govern the author-facing Markdown and any HTML/PDF export; they do not alter evidence judgments, finding counts, or advisor-comparison policy.

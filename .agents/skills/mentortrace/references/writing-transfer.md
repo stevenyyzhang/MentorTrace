@@ -74,7 +74,9 @@ preferences and broader hypotheses separately. Never collapse all feedback to
 
 ## Apply at the passage's actual scale
 
-Reuse the existing Reader section/paragraph map. For each applicable source,
+Reader reuses its existing section/paragraph map. Independent Advisor reconstructs
+the relevant passage job directly from the full manuscript without receiving that
+map or a preliminary task inventory. For each applicable source,
 compare the current passage with a concrete editorial proposal. Address selection
 and emphasis as well as order: what earns its space, what repeats a job, what is
 underexplained, whether the paragraph lands on its intended point, and how it hands
@@ -99,6 +101,17 @@ card's full relationship, including explanation and emphasis, not a keyword list
 An unknown historical record is not automatically a content-only concern. Advisor
 still sees its own full manuscript and card batch, never Reader's plan or decisions.
 Generic runs use the same editorial reasoning without access to historical sources.
+
+For Advisor protocols with `advisor_role_division: 1`, Concern supplies the
+requirement judgment; Expression supplies a concrete additional realization or
+expression comparison. Record `expression_contribution` with its role, adopted
+source feature IDs and genuinely supporting Concern IDs. Explain the contribution
+in the existing transfer fields. A general Concern restated as an Expression is
+not a second defect. Coordinate compatible actions while preserving each source
+identity and independently justified requirement. Unlinked Expressions can support
+optional improvements or target-evidenced local expression repairs; no forced
+Concern association or rewrite is required. Post-freeze drafting retains these
+records but must verify what was actually adopted in the final text.
 
 ## Preserve learning through delivery
 

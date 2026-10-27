@@ -1,0 +1,15 @@
+{
+  "version": 4,
+  "name": "compact",
+  "preferred_max_batches": 12,
+  "standalone_expression_target": 160,
+  "association_weight": 0.25,
+  "limits": {
+    "concerns": 120,
+    "operations": 400,
+    "complexity": 2000
+  },
+  "alternatives": [],
+  "formula": "3*C + F + 0.25*B + 0.25*(U + 0.5*conditional_U + uncertain_U) + 0.5*context_C",
+  "basis": "Minimize complete packets under detected capacity and workload bounds; prefer at most 12, automatically allow necessary overflow without user confirmation. Never fill to 12 or weaken capacity, workload or source coverage to meet it. Candidate associations retain discounted selection cost with no separate count cap. Six/ten are observed examples, not fixed counts. Freeze a finite submission budget of max(12, actual planned packets); no automatic paid retries. Preserve frozen runs."
+}

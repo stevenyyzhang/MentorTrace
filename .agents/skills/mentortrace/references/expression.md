@@ -104,12 +104,24 @@ response only: quote them as mentor wording only when their authorship is separa
 confirmed. Preserve changed technical claims and omissions instead of treating a
 matching later draft as acceptance of the whole proposal.
 
-Expression complements Concern. Inspect both the linked-Concern examples and the
-examples retrieved directly from the target's own editorial tasks. Expression-only
-tasks have assigned Advisor batches and must receive a checked or unfinished
-disposition even when retrieval has no match. Reader/Expert plans and findings are
-not inputs to the independent Advisor task map. Lexical retrieval proposes candidates;
-the full source and target context decide whether a writing operation applies.
+Expression complements Concern. In new ordinary v1.2 runs, every Expression enters
+direct full-manuscript review, with or without a Concern link. No preliminary task
+map or lexical retrieval selects initial sources. Find possible uses independently
+from each source's operations and boundaries; associated Concerns supplement but
+do not restrict this search. Reader/Expert plans and findings are not supplied.
+Keep explicit nonmatch/keep/unknown/unfinished outcomes and each active source use.
+Historical frozen task-map runs retain their own task dispositions and retrieval.
+
+In `advisor_role_division: 1` runs, Expression's main contribution is concrete
+realization: lexical/syntactic choice, qualification, transition or a supported
+sentence/paragraph operation. Explain its added value beyond the Concern's
+requirement in the existing transfer fields, and identify adopted feature IDs.
+Independently seek suitable passages, but do not generate another generic rule or
+defect merely because an example is present. Distinguish necessary repair
+realization, optional improvement, actual local expression error, no change and
+unresolved inspection. A sufficient Concern may coexist with optional expression
+improvement; a compatible target can remain unchanged. Full source and active-use
+coverage still applies in one call, without a preliminary applicability filter.
 
 Read the actual source passage and mentor proposal, then identify specific changes
 in information selection, sentence roles, emphasis, dependencies, transitions,
@@ -123,14 +135,14 @@ unsupplied wording choice. Only the original `mentor_texts` establish actual men
 wording. Literal matching alone does not make a discussion, heading or fragment an
 accepted replacement passage. These labels do not alter the frozen source records.
 
-Return the Expression writing transfers and assigned task dispositions specified
+Return the Expression writing transfers and, for legacy mapped runs, task dispositions specified
 in the request. Keep appropriate target arrangements; do not require a defect per
 example or rewrite every paragraph. Optional improvements need evidence of a useful
 target-specific change, not a claim that the current prose is grammatically wrong.
 Keep the transfer record for each linked editorial Concern as well as each selected
 Expression. A shared idea does not make their source identities interchangeable.
-Link a checked task to inspection of its own target passage; nearby-page support
-alone does not complete that task.
+In legacy mapped runs, link a checked task to inspection of its own target passage;
+nearby-page support alone does not complete that task.
 Only the selected Expression records are admitted transfer candidates. Other
 annotations retained in complete original-page context remain contextual evidence;
 do not promote those comments, held proposals or unselected records into new

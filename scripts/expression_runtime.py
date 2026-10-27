@@ -246,6 +246,17 @@ def admitted_closure(by_id, wanted):
     return supplied
 
 
+def frozen_active_links(library, records):
+    """Apply only the new run's frozen overlay to derived views, never original files."""
+    library=Path(library); overlay=library.parent/'expression_concern_links.json'
+    if not overlay.exists():return records
+    table=read(overlay)
+    require(sha(library/'records.json')==table['corpus_sha256']['corpus/advisor-expression-v1/records.json'],
+            'Frozen relation overlay differs from Expression source')
+    historical={(r['expression_id'],r['concern_id']) for r in table['links'] if r['kind']=='historical'}
+    return [{**r,'concern_ids':[c for c in r['concern_ids'] if (r['id'],c) not in historical]} for r in records]
+
+
 def view(library, wanted):
     available=read(Path(library)/'records.json')
     supplied=admitted_closure({r['id']:r for r in available},wanted)
@@ -253,7 +264,7 @@ def view(library, wanted):
     import public_expression as public
     if read(Path(library)/'manifest.json').get('role') in public.ROLES:
         public.check_records(records)
-        return {'records':[public.project(r) for r in records], 'episodes':[],
+        return {'records':frozen_active_links(library,[public.project(r) for r in records]), 'episodes':[],
                 'source_format':public.FORMAT,
                 'limits':'Minimized examples and conditional analysis only; private original pages and mapping are not available.'}
     episode_ids = {eid for r in records for eid in r['episode_ids']+r.get('context_episode_ids',[])}
@@ -295,8 +306,12 @@ def stage_context(run, stage):
     run = Path(run)
     route_path = run/'expression_route.json'
     task_path = run/'calls/advisor_tasks/response.json'
-    require(task_path.exists(), 'Complete independent Advisor tasks before Expression retrieval')
     protocol = read(run/'inputs/protocol.json')
+    if stage.startswith('evidence_') and protocol.get('advisor_batching'):
+        # Adaptive packets have their own frozen ownership; deferred evidence remains
+        # Concern-specific and must not rebuild the original preparation route.
+        return {'expression_version':1,'expression_tasks':[], 'expression_sources':{'records':[],'episodes':[]}}
+    require(task_path.exists(), 'Complete independent Advisor tasks before Expression retrieval')
     stages = [s for s in protocol['stages'] if s.startswith('supplement_')]
     batches = {s:[c['id'] for c in read(run/f'inputs/batches/batch_{s.rsplit("_",1)[1]}.json')] for s in stages}
     tasks = read(task_path)['tasks']
@@ -318,12 +333,20 @@ def stage_context(run, stage):
 
 def transfer_schema(context):
     import public_expression as public
+    schema = TRANSFER_SCHEMA
+    if context.get('advisor_direct_fulltext'):
+        start = schema.index('Every assigned\nexpression_task')
+        end = schema.index('Each linked editorial Concern', start)
+        schema = schema[:start] + schema[end:]
     if any(public.is_public(r) for r in context.get('expression_sources',{}).get('records',[])):
-        return TRANSFER_SCHEMA+'\nFor public-format records, the following labeled-example/account contract replaces the raw mentor_texts, marked_texts and full original-page source requirements. No raw episodes are available.\n'+public.SCHEMA
-    return TRANSFER_SCHEMA
+        return schema+'\nFor public-format records, the following labeled-example/account contract replaces the raw mentor_texts, marked_texts and full original-page source requirements. No raw episodes are available.\n'+public.SCHEMA
+    return schema
 
 
 def validate_dispositions(response, context):
+    if context.get('advisor_direct_fulltext'):
+        require(not context.get('expression_tasks') and not response.get('expression_task_dispositions'), 'Direct Advisor has no preliminary task assignments')
+        return
     expected = {t['id'] for t in context.get('expression_tasks', [])}
     rows = response.get('expression_task_dispositions')
     require(isinstance(rows,list) and len(rows) == len(expected) and {r['task_id'] for r in rows} == expected, 'Expression task coverage mismatch')

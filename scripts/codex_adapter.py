@@ -11,7 +11,7 @@ from pathlib import Path
 import mentortrace_v1 as m
 from execution_policy import validate_authorization
 
-def invoke(folder,prompt,images=(),*,model='gpt-6-sol',reasoning_effort='xhigh',service_tier='default',settings_authorization=None,transport='default',timeout_seconds=1800):
+def invoke(folder,prompt,images=(),*,model='gpt-6-sol',reasoning_effort='xhigh',service_tier='default',settings_authorization=None,transport='default',timeout_seconds=1800,context_window=None):
  authorization_sha256=validate_authorization(settings_authorization,model,reasoning_effort,service_tier)
  folder=Path(folder).resolve();folder.mkdir(parents=True,exist_ok=True)
  m.require(not (folder/'START.json').exists(),'Existing attempt; inspect before rerun')
@@ -21,6 +21,9 @@ def invoke(folder,prompt,images=(),*,model='gpt-6-sol',reasoning_effort='xhigh',
       '-c','service_tier='+m.dump(service_tier),'-c','model_reasoning_effort='+m.dump(reasoning_effort),'-c','project_doc_max_bytes=0','-c','web_search="disabled"',
       '-c','agents.enabled=false','--enable','skip_host_skill_discovery','--json','-o',str(folder/'final_text.json')]
  m.require(transport in ['default','http_sse'],'Unsupported transport')
+ if context_window is not None:
+  m.require(type(context_window) is int and context_window>0,'Invalid detected context window')
+  cmd+=['-c','model_context_window='+str(context_window)]
  m.require(isinstance(timeout_seconds,int) and timeout_seconds>0,'Invalid client timeout')
  if transport=='http_sse':
   # Per-request provider configuration only. Keep the existing OpenAI credential,
@@ -42,13 +45,13 @@ def invoke(folder,prompt,images=(),*,model='gpt-6-sol',reasoning_effort='xhigh',
  for image in images:cmd+=['--image',str(image)]
  cmd+=['--','-'];env=os.environ.copy()
  for name in ['CODEX_APP_TOOLS_PIPE_PATH','CODEX_SESSION_ID','CODEX_THREAD_ID','CODEX_INTERNAL_ORIGINATOR_OVERRIDE']:env.pop(name,None)
- (folder/'prompt.txt').write_text(prompt,encoding='utf-8')
+ (folder/'prompt.txt').write_bytes(prompt.encode('utf-8'))
  m.save(folder/'settings_authorization.json',settings_authorization)
  m.save(folder/'START.json',{'time':datetime.datetime.now(datetime.timezone.utc).isoformat(),'command':cmd,'transport':transport,'timeout_seconds':timeout_seconds,'settings_authorization_sha256':authorization_sha256,'prompt_sha256':m.sha(folder/'prompt.txt'),'images':[{'path':str(p),'sha256':m.sha(p)} for p in images]})
  with (folder/'events.jsonl').open('w',encoding='utf-8') as out,(folder/'stderr.txt').open('w',encoding='utf-8') as err:
-  proc=subprocess.Popen(cmd,stdin=subprocess.PIPE,stdout=out,stderr=err,text=True,encoding='utf-8',env=env)
+  proc=subprocess.Popen(cmd,stdin=subprocess.PIPE,stdout=out,stderr=err,env=env)
   m.save(folder/'process.json',{'pid':proc.pid})
-  try:proc.communicate(prompt,timeout=timeout_seconds)
+  try:proc.communicate(prompt.encode('utf-8'),timeout=timeout_seconds)
   except subprocess.TimeoutExpired:proc.kill();proc.wait();m.save(folder/'UNCERTAIN.json',{'timeout':True,'timeout_seconds':timeout_seconds,'consumption':'Unreported; not assumed zero.'});raise
  events=[]
  for line in (folder/'events.jsonl').read_text(encoding='utf-8').splitlines():

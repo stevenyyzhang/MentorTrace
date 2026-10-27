@@ -17433,7 +17433,7 @@
   {
     "id": "C0185",
     "core_question": {
-      "text": "Does actual quantization error enter the estimator in the correct coordinates?",
+      "text": "Does input-processing error enter the downstream inference in the correct representation?",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01271",
@@ -17443,7 +17443,7 @@
       ]
     },
     "new_manuscript_check": {
-      "text": "Trace error statistics through quantization, reconstruction, and coordinate transformations into linear estimation.",
+      "text": "Trace error assumptions and statistics through preparation, reconstruction and coordinate changes into the stated inference.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01271",
@@ -17453,7 +17453,7 @@
       ]
     },
     "relationship_to_check": {
-      "text": "Quantization coordinates, inverse transform, error covariance, LMMSE, and channel reconstruction.",
+      "text": "Input representation, transformation, resulting error statistics, inference inputs and final recovery.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01271",
@@ -17463,7 +17463,7 @@
       ]
     },
     "historically_insufficient_response": {
-      "text": "Quantization noise was mentioned but its power and coordinates relative to the estimator were unclear.",
+      "text": "An error was mentioned without explaining its scale or representation relative to the downstream calculation.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01271",
@@ -17473,7 +17473,7 @@
       ]
     },
     "potentially_sufficient_response": {
-      "text": "Define feedback, reconstructed signals, and error statistics in one consistent model, then connect estimation steps and final recovery.",
+      "text": "Define intermediate observations and error statistics consistently, then connect the inference steps to final recovery.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01271",
@@ -17483,7 +17483,7 @@
       ]
     },
     "applicability_boundary": {
-      "text": "Known covariance and error independence require support; scalar quantization alone does not certify independence.",
+      "text": "Known statistics and independence need support; separate componentwise processing alone does not establish statistical independence.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01271",
@@ -17859,7 +17859,7 @@
   {
     "id": "C0191",
     "core_question": {
-      "text": "Are proxy-model errors distinguished from actual quantization noise?",
+      "text": "Are analytical proxy errors distinguished from actual implementation errors?",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01304",
@@ -17869,7 +17869,7 @@
       ]
     },
     "new_manuscript_check": {
-      "text": "Check notation and statistics when a Gaussian proxy represents real quantization errors.",
+      "text": "Check notation, preserved properties and additional assumptions when a proxy represents practical errors.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01304",
@@ -17879,7 +17879,7 @@
       ]
     },
     "relationship_to_check": {
-      "text": "Actual quantization error, Gaussian proxy, covariance and independence assumptions, and resulting analysis.",
+      "text": "Actual error, analytical representation, retained properties, imposed assumptions and resulting analysis.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01304",
@@ -17889,7 +17889,7 @@
       ]
     },
     "historically_insufficient_response": {
-      "text": "Using one symbol for different distributions made analytical assumptions appear to be physical quantizer properties.",
+      "text": "One symbol for distinct error laws made an analytical assumption appear to be an observed property.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01304",
@@ -17899,7 +17899,7 @@
       ]
     },
     "potentially_sufficient_response": {
-      "text": "Use separate error notation and statistics, identifying what is approximated and what is preserved.",
+      "text": "Use distinct notation and assumptions, identifying what is approximated and what is preserved.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01304",
@@ -17909,7 +17909,7 @@
       ]
     },
     "applicability_boundary": {
-      "text": "Zero receiver noise and zero quantization error are independent restrictions.",
+      "text": "Removing one error source does not establish the absence of other error sources.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01304",
@@ -18637,7 +18637,7 @@
   {
     "id": "C0202",
     "core_question": {
-      "text": "Does discretizing continuous bit allocations preserve feasibility?",
+      "text": "Does converting a relaxed solution to an implementable discrete choice preserve feasibility?",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01350",
@@ -18646,7 +18646,7 @@
       ]
     },
     "new_manuscript_check": {
-      "text": "Check rounding and codebook size against the original budget and implementation.",
+      "text": "Check the conversion rule against original constraints and actual implementation.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01350",
@@ -18655,7 +18655,7 @@
       ]
     },
     "relationship_to_check": {
-      "text": "Continuous rate solution, integer bits, codebook size, and budget.",
+      "text": "Relaxed decision, discrete implementation, conversion rule and resource constraints.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01350",
@@ -18664,7 +18664,7 @@
       ]
     },
     "historically_insufficient_response": {
-      "text": "Nearest-integer rounding could exceed the budget, while the continuous relaxation was not clearly identified.",
+      "text": "Unqualified nearest-value conversion could violate a bound while the relaxation was not clearly identified.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01350",
@@ -18673,7 +18673,7 @@
       ]
     },
     "potentially_sufficient_response": {
-      "text": "Specify rounding, feasibility, and performance loss, distinguishing relaxed optimization from implementation.",
+      "text": "Specify conversion, feasibility and any performance qualification, distinguishing relaxation from implementation.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01350",
@@ -18682,7 +18682,7 @@
       ]
     },
     "applicability_boundary": {
-      "text": "Flooring can protect some upper bounds but need not satisfy additional lower bounds.",
+      "text": "A rounding direction that protects an upper bound need not satisfy a separate lower bound.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01350",
@@ -19321,7 +19321,7 @@
   {
     "id": "C0211",
     "core_question": {
-      "text": "Does rate-distortion analysis lead back to practical codebook design?",
+      "text": "Does auxiliary analysis lead back to the unresolved practical design choice?",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01395",
@@ -19332,7 +19332,7 @@
       ]
     },
     "new_manuscript_check": {
-      "text": "Check the link between codebook size, surrogate analysis, allocation, and implemented integer bits.",
+      "text": "Trace the original design question through analytical simplification and back to implementation.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01395",
@@ -19343,7 +19343,7 @@
       ]
     },
     "relationship_to_check": {
-      "text": "Undetermined codebook size, analytically difficult practical quantizer, Gaussian proxy, rate allocation, and codebook size.",
+      "text": "Unresolved design choice, analytical difficulty, proxy assumptions, derived decision and implemented choice.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01395",
@@ -19354,7 +19354,7 @@
       ]
     },
     "historically_insufficient_response": {
-      "text": "Separate codebook and rate-distortion sections obscured how bit allocation determines codebook size.",
+      "text": "Separately presented design and analysis sections obscured how the analytical result informs the practical choice.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01395",
@@ -19365,7 +19365,7 @@
       ]
     },
     "potentially_sufficient_response": {
-      "text": "Identify the unresolved size choice, explain how proxy analysis supplies allocation, and map it back to bits and codebooks.",
+      "text": "Identify the unresolved choice, explain what the auxiliary analysis supplies, and map that result back to implementation.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01395",
@@ -19376,7 +19376,7 @@
       ]
     },
     "applicability_boundary": {
-      "text": "A student's question is not advisor endorsement; analytical convenience does not prove actual quantizer performance.",
+      "text": "A question is not an endorsement; analytical convenience does not establish practical performance.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01395",
@@ -21427,7 +21427,7 @@
   {
     "id": "C0236",
     "core_question": {
-      "text": "Are computational difficulty and observation nonidentifiability treated as different privacy claims?",
+      "text": "Are computational difficulty, uniqueness and statistical uncertainty distinguished rather than conflated?",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01553",
@@ -21490,7 +21490,7 @@
       ]
     },
     "new_manuscript_check": {
-      "text": "Distinguish computation budgets, mathematical identifiability, statistical error, and auxiliary information.",
+      "text": "Distinguish resource-limited computation, uniqueness, statistical uncertainty and auxiliary information.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01553",
@@ -21553,7 +21553,7 @@
       ]
     },
     "relationship_to_check": {
-      "text": "Observation model, legitimate uniqueness with a key, compatible adversarial candidates without it, and noise and prior conditions.",
+      "text": "Claimed property, information available to each role, relevant alternatives and stated operating conditions.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01553",
@@ -21616,7 +21616,7 @@
       ]
     },
     "historically_insufficient_response": {
-      "text": "Noiseless uniqueness definitions were mixed with computational-hardness analogies or broader abstract claims.",
+      "text": "A narrowly defined property was mixed with an analogy or a broader summary claim.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01553",
@@ -21679,7 +21679,7 @@
       ]
     },
     "potentially_sufficient_response": {
-      "text": "State legitimate angle uniqueness and adversarial multiple-angle criteria in the noiseless scope, define applicable strategy sets, verify physically feasible examples and citations, and align all summaries with the threat model.",
+      "text": "State the intended criterion and scope, verify admissible examples and citations, and align summaries with the assumptions.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01553",
@@ -21744,7 +21744,7 @@
       ]
     },
     "applicability_boundary": {
-      "text": "Multiple solutions need not be equally probable and do not establish complete resistance to realistic attacks.",
+      "text": "Several admissible alternatives need not be equally probable and do not establish a broader practical guarantee.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01553",
@@ -23431,7 +23431,7 @@
   {
     "id": "C0246",
     "core_question": {
-      "text": "Does the new privacy mechanism follow from the adversary's observation chain and controllable information?",
+      "text": "Does the proposed intervention address the actual information dependency behind the stated objective?",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01752",
@@ -23477,7 +23477,7 @@
       ]
     },
     "new_manuscript_check": {
-      "text": "Trace what existing protections change and which remaining freedom supports the new objective.",
+      "text": "Trace what an existing method changes and which remaining controllable choice is relevant.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01752",
@@ -23523,7 +23523,7 @@
       ]
     },
     "relationship_to_check": {
-      "text": "Protected physical attribute, signal-based inference, prior protection point, controllable pilot or spatial mapping, and proposed mechanism.",
+      "text": "Objective, available observations, inference dependency, existing intervention and controllable choice.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01752",
@@ -23569,7 +23569,7 @@
       ]
     },
     "historically_insufficient_response": {
-      "text": "General statements about unencryptable physical information did not connect attack inputs with the proposed hidden quantity.",
+      "text": "A general motivation did not connect available inputs with the quantity the proposal changes.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01752",
@@ -23615,7 +23615,7 @@
       ]
     },
     "potentially_sufficient_response": {
-      "text": "Reconstruct observation-to-parameter inference, identify what can change and why, and verify external standards and prior work separately.",
+      "text": "Explain the input-to-result dependency and what can change, then verify external standards and prior work separately.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01752",
@@ -23661,7 +23661,7 @@
       ]
     },
     "applicability_boundary": {
-      "text": "Not every sensing-privacy method must conceal all channel information; requirements depend on the observation and threat model.",
+      "text": "Requirements depend on the actual information and operating assumptions; do not impose a universal intervention.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01752",

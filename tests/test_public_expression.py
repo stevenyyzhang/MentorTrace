@@ -44,6 +44,14 @@ def card(number=1, kind='verbatim_mentor_prose', text='Define the observation as
 
 
 class PublicExpression(unittest.TestCase):
+    def test_exact_analytical_feature_paths_do_not_change_evidence_genre(self):
+        record={'language_features':[{'conditions':['An explicit prerequisite.'],'operation':'A bounded operation.'}]}
+        basis={'kind':'analytical_account','field':'language_features[0].conditions[0]'}
+        public.validate_excerpt(record,{'source_excerpt':'An explicit prerequisite.','expression_excerpt_basis':basis})
+        for path in ['language_features[1].conditions[0]','language_features[0].conditions[9]',
+                     'language_features[0].evidence_example_ids','__dict__']:
+            with self.assertRaises(ValueError):public.excerpt_texts(record,{'kind':'analytical_account','field':path})
+        with self.assertRaises(ValueError):public.validate_excerpt(record,{'source_excerpt':'Invented condition','expression_excerpt_basis':basis})
     setUp = fixture.Pipeline.setUp
     tearDown = fixture.Pipeline.tearDown
 

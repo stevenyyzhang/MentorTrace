@@ -1,5 +1,11 @@
 # Execution efficiency
 
+After formal verification freeze, use the guarded unchanged-claim comparison in
+[review workflow](review-workflow.md). Do not repeatedly rediscover a diagnosis
+whose complete claim, conditions and uncertainty are explicitly preserved. Keep
+its original provenance; new facts and changed claims still need evidence.
+This reuse can inherit an earlier diagnostic error and is not fresh verification.
+
 These rules apply to the distributed MentorTrace workflow, not a user's global Codex configuration. They optimize repeated processing while preserving required evidence, coverage, independent contexts and both delivery gates. No reduction in reasoning effort is authorized by this document. Frozen runs and original responses stay immutable.
 
 ## Reuse valid completed stages
@@ -35,6 +41,12 @@ Write concise dispositions with exact evidence and the decisive reason. Avoid re
 Group complete related packets using `audit_merge_obligations.py --max-batch-bytes` and verified text/image/output reserves. The byte bound is conservative, not an exact token count. Prefer shared-context batches over many tiny calls, while retaining complete source packets and output headroom. Oversized packets fail before submission; split independent tasks rather than cut evidence. Record every assigned ID and check unique complete returns. Do not maximize context occupancy or change the frozen Advisor coverage merely to reduce calls.
 
 ## Use bounded concurrency only for independent work
+
+New `review_efficiency: 1` protocols use the [combined review workflow](review-workflow.md)
+instead of the Advisor-only example below: after planning/case selection, schedule
+Reader/Expert/Advisor/Editor together with three isolated requests by default.
+Source-only execution/A shares one pass; B and final-text/language share one pass.
+Existing gate criteria and A's hidden-later-output boundary remain unchanged.
 
 Independent Advisor batches may be prefetched using `run_authorized_stage.py --prefetch-advisor --workers 2`. Prepare and pin requests/settings before concurrent submission; keep separate call directories and accept results through the ordinary sequential state transition. Dependent merge/verify, A/B and delivery-freeze steps stay sequential. Reduce concurrency when account limits or transport failures require it, without changing model/effort or enabling Fast. Concurrent calls reduce elapsed time, not aggregate tokens. The executor does not create additional review tasks or automatically retry failures.
 

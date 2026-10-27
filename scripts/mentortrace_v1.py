@@ -316,10 +316,11 @@ def validate(stage,x,context):
     require(c['id'] in f['check_ids'],'Check/finding reverse link mismatch')
   else:require(not c['finding_ids'],'Non-gap check cannot assert a finding')
  if stage.startswith(('supplement','evidence_')):
-  dispositions=x['card_dispositions'];require(len(dispositions)==len(cards),'Incomplete card accounting')
-  require({d['card_id'] for d in dispositions}==cards,'Card coverage mismatch')
+  primary_cards=set(context.get('primary_card_ids',cards))
+  dispositions=x['card_dispositions'];require(len(dispositions)==len(primary_cards),'Incomplete card accounting')
+  require({d['card_id'] for d in dispositions}==primary_cards,'Card coverage mismatch')
   for d in dispositions:
-   require(d['state'] in ['linked','not_applicable','unknown','unfinished'],'Invalid card state')
+   require(d['state'] in (['linked','sufficient','not_applicable','unknown','unfinished'] if context.get('advisor_shared_results') else ['linked','not_applicable','unknown','unfinished']),'Invalid card state')
    require(set(d['object_ids'])<=set(objects) and bool(d['reason']),'Bad card disposition')
    if d['state']=='linked':require(bool(d['object_ids']) and any(d['card_id'] in c['card_ids'] for c in checks),'Linked card never checked')
  for e in x.get('evidence_requests',[]):
@@ -339,6 +340,9 @@ def validate(stage,x,context):
  if stage=='reader' and context.get('section_review'):validate_reading_review(x,context,pages)
  if stage=='technical' and context.get('technical_applicability'):applicability.validate_review(x,context,pages,anchor)
  if context.get('writing_transfer'):writing.validate(stage,x,context,pages,anchor)
+ if context.get('advisor_batching'):
+  import advisor_batching
+  advisor_batching.validate_uses(x,context)
 
 def surface_units(pages):
  result=[]
@@ -413,7 +417,7 @@ def adapt_independent(stage,raw,context):
  for d in x['card_dispositions']:d['object_ids']=d.pop('relation_ids')
  return x
 
-def create_run(paper,knowledge,run,batch_ids=None,arm='H',generic_passes=4,max_evidence_calls=6,goodpaper_cases=True,expression_library=None,expression_mode='advisor_and_draft',case_passages=None):
+def create_run(paper,knowledge,run,batch_ids=None,arm='H',generic_passes=4,max_evidence_calls=6,goodpaper_cases=True,expression_library=None,expression_mode='advisor_and_draft',case_passages=None,adaptive_advisor=False):
  paper=Path(paper).resolve();knowledge=Path(knowledge).resolve();run=Path(run).resolve()
  verify_frozen(paper);verify_frozen(knowledge)
  require(read(paper/'manifest.json')['role']=='review_manuscript','Wrong paper role')
@@ -464,7 +468,33 @@ def create_run(paper,knowledge,run,batch_ids=None,arm='H',generic_passes=4,max_e
   protocol=read(run/'inputs/protocol.json')
   protocol['expression_version']=1;protocol['expression_mode']=expression_mode
   protocol['expression_source_freeze_sha256']=sha(source/'FREEZE.json')
-  if expression_mode=='advisor_and_draft':protocol['stages'].insert(0,'advisor_tasks')
+  if expression_mode=='advisor_and_draft' and not adaptive_advisor:protocol['stages'].insert(0,'advisor_tasks')
+  save(run/'inputs/protocol.json',protocol)
+ if adaptive_advisor:
+  require(expression_library is not None and expression_mode=='advisor_and_draft','Adaptive Advisor requires the public Expression review mode')
+  protocol=read(run/'inputs/protocol.json');protocol['advisor_batching_pending']=True
+  protocol['advisor_direct_fulltext']=1
+  protocol['advisor_role_division']=1
+  protocol['advisor_output_contract']=1
+  protocol['advisor_expression_brief']=1
+  protocol['advisor_efficiency']=1
+  protocol['advisor_locators']=1
+  protocol['advisor_review_view']=1
+  protocol['advisor_shared_results']=1
+  protocol['review_efficiency']=1
+  protocol['verified_delivery_fidelity']=1
+  protocol['report_concision']=1
+  protocol['request_capacity']=1
+  guidance_path=ROOT/'config/expression-guidance.json'
+  if guidance_path.exists():
+   registry=read(guidance_path)
+   if registry.get('source_sha256')==sha(run/'inputs/expression/records.json'):
+    import advisor_guidance
+    advisor_guidance.validate(registry,read(run/'inputs/expression/records.json'))
+    save(run/'inputs/expression_guidance.json',registry);protocol['advisor_guidance']=1
+   else:require(Path(expression_library).resolve()!=DEFAULT_EXPRESSION.resolve(),'Bundled guidance is stale for current Expression library')
+  protocol['advisor_batch_budget']=1
+  save(run/'inputs/advisor_planning_policy.json',read(ROOT/'config/advisor-workload.json'))
   save(run/'inputs/protocol.json',protocol)
  freeze_source_inventory(run)
  freeze(run/'inputs');save(run/'state.json',{'status':'ready','completed':[],'pending_evidence':[]})
@@ -572,13 +602,28 @@ def linked_cards(run,wanted):
 
 def context_for(run,stage):
  stage=naming.stage_id(stage)
+ if stage.startswith('supplement_') and read(run/'inputs/protocol.json').get('advisor_batching'):
+  import advisor_batching
+  verify_frozen(run/'inputs')
+  return advisor_batching.inflate(read(run/f'inputs/advisor_packets/{stage}.json'))
  ctx={'manuscript':read(run/'inputs/paper/body.json')}
  protocol=read(run/'inputs/protocol.json')
  if protocol.get('editorial_selection') and (stage in ['reader','merge','verify'] or stage.startswith(('supplement_','evidence_'))):
   ctx['editorial_selection']=protocol['editorial_selection']
  if stage=='advisor_tasks':return ctx
  if protocol.get('expression_mode')=='advisor_and_draft' and stage.startswith(('supplement_','evidence_')):
-  ctx.update(expression.stage_context(run,stage))
+  if protocol.get('advisor_direct_fulltext'):
+   ctx.update(expression_version=1,advisor_direct_fulltext=1)
+   if protocol.get('advisor_role_division'):ctx['advisor_role_division']=protocol['advisor_role_division']
+   if stage.startswith('supplement_') and protocol.get('advisor_output_contract'):ctx['advisor_output_contract']=protocol['advisor_output_contract']
+   if stage.startswith('supplement_') and protocol.get('advisor_expression_brief'):ctx['advisor_expression_brief']=protocol['advisor_expression_brief']
+   if stage.startswith('supplement_') and protocol.get('advisor_shared_results'):ctx['advisor_shared_results']=1
+   if stage.startswith('supplement_') and protocol.get('advisor_review_view'):ctx['advisor_review_view']=1
+   if stage.startswith('supplement_') and protocol.get('advisor_efficiency'):ctx['advisor_efficiency']=protocol['advisor_efficiency']
+   if stage.startswith('supplement_') and protocol.get('advisor_locators'):ctx['advisor_locators']=protocol['advisor_locators']
+   if stage.startswith('supplement_') and protocol.get('advisor_guidance'):ctx['advisor_guidance']=protocol['advisor_guidance']
+   if stage.startswith('evidence_'):ctx['expression_sources']={'records':[],'episodes':[]}
+  else:ctx.update(expression.stage_context(run,stage))
  if read(run/'inputs/protocol.json').get('writing_transfer') and (stage=='reader' or stage.startswith(('supplement_','evidence_'))):ctx['writing_transfer']=1
  if read(run/'inputs/protocol.json').get('source_fidelity'):
   ctx['source_fidelity']=1
@@ -637,6 +682,16 @@ def context_for(run,stage):
    ctx['historical_reference_ids']=sorted(wanted)
    ctx['integration_evidence_policy']='Judge the frozen findings against the current manuscript and supplied checks. Historical cards remain in discovery logs; their IDs are provenance, not additional proof of a current defect.'
   else:
+   if protocol.get('review_efficiency')==1:
+    import review_workflow
+    require((run/'initial_review.json').exists(),'Complete combined source/execution review before Verify')
+    source_review=review_workflow.validated_source_review(run/'initial_review.json')
+    require(all(source_review['bindings'].get(str((run/f'calls/{s}/response.json').resolve()))==sha(run/f'calls/{s}/response.json') for s in branch_stages(run)),'Source review does not bind every current initial lane')
+    ctx['initial_source_review']={'source_requirements':[{'source_id':u['source_id'],
+     'components':[{k:v for k,v in c.items() if k not in {'assessment','duplicate_of'}} for c in u['components']]}
+     for u in source_review['units']],
+     'execution_reviews':source_review['execution_reviews'],'stage_scope_reviews':source_review['stage_scope_reviews']}
+    ctx['initial_source_review_policy']='Independent source-only review completed before this verification. Treat its assessments and execution issues as hypotheses, not verdicts. Resolve supported omissions and contradictions before diagnosis freeze; preserve unknowns. Missing execution is not an author defect.'
    ctx['input_findings']=read(run/'calls/merge/response.json')['findings']
    if ctx.get('editorial_selection'):
     ctx['prior_editorial_selection']=read(run/'calls/merge/response.json').get('editorial_selection',[])
@@ -679,12 +734,17 @@ def next_request(run,capacity_plan_only=False):
   else:save(p,raw);save(run/'RAW_FREEZE.json',{'sha256':sha(p),'stage':'before_merge'})
  return prepare_stage_request(run,stage,capacity_plan_only=capacity_plan_only)
 
-def prepare_stage_request(run,stage,capacity_plan_only=False):
+def prepare_stage_request(run,stage,capacity_plan_only=False,*,_context_override=None,_planning=False):
  """Materialize a request; independent branches only depend on frozen objects/input."""
  stage=naming.stage_id(stage)
  run=Path(run).resolve();verify_frozen(run/'inputs')
+ if read(run/'inputs/protocol.json').get('advisor_batching_pending') and stage!='advisor_tasks' and not _planning:
+  raise ValueError('Plan full Advisor packets before review: run_authorized_stage.py detects capacity and plans before any review call')
+ if not _planning and read(run/'inputs/protocol.json').get('advisor_batch_budget'):
+  from advisor_budget import check_plan
+  check_plan(run,stage)
  current_names=bool(read(run/'inputs/protocol.json').get('module_naming_version'))
- ctx=context_for(run,stage);kind='supplement' if stage.startswith(('supplement','evidence_')) else stage
+ ctx=context_for(run,stage) if _context_override is None else _context_override;kind='supplement' if stage.startswith(('supplement','evidence_')) else stage
  names=list(MODULES[kind])
  if ctx.get('writing_transfer'):names.append('writing-transfer.md')
  if ctx.get('source_fidelity') and kind in ['technical','supplement','language','merge','verify']:names.append('source-fidelity.md')
@@ -744,18 +804,73 @@ def prepare_stage_request(run,stage,capacity_plan_only=False):
  if current_names:
   instruction=naming.current_instructions(instruction)
   instruction='REVIEW MODULE: '+naming.display_name(stage)+'\nThe four review modules are Reader, Expert, Advisor and Editor. The stage IDs technical/language and related JSON keys remain stable serialization identifiers for Expert/Editor; retain the supplied ID namespaces.\n'+instruction
- compact=stage in ['merge','verify'] and bool(read(run/'inputs/protocol.json').get('technical_applicability'))
+ if ctx.get('advisor_batching'):
+  import advisor_batching
+  instruction+='\n'+advisor_batching.instructions(ctx)
+  if ctx.get('advisor_output_contract'):
+   import advisor_output
+   instruction+='\n'+advisor_output.INSTRUCTIONS
+  if ctx.get('advisor_expression_brief'):
+   import advisor_brief
+   instruction+='\n'+advisor_brief.INSTRUCTIONS
+  if ctx.get('advisor_efficiency'):
+   import advisor_efficiency
+   instruction+='\n'+advisor_efficiency.INSTRUCTIONS
+  if ctx.get('advisor_locators'):
+   import advisor_locators
+   instruction+='\n'+advisor_locators.INSTRUCTIONS
+  if ctx.get('advisor_review_view'):
+   import advisor_views
+   instruction+='\n'+advisor_views.INSTRUCTIONS
+  if ctx.get('advisor_guidance'):
+   import advisor_guidance
+   instruction+='\n'+advisor_guidance.INSTRUCTIONS
+ if ctx.get('advisor_shared_results'):
+  import advisor_results,advisor_locators,advisor_views,advisor_guidance
+  instruction=advisor_results.INSTRUCTIONS.replace('STAGE',stage)
+  if ctx.get('advisor_locators'):instruction+='\n'+advisor_locators.INSTRUCTIONS
+  if ctx.get('advisor_review_view'):instruction+='\n'+advisor_views.INSTRUCTIONS
+  if ctx.get('advisor_guidance'):instruction+='\n'+advisor_guidance.INSTRUCTIONS.replace('Every\ncase and active use still needs an explicit disposition.','Every case needs an explicit decision; candidate associations are not implicitly assessed.')
+ compact=bool(ctx.get('advisor_batching')) or (stage in ['merge','verify'] and bool(read(run/'inputs/protocol.json').get('technical_applicability')))
  serialize=(lambda value:json.dumps(value,ensure_ascii=False,separators=(',',':'))) if compact else dump
- prompt=BASE+'\nSTAGE '+stage+'\n'+instruction.replace('STAGE:',stage+':')+'\nMODULES\n'+serialize(modules)+'\nINPUT\n'+serialize(ctx)
+ wire_ctx=advisor_batching.project(ctx) if ctx.get('advisor_batching') else ctx
+ if ctx.get('advisor_batching'):
+  import advisor_wire
+  wire_ctx,local_administration=advisor_wire.prepare(wire_ctx)
+ elif read(run/'inputs/protocol.json').get('review_efficiency')==1 and stage in ['merge','verify']:
+  import advisor_wire
+  wire_ctx=advisor_wire.pack(ctx)
+  require(advisor_wire.unpack(wire_ctx)==ctx,'Combined-review input compression changed context')
+  instruction+='\nLOSSLESS INPUT: exact_shared_values_v1 uses definitions and data. Resolve every $same reference and $rows table into its complete original value. All requirements, evidence and manuscript content remain present; do not summarize or omit them. Return the ordinary stage schema.'
+ prompt=BASE+'\nSTAGE '+stage+'\n'+instruction.replace('STAGE:',stage+':')+'\nMODULES\n'+serialize(modules)+'\nINPUT\n'+serialize(wire_ctx)
  protocol=read(run/'inputs/protocol.json');images=read(run/'inputs/paper/manifest.json')['images']
+ if protocol.get('request_capacity')==1 and not ctx.get('advisor_batching'):
+  import request_capacity
+  prompt=request_capacity.render(BASE+'\nSTAGE '+stage+'\n'+instruction.replace('STAGE:',stage+':'),modules,ctx)
  oversized=len(prompt.encode('utf-8'))>protocol['max_prompt_bytes']
- require(not oversized or (capacity_plan_only and stage in ['merge','verify']),'Request byte budget exceeded; do not truncate')
+ if not _planning:
+  if ctx.get('advisor_batching'):
+   advisor_batching.check_capacity(prompt,len(images),ctx['advisor_batching'])
+   if ctx.get('advisor_direct_fulltext'):advisor_batching.check_workload(ctx,protocol['advisor_workload'])
+  elif protocol.get('request_capacity')!=1:require(not oversized or (capacity_plan_only and stage in ['merge','verify']),'Request byte budget exceeded; do not truncate')
  require(len(images)<=protocol['max_images'],'Image budget exceeded')
  req={'stage':stage,'prompt':prompt,'images':[{'page':x['page'],'path':'inputs/paper/'+x['path'],'sha256':x['sha256']} for x in images],
   'module_hashes':{n:hashlib.sha256(t.encode()).hexdigest() for n,t in modules.items()},
   'card_ids':[c['id'] for c in ctx.get('cards',[])],'object_ids':[o['id'] for o in ctx.get('objects',[])],
   'tools_allowed':False,'utf8_bytes':len(prompt.encode('utf-8')),'model_context_fit_verified':False}
  if current_names:req['module_name']=naming.display_name(stage)
+ if ctx.get('advisor_batching'):
+  req['advisor_capacity']=advisor_batching.estimate(prompt,len(images),ctx['advisor_batching'])
+  req['local_administration']=local_administration
+ if _planning:return req
+ if protocol.get('request_capacity')==1 and not ctx.get('advisor_batching'):
+  import request_capacity
+  policy=request_capacity.policy_for(run)
+  if policy is not None and not capacity_plan_only:
+   if stage in ['merge','verify'] and not request_capacity.capacity.estimate(prompt,len(images),policy)['fits']:
+    import stage_capacity
+    req['capacity_plan']=stage_capacity.prepare(run,stage,ctx,req,policy)
+   else:request_capacity.preflight(req,policy,run/'capacity_checks'/f'{stage}.json')
  p=run/'calls'/stage/'request.json'
  if p.exists():require(read(p)==req,'Request changed across resume')
  else:save(p,req)
@@ -780,7 +895,16 @@ def accept_response(run,response,transport_record=None,capacity_plan=None):
   if isinstance(response,Path):
    raw=response.read_text(encoding='utf-8-sig');(folder/'raw_response.json').write_text(raw,encoding='utf-8');x=json.loads(raw)
   else:x=response;save(folder/'raw_response.json',x)
-  validate(stage,x,context_for(run,stage))
+  ctx=context_for(run,stage)
+  if 'advisor_output_version' in x:
+   import advisor_output
+   x=advisor_output.expand(x,ctx)
+   save(folder/'expanded_response.json',x)
+   save(folder/'output_expansion.json',{'version':1,'raw_sha256':sha(folder/'raw_response.json'),'expanded_sha256':sha(folder/'expanded_response.json'),'policy':'Resolve explicit references and deterministic metadata only; all ordinary validators remain required. No model judgment invented.'})
+  if ctx.get('advisor_output_contract'):
+   import advisor_output
+   save(folder/'response_preflight.json',advisor_output.preflight(x,ctx))
+  validate(stage,x,ctx)
   if independent_stage(run,stage):
    x=adapt_independent(stage,x,context_for(run,stage))
    save(folder/'adapter_map.json',{'raw_sha256':sha(folder/'raw_response.json'),'mapping':'Local relation IDs preserved as object IDs; required_relation copied from declared relations; original output unchanged'})
@@ -881,7 +1005,7 @@ def main():
  args=parser.parse_args()
  if args.action=='import-knowledge':import_knowledge(args.source,args.dest,batch_size=args.batch_size,promotion_registry=args.promotion_registry,max_batch_bytes=args.max_batch_bytes)
  elif args.action=='import-paper':import_paper(args.body,args.images,args.pdf,args.dest,args.pdf_sha256,development_material=args.development_material)
- elif args.action=='create':create_run(args.paper,args.knowledge,args.run,max_evidence_calls=args.max_evidence_calls,goodpaper_cases=args.goodpaper_cases,expression_library=args.expression,expression_mode=args.expression_mode,case_passages=args.case_passages)
+ elif args.action=='create':create_run(args.paper,args.knowledge,args.run,max_evidence_calls=args.max_evidence_calls,goodpaper_cases=args.goodpaper_cases,expression_library=args.expression,expression_mode=args.expression_mode,case_passages=args.case_passages,adaptive_advisor=args.expression is not None and args.expression_mode=='advisor_and_draft' and args.knowledge.resolve()==DEFAULT_KNOWLEDGE.resolve() and args.expression.resolve()==DEFAULT_EXPRESSION.resolve())
  elif args.action=='route-input':
   item=case_route_input(args.run);print(dump({'path':str(Path(args.run).resolve()/'case_route_input.json'),'objects':len(item['objects']),'reader_cases':len(item['reader_index']['cases']),'technical_cases':len(item['technical_index']['cases'])}))
  elif args.action=='route-cases':freeze_case_route(args.run,read(args.route));print(dump({'status':'frozen','route_sha256':sha(Path(args.run)/'case_route.json')}))

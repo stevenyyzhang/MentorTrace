@@ -90,6 +90,10 @@ def validate(stage, response, context, pages, anchor):
     for row in rows:
         require(row['id'].startswith(stage + ':W'), 'Writing transfer namespace')
         key = (row.get('source_kind'), row.get('source_id'))
+        import advisor_brief
+        if advisor_brief.validate(row, context, anchor, pages):
+            seen.add(key)
+            continue
         if key == ('manuscript', 'manuscript'):
             require(row.get('source_excerpt') == '', 'Manuscript transfer cannot invent a historical excerpt')
         else:
@@ -101,6 +105,17 @@ def validate(stage, response, context, pages, anchor):
                 require(excerpt_basis in {'analyst_summary','original_page_text'}, 'Case transfer must identify excerpt origin')
             if key[0]=='mentor_expression':
                 import public_expression as public
+                if context.get('advisor_guidance')==1:
+                    import advisor_guidance
+                    basis=row.get('expression_excerpt_basis',{})
+                    require(not (basis.get('kind')=='analytical_account' and basis.get('field')=='operations')
+                            or advisor_guidance.operation_excerpt_visible(available[key],excerpt),
+                            'Canonical guidance cannot be quoted as original operations')
+                if context.get('advisor_efficiency') == 1:
+                    import advisor_efficiency
+                    basis=row.get('expression_excerpt_basis',{})
+                    require(not (basis.get('kind')=='analytical_account' and basis.get('field') in advisor_efficiency.LOCAL_FIELDS),
+                            'Transfer cites a narrative field not supplied in economical view')
                 if public.is_public(available[key]):
                     public.validate_excerpt(available[key],row)
                     excerpt_basis=row['expression_excerpt_basis']
@@ -108,9 +123,13 @@ def validate(stage, response, context, pages, anchor):
                     any(excerpt in text for text in source_texts(key[0], available[key],excerpt_basis)),
                     'Writing transfer excerpt absent from supplied source account')
             seen.add(key)
-        require(row.get('scope') in SCOPES and row.get('decision') in DECISIONS, 'Invalid writing transfer scope/decision')
+        import advisor_results
+        valid_scope=advisor_results.nonempty_text(row.get('scope')) if context.get('advisor_shared_results') else row.get('scope') in SCOPES
+        require(valid_scope and row.get('decision') in DECISIONS, 'Invalid writing transfer scope/decision')
         for field in ['learned_distinction', 'reader_task', 'current_handling', 'proposed_action', 'preserved_dependencies', 'limits']:
-            require(isinstance(row.get(field), str) and row[field].strip(), 'Incomplete writing transfer: ' + field)
+            if context.get('advisor_shared_results') and field=='preserved_dependencies':
+                require(advisor_results.dependencies_valid(row.get(field)), 'Incomplete writing transfer: ' + field)
+            else:require(isinstance(row.get(field), str) and row[field].strip(), 'Incomplete writing transfer: ' + field)
         for field in ['target_anchors', 'check_ids', 'finding_ids', 'suggestion_ids']:
             require(isinstance(row.get(field), list), 'Missing writing transfer list: ' + field)
         for item in row['target_anchors']:
@@ -145,7 +164,7 @@ def validate(stage, response, context, pages, anchor):
         require(required <= seen, 'Selected Reader case has no transfer disposition')
     else:
         for item in response.get('card_dispositions', []):
-            require(item.get('writing_scope') in {'editorial', 'content_only', 'undetermined'}, 'Missing Advisor writing scope')
+            require(item.get('writing_scope') in ({'editorial', 'content_only', 'undetermined','shared_analysis'} if context.get('advisor_shared_results') else {'editorial', 'content_only', 'undetermined'}), 'Missing Advisor writing scope')
             if item['state'] == 'linked' and item['writing_scope'] == 'editorial':
                 require(('advisor_concern', item['card_id']) in seen, 'Linked editorial concern has no transfer record')
 
@@ -214,6 +233,22 @@ def packet(run, workflow=None):
             'advisor_sources': [cards[cid] for cid in sorted(used_cards)],
             'limits': 'Source associations and model-recorded transfers are not causal effects or mentor endorsement. '
                       'Legacy runs lack dev.4 transfer records. Source facts cannot supply missing target facts.'}
+    if protocol.get('advisor_role_division'):result['advisor_role_division']=protocol['advisor_role_division']
+    if protocol.get('advisor_expression_brief'):
+        result['advisor_expression_brief']=1
+        result['limits'] += ' Non-action Expressions received limited-depth brief assessment, not exhaustive per-case application audits.'
+    if protocol.get('advisor_shared_results'):
+        result['advisor_shared_results']=1
+        result['advisor_analysis_id_maps']={stage:read(run/f'calls/{stage}/response.json').get('analysis_id_map',[]) for stage in workflow.branch_stages(run) if stage.startswith('supplement_')}
+        result['context_concern_results']={stage:read(run/f'calls/{stage}/response.json').get('context_card_dispositions',[]) for stage in workflow.branch_stages(run) if stage.startswith('supplement_')}
+        result['source_review_summaries']={stage:read(run/f'calls/{stage}/response.json').get('source_review_summary') for stage in workflow.branch_stages(run) if stage.startswith('supplement_')}
+        result['limits'] += ' Shared manuscript analyses support explicit per-source decisions. Unknown/unfinished are unresolved; candidate associations not adopted are not certified as inspected.'
+    if protocol.get('advisor_review_view'):
+        result['advisor_review_view']=1
+        result['limits'] += ' Review withheld drafting frames and permission metadata; drafting sources below are reloaded in full from frozen inputs, not reconstructed from the slim review view.'
+    if protocol.get('advisor_efficiency'):
+        result['advisor_efficiency']=1
+        result['limits'] += ' Expression history narratives were withheld from review; explicit shared non-action judgments may cover several cases. Full local records are not proof all fields were reviewed.'
     if protocol.get('expression_version'):
         import expression_runtime as expression
         result['expression_version']=1
@@ -280,6 +315,22 @@ Target-only drafting remains valid; a supplied example is not a mandatory templa
 '''
 import public_expression as public_expression
 EXPRESSION_DRAFT_SCHEMA += '\n'+public_expression.SCHEMA
+
+
+def draft_schema(evidence):
+    result = EXPRESSION_DRAFT_SCHEMA if evidence.get('expression_version') else DRAFT_SCHEMA
+    if evidence.get('advisor_role_division'):
+        result += '''\nConcern records justify requirements; Expression contributions identify concrete
+realization choices. For linked transfers carrying expression_contribution, read their
+actual adopted feature IDs and target comparison. Carry the useful supported operation
+into the coordinated report/replacement where appropriate, rather than restating a
+generic Concern as an additional problem. Source-count is not problem-count. Use only
+features actually supported for that target and source genre; no forced phrase copying.
+A transfer's declared contribution is not proof of actual realization in final prose:
+record the actual operation used and verify it in the delivered passage. Preserve each
+independently justified requirement when coordinating actions. Target-only drafting
+remains valid where no source expression is suitable.\n'''
+    return result
 
 
 def review_schema(context):

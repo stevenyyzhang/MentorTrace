@@ -67,6 +67,8 @@ class SettingsAuthorization(unittest.TestCase):
                     calls.append(cmd)
                     self.cmd, self.out = cmd, kwargs['stdout']
                 def communicate(self, prompt, timeout):
+                    if not isinstance(prompt, bytes):
+                        raise AssertionError('Send exact UTF-8 bytes without Windows newline conversion')
                     Path(self.cmd[self.cmd.index('-o') + 1]).write_text('{}', encoding='utf-8')
                     self.out.write(json.dumps({'type': 'turn.completed', 'usage': {'input_tokens': 1, 'output_tokens': 1}}) + '\n')
             with patch.object(codex_adapter.shutil, 'which', return_value='fake-codex'), \
@@ -155,6 +157,22 @@ class ReuseAndConcurrency(unittest.TestCase):
             stages.pin_settings(folder, {'model': 'synthetic', 'reasoning_effort': 'xhigh', 'service_tier': 'default'})
             with self.assertRaisesRegex(ValueError, 'settings changed'):
                 stages.pin_settings(folder, {'model': 'synthetic', 'reasoning_effort': 'high'})
+
+    def test_windows_newline_cache_requires_original_file_hash_and_exact_text(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);attempt=root/'original';attempt.mkdir()
+            output=attempt/'final_text.json';output.write_text('{}')
+            prompt=attempt/'prompt.txt';prompt.write_bytes(b'first\r\nsecond\r\n')
+            request={'prompt':'first\nsecond\n','images':[]}
+            record={'model':'synthetic-model','reasoning_effort':'xhigh','requested_service_tier':'default',
+                'prompt_sha256':delta.audit.digest(prompt),'images':[], 'returncode':0,
+                'fresh_ephemeral_context':True,'usage':[{'output_tokens':1}],
+                'output_sha256':delta.audit.digest(output)}
+            (attempt/'audit.json').write_text(json.dumps(record))
+            self.assertEqual(stages.find_cached(root,request,'synthetic-model','xhigh')[0],output)
+            self.assertIsNone(stages.find_cached(root,{**request,'prompt':'first\nchanged\n'},'synthetic-model','xhigh'))
+            prompt.write_bytes(b'first\nsecond\n')
+            self.assertIsNone(stages.find_cached(root,request,'synthetic-model','xhigh'))
 
     def test_prefetch_is_bounded_and_does_not_accept_shared_state(self):
         with tempfile.TemporaryDirectory() as folder:

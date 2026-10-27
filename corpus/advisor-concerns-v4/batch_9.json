@@ -653,7 +653,7 @@
   {
     "id": "C0246",
     "core_question": {
-      "text": "Does the new privacy mechanism follow from the adversary's observation chain and controllable information?",
+      "text": "Does the proposed intervention address the actual information dependency behind the stated objective?",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01752",
@@ -699,7 +699,7 @@
       ]
     },
     "new_manuscript_check": {
-      "text": "Trace what existing protections change and which remaining freedom supports the new objective.",
+      "text": "Trace what an existing method changes and which remaining controllable choice is relevant.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01752",
@@ -745,7 +745,7 @@
       ]
     },
     "relationship_to_check": {
-      "text": "Protected physical attribute, signal-based inference, prior protection point, controllable pilot or spatial mapping, and proposed mechanism.",
+      "text": "Objective, available observations, inference dependency, existing intervention and controllable choice.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01752",
@@ -791,7 +791,7 @@
       ]
     },
     "historically_insufficient_response": {
-      "text": "General statements about unencryptable physical information did not connect attack inputs with the proposed hidden quantity.",
+      "text": "A general motivation did not connect available inputs with the quantity the proposal changes.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01752",
@@ -837,7 +837,7 @@
       ]
     },
     "potentially_sufficient_response": {
-      "text": "Reconstruct observation-to-parameter inference, identify what can change and why, and verify external standards and prior work separately.",
+      "text": "Explain the input-to-result dependency and what can change, then verify external standards and prior work separately.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01752",
@@ -883,7 +883,7 @@
       ]
     },
     "applicability_boundary": {
-      "text": "Not every sensing-privacy method must conceal all channel information; requirements depend on the observation and threat model.",
+      "text": "Requirements depend on the actual information and operating assumptions; do not impose a universal intervention.",
       "basis": "analyst_abstraction_from_private_feedback",
       "source_ids": [
         "SRC01752",

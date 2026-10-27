@@ -7,6 +7,7 @@ import argparse
 import copy
 import hashlib
 import json
+import re
 import unicodedata
 from pathlib import Path
 
@@ -443,9 +444,9 @@ def validate_a(ledger, package, snapshot):
             require(isinstance(component, dict) and isinstance(component.get('id'), str) and component['id']
                     and component['id'] not in components, 'Duplicate/missing component IDs')
             field = component.get('source_field')
-            original = source['original']
-            require(field in original and isinstance(original[field], str), 'Unknown original source field')
-            require(substantial(component.get('source_quote')) and component['source_quote'] in original[field],
+            original = source_text(source, field)
+            require(isinstance(original, str), 'Unknown original source field')
+            require(substantial(component.get('source_quote')) and component['source_quote'] in original,
                     'Source excerpt missing from original record')
             require(substantial(component.get('requirement')) and substantial(component.get('reason')),
                     'Concrete requirement and evidence-focused reason required')
@@ -468,6 +469,31 @@ def validate_a(ledger, package, snapshot):
         else:
             require(not component.get('duplicate_of'), 'Nonduplicate component has duplicate target')
     return {'components': components, 'reviewer': provenance}
+
+
+def source_text(source, field):
+    """Resolve only typed literal record fields, including complete source checks."""
+    if not isinstance(field, str):return None
+    if field in source['original'] and isinstance(source['original'][field], str):return source['original'][field]
+    if field.startswith('original.'):
+        value=source['original'].get(field[len('original.'):]);return value if isinstance(value,str) else None
+    match=re.fullmatch(r'checks\[(\d+)\]\.([A-Za-z_]+)(?:\[(\d+)\])?(?:\.(description|quote))?',field)
+    if not match:return None
+    index,key,element,leaf=match.groups();checks=source.get('checks',[])
+    if int(index)>=len(checks):return None
+    value=checks[int(index)].get(key)
+    if element is not None:
+        if not isinstance(value,list) or int(element)>=len(value):return None
+        value=value[int(element)]
+    if leaf is not None:
+        if not isinstance(value,dict):return None
+        value=value.get(leaf)
+    return value if isinstance(value,str) else None
+
+
+def target_text(target, field):
+    if field=='anchor.description':return target.get('anchor',{}).get('description')
+    return target.get(field) if isinstance(field,str) else None
 
 
 def adjudicate(audit_dir, ledger):
@@ -593,8 +619,8 @@ def validate(ledger, report_path=None, require_ready=True):
                 target_id, field, quote = target_quote.get('target_id'), target_quote.get('field'), target_quote.get('quote')
                 require(target_id in snapshot['routes'][sid]['final_ids'], 'Target ID outside original source lineage')
                 target = snapshot['final_targets'][target_id]
-                require(field in target and isinstance(target[field], str), 'Unknown target excerpt field')
-                require(substantial(quote) and quote in target[field], 'Exact target excerpt missing/non-substantive')
+                require(isinstance(target_text(target,field), str), 'Unknown target excerpt field')
+                require(substantial(quote) and quote in target_text(target,field), 'Exact target excerpt missing/non-substantive')
             if report_text is not None:
                 require(row['report_quotes'], 'Kept obligation needs actual report excerpts')
                 for quote in row['report_quotes']:

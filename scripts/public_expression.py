@@ -219,8 +219,21 @@ def excerpt_texts(record, basis=None):
     kind = basis.get('kind')
     if kind == 'analytical_account':
         field = basis.get('field')
-        require(field in ACCOUNTS and set(basis) == {'kind', 'field'}, 'Invalid public analytical excerpt origin')
-        return strings(record[field])
+        require(isinstance(field,str) and set(basis) == {'kind', 'field'}, 'Invalid public analytical excerpt origin')
+        if field in ACCOUNTS:return strings(record[field])
+        # Review views expose analytical feature conditions directly. Resolve a
+        # narrowly typed path, never eval or reinterpret it as mentor wording.
+        import re
+        match=re.fullmatch(r'language_features\[(\d+)\]\.(conditions|do_not_transfer|operation|function)(?:\[(\d+)\])?',field)
+        require(match is not None,'Invalid public analytical excerpt origin')
+        index=int(match[1]);features=record.get('language_features',[])
+        require(index<len(features),'Analytical feature index out of range')
+        value=features[index].get(match[2])
+        if match[3] is not None:
+            item=int(match[3]);require(isinstance(value,list) and item<len(value),'Analytical condition index out of range')
+            value=value[item]
+        require(isinstance(value,(str,list)),'Invalid analytical feature value')
+        return strings(value)
     require(kind in EXAMPLE_KINDS and set(basis) == {'kind', 'example_id'}, 'Invalid public example excerpt origin')
     example = next((e for e in record['examples'] if e['id'] == basis['example_id']), None)
     require(example and example['kind'] in EXAMPLE_KINDS[kind], 'Public Expression excerpt changed evidence genre')
