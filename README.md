@@ -78,9 +78,9 @@ flowchart TB
     L["Editor<br/>Wording, notation<br/>and formatting"]
     M["Consolidate retained findings"]
     V["Independent verification<br/>against manuscript evidence"]
-    Q["Freeze initial results<br/>Source and execution checks<br/>Up to three independent packets"]
+    Q["Freeze initial results<br/>Source and execution checks"]
     D["Propose revisions<br/>Draft the bilingual report"]
-    B["Coverage, facts and language checks<br/>Up to three independent packets"]
+    B["Coverage, facts and language checks"]
     OUT["Bilingual Markdown<br/>PDF and page inspection"]
 
     F --> O --> C
