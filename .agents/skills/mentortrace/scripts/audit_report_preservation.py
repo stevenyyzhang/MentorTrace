@@ -14,11 +14,17 @@ from pathlib import Path
 
 
 def digest(path):
-    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+    return _cache().digest(path)
+
+def _cache():
+    scripts=Path(__file__).resolve().parents[4]/'scripts'
+    if str(scripts) not in sys.path:sys.path.insert(0,str(scripts))
+    import validation_cache
+    return validation_cache
 
 
 def read(path):
-    return json.loads(Path(path).read_text(encoding='utf-8-sig'))
+    return json.loads(_cache().text(path))
 
 
 def require(value, message):
@@ -54,6 +60,10 @@ def blocks(path):
             for field in fields:
                 if field in item:
                     result.append(json.dumps({'id': item['id'], 'field': field, 'value': item[field]}, ensure_ascii=False, sort_keys=True))
+    for item in data.get('candidate_reviews', []):
+        if item.get('status') in {'optional','author_confirmation'}:
+            for field in ('author_action','conditions'):
+                if item.get(field):result.append(json.dumps({'id':item['candidate_id'],'field':field,'value':item[field]},ensure_ascii=False,sort_keys=True))
     if not result:
         raise ValueError('JSON source needs findings or organization_suggestions: ' + str(path))
     return result
@@ -163,7 +173,7 @@ def attach_language(ledger, response, evidence):
     return ledger
 
 
-def validate_evidence(entries, message, factual=False):
+def validate_evidence(entries, message, factual=False, domain="manuscript"):
     require(isinstance(entries, list) and bool(entries), message)
     for entry in entries:
         require(isinstance(entry, dict) and has_text(entry.get('path')), 'Evidence source missing')
@@ -171,17 +181,17 @@ def validate_evidence(entries, message, factual=False):
         require(path.is_file(), 'Evidence source missing: ' + str(path))
         require(digest(path) == entry.get('sha256'), 'Evidence source changed: ' + str(path))
         try:
-            text = path.read_text(encoding='utf-8-sig')
+            text = _cache().text(path)
         except (OSError, UnicodeError) as error:
             raise ValueError('Evidence needs a readable textual inspection/derivation record: ' + str(path)) from error
         require(substantive_quote(entry.get('quote')) and entry['quote'] in text,
                 'Evidence excerpt absent: ' + str(path))
         if factual:
-            require(entry.get('basis') in {'manuscript', 'direct_derivation'},
-                    'Factual assertion needs manuscript or direct-derivation evidence')
+            require(entry.get('basis') in {'manuscript':{'manuscript','direct_derivation'},'review_execution':{'execution_record'},'report_correspondence':{'report_structure'}}.get(domain,set()),
+                    'Factual assertion needs domain-appropriate evidence')
 
 
-def validate_target_review(ledger, report):
+def prepare_target_validation(ledger, report):
     reuse_context=None
     if ledger.get('verified_review_reuse'):
         # This records reuse of an earlier accepted judgment, never fresh evidence.
@@ -196,15 +206,23 @@ def validate_target_review(ledger, report):
     require(all(isinstance(row, dict) for row in rows) and
             [signature(row) for row in rows] == [signature(row) for row in expected],
             'Final target block missing or changed; re-review required')
-    scope = ledger.get('target_review', {})
-    require(isinstance(scope, dict) and all(has_text(scope.get(key)) for key in
-            ('reviewer', 'assertion_completeness', 'semantic_review')),
-            'Missing final target assertion-completeness/semantic review')
     blocks_by_id = {row['id']: row for row in expected if row['kind'] == 'block'}
     positions = {unit_id: index for index, unit_id in enumerate(blocks_by_id)}
     draft_by_member = {member: row for row in expected if row['kind'] == 'suggested_wording'
                        for member in row['member_ids']}
 
+    return {'owner':id(ledger),'report':str(Path(report).resolve()),'reuse_context':reuse_context,'expected':expected,'blocks_by_id':blocks_by_id,'positions':positions,'draft_by_member':draft_by_member}
+
+
+def validate_target_review(ledger, report, local_ids=None, _prepared=None):
+    prepared=_prepared or prepare_target_validation(ledger,report)
+    require(prepared['owner']==id(ledger) and prepared['report']==str(Path(report).resolve()),'Wrong validation context')
+    reuse_context=prepared['reuse_context'];expected=prepared['expected'];rows=ledger['target_units']
+    blocks_by_id=prepared['blocks_by_id'];positions=prepared['positions'];draft_by_member=prepared['draft_by_member']
+    scope = ledger.get('target_review', {})
+    require(local_ids is not None or (isinstance(scope, dict) and all(has_text(scope.get(key)) for key in
+            ('reviewer', 'assertion_completeness', 'semantic_review'))),
+            'Missing final target assertion-completeness/semantic review')
     def local_notice(notice, row, label):
         require(isinstance(notice, dict) and has_text(notice.get('reason')),
                 label + ' needs a locally visible explanation')
@@ -223,6 +241,7 @@ def validate_target_review(ledger, report):
         require(local, label + ' must be attached locally before the assertion/draft')
 
     for row in rows:
+        if local_ids is not None and row['id'] not in local_ids:continue
         review = row.get('review', {})
         require(isinstance(review, dict) and review.get('reviewed_sha256') == row['sha256'],
                 'Target review missing or stale for ' + row['id'])
@@ -246,8 +265,9 @@ def validate_target_review(ledger, report):
             status = assertion.get('status')
             require(status in {'supported', 'conditional', 'unresolved', 'reused_verified'}, 'Unprocessed target assertion')
             if status == 'supported':
+                require(assertion.get('domain','manuscript')=='manuscript' or ledger.get('delivery_hardening'),'Documentary domain requires new protocol')
                 validate_evidence(assertion.get('evidence'),
-                                  'Supported target assertion needs evidence', factual=True)
+                                  'Supported target assertion needs evidence', factual=True, domain=assertion.get('domain','manuscript'))
             elif status == 'reused_verified':
                 import verification_basis
                 verification_basis.validate_reference(assertion,reuse_context)
@@ -257,7 +277,7 @@ def validate_target_review(ledger, report):
                 local_notice(assertion.get('unresolved_notice'), row, 'Unresolved fact/action')
     require(not ledger.get('language_realization_required') or 'language_realization' in ledger,
             'Required language realization review missing')
-    if 'language_realization' in ledger:
+    if local_ids is None and 'language_realization' in ledger:
         language_module().validate_delivery_binding(ledger['language_realization'],Path(report).read_text(encoding='utf-8-sig'))
     result={'target_blocks': len(blocks_by_id),
             'suggested_wording_passages': sum(row['kind'] == 'suggested_wording' for row in expected)}
@@ -266,7 +286,34 @@ def validate_target_review(ledger, report):
     return result
 
 
+def validate_source_row(row, target, version=2):
+    components = row.get('components', [])
+    require(bool(components) != bool(row.get('non_substantive_reason')), 'Each source block needs obligations or a non-substantive rationale: ' + row['id'])
+    for c in components:
+        require(c.get('source_quote') and c['source_quote'] in row['text'], 'Obligation lacks exact source quote')
+        require(c.get('obligation') and c.get('reason'), 'Missing obligation or disposition rationale')
+        status = c.get('status')
+        require(status in {'retained', 'revised', 'rejected', 'unresolved'}, 'Unprocessed obligation')
+        quotes = c.get('target_quotes', [])
+        require(isinstance(quotes, list) and all(has_text(q) and q in target for q in quotes), 'Target excerpt missing')
+        if version == 2:
+            require(all(substantive_quote(q) for q in quotes), 'Separator-only target excerpt cannot locate an obligation')
+        elif quotes:
+            # Preserve frozen mixed v1 excerpts, while closing the all-rule
+            # mapping loophole. New v2 reviews do not retain those extras.
+            require(any(substantive_quote(q) for q in quotes),
+                    'Separator-only target excerpts cannot locate an obligation')
+        if status != 'rejected':
+            require(quotes, 'Retained/revised/unresolved obligation must be visible')
+        if status in {'revised', 'rejected'}:
+            validate_evidence(c.get('evidence', []), 'Changed obligation needs evidence')
+
+
 def validate(ledger, report, require_v2=False):
+    with _cache().session():
+        return _validate(ledger,report,require_v2)
+
+def _validate(ledger, report, require_v2=False):
     report = Path(report).resolve()
     version = ledger.get('version')
     require(version in {1, 2}, 'Unsupported preservation ledger')
@@ -279,28 +326,12 @@ def validate(ledger, report, require_v2=False):
     scope = ledger.get('scope_review', {})
     require(all(isinstance(scope.get(k), str) and scope[k].strip() for k in ('reviewer', 'source_completeness', 'semantic_review')), 'Missing source/semantic review')
     target = report.read_text(encoding='utf-8-sig')
-    for row in rows:
-        components = row.get('components', [])
-        require(bool(components) != bool(row.get('non_substantive_reason')), 'Each source block needs obligations or a non-substantive rationale: ' + row['id'])
-        for c in components:
-            require(c.get('source_quote') and c['source_quote'] in row['text'], 'Obligation lacks exact source quote')
-            require(c.get('obligation') and c.get('reason'), 'Missing obligation or disposition rationale')
-            status = c.get('status')
-            require(status in {'retained', 'revised', 'rejected', 'unresolved'}, 'Unprocessed obligation')
-            quotes = c.get('target_quotes', [])
-            require(isinstance(quotes, list) and all(has_text(q) and q in target for q in quotes), 'Target excerpt missing')
-            if version == 2:
-                require(all(substantive_quote(q) for q in quotes), 'Separator-only target excerpt cannot locate an obligation')
-            elif quotes:
-                # Preserve frozen mixed v1 excerpts, while closing the all-rule
-                # mapping loophole. New v2 reviews do not retain those extras.
-                require(any(substantive_quote(q) for q in quotes),
-                        'Separator-only target excerpts cannot locate an obligation')
-            if status != 'rejected':
-                require(quotes, 'Retained/revised/unresolved obligation must be visible')
-            if status in {'revised', 'rejected'}:
-                validate_evidence(c.get('evidence', []), 'Changed obligation needs evidence')
+    for row in rows:validate_source_row(row,target,version)
     counts = validate_target_review(ledger, report) if version == 2 else {}
+    if ledger.get('history_binding'):
+        language_module()
+        import delivery_runtime
+        delivery_runtime.validate_history_delivery(ledger,report)
     return {'status': 'records_validated', 'version': version, 'source_blocks': len(rows), **counts,
             'semantic_correctness_verified': False,
             'limitation': ('Semantic coverage, factual support and assertion splitting depend on the recorded review; '

@@ -15,6 +15,15 @@ def prepare(run, stage, context, request, policy):
     run=Path(run);folder=run/'capacity_plans'/stage
     items=[('input_findings',v) for v in context['input_findings']]
     items += [('input_organization_suggestions',v) for v in context.get('input_organization_suggestions',[])]
+    items += [('excluded_organization_candidates',{'id':c['suggestion']['id'],**c}) for c in context.get('excluded_organization_candidates',[])]
+    if context.get('delivery_reliability'):
+        items += [('delivery_candidates',c) for c in context.get('delivery_candidates',[])]
+        items += [('source_requirement',{'id':'requirement:'+u['source_id'],'unit':u,
+                    'related_targets':context.get('source_requirement_routes',{}).get(u['source_id'],[])})
+                  for u in context.get('initial_source_review',{}).get('source_requirements',[])]
+    # Execution issues are adjudication targets, not shared evidence. Assign once.
+    items += [('coverage_execution_issues',{'id':'execution_issue:'+v['id'],'issue':v})
+              for v in context.get('coverage_execution_issues',[])]
     m.require(items,'No independent targets to partition')
     # Explicit cross-target references keep their complete records together.
     ids={v['id']:n for n,(_,v) in enumerate(items)};parents=list(range(len(items)))
@@ -31,7 +40,7 @@ def prepare(run, stage, context, request, policy):
         for value in strings(v):
             if value in ids:parents[root(n)]=root(ids[value])
     # Competing editorial alternatives require a joint decision, not one per shard.
-    editorial=[n for n,(kind,_) in enumerate(items) if kind=='input_organization_suggestions']
+    editorial=[n for n,(kind,_) in enumerate(items) if kind in {'input_organization_suggestions','excluded_organization_candidates'}]
     for n in editorial[1:]:parents[root(n)]=root(editorial[0])
     groups={}
     for n,item in enumerate(items):groups.setdefault(root(n),[]).append(item)
@@ -39,8 +48,18 @@ def prepare(run, stage, context, request, policy):
     def build(rows):
         ctx=copy.deepcopy(context)
         ctx['input_findings']=[v for k,v in rows if k=='input_findings']
+        if 'coverage_execution_issues' in ctx:
+            ctx['coverage_execution_issues']=[v['issue'] for k,v in rows if k=='coverage_execution_issues']
         if 'input_organization_suggestions' in ctx:
             ctx['input_organization_suggestions']=[v for k,v in rows if k=='input_organization_suggestions']
+        if 'excluded_organization_candidates' in ctx:
+            ctx['excluded_organization_candidates']=[{k:v for k,v in item.items() if k!='id'} for kind,item in rows if kind=='excluded_organization_candidates']
+        if ctx.get('delivery_reliability'):
+            ctx['delivery_candidates']=[v for k,v in rows if k=='delivery_candidates']
+            if 'initial_source_review' in ctx:
+                ctx['initial_source_review']['source_requirements']=[v['unit'] for k,v in rows if k=='source_requirement']
+            selected_candidates={v['id'] for v in ctx['delivery_candidates']}
+            ctx['prior_candidate_reviews']=[v for v in ctx.get('prior_candidate_reviews',[]) if v['candidate_id'] in selected_candidates]
         ctx['capacity_partition']={
             'assigned_ids':[v['id'] for _,v in rows],
             'all_target_ids':[v['id'] for _,v in items],

@@ -98,8 +98,7 @@ Minimize calls within the approved bounds; the heuristic does not prove a global
 minimum. Do not automatically raise workload limits again. Expression count has
 no independent hard cap: operations, boundaries and complete capacity constrain it.
 Candidate associations retain a quarter of the old complexity charge, not a
-quarter of their content or coverage. Six Sol packets and ten Astra packets were
-offline examples for one paper, not defaults to hard-code or quality guarantees.
+quarter of their content or coverage. Do not hard-code a model-specific packet count.
 The profile's standalone-expression target only spreads unlinked Concerns; it
 does not exclude Expressions or impose a separate source count.
 
@@ -208,10 +207,9 @@ and recheck rather than guessing capacity or silently changing models.
 Text uses the larger cl100k/o200k token count with 10% headroom when tiktoken is
 available; otherwise UTF-8 bytes provide a conservative text bound. The planner
 reserves 64,000 tokens for output INCLUDING reasoning, 6,000 per paper-page image
-and 8,000 for system overhead. These allowances were calibrated against saved Sol
-trials on the same six-page manuscript, not all image sizes or other models.
-Use the selected model's catalog context_window and effective percentage (currently
-95%), not max_context_window or an API-advertised maximum. These are explicit
+and 8,000 for system overhead. Use the selected model's detected catalog
+context_window and effective percentage, not max_context_window or an
+API-advertised maximum. These are explicit
 planning allowances, not measured provider limits or an output-length command.
 The automatic catalog read may use the CLI's current cache; it is not a server
 acceptance probe. Unknown output size, image processing and server limits remain
@@ -230,3 +228,13 @@ is promised, and Codex metadata must not be substituted for another host's capac
 
 Offline coverage, capacity and lossless reconstruction checks do not establish
 model comprehension, complete reasoning or improved review quality.
+
+## Mentor-style alignment without a superiority claim
+
+When mentor-style writing is the goal, a compatible source-supported expression may
+be selected without proven improvement. Preserve facts, conditions and naturalness;
+record the actual adopted feature and style purpose in the existing reason fields.
+The legacy expression_improvement / optional_improvement serialized labels also carry
+these optional expression changes; they do not certify improvement. Distinguish this
+basis from an evidenced quality gain in the record and author wording. An acceptable
+original is not an error, and nonuse remains legitimate. No new issue or rewrite quota.

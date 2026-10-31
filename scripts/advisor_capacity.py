@@ -75,8 +75,12 @@ def estimate(prompt, image_count, policy):
                 exact_provider_token_count=False, policy=policy)
 
 
+class CapacityExceeded(ValueError):
+    pass
+
+
 def check_capacity(prompt, image_count, policy):
     result = estimate(prompt, image_count, policy)
-    require(result['transport_character_fit'], 'Complete request exceeds Codex transport character limit; replan, never truncate')
-    require(result['fits'], 'Complete request exceeds detected capacity budget; replan, never truncate')
+    if not result['fits']:
+        raise CapacityExceeded('Complete request exceeds detected capacity or transport budget; replan, never truncate')
     return result

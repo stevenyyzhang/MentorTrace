@@ -14,7 +14,11 @@ import audit_merge_obligations as audit
 import advisor_capacity as capacity
 import advisor_wire
 import verification_basis
+import review_quality
 import report_concision
+import delivery_recovery as recovery
+import delivery_reliability as reliability
+import delivery_efficiency
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('workflow_preservation', ROOT / '.agents/skills/mentortrace/scripts/audit_report_preservation.py')
@@ -60,16 +64,29 @@ Stage-scope task value: {status:"completed",reason,issues:[],unresolved_ids:[]}.
 Check assigned objects/plans against actual declared checks and the full paper; distinguish
 completed unknown from absent review. Do not independently re-review every no-match library
 disposition: source ID accounting is mechanical and not a second semantic library review.
+When technical_scope or Reader editorial_axes are supplied, inspect each recorded aspect
+against its actual scope and evidence; a sufficient judgment on another aspect is not proof
+that this aspect was checked. Preserve unknown and not_checked distinctions.
+For Reader/Expert scope, also check manuscript-grounded omissions outside the declared inventory:
+actual scene inputs, processing-to-plot links, statistical basis and literature relationships.
+Keep these as specific execution issues for Verify; missing review alone is not an author error.
 Return ALL required checks in this one pass; do not create a separate execution-review call.
 '''
 DELIVERY = COMMON + audit.B_INSTRUCTIONS + '''
 One DELIVERY pass covers original-to-report preservation AND final facts, both-language meaning,
 conditions, style and actual Expression realization. Frozen A is supplied; do not readjudicate A
 to make B pass. Inspect complete report context and cross-section dependencies.
-Coverage task value is the B component row without component_id: {status,reason,target_quotes:
-[{target_id,field,quote}],report_quotes:[],uncertainty_visibility_review:{status,presented_as,reason}}.
+Coverage task value is the B component row without component_id:
+{status:"kept|missing|not_required|unresolved",reason,target_quotes:
+[{target_id,field,quote}],report_quotes:[<exact report string>],uncertainty_visibility_review:{status,presented_as,reason}}.
+Use kept for a delivered required/optional component. Frozen already_answered, unsupported,
+and duplicate components require not_required, with both quote lists empty; preserve optional
+canonical-reference explanations separately. Missing optional components remain missing.
+Unknown requires unresolved, no target_quotes, and exact report strings plus visibility
+{status:"completed",presented_as:"unknown_or_author_confirmation",reason}.
 Source-field value: {components:[{source_quote,obligation,status:"retained|revised|rejected|unresolved",
-target_quotes:[],reason,evidence:[]}],non_substantive_reason:""}. Cover every substantive clause;
+target_quotes:[<exact report string>],reason,evidence:[]}],non_substantive_reason:""}. Report excerpts
+in these two string lists must not be locator objects. Cover every substantive clause;
 revised/rejected require actual evidence. All excerpts must be literal in the bound source/report.
 Target-block value: {classification:"factual|non_factual|action|explanatory",reason,assertions:[],
 meaning_check,style_check}. List factual clauses even inside actions. Assertion:
@@ -137,9 +154,11 @@ def source_inputs(run):
                 sources.append({'source_id': item['id'], 'source_type': kind, 'original': item,
                                 'checks': [checks[c] for c in item.get('check_ids', [])],
                                 'source_sha256': audit.value_digest(item)})
+        if protocol.get('delivery_reliability'):
+            sources.extend(reliability.candidate_source(c) for c in reliability.candidates(stage,response,m.read(objects) if protocol.get('coverage_basis_v1') else None))
         # Full original same-stage mapping is included once, fixing short A-number references.
         context = {k: response[k] for k in ['relations', 'new_objects', 'checks', 'findings', 'organization_suggestions',
-                    'analysis_id_map', 'reading_review', 'configuration_review', 'coverage', 'uncertain_items',
+                    'analysis_id_map', 'coverage_answers', 'new_coverage_basis', 'reading_review', 'technical_scope', 'configuration_review', 'coverage', 'uncertain_items',
                     'source_review_summary', 'limits'] if k in response}
         plan = m.read(run / 'calls/objects/response.json') if stage in {'reader', 'technical'} else {}
         scopes.append({'stage': stage, 'assigned_plan': plan, 'actual_initial_records': context})
@@ -166,7 +185,14 @@ def task(kind, key, data, group=None):
 def encoded_request(instruction, payload):
     wire = advisor_wire.pack(payload)
     m.require(advisor_wire.unpack(wire) == payload, 'Lossless packet roundtrip failed')
-    return instruction + '\nINPUT\n' + json.dumps(wire, ensure_ascii=False, separators=(',', ':'))
+    prompt=instruction + '\nINPUT\n' + json.dumps(wire, ensure_ascii=False, separators=(',', ':'))
+    if (instruction.startswith('DELIVERY CONTRACT v2') or payload.get('global_semantic_view')) and len(prompt)>600000:
+        import lossless_delivery_wire as compact
+        candidate=compact.pack(payload)
+        m.require(compact.unpack(candidate)==payload,'Exact delivery payload reconstruction failed')
+        shorter=instruction+'\n'+compact.INSTRUCTIONS+'\nINPUT\n'+compact.dump(candidate)
+        if len(shorter)<len(prompt):return shorter
+    return prompt
 
 
 # Output planning estimates only; the full capacity policy/output reserve is unchanged.
@@ -181,15 +207,35 @@ def prepare_bundle(out, phase, base, tasks, bindings, policy):
     out = Path(out).resolve()
     m.require(not out.exists(), 'Refuse to overwrite a review bundle')
     m.require(len({t['id'] for t in tasks}) == len(tasks), 'Duplicate task inventory')
-    instruction = SOURCE if phase == 'source' else DELIVERY
-    if phase=='delivery' and base.get('verified_delivery_fidelity'):instruction+=FIDELITY
-    if phase=='delivery' and base.get('report_concision'):instruction+='\n'+report_concision.INSTRUCTIONS
+    compact=phase=='delivery' and bool(base.get('delivery_compact'))
+    instruction=''
+    if not compact:
+        instruction = SOURCE if phase == 'source' else DELIVERY
+        if phase=='source' and base.get('coverage_basis_v1'):instruction+='\n'+__import__('coverage_basis').AUDIT
+        if phase=='delivery' and base.get('delivery_hardening'):
+            import review_contract
+            instruction+='\n'+review_contract.instructions(tasks)+'\n'+report_concision.META_INSTRUCTIONS+'\n'+__import__('expression_realization').PARTIAL_INSTRUCTIONS
+        if phase=='delivery' and base.get('verified_delivery_fidelity'):instruction+=FIDELITY
+        if phase=='delivery' and base.get('report_concision'):instruction+='\n'+report_concision.INSTRUCTIONS
+        if phase=='delivery' and base.get('report_source_quotes'):instruction+='\n'+report_concision.SOURCE_QUOTE_INSTRUCTIONS
+        if phase=='delivery' and base.get('review_quality'):instruction+='\n'+review_quality.CLARITY_INSTRUCTIONS
+        if phase=='delivery' and base.get('postprocess_efficiency'):instruction+='\n'+delivery_efficiency.INSTRUCTIONS
+        if base.get('delivery_reliability'):
+            instruction+='\nExact quote fields may use {"$evidence_text":"E1","span":[start,end]} for an actual evidence_records entry, or {"$page_text":page,"span":[start,end]} for supplied page text. Offsets are Python Unicode characters, end-exclusive. Programs expand exact strings; choose focused supporting evidence, not a generic record merely to shorten output. No semantic judgment is generated by expansion.'
     # Keep report contexts / original units together while allowing different views to share a call.
     groups = {}
     for item in tasks:
-        groups.setdefault(item['group'], []).append(item)
+        group=('dependent_global:'+item['id']) if base.get('delivery_hardening') and item['kind']=='global_scope' else item['group']
+        groups.setdefault(group, []).append(item)
+    def output_cost(item):
+        cost = OUTPUT_ESTIMATES[item['kind']]
+        if item['kind']=='global_scope' and base.get('report_source_quotes'):
+            cost += 220 * len(base['original_fields'])
+        return cost
     def make(items):
-        payload = {**base, 'tasks': items}
+        payload = recovery.scoped_payload(base,items) if phase=='delivery' and base.get('delivery_reliability') else {**base,'tasks':items}
+        if not any(t['kind']=='global_scope' for t in items):
+            payload.pop('original_fields',None)
         if phase == 'source':
             stages = {t['data'].get('stage', t['key'].split(':')[0]) for t in items}
             payload['original_stage_context'] = [s for s in base['original_stage_context'] if s['stage'] in stages]
@@ -205,15 +251,22 @@ def prepare_bundle(out, phase, base, tasks, bindings, policy):
                 if more<=wanted:break
                 wanted|=more
             payload['frozen_a']=[u for u in base['frozen_a'] if u['source_id'] in wanted]
-        prompt = encoded_request(instruction, payload)
-        result = capacity.estimate(prompt, len(base['page_images']), policy)
-        estimate = sum(OUTPUT_ESTIMATES[t['kind']] for t in items)
+        if phase=='delivery' and base.get('delivery_compact'):
+            import delivery_protocol
+            payload=delivery_protocol.project(payload,items)
+            packet_instruction=delivery_protocol.instructions(items,base)
+        else:packet_instruction=instruction
+        prompt = encoded_request(packet_instruction, payload)
+        result = capacity.estimate(prompt, len(payload['page_images']), policy)
+        estimate = sum(output_cost(t) for t in items)
         return prompt, result, estimate
     packets = []; grouped=list(groups.values()); start=0
+    if base.get('delivery_hardening'):grouped.sort(key=lambda g:any(t['kind']=='global_scope' for t in g))
     while start < len(grouped):
         end=start; estimated=0
         while end<len(grouped):
-            cost=sum(OUTPUT_ESTIMATES[t['kind']] for t in grouped[end])
+            if (base.get('delivery_reliability') or base.get('delivery_hardening')) and end>start and any(t['kind']=='global_scope' for t in grouped[end]):break
+            cost=sum(output_cost(t) for t in grouped[end])
             if estimated+cost>policy['output_reserve']:break
             estimated+=cost;end+=1
         if end==start and len(grouped[start])>1:
@@ -241,7 +294,8 @@ def prepare_bundle(out, phase, base, tasks, bindings, policy):
         ident = f'{phase}-{n:03d}'; request_sha = audit.text_digest(prompt) if hasattr(audit, 'text_digest') else __import__('hashlib').sha256(prompt.encode()).hexdigest()
         request = {'id': ident, 'phase': phase, 'prompt': prompt, 'request_sha256': request_sha,
                    'task_ids': [t['id'] for t in items], 'capacity': cap,
-                   'estimated_output_tokens': estimate, 'images': base['page_images']}
+                   'estimated_output_tokens': estimate, 'images': (recovery.scoped_payload(base,items)['page_images'] if phase=='delivery' and base.get('delivery_reliability') else base['page_images'])}
+        if phase=='delivery' and base.get('delivery_compact'):request['wire_protocol']='mentortrace_delivery_v2'
         audit.save_new(out / 'requests' / (ident + '.json'), request)
         manifest['packets'].append({'id': ident, 'file': 'requests/' + ident + '.json', 'sha256': audit.value_digest(request)})
     audit.save_new(out / 'manifest.json', manifest)
@@ -274,7 +328,7 @@ def prepare_source(run, out, policy):
     for t in tasks:
         stage=t['data'].get('stage',t['key'].split(':')[0]);first_stage_group.setdefault(stage,t['group'])
     tasks += [task('stage_scope', s['stage'], {'stage': s['stage']},first_stage_group.get(s['stage'])) for s in scopes]
-    return prepare_bundle(out, 'source', {**paper, 'original_stage_context': scopes}, tasks, files, policy)
+    return prepare_bundle(out, 'source', {**paper, 'original_stage_context': scopes, 'coverage_basis_v1': m.read(Path(run)/'inputs/protocol.json').get('coverage_basis_v1',0)}, tasks, files, policy)
 
 
 def verify_bundle(folder):
@@ -302,14 +356,23 @@ def expand_judgments(value, definitions, trail=()):
     return value
 
 
-def collect(folder, result_paths):
+def collect(folder, result_paths, allow_partial=False):
     folder = Path(folder); manifest = verify_bundle(folder)
+    ctx=m.read(folder/'context.json')
+    inventory={t['id']:t for t in m.read(folder/'inventory.json')}
     results = {}; seen_packets = set(); provenance = []
     for path in result_paths:
         response = m.read(path)
         if response.get('transport_provenance'):
             raw=response['transport_provenance'];m.require(m.sha(raw['raw_path'])==raw['raw_sha256'],'Original review response changed')
             actual=m.read(raw['raw_path'])
+            if raw.get('wire_protocol'):
+                import delivery_protocol
+                m.require(m.sha(raw['audit_path'])==raw['audit_sha256'],'Actual transport audit changed')
+                actual_audit=m.read(raw['audit_path'])
+                req=m.read(folder/next(e['file'] for e in manifest['packets'] if e['id']==response['packet_id']))
+                if ctx.get('delivery_focus'):actual=__import__('review_contract').normalize_wire(actual)
+                actual=delivery_protocol.materialize(actual,[inventory[k] for k in req['task_ids']],delivery_protocol.expected_reviewer(manifest['policy']['model'],actual_audit))
             m.require({k:v for k,v in response.items() if k not in {'packet_id','request_sha256','transport_provenance'}}==actual,'Assembled response differs from actual model output')
         ident = response.get('packet_id')
         entry = next((p for p in manifest['packets'] if p['id'] == ident), None)
@@ -317,26 +380,44 @@ def collect(folder, result_paths):
         request = m.read(folder / entry['file'])
         m.require(response.get('request_sha256') == request['request_sha256'], 'Result belongs to another request')
         audit.review_provenance(response.get('reviewer'), 'A' if manifest['phase'] == 'source' else 'B')
-        assigned = set(request['task_ids']); returned = set()
+        assigned = set(request['task_ids']); returned = set(); tainted=set(); errors=[]
         for row in response.get('results', []):
-            ids = row.get('task_ids', [])
-            m.require(ids and len(ids) == len(set(ids)) and set(ids) <= assigned and not set(ids) & returned,
-                        'Missing, duplicate or unassigned task result')
-            value = expand_judgments(row['value'], response.get('judgments', {}))
-            m.require(isinstance(value, dict) and bool(value), 'Empty task judgment')
-            for key in ids: results[key] = copy.deepcopy(value)
-            returned.update(ids)
-        m.require(returned == assigned, 'Omitted task is unreviewed; never default to pass')
+            ids=row.get('task_ids',[]) if isinstance(row,dict) else []
+            named={k for k in ids if isinstance(k,str)} if isinstance(ids,list) else set()
+            try:
+                m.require(isinstance(ids,list) and ids and len(ids)==len(named) and named<=assigned and not named & (returned|tainted),
+                          'Missing, duplicate or unassigned task result')
+                value = expand_judgments(row['value'], response.get('judgments', {}))
+                if ctx.get('postprocess_efficiency'):
+                    inputs=delivery_efficiency.input_texts([inventory[k] for k in request['task_ids']])
+                    value=delivery_efficiency.expand(value,response.get('texts',{}),inputs)
+                if ctx.get('delivery_reliability'):
+                    value=recovery.expand_evidence(value,response.get('evidence_records',[]),ctx.get('manuscript',[]))
+                m.require(isinstance(value,dict) and value,'Empty task judgment')
+                if ctx.get('delivery_hardening') and manifest['phase']=='delivery':
+                    import review_contract
+                    checks=review_contract.inspect([inventory[k] for k in ids],{k:value for k in ids},ctx)
+                    m.require(not checks,'Canonical result defects: '+__import__('json').dumps(checks,ensure_ascii=False))
+                for key in ids:results[key]=copy.deepcopy(value)
+                returned.update(ids)
+            except (ValueError,KeyError,TypeError,IndexError) as error:
+                if not allow_partial:raise
+                tainted.update(named & assigned)
+                errors.append({'task_ids':sorted(named),'error':str(error)})
+        for key in tainted:results.pop(key,None)
+        returned-=tainted
+        m.require(allow_partial or returned == assigned, 'Omitted task is unreviewed; never default to pass')
         seen_packets.add(ident)
-        origin={'path':str(Path(path).resolve()),'sha256':m.sha(path),'reviewer':response['reviewer']}
+        origin={'path':str(Path(path).resolve()),'sha256':m.sha(path),'reviewer':response['reviewer'],
+                'packet_id':ident,'task_ids':sorted(returned),'collection_errors':errors}
         if response.get('offline_replay'):
             replay=response['offline_replay']
             m.require(replay.get('new_model_calls')==0 and replay.get('not_new_semantic_review') is True,'Replay must retain its actual scope')
             for item in replay['sources']:m.require(m.sha(item['path'])==item['sha256'],'Replayed original review changed')
             origin['offline_replay']=copy.deepcopy(replay)
         provenance.append(origin)
-    m.require(seen_packets == {p['id'] for p in manifest['packets']}, 'Missing review packet')
-    m.require(set(results) == set(manifest['task_ids']), 'Incomplete review inventory')
+    m.require(allow_partial or seen_packets == {p['id'] for p in manifest['packets']}, 'Missing review packet')
+    m.require(allow_partial or set(results) == set(manifest['task_ids']), 'Incomplete review inventory')
     return results, provenance
 
 
@@ -354,6 +435,10 @@ def assemble_source(folder, responses, output):
             checks.append({**value, 'check_id': t['key']})
         else:
             m.require(value.get('status') == 'completed' and audit.substantial(value.get('reason')) and isinstance(value.get('issues'),list) and isinstance(value.get('unresolved_ids'),list), 'Incomplete stage scope judgment')
+            ctx=m.read(folder/'context.json')
+            if ctx.get('coverage_basis_v1'):
+                scope=next(s for s in ctx['original_stage_context'] if s['stage']==t['key'])
+                __import__('coverage_basis').validate_audit(value,scope,{p['page']:p['text'] for p in ctx['manuscript']},m.anchor)
             scopes.append({**value, 'stage': t['key']})
     # Reuse the strict A validator on the complete source-only inventory.
     sources = [t['data'] for t in m.read(folder / 'inventory.json') if t['kind'] == 'source']
@@ -375,6 +460,7 @@ def source_metadata(value, images):
     if isinstance(value,list):return [source_metadata(v,images) for v in value]
     if isinstance(value,dict):
         value={k:source_metadata(v,images) for k,v in value.items()}
+        if 'page' in value and 'quote' in value and 'kind' not in value:value['kind']='text'
         if value.get('kind')=='image' and 'image_sha256' not in value:
             image=next((i for i in images if i['page']==value.get('page')),None)
             m.require(image is not None,'Unknown source image evidence page')
@@ -422,6 +508,10 @@ def seed_a(source_review, audit_dir, output):
             pending.append(u['source_id'])
     ledger['reviewer']=result['provenance'][0]['reviewer'];ledger['reuse_provenance']=result['provenance']
     ledger['seed_source_review']={'path':str(Path(source_review).resolve()),'sha256':m.sha(source_review)}
+    if (Path(package['run'])/'inputs/protocol.json').exists() and m.read(Path(package['run'])/'inputs/protocol.json').get('delivery_reliability'):
+        final=m.read(Path(package['run'])/'final.json')
+        ledger=reliability.apply_resolutions(ledger,final,{'path':str(Path(package['run'])/'final.json'),'sha256':m.sha(Path(package['run'])/'final.json')})
+        ledger=source_metadata(ledger,snapshot['page_images'])
     ledger['pending_source_ids']=sorted(set(pending));audit.save_new(output,ledger)
     # New merge additions or missing canonical duplicate context require an explicit delta,
     # never automatic promotion or discarded obligations.
@@ -459,7 +549,7 @@ def complete_a(audit_dir, seed_path, bundle, responses, output):
     audit.validate_a(seed,package,snapshot);audit.save_new(output,seed);return seed
 
 
-def prepare_delivery(audit_dir, ledger_path, out, policy, fidelity=None, concise=None):
+def prepare_delivery(audit_dir, ledger_path, out, policy, fidelity=None, concise=None, efficient=None, scope_plan=None, recoverable=None):
     audit_dir=Path(audit_dir); ledger_path=Path(ledger_path)
     package,snapshot=audit.verify_package(audit_dir);audit.frozen_a(audit_dir,package,snapshot)
     b=m.read(audit_dir/'phase_b.packet.json');ledger=m.read(ledger_path)
@@ -468,6 +558,11 @@ def prepare_delivery(audit_dir, ledger_path, out, policy, fidelity=None, concise
     m.require(b['report_text']==report.read_text(encoding='utf-8-sig'),'B and final-text report differ')
     final=(Path(package['run'])/'final.json').resolve()
     m.require(any(Path(s['path']).resolve()==final and s['sha256']==package['source_files']['final.json'] for s in ledger['sources']), 'Both delivery gates must bind the same final review')
+    for source in ledger['sources']:
+        path=Path(source['path'])
+        if path.suffix.lower()=='.json':
+            value=m.read(path)
+            if isinstance(value,dict) and value.get('canonical_draft'):__import__('canonical_draft').validate(value)
     expected_sources=preservation.inventory(ledger['sources'])
     m.require([(u['id'],u['text']) for u in ledger['units']]==[(u['id'],u['text']) for u in expected_sources], 'Final source inventory changed/omitted')
     expected_targets=preservation.target_inventory(report)
@@ -490,6 +585,7 @@ def prepare_delivery(audit_dir, ledger_path, out, policy, fidelity=None, concise
             path=candidates.pop()
         bindings[str(path.resolve())]=sha
     for s in ledger['sources']:bindings[s['path']]=s['sha256']
+    delivery_efficiency.preflight(ledger,bindings)
     base={'manuscript':b['manuscript'],'page_images':b['page_images'],'report_text':b['report_text'],
           'final_targets':b['final_targets'],'routes':b['routes'],
           'frozen_a':[{'source_id':u['source_id'],'components':u['components']} for u in b['frozen_adjudication']['units']],
@@ -497,7 +593,34 @@ def prepare_delivery(audit_dir, ledger_path, out, policy, fidelity=None, concise
           'all_source_inventory':[],'all_target_inventory':[],
           'audit_directory':str(audit_dir.resolve()),'ledger_path':str(ledger_path.resolve()),
           'source_field_schema':preservation.__doc__}
+    # Historical report context is evidence for preservation, never initial discovery.
+    # Complete literal texts also permit exact substring interning of their blocks.
+    history=[s for s in ledger['sources'] if Path(s['path']).suffix.lower()=='.md']
+    if history:base['historical_report_evidence']=[{**s,'text':Path(s['path']).read_text(encoding='utf-8-sig')} for s in history]
     protocol=m.read(Path(package['run'])/'inputs/protocol.json') if (Path(package['run'])/'inputs/protocol.json').exists() else {}
+    if protocol.get('native_report_repair'):base['native_report_repair']=1
+    efficient=protocol.get('postprocess_efficiency')==1 if efficient is None else efficient
+    carry={'source_ids':[],'target_ids':[],'language':[]}
+    if efficient:
+        base['postprocess_efficiency']=1
+        base['delivery_rule_binding']=delivery_efficiency.rule_binding()
+        bindings.update({str(delivery_efficiency.ROOT/p):s for p,s in base['delivery_rule_binding'].items()})
+        base['delivery_contract']={
+            'verified_delivery_fidelity':protocol.get('verified_delivery_fidelity')==1 if fidelity is None else fidelity,
+            'report_concision':protocol.get('report_concision')==1 if concise is None else concise,
+            'review_quality':bool(protocol.get('review_quality')),
+            'report_source_quotes':protocol.get('report_source_quotes')==1}
+        if protocol.get('delivery_hardening'):base['delivery_contract']['delivery_hardening']=1
+        if protocol.get('delivery_compact'):base['delivery_contract']['delivery_compact']=1
+        if protocol.get('delivery_focus'):base['delivery_contract']['delivery_focus']=1
+        carry=delivery_efficiency.checked_carryover(ledger,base['delivery_contract'])
+        bindings.update(carry.get('bindings',{}))
+        if carry.get('coverage_binding'):m.require(carry['coverage_binding']['phase_a_sha256']==m.sha(audit_dir/'phase_a.adjudicated.json'),'Coverage reuse belongs to a different frozen A')
+        base['delivery_carryover']={k:v for k,v in carry.items() if k!='bindings'}
+        base['carried_reviews']={
+            'source_fields':[u for u in ledger['units'] if u['id'] in carry['source_ids']],
+            'target_reviews':[{'id':u['id'],'review':u['review']} for u in ledger['target_units'] if u['id'] in carry['target_ids']],
+            'language':carry['language']}
     use_fidelity=protocol.get('verified_delivery_fidelity')==1 if fidelity is None else fidelity
     use_concision=protocol.get('report_concision')==1 if concise is None else concise
     basis=verification_basis.build(package['run']) if use_fidelity else None
@@ -510,10 +633,22 @@ def prepare_delivery(audit_dir, ledger_path, out, policy, fidelity=None, concise
         bindings.update({str(Path(basis['run'])/p):sha for p,sha in basis['files'].items()})
     elif use_fidelity:
         base['verification_reuse_unavailable']=basis
+    if recoverable is None:recoverable=bool(protocol.get('delivery_reliability'))
+    if recoverable:base['delivery_reliability']=1
+    if protocol.get('delivery_compact'):base['delivery_compact']=1
+    if protocol.get('delivery_focus'):base['delivery_focus']=1
+    if protocol.get('delivery_hardening'):
+        base['delivery_hardening']=1
+        base['report_meta_candidates']=report_concision.meta_candidates(ledger['target_units'])
+        if ledger.get('history_binding'):base['history_binding']=ledger['history_binding']
+    if protocol.get('review_quality'):base['review_quality']=1
     if use_concision:
         base['report_concision']=1
         response_for_economy=m.read(ledger['language_realization']['response']['path']) if ledger.get('language_realization_required') else {}
         base['placeholder_candidates']=report_concision.candidates(response_for_economy,ledger['target_units'])
+        if protocol.get('report_source_quotes')==1:
+            base['report_source_quotes']=1
+            base['original_fields']=report_concision.original_fields(b['report_text'])
     for u in ledger['units']:
         try:
             parsed=json.loads(u['text']);fid=parsed['id'];field=parsed['field']
@@ -560,17 +695,22 @@ def prepare_delivery(audit_dir, ledger_path, out, policy, fidelity=None, concise
         final_groups={r['verified_id']:display_groups[(r['report_section'],r['display_number'])]
                       for r in draft_response.get('delivery_map',[])
                       if (r['report_section'],r['display_number']) in display_groups}
+        if protocol.get('delivery_hardening'):
+            from review_integrity import normalize_section
+            final_groups={r['verified_id']:display_groups[(normalize_section(r['report_section']),r['display_number'])] for r in draft_response.get('delivery_map',[])}
     def related_group(ids,fallback):return next((final_groups[k] for k in ids if k in final_groups),fallback)
     tasks=[]
     for u in b['frozen_adjudication']['units']:
         group=related_group(b['routes'][u['source_id']]['final_ids'],'source:'+u['source_id'])
-        for c in u['components']:tasks.append(task('coverage',c['id'],{'source_id':u['source_id'],'component':c},group))
+        for c in u['components']:
+            if c['id'] not in {r['component_id'] for r in carry.get('coverage',[])}:tasks.append(task('coverage',c['id'],{'source_id':u['source_id'],'component':c},group))
     for u in ledger['units']:
         try:
             fid=json.loads(u['text'])['id'];group=related_group([fid],'final:'+fid)
         except (ValueError,KeyError,TypeError):group=u['id']
-        tasks.append(task('source_field',u['id'],u,group))
-    for u in ledger['target_units']:tasks.append(task('target',u['id'],u,context_groups[u['context_id']]))
+        if u['id'] not in carry['source_ids']:tasks.append(task('source_field',u['id'],u,group))
+    for u in ledger['target_units']:
+        if u['id'] not in carry['target_ids']:tasks.append(task('target',u['id'],u,context_groups[u['context_id']]))
     if ledger.get('language_realization_required'):
         lang=ledger['language_realization']
         for key in ['response','evidence']:bindings[lang[key]['path']]=lang[key]['sha256']
@@ -579,12 +719,43 @@ def prepare_delivery(audit_dir, ledger_path, out, policy, fidelity=None, concise
         base['revision_actions']=response['revision_actions']
         records={r['id']:r for r in evidence.get('expression_sources',{}).get('records',[])}
         for draft in response['language_realizations']:
+            if any(g['draft_label']==draft['draft_label'] for g in carry['language']):continue
             ids=realization.allowed_sources(evidence,draft['verified_ids'])
             tasks.append(task('language',draft['draft_label'],{'realization':draft,
                 'revision_action':next(a for a in response['revision_actions'] if a['draft_label']==draft['draft_label']),
                 'complete_expression_sources':[records[k] for k in sorted(ids)]},related_group(draft['verified_ids'],'language:'+draft['draft_label'])))
     tasks.append(task('global_scope','report',{}))
+    if scope_plan:
+        source_bindings={s['path']:s['sha256'] for s in ledger['sources']}
+        base['packet_scopes']=recovery.load_scope(scope_plan,ledger['report_sha256'],source_bindings)
+        bindings[str(Path(scope_plan).resolve())]=m.sha(scope_plan)
+    elif ledger.get('carryover',{}).get('affected_scope_assessment',{}).get('packet_scopes'):
+        # The assessment is already report/hash-bound by checked_carryover.
+        base['packet_scopes']=ledger['carryover']['affected_scope_assessment']['packet_scopes']
+    if protocol.get('delivery_hardening'):
+        # All source genres/features used by local language judgments remain visible to global.
+        base['global_expression_sources']=[r for r in records.values() if any(r['id']==f['expression_id'] for d in response['language_realizations'] for f in d['feature_decisions'])] if ledger.get('language_realization_required') else []
+        base['current_realization_declarations']=response.get('language_realizations',[]) if ledger.get('language_realization_required') else []
+        semantic=ledger.get('carryover',{}).get('affected_scope_assessment',{}).get('semantic_dependencies')
+        if semantic and not base.get('packet_scopes'):
+            import delivery_runtime
+            base['packet_scopes']=delivery_runtime.dependency_scopes(base,tasks,semantic)
+        execution=[]
+        for path in sorted(Path(package['run']).glob('calls/*/*/audit.json')):
+            record=m.read(path)
+            if record.get('model'):
+                bindings[str(path.resolve())]=m.sha(path);execution.append({'path':str(path.resolve()),'sha256':m.sha(path),'text':path.read_text(encoding='utf-8')})
+        base['review_execution_evidence']=execution
+        base['report_correspondence_evidence']={'path':str(report.resolve()),'sha256':m.sha(report)}
+        base['evidence_source_refs']={'report:current':base['report_correspondence_evidence']}
+        base['evidence_source_refs'].update({'execution:'+str(i):{'path':e['path'],'sha256':e['sha256']} for i,e in enumerate(execution,1)})
+    base['task_groups']={g:[t['id'] for t in tasks if t['group']==g] for g in {t['group'] for t in tasks}}
     result=prepare_bundle(out,'delivery',base,tasks,bindings,policy)
+    if efficient:
+        audit.save_new(Path(out)/'efficiency.json',{'carried_source_fields':len(carry['source_ids']),
+            'carried_target_units':len(carry['target_ids']),'carried_language_groups':len(carry['language']),
+            'fresh_tasks':len(tasks),'carried_coverage_components':len(carry.get('coverage',[])),'coverage_review':'fresh except individually validated carried rows','global_review':'fresh','reason':carry.get('reason'),
+            'model_calls':0,'semantic_correctness_verified':False})
     if basis and basis.get('available'):basis_path.write_bytes(audit.encoded(basis))
     for item in evidence_files:
         path=Path(item['path']);path.parent.mkdir(exist_ok=True);path.write_bytes(item['text'].encode())
@@ -594,61 +765,131 @@ def prepare_delivery(audit_dir, ledger_path, out, policy, fidelity=None, concise
 def assemble_delivery(folder, responses, out):
     folder=Path(folder);out=Path(out);m.require(not out.exists(),'Delivery assembly already exists')
     manifest=verify_bundle(folder);m.require(manifest['phase']=='delivery','Expected delivery bundle')
-    values,provenance=collect(folder,responses);ctx=m.read(folder/'context.json')
-    evidence={};paper_bound_evidence=set()
+    ctx=m.read(folder/'context.json');reliable=bool(ctx.get('delivery_reliability'))
+    values,provenance=collect(folder,responses,allow_partial=reliable)
+    m.require(provenance,'No actual review result to checkpoint')
+    evidence={};paper_bound_evidence=set();binding_errors=[]
     for n,path in enumerate(responses):
         for record in m.read(path).get('evidence_records',[]):
-            key=(m.read(path)['packet_id'],record['id'])
-            m.require(key not in evidence and audit.substantial(record.get('text')),'Duplicate/empty actual evidence record')
-            source_paths=record.get('source_paths',[]);hashes=record.get('source_sha256s',[])
-            if record.get('source_pages'):
-                images={i['page']:i for i in ctx['page_images']}
-                m.require(all(p in images for p in record['source_pages']),'Unknown actually inspected image page')
-                source_paths=[images[p]['path'] for p in record['source_pages']]
-                hashes=[images[p]['sha256'] for p in record['source_pages']]
-            m.require(source_paths and len(source_paths)==len(hashes) and all(manifest['bindings'].get(p)==s for p,s in zip(source_paths,hashes)), 'Actual evidence must bind supplied unchanged sources')
-            evidence_path=out/'evidence'/f'packet-{n+1}-{len(evidence)+1}.txt'
-            evidence_path.parent.mkdir(parents=True,exist_ok=True)
-            evidence_path.write_text(json.dumps({'actual_response':str(Path(path).resolve()),'response_sha256':m.sha(path),'sources':dict(zip(source_paths,hashes))},ensure_ascii=False)+'\n'+record['text'],encoding='utf-8',newline='\n')
-            evidence[key]={'path':str(evidence_path.resolve()),'sha256':m.sha(evidence_path)}
-            if record.get('source_pages'):paper_bound_evidence.add(str(evidence_path.resolve()))
+            try:
+                key=(m.read(path)['packet_id'],record['id'])
+                m.require(key not in evidence and audit.substantial(record.get('text')),'Duplicate/empty actual evidence record')
+                source_paths=record.get('source_paths',[]);hashes=record.get('source_sha256s',[])
+                if record.get('source_pages'):
+                    images={i['page']:i for i in ctx['page_images']}
+                    m.require(all(p in images for p in record['source_pages']),'Unknown actually inspected image page')
+                    source_paths=[images[p]['path'] for p in record['source_pages']]
+                    hashes=[images[p]['sha256'] for p in record['source_pages']]
+                m.require(source_paths and len(source_paths)==len(hashes) and all(manifest['bindings'].get(p)==s for p,s in zip(source_paths,hashes)), 'Actual evidence must bind supplied unchanged sources')
+                evidence_path=out/'evidence'/f'packet-{n+1}-{len(evidence)+1}.txt'
+                evidence_path.parent.mkdir(parents=True,exist_ok=True)
+                evidence_path.write_text(json.dumps({'actual_response':str(Path(path).resolve()),'response_sha256':m.sha(path),'sources':dict(zip(source_paths,hashes))},ensure_ascii=False)+'\n'+record['text'],encoding='utf-8',newline='\n')
+                evidence[key]={'path':str(evidence_path.resolve()),'sha256':m.sha(evidence_path)}
+                if record.get('source_pages'):paper_bound_evidence.add(str(evidence_path.resolve()))
+            except (ValueError,KeyError,TypeError,OSError) as error:
+                if not reliable:raise
+                if isinstance(record,dict) and record.get('id'):evidence.pop((m.read(path)['packet_id'],record['id']),None)
+                binding_errors.append({'record':record.get('id') if isinstance(record,dict) else None,'error':str(error)})
     packet_for={tid:p['id'] for p in manifest['packets'] for tid in m.read(folder/p['file'])['task_ids']}
     def bind_evidence(value,packet):
         if isinstance(value,list):return [bind_evidence(v,packet) for v in value]
         if isinstance(value,dict):
-            if 'page' in value and 'quote' in value and value.get('basis')=='manuscript' and 'path' not in value:
+            if 'page' in value and 'quote' in value and value.get('basis') in {'manuscript','direct_derivation'} and 'path' not in value:
                 page=next((p for p in ctx['manuscript_evidence'] if p['page']==value['page']),None)
                 m.require(page is not None,'Unknown manuscript evidence page')
                 return {**{k:bind_evidence(v,packet) for k,v in value.items() if k!='page'},'path':page['path'],'sha256':page['sha256']}
             if 'evidence_record' in value:
+                m.require(not {'path','sha256'} & set(value),'Evidence record cannot override generated binding')
                 key=(packet,value['evidence_record']);m.require(key in evidence,'Missing actually returned evidence record')
                 return {**evidence[key],**{k:bind_evidence(v,packet) for k,v in value.items() if k!='evidence_record'}}
             return {k:bind_evidence(v,packet) for k,v in value.items()}
         return value
-    values={k:bind_evidence(v,packet_for[k]) for k,v in values.items()}
+    bound_values={}
+    for key,value in values.items():
+        try:bound_values[key]=bind_evidence(value,packet_for[key])
+        except (ValueError,KeyError,TypeError) as error:
+            if not reliable:raise
+            binding_errors.append({'task_id':key,'error':str(error)})
+    values=bound_values
+    task_origins={tid:origin for origin in provenance for tid in origin.get('task_ids',[])}
     ledger=m.read(ctx['ledger_path']);b=m.read(Path(ctx['audit_directory'])/'phase_b.template.json')
     if ctx.get('verified_delivery_fidelity'):
         ledger['verified_review_reuse']=m.read(ctx['verification_basis_file'])
-    tasks=m.read(folder/'inventory.json');b['components']=[];language=[]
+    tasks=m.read(folder/'inventory.json');b['components']=copy.deepcopy(ctx.get('delivery_carryover',{}).get('coverage',[]));language=copy.deepcopy(ctx.get('delivery_carryover',{}).get('language',[]))
+    if ctx.get('postprocess_efficiency'):
+        ledger['delivery_rule_binding']=ctx['delivery_rule_binding']
+        ledger['delivery_contract']=ctx['delivery_contract']
+        ledger['delivery_carryover_provenance']=ctx['delivery_carryover']
     source={u['id']:u for u in ledger['units']};target={u['id']:u for u in ledger['target_units']}
+    global_blockers=list(binding_errors)
     for t in tasks:
+        if t['id'] not in values:
+            global_blockers.append({'missing_task':t['id']})
+            # A newly assigned failed/missing task must not inherit a prefilled old
+            # verdict from an unapproved template. Legitimate carryover is not assigned.
+            if t['kind']=='target':target[t['key']]['review']={}
+            elif t['kind']=='source_field':
+                source[t['key']]['components']=[];source[t['key']]['non_substantive_reason']=''
+            continue
         v=values[t['id']]
-        if t['kind']=='coverage':b['components'].append({**v,'component_id':t['key']})
-        elif t['kind']=='source_field':
-            m.require(set(v)<={'components','non_substantive_reason'},'Source result cannot overwrite immutable inventory')
-            source[t['key']].update(v)
-        elif t['kind']=='target':target[t['key']]['review']={**v,'reviewed_sha256':target[t['key']]['sha256']}
-        elif t['kind']=='language':language.append({**v,'draft_label':t['key']})
-        else:
-            m.require(not v.get('issues'),'Global delivery issues remain')
-            if ctx.get('report_concision'):
-                allowed={p['path'] for p in ctx['manuscript_evidence']}|paper_bound_evidence
-                report_concision.validate(v.get('report_economy'),ctx['placeholder_candidates'],preservation.validate_evidence,allowed)
-                ledger['report_economy_review']=v['report_economy']
-            ledger['scope_review']={'reviewer':provenance[0]['reviewer']['name'],**v}
-            ledger['target_review']={'reviewer':provenance[0]['reviewer']['name'],**v}
-    if ledger.get('language_realization_required'):ledger['language_realization']['review']={'reviewer':provenance[0]['reviewer']['name'],'groups':language}
-    b['reviewer']=provenance[0]['reviewer'];b['combined_review_provenance']=provenance;ledger['combined_review_provenance']=provenance
+        try:
+            if t['kind']=='coverage':b['components'].append({**v,'component_id':t['key']})
+            elif t['kind']=='source_field':
+                m.require(set(v)<={'components','non_substantive_reason'},'Source result cannot overwrite immutable inventory')
+                source[t['key']].update(v)
+            elif t['kind']=='target':target[t['key']]['review']={**v,'reviewed_sha256':target[t['key']]['sha256']}
+            elif t['kind']=='language':language.append({**v,'draft_label':t['key'],'reviewer_provenance':task_origins[t['id']]})
+            else:
+                if reliable:global_blockers.extend(v.get('issues',[]))
+                else:m.require(not v.get('issues'),'Global delivery issues remain')
+                if ctx.get('review_quality'):
+                    if not reliable:review_quality.validate_clarity(v.get('author_clarity'))
+                    ledger['author_clarity_review']=v.get('author_clarity')
+                if ctx.get('report_concision'):
+                    allowed={p['path'] for p in ctx['manuscript_evidence']}|paper_bound_evidence
+                    if not reliable:report_concision.validate(v.get('report_economy'),ctx['placeholder_candidates'],preservation.validate_evidence,allowed)
+                    if ctx.get('report_source_quotes'):
+                        if not reliable:report_concision.validate_originals(v.get('report_economy'),ctx['original_fields'],preservation.validate_evidence,allowed)
+                    ledger['report_economy_review']=v.get('report_economy')
+                if ctx.get('delivery_hardening') and 'report_economy' in v:ledger['report_economy_review']=v['report_economy']
+                ledger['scope_review']={**v,'reviewer':task_origins[t['id']]['reviewer']['name'],'provenance':task_origins[t['id']]}
+                ledger['target_review']={**v,'reviewer':task_origins[t['id']]['reviewer']['name'],'provenance':task_origins[t['id']]}
+        except (ValueError,KeyError,TypeError) as error:
+            if not reliable:raise
+            global_blockers.append({'task_id':t['id'],'error':str(error)})
+    if ledger.get('language_realization_required'):ledger['language_realization']['review']={'reviewer':'Combined actual reviewers; see group provenance','groups':language}
+    b['reviewer']=task_origins.get('global_scope:report',provenance[0])['reviewer']
+    b['combined_review_provenance']=provenance;ledger['combined_review_provenance']=provenance
+    prior_task_provenance=copy.deepcopy(ledger.get('task_provenance',{}))
+    b['task_provenance']=task_origins;ledger['task_provenance']=task_origins
+    if ctx.get('delivery_hardening'):
+        import delivery_runtime
+        ledger['delivery_hardening']=1
+        index=delivery_runtime.provenance_index(provenance)
+        index['records']={**ledger.get('review_provenance_index',{}),**index['records']}
+        index['tasks']={**prior_task_provenance,**index['tasks']}
+        ledger['review_provenance_index']=index['records'];b['review_provenance_index']=index['records']
+        ledger['task_provenance']=index['tasks'];b['task_provenance']=index['tasks']
+        for group in language:
+            key='language:'+group['draft_label']
+            if key in index['tasks']:group['reviewer_provenance']=index['tasks'][key]
+        global_ref=index['tasks'].get('global_scope:report')
+        if global_ref:
+            ledger['scope_review']['provenance']=global_ref;ledger['target_review']['provenance']=global_ref
+    if reliable:
+        ledger['partial_review_version']=1
+        audit.save_new(out/'checkpoint.json',ledger)
+        audit.save_new(out/'checkpoint_phase_b.json',b)
+        audit.save_new(out/'checkpoint_status.json',{'delivery_ready':False,'global_blockers':global_blockers,'local_issues':delivery_efficiency.inspect_values(tasks,values),'provenance':provenance})
+        m.require(not global_blockers,'Partial review checkpoint saved; delivery blockers remain')
+        global_value=values.get('global_scope:report',{})
+        if ctx.get('review_quality'):review_quality.validate_clarity(global_value.get('author_clarity'))
+        if ctx.get('report_concision'):
+            report_concision.validate(global_value.get('report_economy'),ctx['placeholder_candidates'],preservation.validate_evidence,allowed)
+            if ctx.get('report_source_quotes'):report_concision.validate_originals(global_value.get('report_economy'),ctx['original_fields'],preservation.validate_evidence,allowed)
+    if ctx.get('delivery_hardening'):
+        report_concision.validate_meta(ledger.get('report_economy_review',{}),ctx.get('report_meta_candidates',[]))
+        if ctx.get('history_binding'):ledger['history_change_review']=values.get('global_scope:report',{}).get('history_change_review')
     # Both existing gates remain mandatory; no weakened criteria or fabricated passes.
     p_result=preservation.validate(ledger,ledger['report'],require_v2=True)
     b_result=audit.validate(b,ledger['report'],require_ready=True)
@@ -666,6 +907,8 @@ def main():
             q.add_argument('--audit',type=Path,required=True);q.add_argument('--ledger',type=Path,required=True)
             q.add_argument('--fidelity',action='store_true',default=None,help='Explicitly preview/use the new fidelity contract on a historical run without modifying it')
             q.add_argument('--concise',action='store_true',default=None,help='Include report concision review in the same pass')
+            q.add_argument('--scope-plan',type=Path,help='Current report/source-bound dependency assessment; absence safely retains complete context')
+            q.add_argument('--efficient',action='store_true',default=None,help='Use lossless references and validated affected-scope carryover')
     for name in ['assemble-source','assemble-delivery']:
         q=sub.add_parser(name);q.add_argument('--bundle',type=Path,required=True);q.add_argument('--responses',nargs='+',type=Path,required=True);q.add_argument('--out',type=Path,required=True)
     q=sub.add_parser('seed-a');q.add_argument('--source-review',type=Path,required=True);q.add_argument('--audit',type=Path,required=True);q.add_argument('--out',type=Path,required=True)
@@ -673,7 +916,7 @@ def main():
     q=sub.add_parser('complete-a');q.add_argument('--audit',type=Path,required=True);q.add_argument('--seed',type=Path,required=True);q.add_argument('--bundle',type=Path,required=True);q.add_argument('--responses',nargs='+',type=Path,required=True);q.add_argument('--out',type=Path,required=True)
     args=p.parse_args()
     if args.command=='prepare-source':r=prepare_source(args.run,args.out,m.read(args.policy))
-    elif args.command=='prepare-delivery':r=prepare_delivery(args.audit,args.ledger,args.out,m.read(args.policy),args.fidelity,args.concise)
+    elif args.command=='prepare-delivery':r=prepare_delivery(args.audit,args.ledger,args.out,m.read(args.policy),args.fidelity,args.concise,args.efficient,args.scope_plan)
     elif args.command=='assemble-source':r=assemble_source(args.bundle,args.responses,args.out)
     elif args.command=='assemble-delivery':r=assemble_delivery(args.bundle,args.responses,args.out)
     elif args.command=='seed-a':r=seed_a(args.source_review,args.audit,args.out)

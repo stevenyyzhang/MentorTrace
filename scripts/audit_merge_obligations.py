@@ -22,6 +22,12 @@ topic does not make requirements equal. Record exact source excerpts, typed
 manuscript evidence and required/optional/already_answered/unsupported/unknown/
 duplicate assessments. Extra occurrence suggestions are not automatically necessary
 technical repairs. Evidence-supported withdrawals and duplicates are legitimate.
+Decompose compound requests by independently answerable facts or actions, including conditional
+branches and substantive unnumbered remaining-check notes when supplied. Preserve the target
+object, applicability condition, missing fact/action and occurrence. Do not attach a broad
+normalization or reproducibility label to several independently unanswered questions. Reviewer
+rebuttals describing excessive work that is not requested are not author obligations: keep their
+valid scope in the selected positive repair, without requiring the rebuttal sentence in delivery.
 Explicitly assess whether the decomposition covers the complete source scope.
 Component count and completeness declarations do not prove completeness. Use
 concise evidence-focused explanations, not private deliberation. Unknown remains
@@ -33,6 +39,10 @@ B_INSTRUCTIONS = '''A is frozen. Compare EACH component to actual final outputs.
 Only now examine original dispositions. If an author fully follows the final
 output, decide whether any supported required component remains unanswered.
 Keep independent closure goals and additional occurrence locations separate.
+Test each concrete action, not topic overlap: could the author satisfy the final wording while
+leaving this exact question unanswered? A shared action covers several components only when it
+answers each. Report prose need not reproduce internal audit explanations or rejected alternatives
+whose absence does not change the supported judgment, selected action or a live author choice.
 Existing quotes do not prove correspondence. Give focused exact target field
 excerpts and concise component-specific explanations. Required missing/unresolved
 and pending review block readiness. Unknown stays unresolved but may be delivered
@@ -94,22 +104,33 @@ def path_under(root, relative):
     return path
 
 
-def disposition_map(data, field, incoming, targets, label):
+def disposition_map(data, field, incoming, targets, label, cross_targets=None):
     rows = data.get(field, [])
     require(isinstance(rows, list) and len(rows) == len(incoming)
             and {r.get('input_id') for r in rows} == set(incoming), label + ' duplicate/missing source dispositions')
     for row in rows:
         require(isinstance(row.get('output_ids'), list) and len(row['output_ids']) == len(set(row['output_ids'])),
                 label + ' duplicate/missing target IDs')
-        require(set(row['output_ids']) <= set(targets), label + ' unknown target')
+        allowed=set(targets) | (set(cross_targets or {}) if row.get('status')=='incorporated' else set())
+        require(set(row['output_ids']) <= allowed, label + ' unknown target')
+        if cross_targets is not None and row.get('status')=='incorporated':
+            require(set(row['output_ids'])<=set(cross_targets) and bool(row.get('evidence')), label+' category change needs explicit evidence and cross-category targets')
         require(row.get('status') in {'retained', 'merged', 'narrowed', 'withdrawn', 'unresolved', 'incorporated'},
                 label + ' invalid disposition')
         if row['status'] in {'retained', 'merged', 'narrowed', 'incorporated'}:
             require(row['output_ids'], label + ' retained requirement without target')
         if row['status'] in {'withdrawn', 'unresolved'}:
             require(not row['output_ids'], label + ' withdrawn/unresolved requirement has target')
-    return {row['input_id']: row for row in rows}
+    result = {}
+    for row in rows:
+        extra = row.get('content_output_ids', [])
+        require(isinstance(extra, list) and len(extra)==len(set(extra)) and set(extra)<=set(targets), label+' invalid content targets')
+        require(not extra or row['status'] in {'retained','merged'}, label+' inactive content targets')
+        result[row['input_id']] = {**row, 'output_ids': list(dict.fromkeys(row['output_ids']+extra))}
+    return result
 
+
+import delivery_reliability as reliability
 
 def load_run(run):
     """Read immutable sources and derive deterministic selection and lineage."""
@@ -165,6 +186,8 @@ def load_run(run):
                     files['inputs/paper/' + name] = expected
             if relative.endswith('/record.json'):
                 acceptance_sources(relative, freeze)
+    reliable = (read(run/'inputs/protocol.json').get('delivery_reliability') if (run/'inputs/protocol.json').exists() else False)
+    candidates = []
     originals, checks, branch_findings = {}, {}, {}
     for folder in sorted((run / 'calls').iterdir(), key=lambda p: p.name):
         if not folder.is_dir() or folder.name in {'merge', 'verify', 'objects'} or not (folder / 'response.json').exists():
@@ -174,6 +197,7 @@ def load_run(run):
         if (run / relative_record).exists():
             record = load(relative_record)
             acceptance_sources(relative_record, record)
+        if reliable:candidates.extend(reliability.candidates(folder.name,response,read(run/'calls/objects/response.json') if read(run/'inputs/protocol.json').get('coverage_basis_v1') else None))
         branch_checks = rows_by_id(response.get('checks', []), folder.name + ' checks')
         require(not set(branch_checks) & set(checks), 'Duplicate check IDs across sources')
         checks.update(branch_checks)
@@ -198,9 +222,9 @@ def load_run(run):
     fo = rows_by_id(final.get('organization_suggestions', []), 'Final organization')
     require(not set(mf) & set(mo) and not set(ff) & set(fo), 'Finding/organization target ID collision')
     mt, ft = {**mf, **mo}, {**ff, **fo}
-    first = {**disposition_map(merged, 'dispositions', raw, mf, 'Merge'),
+    first = {**disposition_map(merged, 'dispositions', raw, mf, 'Merge', mo),
              **disposition_map(merged, 'organization_dispositions', raw_org, mt, 'Organization merge')}
-    last = {**disposition_map(final, 'dispositions', mf, ff, 'Verify'),
+    last = {**disposition_map(final, 'dispositions', mf, ff, 'Verify', fo),
             **disposition_map(final, 'organization_dispositions', mo, ft, 'Organization verify')}
     ancestors = {target: set() for target in mt}
     for sid, disposition in first.items():
@@ -219,8 +243,25 @@ def load_run(run):
             final_ancestors[target].update(ancestors[intermediate])
             for sid in ancestors[intermediate]:
                 descendants[sid].add(target)
+    # Explicit Verify reconsideration restores lineage without editing frozen Merge records.
+    reconsiderations = {}
+    for row in final.get('withdrawn_candidate_reviews', []):
+        sid = row.get('input_id')
+        require(sid in raw_org and sid not in reconsiderations and first[sid]['status'] in {'withdrawn','unresolved'},
+                'Invalid original source for Verify reconsideration')
+        targets = row.get('output_ids')
+        require(isinstance(targets,list) and len(targets)==len(set(targets)) and set(targets)<=set(fo),
+                'Invalid reconsideration output')
+        require(row.get('decision') in {'withdraw','restore','unresolved'} and bool(targets)==(row['decision']=='restore'),
+                'Reconsideration decision/target mismatch')
+        if row['decision']=='restore':
+            require(all(fo[t].get('new_in_stage') is True for t in targets), 'Restoration must mark Verify addition')
+            for target in targets:
+                descendants[sid].add(target)
+                final_ancestors[target].add(sid)
+        reconsiderations[sid]=row
     eligible = {sid for sid, s in originals.items() if s['original'].get('finding_type') != 'surface'}
-    changed = {'narrowed', 'withdrawn', 'unresolved'}
+    changed = {'narrowed', 'withdrawn', 'unresolved', 'incorporated'}
     selected = {sid for sid, d in first.items() if sid in eligible and d['status'] in changed}
     for intermediate, d in last.items():
         if d['status'] in changed:
@@ -228,6 +269,24 @@ def load_run(run):
     for lineage in list(ancestors.values()) + list(final_ancestors.values()):
         if len(lineage & eligible) > 1:
             selected.update(lineage & eligible)
+    if reliable:
+        # Stable complete source inventory; selection no longer changes when a late
+        # cross-category edge is added. Source judgments are reused, not repeated.
+        selected=set(eligible)
+        ft.update(reliability.request_targets(final))
+        decisions={r['candidate_id']:r for r in final.get('candidate_reviews',[])}
+        require(set(decisions)=={c['id'] for c in candidates},'Candidate delivery disposition missing')
+        for candidate in candidates:
+            sid=candidate['id'];originals[sid]=reliability.candidate_source(candidate);selected.add(sid)
+            decision=decisions[sid]
+            descendants[sid]=set(decision.get('output_ids',[])) if decision['status']=='incorporated' else ({sid} if decision['status'] in {'optional','author_confirmation'} else set())
+            require(descendants[sid]<=set(ft),'Candidate route has absent target')
+            for target in descendants[sid]:final_ancestors.setdefault(target,set()).add(sid)
+        # Concrete component decisions add explicit cross-category routes before A/B.
+        source_components={c['id']:u['source_id'] for u in load('initial_review.json')['units'] for c in u['components']}
+        for decision in final.get('source_requirement_resolutions',[]):
+            sid=source_components[decision['component_id']]
+            descendants[sid].update(decision.get('output_ids',[]))
     # A opaque group IDs hide selection labels and later outputs.
     lineages = {tuple(sorted(lineage & selected)) for lineage in final_ancestors.values() if lineage & selected}
     lineages.update(tuple(sorted(lineage & selected)) for lineage in ancestors.values() if len(lineage & selected) > 1)
@@ -241,6 +300,8 @@ def load_run(run):
         sources.append(source)
     routes = {sid: {'final_ids': sorted(descendants[sid]), 'merge_dispositions': [first[sid]] if sid in first else [],
                     'verify_dispositions': [last[t] for t in sorted(ancestors) if sid in ancestors[t]]} for sid in sorted(selected)}
+    for sid,row in reconsiderations.items():
+        if sid in routes:routes[sid]['verify_reconsideration']=row
     return {'run': str(run), 'source_files': dict(sorted(files.items())), 'manuscript': manuscript,
             'page_images': [images[p] for p in sorted(images)], 'sources': sources, 'groups': groups,
             'routes': routes, 'final_targets': ft}

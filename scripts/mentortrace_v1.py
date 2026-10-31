@@ -14,6 +14,8 @@ import unicodedata
 from pathlib import Path
 import goodpaper_runtime as goodpaper
 import reader_multiscale as multiscale
+import delivery_reliability as reliability
+import review_quality
 import editorial_selection
 import technical_applicability as applicability
 import source_fidelity as fidelity
@@ -170,6 +172,7 @@ def validate_organization(stage,x,context,pages):
  require(len(dispositions)==len(incoming) and {d['input_id'] for d in dispositions}==incoming,
          'Organization disposition coverage mismatch')
  findings={f['id'] for f in x['findings'] if f.get('finding_type')!='surface'};targeted=set()
+ surface={f['id'] for f in x['findings'] if f.get('finding_type')=='surface'}
  for d in dispositions:
   require(d['status'] in ['retained','merged','incorporated','withdrawn','unresolved'] and bool(d.get('reason')),
           'Invalid organization disposition')
@@ -181,13 +184,18 @@ def validate_organization(stage,x,context,pages):
   if d['status'] in ['retained','merged']:
    require(bool(targets) and targets<=sids,'Retained organization suggestion lost')
   elif d['status']=='incorporated':
-   require(bool(targets) and targets<=findings,'Organization incorporation needs a content finding')
+   allowed=findings|surface if context.get('review_quality') else findings
+   require(bool(targets) and targets<=allowed,'Organization incorporation needs a supported finding' if context.get('review_quality') else 'Organization incorporation needs a content finding')
+   if targets&surface:
+    require(bool(d.get('evidence')),'Organization-to-surface incorporation needs manuscript evidence')
+    for evidence in d['evidence']:anchor(evidence,pages)
   else:
    require(not targets,'Withdrawn/unresolved organization suggestion has output')
    if d['status']=='withdrawn':
     require(bool(d.get('evidence')),'Organization withdrawal lacks evidence')
     for evidence in d['evidence']:anchor(evidence,pages)
   targeted.update(targets&sids)
+ if context.get('review_quality'):targeted.update(fid for d in x.get('dispositions',[]) if d['status']=='incorporated' for fid in d['output_ids'])
  for item in suggestions:
   if item['id'] not in targeted:require(item.get('new_in_stage') is True,'New organization suggestion must be marked new')
  if context.get('editorial_selection'):editorial_selection.validate(x,context,pages,anchor)
@@ -226,6 +234,16 @@ def validate(stage,x,context):
  if stage.startswith('supplement_') and 'objects' not in context:
   normalized=adapt_independent(stage,x,context)
   validate(stage,normalized,{**context,'objects':[]});return
+ reliability.validate(stage,x,context,anchor)
+ review_quality.validate(stage,x,context,pages,anchor)
+ __import__("coverage_basis").validate(stage,x,context,pages,anchor)
+ if context.get('delivery_hardening'):
+  import review_integrity
+  if stage=='objects':review_integrity.validate_dimensions(x.get('technical_configurations',[]),pages=pages,anchor=anchor)
+  if stage=='technical':
+   configs=context['technical_configurations']+x.get('configuration_review',{}).get('additional_configurations',[])
+   review_integrity.validate_dimensions(configs,x.get('configuration_review',{}).get('items',[]),pages,anchor)
+  if stage=='verify':review_integrity.validate_withdrawals(x,pages,anchor,context)
  if stage!='objects':validate_organization(stage,x,context,pages)
  if stage=='objects':
   validate_objects(x['objects'],pages);known=ids(x['objects'],'objects');seen=set()
@@ -247,9 +265,15 @@ def validate(stage,x,context):
   targeted={fid for d in x.get('organization_dispositions',[]) if d['status']=='incorporated' for fid in d['output_ids']}
   targeted.update(fid for d in x.get('organization_dispositions',[]) for fid in d.get('content_output_ids',[]))
   for d in dispositions:
-   require(d['status'] in ['retained','merged','narrowed','withdrawn','unresolved'],'Invalid disposition')
+   require(d['status'] in (['retained','merged','narrowed','withdrawn','unresolved','incorporated'] if context.get('review_quality') else ['retained','merged','narrowed','withdrawn','unresolved']),'Invalid disposition')
    require(bool(d['reason']),'Missing disposition rationale')
-   require(set(d['output_ids'])<=finds,'Unknown disposition output')
+   if d['status']=='incorporated':
+    require(bool(d['output_ids']) and set(d['output_ids'])<={s['id'] for s in x.get('organization_suggestions',[])},'Category change needs organization targets')
+    require(bool(d.get('evidence')),'Category change needs evidence')
+    for evidence in d['evidence']:anchor(evidence,pages)
+    original=next(f for f in context['input_findings'] if f['id']==d['input_id'])
+    require(original.get('finding_type')!='surface','Surface finding cannot change category')
+   else:require(set(d['output_ids'])<=finds,'Unknown disposition output')
    if d['status'] in ['retained','merged','narrowed']:require(bool(d['output_ids']),'Retained item has no output')
    if d['status']=='withdrawn':
     require(not d['output_ids'] and bool(d.get('evidence')),'Withdrawal lacks evidence')
@@ -439,7 +463,7 @@ def create_run(paper,knowledge,run,batch_ids=None,arm='H',generic_passes=4,max_e
   require(read(DEFAULT_GOODPAPER/'manifest.json')['role']=='goodpaper_task_cases','Wrong good-paper case package')
   shutil.copytree(DEFAULT_GOODPAPER,run/'inputs/goodpaper')
  save(run/'inputs/protocol.json',{'product':'MentorTrace V1','mode':'diagnose_only','arm':'H','stages':STAGES,'workflow_version':2,'advisor_independent':True,'concern_count':len(archive),'knowledge_source_scope':manifest.get('scope','not declared; no held-out claim'),'max_evidence_calls':max_evidence_calls,'max_prompt_bytes':950000,'max_images':15,'token_and_model_context_fit':'requires transport preflight; byte bound is not token bound','transport':'explicit JSON files; cloud transport not invoked'})
- protocol=read(run/'inputs/protocol.json');protocol['organization_review']=1;protocol['section_review']=1;protocol['whole_manuscript_structure']=1;protocol['reader_multiscale']=4;protocol['editorial_selection']=1;protocol['technical_applicability']=1;protocol['consolidation_review']=1;protocol['source_fidelity']=1
+ protocol=read(run/'inputs/protocol.json');protocol['organization_review']=1;protocol['section_review']=1;protocol['whole_manuscript_structure']=1;protocol['reader_multiscale']=4;protocol['editorial_selection']=1;protocol['technical_applicability']=1;protocol['consolidation_review']=1;protocol['source_fidelity']=1;protocol['review_quality']=1
  protocol['goodpaper_case_mode']='task_routed_reader_technical_v1' if goodpaper_cases else 'off'
  protocol['writing_transfer']=1
  protocol['module_naming_version']=1;protocol['module_names']=dict(naming.NAMES)
@@ -484,6 +508,18 @@ def create_run(paper,knowledge,run,batch_ids=None,arm='H',generic_passes=4,max_e
   protocol['review_efficiency']=1
   protocol['verified_delivery_fidelity']=1
   protocol['report_concision']=1
+  protocol['report_source_quotes']=1
+  protocol['postprocess_efficiency']=1
+  protocol['delivery_reliability']=1
+  protocol['delivery_hardening']=1
+  protocol['delivery_compact']=1
+  protocol['coverage_basis_v1']=1
+  protocol['delivery_focus']=1
+  protocol['canonical_draft']=2
+  protocol['native_report_repair']=1
+  protocol['output_aware_draft']=1
+  protocol['lean_runtime']=1
+  protocol['draft_context_v1']=1
   protocol['request_capacity']=1
   guidance_path=ROOT/'config/expression-guidance.json'
   if guidance_path.exists():
@@ -508,7 +544,7 @@ def create_generic_run(paper,run,passes):
  for name in ['reader-structure.md','expert-checks.md','technical-applicability.md','diagnosis-contract.md','merge-verify.md','editor-surface.md','section-argument.md','reader-checklist.md','source-fidelity.md','writing-transfer.md']:
   p=run/'inputs/skill/references'/name;p.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/'.agents/skills/mentortrace/references'/name,p)
  save(run/'inputs/protocol.json',{'product':'MentorTrace V1','mode':'diagnose_only','arm':'G',
-  'workflow_version':2,'organization_review':1,'section_review':1,'whole_manuscript_structure':1,'reader_multiscale':4,'editorial_selection':1,'technical_applicability':1,'consolidation_review':1,'source_fidelity':1,'writing_transfer':1,'module_naming_version':1,'module_names':dict(naming.NAMES),
+  'workflow_version':2,'organization_review':1,'section_review':1,'whole_manuscript_structure':1,'reader_multiscale':4,'editorial_selection':1,'technical_applicability':1,'consolidation_review':1,'source_fidelity':1,'review_quality':1,'writing_transfer':1,'module_naming_version':1,'module_names':dict(naming.NAMES),
   'stages':['objects','reader','technical']+[f'supplement_{n}' for n in range(1,passes+1)]+['language','merge','verify'],
   'max_prompt_bytes':950000,'max_images':15,'knowledge_policy':'No advisor archive, cards, comments, histories, reference patterns or target answers in this package; independent generic technical passes'})
  freeze_source_inventory(run)
@@ -538,6 +574,8 @@ def case_route_input(run):
   result['reader_scope_plan']=plan['reader_scope_plan']
   if read(run/'inputs/protocol.json')['reader_multiscale']>=2:
    result['reader_editorial_plan']=plan['reader_editorial_plan']
+ if read(run/'inputs/protocol.json').get('review_quality'):
+  result['reader_case_routing_instruction']='Use actual reader_scope_plan and reader_editorial_plan tasks when matching cases. Include information selection, emphasis, paragraph handoffs and standalone summaries/captions where applicable, not only missing technical explanations. Cases prompt target-grounded checks and optional alternatives; no source order, per-axis match or issue quota. Zero matches remain valid. This routing is for Reader/Expert, not an input inventory for independent Advisor.'
  result['source_plan_sha256']=sha(source)
  candidate_file=run/'case_route_input.json'
  if candidate_file.exists():
@@ -565,6 +603,8 @@ def freeze_case_route(run,selection):
   expected['reader_scope_plan']=plan['reader_scope_plan']
   if read(run/'inputs/protocol.json')['reader_multiscale']>=2:
    expected['reader_editorial_plan']=plan['reader_editorial_plan']
+ if read(run/'inputs/protocol.json').get('review_quality'):
+  expected['reader_case_routing_instruction']='Use actual reader_scope_plan and reader_editorial_plan tasks when matching cases. Include information selection, emphasis, paragraph handoffs and standalone summaries/captions where applicable, not only missing technical explanations. Cases prompt target-grounded checks and optional alternatives; no source order, per-axis match or issue quota. Zero matches remain valid. This routing is for Reader/Expert, not an input inventory for independent Advisor.'
  expected['source_plan_sha256']=sha(source)
  saved=read(candidate_file)
  if saved!=expected and 'reader_editorial_plan' in expected:
@@ -608,6 +648,8 @@ def context_for(run,stage):
   return advisor_batching.inflate(read(run/f'inputs/advisor_packets/{stage}.json'))
  ctx={'manuscript':read(run/'inputs/paper/body.json')}
  protocol=read(run/'inputs/protocol.json')
+ if protocol.get('coverage_basis_v1') and stage in ['objects','reader','technical','verify']:ctx['coverage_basis_v1']=1
+ if protocol.get('review_quality') and stage in ['objects','technical','reader','merge','verify']:ctx['review_quality']=1
  if protocol.get('editorial_selection') and (stage in ['reader','merge','verify'] or stage.startswith(('supplement_','evidence_'))):
   ctx['editorial_selection']=protocol['editorial_selection']
  if stage=='advisor_tasks':return ctx
@@ -632,6 +674,9 @@ def context_for(run,stage):
    ctx['source_page_images']=source['page_images']
    if stage=='language':ctx['source_candidates']=source['surface_candidates']
  if stage in ['objects','technical'] and read(run/'inputs/protocol.json').get('technical_applicability'):ctx['technical_applicability']=1
+ if stage in ['objects','technical','reader','language','merge','verify'] and read(run/'inputs/protocol.json').get('delivery_hardening'):
+  ctx['delivery_hardening']=1
+  if stage in ['reader','merge','verify'] and (run/'inputs/paper/layout.json').exists():ctx['source_layout_facts']=read(run/'inputs/paper/layout.json')
  if stage=='reader' and read(run/'inputs/protocol.json').get('section_review'):ctx['section_review']=1
  if stage in ['objects','reader'] and multiscale_enabled(run):
   ctx['reader_multiscale']=read(run/'inputs/protocol.json')['reader_multiscale']
@@ -642,6 +687,8 @@ def context_for(run,stage):
   ctx['cards']=read(run/f'inputs/batches/batch_{stage.rsplit("_",1)[1]}.json')
   return ctx
  ctx['objects']=read(run/'calls/objects/response.json')['objects']
+ if ctx.get('coverage_basis_v1') and stage in ['reader','technical']:
+  ctx['coverage_basis']=[r for r in read(run/'calls/objects/response.json')['coverage_basis'] if r['lane']==stage]
  if stage=='technical' and ctx.get('technical_applicability'):
   ctx['technical_configurations']=read(run/'calls/objects/response.json')['technical_configurations']
  if stage=='reader' and multiscale_enabled(run):
@@ -686,6 +733,7 @@ def context_for(run,stage):
     import review_workflow
     require((run/'initial_review.json').exists(),'Complete combined source/execution review before Verify')
     source_review=review_workflow.validated_source_review(run/'initial_review.json')
+    if ctx.get('coverage_basis_v1'):ctx['coverage_execution_issues']=__import__('coverage_basis').execution_issues(source_review)
     require(all(source_review['bindings'].get(str((run/f'calls/{s}/response.json').resolve()))==sha(run/f'calls/{s}/response.json') for s in branch_stages(run)),'Source review does not bind every current initial lane')
     ctx['initial_source_review']={'source_requirements':[{'source_id':u['source_id'],
      'components':[{k:v for k,v in c.items() if k not in {'assessment','duplicate_of'}} for c in u['components']]}
@@ -698,6 +746,11 @@ def context_for(run,stage):
    if read(run/'inputs/protocol.json').get('organization_review'):
     ctx['input_organization_suggestions']=read(run/'calls/merge/response.json').get('organization_suggestions',[])
    branches=[read(run/f'calls/{s}/response.json') for s in branch_stages(run)]
+   if ctx.get('review_quality'):
+    merged=read(run/'calls/merge/response.json')
+    excluded={d['input_id']:d for d in merged.get('organization_dispositions',[]) if d['status'] in ['withdrawn','unresolved']}
+    ctx['excluded_organization_candidates']=[{'suggestion':item,'merge_disposition':excluded[item['id']]}
+     for branch in branches for item in branch.get('organization_suggestions',[]) if item['id'] in excluded]
    ctx['source_evidence']=[{k:c[k] for k in ['id','object_id','anchor','author_explanation','required_relation','counterevidence','card_ids']} for b in branches for c in b.get('checks',[])]
    if read(run/'inputs/protocol.json').get('technical_applicability'):
     for evidence,c in zip(ctx['source_evidence'],[c for b in branches for c in b.get('checks',[])]):
@@ -707,6 +760,14 @@ def context_for(run,stage):
    ctx['cards']=[]
    ctx['historical_reference_ids']=sorted(wanted)
    ctx['verification_note']=('Structured judgment, severity and pass fields are omitted. Source explanations can contain previous conclusions and must be rechecked against the manuscript.' if ctx.get('consolidation_review') else 'No previous self-evaluation, severity or pass labels supplied.')
+ if protocol.get('delivery_reliability') and stage in ['merge','verify']:
+  ctx['delivery_reliability']=1
+  ctx['delivery_candidates']=[c for s in branch_stages(run) for c in reliability.candidates(s,read(run/f'calls/{s}/response.json'),read(run/'calls/objects/response.json') if protocol.get('coverage_basis_v1') else None)]
+  if stage=='verify':
+   merged=read(run/'calls/merge/response.json')
+   ctx['prior_candidate_reviews']=merged.get('candidate_reviews',[])
+   ctx['source_requirement_routes']={d['input_id']:d.get('output_ids',[])+d.get('content_output_ids',[]) for d in merged.get('dispositions',[])+merged.get('organization_dispositions',[])}
+   ctx['source_requirement_routes'].update({d['candidate_id']:d.get('output_ids',[]) for d in merged.get('candidate_reviews',[])})
  return ctx
 
 def next_request(run,capacity_plan_only=False):
@@ -798,6 +859,21 @@ def prepare_stage_request(run,stage,capacity_plan_only=False,*,_context_override
  if ctx.get('editorial_selection'):
   instruction+='\n'+editorial_selection.BRANCH_SCHEMA
   if stage in ['merge','verify']:instruction+='\n'+editorial_selection.MERGE_SCHEMA
+ if read(run/'inputs/protocol.json').get('delivery_reliability'):
+  if stage in ['reader','technical']:instruction+='\n'+reliability.SCOPE_INSTRUCTIONS
+  if stage in ['merge','verify']:instruction+='\n'+reliability.INSTRUCTIONS
+ if ctx.get('coverage_basis_v1'):
+  import coverage_basis
+  instruction+='\n'+(coverage_basis.PLAN if stage=='objects' else coverage_basis.REVIEW if stage in ['reader','technical'] else coverage_basis.VERIFY)
+ if ctx.get('review_quality'):
+  if stage=='objects':instruction+='\nInclude key printed formulas and unnumbered expressions with their adjacent interpretive claims in technical objects. Do not collapse expression correctness and intended argument validity into a single implicit judgment. This inventory does not pre-judge defects; Expert may add missed objects.'
+  if stage=='technical':instruction+='\n'+review_quality.TECH_INSTRUCTIONS
+  if stage=='reader':instruction+='\n'+review_quality.READER_INSTRUCTIONS
+  if stage in ['merge','verify']:instruction+='\n'+review_quality.SELECTION_INSTRUCTIONS+'\n'+review_quality.LINEAGE_INSTRUCTIONS
+ if ctx.get('delivery_hardening'):
+  import review_integrity
+  if stage in ['objects','technical']:instruction+='\n'+review_integrity.TECH_INSTRUCTIONS
+  if stage=='verify':instruction+='\n'+review_integrity.WITHDRAWAL_INSTRUCTIONS
  if ctx.get('technical_applicability'):instruction+='\n'+(applicability.PLAN_SCHEMA if stage=='objects' else applicability.REVIEW_SCHEMA)
  if ctx.get('writing_transfer'):instruction+='\n'+writing.review_schema(ctx)
  if ctx.get('expression_version'):instruction+='\n'+expression.transfer_schema(ctx)
@@ -975,6 +1051,7 @@ def export_report(run):
   if read(run/'inputs/protocol.json').get('editorial_selection'):
    organization['merge_selection']=merged.get('editorial_selection',[])
    organization['verified_selection']=final.get('editorial_selection',[])
+   if read(run/'inputs/protocol.json').get('review_quality'):organization['verify_reconsiderations']=final.get('withdrawn_candidate_reviews',[])
   save(run/'organization_review.json',organization)
   if organization['final_suggestions']:
    lines+=['## Optional organization and flow suggestions','', 'These suggestions are separate from confirmed findings.','']
@@ -982,6 +1059,9 @@ def export_report(run):
     lines += [f'### {n}. Page {s["anchor"]["page"]}',f'- Current arrangement: {s["current_order"]}',f'- Proposed arrangement: {s["proposed_order"]}',
               f'- Reason: {s["reason"]}',f'- Affected links: {s["affected_links"]}',f'- Conditions: {s["conditions"]}','']
   unresolved=[d for d in organization['verification_dispositions']+organization['merge_dispositions'] if d['status']=='unresolved']
+  if read(run/'inputs/protocol.json').get('review_quality'):
+   unresolved=[d for d in organization['verification_dispositions'] if d['status']=='unresolved']
+   unresolved += [{**r,'status':'unresolved'} for r in final.get('withdrawn_candidate_reviews',[]) if r['decision']=='unresolved']
   if unresolved:
    lines+=['## Unresolved organization suggestions','']+[f'- {d["reason"]}' for d in unresolved]+['']
  (run/'report.md').write_text('\n'.join(lines),encoding='utf-8')

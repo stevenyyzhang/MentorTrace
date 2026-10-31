@@ -108,7 +108,7 @@ and concern, but this association does not feed Advisor the Reader inventory.
 After source review, derive an anonymous English abstraction and promote it through
 the existing frozen-snapshot and training-promotion process. Keep the raw episode,
 identity evidence, exact comments, revisions and source-family registry private.
-Do not update the 493-card dev.3 snapshot in place. Record the lesson-to-card link,
+Do not update a frozen Concern snapshot in place. Record the lesson-to-card link,
 admission decision and unresolved evidence; a checked JSON record alone is not
 admission or evidence of successful transfer. Then assess a new target with the
 writing-transfer protocol, retaining keeps and failed transfers to revise the lesson.

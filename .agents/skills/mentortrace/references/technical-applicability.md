@@ -9,3 +9,6 @@ For each relevant setting record: actual values or assumptions → operation pre
 For any operation whose prerequisite fails under a reported setting, distinguish an undefined or inapplicable expression in the manuscript from an implementation that may use an unstated convention. Do not infer that the experiment itself is wrong without evidence. Ask for the actual convention and its consequence when those facts are absent; retain uncertainty until they are supplied.
 
 Carry any gap's exact condition and repair obligation into its finding, not only a check's explanation. Additional configurations cannot rewrite the frozen case route. Missing author facts remain unknown. A structurally complete inventory is not proof that every configuration was found or evaluated correctly; review its completeness against actual settings in tables, captions, baseline descriptions and claims.
+
+
+For new `delivery_hardening: 1` runs, the additional [delivery hardening contract](delivery-hardening.md) governs source/component retention, actual-result barriers and scoped recovery. Older frozen protocols retain their existing rules.

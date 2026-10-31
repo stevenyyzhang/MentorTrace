@@ -132,13 +132,3 @@ sound personalized. A legacy object-level case association is weaker than a reco
 transfer, and neither proves causal improvement. Attribute new drafting to its own
 stage, never retroactively to an older review.
 
-## Evaluate the intended improvement
-
-Evaluate coverage and precision of independently actionable editorial requirements,
-source-grounded specificity, preservation of target meaning, supported paragraph
-repairs, and unsupported preference/defect claims. Finding counts alone are not a
-quality score. Use actual held-out source families for transfer claims; known drafts
-remain development examples. Keep model, effort, tier, manuscript and generic Reader
-rules constant when comparing source use; compare dev.3 against dev.4 separately as
-a whole-system comparison. Freeze each output before showing mentor feedback to the
-evaluator. A local schema check demonstrates wiring, not better prose or mentor fit.

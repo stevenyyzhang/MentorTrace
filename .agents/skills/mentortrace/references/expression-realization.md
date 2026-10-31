@@ -76,3 +76,24 @@ features, operation-only records and held choices. Full inventory coverage does
 not mean that every record supplies a sentence template. Normal author reports
 show the issue and usable passage; private source details appear only in an
 explicitly requested learning/comparison report.
+
+## Style alignment and improvement are different adoption reasons
+
+Expression can serve a mentor-style writing goal without a proven improvement over
+the original. In the existing decision reason distinguish mentor-style alignment,
+repair, and an evidenced readability improvement. For style alignment, identify the
+source-supported feature actually realized, target fit and preserved meaning; leave
+comparative quality unestablished when no reliable comparison exists. Equally valid
+wording may be adopted for style. Do not manufacture a defect, measurable benefit or
+mentor endorsement to justify that choice. Neither adoption count nor feature
+matching measures improved quality.
+
+The existing final-text check still examines meaning, naturalness and intelligibility.
+It does not demand that every manuscript rewrite be clearer than the original.
+Separately, review comments must remain understandable and actionable for the author.
+
+
+For new `delivery_reliability: 1` runs, apply [delivery reliability](delivery-reliability.md). Its explicit candidate/requirement decisions and local-validity recovery extend this contract; historical frozen runs retain the rules above. Local reuse does not imply whole-report approval, and style alignment does not imply improved quality.
+
+
+For new `delivery_hardening: 1` runs, the additional [delivery hardening contract](delivery-hardening.md) governs source/component retention, actual-result barriers and scoped recovery. Older frozen protocols retain their existing rules.

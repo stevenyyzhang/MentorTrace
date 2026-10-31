@@ -43,6 +43,14 @@ def prepare(source, output, *, text_tool='pdftotext', image_tool='pdftoppm', dpi
         body = work / 'body.json'
         m.save(body, [{'page': number, 'text': text} for number, text in enumerate(texts, 1)])
         m.import_paper(body, normalized, source, output, m.sha(source))
+        try:
+            from layout_evidence import parse_bbox
+            layout=subprocess.run([text_tool,'-bbox-layout',str(clean),'-'],check=True,capture_output=True,encoding='utf-8',errors='replace')
+            m.save(output/'layout.json',parse_bbox(layout.stdout,m.sha(source)))
+            manifest=m.read(output/'manifest.json');manifest['layout']={'path':'layout.json','sha256':m.sha(output/'layout.json')}
+            m.save(output/'manifest.json',manifest);m.freeze(output)
+        except (subprocess.SubprocessError,ValueError,KeyError) as error:
+            m.save(output/'layout-unavailable.json',{'status':'unavailable','reason':str(error),'claim':'No definitive layout withdrawal may rely on missing coordinates.'});m.freeze(output)
     return {'pages': len(texts), 'annotation_objects_removed': True,
             'text_extraction_fidelity': 'Not certified; raw extraction locates evidence, original page images govern glyphs.',
             'required_manual_check': 'Inspect burned-in comments, text/image correspondence, decisive formula delimiters/operators and the physical placement of split words.'}

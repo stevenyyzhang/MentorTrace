@@ -26,7 +26,44 @@ python scripts/prepare_delivery_delta.py --previous-ledger OLD/delivery.json --p
 
 Inspect `pending.json` and complete a copy of `assessment.template.json`: its bound hashes, `reviewer`, `reason`, `cross_context_review`, `affected_source_ids`, `affected_target_ids` document the actual change/dependency assessment. Do not claim independence for an editor's scope judgment. Then run the same command with `--assessment NEW/assessment.json --out NEW/delta-reviewed` to carry eligible records and list remaining work. The helper conservatively invalidates whole local contexts, keeps stable IDs, and declines reuse if old records no longer validate; it does not infer equivalence or remap shifted IDs. Use original provenance for inherited records and truthful provenance for the new scope assessment.
 
-## Supply complete relevant evidence
+## Delivery task reuse and lossless records
+
+New adaptive protocols pin `postprocess_efficiency: 1`. `prepare-delivery` consumes the
+ledger produced by `prepare_delivery_delta.py` with an actual affected-scope assessment.
+It independently recomputes reuse eligibility and compares every claimed carried record.
+Only unchanged source fields, target units and Expression groups with valid prior review,
+full local context, evidence hashes, cross-context assessment and identical applicable
+delivery rules/settings may be omitted from fresh task assignment. Earlier ledgers without
+the rule binding receive complete review; manually populated pass fields do not authorize
+reuse. A changed dependency invalidates its records even when their text is unchanged.
+
+The new reviewer receives the complete current report, source inventories, manuscript
+and carried judgments with their provenance. Coverage/B, global completeness, author
+clarity, economy and Original-field checks remain fresh. Both ordinary delivery validators
+run on the assembled complete result; any conflict with a carried record blocks delivery.
+Original raw responses and the prior checked ledger remain immutable. Carryover is an
+earlier judgment, never a new independent verification or a guarantee against old errors.
+
+For repeated quotations, use the versioned exact text-reference syntax supplied in the
+request. `$input_text` resolves only an assigned task's complete literal text; `$text`
+resolves a literal string returned once in `texts`. Programs expand them before validation.
+Use focused excerpts and separate independent components even when a whole-field reference
+would be shorter. Shared wording does not imply shared judgments. These references remove
+retyping, not evidence, qualifications or review tasks.
+
+Before submission, local preparation validates actual source files and language-response
+bindings. The packet runner collects common format, quote and unsupported-reuse problems
+together after completed calls, retaining task IDs and distinguishing a format problem
+from a new substantive judgment. Inspect the saved result list once, correct affected
+records and dependencies, and run the ordinary gates. Do not rerun successful packets to
+repair deterministic format issues, invent missing evidence, or automatically reclassify a
+claim to make a validator pass. The result check is not semantic approval.
+
+`efficiency.json` records carried versus fresh tasks; execution receipts record actual
+phase wall time. Record development and repair intervals separately from ordinary
+review. Report observed token usage and elapsed time, not projected savings.
+
+## Complete evidence for each remaining task
 
 Initial Reader, Expert, Advisor and Editor retain their full manuscript/image contracts; Advisor keeps complete assigned cards, and A retains the full manuscript. For targeted delivery work, include the complete source requirement, relevant final fields, report context, exact evidence and required cross-section prerequisites. Do not repeatedly submit all old reports, raw lanes, audit logs or unrelated cards. A path/hash/ID does not give an isolated reviewer access to its contents. Supply the content or inspected page actually needed. If relevance cannot safely be bounded, broaden the packet rather than truncate it.
 
@@ -75,3 +112,20 @@ Pass `--settings-authorization AUTH.json` to the CLI stage runner. The optional 
 Run schema, unique-ID, exact-quote, source-hash, numbering and capacity checks locally. Try only deterministic, traceable formatting/anchor normalization; invented evidence or changed judgments need substantive review. Programs cannot certify evidence sufficiency, bilingual equivalence or natural prose. Inspect rendered PDF pages and retain the two required report-bound audits.
 
 Failed or uncertain transport calls are not automatically resubmitted by the orchestration scripts. Inspect completed events and preserved output first; an uncertain attempt may already have consumed usage. Reconcile it before explicitly creating a separate attempt. Once necessary semantic checks, both delivery gates and requested layout checks pass, freeze and deliver. Do not launch another optional polishing pass or a new audit stage. Later requested changes renew only their affected records.
+
+## Attempt timing and interpretation
+
+Each isolated Codex attempt now writes END.json with UTC completion, elapsed wall
+seconds and exit code; timed-out calls retain elapsed time in UNCERTAIN.json.
+START.json and immutable raw output remain the attempt identity. Usage is taken
+only from completed provider events. Sum per-call usage once, keep cached tokens
+inside input, and do not treat missing failed-call usage as zero. END without a
+validated audit is not a successful review. The run's wall-clock span and summed
+call durations differ under concurrency. Local preparation, waiting and repair time
+must be measured separately; never backfill these durations from token counts.
+
+
+For new `delivery_reliability: 1` runs, apply [delivery reliability](delivery-reliability.md). Its explicit candidate/requirement decisions and local-validity recovery extend this contract; historical frozen runs retain the rules above. Local reuse does not imply whole-report approval, and style alignment does not imply improved quality.
+
+
+For new `delivery_hardening: 1` runs, the additional [delivery hardening contract](delivery-hardening.md) governs source/component retention, actual-result barriers and scoped recovery. Older frozen protocols retain their existing rules.

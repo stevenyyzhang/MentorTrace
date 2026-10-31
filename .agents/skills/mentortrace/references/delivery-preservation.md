@@ -67,6 +67,14 @@ New author delivery requires both the report-bound B consolidation record and th
 
 ## Coordinated action and concision review
 
+Preserve the supported requirement rather than every sentence of reviewer commentary.
+Keep validity conditions, actual uncertainty and live repair alternatives. A sentence
+defending why an unrequested algorithm or experiment is unnecessary may remain in the
+private rationale when the delivered positive action already has the correct scope.
+Do not restore such sentences merely because they occurred in a source opinion.
+For same-manuscript replacement delivery, apply [review stability](review-stability.md)
+and include earlier unnumbered author questions in the source inventory.
+
 Use the existing component comparisons and final-text meaning/style reviews for these checks; do not add a new audit stage or author-facing checklist. Verify that a shortened or alternative request still answers every supported independent question, with evidence for any relaxation. Check claim corrections across all affected manuscript occurrences against one supported conclusion, preserving legitimate differences in meaning. Check that plans and overlapping replacements can be applied together, or are explicitly separate alternatives. Put missing author facts and insertion locations in Suggested revision / 建议修改 or shared revision actions, with no separate author-information field. Review concise language comments for exact corrections and all occurrence anchors. Remove redundant explanations, repeated checklists and duplicate drafts while retaining locally necessary use conditions. Any resulting text change still requires the affected bound review to be renewed.
 
 Distinguish the manuscript's stated aim from its demonstrated result and any guarantee. When narrowing an unsupported success claim or shortening a method preview, retain the source-supported aim explicitly in the actual replacement; describing its decision mechanism alone may lose that aim. Preserve that distinction in every supplied language and mutually exclusive alternative. Do not invent a new aim from a historical example, or strengthen an aim into evidence of successful identification.

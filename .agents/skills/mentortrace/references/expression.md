@@ -68,14 +68,15 @@ for its additional realization, with one compatible target recommendation. Missi
 Concern coverage warrants a separately supported intake candidate, not an invented
 Concern ID or an automatic promotion.
 
-For each admission/overlap review, record the source evidence examined, feature
-type, concrete added value, matched Concern IDs and review disposition in a private
-receipt. Distinguish source-bound wording examples from conditional operations
+During explicit library intake or maintenance, record admission evidence, feature
+type, concrete added value, matched Concern IDs and review disposition privately.
+An ordinary manuscript review uses the frozen source records: assess target fit
+and the additional operation, without repeating a library-wide admission audit. Distinguish source-bound wording examples from conditional operations
 and from repeated requirements when reporting library coverage. Existing source
 and schema checks do not certify this semantic review; preserve frozen snapshots
 and report unreviewed cases instead of retrospectively relabeling them as passed.
 
-An Expression match does not require a rewrite. Compare the target's current wording and arrangement with the source-inspired candidate, including preserved meaning, prerequisites, local transitions and space. Keep the original if the alternative is merely equivalent or its gain does not justify the cost. Exact mentor wording remains source evidence; generated target wording is a new model draft, not a mentor-approved correction. Several examples supporting one editorial decision do not establish several independent defects. Carry only the preferred compatible operation into a suggested revision; record unused alternatives in the private trace.
+An Expression match does not require a rewrite. Compare the target's current wording and arrangement with the source-inspired candidate, including preserved meaning, prerequisites, local transitions and space. For an improvement goal, compare the claimed gain with its cost. For a mentor-style writing goal, equivalent wording may be adopted when an actual source-supported feature fits the target and preserves meaning. Record style alignment as the reason; improved quality may remain unestablished. Do not require a defect or invent a benefit to justify imitation. Exact mentor wording remains source evidence; generated target wording is a new model draft, not a mentor-approved correction. Several examples supporting one editorial decision do not establish several independent defects. Carry only the preferred compatible operation into a suggested revision; record unused alternatives in the private trace.
 
 For a private snapshot, use an explicitly selected frozen source to learn from actual
 mentor wording and concrete paragraph actions. Each record retains attributed
@@ -118,8 +119,8 @@ sentence/paragraph operation. Explain its added value beyond the Concern's
 requirement in the existing transfer fields, and identify adopted feature IDs.
 Independently seek suitable passages, but do not generate another generic rule or
 defect merely because an example is present. Distinguish necessary repair
-realization, optional improvement, actual local expression error, no change and
-unresolved inspection. A sufficient Concern may coexist with optional expression
+realization, mentor-style alignment without a superiority claim, optional improvement,
+actual local expression error, no change and unresolved inspection. A sufficient Concern may coexist with optional expression
 improvement; a compatible target can remain unchanged. Full source and active-use
 coverage still applies in one call, without a preliminary applicability filter.
 

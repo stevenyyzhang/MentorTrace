@@ -27,6 +27,15 @@ A normal word broken at the physical line end may be reconstructed for reading. 
 
 ## Report quotations
 
+Original is a source-only field. Include exact source sentences and formulas; never
+insert reviewer narration such as “the following equation shows” or “the paragraph
+subsequently prints”. Move location tags to Location and interpretation to Comment.
+Noncontiguous excerpts occupy separate paragraphs, without stitching fragments into
+an invented source sentence. Retain source errors. Outer quotation marks, PDF line-wrap
+repair and faithful LaTeX transcription are presentation changes, not permission to
+paraphrase. If transcription is unresolved, use a readable source crop or resolve the
+source before delivering a purported verbatim quotation.
+
 Reuse checked transcription for formula-centered `Original` passages, or an unaltered source crop if faithful transcription is unavailable. Compare the rendered report with the original page for meaning-bearing symbols; a correctly rendered but incorrect transcription fails this check. Review repeated quotations together. If a corrected quotation changes an opinion's premise, re-adjudicate the opinion and its shared revision actions. Source-to-report preservation alone does not establish source accuracy.
 
 Apply this contract to new runs. Historical frozen inputs/requests/findings retain their protocol; label later corrections as corrections, not fresh discoveries. Structural acceptance does not guarantee zero false alarms or missed errors.

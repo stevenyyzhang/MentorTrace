@@ -120,6 +120,16 @@ def normalize_revision_fields(markdown: str) -> str:
     return "\n\n".join(output) + "\n"
 
 
+def normalize_math_fonts(markdown: str) -> str:
+    def math(match):
+        return re.sub(r'\{\\rm\s+([^{}]+)\}', lambda m: r'{\mathrm{' + m[1] + '}}', match[0])
+    # Fenced code is literal, not manuscript math.
+    parts = re.split(r'(```.*?```|~~~.*?~~~)', markdown, flags=re.S)
+    for i in range(0, len(parts), 2):
+        parts[i] = re.sub(r'\$\$.*?\$\$|(?<![\\$])\$(?!\$)(?:\\.|[^$])*?\$', math, parts[i], flags=re.S)
+    return ''.join(parts)
+
+
 def build_html(markdown: str, css_name: str, pandoc: str) -> tuple[str, int, int]:
     markdown = normalize_revision_fields(markdown)
     # GFM recognizes dollar math; normalize both TeX delimiter forms for
@@ -131,6 +141,8 @@ def build_html(markdown: str, css_name: str, pandoc: str) -> tuple[str, int, int
         render_markdown,
         flags=re.S,
     )
+    # Normalize a supported legacy font declaration only inside math. Keep source intact.
+    render_markdown = normalize_math_fonts(render_markdown)
     fragment = subprocess.run(
         # Pandoc's GFM parser treats a standalone '=' inside a $$ block as a
         # Setext heading, leaving the surrounding equation as literal TeX.

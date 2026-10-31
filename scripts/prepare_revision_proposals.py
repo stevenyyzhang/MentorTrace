@@ -13,6 +13,9 @@ def prepare(run,out):
  # Revalidate all recorded request/response hashes before using final findings.
  m.require(m.next_request(run) is None,'Diagnosis has unfinished work')
  final=m.read(run/'calls/verify/response.json')
+ if m.read(run/'inputs/protocol.json').get('delivery_reliability'):
+  import delivery_reliability
+  delivery_reliability.validate('verify',final,m.context_for(run,'verify'),m.anchor)
  out.mkdir(parents=True)
  shutil.copytree(run/'inputs/paper',out/'inputs/paper')
  for name in ['section-argument.md','report-language.md','reader-checklist.md','repair-contract.md','delivery-preservation.md','execution-efficiency.md','source-fidelity.md']:
@@ -24,16 +27,27 @@ def prepare(run,out):
  language_path=run/'calls/language/response.json'
  language=m.read(language_path) if language_path.exists() else {}
  protocol=m.read(run/'inputs/protocol.json')
+ m.save(out/'inputs/delivery_protocol.json',{'delivery_hardening':protocol.get('delivery_hardening',0),'canonical_draft':protocol.get('canonical_draft',0)})
+ settings=[]
+ for audit_path in sorted(run.rglob('audit.json')):
+  record=m.read(audit_path)
+  if record.get('model') and record.get('reasoning_effort'):
+   settings.append({'source':str(audit_path.relative_to(run)),'sha256':m.sha(audit_path),'model':record['model'],'reasoning_effort':record['reasoning_effort'],'service_tier':record.get('requested_service_tier',record.get('service_tier','unknown'))})
  card_manifest=m.read(run/'inputs/knowledge/manifest.json')
  m.save(out/'inputs/coverage_and_pending.json',{
+  'technical_scope':m.read(run/'calls/technical/response.json').get('technical_scope',[]),
+  'actual_call_settings':settings,
+  'settings_status':'recorded_per_call' if settings else 'not_recorded_do_not_infer',
   'knowledge_count':card_manifest['count'],
   'advisor_batches':sum(stage.startswith('supplement_') for stage in protocol['stages']),
   'language_coverage':language.get('coverage',[]),
   'language_uncertain_items':language.get('uncertain_items',[]),
   'unresolved_dispositions':[d for d in final.get('dispositions',[]) if d['status']=='unresolved'],
+  'unresolved_organization_dispositions':[d for d in final.get('organization_dispositions',[]) if d['status']=='unresolved'],
+  'verify_organization_reconsiderations':final.get('withdrawn_candidate_reviews',[]),
   'reader_review':m.read(run/'reading_review.json') if (run/'reading_review.json').exists() else None,
   'review_provenance':m.read(run/'review_provenance.json') if (run/'review_provenance.json').exists() else None,
-  'instruction':'Report factual coverage and still-unresolved items separately. Do not repeat an uncertainty already resolved by a frozen finding; do not promote pending items to confirmed errors.'})
+  'instruction':'Keep unknown and not_checked technical_scope aspects explicit in remaining checks; a pass applies only to its stated scope. Report factual coverage and still-unresolved items separately. Do not repeat an uncertainty already resolved by a frozen finding; do not promote pending items to confirmed errors.'})
  if protocol.get('review_efficiency')==1:
   import review_workflow
   reviewed=review_workflow.validated_source_review(run/'initial_review.json')
@@ -61,10 +75,13 @@ def prepare(run,out):
 '''
  # Preserve established drafting references without repeating the separate
  # delivery-audit procedure inside the generation request.
- for name in ['section-argument.md','report-language.md','reader-checklist.md','repair-contract.md','source-fidelity.md']:
-  prompt+='\n'+name+'\n'+(out/'inputs'/name).read_text(encoding='utf-8')
+ import runtime_guidance
+ prompt+=runtime_guidance.drafting_references(out/'inputs',lean=protocol.get('lean_runtime')==1)
  compact=lambda value:__import__('json').dumps(value,ensure_ascii=False,separators=(',',':'))
  prompt+='\nKeep explanations concise and evidence-focused; do not reproduce private audit deliberation. This pass combines supported drafting, both-language meaning and natural wording checks; later final-text verification remains independent.'
+ if protocol.get('review_quality'):
+  import review_quality
+  prompt+='\n'+review_quality.CLARITY_INSTRUCTIONS.split('Return global_scope.')[0]
  if protocol.get('report_concision')==1:
   import report_concision
   prompt+='\n'+report_concision.DRAFT_INSTRUCTIONS
@@ -77,10 +94,20 @@ def prepare(run,out):
   import expression_realization as realization
   shutil.copyfile(m.ROOT/'.agents/skills/mentortrace/references/expression-realization.md',out/'inputs/expression-realization.md')
   m.freeze(out/'inputs')
-  prompt+='\n'+realization.SCHEMA+'\n'+(out/'inputs/expression-realization.md').read_text(encoding='utf-8')
+  prompt+='\n'+(realization.PARTIAL_INSTRUCTIONS+'\n' if protocol.get('delivery_hardening') else '')+realization.SCHEMA+'\n'+(out/'inputs/expression-realization.md').read_text(encoding='utf-8')
   m.save(out/'realization_review_contract.json',{'version':1,'required':True,
     'schema':realization.REVIEW_SCHEMA,'scope':'Extend the existing final-text facts/meaning/style review; not a new discovery lane.'})
  prompt+='\n'+writing.draft_schema(evidence)+'\n'+(out/'inputs/writing-transfer.md').read_text(encoding='utf-8')
+ if protocol.get('delivery_reliability'):
+  prompt+='\nDeliver each optional/author_confirmation candidate_review as a concrete author-facing suggestion or question, retaining its candidate_id in candidate_delivery_map:[{candidate_id,report_excerpt}]. Do not collapse these into a generic remaining-checks disclaimer. Incorporated candidates follow their actual output IDs. Preserve source_requirement_resolutions delivery actions and alternatives. Original fields may use [[ORIGINAL:ref_id]] with original_references:{ref_id:{page,page_sha256,span:[start,end]}}; the runner substitutes only exact frozen page text. If decisive PDF glyphs differ, retain a separately image-checked transcription and its evidence; never fabricate a text span. Write direct comments with the problem and action. Keep only conditions that change the repair; do not copy private defenses. Style alignment does not claim superiority.'
+ if protocol.get('delivery_hardening'):
+  import review_integrity
+  prompt=prompt.replace('Return JSON {report_markdown,delivery_map:', 'Return JSON {report_fragments,report_preamble,delivery_map:')
+  prompt+='\n'+review_integrity.CLAIM_INSTRUCTIONS+'\nFor the new structured format report_markdown is assembled locally from report_preamble and report_fragments; do not repeat it in the model output.'
+ if protocol.get('canonical_draft'):
+  import re
+  prompt=re.sub(r'Return JSON \{report_fragments,report_preamble,delivery_map:.*?limits:\[\]\}\.', 'Return canonical group records in the schema below.', prompt, count=1)
+  prompt+='\n'+(__import__('canonical_draft').INSTRUCTIONS_V2 if protocol.get('canonical_draft')==2 else __import__('canonical_draft').INSTRUCTIONS)
  instruction_before_data=prompt
  draft_evidence=writing.draft_view(m.read(out/'inputs/writing_evidence.json'))
  prompt+='\nWRITING EVIDENCE (LINKED SOURCES, NOT TARGET FACTS)\n'+compact(draft_evidence)
@@ -102,7 +129,13 @@ def prepare(run,out):
  if protocol.get('review_efficiency')==1 or protocol.get('request_capacity')==1:
   import advisor_wire
   payload={'writing_evidence_linked_sources_not_target_facts':draft_evidence,'verified_review':draft_final,
-           'manuscript':paper,'coverage_and_pending':m.read(out/'inputs/coverage_and_pending.json')}
+           'manuscript':paper,'coverage_and_pending':m.read(out/'inputs/coverage_and_pending.json'),'delivery_hardening':protocol.get('delivery_hardening',0),'canonical_draft':protocol.get('canonical_draft',0)}
+  if protocol.get('draft_context_v1'):
+   import draft_context
+   payload['draft_context_v1']=1
+   payload,scope_receipt=draft_context.project(payload)
+   m.save(out/'draft_input_scope.json',scope_receipt)
+   instruction_before_data+='\n'+draft_context.INSTRUCTIONS
   wire=advisor_wire.pack(payload);m.require(advisor_wire.unpack(wire)==payload,'Draft compression changed source values')
   prompt=instruction_before_data+'\nReuse checked source_fidelity_checks for Original quotations and inspect decisive glyphs against original page images. Unavailable or conflicting quotations remain unresolved; never invent a transcription. A corrected source that contradicts a finding requires readjudication. Develop revisions from actual verified requirements and available target facts; source organization is not a required target order. Preserve necessary information and dependencies.\nLOSSLESS INPUT: exact_shared_values_v1 uses definitions and data. Resolve every $same reference and $rows table literally into complete values. All linked sources, verified fields, manuscript and pending coverage remain intact.\nINPUT\n'+compact(wire)
   m.save(out/'lossless_input_receipt.json',{'complete_roundtrip':True,'source_value_sha256':__import__('hashlib').sha256(compact(payload).encode()).hexdigest(),'model_calls':0})
@@ -115,6 +148,11 @@ def prepare(run,out):
   if protocol.get('request_capacity')==1 and not request_capacity.capacity.estimate(prompt,len(images),policy)['fits']:
    import draft_capacity
    request['capacity_plan']=draft_capacity.prepare(out,instruction_before_data,payload,images,policy,request)
+  elif protocol.get('output_aware_draft'):
+   import draft_capacity
+   plan=draft_capacity.prepare(out,instruction_before_data,payload,images,policy,request,output_aware=True)
+   if plan:request['capacity_plan']=plan
+   else:request_capacity.preflight(request,policy,out/'capacity_preflight.json')
   else:request_capacity.preflight(request,policy,out/'capacity_preflight.json')
  m.save(out/'request.json',request)
  return out/'request.json'

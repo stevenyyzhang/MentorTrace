@@ -45,3 +45,17 @@ Do not ask users to select profiles or approve individual batches. If the full
 manuscript/shared evidence or one inseparable target group cannot fit alone, save
 the actual obstacle and report incomplete work once; never truncate or fabricate
 completion. That is a real capacity limit, not the removed byte threshold.
+
+
+Output-aware draft scheduling uses `output_aware_draft: 1` and saves its decision.
+Without an explicitly source-bound observed `draft_output_profile` matching model,
+effort and Standard tier, an input-fitting request stays a single call. A profile
+contains `observation:{path,sha256}` for an observed record with model, effort,
+service_tier, targets, input_tokens, output_tokens and elapsed_seconds. Preserve its
+original measurement provenance; do not manufacture calibration to force a split.
+The planner compares one to three complete dependency-group partitions, including
+all repeated text and image reserves. It selects parallel drafting only when the
+estimated critical path falls at least 20% and estimated total tokens grow at most
+10%; estimates are not measured savings. Capacity-forced splits remain supported.
+The draft runner uses at most three workers and assembles original outputs in order.
+Full final report checks still assess cross-part coherence and independent requirements.

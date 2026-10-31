@@ -175,8 +175,15 @@ def follow(raw_id, merged, final):
         rows = document.get('dispositions', []) + document.get('organization_dispositions', [])
         match = [row for row in rows if row['input_id'] == item_id]
         require(len(match) == 1, 'Missing/duplicate writing lineage disposition: ' + item_id)
-        return match[0]['output_ids']
-    return sorted({out for middle in outputs(merged, raw_id) for out in outputs(final, middle)})
+        return list(dict.fromkeys(match[0]['output_ids']+match[0].get('content_output_ids',[])))
+    followed={out for middle in outputs(merged, raw_id) for out in outputs(final, middle)}
+    restored=[r for r in final.get('withdrawn_candidate_reviews',[]) if r['input_id']==raw_id]
+    require(len(restored)<=1, 'Duplicate writing restoration')
+    if restored and restored[0]['decision']=='restore':
+        require(restored[0]['output_ids'] and set(restored[0]['output_ids'])<=
+                {s['id'] for s in final.get('organization_suggestions',[])},'Restored writing source has no final target')
+        followed.update(restored[0]['output_ids'])
+    return sorted(followed)
 
 
 def packet(run, workflow=None):

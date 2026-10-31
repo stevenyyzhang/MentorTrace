@@ -72,6 +72,9 @@ language_form needs a concrete lexical choice or grammatical construction retain
 the target. Shared topic, information role or numeric scope alone is editorial reasoning, not
 evidence that the mentor's wording/syntax reached the sentence. Report retained versus newly
 changed forms separately; source attribution cannot establish a causal improvement.
+A mentor-style writing goal does not require the replacement to outperform the original.
+Confirm actual compatible feature realization and preserved meaning even when comparative
+quality is uncertain or equivalent; state style alignment separately from quality improvement.
 This is source-conditioned semantic review, not mentor approval or scientific certification.
 Public-format source context is explicitly minimized; do not claim inspection of omitted
 private pages or infer their content. Apply the same evidence-genre and actual-text checks.
@@ -325,6 +328,10 @@ def validate_draft(response,evidence):
                 keys+=['realization_explanation','preserved_meaning','adaptations']
             for k in keys:
                 require(account(f.get(k)),'Missing feature realization '+k)
+            if f.get('claim_extent','full')=='partial':
+                require(f['decision']=='adapt' and meaningful(f.get('claimed_operation')) and
+                    meaningful(f.get('source_operation_quote')) and f['source_operation_quote'] in source['operation'],
+                    'Partial adoption needs a source-bound operation subset')
             quote=f.get('target_quote','')
             if f['decision']=='not_applicable':require(quote=='','Unused feature claims target realization')
             else:
@@ -347,18 +354,30 @@ def validate_review(response,evidence,review,report_text=None):
         'Final realization review coverage mismatch')
     by_label={g['draft_label']:g for g in groups}
     for draft in drafts:
-        group=by_label[draft['draft_label']]
-        if report_text is not None:
-            for p in draft['passages']:require(p['text'] in report_text,'Final realized passage changed')
-        for key in ['meaning','naturalness']:
-            require(group.get(key,{}).get('status')=='pass' and meaningful(group[key].get('reason')),
-                'Final language '+key+' review failed or unfinished')
-        used={(f['expression_id'],f['feature_id']) for f in draft['feature_decisions'] if f['decision']!='not_applicable'}
-        results=group.get('feature_results',[])
-        require(len(results)==len(used) and {(r.get('expression_id'),r.get('feature_id')) for r in results}==used,
-            'Final feature review coverage mismatch')
-        require(all(r.get('status')=='confirmed' and meaningful(r.get('reason')) for r in results),
-            'Final feature realization rejected or unfinished')
+        validate_group(draft,by_label[draft['draft_label']],report_text)
+    return {'status':'records_validated','semantic_correctness_verified':False}
+
+
+def validate_group(draft,group,report_text=None):
+    if report_text is not None:
+        for p in draft['passages']:require(p['text'] in report_text,'Final realized passage changed')
+    for key in ['meaning','naturalness']:
+        require(group.get(key,{}).get('status')=='pass' and meaningful(group[key].get('reason')),
+            'Final language '+key+' review failed or unfinished')
+    used={(f['expression_id'],f['feature_id']) for f in draft['feature_decisions'] if f['decision']!='not_applicable'}
+    results=group.get('feature_results',[])
+    require(len(results)==len(used) and {(r.get('expression_id'),r.get('feature_id')) for r in results}==used,
+        'Final feature review coverage mismatch')
+    decisions={(f['expression_id'],f['feature_id']):f for f in draft['feature_decisions']}
+    for result in results:
+        decision=decisions[(result['expression_id'],result['feature_id'])]
+        if decision.get('claim_extent','full')=='partial':
+            require(result.get('status')=='partial' and result.get('covered_operation')==decision['claimed_operation'] and meaningful(result.get('reason')),'Partial feature claim lacks actual subset review')
+        else:
+            require(result.get('status')=='confirmed' and meaningful(result.get('reason')),'Final feature realization rejected or unfinished')
+    nonuse={(f['expression_id'],f['feature_id']) for f in draft['feature_decisions'] if f['decision']=='not_applicable'}
+    for result in group.get('nonuse_results',[]):
+        require((result.get('expression_id'),result.get('feature_id')) in nonuse and result.get('reason'),'Nonuse result mislabels a claimed realization')
     return {'status':'records_validated','semantic_correctness_verified':False}
 
 def validate_delivery_binding(binding,report_text):
@@ -368,3 +387,6 @@ def validate_delivery_binding(binding,report_text):
         require(ref.get('path') and ref.get('sha256')==sha(ref['path']),'Stale realization '+key+' binding')
     return validate_review(read(binding['response']['path']),read(binding['evidence']['path']),
                            binding.get('review',{}),report_text)
+
+
+PARTIAL_INSTRUCTIONS = "Partial adaptation is optional: claim_extent=partial, claimed_operation and a literal source_operation_quote bind only the adopted operation. Its final result is status=partial with covered_operation matching that claim; do not call a whole compound source feature confirmed. Explicit nonuse results stay separate in nonuse_results. Equivalent style or uncertain quality benefit does not prevent a supported optional adaptation."

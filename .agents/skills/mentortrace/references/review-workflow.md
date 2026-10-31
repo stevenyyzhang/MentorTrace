@@ -120,6 +120,18 @@ translation, style or Expression calls for this same unchanged material.
 
 ## Default post-processing concurrency and dependency barrier
 
+For `postprocess_efficiency: 1`, delivery preparation performs local preflight and accepts
+only recomputed, scope-approved carryover from `prepare_delivery_delta.py`. Its existing
+pending IDs become the actual model task inventory; carried records remain in the complete
+ledger and visible context. Review pending or invalidated Coverage/B rows against
+the current report; reuse eligible unchanged rows only with the source-specific
+routes, quotes, contexts and rule bindings required by delivery-hardening.md.
+The global review must run on the current report; a prior global pass is not reusable.
+Applicable rule hashes and delivery options must match the prior review; otherwise all
+affected records are reviewed again. Exact text references reduce response repetition and
+are expanded before the unchanged validators. See
+[delivery task reuse](execution-efficiency.md#delivery-task-reuse-and-lossless-records).
+
 After preparing each source or combined-delivery bundle, invoke
 `run_review_packet.py` without `--packet`; it executes that bundle with at most
 three isolated workers. Each worker reads its frozen request only, never another
@@ -155,3 +167,9 @@ and cross-section dependencies. Combine coverage/facts/meaning/language renewal
 in one pass; retain valid unaffected judgments with original provenance. Format
 reconciliation stays local and preserves raw output. Stop after required checks
 pass. Runtime targets do not permit waiving required checks.
+
+
+For new `delivery_reliability: 1` runs, apply [delivery reliability](delivery-reliability.md). Its explicit candidate/requirement decisions and local-validity recovery extend this contract; historical frozen runs retain the rules above. Local reuse does not imply whole-report approval, and style alignment does not imply improved quality.
+
+
+For new `delivery_hardening: 1` runs, the additional [delivery hardening contract](delivery-hardening.md) governs source/component retention, actual-result barriers and scoped recovery. Older frozen protocols retain their existing rules.

@@ -84,14 +84,12 @@ before retrying; the output format does not authorize automatic network retries.
 check links, contribution defects and unresolved anchors together. It is a local
 deficiency inventory, never a substitute for the ordinary validator or a semantic verdict.
 
-`scripts/audit_advisor_output.py --saved-run RUN --out NEW_DIRECTORY` re-encodes
-previously accepted results offline, restores and validates every field, and
-reports token/text reduction and unchanged coverage. Its results are replay data,
-not a new review or measured future latency, quota saving or semantic-quality gain.
+
 # Brief Expression assessment
 
 New runs pin `advisor_expression_brief: 1`; frozen older runs do not inherit it.
-The user accepted less exhaustive expression refinement to reduce elapsed time.
+This protocol uses limited-depth non-action Expression assessments; disclose that
+coverage boundary. It does not imply a new user has approved any model setting.
 All complete sources and active uses are still supplied. Concern checks retain
 their ordinary evidence requirements. Expression review favors clear corrections
 and useful improvements rather than exploring every stylistic alternative.

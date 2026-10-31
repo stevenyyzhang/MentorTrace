@@ -63,7 +63,7 @@ audit-proposals` to check source links. Independent factual/meaning review is st
 required. Preserve each prior run and snapshot. Original case passages and private
 Expression overrides remain opt-in; the public Expression library is bundled and enabled.
 
-## dev.4 writing transfer records
+## Writing transfer records
 
 New H/G runs freeze `writing_transfer: 1`; older frozen runs keep their schemas.
 Reader and independent Advisor load writing-transfer.md. Each selected Reader case
@@ -78,7 +78,7 @@ stage; explicit legacy protocols preserve their frozen preparation stages.
 and optional dispositions. Draft preparation freezes `inputs/writing_evidence.json`
 and requests `revision_attribution` for actual report excerpts. This includes sources
 connected through retained raw requirements; old runs are explicitly marked as
-lacking dev.4 transfer records. Validate a proposal response before final delivery:
+lacking versioned transfer records. Validate a proposal response before final delivery:
 
 ```powershell
 python scripts/writing_transfer.py audit-proposals --delivery <proposal-folder> --response <response.json>

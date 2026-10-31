@@ -48,11 +48,13 @@ def invoke(folder,prompt,images=(),*,model='gpt-6-sol',reasoning_effort='xhigh',
  (folder/'prompt.txt').write_bytes(prompt.encode('utf-8'))
  m.save(folder/'settings_authorization.json',settings_authorization)
  m.save(folder/'START.json',{'time':datetime.datetime.now(datetime.timezone.utc).isoformat(),'command':cmd,'transport':transport,'timeout_seconds':timeout_seconds,'settings_authorization_sha256':authorization_sha256,'prompt_sha256':m.sha(folder/'prompt.txt'),'images':[{'path':str(p),'sha256':m.sha(p)} for p in images]})
+ started=time.monotonic()
  with (folder/'events.jsonl').open('w',encoding='utf-8') as out,(folder/'stderr.txt').open('w',encoding='utf-8') as err:
   proc=subprocess.Popen(cmd,stdin=subprocess.PIPE,stdout=out,stderr=err,env=env)
   m.save(folder/'process.json',{'pid':proc.pid})
   try:proc.communicate(prompt.encode('utf-8'),timeout=timeout_seconds)
-  except subprocess.TimeoutExpired:proc.kill();proc.wait();m.save(folder/'UNCERTAIN.json',{'timeout':True,'timeout_seconds':timeout_seconds,'consumption':'Unreported; not assumed zero.'});raise
+  except subprocess.TimeoutExpired:proc.kill();proc.wait();m.save(folder/'UNCERTAIN.json',{'timeout':True,'timeout_seconds':timeout_seconds,'elapsed_seconds':time.monotonic()-started,'ended_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'consumption':'Unreported; not assumed zero.'});raise
+ m.save(folder/'END.json',{'time':datetime.datetime.now(datetime.timezone.utc).isoformat(),'elapsed_seconds':time.monotonic()-started,'returncode':proc.returncode})
  events=[]
  for line in (folder/'events.jsonl').read_text(encoding='utf-8').splitlines():
   if line.strip():

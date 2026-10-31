@@ -38,6 +38,13 @@ Original findings are not rewritten after verification or after seeing target co
 
 ## Delivery preservation checkpoint
 
+Preserve each independently answerable fact or action, not the full rhetorical wording
+of every source opinion. Keep conditions and genuine author choices. Explanations of
+why an unrequested, excessive repair is unnecessary belong in the private disposition
+when the selected positive action already defines the correct scope. Do not require
+drafting to copy those defenses. For re-review, follow [review stability](review-stability.md)
+after independent freeze, including substantive unnumbered author-confirmation requests.
+
 For new `editorial_selection: 1` runs, adjudicate optional proposals as editorial decision groups before drafting. A group represents the reader task and underlying choice, not every possible location or replacement. Compare keeping the original with feasible candidates and record concrete gain, cost, evidence and cross-group compatibility. Select a preferred path (which may be keep), explicitly withdraw competing proposals with manuscript evidence, and defer choices whose necessary facts are unknown. Several coordinated operations can implement one path; independently answerable content requirements must survive even when their relocation is rejected. Neither ID coverage nor calling all options "optional" makes an unselected bundle suitable for delivery. Verify the set together for contradictory destinations, duplicate explanations, pronoun transitions and overlapping replacements. Preserve group records in the organization audit; they establish traceability, not proof of semantic quality. No issue-count or compression target.
 
 For a multi-paragraph or cross-subsection repair, preserve the shared argument task, affected passage range, and the linked retain/delete/compress/move/add/merge/split/rewrite actions. Several independent findings may refer to one coordinated revision plan; do not fragment that plan into unrelated sentence edits or merge away separately answerable requirements. Verify that deletions preserve needed assumptions, evidence and later references. Existing technical correctness does not dispose of an independently evidenced organization problem.
@@ -51,3 +58,38 @@ Before freezing author-facing output, inspect the source `relation`, `gap` and `
 If an existing frozen delivery needs reorganization, create a new version from the manuscript, frozen raw findings and explicit earlier verification additions/dispositions. Keep target comments and hit labels out of this generation. Preserve the original final and response, map every source requirement to its new location or evidence-based exclusion, and disclose unresolved grouping boundaries. Do not invent detail to increase counts. Freeze the reorganized output before any new alignment scoring; restoration of a previously expressed requirement is delivery recovery, not a new autonomous finding.
 
 For section-level argument, information selection and whole-paper summary checks, also follow [section-argument.md](section-argument.md). Its runtime module is enabled for new section-review protocols; frozen older requests are unchanged.
+
+## New quality-protocol selection and reconsideration
+
+For `review_quality: 1`, separate evidence for the proposal from uncertainty about
+its comparative benefit. A source- and manuscript-supported, applicable, compatible
+organization/style suggestion can survive as optional even if benefit is plausible,
+unmeasured or unknown. This applies to Reader and Advisor proposals equally. The
+original being understandable, a repair being unnecessary, or a benefit being small
+or uncertain is not by itself evidence for withdrawal. Never manufacture superiority.
+
+Record the proposal's purpose and benefit_status in each decision group. Withdrawal
+requires a specific source contradiction, meaning/dependency loss, conflict with the
+selected alternative, unsupported attribution, scope conflict, or concrete cost that
+outweighs the stated goal. Cite the affected passage and explain the actual problem.
+Duplicates merge with their source links; preference uncertainty is not missing fact.
+Unresolved status identifies actual missing source evidence, author facts, applicability
+or compatibility. Do not hide a supported optional recommendation there merely because
+its effect has not been measured. Conflicting alternatives still need a compatible choice.
+
+Verify receives complete original excluded proposals and frozen Merge dispositions.
+Within the same Verify pass, reconsider every withdrawal/unresolved proposal. Preserve
+withdrawal only with concrete grounds, restore a supported proposal as an explicitly
+traced Verify-stage suggestion, or disclose the genuine unresolved fact. Restoration
+is a revision of the selection decision, not independent rediscovery. The original
+Advisor/Reader outputs and Merge record remain frozen. Native lineage follows the
+explicit restoration links through the final delivery, including unknowns.
+
+These rules govern consolidation. They do not send Reader's cases, coverage plan or
+judgments to Advisor, prescribe Advisor's candidate list, or change its source library.
+
+
+For new `delivery_reliability: 1` runs, apply [delivery reliability](delivery-reliability.md). Its explicit candidate/requirement decisions and local-validity recovery extend this contract; historical frozen runs retain the rules above. Local reuse does not imply whole-report approval, and style alignment does not imply improved quality.
+
+
+For new `delivery_hardening: 1` runs, the additional [delivery hardening contract](delivery-hardening.md) governs source/component retention, actual-result barriers and scoped recovery. Older frozen protocols retain their existing rules.

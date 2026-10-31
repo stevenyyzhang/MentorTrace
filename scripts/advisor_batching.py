@@ -22,14 +22,19 @@ expression improvement, or identify a local expression error with target evidenc
 No Concern match is required for an Expression-only improvement/error. Do not use
 a source sentence to establish a missing scientific fact or technical invalidity.
 Use the original as baseline: a sufficient Concern can coexist with a useful optional
-expression improvement; equivalent style, unsuitable conditions or no demonstrable
-gain call for keep/not_applicable. Every source is inspected, no rewrite quota.
+expression improvement. A mentor-style writing goal may also justify a source-supported,
+compatible choice even when it is equivalent or comparative quality is unestablished.
+Unsuitable conditions call for keep/not_applicable; absence of proven gain alone does not.
+Every source is inspected, no rewrite quota. Never invent a defect to justify style imitation.
 For EVERY mentor_expression writing_transfer add
 expression_contribution:{role:"repair_realization|expression_improvement|expression_repair|no_change|unresolved",
 feature_ids:[],supporting_concern_ids:[]}.
 repair_realization means required_repair implementing an evidenced Concern check;
 expression_repair means required_repair for a target-evidenced local expression error;
-expression_improvement means optional_improvement; no_change means keep/not_applicable;
+expression_improvement is the legacy serialized role for optional expression changes,
+including mentor-style alignment; it maps to optional_improvement but does not prove superior
+quality. In the existing reason distinguish style alignment from an evidenced improvement;
+no_change means keep/not_applicable;
 unresolved means unknown/unfinished. List actual adopted language_features IDs for
 repairs/improvements when the source has features. Use only this record's IDs.
 supporting_concern_ids cites supplied cards actually used by this transfer's linked
