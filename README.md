@@ -2,8 +2,6 @@
 
 Version: [v1.2.0](VERSION)
 
-Updated 2026-10-31. See the [native delivery contract](.agents/skills/mentortrace/references/delivery-compact.md) for report repair, synchronized group records and affected checks.
-
 [English](README.md) | [简体中文](README.zh-CN.md)
 
 
@@ -11,6 +9,17 @@ MentorTrace derives judgment patterns from an academic supervisor's actual comme
 
 The current implementation runs as a **Codex skill with a Python workflow** and accepts **PDF manuscripts**. **LaTeX source input and output** are planned. It produces revision guidance and reports; automatically applying changes to the manuscript is not yet integrated.
 
+## Changes from 1.1.0 to 1.2.0
+
+- **Independent review with both libraries:** Advisor directly reviews the full manuscript. Concern guides problem checks; Expression guides concrete wording and later drafting. Both libraries remain complete.
+- **Adaptive batching and concurrency:** size batches by model capacity and review workload, with up to three independent tasks running concurrently by default to reduce repeated input and waiting.
+- **Leaner checks and reports:** combine repeated checks and explanations while retaining complete coverage, verification requirements and bilingual revision suggestions.
+
+## Changes from 1.0.0 to 1.1.0
+
+- **Two mentor libraries:** 493 Concern records describe what to explain or justify; 1,581 Expression examples show concrete wording, syntax and paragraph operations. Both ship with the skill and are enabled by default.
+- **Organization and revision:** check paragraph tasks, information selection and transitions; draft concrete passages for retained issues and coordinate duplicate or conflicting suggestions.
+- **Consistent modules and reports:** Reader, Expert, Advisor and Editor, with refined bilingual comments and suggested-revision presentation.
 
 ## Contents
 
@@ -150,6 +159,7 @@ MentorTrace/
 │   └── published-cases-v1/         Published-paper cases, indexes and citations
 ├── examples/                      Fictional bilingual report examples
 ├── docs/                          Corpus fields, case checks and validation
+├── tests/                         Offline workflow and public-package tests
 ├── requirements.txt
 ├── VERSION
 ├── LICENSE                        MIT for code, instructions and documentation
