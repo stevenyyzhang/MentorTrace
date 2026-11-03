@@ -11,9 +11,12 @@ The current implementation runs as a **Codex skill with a Python workflow** and 
 
 ## Changes from 1.1.0 to 1.2.0
 
-- **Independent review with both libraries:** Advisor directly reviews the full manuscript. Concern guides problem checks; Expression guides concrete wording and later drafting. Both libraries remain complete.
-- **Adaptive batching and concurrency:** size batches by model capacity and review workload, with up to three independent tasks running concurrently by default to reduce repeated input and waiting.
-- **Leaner checks and reports:** combine repeated checks and explanations while retaining complete coverage, verification requirements and bilingual revision suggestions.
+- **Both libraries and independent reviews:** Advisor independently reviews the full manuscript using the complete Concern and Expression libraries. Reader, Expert, Advisor and Editor form separate reviews before integration and verification.
+- **Technical and organizational checks:** inspect derivation premises, configurations, applicability conditions and supporting evidence for the manuscript's actual claims, alongside paragraph tasks, information selection and argumentative connections.
+- **Requirement preservation and deduplication:** trace distinct revision requirements, conditional branches and affected passages; merge only genuine duplicates. Keep technical, organizational and language opinions separate even when they share replacement text, and retain supported organizational suggestions when comparative benefit is uncertain.
+- **Expression and revision guidance:** use applicable Expression cases for wording and paragraph suggestions, distinguishing necessary corrections from optional mentor-style choices without assuming a rewrite is better. Comments state the issue and action directly; Original fields faithfully quote the manuscript.
+- **Adaptive execution and local recovery:** size batches by capacity and workload, with up to three independent tasks running concurrently by default. Reuse valid results and repair affected opinions and associated records with incremental checks, reducing whole-batch repetition and duplicate output.
+- **Reports and delivery checks:** produce bilingual Markdown and PDF reports with separate numbering for each comment category, synchronized cross-references and a coverage-and-remaining-checks section. Check requirement preservation, bilingual consistency and report structure before delivery.
 
 ## Changes from 1.0.0 to 1.1.0
 
