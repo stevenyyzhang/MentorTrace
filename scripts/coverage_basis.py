@@ -107,6 +107,8 @@ def validate(stage, response, context, pages, anchor):
                 require(row.get('evidence'), 'Resolved execution issue needs evidence')
             for e in row.get('evidence', []):
                 anchor(e, pages)
+    if stage == 'technical':
+        __import__('technical_dependencies').validate(response,context)
 
 
 def validate_audit(value, scope, pages, anchor):

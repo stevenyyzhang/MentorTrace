@@ -7,6 +7,7 @@ import copy
 import hashlib
 import json
 import shutil
+import re
 from pathlib import Path
 import mentortrace_v1 as m
 import canonical_draft as canonical
@@ -30,6 +31,9 @@ Original stays verbatim. Only an actual quotation defect permits original_repair
 [{group_id,old,new,page,reason}]; new must be an exact supplied manuscript text span.
 A symbol not reliably represented in extracted text remains an explicit source issue,
 not a guessed transcription. Do not relabel an unchanged failed report as accepted.
+For an edit confined to Use/使用条件 instructions, semantic_dependencies may name
+instruction_only_group_ids. This is eligible only when all other prose and every owned
+delivery record are bytewise unchanged; it never waives local/global validation.
 Write direct, concrete bilingual mentor comments; remove defensive caveats that add no
 condition or author action. Preserve scientific qualifications and separate style
 alignment from a claim of superior writing. No added independent review lane.
@@ -52,7 +56,7 @@ def group_contexts(response, rows):
     return result
 
 
-def affected_groups(before, after, semantic, final):
+def affected_groups(before, after, semantic, final, fine=False):
     old={g['group_id']:g for g in before['report_fragments']};new={g['group_id']:g for g in after['report_fragments']}
     m.require(set(old)==set(new),'Group inventory changed')
     changed={i for i in old if old[i]!=new[i]}
@@ -66,12 +70,24 @@ def affected_groups(before, after, semantic, final):
     for e in semantic.get('edges',[]):
         m.require(e.get('from') in known and e.get('to') in known and e.get('reason'),'Invalid semantic dependency')
         edges.append((e['from'],e['to']))
-    # Shared frozen requirements couple groups even if a model forgets the edge.
+    claimed=set(semantic.get('instruction_only_group_ids',[]))
+    m.require(claimed<=changed,'Instruction-only declaration names unchanged/unknown group')
+    def without_use(g):
+        text=re.sub(r'^\*\*(?:Use:|使用条件：)\*\*.*?(?=^\*\*|^#{1,6} |^---\s*$|\Z)',
+                    '',g['text'],flags=re.M|re.S)
+        return {**g,'text':text}
+    m.require(all(without_use(old[i])==without_use(new[i]) for i in claimed),
+              'Instruction-only edit changed protected prose or owned records')
+    narrow=claimed==changed and semantic['status']=='complete'
+    scoped=__import__('normal_flow').fine_dependencies(old,new,changed,semantic) if fine else None
+    if scoped is not None:edges.extend(scoped)
+    # Shared frozen requirements couple substantive edits. Exact instruction-only
+    # edits retain explicit/semantic edges without invalidating every same-topic group.
     owner={}
     for i,g in new.items():
         for v in g['verified_ids']+g.get('candidate_ids',[]):owner.setdefault(v,set()).add(i)
-    for owners in owner.values():edges.extend((a,b) for a in owners for b in owners if a!=b)
-    for row in final.get('source_requirement_resolutions',[]):
+    for owners in ([] if narrow or scoped is not None else owner.values()):edges.extend((a,b) for a in owners for b in owners if a!=b)
+    for row in ([] if narrow or scoped is not None else final.get('source_requirement_resolutions',[])):
         ids=set().union(*(owner.get(x,set()) for x in row.get('output_ids',[])))
         edges.extend((a,b) for a in ids for b in ids if a!=b)
     for i,g in new.items():
@@ -130,6 +146,18 @@ def validate_revision(response, final, evidence, manuscript):
     m.require(not errors,'Revision local checks: '+json.dumps(errors,ensure_ascii=False))
 
 
+def semantic_failures(failures):
+    """Do not convert missing/invalid review records into requested report edits."""
+    result=[]
+    for failure in failures:
+        if failure.get('actual_language_verdict') or failure.get('phase') in {'global_result_check','native_delivery_gates'}:
+            result.append(copy.deepcopy(failure))
+        elif failure.get('phase')=='local_result_check':
+            issues=[i for i in failure.get('issues',[]) if i.get('kind')=='needs_judgment']
+            if issues:result.append({**failure,'issues':issues})
+    return result
+
+
 def defect_values(values,failures):
     ids=set()
     def scan(value):
@@ -138,10 +166,10 @@ def defect_values(values,failures):
             for x in value.values():scan(x)
         elif isinstance(value,list):
             for x in value:scan(x)
-    scan(failures)
+    scan(semantic_failures(failures))
     def negative(value):
         if isinstance(value,dict):
-            return value.get('status') in {'fail','rejected','missing','lost','unsupported'} or bool(value.get('issues')) or any(negative(x) for x in value.values())
+            return value.get('status') in {'fail','rejected','missing','lost'} or bool(value.get('issues')) or any(negative(x) for x in value.values())
         if isinstance(value,list):return any(negative(x) for x in value)
         return False
     return {k:v for k,v in values.items() if k in ids or negative(v)}
@@ -170,13 +198,21 @@ def prepare(bundle,responses,out,failures):
     final=m.read(Path(package['run'])/'final.json')
     values,_=w.collect(bundle,responses,allow_partial=True)
     selected=defect_values(values,failures)
+    for failure in failures:
+        if failure.get('actual_language_verdict'):
+            for tid in failure.get('task_ids',[]):selected[tid]=copy.deepcopy(failure['actual_language_verdict'])
     evidence_records=[{'path':str(p),'sha256':m.sha(p),'evidence_records':m.read(p).get('evidence_records',[])} for p in responses if any(tid in selected for row in m.read(p).get('results',[]) for tid in row.get('task_ids',[]))]
-    payload={'current_draft':canonical.compact_wire(before),'actual_defect_judgments':selected,'actual_defect_evidence':evidence_records,'failures':failures,
+    payload={'current_draft':canonical.compact_wire(before),'actual_defect_judgments':selected,'actual_defect_evidence':evidence_records,'failures':semantic_failures(failures),
              'verified_review':final,'writing_evidence':m.read(lang['evidence']['path']),
              'manuscript':ctx['manuscript'],'frozen_a':ctx['frozen_a']}
-    # Full source scope is intentionally retained for this cross-context repair.
+    if ctx.get('normal_flow_v1'):
+        payload['normal_flow_v1']=1
+        payload['dependency_scope_contract']=__import__('normal_flow').DEPENDENCIES
+    full_evidence=payload['writing_evidence']
+    payload,projection=__import__('repair_projection').project(payload,ctx,before)
     inputs=out/'inputs';inputs.mkdir(exist_ok=True)
     save_once(inputs/'before.json',before);save_once(inputs/'payload.json',payload)
+    save_once(inputs/'writing_evidence.json',full_evidence);save_once(inputs/'projection.json',projection)
     save_once(inputs/'context.json',ctx);save_once(inputs/'policy.json',manifest['policy'])
     save_once(inputs/'origin.json',{'checkpoint':str(cp),'checkpoint_sha256':m.sha(cp),'language':lang,'bindings':manifest['bindings']})
     m.freeze(inputs)
@@ -220,8 +256,11 @@ def submit(out,args,authorization):
         try:
             value=m.read(raw)
             after=apply_revision(before,value,payload['manuscript'])
-            changed,affected=affected_groups(before,after,value['semantic_dependencies'],payload['verified_review'])
-            validate_revision(after,payload['verified_review'],payload['writing_evidence'],payload['manuscript'])
+            changed,affected=affected_groups(before,after,value['semantic_dependencies'],payload['verified_review'],bool(payload.get('normal_flow_v1')))
+            allowed=payload.get('repair_source_scope',{}).get('editable_group_ids')
+            if allowed is not None:m.require(changed<=set(allowed),'Repair edits exceed supplied source dependency scope')
+            full=m.read(out/'inputs/writing_evidence.json') if (out/'inputs/writing_evidence.json').exists() else payload['writing_evidence']
+            validate_revision(after,payload['verified_review'],full,payload['manuscript'])
         except (ValueError,KeyError,TypeError) as exc:
             if value is None:value={'invalid_json':Path(raw).read_text(encoding='utf-8-sig')}
             error=str(exc);save_once(out/('local-error-'+str(wave)+'.json'),{'raw':str(raw),'sha256':m.sha(raw),'error':error})
@@ -242,8 +281,10 @@ def recheck(out):
     before=m.read(out/'inputs/before.json');after=m.read(out/'response.json');report=out/'report_bilingual.md'
     m.require(canonical.digest(after)==transaction['response_value_sha256'],'Applied revision differs from actual transaction')
     canonical.validate(after);m.require(report.read_text(encoding='utf-8')==after['report_markdown'],'Revision report changed')
-    payload=m.read(out/'inputs/payload.json');validate_revision(after,payload['verified_review'],payload['writing_evidence'],payload['manuscript'])
-    _,affected=affected_groups(before,after,transaction['semantic_dependencies'],payload['verified_review'])
+    payload=m.read(out/'inputs/payload.json')
+    full=m.read(out/'inputs/writing_evidence.json') if (out/'inputs/writing_evidence.json').exists() else payload['writing_evidence']
+    validate_revision(after,payload['verified_review'],full,payload['manuscript'])
+    _,affected=affected_groups(before,after,transaction['semantic_dependencies'],payload['verified_review'],bool(payload.get('normal_flow_v1')))
     previous=m.read(origin['checkpoint']);rows=w.preservation.target_inventory(report)
     contexts=group_contexts(after,rows)
     # Missing structural mapping cannot justify selective reuse.
@@ -253,6 +294,10 @@ def recheck(out):
     affected_final={v for g in after['report_fragments'] if g['group_id'] in affected for v in g['verified_ids']}
     affected_sources={sid for sid,route in ctx['routes'].items() if set(route['final_ids'])&affected_final}
     source_ids=[r['id'] for r in previous['units'] if any(json.dumps(sid) in r.get('text','') for sid in affected_sources|affected_final)]
+    # Exact target-quote/context dependencies are checked by delta. Shared final IDs
+    # alone do not invalidate unrelated source mappings after a complete fine scope.
+    if payload.get('normal_flow_v1') and transaction['semantic_dependencies'].get('status')=='complete' and transaction['semantic_dependencies'].get('scope_units'):
+        source_ids=[]
     # Quote mappings and target contexts are independently invalidated by delta too.
     b=Path(origin['checkpoint']).parent/'checkpoint_phase_b.json'
     assessment={'previous_ledger_sha256':m.sha(origin['checkpoint']),'report_sha256':m.sha(report),
@@ -262,6 +307,7 @@ def recheck(out):
         'affected_source_ids':source_ids,'affected_component_ids':sorted(component_ids),
         'language_response':{'path':str(out/'response.json'),'sha256':m.sha(out/'response.json')},
         'previous_phase_b':{'path':str(b),'sha256':m.sha(b)}}
+    if ctx.get('normal_flow_v1'):assessment['normal_flow_v1']=1
     fresh,pending=delta.prepare(origin['checkpoint'],previous['report'],report,assessment=assessment)
     save_once(out/'delta.json',fresh);save_once(out/'pending.json',pending)
     audit_dir=out/'audit'

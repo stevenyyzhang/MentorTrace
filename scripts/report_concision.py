@@ -2,10 +2,28 @@
 import re
 
 
+DIRECTNESS='''State what is missing and where to add it. A consequence is useful only when it explains
+why that missing information matters; do not attach a generic consequence to a simple edit.
+Do not append assurances such as "this does not prove the implementation is wrong" after a
+missing-information diagnosis. Preserve uncertainty by asking for the actual method or fact.
+Keep substantive negation that identifies the error or changes the remedy. Break a shared plan
+into short parallel actions by author task/insertion location, with its conditions beside each
+action; retain every independent request. Do not compress a long checklist into one sentence.
+Use familiar verbs, avoid translated noun stacks, and remove repeated terms when their roles
+remain unambiguous. Judge the final English and Chinese wording, not merely its source IDs.
+For one comment with several insertion locations, use short action items labeled by location;
+keep each independent requirement and its conditions together. Put a shared caveat once at its
+owning action, not in Comment, Suggested revision, Use and Scope repeatedly. Preserve local
+conditions needed to use a replacement safely. For each proposed rewrite, state its concrete
+editing operation or style correspondence, without a generic superiority claim. Final clarity
+review identifies affected block IDs and literal redundant spans; it must not request a new
+whole-report polish pass or erase a technically necessary negative statement.
+'''
+
 DRAFT_INSTRUCTIONS='''CONCISE REPORT CONTRACT:
 Keep every supported independent requirement, condition, uncertainty and exact edit location.
-Comment explains the problem and consequence once; Suggested revision gives the concrete action.
-Lead with the specific problem or missing fact. Use concrete verbs and explicit subjects; split
+Comment identifies the specific problem; Suggested revision gives the concrete action.
+''' + DIRECTNESS + '''Lead with the specific problem or missing fact. Use concrete verbs and explicit subjects; split
 sentences that mix diagnosis, repair options and scope. Do not repeat the entire derivation in
 the comment when only its decisive step is needed. Do not add unsupported claims of harm.
 Keep decision-changing conditions, such as "if this is an empirical average". Remove anticipatory
@@ -117,6 +135,8 @@ def validate(review,items,evidence_validator,allowed_paths=None):
             raise ValueError('Literal-notation evidence does not contain the candidate token')
 
 
+DEFENSIVE_PATTERN=re.compile(r'\b(?:this|these observations|that omission|this omission|these limitations) (?:does|do) not (?:establish|prove|imply)[^.\n]{0,100}(?:wrong|incorrect|error|failure)|(?:not disproved by (?:that|this) omission)|(?:这一缺失不能否定|(?:现有缺口|这|这些).{0,10}(?:并不|不能)(?:证明|说明)).{0,60}(?:错误|出错|失败|有限观测值)',re.I)
+
 META_PATTERN=re.compile(r'\b(?:present|current|this) rewrite\b|(?:cannot|prevent\w*|no)\b[^.\n]{0,120}\b(?:draft(?:ed|ing)?|setup rewrite)\b|does not (?:necessarily )?require[^.\n]{0,80}(?:new|additional) (?:experiment|algorithm)|当前改写|尚不能完整改写|此处不提供|未代写|没有起草|不需要新增.{0,12}(?:实验|算法)',re.I)
 
 
@@ -125,7 +145,11 @@ def meta_candidates(target_units):
     rows=[]
     for unit in target_units:
         if unit['kind']!='block' or unit['text'].startswith(('**Original:**','**Location:**')):continue
-        for match in META_PATTERN.finditer(unit['text']):
+        matches=list(META_PATTERN.finditer(unit['text']))+list(DEFENSIVE_PATTERN.finditer(unit['text']))
+        seen=set()
+        for match in sorted(matches,key=lambda m:m.start()):
+            if match.span() in seen:continue
+            seen.add(match.span())
             rows.append({'id':'M'+str(len(rows)+1),'target_id':unit['id'],'token':match.group(),
                 'span':[match.start(),match.end()],'text':unit['text']})
     return rows
@@ -144,6 +168,9 @@ META_INSTRUCTIONS='''For every report_meta_candidate return report_economy.meta_
 [{candidate_id,decision:"keep_validity_condition|remove_private_narration",reason}]. These are
 heuristic candidates, not prohibited words. Keep a real mathematical condition, author choice
 or action-changing uncertainty; remove explanations of what the reviewer did not draft or
-why a replacement was withheld. Evaluate each full context in both languages. A remaining
+why a replacement was withheld, or assurances that a missing fact does not prove an error.
+A keep_validity_condition reason must identify the actual validity boundary or author action
+that would change if the clause were removed; generic caution is insufficient.
+Evaluate each full context in both languages. A remaining
 remove_private_narration item blocks delivery. Do not delete technical negation or factual scope.
 '''

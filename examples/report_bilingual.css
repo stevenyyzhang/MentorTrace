@@ -296,3 +296,8 @@ li::marker { color: #64748b; }
   .metadata-grid { grid-template-columns: 1fr; }
   .metadata-item.result { grid-column: auto; }
 }
+
+/* Standalone revision labels: separate diagnosis from the action block. */
+.report p.revision-label { margin-top: 14px; margin-bottom: 8px; break-after: avoid; }
+.report p.revision-body { margin-top: 0; margin-bottom: 8px; }
+.report p.revision-label + p.revision-body { break-before: avoid; }

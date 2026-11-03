@@ -214,6 +214,20 @@ def prepare_target_validation(ledger, report):
     return {'owner':id(ledger),'report':str(Path(report).resolve()),'reuse_context':reuse_context,'expected':expected,'blocks_by_id':blocks_by_id,'positions':positions,'draft_by_member':draft_by_member}
 
 
+def validate_local_notice(notice,row,label,blocks_by_id,positions,draft_by_member):
+    require(isinstance(notice,dict) and has_text(notice.get('reason')),label+' needs a locally visible explanation')
+    other=blocks_by_id.get(notice.get('target_unit_id'))
+    require(other and substantive_quote(notice.get('quote')) and notice['quote'] in other['text'],
+            label+' excerpt absent from its referenced target block')
+    if other['id']==row['id']:return
+    draft=draft_by_member.get(row['id'])
+    if draft:
+        local=other['context_id']==draft['context_id'] and positions[other['id']]<positions[draft['marker_id']]
+    else:
+        local=other['context_id']==row['context_id'] and positions[other['id']]+1==positions[row['id']]
+    require(local,label+' must be attached locally before the assertion/draft')
+
+
 def validate_target_review(ledger, report, local_ids=None, _prepared=None):
     prepared=_prepared or prepare_target_validation(ledger,report)
     require(prepared['owner']==id(ledger) and prepared['report']==str(Path(report).resolve()),'Wrong validation context')
@@ -224,21 +238,7 @@ def validate_target_review(ledger, report, local_ids=None, _prepared=None):
             ('reviewer', 'assertion_completeness', 'semantic_review'))),
             'Missing final target assertion-completeness/semantic review')
     def local_notice(notice, row, label):
-        require(isinstance(notice, dict) and has_text(notice.get('reason')),
-                label + ' needs a locally visible explanation')
-        other = blocks_by_id.get(notice.get('target_unit_id'))
-        require(other and substantive_quote(notice.get('quote')) and notice['quote'] in other['text'],
-                label + ' excerpt absent from its referenced target block')
-        if other['id'] == row['id']:
-            return
-        draft = draft_by_member.get(row['id'])
-        if draft:
-            local = (other['context_id'] == draft['context_id'] and
-                     positions[other['id']] < positions[draft['marker_id']])
-        else:
-            local = (other['context_id'] == row['context_id'] and
-                     positions[other['id']] + 1 == positions[row['id']])
-        require(local, label + ' must be attached locally before the assertion/draft')
+        validate_local_notice(notice,row,label,blocks_by_id,positions,draft_by_member)
 
     for row in rows:
         if local_ids is not None and row['id'] not in local_ids:continue

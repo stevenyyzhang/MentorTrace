@@ -77,13 +77,28 @@ def candidates(stage, response, plan=None):
     return rows
 
 
-def candidate_source(row):
+def candidate_source(row, compact=False, checks=None):
     result = {'source_id': row['id'], 'source_type': 'candidate', 'checks': [],
             'original': {'id': row['id'], 'relation': row['text'],
                          'gap': row['text'], 'closure_goal': row['text'],
                          'anchor': row['anchors'][0], 'candidate_kind': row['kind'],
                          'source_record': row['source']},
             'source_sha256': digest(row)}
+    if compact:
+        original = result['original']
+        for name in ('relation', 'gap', 'closure_goal'):
+            original.pop(name)
+        original['question'] = row['text']
+        # Only declared links and the exact check that generated this candidate.
+        # No same-topic/object inference adds supporting evidence.
+        origin = row['source']; linked = set(origin.get('check_ids', [])) if isinstance(origin, dict) else set()
+        if row.get('origin_path', '').startswith('checks/') and isinstance(origin, dict):
+            linked.add(origin['id'])
+        known = checks or {}
+        require(linked <= set(known), 'Candidate references an unknown original check')
+        # The complete checks already occur once in original_stage_context and
+        # execution tasks. Carry exact identities/bindings, not another full copy.
+        result['check_refs'] = [{'id': k, 'sha256': digest(known[k])} for k in sorted(linked)]
     result['source_sha256'] = hashlib.sha256(json.dumps(result['original'],ensure_ascii=False,indent=2).encode()).hexdigest()
     return result
 
@@ -164,6 +179,9 @@ def validate(stage, response, context, anchor):
     require(len(decisions) == len(components) and {d.get('component_id') for d in decisions} == set(components), 'Unresolved source-requirement accounting before drafting')
     for d in decisions:
         require(d.get('assessment') in {'required', 'optional', 'already_answered', 'unsupported', 'unknown', 'duplicate'} and d.get('reason'), 'Invalid source resolution')
+        if context.get('native_source_repair') and d['assessment']=='duplicate':
+            require(components[d['component_id']].get('assessment')=='duplicate',
+                    'Verify must retain separate requirements unless source-only review established duplication')
         if d['assessment'] in {'required', 'optional', 'unknown'}:
             require(d.get('output_ids') and set(d['output_ids']) <= targets and d.get('delivery_action'), 'Source requirement lacks concrete delivery route')
             if d['assessment']=='unknown':

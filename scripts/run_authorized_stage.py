@@ -127,11 +127,21 @@ def execute_request(run, request, args, authorization):
         model_output_path, usage = codex_adapter.invoke(
             call_dir, request['prompt'], images, model=args.model, reasoning_effort=args.effort,
             service_tier=args.service_tier, settings_authorization=authorization, **capacity_options)
-    output_path, _, unresolved = normalize_stage_response.normalize(run, stage, model_output_path)
+    recovery_receipt = None
+    try:
+        output_path, _, unresolved = normalize_stage_response.normalize(run, stage, model_output_path)
+    except __import__('advisor_associations').AssociationConflict as error:
+        import advisor_association_recovery
+        reconciled, recovery_receipt = advisor_association_recovery.resolve(
+            run, stage, model_output_path, error, mentortrace.context_for(run,stage), request,args,authorization)
+        output_path, _, unresolved = normalize_stage_response.normalize(run, stage, reconciled)
+        usage = list(usage) + recovery_receipt['usage']
     mentortrace.require(not unresolved, f'Unresolved source anchors in {stage}; inspect normalization log')
     mentortrace.validate(stage, mentortrace.read(output_path), mentortrace.context_for(run, stage))
     return {'stage': stage, 'module_name': mentortrace.naming.display_name(stage), 'output': str(output_path), 'model_output': str(model_output_path),
-            'usage': usage, 'reused': cached is not None}
+            'usage': usage, 'reused': cached is not None,
+            **({'association_recovery':recovery_receipt,
+                'normalization_log':str(output_path.parent/'anchor_normalization.json')} if recovery_receipt else {})}
 
 
 def accept_result(run, result, args, authorization_sha):
@@ -144,8 +154,10 @@ def accept_result(run, result, args, authorization_sha):
         'reused_completed_response': result['reused'], 'usage': result['usage'],
         'audit': str((model_output.parent / 'audit.json').relative_to(run)),
         'model_output': str(model_output.relative_to(run)),
-        'normalization_log': None if result.get('capacity_parts') else str((model_output.parent / 'anchor_normalization.json').relative_to(run)),
-        'fresh_context': not bool(result.get('capacity_parts')), 'user_authorized_manuscript_disclosure': True,
+        'normalization_log': None if result.get('capacity_parts') else str(Path(result.get('normalization_log',model_output.parent / 'anchor_normalization.json')).relative_to(run)),
+        **({'association_recovery':result['association_recovery'],
+            'not_a_single_model_output':True} if result.get('association_recovery') else {}),
+        'fresh_context': not bool(result.get('capacity_parts') or result.get('association_recovery')), 'user_authorized_manuscript_disclosure': True,
         **({'actual_model_calls':result['capacity_parts'],'not_a_single_model_output':True} if result.get('capacity_parts') else {})})
 
 
@@ -171,7 +183,7 @@ def execute_capacity_plan(run,request,args,authorization):
             request_capacity.preflight(req,args.auto_capacity,attempt/'capacity_preflight.json')
             raw,used=codex_adapter.invoke(attempt,req['prompt'],images,model=args.model,reasoning_effort=args.effort,
                  service_tier=args.service_tier,settings_authorization=authorization,context_window=args.auto_capacity['context_window'])
-        normalized,_,unresolved=normalize_stage_response.normalize(run,stage,raw)
+        normalized,_,unresolved=normalize_stage_response.normalize(run,stage,raw,context_override=part['context'])
         mentortrace.require(not unresolved,'Unresolved partition anchors; preserve original output')
         value=mentortrace.read(normalized);mentortrace.validate(stage,value,part['context'])
         parts.append((value,part['context']));usage.extend(used)

@@ -187,6 +187,7 @@ def load_run(run):
             if relative.endswith('/record.json'):
                 acceptance_sources(relative, freeze)
     reliable = (read(run/'inputs/protocol.json').get('delivery_reliability') if (run/'inputs/protocol.json').exists() else False)
+    integration = (read(run/'inputs/protocol.json').get('integration_contract_v1') if (run/'inputs/protocol.json').exists() else False)
     candidates = []
     originals, checks, branch_findings = {}, {}, {}
     for folder in sorted((run / 'calls').iterdir(), key=lambda p: p.name):
@@ -275,13 +276,20 @@ def load_run(run):
         selected=set(eligible)
         ft.update(reliability.request_targets(final))
         decisions={r['candidate_id']:r for r in final.get('candidate_reviews',[])}
-        require(set(decisions)=={c['id'] for c in candidates},'Candidate delivery disposition missing')
+        extras=__import__('integration_contract').extra_candidates(merged) if integration else []
+        require(set(decisions)=={c['id'] for c in candidates+extras},'Candidate delivery disposition missing')
         for candidate in candidates:
-            sid=candidate['id'];originals[sid]=reliability.candidate_source(candidate);selected.add(sid)
+            sid=candidate['id'];originals[sid]=reliability.candidate_source(candidate,bool(integration),checks);selected.add(sid)
             decision=decisions[sid]
             descendants[sid]=set(decision.get('output_ids',[])) if decision['status']=='incorporated' else ({sid} if decision['status'] in {'optional','author_confirmation'} else set())
             require(descendants[sid]<=set(ft),'Candidate route has absent target')
             for target in descendants[sid]:final_ancestors.setdefault(target,set()).add(sid)
+        # Extra Merge records were adjudicated in Verify, never relabeled as initial
+        # Source discovery. Their actual optional/unknown actions are already in ft;
+        # incorporated actions enter ordinary finding/organization delivery checks.
+        for candidate in extras:
+            decision=decisions[candidate['id']]
+            require(set(decision.get('output_ids',[]))<=set(ft),'Extra Merge candidate has absent delivery target')
         # Concrete component decisions add explicit cross-category routes before A/B.
         source_components={c['id']:u['source_id'] for u in load('initial_review.json')['units'] for c in u['components']}
         for decision in final.get('source_requirement_resolutions',[]):
@@ -535,6 +543,10 @@ def validate_a(ledger, package, snapshot):
 def source_text(source, field):
     """Resolve only typed literal record fields, including complete source checks."""
     if not isinstance(field, str):return None
+    if field.startswith(('original.','checks[')):
+        # Enumerated literal fields only: no eval, summaries or arbitrary object access.
+        exact=__import__('source_recovery').fields(source).get(field)
+        if exact is not None:return exact
     if field in source['original'] and isinstance(source['original'][field], str):return source['original'][field]
     if field.startswith('original.'):
         value=source['original'].get(field[len('original.'):]);return value if isinstance(value,str) else None

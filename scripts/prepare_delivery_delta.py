@@ -192,7 +192,7 @@ def prepare(previous_ledger, previous_report, report, source_paths=None, assessm
         audit.require(audit.digest(old_b_ref['path'])==old_b_ref['sha256'],'Previous B binding changed')
         from delivery_runtime import coverage_carryover
         texts=['\n\n'.join(r['text'] for r in members if r['kind']=='block') for c,members in new_contexts.items() if c in safe_contexts and c not in {r['context_id'] for r in fresh['target_units'] if r['id'] in affected_targets}]
-        coverage=coverage_carryover(old_b_ref['path'],previous_report,report,texts,(assessment or {}).get('affected_component_ids',[]))
+        coverage=coverage_carryover(old_b_ref['path'],previous_report,report,texts,(assessment or {}).get('affected_component_ids',[]),reuse_complete=bool((assessment or {}).get('normal_flow_v1') and previous_valid and not affected_targets and not affected_sources))
     if coverage:fresh['coverage_carryover']=coverage
     fresh['carryover'] = {
         'previous_ledger': str(previous_ledger.resolve()), 'previous_ledger_sha256': audit.digest(previous_ledger),

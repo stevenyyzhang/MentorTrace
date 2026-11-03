@@ -29,6 +29,7 @@ def execute(bundle, packet_id, calls, args, authorization):
     m.require((policy['model'],policy['effort'])==(args.model,args.effort),'Review settings differ from pinned capacity policy')
     execution_policy.validate_authorization(authorization,args.model,args.effort,args.service_tier)
     request=m.read(bundle/entry['file']);request['images']=[{'path':p['path'],'sha256':p['sha256']} for p in request['images']]
+    m.require(not request.get('reuse_eligibility_only'),'Reuse eligibility stub cannot be submitted; prepare complete global evidence first')
     folder=Path(calls)/packet_id;output=folder/'assembled_response.json'
     transport_request={'prompt':request['prompt'],'images':request['images']}
     cached=runner.find_cached(folder,transport_request,args.model,args.effort,args.service_tier)
@@ -42,6 +43,11 @@ def execute(bundle, packet_id, calls, args, authorization):
                  model=args.model,reasoning_effort=args.effort,service_tier=args.service_tier,
                  settings_authorization=authorization,context_window=policy['context_window'])
     result=m.read(raw)
+    source_context=m.read(bundle/'context.json')
+    if manifest['phase']=='source' and source_context.get('native_source_repair'):
+        inventory={t['id']:t for t in m.read(bundle/'inventory.json')}
+        result,changes=__import__('source_recovery').normalize(result,{**source_context,'assigned_tasks':[inventory[k] for k in request['task_ids']]})
+        m.save(folder/'source_normalization.json',{'raw_sha256':m.sha(raw),'changes':changes,'new_model_calls':0})
     wire_metadata={}
     if request.get('wire_protocol'):
         import delivery_protocol
@@ -62,7 +68,8 @@ def execute(bundle, packet_id, calls, args, authorization):
     context=m.read(bundle/'context.json')
     if context.get('delivery_hardening') and manifest['phase']=='delivery':
         import review_contract
-        normalized,changes=review_contract.normalize(envelope,context)
+        packet_tasks=[t for t in m.read(bundle/'inventory.json') if t['id'] in request['task_ids']]
+        normalized,changes=review_contract.normalize(envelope,{**context,'assigned_tasks':packet_tasks})
         if changes:
             normalized.pop('transport_provenance',None)
             normalized['offline_replay']={'new_model_calls':0,'not_new_semantic_review':True,
@@ -76,10 +83,9 @@ def execute(bundle, packet_id, calls, args, authorization):
         with span(Path(calls)/'trace','validation:'+packet_id,'deterministic_validation'):
             values,origins=workflow.collect(bundle,[output],allow_partial=True)
             tasks=[t for t in m.read(bundle/'inventory.json') if t['id'] in request['task_ids']]
-            issues=review_contract.inspect(tasks,values,context)+workflow.delivery_efficiency.inspect_values(tasks,values)
+            issues=([] if context.get('normal_flow_v1') and context.get('delivery_hardening') else review_contract.inspect(tasks,values,context))+workflow.delivery_efficiency.inspect_values(tasks,values)
             issues+=workflow.recovery.inspect(tasks,values,context,m.read(output).get('evidence_records',[]))
-            for issue in review_contract.inspect_records(m.read(output),manifest['bindings'],context.get('page_images',[])):
-                issues.extend({**issue,'task_id':t['id']} for t in tasks)
+            issues+=review_contract.inspect_record_users(m.read(output),tasks,values,manifest['bindings'],context.get('page_images',[]))
             issues += [{'task_id':tid,'problem':e['error'],'kind':'format'} for o in origins for e in o['collection_errors'] for tid in e['task_ids']]
             m.save(folder/'local_check.json',{'issues':issues,'pending_task_ids':sorted({i['task_id'] for i in issues}),
                 'response':str(output),'response_sha256':m.sha(output),'new_model_calls':0})
@@ -87,8 +93,10 @@ def execute(bundle, packet_id, calls, args, authorization):
     return output
 
 
-def execute_bundle(bundle,calls,args,authorization):
+def execute_bundle(bundle,calls,args,authorization,_source_once=False):
     """One frozen phase per wave. No next-stage launch, automatic retry or shared context."""
+    if workflow.m.read(Path(bundle)/'context.json').get('native_source_repair') and not _source_once:
+        return __import__('source_recovery').execute(bundle,calls,args,authorization)
     if workflow.m.read(Path(bundle)/'context.json').get('delivery_hardening'):
         return execute_hardened_bundle(bundle,calls,args,authorization)
     started=datetime.datetime.now(datetime.timezone.utc).isoformat();timer=time.monotonic()
@@ -109,8 +117,13 @@ def execute_bundle(bundle,calls,args,authorization):
     calls.mkdir(parents=True,exist_ok=True)
     lock=calls/'bundle-execution.lock'
     # A second coordinator must not submit the same packets concurrently.
-    with lock.open('x',encoding='utf-8') as stream:
-        json.dump({'bundle':str(bundle),'workers':workers},stream)
+    guard=None
+    if m.read(bundle/'context.json').get('native_source_repair'):
+        from native_delivery import locked
+        guard=locked(lock);guard.__enter__()
+    else:
+        with lock.open('x',encoding='utf-8') as stream:
+            json.dump({'bundle':str(bundle),'workers':workers},stream)
     results={};failures=[]
     try:
         binding={'bundle':str(bundle),'manifest_sha256':m.sha(bundle/'manifest.json'),
@@ -128,7 +141,7 @@ def execute_bundle(bundle,calls,args,authorization):
         collected=0
         if not failures:
             try:
-                values,_=workflow.collect(bundle,outputs,allow_partial=bool(m.read(bundle/'context.json').get('delivery_reliability')))
+                values,_=workflow.collect(bundle,outputs,allow_partial=bool(m.read(bundle/'context.json').get('delivery_reliability') or m.read(bundle/'context.json').get('native_source_repair')))
                 collected=len(values)
                 if m.read(bundle/'context.json').get('postprocess_efficiency'):
                     issues=workflow.delivery_efficiency.inspect_values(m.read(bundle/'inventory.json'),values)
@@ -152,7 +165,8 @@ def execute_bundle(bundle,calls,args,authorization):
         m.save(path,receipt)
         return {**receipt,'receipt':str(path)}
     finally:
-        lock.unlink()
+        if guard is not None:guard.__exit__(None,None,None)
+        else:lock.unlink()
 
 
 def execute_hardened_bundle(bundle,calls,args,authorization):
@@ -186,8 +200,15 @@ def execute_hardened_bundle(bundle,calls,args,authorization):
             try:
                 paths=[results[e['id']] for e in locals_]
                 entry=global_entries[0]
+                reused=__import__('normal_flow').global_response(bundle,entry,(args.model,args.effort,args.service_tier))
+                if reused:
+                    path=calls/'reused-global.json'
+                    if path.exists():m.require(m.read(path)==reused,'Saved global reuse changed')
+                    else:m.save(path,reused)
+                    results[entry['id']]=str(path)
+                    global_entries=[]
                 try:
-                    active_bundle=delivery_runtime.bind_global(bundle,paths,calls/'global-ready')
+                    active_bundle=bundle if reused else delivery_runtime.bind_global(bundle,paths,calls/'global-ready')
                 except workflow.capacity.CapacityExceeded:
                     if not m.read(bundle/'context.json').get('native_report_repair'):raise
                     import delivery_global_views
@@ -198,8 +219,8 @@ def execute_hardened_bundle(bundle,calls,args,authorization):
                     else:
                         manifest=workflow.verify_bundle(active_bundle)
                         entry=next(e for e in manifest['packets'] if e['id']=='global-synthesis')
-                global_started=True
-                if not failures:results[entry['id']]=str(execute(active_bundle,entry['id'],calls,args,authorization))
+                global_started=not bool(reused)
+                if not failures and not reused:results[entry['id']]=str(execute(active_bundle,entry['id'],calls,args,authorization))
             except PacketCheckError as error:results[entry['id']]=error.response;failures.append({'packet_id':entry['id'],'phase':'global_result_check','issues':error.issues})
             except Exception as error:failures.append({'phase':'global_barrier_or_transport','error':str(error)})
         outputs=[results[e['id']] for e in manifest['packets'] if e['id'] in results];collected=0

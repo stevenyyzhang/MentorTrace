@@ -195,7 +195,7 @@ These are writing tasks, not required headings. Related work, contributions, and
 - Is a different setting mistaken for a defect in prior methods?
 - Is the reasoning from comparison to gap sufficient?
 - Are methods compared on common dimensions?
-- Do citations support the nearby specific claims?
+- Does a substantive externally grounded claim lack a nearby or paragraph-level citation or explanation? Identify what needs support; do not routinely verify the suitability of an existing citation (see review-scope.md).
 - Are irrelevant details repeatedly introduced?
 - When full texts are unavailable, are external factual judgments left for verification rather than asserted?
 

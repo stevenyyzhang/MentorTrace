@@ -7,6 +7,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 RULES=['scripts/native_delivery.py','scripts/report_revision.py','scripts/delivery_reliability.py','scripts/delivery_recovery.py','scripts/review_workflow.py','scripts/delivery_efficiency.py','scripts/prepare_delivery_delta.py','scripts/lossless_delivery_wire.py','scripts/delivery_global_views.py',
        'scripts/audit_merge_obligations.py','scripts/verification_basis.py','scripts/review_quality.py',
+       'scripts/source_recovery.py','scripts/repair_projection.py','scripts/technical_dependencies.py','scripts/normal_flow.py','scripts/integration_contract.py',
        'scripts/report_concision.py','scripts/expression_realization.py','scripts/review_contract.py','scripts/review_integrity.py','scripts/delivery_runtime.py','scripts/validation_cache.py','scripts/layout_evidence.py','scripts/execution_trace.py','scripts/delivery_protocol.py','scripts/delivery_cycle.py','scripts/delivery_focus.py','scripts/canonical_draft.py','scripts/coverage_basis.py','scripts/runtime_guidance.py','scripts/draft_context.py',
        '.agents/skills/mentortrace/scripts/audit_report_preservation.py',
        *['.agents/skills/mentortrace/references/'+name+'.md' for name in
@@ -133,7 +134,10 @@ def checked_carryover(ledger,contract=None):
         if ref.get('review_id'):
             from delivery_runtime import expand_provenance
             bind(expand_provenance(ref,previous.get('review_provenance_index',{})))
-    return {'source_ids':plan['carried_source_ids'],'target_ids':plan['carried_target_ids'],
+    global_ref=None
+    if previous.get('delivery_rule_binding')==rule_binding() and __import__('normal_flow').reusable_global(previous,fresh,plan,assessment):
+        global_ref={'path':str(path.resolve()),'sha256':delta.audit.digest(path)}
+    return {'global':global_ref,'source_ids':plan['carried_source_ids'],'target_ids':plan['carried_target_ids'],
             'language':copy.deepcopy(language),'coverage':copy.deepcopy(fresh.get('coverage_carryover',{}).get('rows',[])),'coverage_binding':fresh.get('coverage_carryover'),'bindings':bindings,'provenance':copy.deepcopy(carry),
             'reason':'Exact context/evidence plus recorded dependency assessment; not a new review'}
 

@@ -3,6 +3,8 @@
 from __future__ import annotations
 
 import argparse
+import json
+import sys
 import os
 import re
 import shutil
@@ -13,6 +15,9 @@ import unicodedata
 from pathlib import Path
 
 from lxml import html
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[4] / "scripts"))
+from report_numbering import normalize as normalize_numbering, validate_report
 
 
 ASSET = Path(__file__).resolve().parents[1] / "assets" / "report_bilingual.css"
@@ -131,6 +136,8 @@ def normalize_math_fonts(markdown: str) -> str:
 
 
 def build_html(markdown: str, css_name: str, pandoc: str) -> tuple[str, int, int]:
+    markdown, _ = normalize_numbering(markdown)
+    validate_report(markdown)
     markdown = normalize_revision_fields(markdown)
     # GFM recognizes dollar math; normalize both TeX delimiter forms for
     # rendering only, without changing the frozen Markdown.
@@ -430,7 +437,7 @@ def print_pdf(chrome: str, html_path: Path, pdf_path: Path, markdown: str,
                 raise RuntimeError(f"PDF is missing finding IDs: {sorted(missing)}")
             if not expected:
                 def normalized_title(value):
-                    return re.sub(r"\\[()]|[{}_]|\s+", "", unicodedata.normalize("NFKC", value)).casefold()
+                    return re.sub(r"\\[()]|[{}_]|\s+", "", unicodedata.normalize("NFKC", value).replace("’", "'")).casefold()
                 normalized_pdf = normalized_title(text)
                 headings = re.findall(r"(?m)^#{3,4} \d+\. ([^/\n]+) /", markdown)
                 missing_titles = [
@@ -489,7 +496,9 @@ def main() -> None:
     html_path = output_dir / f"{args.name}.html"
     css_path = output_dir / f"{args.name}.css"
     pdf_path = output_dir / f"{args.name}.pdf"
-    targets = (html_path, css_path) if args.html_only else (html_path, css_path, pdf_path)
+    display_path = output_dir / f"{args.name}.display.md"
+    map_path = output_dir / f"{args.name}.numbering.json"
+    targets = (html_path, css_path, display_path, map_path) if args.html_only else (html_path, css_path, display_path, map_path, pdf_path)
     existing = [path for path in targets if path.exists()]
     if existing and not args.force:
         raise FileExistsError(f"Refusing to overwrite: {', '.join(map(str, existing))}; pass --force")
@@ -497,8 +506,10 @@ def main() -> None:
     pandoc = find_executable(
         args.pandoc, ("pandoc",), ()
     )
-    markdown = markdown_path.read_text(encoding="utf-8")
+    markdown, numbering = normalize_numbering(markdown_path.read_text(encoding="utf-8"))
     html_text, card_count, language_count = build_html(markdown, css_path.name, pandoc)
+    display_path.write_text(markdown, encoding="utf-8")
+    map_path.write_text(json.dumps(numbering, ensure_ascii=False, indent=2), encoding="utf-8")
     html_path.write_text(html_text, encoding="utf-8")
     shutil.copyfile(ASSET, css_path)
     if args.html_only:

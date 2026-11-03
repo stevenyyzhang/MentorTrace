@@ -35,12 +35,18 @@ def iter_anchors(value, path=""):
             yield from iter_anchors(child, f"{path}[{index}]")
 
 
-def normalize(run: Path, stage: str, raw_path: Path):
+def normalize(run: Path, stage: str, raw_path: Path, context_override=None):
     run = run.resolve()
     raw_path = raw_path.resolve()
     original = mentortrace.read(raw_path)
     candidate = copy.deepcopy(original)
     output_expansion = None
+    if 'integration_output_version' in original:
+        import integration_contract
+        context = context_override if context_override is not None else mentortrace.context_for(run, stage)
+        candidate = integration_contract.expand(original, context)
+        output_expansion = {'version': original['integration_output_version'],
+                            'policy': 'Exact integration references only; ordinary validation still required.'}
     if 'advisor_output_version' in original:
         import advisor_output
         candidate = advisor_output.expand(original, mentortrace.context_for(run, stage))

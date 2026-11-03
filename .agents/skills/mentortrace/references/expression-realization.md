@@ -1,5 +1,11 @@
 # Concrete mentor language in replacement passages
 
+Retrieval version 3 ignores generic task words and ranks by active Concern links,
+specific writing functions and meaningful task terms. Do not force both wording
+and editorial examples into every target. No relevant candidate is a valid result;
+the actual reviewer still decides applicability. Stylistic imitation can be useful
+without a proven superiority claim and must not change scientific meaning.
+
 Use with an Expression snapshot declaring `expression_realization: 1`, after the
 revision scope is fixed. Keep Concern, Expression and published examples distinct.
 This extends existing drafting and final-text review, not the four discovery lanes.
@@ -39,7 +45,7 @@ proposed body text, `language_edit` describes a supported deletion, and
 `editorial_operation` uses comments or actual non-body mentor examples only for
 the bounded modification action, preserving their distinct evidence roles.
 
-For each retained drafting task, retrieve by passage job and language function,
+For every retained revision target, including surface corrections and action-only author questions, retrieve by passage job and language function,
 then judge semantic compatibility. Additional post-freeze language retrieval may
 guide wording only; record its timing and never turn it into an earlier discovery.
 Read admitted companions with their original conditions. Topic vocabulary alone
@@ -97,3 +103,13 @@ For new `delivery_reliability: 1` runs, apply [delivery reliability](delivery-re
 
 
 For new `delivery_hardening: 1` runs, the additional [delivery hardening contract](delivery-hardening.md) governs source/component retention, actual-result barriers and scoped recovery. Older frozen protocols retain their existing rules.
+
+For new `expression_routing: 2` runs, the deterministic router records one route per
+target, including explicit no-candidate routes. Rank active frozen Concern associations
+alongside task/function matches, admit both actual wording and bounded editorial operations,
+and retain complete selected cases with their companions. The small shortlist is candidate
+retrieval, not an exhaustive semantic search or an adoption quota. Already admitted initial
+transfers remain available independently of this shortlist. Judge each target's actual
+language realization in the existing drafting/final-text pass, not a new model call per item.
+An action-only request can adopt how to organize a revision; it cannot fabricate the missing
+author facts to produce replacement prose. Keep style alignment distinct from improvement.

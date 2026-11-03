@@ -14,6 +14,10 @@ def scoped_payload(base, items):
     payload = {**base, 'tasks': items}
     if any(t['kind'] == 'global_scope' for t in items):
         return payload
+    # Unassigned peer judgments belong to the dependent global, not each local.
+    # Preserve full manuscript/report/source context even without a scope plan.
+    payload.pop('carried_reviews',None)
+    payload.pop('completed_local_reviews',None)
     scopes = base.get('packet_scopes', {})
     groups = {t['group'] for t in items}
     if not groups <= set(scopes) or any(scopes[g].get('status') != 'complete' for g in groups):

@@ -6,6 +6,15 @@ older output-shape instructions only where explicitly stated below.
 
 ## Discover from this manuscript
 
+New adaptive runs also pin `technical_dependency_v1: 1`. In the existing planning
+and technical calls, trace a claimed input through its producer, consumer and
+stated operating conditions, using manuscript triggers rather than a domain checklist.
+Technical `coverage_answers[].dimension_refs` identifies applicable
+`{configuration_id, dimension_id}` pairs; use `[]` when none applies. An answered
+scope cannot mask a referenced unknown or unfinished dimension. Reuse check IDs
+and preserve unresolved subquestions in existing records. These inputs never enter
+the independent Advisor review.
+
 In the existing Reader/Expert planning call, `coverage_basis` records concise,
 independently answerable questions triggered by the actual manuscript. Use anchors
 and existing object IDs for claims, method steps, result comparisons, citation

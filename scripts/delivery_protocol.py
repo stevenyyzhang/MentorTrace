@@ -76,6 +76,7 @@ input locators, not summaries. Page images govern decisive glyphs. Unknown is no
     text += '\nCanonical nested types: meaning_check, style_check, assertion_completeness and reason are nonempty STRINGS. Language meaning/naturalness are OBJECTS {status:"pass|fail",reason:string}. Shared judgments must be named OBJECTS, not column arrays. Return answers:[[slot,{value:{...named fields...}}]]. Evidence basis is the exact domain-compatible enum; rationale belongs in reason/basis_detail. source_ref is an exact supplied string ID, never a {path,sha256} object. Global must inspect completed_local_reviews.actual_values and their evidence, not completion hashes alone.'
     for kind in sorted(kinds):
         text += '\n' + kind.upper() + ': ' + RULES[kind]
+    if context.get('normal_flow_v1'):text+='\n'+__import__('normal_flow').LITERALS
     if kinds & {'target','source_field'}:
         text+='\nEvidence quote rule: page+quote must be a literal substring of supplied extracted page text. For a visually inspected glyph/formula or direct derivation, use an explicit evidence_record with actual source_pages and an exact quote from that record, not a retyped page quotation. In mixed source-field evidence, documentary support of report correspondence must explicitly set domain:"report_correspondence" on that evidence item and basis:"report_structure"; this never supports a scientific conclusion. Scientific evidence retains manuscript/direct_derivation scope. Return named value objects only; no positional arrays or mixed syntax.'
     if context.get('native_report_repair') and kinds & {'target','language','global_scope'}:
@@ -88,6 +89,7 @@ input locators, not summaries. Page images govern decisive glyphs. Unknown is no
         text += '\nOptional evidence_records:[{id,text,source_pages:[page]}] hold actual visual/derivation observations. Documentary records use source_ref from evidence_source_refs, or actual supplied source_paths and source_sha256s. Programs bind only actual sources; no invented quote or hash.'
     if 'global_scope' in kinds:
         if context.get('review_quality'):
+            text += '\n'+__import__('report_concision').DIRECTNESS
             text += '\nauthor_clarity:{status:"pass|fail",reason,issues:[]} checks direct diagnosis/consequence/action in both languages. Keep meaningful scientific conditions and optional alternatives.'
         if context.get('report_concision') or context.get('report_meta_candidates'):
             text += '\nreport_economy:{status:"pass|fail",reason,placeholder_results:[],meta_results:[]} judges each supplied candidate explicitly. Placeholder result:{candidate_id,decision:"literal_notation|author_placeholder",reason,evidence:[]} covers each supplied ID; only actual manuscript-backed literal notation passes. Meta result:{candidate_id,decision:"keep_validity_condition|remove_private_narration",reason}; remaining private narration blocks delivery. Never auto-delete a substantive caveat.'
@@ -97,6 +99,8 @@ input locators, not summaries. Page images govern decisive glyphs. Unknown is no
             text += '\nhistory_change_review:{status:"completed",reason,issues:[]} must inspect actual historical-source integration, changed bilingual text and dependencies. Assisted recovery is not independent discovery.'
     if context.get('correction_feedback'):
         text+='\nCORRECTION: inspect the actual listed output defects against unchanged source evidence. Correct only affected judgments; preserve honest missing/unknown outcomes. Never change a verdict merely to pass validation.'
+    scope_instruction=__import__('review_scope').instructions(context)
+    if scope_instruction:text+='\n'+scope_instruction
     return text
 
 

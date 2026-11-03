@@ -46,7 +46,19 @@ def instructions(tasks):
 
 def normalize(response, context=None):
     """Only reversible, unambiguous representation changes. Raw output stays immutable."""
-    result = copy.deepcopy(response); changes = []
+    result = __import__('normal_flow').expand(response,(context or {}).get('assigned_tasks',[]),context or {}); changes = []
+    if result!=response:changes.append({'operation':'Expand explicit exact input/specialist references; no verdict inferred'})
+    def expand_records(records):
+        if not ((context or {}).get('delivery_focus') and (context or {}).get('assigned_tasks')):return
+        import delivery_efficiency
+        inputs=delivery_efficiency.input_texts(context['assigned_tasks'])
+        for record in records:
+            before=record.get('text')
+            if isinstance(before,dict):
+                record['text']=delivery_efficiency.expand(before,result.get('texts',{}),inputs)
+                changes.append({'field':'evidence_records/'+str(record.get('id'))+'/text',
+                                'operation':'Expand literal assigned input reference','original':before})
+    expand_records(result.get('evidence_records',[]))
     limits = result.get('reviewer', {}).get('limits')
     if isinstance(limits, list) and all(isinstance(s, str) for s in limits):
         result['reviewer']['limits'] = '\n'.join(limits)
@@ -75,6 +87,7 @@ def normalize(response, context=None):
         globals_ = [r['value'] for r in result.get('results', [])
                     if any(t.startswith('global_scope:') for t in r.get('task_ids', [])) and isinstance(r.get('value'), dict)]
         for value in globals_:
+            expand_records(value.get('evidence_records', []))
             for record in value.get('evidence_records', []):
                 ident = record['id']
                 if ident in records and records[ident] != record:
@@ -142,9 +155,26 @@ def inspect_records(response, bindings, page_images):
     return issues
 
 
+def inspect_record_users(response,tasks,values,bindings,page_images):
+    """One bad evidence record invalidates its actual users, not the entire packet."""
+    def uses(v,ident):
+        if isinstance(v,dict):return v.get('evidence_record')==ident or any(uses(x,ident) for x in v.values())
+        if isinstance(v,list):return any(uses(x,ident) for x in v)
+        return v==ident
+    result=[]
+    for issue in inspect_records(response,bindings,page_images):
+        ident=issue['field'].split('/',1)[1]
+        affected=[t['id'] for t in tasks if uses(values.get(t['id'],{}),ident)]
+        # Unused malformed record is still repaired, with one administrative owner;
+        # do not multiply a packet format error into every independent leaf judgment.
+        if not affected and tasks:affected=[tasks[0]['id']]
+        result.extend({**issue,'task_id':tid,'evidence_record_id':ident} for tid in affected)
+    return result
+
+
 def inspect(tasks, values, context=None):
     """Collect all contract defects, never alter decisions or manufacture passes."""
-    context = context or {}; issues = []
+    context = context or {}; issues = []; notice_context=None
     def add(t, field, error, kind='format'):
         issues.append({'task_id': t['id'], 'field': field, 'problem': error, 'kind': kind})
     def text(t, value, key, path=''):
@@ -174,6 +204,24 @@ def inspect(tasks, values, context=None):
                     for e in evidence:
                         if e.get('basis') not in BASES.get(domain, set()): add(t, path+'evidence', 'Evidence basis/domain mismatch')
                 if status == 'reused_verified' and domain != 'manuscript': add(t, path+'domain', 'Verified scientific reuse cannot establish execution metadata')
+                if context.get('delivery_focus') and context.get('all_target_inventory'):
+                    import review_workflow as w
+                    if notice_context is None:
+                        rows=[{**r,'text':context.get('report_text','')[slice(*r['text_span'])] if 'text_span' in r else r.get('text','')}
+                              for r in context['all_target_inventory']]
+                        blocks={r['id']:r for r in rows if r['kind']=='block'}
+                        positions={k:i for i,k in enumerate(blocks)}
+                        drafts={k:r for r in rows if r['kind']=='suggested_wording' for k in r.get('member_ids',[])}
+                        notice_context=(blocks,positions,drafts)
+                    blocks,positions,drafts=notice_context
+                    row=blocks.get(t['key'])
+                    if row:
+                        if not isinstance(assertion.get('quote'),str) or assertion['quote'] not in row['text']:
+                            add(t,path+'quote','Assertion excerpt absent from actual target block')
+                        if status in {'conditional','unresolved'}:
+                            key='condition' if status=='conditional' else 'unresolved_notice'
+                            try:w.preservation.validate_local_notice(assertion.get(key),row,key,blocks,positions,drafts)
+                            except (ValueError,KeyError) as error:add(t,path+key,str(error))
         elif kind == 'source_field':
             if set(value) - {'components', 'non_substantive_reason'}: add(t, 'result', 'Unexpected immutable-inventory/source keys')
             if bool(value.get('components')) == bool(value.get('non_substantive_reason')): add(t, 'components', 'Provide components XOR non-substantive reason')

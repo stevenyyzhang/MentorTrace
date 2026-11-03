@@ -31,6 +31,13 @@ retain the existing explicit same-judgment rule. Evidence and conditional detail
 literal. Exact shared references reduce repeated text; named records avoid column/schema confusion.
 The number of required semantic checks is unchanged.
 
+New adaptive runs pin `normal_flow_v1: 1`. Long repeated literal task strings may
+use `$literal:[answer_slot,path]` (Source uses its assigned task ID); paths address
+actual task data and must resolve to a complete string. Existing `texts/$text`
+shares identical complete strings. These are exact output references, not shorter
+paraphrases, inferred evidence or default judgments. Both collectors and final
+validators see expanded records; raw responses and reference provenance remain.
+
 The runner supplies reviewer identity/context and transport hashes from the actual
 completed fresh execution audit. Actual declared model limits remain in the record.
 Unexpected model-generated execution metadata is retained as ignored metadata alongside
@@ -44,7 +51,7 @@ changed model output as an equivalent response.
 bundles (without --packet). The existing three-worker local wave runs first. Known
 completed, independently assignable invalid/missing local records are checkpointed
 and revalidated. `delivery_cycle.py` builds the ordinary delta ledger and a new native
-bundle containing only pending corrections plus a fresh global task. All known defects
+bundle containing only pending corrections plus a global task. All known defects
 and actual prior values are supplied together only to affected local tasks.
 
 There is at most one correction wave. This is a new correction request with its own
@@ -94,6 +101,34 @@ delivery on an old frozen audit does not enable/rewrite its initial discovery pr
 
 ## Verification and limits
 
+Under `normal_flow_v1`, global reuse requires a previously accepted report, identical
+report and source/evidence bindings, unchanged review-rule hashes and actual model,
+effort and tier, complete local/B carryover, and no affected or invalid records.
+The runner revalidates those predicates and preserves the actual global provenance;
+both final gates still run. A formatting change does not alone require a new review,
+but missing, negative or semantically changed judgments never qualify. Old protocols
+and uncertain dependency scopes retain their conservative behavior.
+
+Apply final-validator excerpt and local-notice rules at initial response collection.
+Malformed shared evidence invalidates its actual users, not every task in the packet.
+Local checks omit unrelated completed peer reviews; global checks retain them.
+Require historical completeness only when actual history is explicitly bound.
+
+Report rewriting receives actual semantic or language failures, not reviewer-record
+format defects. Project writing candidates to the affected groups and their admitted
+dependencies; retain full manuscript, report prose, frozen requirements and final
+opinions. Read-only groups omit repeated bookkeeping in the model view only; full
+saved records remain validation authority. Unknown scope falls back to full input.
+An explicit `instruction_only_group_ids` declaration narrows incremental review only
+when every other prose field and owned delivery record is mechanically unchanged.
+Explicit semantic dependencies, changed local checks and a fresh global judgment
+remain mandatory for edited reports. With `normal_flow_v1`, the existing revision
+call may supply complete `scope_units`: actual changed requirements, claim/condition
+assessment and every shared-opinion peer reviewed. Shared opinion IDs alone then do
+not invalidate peers. Changed shared requirements and explicit/quotation dependencies
+still propagate; missing/uncertain scope falls back to conservative expansion. Changed
+group locals and the full cross-context global review are never waived.
+
 If complete global input exceeds capacity, do not terminate the authorized task or
 delete leaf judgments. The native runner routes a proven capacity overflow through `scripts/delivery_global_views.py`: prepare and
 finish pending locals, then assign every actual source/coverage body to a complete
@@ -105,5 +140,13 @@ results, the full report and inventories for cross-view conflicts and supplies
 the ordinary final global record. Python never invents that acceptance. Any real
 scoped defect requires correction before synthesis. Record this compositional
 review honestly; the synthesis did not independently reread every leaf body.
+With `normal_flow_v1`, synthesis owns cross-view conflicts and unresolved interfaces.
+It receives the full report, manuscript, source/target inventories, final opinions and
+complete actual specialist conclusions. Full frozen-A and Expression leaf reviews
+stay with their specialist views and frozen runtime context. Synthesis explicitly
+adopts unchanged specialist fields via `$view:[role,field_or_path]`, retaining exact
+records and file hashes, and supplies its own cross-view reasons/issues. It does not
+repeat Original/Expression/clause judgments; disagreement remains a blocking issue.
+Only fields actually supplied by a passing, unchanged specialist can be adopted.
 The ordinary source-preservation and final-text gates still both have to pass.
 

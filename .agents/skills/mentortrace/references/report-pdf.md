@@ -2,7 +2,7 @@
 
 Use this format when a bilingual manuscript review is exported to HTML/PDF. It formats a **frozen author-facing Markdown report**; it does not change findings, issue counts, source dispositions, or advisor-comparison policy.
 
-Apply the [author-facing bilingual report rules](report-language.md) before export. The current report format puts English first and displays separately numbered content/technical, organization/flow, and language/presentation comments without internal IDs. Preserve the Markdown grouping and local revision plans rather than flattening them or collecting drafts elsewhere.
+Apply the [author-facing bilingual report rules](report-language.md) before export. The current report format puts English first and displays content/technical, organization/flow, and language/presentation comments with numbering restarted at 1 in each category without internal IDs. Preserve the Markdown grouping and local revision plans rather than flattening them or collecting drafts elsewhere.
 
 In 使用说明, keep `Revision priority: ...` and `修改优先级： ...` as two separate paragraphs, English first, with plain (unbolded) labels and the explanation on the same line as its label. Do not turn them into a combined heading or merge them with comment-type descriptions. Preserve locally attached paragraph drafts and their use conditions selected by the revision-scope check.
 
@@ -50,3 +50,15 @@ Render all PDF pages to images and inspect long headings, SHA wrapping, Chinese/
 ## Preservation prerequisite
 
 Before rendering, complete references/delivery-preservation.md and pass --preservation-audit DELIVERY.json plus --requirements-audit B.json to render_bilingual_report.py. The first must be a completed version 2 final-text audit; the second must be a delivery-ready consolidation comparison bound to this exact report and the same final review. Both are required for HTML-only and PDF exports and are checked before any output writes. Existing frozen report files remain unchanged.
+
+## Automatic display numbering
+
+After validating the unchanged frozen source against both gates, the renderer
+normalizes only visible headings and comment references within each category and validates the complete section order and bilingual closing note. It writes matching
+`.display.md` and `.numbering.json` beside HTML, including source/display hashes
+and the alias map. Deliver this display Markdown with the HTML; preserve the
+audited source. Original quotations and fenced examples are opaque. The same
+normalizer runs inside `build_html`, so direct callers cannot export internal
+numbering accidentally. No model call is needed. This presentation derivative
+does not transfer acceptance to substantive edits or authorize semantic merging.
+Correct ambiguous identities or dangling references locally before export.

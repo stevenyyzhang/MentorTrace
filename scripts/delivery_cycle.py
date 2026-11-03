@@ -69,26 +69,28 @@ def prepare(bundle, responses, out, rule_compatibility=None):
     previous = w.m.read(cp); report = Path(previous['report'])
     values,_=w.collect(bundle,responses,allow_partial=True)
     all_tasks=w.m.read(bundle/'inventory.json');byid={t['id']:t for t in all_tasks}
-    all_issues=review_contract.inspect(all_tasks,values,ctx)+w.delivery_efficiency.inspect_values(all_tasks,values)
+    all_issues=([] if ctx.get('normal_flow_v1') and ctx.get('delivery_hardening') else review_contract.inspect(all_tasks,values,ctx))+w.delivery_efficiency.inspect_values(all_tasks,values)
     for p in responses:
         raw=w.m.read(p);request=w.m.read(bundle/next(e['file'] for e in manifest['packets'] if e['id']==raw['packet_id']))
         assigned=[byid[k] for k in request['task_ids']]
         all_issues+=w.recovery.inspect(assigned,values,ctx,raw.get('evidence_records',[]))
-        all_issues += [{**issue,'task_id':t['id']} for issue in review_contract.inspect_records(raw,manifest['bindings'],ctx.get('page_images',[])) for t in assigned]
+        all_issues += review_contract.inspect_record_users(raw,assigned,values,manifest['bindings'],ctx.get('page_images',[]))
     invalid={i['task_id'] for i in all_issues if i.get('task_id') in byid}
     # The report, context and sources are exactly unchanged. This is not a semantic
     # affected-scope guess for an edited report. Every positive local record is
-    # independently revalidated by delta; the global judgment is always fresh.
+    # independently revalidated by delta. A complete unchanged accepted global may
+    # qualify for explicit normal_flow reuse; missing/negative globals remain fresh.
     assessment = {'previous_ledger_sha256': w.m.sha(cp), 'report_sha256': w.m.sha(report),
                   'reviewer': 'Deterministic unchanged-report recovery',
                   'reason': 'Identical full report and frozen sources; revalidate actual local records.',
-                  'cross_context_review': 'No text/context was edited. Reuse only validated actual records; global dependencies remain a fresh task.',
+                  'cross_context_review': 'No text/context was edited. Reuse only validated actual records; global reuse additionally requires complete accepted unchanged dependencies.',
                   'affected_source_ids': [], 'affected_target_ids': [],
                   'invalid_record_task_ids': sorted(invalid),
                   'affected_component_ids': sorted(byid[i]['key'] for i in invalid if byid[i]['kind']=='coverage'),
                   'previous_phase_b': {'path': str((out / 'checkpoint/checkpoint_phase_b.json').resolve()),
                                        'sha256': w.m.sha(out / 'checkpoint/checkpoint_phase_b.json')}}
     if rule_compatibility is not None:assessment['local_rule_compatibility']=copy.deepcopy(rule_compatibility)
+    if ctx.get('normal_flow_v1'):assessment['normal_flow_v1']=1
     fresh, pending = delta.prepare(cp, report, report, assessment=assessment)
     ledger_path = out / 'delta.json'; w.m.save(ledger_path, fresh)
     corrected = out / 'bundle'
@@ -97,7 +99,6 @@ def prepare(bundle, responses, out, rule_compatibility=None):
                        fidelity=contract.get('verified_delivery_fidelity', False),
                        concise=contract.get('report_concision', False), recoverable=True)
     # Supply all known defects together, and only to the tasks that must correct them.
-    values, _ = w.collect(bundle, responses, allow_partial=True)
     tasks = w.m.read(bundle / 'inventory.json')
     issues = all_issues
     original_values = {}

@@ -1,8 +1,57 @@
 # Merge and independently verify
 
+## Stage ownership for integration_contract_v1
+
+Merge consumes the bound, completed Source inventory alongside original findings,
+candidates and checks. It proposes compatible integration, routes and supported
+withdrawals; it does not repeat Source decomposition or perform Verify's scientific
+and formula-fidelity sweep. The source assessments are hypotheses, not authority.
+Only Verify returns source_requirement_resolutions and source_fidelity_checks.
+Do not add source_requirement_audit or source_expression_records as Merge side tables.
+Any unexpected Merge records remain in the saved raw/canonical output and become
+explicit Verify candidates; substantive content cannot be silently discarded.
+
+Verify still independently settles all source components, candidates, withdrawals,
+editorial alternatives and execution issues. Its ordinary tables remain authoritative.
+The response may use integration_output_version:1, shared_values, exact $value
+references and selected $fields references as specified in the runtime prompt.
+Explicit component_ids/candidate_ids/input_ids groups in the respective resolution
+or disposition tables expand to one row per named ID only when the complete actual
+decision is identical. Editorial-selection input_ids retains its ordinary meaning.
+Write an actual decision/evidence account once where it applies, then explicitly
+reference it across required views. Keep every ID, distinct assessment, author
+action, condition, route and occurrence; sharing an output ID is not equivalence.
+The program expands each response/part before unchanged substantive validators.
+References cannot cross responses or capacity parts. Conflicts, missing definitions,
+cycles and unused definitions are errors, never implicit acceptance. Fully expanded
+responses remain supported. These transport definitions are not another audit ledger.
+
+Source provides canonical duplicate links with complete original components. Verify
+must inspect each alias's actual scope; it can disagree and retain a separate request.
+Partition-local duplicate decisions retain complete read-only canonical context.
+No output reserve is lowered to force fewer parts. Advisor discovery and isolation
+are unchanged; Source/Reader plans are never supplied to Advisor.
+
+Integration requests may use the existing lossless schema/span input encoding when
+its complete serialized request is smaller. Exact reconstruction retains full
+manuscript, Source reasons/evidence and every original alias; capacity is measured
+after encoding with unchanged reserves. New integration planning also estimates
+required output views (including each source component); optional response sharing
+does not justify assuming that a large Verify output will fit one call. These are
+planning allowances, not measured provider tokens or a required finding count.
+For an output-heavy connected routing group, partition complete adjudication targets
+with full read-only counterpart records, while keeping editorial alternatives jointly
+assigned. Do not infer another part's final decision or withdraw a request merely
+because a peer might cover it. Explicit duplicates can remain; conditions cannot be
+lost. A single indivisible target that cannot fit still requires honest bounded
+continuation. Binary capacity search avoids re-encoding the full input per target.
+Source attachment is not permission to
+silently cut its evidence or add another review phase. Smaller input/output text
+does not establish a measured improvement in reasoning quality or elapsed time.
+
 Apply source-fidelity.md alongside the consolidation and delivery contracts. New verification protocols account for every incoming finding and every verification discovery in source_fidelity_checks. For a formula-dependent verdict, record the observed decisive original expression, symbol roles, exact page-image hash and any extraction difference. Page evidence contradicting the premise requires withdrawal or supported narrowing; unreadable decisive notation remains unresolved. Retaining earlier findings or matching their wording is not evidence that their source transcription is correct.
 
-When language findings are supplied, preserve their finding_type=surface, category and suggested_text fields in every retained output. Keep them separate from technical findings and retain every occurrence anchor. Definite small errors are reportable regardless of importance; do not withdraw them for being minor. Uncertain language/notation items and optional style suggestions remain separately visible, not promoted to confirmed defects.
+When language findings are supplied, preserve their finding_type=surface, category and suggested_text fields in every retained output. Keep their diagnostic IDs/types distinct from technical findings and retain every occurrence anchor. Report presentation must retain a separately numbered language opinion even when a coordinated technical/style replacement fixes it. Preserve its necessary correction independently of optional style adoption; share replacement text only, under report-language.md. Definite small errors are reportable regardless of importance; do not withdraw them for being minor. Uncertain language/notation items and optional style suggestions remain separately visible, not promoted to confirmed defects.
 
 Freeze branch findings before integration. Consolidate by object, relationship, gap and closure goal, not topic alone. A local technical error does not automatically answer a question about the overall explanation; complete parameter reporting does not settle realism.
 
@@ -11,6 +60,14 @@ Every initial finding has a disposition: retained, merged with explicit target I
 Verification receives the original manuscript, concrete findings, source support and counterevidence in fresh context, without prior praise or pass labels. It returns its own evidence-based disposition. Fresh context is not an independent-expert guarantee. Newly discovered findings are marked as new in verification. Final output remains linked to each original finding; fewer findings alone is not improvement.
 
 ## Consolidation decision
+
+Preserve independent closure goals/IDs and separately numbered report opinions.
+Technical, organization and language categories retain independent adoption status.
+Merge only genuine duplicates within a category, with compatible conditions, scope
+and force, preserving every branch and occurrence with explicit aliases. A shared
+paragraph rewrite or overlapping wording is never sufficient. Apply the precise
+presentation and duplicate criteria in report-language.md in existing checks.
+
 
 Prefer one final finding for each independently answerable, supported gap. Two gaps are independent when an author could close one while the other remains. Share a section heading if useful, but retain separate finding IDs and closure goals for independent gaps, even at the same location. For example, acquisition-path evidence and reconstructed-size accuracy are separate requirements; baseline identity and comparison settings may also require separate answers. These examples illustrate independence, not mandatory checks on every manuscript.
 

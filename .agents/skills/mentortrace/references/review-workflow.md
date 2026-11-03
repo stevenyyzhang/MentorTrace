@@ -1,5 +1,37 @@
 # Combined review workflow
 
+New adaptive runs also pin `integration_contract_v1: 1`. Candidate Source records
+have one literal `original.question` plus the complete `source_record`, instead of
+repeating the question as relation/gap/closure_goal. Stable candidate IDs remain;
+the new original shape is hash-bound consistently at preparation and preservation.
+Only explicit check IDs or the exact originating check connect Source/execution
+tasks. Candidates carry check_refs with exact IDs/hashes; complete checks remain
+in the shared stage context and execution tasks, not another candidate-level copy.
+Check links are scheduling affinity: when a group would waste output capacity,
+split at whole-task boundaries while retaining complete shared stage evidence in
+both packets. Never split a source task, lower output reserves or infer a peer's
+judgment. Share the actual evidence/observation through existing judgments references;
+requirement necessity, execution completeness and stage coverage remain distinct
+decisions. Only assigned stage_scope tasks repeat whole-stage coverage comparisons.
+Full manuscript and source-stage context remain available: no inferred dependency
+slicing removes possibly needed evidence. Advisor's initial context stays isolated.
+Merge now receives the validated Source component inventory before integration.
+See merge-verify.md for stage ownership and compact response expansion.
+
+New adaptive runs pin `native_source_repair: 1`. The native Source runner normalizes
+only unambiguous record shapes, then applies the actual source validator before
+assembly. Actual missing quotes, mismatched occurrences and invalid duplicates
+remain errors. One bounded correction receives only affected tasks and required
+canonical peers, with the complete source-stage evidence; completed unrelated
+tasks are reused. Correction is recorded as self-review, not independent discovery.
+Transport-uncertain calls are never blindly resubmitted. Unresolved corrections
+remain explicit in the continuation receipt rather than becoming a false pass.
+
+Verify sees frozen Source assessments as hypotheses. It cannot create an unsupported
+duplicate to conceal an independent requirement. When Source delta is pending,
+validate its source-only judgments first and then apply Verify resolutions. The
+ordinary final gates still apply; no new full-manuscript review stage is added.
+
 New adaptive runs pin `review_efficiency: 1`. Earlier frozen runs retain their
 protocols. This changes scheduling and record production, not source coverage,
 Advisor independence, capacity allowances, model, effort or service tier.

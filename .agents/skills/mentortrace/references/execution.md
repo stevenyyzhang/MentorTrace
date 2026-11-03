@@ -114,7 +114,8 @@ For new `review_efficiency: 1` runs, follow [combined review workflow](review-wo
 After object planning and case routing, the authorized runner automatically
 schedules Reader/Expert/Advisor/Editor in separate concurrent requests (three by
 default, fewer with `--workers`). Combine source-only execution/A inspection and
-finish it before Verify; combine B/final-text/language review after drafting.
+finish it before Merge for `integration_contract_v1: 1` (legacy protocols require
+it before Verify); combine B/final-text/language review after drafting.
 The older sequential description below applies to frozen older protocols.
 
 New protocols enable source_fidelity: 1 and freeze inputs/source_fidelity.json from raw page text and image hashes. This adds deterministic inline split-word candidates to Editor only, plus formula-source records in Verify; source-fidelity.md also guides Expert, Advisor, consolidation and drafting. Candidate dispositions and formula records are validated on acceptance. The program does not rewrite extraction, perform OCR or certify the reviewer's visual judgment. Frozen older protocols retain their existing request/response contracts.

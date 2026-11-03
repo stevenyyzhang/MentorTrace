@@ -93,6 +93,8 @@ def expand(raw,context):
     require(context.get('advisor_shared_results')==1,'Shared results not enabled')
     require(not set(raw)&{'relations','checks','findings','card_dispositions','writing_transfers','source_use_dispositions'},'Mixed shared and legacy result lists')
     require(set(raw)<={'stage','analyses','concern_results','expression_results','adopted_uses','association_exceptions','evidence_requests','limits'},'Unexpected shared result field')
+    import advisor_associations
+    raw=advisor_associations.project(raw,context)
     primary=context['primary_card_ids'];sources={r['id']:r for r in context['expression_sources']['records']}
     supplied={c['id'] for c in context['cards']}
     returned={s for row in raw['concern_results'] for s in row.get('source_ids',[])}
@@ -121,7 +123,9 @@ def expand(raw,context):
         if 'actions' in row:
             require(set(row)=={'source_ids','actions'} and len(row['source_ids'])==1 and row['actions'],'Invalid multiple-action source result')
             for action in row['actions']:
-                require('source_ids' not in action and action.get('decision') in {'required_repair','optional_improvement'},'Invalid nested action')
+                allowed={'required_repair','optional_improvement'}
+                if context.get('advisor_target_links'):allowed|={'unknown','unfinished','not_applicable'}
+                require('source_ids' not in action and action.get('decision') in allowed,'Invalid nested action')
                 expression_rows.append({**action,'source_ids':row['source_ids']})
         else:expression_rows.append(row)
     for row in expression_rows:

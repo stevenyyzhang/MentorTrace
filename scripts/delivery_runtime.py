@@ -120,7 +120,7 @@ def bind_global(bundle,paths,out):
     import review_contract as contract
     bundle=Path(bundle);manifest=w.verify_bundle(bundle);ctx=m.read(bundle/'context.json');inventory=m.read(bundle/'inventory.json')
     values,origins=w.collect(bundle,paths,allow_partial=True);local=[t for t in inventory if t['kind']!='global_scope']
-    issues=contract.inspect(local,values,ctx)+w.delivery_efficiency.inspect_values(local,values)
+    issues=([] if ctx.get('normal_flow_v1') and ctx.get('delivery_hardening') else contract.inspect(local,values,ctx))+w.delivery_efficiency.inspect_values(local,values)
     for path in paths:
         result=m.read(path);req=m.read(bundle/next(p['file'] for p in manifest['packets'] if p['id']==result['packet_id']))
         assigned=[t for t in local if t['id'] in req['task_ids']]
@@ -151,6 +151,7 @@ def bind_global(bundle,paths,out):
             request['prompt']=w.encoded_request(delivery_protocol.instructions(tasks,ctx),delivery_protocol.project(ctx,tasks))
         else:request['prompt']+='\nBOUND ACTUAL LOCAL COMPLETIONS\n'+__import__('request_capacity').encode(ctx['completed_local_reviews'])
         request['request_sha256']=hashlib.sha256(request['prompt'].encode()).hexdigest()
+        request.pop('reuse_eligibility_only',None)
         w.capacity.check_capacity(request['prompt'],len(request['images']),manifest['policy'])
         prepared_requests[entry['file']]=request;entry['sha256']=w.audit.value_digest(request)
     # Preflight all complete requests before creating a frozen bundle. A capacity
@@ -165,12 +166,19 @@ def bind_global(bundle,paths,out):
     return derived
 
 
-def coverage_carryover(previous_b,previous_report,report,safe_context_texts,affected_component_ids=()):
+def coverage_carryover(previous_b,previous_report,report,safe_context_texts,affected_component_ids=(),reuse_complete=False):
     """Retain actual complete B rows only when their frozen routes/quotes still bind."""
     import audit_merge_obligations as audit
     previous_b=Path(previous_b);ledger=audit.read(previous_b);packet=audit.read(Path(ledger['audit_directory'])/'phase_b.packet.json')
     require(ledger['report']['sha256']==audit.digest(previous_report),'Previous B report changed')
     require(audit.value_digest(packet)==ledger['phase_b_packet_sha256'],'Previous B packet changed')
+    if reuse_complete and not affected_component_ids and audit.digest(previous_report)==audit.digest(report):
+        # A genuinely accepted, unchanged B retains its explicit unknown/optional
+        # decisions too. Validation still checks all actual source/evidence bindings.
+        try:audit.validate(ledger,previous_report,require_ready=True)
+        except (ValueError,KeyError,TypeError,OSError):pass
+        else:return {'previous_b':str(previous_b.resolve()),'sha256':audit.digest(previous_b),'phase_a_sha256':ledger['phase_a_sha256'],
+            'rows':copy.deepcopy(ledger['components']),'scope':'Actual accepted complete B; report, source lineage and evidence revalidated unchanged.'}
     current=Path(report).read_text(encoding='utf-8-sig');frozen={c['id']:(u['source_id'],c) for u in packet['frozen_adjudication']['units'] for c in u['components']};result=[]
     for row in ledger['components']:
         cid=row['component_id']

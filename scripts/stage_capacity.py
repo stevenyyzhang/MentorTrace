@@ -45,8 +45,36 @@ def prepare(run, stage, context, request, policy):
     groups={}
     for n,item in enumerate(items):groups.setdefault(root(n),[]).append(item)
     groups=list(groups.values())
+    def output_cost(group):
+        return sum((250 if stage=='merge' else 500) if k=='input_findings' else
+                   500 if k in {'input_organization_suggestions','excluded_organization_candidates'} else
+                   200 if k in {'delivery_candidates','coverage_execution_issues'} else
+                   100*len(v['unit']['components']) if k=='source_requirement' and stage=='verify' else 0
+                   for k,v in group)
+    peer_groups={};peer_owner={}
+    if context.get('integration_contract_v1'):
+        expanded=[]
+        for n,group in enumerate(groups):
+            if output_cost(group)<=policy['output_reserve'] or len(group)==1:
+                expanded.append(group);continue
+            # An output-heavy connected routing graph is not one indivisible
+            # judgment. Retain its complete originals as read-only peer context;
+            # partition complete adjudication targets, keeping editorial choices
+            # together. Do not invent a retained peer verdict or deduplicate by ID.
+            gid='peers:'+str(n);peer_groups[gid]=group
+            for _,v in group:peer_owner[v['id']]=gid
+            editorial_rows=[row for row in group if row[0] in {'input_organization_suggestions','excluded_organization_candidates'}]
+            if editorial_rows:expanded.append(editorial_rows)
+            expanded.extend([row] for row in group if row[0] not in {'input_organization_suggestions','excluded_organization_candidates'})
+        groups=expanded
     def build(rows):
         ctx=copy.deepcopy(context)
+        peer_ids={peer_owner[v['id']] for _,v in rows if v['id'] in peer_owner}
+        if peer_ids:
+            assigned={v['id'] for _,v in rows}
+            ctx['partition_peer_context']=[{'kind':k,'record':copy.deepcopy(v)} for gid in sorted(peer_ids)
+                                           for k,v in peer_groups[gid] if v['id'] not in assigned]
+            ctx['partition_peer_policy']='Complete original counterparts of an output-heavy routing group, read-only hypotheses. Judge only assigned IDs. Never infer a peer final verdict, target its unreturned output ID or withdraw a requirement because a peer may cover it. Retain an independent supported output/unknown if needed; duplicates are safer than lost conditions. Editorial alternatives remain jointly assigned.'
         ctx['input_findings']=[v for k,v in rows if k=='input_findings']
         if 'coverage_execution_issues' in ctx:
             ctx['coverage_execution_issues']=[v['issue'] for k,v in rows if k=='coverage_execution_issues']
@@ -58,6 +86,13 @@ def prepare(run, stage, context, request, policy):
             ctx['delivery_candidates']=[v for k,v in rows if k=='delivery_candidates']
             if 'initial_source_review' in ctx:
                 ctx['initial_source_review']['source_requirements']=[v['unit'] for k,v in rows if k=='source_requirement']
+                if ctx.get('integration_contract_v1'):
+                    assigned={c['id'] for u in ctx['initial_source_review']['source_requirements'] for c in u['components']}
+                    canonical=__import__('integration_contract').canonical_context(context)
+                    needed={c['duplicate_of'] for u in ctx['initial_source_review']['source_requirements'] for c in u['components'] if c.get('duplicate_of') not in assigned and c.get('duplicate_of')}
+                    m.require(needed<=set(canonical),'Missing source canonical evidence; do not silently drop a duplicate dependency')
+                    ctx['source_canonical_context']={k:canonical[k] for k in sorted(needed) if k in canonical}
+                    ctx['source_canonical_context_policy']='Read-only complete canonical evidence for assigned duplicate decisions. These are not additional assigned component resolutions; never reference another response shared_values.'
             selected_candidates={v['id'] for v in ctx['delivery_candidates']}
             ctx['prior_candidate_reviews']=[v for v in ctx.get('prior_candidate_reviews',[]) if v['candidate_id'] in selected_candidates]
         ctx['capacity_partition']={
@@ -65,21 +100,47 @@ def prepare(run, stage, context, request, policy):
             'all_target_ids':[v['id'] for _,v in items],
             'rule':'Judge every assigned complete target using the complete manuscript and shared evidence. Other target IDs are routing only, not evidence. Do not withdraw or merge an assigned requirement based on an unseen other target; retain it independently. Preserve all conditions and unresolved questions. Cross-partition duplicates may remain and are not permission to omit a requirement.'}
         req=m.prepare_stage_request(run,stage,_context_override=ctx,_planning=True)
-        return ctx,req,capacity.capacity.estimate(req['prompt'],len(req['images']),policy)
+        budget=capacity.capacity.estimate(req['prompt'],len(req['images']),policy)
+        if ctx.get('integration_contract_v1'):
+            budget['estimated_output_tokens']=__import__('integration_contract').output_estimate(ctx,stage)
+            budget['output_planning_fit']=budget['estimated_output_tokens']<=policy['output_reserve']
+            budget['fits']=budget['fits'] and budget['output_planning_fit']
+        return ctx,req,budget
     packets=[];pending=[]
-    for group in groups:
-        ctx,req,budget=build(pending+group)
-        if budget['fits']:pending+=group;continue
-        if pending:
-            packets.append(build(pending));pending=[]
-        ctx,req,budget=build(group)
-        if not budget['fits']:
-            m.save(run/'capacity_checks'/(stage+'.obstacle.json'),{'status':'infeasible','capacity':budget,
-                'target_ids':[v['id'] for _,v in group],'complete_shared_evidence_retained':True,
-                'user_confirmation_required':False,'model_calls_submitted_by_planner':0})
-        m.require(budget['fits'],'One complete consolidation target plus full manuscript/shared evidence exceeds actual capacity; no evidence removed')
-        pending=group
-    if pending:packets.append(build(pending))
+    if context.get('integration_contract_v1'):
+        start=0
+        while start<len(groups):
+            # Cheap output-bound search first, then binary input-fit search. Avoid
+            # re-encoding the full manuscript once per appended integration target.
+            end=start;cost=0
+            while end<len(groups) and cost+output_cost(groups[end])<=policy['output_reserve']:
+                cost+=output_cost(groups[end]);end+=1
+            low,high=start+1,max(start+1,end);best=None
+            while low<=high:
+                mid=(low+high)//2;rows=[row for g in groups[start:mid] for row in g]
+                ctx,req,budget=build(rows)
+                if budget['fits']:best=(mid,ctx,req,budget);low=mid+1
+                else:high=mid-1
+            if best is None:
+                m.save(run/'capacity_checks'/(stage+'.obstacle.json'),{'status':'infeasible','capacity':budget,
+                    'target_ids':[v['id'] for _,v in groups[start]],'complete_shared_evidence_retained':True,
+                    'user_confirmation_required':False,'model_calls_submitted_by_planner':0})
+                raise ValueError('One complete integration group exceeds actual input/output planning capacity; no evidence removed')
+            start,ctx,req,budget=best;packets.append((ctx,req,budget))
+    else:
+        for group in groups:
+            ctx,req,budget=build(pending+group)
+            if budget['fits']:pending+=group;continue
+            if pending:
+                packets.append(build(pending));pending=[]
+            ctx,req,budget=build(group)
+            if not budget['fits']:
+                m.save(run/'capacity_checks'/(stage+'.obstacle.json'),{'status':'infeasible','capacity':budget,
+                    'target_ids':[v['id'] for _,v in group],'complete_shared_evidence_retained':True,
+                    'user_confirmation_required':False,'model_calls_submitted_by_planner':0})
+            m.require(budget['fits'],'One complete consolidation target plus full manuscript/shared evidence exceeds actual capacity; no evidence removed')
+            pending=group
+        if pending:packets.append(build(pending))
     entries=[]
     for n,(ctx,req,budget) in enumerate(packets,1):
         name=f'part-{n:03d}'

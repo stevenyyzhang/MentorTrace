@@ -277,8 +277,14 @@ def packet(run, workflow=None):
         result['expression_sources']=expression.view(run/'inputs/expression',used_expressions)
         if read(run/'inputs/expression/manifest.json').get('expression_realization'):
             import expression_realization as realization
-            language_links=realization.route(run/'inputs/expression',
-                final['findings']+final.get('organization_suggestions',[]))
+            route_items=final['findings']+final.get('organization_suggestions',[])
+            if protocol.get('expression_routing',1)>=2:
+                route_items += [{**c,'id':c['candidate_id']} for c in final.get('candidate_reviews',[])
+                                if c.get('status') in {'optional','author_confirmation'}]
+            concern_links={item['id']:sorted({cid for row in raw_sources if item['id'] in row['final_ids']
+                                              for cid in row['advisor_card_ids']}) for item in route_items}
+            language_links=realization.route(run/'inputs/expression',route_items,
+                version=protocol.get('expression_routing',1),concern_links=concern_links)
             result['draft_expression_links']+=language_links
             used_expressions.update(eid for link in language_links for eid in link['expression_ids'])
             result['expression_sources']=expression.view(run/'inputs/expression',used_expressions)

@@ -108,6 +108,8 @@ def prepare(run,out):
   import re
   prompt=re.sub(r'Return JSON \{report_fragments,report_preamble,delivery_map:.*?limits:\[\]\}\.', 'Return canonical group records in the schema below.', prompt, count=1)
   prompt+='\n'+(__import__('canonical_draft').INSTRUCTIONS_V2 if protocol.get('canonical_draft')==2 else __import__('canonical_draft').INSTRUCTIONS)
+ scope_instruction=__import__('review_scope').instructions(protocol)
+ if scope_instruction:prompt+='\n'+scope_instruction
  instruction_before_data=prompt
  draft_evidence=writing.draft_view(m.read(out/'inputs/writing_evidence.json'))
  prompt+='\nWRITING EVIDENCE (LINKED SOURCES, NOT TARGET FACTS)\n'+compact(draft_evidence)

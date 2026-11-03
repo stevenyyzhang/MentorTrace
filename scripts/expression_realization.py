@@ -54,6 +54,12 @@ For public_minimized_expression_v1 records, private original pages are unavailab
 supplied minimized examples, analytical accounts, conditions and limits; do not reconstruct
 omitted context. source_ref binds a public example ID, not an original annotation locator.
 No new findings, extra replacement scope, or competing drafts may be introduced by style retrieval.
+Inspect supplied candidate routes for every revision target, including surface corrections
+and action-only requests. Consider the concrete operation, not just whether it repairs a
+Concern finding. If adopting a surface correction's source, include its target in the existing
+revision_actions/language_realizations group so actual wording and attribution are checked.
+Without a fitting source, keep the correction with no invented attribution. Do not add a
+paragraph or force a rewrite just to demonstrate Expression use.
 '''
 
 REVIEW_SCHEMA = '''Within the existing final-text review, review the language_realizations against
@@ -232,8 +238,11 @@ def build_snapshot(source,destination,pilot=None,provenance=None):
     return {'records':len(records),'features':manifest['language_feature_count'],
             'pilot':len(pilot),'held_choices':sum(len(r['held_choices']) for r in coverage)}
 
-def route(library,items,top_k=2):
+def route(library,items,top_k=2,*,version=1,concern_links=None):
     """Language-task/function retrieval, followed by mandatory contextual model judgment."""
+    if version>=2:
+        from expression_routing import route
+        return route(library,items,concern_links=concern_links,top_k=top_k)
     import expression_runtime as expression
     records=read(Path(library)/'records.json');links=[]
     import public_expression as public
