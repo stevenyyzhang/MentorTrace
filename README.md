@@ -11,12 +11,11 @@ The current implementation runs as a **Codex skill with a Python workflow** and 
 
 ## Changes from 1.1.0 to 1.2.0
 
-- **Both libraries and independent reviews:** Advisor independently reviews the full manuscript using the complete Concern and Expression libraries. Reader, Expert, Advisor and Editor form separate reviews before integration and verification.
-- **Technical and organizational checks:** inspect derivation premises, configurations, applicability conditions and supporting evidence for the manuscript's actual claims, alongside paragraph tasks, information selection and argumentative connections.
-- **Requirement preservation and deduplication:** trace distinct revision requirements, conditional branches and affected passages; merge only genuine duplicates. Keep technical, organizational and language opinions separate even when they share replacement text, and retain supported organizational suggestions when comparative benefit is uncertain.
-- **Expression and revision guidance:** use applicable Expression cases for wording and paragraph suggestions, distinguishing necessary corrections from optional mentor-style choices without assuming a rewrite is better. Comments state the issue and action directly; Original fields faithfully quote the manuscript.
-- **Adaptive execution and local recovery:** size batches by capacity and workload, with up to three independent tasks running concurrently by default. Reuse valid results and repair affected opinions and associated records with incremental checks, reducing whole-batch repetition and duplicate output.
-- **Reports and delivery checks:** produce bilingual Markdown and PDF reports with separate numbering for each comment category, synchronized cross-references and a coverage-and-remaining-checks section. Check requirement preservation, bilingual consistency and report structure before delivery.
+- **Broader use of mentor examples:** review a wider range of expression examples, reducing the chance that an applicable example is missed during initial selection.
+- **Closer tracking of revision requirements:** track specific issues and their conditions more carefully so that distinct comments are not lost when reports are combined or shortened.
+- **More flexible use of mentor wording:** distinguish necessary corrections from optional writing styles. Adopting a mentor's style does not require treating the original as wrong or assuming the rewrite is better.
+- **Less repeated work and better recovery:** split work into batches according to task size, reuse valid completed results, and prioritize repairs to the affected parts when a problem occurs.
+- **Stronger delivery checks:** check more explicitly that comments are understandable, manuscript quotations are accurate, and category numbering, cross-references and closing notes are complete.
 
 ## Changes from 1.0.0 to 1.1.0
 
